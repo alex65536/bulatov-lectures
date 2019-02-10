@@ -1,0 +1,15 @@
+os: linux
+dist: xenial
+
+language: tex
+
+addons:
+  apt:
+    packages:
+      - texlive
+      - texlive-lang-cyrillic
+      - texlive-science
+      - texlive-latex-extra
+
+script:
+    make
