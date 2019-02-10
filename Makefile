@@ -7,4 +7,4 @@ clean:
 	latexmk -c
 
 distclean: clean
-	rm -f main.pdf
+	rm -f main.pdf main.dvi
