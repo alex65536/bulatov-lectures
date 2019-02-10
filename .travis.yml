@@ -1,7 +1,7 @@
 os: linux
 dist: xenial
 
-language: custom
+language: tex
 
 addons:
   apt:
