@@ -1,0 +1,88 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\usepackage{verbatim}
+
+\begin{document}
+\section{Тестовый раздел}
+
+\begin{defn}[Коши]
+    $$\forall \eps > 0 \quad \exists \delta > 0 \quad \forall x \in D(f) \quad 0 < \abs{x-x_0} < \delta \implies \abs{f(x) - a} \le \eps$$
+\end{defn}
+
+\begin{thm}[Про \LaTeX]
+    \LaTeX\ крут :)
+\end{thm}
+
+\begin{proof}
+    По определению.
+\end{proof}
+
+\begin{crl}[\texttt{alex65536}]
+    Электронный конспект стоит вести в \LaTeX'е.
+\end{crl}
+
+\begin{crl}
+    \LaTeX-документы текстовые,
+    поэтому можно использовать \texttt{git} для конроля версий.
+\end{crl}
+
+\begin{rem}
+    Числовые множества в \LaTeX: $\R\C\Q\N\Z$.
+\end{rem}
+
+\begin{exmp}
+    Пример примера :)
+\end{exmp}
+
+
+\begin{lem}[О единственном следствии из теоремы]
+ Следствие может быть без номера (если оно одно)
+\end{lem}
+
+\begin{proof}
+ Используйте \texttt{crl*}!
+\end{proof}
+
+\begin{crl*}
+    Получится как-то так
+\end{crl*}
+
+\begin{exc}
+    За\LaTeX'ать весь матан.
+\end{exc}
+
+\bigskip
+
+Заметим, что строчки лучше делать короткими.
+Так будет проще смотреть изменения.
+
+\begin{exmp}[Маяковский]
+
+    Такой текст
+
+\begin{verbatim}
+    Послушайте!
+    Ведь, если звезды зажигают~--
+    значит~-- это кому-нибудь нужно?
+    Значит~-- кто-то хочет, чтобы они были?
+    Значит~-- кто-то называет эти плевочки
+                                  жемчужиной?
+\end{verbatim}
+
+    отформатируется как
+
+    \medskip
+
+    Послушайте!
+    Ведь, если звезды зажигают~--
+    значит~-- это кому-нибудь нужно?
+    Значит~-- кто-то хочет, чтобы они были?
+    Значит~-- кто-то называет эти плевочки
+                                  жемчужиной?
+
+\end{exmp}
+
+\end{document}

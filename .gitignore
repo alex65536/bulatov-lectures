@@ -209,8 +209,8 @@ TSWLatexianTemp*
 # Kile
 *.backup
 *.kilepr
-*/.kile
-*/.kile/*
+.kile
+.kile/*
 
 # KBibTeX
 *~[0-9]*

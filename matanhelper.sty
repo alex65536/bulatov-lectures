@@ -1,0 +1,44 @@
+\ProvidesPackage{matanhelper}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+% Теоремы, следствия, замечания, ...
+\theoremstyle{plain}
+\newtheorem{theorem}{Теорема}[chapter]
+\newtheorem{lemma}[theorem]{Лемма}
+\newcounter{corollaryCounter}[theorem]
+\newtheorem{corollary}[corollaryCounter]{Следствие}
+\newtheorem*{corollary*}{Следствие}
+
+\theoremstyle{definition}
+\newtheorem*{example}{Пример}
+\newtheorem*{exercise}{Упражнение}
+\newtheorem{definition}{Определение}[chapter]
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Замечание}
+
+% Сокращения (aliases)
+\let \thm \theorem
+\let \lem \lemma
+\let \defn \definition
+\let \exmp \example
+\let \exc \exercise
+\let \rem \remark
+\let \crl \corollary
+
+% Версия со звездочкой убирает нумерацию из следствия
+\newenvironment{crl*}{\begin{corollary*}}{\end{corollary*}}
+
+% Разные определения
+\newcommand{\eps}{\varepsilon}
+\newcommand{\abs}[1]{\left|{#1}\right|}
+
+% Числовые множества
+\newcommand{\R}{\mathbb{R}}
+\renewcommand{\C}{\mathbb{C}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Z}{\mathbb{Z}}
