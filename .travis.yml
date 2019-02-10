@@ -10,6 +10,7 @@ addons:
       - texlive-lang-cyrillic
       - texlive-science
       - texlive-latex-extra
+      - latexmk
 
 script:
     make
