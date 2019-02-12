@@ -24,13 +24,13 @@
 положить
 
 \[\lambda x + \mu y = (\lambda x_1 + \mu y_1, \lambda x_2 + \mu y_2 + 
-\dots + \lambda x_n + \mu y_n)\]
+\dots + \lambda x_n + \mu y_n),\]
 
 то относительно множества $\R^n$ мы получим линейное (векторное) 
 пространство над полем $\R$. В общем случае, линейное (векторное) 
 пространство $P$ над над полем $\R$ называется \textit{евклидовым},
 если в нем определено скалярное произведение для любых $x, y \in P$, 
-т. е. отображение $\left<x, y\right>: P^2 \to R$, ставящее в 
+т.~е. отображение $\left<x, y\right>: P^2 \to R$, ставящее в 
 соответствие двум векторам $x$ и $y$ число $\left<x, y\right>$, 
 удовлетворяющее аксиомам:
 
@@ -43,7 +43,8 @@
  \[\forall x, y \in P \implies \left<x, y\right> = \left<y, x\right>\]
  \item Линейность:
  \[\forall \lambda, \mu \in P \quad \forall x, y, z \in P \implies
- \left<\lambda x + \mu y, z\right>\]
+ \left<\lambda x + \mu y, z\right> = \lambda\left<x, z\right> + 
+ \mu\left<y, z\right>\]
 \end{enumerate}
 
 Из последней аксиомы, в частности, следует \[\left<0, z\right> = 0 
@@ -99,17 +100,312 @@
  
  \begin{equation}
   \label{mink}
-  \sqrt{\left<x+y, x+y\right>} \le \sqrt{\left<x, x\right>} + 
-  \sqrt{\left<y, y\right>}
+  \sqrt{\left<x+y, x+y\right>} \le
+  \sqrt{\left<x, x\right>} + \sqrt{\left<y, y\right>}
  \end{equation}
 
 \end{crl*}
 
 \begin{proof}
- Во-первых, отметим, что в силу аксиомы неотрицательности скалярного произведения подкоренное выражение \eqref{mink} неотрицательно.
+ Во-первых, отметим, что в силу аксиомы неотрицательности скалярного 
+ произведения подкоренное выражение \eqref{mink} неотрицательно. 
+ Далее, используя линейность скалярного произведения и неравенство 
+ Коши-Буняковского \eqref{kosh-bun}, получаем
+ 
+ $\displaystyle
+  \sqrt{\left<x+y, x+y\right>} = 
+  \sqrt{\left<x, x\right> + 2\left<x, y\right> + \left<y, y\right>} 
+  \le
+  \Big[
+    (\left<x, y\right>) \le \abs{\left<x, y\right>}
+    \stackrel{\eqref{kosh-bun}}{\le} \sqrt{\left<x, x\right> \cdot
+    \left<y, y\right>}
+  \Big]
+  \le
+  \sqrt{\left(\sqrt{\left<x, x\right>}\right)^2 +
+        2\sqrt{\left<x, x\right> \cdot \left<y, y\right>} +
+        \left(\sqrt{\left<y, y\right>}\right)^2} =
+  \sqrt{\left(\left<x, x\right> + \left<y, y\right>\right)^2} =
+  \sqrt{\left<x, x\right>} + \sqrt{\left<y, y\right>}
+ $
 \end{proof}
 
+\begin{rem}
+ В дальнейшем, как правило, в линейном пространстве $\R^n$ будем 
+ использовать евклидово скалярное произведение, т. е.
 
+ \[
+ \begin{array}{c}
+  \forall x = (x_1, x_2, \dots, x_n) \in \R^n \\
+  \forall y = (y_1, y_2, \dots, y_n) \in \R^n \\
+  \forall \lambda, \mu \in \R
+ \end{array}
+ \]
+ 
+ полагаем
+ 
+ \begin{equation}
+  \label{eucl}
+  \left<x, y\right> = x_1y_1 + x_2y_2 + \dots + x_ny_n =
+  \sum_{k=1}^n x_ky_k
+ \end{equation}
 
+ Нетрудно проверить, что \eqref{eucl} удовлетворяет всем аксиомам 
+ скалярного произведения (неотрицательность, симметричность, 
+ линейность). В этом случае получаемое линейное евклидово пространство
+ $\R^n$ со скалярным произведением \eqref{eucl} дает неравенство
+ Коши-Буняковского в виде
+ 
+ \begin{equation}
+  \label{kosh-bun.e}
+  \left(x_1y_1 + x_2y_2 + \dots + x_ny_n\right)^2 \le
+  \left(x_1^2 + x_2^2 + \dots + x_n^2\right)\cdot
+  \left(y_1^2 + y_2^2 + \dots + y_n^2\right),
+ \end{equation}
+ 
+ а неравенство Минковского имеет вид
+ 
+ \begin{equation}
+  \label{mink.e}
+  \begin{array}{c}
+   \displaystyle
+   \sqrt{\sum_{k=1}^n (x_k + y_k)^2} \le
+   \sqrt{\sum_{k=1}^n x_k^2} + \sqrt{\sum_{k=1}^n y_k^2} \\
+   \forall x_k, y_k \in \R,\ k = \overline{1, n}
+  \end{array}
+ \end{equation}
+ 
+\end{rem}
+
+\begin{exc}
+ Выяснить, при каких условиях неравенства \eqref{kosh-bun.e} и 
+ \eqref{mink.e} переходят в соответствующие равенства.
+\end{exc}
+
+\begin{eans}
+ Из доказательства \eqref{kosh-bun} и \eqref{mink} легко показать, что 
+ равенство достигается, если $\left<x, x\right> = 0\ \lor\ \left<y, 
+ y\right> = 0 \iff x = \vec 0\ \lor\ y = \vec 0$.
+\end{eans}
+
+\section{Нормированное и метрическое пространства $\R^n$}
+
+Линейное евклидово пространство $\R^n$ будем называть 
+\textit{нормированным}, если существует отображение
+
+\begin{equation}
+ \label{norm-disp}
+ \lVert\ \rVert: \R^n \to \R,
+\end{equation}
+
+которое ставит в соответствие любому $x \in \R^n$ число $\norm x$, для 
+которого выполняются следующие аксиомы нормы:
+
+\begin{enumerate}
+ \item Невырожденность:
+ \[\forall x \in \R^n \quad \norm x = 0 \iff x = \vec 0 \in \R^n\]
+ \item Однородность:
+ \[\forall x \in \R^n \quad \forall \lambda \in \R \quad 
+   \norm{\lambda x} = \abs\lambda \cdot \norm x\]
+ \item Неравенство треугольника:
+ \[\forall x, y \in \R^n \quad \norm{x+y} \le \norm x + \norm y\]
+\end{enumerate}
+
+($\norm{x}$~--- \textit{норма} вектора $x$)
+
+\bigskip
+
+Отметим, что в силу последней аксиомы при $y = -x \in \R^n$ получаем
+
+$0 = \norm{\vec 0} = \norm{x - x} \le \norm x + \norm{-x} =
+ \norm x + \abs{-1} \cdot \norm x = 2\norm x \implies \norm x \ge 0
+ \quad \forall x \in \R^n$
+ 
+Значит, как и скалярное произведение, норма $\norm x$ обладает
+свойством неотрицательности.
+
+\begin{thm}[О нормируемости линейного евклидова пространства $\R^n$]
+ Любое линейное евклидово пространство $\R^n$ с произвольным скалярным
+ произведением нормируется с помощью естественной нормы
+ 
+ \begin{equation}
+  \label{rn-norm}
+  \norm x = \sqrt{\left<x, x\right>} \quad \forall x \in \R^n
+ \end{equation}
+ 
+\end{thm}
+
+\begin{proof}
+ Во-первых, отметим, что \eqref{rn-norm} корректно определена в силу 
+ неотрицательности скалярного произведения. Во-вторых, проверим
+ выполнимость всех аксиом нормы:
+ 
+ \begin{enumerate}
+  \item[а)]
+  $\norm x = 0 \iff \sqrt{\left<x, x\right>} = 0 \iff
+  \left<x, x\right> = 0 \iff x = \vec 0$ (в силу 
+  неотрицательности скалярного произведения)
+  
+  \item[б)]
+  Из линейности скалярного произведения получаем
+  
+  $\forall \lambda \in \R \quad \forall x \in \R^n \quad
+   \norm{\lambda x} \stackrel{\eqref{rn-norm}}{=}
+   \sqrt{\left<\lambda x, \lambda x\right>} = \dots =
+   \sqrt{\lambda^2\left<x, x\right>} =
+   \abs\lambda \sqrt{\left<x, x\right>} \stackrel{\eqref{rn-norm}}{=}
+   \abs\lambda \norm x$
+ 
+  \item[в)]
+  Используя неравенство Минковского, имеем
+  
+  $\norm{x+y} \stackrel{\eqref{rn-norm}}{=}
+   \sqrt{\left<x+y, x+y\right>} \stackrel{\eqref{mink}}{\le}
+   \sqrt{\left<x, x\right>} + \sqrt{\left<y, y\right>}
+   \stackrel{\eqref{rn-norm}}{=} \norm x + \norm y$
+ \end{enumerate}
+ 
+\end{proof}
+
+\begin{rem}
+ В случае евклидова пространства $\R^n$ с евклидовым скалярным 
+ произведением \eqref{eucl} естественной нормой будет
+ 
+ \[\begin{array}{c}
+    \norm x = \sqrt{x_1^2 + x_2^2 + \dots + x_n^2} \\
+    \forall x = (x_1, x_2, \dots, x_n) \in \R^n
+   \end{array}\]
+   
+ В этом случае для простоты будем писать $\abs x = \norm x = 
+ \sqrt{x_1^2 + x_2^2 + \dots + x_n^2}$, а само евклидово скалярное
+ произведение будем записывать в виде $x\cdot y = \sum\limits_{i=1}^k 
+ x_ky_k$.
+
+\end{rem}
+
+\begin{exc}
+  Доказать, что $\forall x, y \in \R^n$ в случае естественной нормы
+  имеем
+  
+  \[\abs x - \abs y \le \abs{x \pm y} \le \abs x + \abs y\]
+\end{exc}
+
+\begin{proof}
+ Докажем $\abs x - \abs y \le \abs{x + y} \le \abs x + \abs y$,
+ второй случай аналогичен. Правая часть неравнства $\abs{x + y} \le 
+ \abs x + \abs y$ верна в силу неравенства треугольника, левая часть
+ 
+ $\abs x - \abs y \le \abs{x + y} \implies
+ \abs{(x + y) - y} \le \abs{x + y} + \abs y = \abs{x + y} + \abs{-y}$
+ 
+ \noindent также верна в силу неравенства треугольника, что и 
+ требовалось доказать.
+\end{proof}
+
+Линейное пространство $\R^n$ будем называть \textit{метрическим}, если 
+имеется отображение 
+
+\begin{equation}
+ \label{metric}
+ \rho: \R^n \times \R^n \to \R,
+\end{equation}
+
+ставящее в соответствие для любого $x, y \in \R_n$ число $\rho \in 
+\R$, удовлетворяющее следующим аксиомам расстояния:
+
+\begin{enumerate}
+ \item Неотрицательность:
+ \[\forall x, y \in \R^n \implies \rho(x, y) \ge 0\text{, причем }
+   \rho(x, y) = 0 \iff x = y\]
+ 
+ \item Симметричность:
+ \[\forall x, y \in \R^n \implies \rho(x, y) = \rho(y, x)\]
+ 
+ \item Неравенство треугольника для расстояния:
+ \[\forall x, y, z \in \R^n \implies \rho(x, y) \le \rho(x, z) + 
+   \rho(z, y)\]
+ 
+\end{enumerate}
+
+В дальнейшем линейное метрическое пространство $\R^n$ с 
+соответствующей метрикой \eqref{metric} кратко будем обозначать
+$\left(\R^n; \rho\right)$.
+
+\begin{thm}[О метризируемости произвольного нормируемого пространства
+$\R^n$]
+ Любое линейное нормированное пространство $\R^n$ с нормой
+ \eqref{norm-disp} метризируется с помощью естественного расстояния
+
+ \begin{equation}
+  \label{nat-dist}
+  \rho(x, y) = \norm{x-y}\quad \forall x, y \in \R^n
+ \end{equation}
+ 
+\end{thm}
+
+\begin{proof}
+ В силу аксиомы неотрицательности нормы, во-первых, имеем $\rho(x, y) 
+ = \norm{x-y} \ge 0 \quad \forall x, y \in \R$ и, во-вторых, получаем
+ \[\rho(x, y) = 0 \stackrel{\eqref{nat-dist}}{\iff} \norm{x-y} = 0 
+  \iff x = y\]
+ 
+ Далее, используя аксиомы нормы, имеем
+ 
+ \[\rho(x, y) \stackrel{\eqref{nat-dist}}{=} \norm{-(y-x)} =
+   \abs{-1}\norm{y-x} = \norm{y-x} = \rho(y, x).\]
+ 
+ В силу неравенства треугольника для нормы
+ 
+ $\forall x, y, z \in \R^n \implies \rho(x, y) \stk{nat-dist}{=} 
+  \norm{x-y} = \norm((x-z) + (z-y)) \le
+  \norm{x-z} + \norm{z-y} \stk{nat-dist}{=} \rho(x, z) +  \rho(z, y).$
+\end{proof}
+
+\begin{rem} 
+
+ \
+
+ \begin{enumerate}
+  \item  Для линейного евклидова пространства $\R^n$ с евклидовой
+  нормой
+  
+  \begin{equation}
+   \label{e-norm}
+   \begin{array}{c}
+    \abs x = \norm x = \sqrt{\sum_{k=1}^n x_k^2} \\
+    \forall x = (x_1, x_2, \dots, x_n) \in \R_n
+   \end{array}
+  \end{equation}
+  
+  на основании \eqref{nat-dist} имеем евклидово расстояние, которое
+  в дальнейшем будем обозначать $d(x, y) = \rho(x, y) \stk{e-norm}{=}
+  \sqrt{\sum\limits_{k=1}^n x_k^2}$. Полученное евклидово метрическое
+  пространство $\R^n$ с таким евклидовым расстоянием будем записывать
+  в виде $(\R^n; d)$.
+  
+  \item Любое линейное пространство $\R^n$ можно метризировать с
+  помощью тривиальной метрики
+  
+  \[
+   \rho_0(x, y) =
+   \begin{cases}
+    1, & \text{если } x \ne y \\
+    0, & \text{если } x = y \\
+   \end{cases}
+  \]
+  
+  \item Иногда, наряду с пространствами $(\R^n, d)$ и $(\R^n, \rho_0)$
+  удобнее использовать также метрические пространства $(\R^n, \rho_1)$
+  и $(\R^n, \rho_2)$ соответственно с октаэдрической метрикой
+  \[\rho_1(x, y) = \sum_{i=1}^k \abs{x_k - y_k}\]
+  и кубической метрикой
+  \[\rho_2(x, y) = \max_{1 \le k \le n} \abs{x_k - y_k}\]
+  \[\begin{array}{c}
+     \forall x = (x_1, x_2, \dots, x_k) \in \R^n \\
+     \forall y = (y_1, y_2, \dots, y_k) \in \R^n \\
+    \end{array}\]
+ \end{enumerate}
+
+\end{rem}
 
 \end{document}

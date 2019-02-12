@@ -19,6 +19,7 @@
 
 \theoremstyle{remark}
 \newtheorem*{remark}{Замечание}
+\newtheorem*{exerciseAnswer}{Ответ на упражнение}
 
 % Сокращения (aliases)
 \let \thm \theorem
@@ -28,6 +29,7 @@
 \let \exc \exercise
 \let \rem \remark
 \let \crl \corollary
+\let \eans \exerciseAnswer
 
 % Нумеровать формулы по главам
 \numberwithin{equation}{chapter}
@@ -38,6 +40,8 @@
 % Разные определения
 \newcommand{\eps}{\varepsilon}
 \newcommand{\abs}[1]{\left|{#1}\right|}
+\newcommand{\norm}[1]{\lVert{#1}\rVert}
+\newcommand{\stk}[2]{\stackrel{\eqref{#1}}{#2}}
 
 % Числовые множества
 \newcommand{\R}{\mathbb{R}}
