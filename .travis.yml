@@ -6,6 +6,7 @@ language: tex
 addons:
   apt:
     packages:
+      - cm-super
       - texlive
       - texlive-lang-cyrillic
       - texlive-science
