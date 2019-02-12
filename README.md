@@ -1,7 +1,6 @@
 # Конспект по математическому анализу в LaTeX (по лекциям Булатова)
 
-![travis build status](https://api.travis-ci.com/alex65536/bulatov-lectures.svg?token=jpeNqaJZZxa4oU5dqJk8&branch=master)
-
+[![Build Status](https://travis-ci.com/alex65536/bulatov-lectures.svg?token=jpeNqaJZZxa4oU5dqJk8&branch=master)](https://travis-ci.com/alex65536/bulatov-lectures)
 
 В этом репозитории будет вестись работа над конспектом.
 
