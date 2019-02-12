@@ -1,0 +1,115 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+\section{Линейное евклидово пространство $\R^n$}
+
+Через $R^n$ будем обозначать множество упорядоченных наборов из $n$
+действительных чисел. Эти наборы будем называть \textit{векторами},
+а соответствующие им точки будем обозначать $M(x_1, x_2, \dots, x_n)$.
+
+Если по определению
+
+\[
+\begin{array}{c}
+ \forall x = (x_1, x_2, \dots, x_n) \in \R^n \\
+ \forall y = (y_1, y_2, \dots, y_n) \in \R^n \\
+ \forall \lambda, \mu \in \R
+\end{array}
+\]
+
+положить
+
+\[\lambda x + \mu y = (\lambda x_1 + \mu y_1, \lambda x_2 + \mu y_2 + 
+\dots + \lambda x_n + \mu y_n)\]
+
+то относительно множества $\R^n$ мы получим линейное (векторное) 
+пространство над полем $\R$. В общем случае, линейное (векторное) 
+пространство $P$ над над полем $\R$ называется \textit{евклидовым},
+если в нем определено скалярное произведение для любых $x, y \in P$, 
+т. е. отображение $\left<x, y\right>: P^2 \to R$, ставящее в 
+соответствие двум векторам $x$ и $y$ число $\left<x, y\right>$, 
+удовлетворяющее аксиомам:
+
+\begin{enumerate}
+ \item Неотрицательность:
+ \[\forall x \in P \implies \left<x, x\right> \ge 0,\]
+ причем
+ \[\left<x, x\right> = 0 \iff x = \vec 0\]
+ \item Симметричность:
+ \[\forall x, y \in P \implies \left<x, y\right> = \left<y, x\right>\]
+ \item Линейность:
+ \[\forall \lambda, \mu \in P \quad \forall x, y, z \in P \implies
+ \left<\lambda x + \mu y, z\right>\]
+\end{enumerate}
+
+Из последней аксиомы, в частности, следует \[\left<0, z\right> = 0 
+\quad \forall z \in P\]
+
+\begin{thm}[Неравенство Коши-Буняковского]
+ В любом линейном евклидовом линейном пространстве $P$ над полем $\R$
+ выполняется неравенство
+ 
+ \begin{equation}
+  \label{kosh-bun}
+  (\left<x, y\right>)^2 = \left<x, x\right>\cdot\left<y, y\right>
+ \end{equation}
+\end{thm}
+
+\begin{proof}
+ Для произвольного $t \in \R$ рассмотрим функцию
+ 
+ \[f(t) = \left<x + ty, x + ty\right> \ge 0\]
+
+ Используя линейность скалярного произведения, имеем
+ 
+ \[f(t) = at^2 + 2bt + c,\]
+ 
+ где
+ 
+ \[
+   \begin{array}{c}
+    a = \left<y, y\right> \ge 0 \\
+    b = \left<x, y\right> \\
+    c = \left<x, x\right> \\
+   \end{array}
+ \]
+ 
+ Если $a = 0$, т. е. $\left<y, y\right> = 0$, то $y = \vec 0$; в этом 
+ случае справа имеем $0$, а слева~--- тоже $0$, т. е. выполнено 
+ \eqref{kosh-bun}.
+ 
+ Пусть $a > 0$. В этом случае имеем квадратичную функцию $f(t) \ge 0 
+ \quad \forall t \in \R$. График этой функции~--- парабола, ветви 
+ которой направлены вверх. Поэтому дискриминант должен быть 
+ неположительным, т. е.
+ 
+ \[
+   D = (2b)^2 - 4ac \le 0 \iff b^2 \le 4ac \iff \eqref{kosh-bun} 
+   \qedhere
+ \]
+
+\end{proof}
+
+\begin{crl*}[Неравенство Минковского]
+ В линейном евклидовом пространстве $P$ для любых $x, y \in P$ имеем:
+ 
+ \begin{equation}
+  \label{mink}
+  \sqrt{\left<x+y, x+y\right>} \le \sqrt{\left<x, x\right>} + 
+  \sqrt{\left<y, y\right>}
+ \end{equation}
+
+\end{crl*}
+
+\begin{proof}
+ Во-первых, отметим, что в силу аксиомы неотрицательности скалярного произведения подкоренное выражение \eqref{mink} неотрицательно.
+\end{proof}
+
+
+
+
+\end{document}
