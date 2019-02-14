@@ -22,8 +22,8 @@ before_deploy:
     # set up git user name and tag this commit
     - git config --local user.name "travis"
     - git config --local user.email "travis"
-    - export TRAVIS_TAG=${TRAVIS_TAG:-$(date +'%Y%m%d%H%M%S')-$(git log --format=%h -1)}
-    - git tag $TRAVIS_TAG
+    - export TRAVIS_TAG=latest
+    - git tag -f $TRAVIS_TAG
 
 deploy:
   provider: releases
@@ -32,5 +32,6 @@ deploy:
   file:
     - "bulatov.pdf"
   skip_cleanup: true
+  update: true
   on:
     branch: master
