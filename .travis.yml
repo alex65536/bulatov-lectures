@@ -32,6 +32,10 @@ deploy:
   file:
     - "bulatov.pdf"
   skip_cleanup: true
-  update: true
+  overwrite: true
   on:
     branch: master
+
+tags:
+  except:
+    - latest
