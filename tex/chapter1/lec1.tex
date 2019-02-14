@@ -184,9 +184,32 @@ $\left<x, y\right>$, удовлетворяющее аксиомам:
 \end{exc}
 
 \begin{eans}
- Из доказательства \eqref{kosh-bun} и \eqref{mink} легко показать, что 
- равенство достигается, если $\left<x, x\right> = 0\ \lor\ \left<y, 
- y\right> = 0 \iff x = \vec 0\ \lor\ y = \vec 0$.
+ Пусть неравенство Коши \eqref{kosh-bun} перешло в равенство:
+ \[ (\left<x, y\right>)^2 = \left(\left<x, x\right>\right) 
+ \cdot \left(\left<y, y\right>\right) \]
+ Покажем, что это возможно тогда и только тогда, когда $x = ay,
+ a \in \R$. Нетрудно видеть, что этого условия достаточно для
+ выполнения равенства:
+ \[ (\left<ay, y\right>)^2 = \left(\left<ay, ay\right>\right) 
+ \cdot \left(\left<y, y\right>\right) \iff \left[
+ \text{линейность}\right] \iff a^2 (\left<y, y\right>)^2 = 
+ a^2 (\left<y, y\right>)^2 \]
+ Покажем, что оно необходимо. Случаи $x = \vec{0}$ и $y = \vec{0}$
+ тривиальны, поэтому пусть $x \neq \vec{0}$ и $y \neq \vec{0}$. 
+ Из равенства имеем:
+ \[\left<x, x\right> = \frac{\left<x, y\right>^2}{\left<y, y\right>}
+ \implies \left<x, x\right> = \left(\frac{\left<x, y\right>}
+ {\left<y, y\right>}\right)^2 \left<y, y\right> \iff \left<x, x\right>
+ = \left<\left(\frac{\left<x, y\right>}{\left<y, y\right>}\right) y, 
+ \left(\frac{\left<x, y\right>}{\left<y, y\right>}\right) y\right> \]
+ Пусть:
+ \[a = \frac{\left<x, y\right>}{\left<y, y\right>}, a \in \R \]
+ Используя свойство линейности, получаем:
+ \[\left<x, x\right> - \left<ay, ay\right> = 0 \iff \left<x - ay,
+ x - ay\right> = 0 \iff x - ay = \vec{0} \implies x = ay\]
+ Для того, чтобы неравенство Минковского \eqref{mink} перешло в
+ равенство, необходимо и достаточно, чтобы $x = ay, a \geq 0, a \in \R$. 
+ \textbf{Доказательство?}
 \end{eans}
 
 \section{Нормированное и метрическое пространства $\R^n$}
