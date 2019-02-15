@@ -1,0 +1,35 @@
+\makeatletter
+\def\input@path{{../}}
+\makeatother
+\documentclass[../main.tex]{subfiles}
+
+
+\begin{document}
+	
+	\section{Множества и окрестности в $\R^n$}
+	Далее в метрическом пространстве $(\R^n, \rho)$ для записи его элементов будем использовать не только $a, b c, \dots x$, также $R, L, M, \cdots$, а также элементы будем называть точками.
+	
+	Открытым шаром $B_r(x_0)$ радиуса $r > 0$ с центром в $x_0 \in \R^n$ в пространстве ($\R^n, \rho$) будем называть множество 
+	$$
+	B_r(x_0) = \{x \in \R^n\ |\ \rho(x, x_0) < r\}, 
+	$$
+	А замкнутым шаром
+	$$
+	\overline{B_r}(x_0) = \{x \in \R^n\ |\ \rho(x, x_0) \leqslant r\}, 
+	$$ 
+	Очевидно, что $\overline{B_r}(x_0) = B_r(x_0) + S_r(x_0),$ где $ S_r(x_0)$~--- n-мерная сфера в  $(\R^n, \rho)$, то есть 
+	$$
+	S_r(x_0) = \{x \in \R^n\ |\ \rho(x, x_0) = r\}
+	$$ 
+	Шары $B_r, \overline{B_r}$ будем называть открытыми и замкнутыми окрестностями для $x_0 \in \R^n$. А в случае когда размеры не существенны или фиксированы будем их обозначать для краткости $B_r(x_0) = V(x_0)$ и $\overline{B_r}(x_0) = \overline{V}(x_0)$.
+	
+	\textbf{Примеры:}
+	
+	Для $n = 1 \Rightarrow d(x, x_0) = |x - x_0|, x, x_0 \in \R.$ В этом случае 
+	$$
+	B_r(x_0) = \{x \in \R\ |\ |x - x_0| < r\} =\ ] x_0 - r [ 
+	$$
+% \chapter{Тестовая}
+% \subfile{tex/lec_test/test.tex}
+% \subfile{tex/lec_test/template.tex}
+\end{document}
