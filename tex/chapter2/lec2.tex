@@ -1,0 +1,93 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+\section{Предел последовательностей и функций в $\R^n$.}
+
+	\emph{Последовательностью} в $\R^n$ будем называть произвольное отображение
+	\[
+		f : \N \to \R^n
+	\]
+  	ставящее в соответствие для $\forall k \in \N$ единственное значение $M_k = f(k) \in \R^n.$ 
+  	Эти n-мерные последовательности будем также называть \emph{точечными последовательностями} в $\R^n$ и обозначать $(M_k), k \in \N$.
+  	Используя координатную запись $\forall (M_k):$
+  	\[
+  		M_k = (x_{k1}, x_{k2}, \dots, x_{kn}),
+ 	\] 
+ 	где $\forall x_{kj} \in \R, j = \overline{1, n}.$  
+	То есть задание n-мерных последовательностей равносильно заданию $n$ числовых последовательностей $(x_{kj}) k \in \N, j = \overline{1,n}$.
+	Последовательность $(M_k), k \in \N$ называется сходящейся к точке $M_0 \in \R^n$ в пространстве $(\R^n, \rho)$, если
+	\[
+		\lim_{k \to \infty}{\rho(M_k, M_0)} = 0
+	\]
+	т.е. 
+	\begin{equation}
+	\label{eq1}
+		\forall \varepsilon > 0\ \exists\ \nu(\varepsilon) \in \R\ |\ \forall k > \nu(\varepsilon) \Rightarrow \rho(M_k, M_0) \leqslant \varepsilon 
+	\end{equation}
+	На языке окрестностей имеем:
+	\[
+		\eqref{eq1} \Leftrightarrow \forall \varepsilon > 0\ \exists\ \nu \in \R\ |\ \forall k > \nu  \Rightarrow M_k \in \bar B_\varepsilon(M_0).
+	\]
+	По аналогии с M-леммой для сходимости числовых последовательностей доказывается
+	\begin{lem}[N-лемма]
+		сходимости n-мерных последовательностей:
+		
+		Если $\exists N = const \geqslant 0:$
+		\[
+			\forall \varepsilon > 0\ \exists\ \nu_\varepsilon \in \R\ |\ \forall k > \nu_\varepsilon \Rightarrow \rho(M_k, M_0) \leqslant N \varepsilon,
+		\]
+		то $M_k \underset{k\rightarrow\infty}{\longrightarrow}  M_0.$
+	\end{lem}
+
+	Как и для числовой последовательности, для \eqref{eq1} точку $M_0$ будем называть пределом рассматриваемой последоваетельности $(M_k)$ и кроме записи $M_k \underset{k\rightarrow\infty}{\longrightarrow}  M_0$ будем использовать $ \lim_{k \to \infty}{M_k} = M_0$
+	\begin{thm}[Критерий сходимости n-мерных последовательностей]
+		Последовательность $M_k = (x_{k1}, \dots, x_{kn}) \in \R^n, k \in \N$ сходится в линейном метрическом пространстве $(\R^n, d)$ к точке $M_0 = (x_{01}, \dots, x_{0n}) \in \R^n \Leftrightarrow \forall\ fixed\ j = \overline{1, n} \Rightarrow$
+		\begin{equation}
+		\label{krit}
+			x_{kj}\underset{k\rightarrow\infty}{\longrightarrow} x_{0j}.
+		\end{equation}
+	\end{thm}
+	\begin{proof}
+		
+		\nec 
+		Пусть $M_k \underset{k\rightarrow\infty}{\longrightarrow}  M_0$.
+		
+		Тогда, используя евклидово расстояние 
+		\[
+			d(M_k, M_0) = \sqrt{\sum_{j = 0}^{n}{(x_{ki} - x_{0j})^2}}
+		\]
+		получаем, что
+		\[
+			d(M_k, M_0) \underset{k\rightarrow\infty}{\longrightarrow} = 0 \Rightarrow
+			\forall \varepsilon > 0\ \exists \nu \in \R\ |\ \Rightarrow d(M_k, M_0) \leqslant \varepsilon.
+		\]
+		Отсюда, учитывая, что для произвольного фиксированного $j = \overline{1, n}$
+		\[
+			|x_{kj} - x_{0j}| \leqslant \sqrt{(x_{1j} - x_{0j})^2 + \dots + (x_{kj} - x_{0j})^2 + \dots + (x_{nj} - x_{0j})^2} = d(M_k, M_0) 
+		\]
+		Получаем, что 
+		\[
+			\forall \varepsilon > 0\ \exists\ \nu \in \R\ |\ \forall k > \nu \Rightarrow |x_{kj} - x_{0j}| \leqslant d(M_k, M_0) \leqslant \varepsilon
+		\]
+		То есть выполняется \eqref{krit}
+		
+		\suff Пусть для каждого фиксированного $j = \overline{1, n}$ выполняется \eqref{krit}. Тогда
+		\[
+			\forall \varepsilon > 0\ \exists\ \nu_j \in \R\ |\ \forall k > \nu_j \Rightarrow |x_{kj} - x_{0j}| \leqslant \varepsilon
+		\]
+		Выбирая $\nu = max\{\nu_i\}$, получаем, что для $\forall k > \nu \Rightarrow |x_{kj} - x_{0j}| \leqslant \varepsilon$
+		 и 
+		 \[
+		 	d(M_k, M_0) \leqslant \sqrt{\sum_{j = 1}^{n}{max(x_{kj} - x_{0j})^2}} \leqslant \sqrt{\sum_{j = 1}^{n}{\varepsilon^2}} = \varepsilon\sqrt{n}, 
+		 \]
+		 Т.е. $\exists N = \sqrt{n} \leqslant 0$ такое, что $d(M_k, M_0) \leqslant N \varepsilon,$ а значит по N-лемме сходимости n-мерных последовательностей имеем:
+		 \[
+		 	M_k \underset{k\rightarrow\infty}{\longrightarrow}  M_0.
+		 \]
+	\end{proof}
+	
+	
+\end{document}
