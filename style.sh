@@ -13,7 +13,7 @@ trap 'finish 2' SIGHUP SIGINT SIGQUIT SIGTERM
 error() {
 	EXITCODE=1
 	echo "------------"
-	echo "ERROR: $@"
+	echo "ERROR: $*"
 	echo
 	touch err.stamp
 }
