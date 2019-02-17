@@ -149,4 +149,36 @@
 		Аналогичным образом принцип выбора применяется в пространстве $(\R^n, d)$
 	\end{exmp}
 
+	\begin{exc}
+		По аналогии с числовой последовательностью
+		доказать свойства:
+		\begin{enumerate}
+			\item Единственность  предела n-мерных последовательностей,
+			\item Предел линейной комбинации,
+			\item Критерий Коши сходимости.
+		\end{enumerate}
+	\end{exc}
+
+	Далее по аналогии с числовой последовательностью, 
+	n-мерную последовательность $(M_k),  k \in \N $
+	будем называть бмп, если
+	\[
+		M_k \underset{k \longrightarrow \infty}
+		{\longrightarrow}\vec{0} = (0,0,\dots,0).
+	\]
+	Как и для чп показывается, что любая линейная 
+	комбинация бмп n-мерных последовательностей с 
+	ограниченными коэффицентами является бмп, т. е. если
+	\[
+		\forall \lambda_k, \mu_{k} = O(1) \text{, то}
+	\] 
+	\[
+		\lambda_k \widetilde{M}_k + \mu_k \overline{M}_k =
+		(\lambda_k \widetilde{x}_{k_1} + \mu_k \overline{x}_{k_1}, 
+		\dots,
+		\lambda_k \widetilde{x}_{k_n} + \mu_k \overline{x}_{k_n},
+		)
+		\underset{k \longrightarrow \infty}{\longrightarrow}
+		\vec{0} = (0,0,\dots,0).
+	\]
 \end{document}
