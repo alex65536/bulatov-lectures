@@ -6,179 +6,233 @@
 \begin{document}
 \section{Предел последовательностей и функций в $\R^n$.}
 
-	\emph{Последовательностью} в $\R^n$ будем называть произвольное отображение
-	\[
-		f : \N \to \R^n
-	\]
-  	ставящее в соответствие для $\forall k \in \N$ единственное значение $M_k = f(k) \in \R^n.$ 
-  	Эти n-мерные последовательности будем также называть \emph{точечными последовательностями} в $\R^n$ и обозначать $(M_k), k \in \N$.
-  	Используя координатную запись $\forall (M_k):$
-  	\[
-  		M_k = (x_{k1}, x_{k2}, \dots, x_{kn}),
- 	\] 
- 	где $\forall x_{kj} \in \R, j = \overline{1, n}.$  
-	То есть задание n-мерных последовательностей равносильно заданию $n$ числовых последовательностей $(x_{kj}) k \in \N, j = \overline{1,n}$.
-	Последовательность $(M_k), k \in \N$ называется сходящейся к точке $M_0 \in \R^n$ в пространстве $(\R^n, \rho)$, если
-	\[
-		\lim_{k \to \infty}{\rho(M_k, M_0)} = 0
-	\]
-	т.е. 
-	\begin{equation}
-	\label{eq1}
-		\forall \varepsilon > 0\ \exists\ \nu(\varepsilon) \in \R\ |\ \forall k > \nu(\varepsilon) \Rightarrow \rho(M_k, M_0) \leqslant \varepsilon 
-	\end{equation}
-	На языке окрестностей имеем:
-	\[
-		\eqref{eq1} \Leftrightarrow \forall \varepsilon > 0\ \exists\ \nu \in \R\ |\ \forall k > \nu  \Rightarrow M_k \in \bar B_\varepsilon(M_0).
-	\]
-	По аналогии с M-леммой для сходимости числовых последовательностей доказывается
-	\begin{lem}[N-лемма]
-		сходимости n-мерных последовательностей:
-		
-		Если $\exists N = const \geqslant 0:$
-		\[
-			\forall \varepsilon > 0\ \exists\ \nu_\varepsilon \in \R\ |\ \forall k > \nu_\varepsilon \Rightarrow \rho(M_k, M_0) \leqslant N \varepsilon,
-		\]
-		то $M_k \underset{k\rightarrow\infty}{\longrightarrow}  M_0.$
-	\end{lem}
+  \emph{Последовательностью} в $\R^n$ будем называть произвольное 
+  отображение
+  \[
+    f : \N \to \R^n,
+  \]
+  ставящее в соответствие для $\forall k \in \N$ единственное 
+  значение $M_k = f(k) \in \R^n$. 
+  Эти $n$-мерные последовательности будем также называть 
+  \emph{точечными последовательностями} в $\R^n$ и обозначать $
+  (M_k), k \in \N$.
+  Используя координатную запись, $\forall (M_k)$:
+  \[
+    M_k = (x_{k1}, x_{k2}, \dots, x_{kn}),
+  \] 
+  где $\forall x_{kj} \in \R, j = \overline{1, n}$.  
+  То есть, задание $n$-мерных последовательностей равносильно 
+  заданию $n$ числовых последовательностей $(x_{kj}) k \in \N, j = 
+  \overline{1,n}$.
+  Последовательность $(M_k), k \in \N$ называется \emph{сходящейся} 
+  в точке $M_0 \in \R^n$ в пространстве $(\R^n, \rho)$, если
+  \[
+    \lim_{k \to \infty}{\rho(M_k, M_0)} = 0
+  \]
+  т.е. 
+  \begin{equation}
+  \label{seq-lim}
+    \forall \eps > 0\ \exists\ \nu(\eps) \in \R\ |\ \forall k > 
+    \nu(\eps) \implies \rho(M_k, M_0) \leq \eps 
+  \end{equation}
+  На языке окрестностей имеем:
+  \[
+    \eqref{seq-lim} \iff \forall \eps > 0\ \exists\ \nu \in \R\ |\ 
+    \forall k > \nu  \implies M_k \in \overline B_\eps(M_0).
+  \]
+  По аналогии с M-леммой для сходимости числовых последовательностей 
+  доказывается
+  \begin{lem}[N-лемма сходимости $n$-мерных последовательностей]
+    Если 
+    \[
+      \exists N = const \geq 0:\ 
+      \forall \eps > 0\ \exists\ \nu_\eps \in \R\ |\ \forall k > 
+      \nu_\eps \implies \rho(M_k, M_0) \leq N \eps,
+    \]
+    то $M_k \underset{k\rightarrow\infty}{\longrightarrow}  M_0$.
+  \end{lem}
 
-	Как и для числовой последовательности, для \eqref{eq1} точку $M_0$ будем называть пределом рассматриваемой последоваетельности $(M_k)$ и кроме записи $M_k \underset{k\rightarrow\infty}{\longrightarrow}  M_0$ будем использовать $ \lim_{k \to \infty}{M_k} = M_0$
-	\begin{thm}[Критерий сходимости n-мерных последовательностей]
-		Последовательность $M_k = (x_{k1}, \dots, x_{kn}) \in \R^n, k \in \N$ сходится в линейном метрическом пространстве $(\R^n, d)$ к точке $M_0 = (x_{01}, \dots, x_{0n}) \in \R^n \Leftrightarrow \forall\ fixed\ j = \overline{1, n} \Rightarrow$
-		\begin{equation}
-		\label{krit}
-			x_{kj}\underset{k\rightarrow\infty}{\longrightarrow} x_{0j}.
-		\end{equation}
-	\end{thm}
-	\begin{proof}
-		
-		\nec 
-		Пусть $M_k \underset{k\rightarrow\infty}{\longrightarrow}  M_0$.
-		
-		Тогда, используя евклидово расстояние 
-		\[
-			d(M_k, M_0) = \sqrt{\sum_{j = 0}^{n}{(x_{ki} - x_{0j})^2}}
-		\]
-		получаем, что
-		\[
-			d(M_k, M_0) \underset{k\rightarrow\infty}{\longrightarrow} = 0 \Rightarrow
-			\forall \varepsilon > 0\ \exists \nu \in \R\ |\ \Rightarrow d(M_k, M_0) \leqslant \varepsilon.
-		\]
-		Отсюда, учитывая, что для произвольного фиксированного $j = \overline{1, n}$
-		\[
-			|x_{kj} - x_{0j}| \leqslant \sqrt{(x_{1j} - x_{0j})^2 + \dots + (x_{kj} - x_{0j})^2 + \dots + (x_{nj} - x_{0j})^2} = d(M_k, M_0) 
-		\]
-		Получаем, что 
-		\[
-			\forall \varepsilon > 0\ \exists\ \nu \in \R\ |\ \forall k > \nu \Rightarrow |x_{kj} - x_{0j}| \leqslant d(M_k, M_0) \leqslant \varepsilon
-		\]
-		То есть выполняется \eqref{krit}
-		
-		\suff Пусть для каждого фиксированного $j = \overline{1, n}$ выполняется \eqref{krit}. Тогда
-		\[
-			\forall \varepsilon > 0\ \exists\ \nu_j \in \R\ |\ \forall k > \nu_j \Rightarrow |x_{kj} - x_{0j}| \leqslant \varepsilon
-		\]
-		Выбирая $\nu = max\{\nu_i\}$, получаем, что для $\forall k > \nu \Rightarrow |x_{kj} - x_{0j}| \leqslant \varepsilon$
-		 и 
-		 \[
-		 	d(M_k, M_0) \leqslant \sqrt{\sum_{j = 1}^{n}{max(x_{kj} - x_{0j})^2}} \leqslant \sqrt{\sum_{j = 1}^{n}{\varepsilon^2}} = \varepsilon\sqrt{n}, 
-		 \]
-		 Т.е. $\exists N = \sqrt{n} \leqslant 0$ такое, что $d(M_k, M_0) \leqslant N \varepsilon,$ а значит по N-лемме сходимости n-мерных последовательностей имеем:
-		 \[
-		 	M_k \underset{k\rightarrow\infty}{\longrightarrow}  M_0.
-		 \]
-	\end{proof}
+  Как и для числовой последовательности, для \eqref{seq-lim} точку 
+  $M_0$ будем называть пределом рассматриваемой последоваетельности 
+  $(M_k)$ и кроме записи $M_k \underset{k\rightarrow\infty}
+  {\longrightarrow}  M_0$ будем использовать $ \lim\limits_{k \to 
+  \infty}{M_k} = M_0$
+  \begin{thm}[Критерий сходимости n-мерных последовательностей]
+    Последовательность $M_k = (x_{k1}, \dots, x_{kn}) \in \R^n, k 
+    \in \N$ сходится в линейном метрическом пространстве $(\R^n, d)$ 
+    к точке $M_0 = (x_{01}, \dots, x_{0n}) \in \R^n$ тогда и только 
+    тогда, когда
+    \begin{equation}
+    \label{krit-posl}
+      \forall fix\ j = \overline{1, n} \implies
+      x_{kj}\underset{k\rightarrow\infty}{\longrightarrow} x_{0j}.
+    \end{equation}
+  \end{thm}
+  \begin{proof}
+    \quad
+    
+    \nec: 
+    Пусть $M_k \underset{k\rightarrow\infty}{\longrightarrow}  M_0$.
+    
+    Тогда, используя евклидово расстояние 
+    \[
+      d(M_k, M_0) = \sqrt{\sum_{j = 0}^{n}{(x_{kj} - x_{0j})^2}}
+    \]
+    получаем, что
+    \[
+      d(M_k, M_0) \underset{k\rightarrow\infty}{\longrightarrow} = 0 
+      \implies
+      \forall \eps > 0\ \exists \nu \in \R\ |\ \forall k > \nu 
+      \implies d(M_k, M_0) \leq \eps.
+    \]
+    Отсюда, учитывая, что для произвольного фиксированного $j = 
+    \overline{1, n}$
+    \[
+      |x_{kj} - x_{0j}| \leq \sqrt{(x_{k1} - x_{01})^2 + (x_{k2} - 
+      x_{02})^2 + \dots + (x_{kj} - x_{0j})^2 + \dots + (x_{kn} - 
+      x_{0n})^2} = d(M_k, M_0) 
+    \]
+    получаем, что 
+    \[
+      \forall \eps > 0\ \exists\ \nu \in \R\ |\ \forall k > \nu 
+      \implies |x_{kj} - x_{0j}| \leq d(M_k, M_0) \leq \eps,
+    \]
+    то есть выполняется \eqref{krit-posl}.
+    
+    \bigskip
+    
+    \suff: Пусть для каждого фиксированного $j = \overline{1, n}$ 
+    выполняется \eqref{krit-posl}. Тогда
+    \[
+      \forall \eps > 0\ \exists\ \nu_j \in \R\ |\ \forall k > \nu_j 
+      \implies |x_{kj} - x_{0j}| \leq \eps
+    \]
+    Выбирая $\displaystyle\nu = \max_{1 \le i \le n}(\nu_i)$, 
+    получаем, что для $\forall k > \nu \implies |x_{kj} - x_{0j}| 
+    \leq \eps$
+     и 
+     \[
+       d(M_k, M_0) \leq \sqrt{\sum_{j = 1}^{n}{max(x_{kj} - 
+       x_{0j})^2}} \leq \sqrt{\sum_{j = 1}^{n}{\eps^2}} = 
+       \eps\sqrt{n}, 
+     \]
+     Т.е. $\exists N = \sqrt{n} \leq 0$ такое, что $d(M_k, M_0) \leq 
+     N \eps,$ а значит, по N-лемме сходимости $n$-мерных 
+     последовательностей, имеем:
+     \[
+       M_k \underset{k\rightarrow\infty}{\longrightarrow}  M_0.
+     \]
+  \end{proof}
 
-	\begin{exc}
-		Доказать, что для $\forall \widetilde M, \overline{M} \in \R^n$ eвклидово расстояние $d(\widetilde M, \overline{M})$, октаэдрическое расстояние $\rho_1(\widetilde M, \overline{M}))$ и кубическое расстояние $\rho_2(\widetilde M, \overline{M}))$ удовлетворяют неравенствам
-		\[
-		\frac{d(\widetilde M, \overline{M})}{\sqrt{n}} \leqslant \rho_2(\widetilde M, \overline{M}) \leqslant \rho_1(\widetilde M, \overline{M})) \leqslant \sqrt{n}\cdot d(\widetilde M, \overline{M})
-		\]
- 		И вывести, что если в одном из метрических пространств $(\R^n, d)$, $(\R^n, \rho_1)$ или $(\R^n, \rho_2)$ имеем $M_k \underset{k\rightarrow\infty}{\longrightarrow}  M_0,$ то в силу N-леммы для n-мерных последовательностей то же самое будет и в остальных рассматриваемых метрических пространствах.
-	\end{exc}
-	
-	\begin{rem}
-		Доказанная теорема сводит исследование сходимости точечных последовательностей в метрическом пространстве $(\R^n, d)$ к исследованию на сходимость соответствующих координатных числовых последовательностей.
-		В связи с этим большинство основных свойств сходящихся числовых последовательностей естественным образом переносятся на n-мерные последовательности в $(\R^n, d)$
-		(единственность предела, предел линейной комбинации, принцип выбора, критерий Коши сходимости n-мерных последовательностей и т. д.)
-	\end{rem}
-	
-	\begin{exmp}
-		Рассмотрим пространство $\R^n$ с элементами
-		$M=(x,y) \in \R^2, x,y \in \R$. 
-		Покажем, что если последовательность $M_k=(x_k,y_k)$ ограничена 
-		при $k \in \N$, т. е.
-		\[
-		\exists r>0 \; | \; \forall k \in \N 
-		\Rightarrow d(M_k; \vec0)=\sqrt{x^2_k+y^2_k} \leqslant r,
-		\]
-		то из нее можно выбрать сходящуюся.
-		
-		Из неравенств
-		\[ 
-		|x_k| \leqslant \sqrt{x^2_k+y^2_k}\leqslant r, \; \forall k \in \N 
-		\]
-		\[ 
-		|y_k| \leqslant \sqrt{x^2_k+y^2_k}\leqslant r, \; \forall k \in \N 
-		\]
-		следует в силу ограниченности $M_k=(x_k,y_k) \in \R^2$, 
-		что ограниченны числовые последовательности 
-		$(x_k)$ и $(y_k)$. 
-		Используя дальше принцип выбора для ограниченной 
-		числовой последовательности $(x_k)$,
-		получим, что у нее $\exists$ сходящаяся подпоследовательность
-		$x_{k_j}\underset{k_j \longrightarrow \infty}
-		{\longrightarrow}x_0 \in \R$.
-		Тогда из ограниченной подпоследовательности $y_{k_j}$ 
-		можно выбрать некоторую подпоследовательность
-		$y_{m_i}\underset{m_i\longrightarrow \infty}
-		{\longrightarrow}y_o \in \R$
-		
-		Для получаемых индексов $1 \leqslant m_1 \leqslant \dots 
-		\leqslant m_i \leqslant \dots $ из множества
-		$\{k_{1_j}, k_{2_j}, \dots, k_{i_j}\}$
-		последовательность $ x_{m_i} $ будет являться 
-		подпоследовательностью $ x_{k_j} $ и, значит, 
-		\[  \lim_{m_i \to \infty}{x_{m_i}}= 
-		\lim_{k_i \to \infty}{x_{k_i}}=  x_0\]
-		В результате получим двумерную подпоследовательность 
-		$(x_{m_i}, y_{m_i}) \underset{m_i\longrightarrow \infty}
-		{\longrightarrow} (x_0, y_0) \in \R^2$,
-		то есть в этом случае имеем принцип выбора.
-		
-		Аналогичным образом принцип выбора применяется в пространстве $(\R^n, d)$
-	\end{exmp}
+  \begin{exc}
+    Доказать, что для $\forall \widetilde M, \overline{M} \in \R^n$ 
+    eвклидово расстояние $d(\widetilde M, \overline{M})$, 
+    октаэдрическое расстояние $\rho_1(\widetilde M, \overline{M}))$ 
+    и кубическое расстояние $\rho_2(\widetilde M, \overline{M}))$ 
+    удовлетворяют неравенствам
+    \[
+    \frac{d(\widetilde M, \overline{M})}{\sqrt{n}} \leq 
+    \rho_2(\widetilde M, \overline{M}) \leq \rho_1(\widetilde M, 
+    \overline{M})) \leq \sqrt{n}\cdot d(\widetilde M, \overline{M})
+    \]
+     и вывести, что если в одном из метрических пространств $(\R^n, 
+     d)$, $(\R^n, \rho_1)$ или $(\R^n, \rho_2)$ имеем $M_k 
+     \underset{k\rightarrow\infty}{\longrightarrow}  M_0,$ то в силу 
+     N-леммы для $n$-мерных последовательностей, она будет сходиться 
+     и в остальных рассматриваемых метрических пространствах.
+  \end{exc}
+  
+  \begin{rem}
+    Доказанная теорема сводит исследование сходимости точечных 
+    последовательностей в метрическом пространстве $(\R^n, d)$ к 
+    исследованию на сходимость соответствующих координатных числовых 
+    последовательностей.
+    В связи с этим большинство основных свойств сходящихся числовых 
+    последовательностей естественным образом переносятся на $n$-
+    мерные последовательности в $(\R^n, d)$
+    (единственность предела, предел линейной комбинации, принцип 
+    выбора, критерий Коши сходимости n-мерных последовательностей и 
+    т. д.)
+  \end{rem}
+  
+  \begin{exmp}
+    Рассмотрим пространство $\R^n$ с элементами
+    $M=(x,y) \in \R^2, x,y \in \R$. 
+    Покажем, что если последовательность $M_k=(x_k,y_k)$ ограничена 
+    при $k \in \N$, т. е.
+    \[
+    \exists r>0 \; | \; \forall k \in \N 
+    \implies d(M_k; \vec0)=\sqrt{x^2_k+y^2_k} \leq r,
+    \]
+    то из нее можно выбрать сходящуюся.
+    
+    Из неравенств
+    \[ 
+    |x_k| \leq \sqrt{x^2_k+y^2_k}\leq r, \; \forall k \in \N 
+    \]
+    \[ 
+    |y_k| \leq \sqrt{x^2_k+y^2_k}\leq r, \; \forall k \in \N 
+    \]
+    следует в силу ограниченности $M_k=(x_k,y_k) \in \R^2$, 
+    что ограничены и числовые последовательности
+    $(x_k)$ и $(y_k)$. 
+    Используя дальше принцип выбора для ограниченной 
+    числовой последовательности $(x_k)$,
+    получим, что у нее существует сходящаяся подпоследовательность
+    $x_{k_j}\underset{k_j \longrightarrow \infty}
+    {\longrightarrow}x_0 \in \R$.
+    Тогда из ограниченной подпоследовательности $y_{k_j}$ 
+    можно выбрать некоторую подпоследовательность
+    $y_{m_i}\underset{m_i\longrightarrow \infty}
+    {\longrightarrow}y_0 \in \R$
+    
+    Для получаемых индексов $1 \leq m_1 \leq \ldots 
+    \leq m_i \leq \ldots $ из множества
+    $\{k_{1_j}, k_{2_j}, \dots, k_{i_j}\}$
+    последовательность $ x_{m_i} $ будет являться 
+    подпоследовательностью $ x_{k_j} $ и, значит, 
+    \[  \lim_{m_i \to \infty}{x_{m_i}}= 
+    \lim_{k_i \to \infty}{x_{k_i}}=  x_0\]
+    В результате получим двумерную подпоследовательность 
+    $(x_{m_i}, y_{m_i}) \underset{m_i\longrightarrow \infty}
+    {\longrightarrow} (x_0, y_0) \in \R^2$,
+    то есть в этом случае имеем принцип выбора.
+    
+    Аналогичным образом принцип выбора доказывается в пространстве $
+    (\R^n, d)$
+  \end{exmp}
 
-	\begin{exc}
-		По аналогии с числовой последовательностью
-		доказать свойства:
-		\begin{enumerate}
-			\item Единственность  предела n-мерных последовательностей,
-			\item Предел линейной комбинации,
-			\item Критерий Коши сходимости.
-		\end{enumerate}
-	\end{exc}
+  \begin{exc}
+    По аналогии с числовой последовательностью
+    доказать свойства:
+    \begin{enumerate}
+      \item единственность  предела n-мерных последовательностей;
+      \item предел линейной комбинации;
+      \item критерий Коши сходимости.
+    \end{enumerate}
+  \end{exc}
 
-	Далее по аналогии с числовой последовательностью, 
-	n-мерную последовательность $(M_k),  k \in \N $
-	будем называть бмп, если
-	\[
-		M_k \underset{k \longrightarrow \infty}
-		{\longrightarrow}\vec{0} = (0,0,\dots,0).
-	\]
-	Как и для чп показывается, что любая линейная 
-	комбинация бмп n-мерных последовательностей с 
-	ограниченными коэффицентами является бмп, т. е. если
-	\[
-		\forall \lambda_k, \mu_{k} = O(1) \text{, то}
-	\] 
-	\[
-		\lambda_k \widetilde{M}_k + \mu_k \overline{M}_k =
-		(\lambda_k \widetilde{x}_{k_1} + \mu_k \overline{x}_{k_1}, 
-		\dots,
-		\lambda_k \widetilde{x}_{k_n} + \mu_k \overline{x}_{k_n},
-		)
-		\underset{k \longrightarrow \infty}{\longrightarrow}
-		\vec{0} = (0,0,\dots,0).
-	\]
+  Далее, по аналогии с числовой последовательностью, 
+  $n$-мерную последовательность $(M_k),  k \in \N $
+  будем называть \emph{бмп}, если
+  \[
+    M_k \underset{k \longrightarrow \infty}
+    {\longrightarrow}\vec{0} = (0,0,\dots,0).
+  \]
+  Как и для ЧП показывается, что любая линейная 
+  комбинация бесконечно малых $n$-мерных последовательностей с 
+  ограниченными коэффициентами является бмп, т. е. если
+  \[
+    \forall \lambda_k, \mu_{k} = O(1),
+  \]
+  то
+  \[
+    \lambda_k \widetilde{M}_k + \mu_k \overline{M}_k =
+    (\lambda_k \widetilde{x}_{k_1} + \mu_k \overline{x}_{k_1}, 
+    \dots,
+    \lambda_k \widetilde{x}_{k_n} + \mu_k \overline{x}_{k_n},
+    )
+    \underset{k \longrightarrow \infty}{\longrightarrow}
+    \vec{0} = (0,0,\dots,0).
+  \]
 \end{document}
