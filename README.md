@@ -78,7 +78,7 @@
 * Затем используйте `\includegraphics`:
 
   ```tex
-  \includegraphics{42..png}
+  \includegraphics{42.png}
   ```
   
 * Готово :)
