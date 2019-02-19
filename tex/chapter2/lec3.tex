@@ -1,0 +1,46 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+Последовательность $M_k \in \R^n$ будем называть ББП в метрическом
+пространстве $(\R^n, d)$, если     
+\[ \exists \lim_{k \to \infty}{M_k} = \infty, \text{ т.е. } 
+\forall \eps > 0\ \exists \nu \in \R\ |\ \forall k \geq \nu \implies
+d(M_k, \vec{0}) \leq \eps\]
+
+В отличие от числовых последовательностей для $n$-мерной ББП не определяют
+знак бесконечности, т.е. не рассматривают отдельно случаи 
+$(+\infty)$ и $(-\infty)$.
+
+В общем случае в метрическом пространстве $(\R^n, d)$, когда
+$\forall M_k \in D \subset \R^n, k \in \N$ в случае, когда $M_k 
+\underset{k \to \infty}{\longrightarrow} M_0 \in \R^n$, то тогда
+$M_0 \in \overline{D}$. В частности, для любого компакта $(\overline{D} = D)$
+в случае, когда $\forall M_k \in D \implies M_0 = \displaystyle \lim_{k \to \infty}{M_k} \in D$. По аналогии с чп последовательность 
+$M_k \underset{k \to \infty}{\longrightarrow} M_0$, где $\forall M_k \ne M_0, k \in \N$
+будем называть последовательностью Гейне точки $M_0$.
+
+\begin{exc}
+	Показать, что точка $M_0 \in \R^n$ будет предельной для множества $D \subset \R^n$
+	$\iff \exists$ последовательность Гейне $M_k \in D, k \in \N$ этой точки.
+\end{exc}
+ 
+Как и для числовых последовательностей будем придерживаться терминологии.
+
+Последовательность $M_k$ = $\left\{\begin{aligned}
+	&\text{сходится} \iff \text{имеет конечный предел} M_0 \ne \infty \\
+	&\text{имеет предел} \iff \left[\begin{aligned}
+		\text{сходится} \\
+		M_k \to \infty
+	\end{aligned}\right. \\
+	&\text{не имеет предела} \iff \begin{aligned}
+		&\text{не имеет ни конечно, ни} \\
+		&\text{ни бесконечного предела}
+	\end{aligned}
+\end{aligned}\right.$
+
+
+\end{document}
