@@ -1,4 +1,3 @@
-os: linux
 dist: xenial
 
 language: tex
@@ -12,6 +11,10 @@ addons:
       - texlive-science
       - texlive-latex-extra
       - latexmk
+
+before_install:
+    # display Ubuntu version
+    lsb_release -a
 
 script:
     make
