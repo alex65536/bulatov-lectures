@@ -4,6 +4,7 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{textcomp}
+\usepackage{tikz}
 
 % Теоремы, следствия, замечания, ...
 \theoremstyle{plain}
@@ -56,3 +57,8 @@
 % Необходимость, достаточность
 \newcommand{\nec}{\textbigcircle\hspace{-1em}$\Rightarrow$}
 \newcommand{\suff}{\textbigcircle\hspace{-1em}$\Leftarrow$}
+
+% Специальная команда обрамления в кружочек (для Лопиталя)
+\newcommand{\encircle}[1]{
+  \tikz[baseline=(X.base)] 
+    \node (X) [draw, shape=circle, inner sep=0] {\strut #1};}
