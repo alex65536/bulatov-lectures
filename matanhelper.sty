@@ -54,11 +54,27 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Z}{\mathbb{Z}}
 
-% Необходимость, достаточность
-\newcommand{\nec}{\textbigcircle\hspace{-1em}$\Rightarrow$}
-\newcommand{\suff}{\textbigcircle\hspace{-1em}$\Leftarrow$}
+% Специальная команда обрамления в кружочек
+\newcommand*{\encircle}[1]{
+  \relax
+  \ifmmode
+    \mathpalette\@encircle@math{#1}
+  \else
+    \@encircle{#1}
+  \fi
+}
+\newcommand*{\@encircle@math}[2]{
+  \@encircle{$\m@th#1#2$}
+}
+\newcommand*{\@encircle}[1]{
+  \tikz[baseline,anchor=base] {
+    \node[draw,circle,outer sep=0pt,inner sep=.1ex] {#1};
+  }
+}
 
-% Специальная команда обрамления в кружочек (для Лопиталя)
-\newcommand{\encircle}[1]{
-  \tikz[baseline=(X.base)] 
-    \node (X) [draw, shape=circle, inner sep=0] {\strut #1};}
+% Необходимость, достаточность
+\newcommand{\nec}{\encircle{$\Rightarrow$}}
+\newcommand{\suff}{\encircle{$\Leftarrow$}}
+
+% Лопиталь
+\newcommand{\lopital}{\encircle{\text{Л}}}
