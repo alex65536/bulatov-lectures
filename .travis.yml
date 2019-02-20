@@ -1,4 +1,4 @@
-dist: xenial
+os: linux
 
 language: tex
 
@@ -11,6 +11,7 @@ addons:
       - texlive-science
       - texlive-latex-extra
       - latexmk
+      - pgf
 
 before_install:
     # display Ubuntu version
