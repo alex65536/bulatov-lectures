@@ -89,5 +89,95 @@ $f(x) \underset{x \to x_0}{\longrightarrow} p_0 \in \R$, а само число 
 пределом $f(x)$ при $x \to x_0$ и записывается 
 $\displaystyle \lim_{x \to x_0}{f(x)} = p_0 \in \R$.
 
+По аналогии с $M$-леммой для Ф1П доказывается \emph{$F$-лемма для ФНП}:
 
+Если $\exists\ C = const\ |\ \forall\ \eps > 0, \exists\ \delta > 0\ |\
+\forall x \in \dot{V}(x_0), d(x, x_0) \leq \delta \implies |f(x) - p_0| \leq C \cdot \eps$,
+то тогда $f(x)\underset{x \to x_0}{\longrightarrow}p_0$. Также, как и для Ф1П, доказывается
+\emph{критерий Гейне} сходимости ФНП в пространстве $\R^n$:
+
+Для того, чтобы $f(x)\underset{x \to x_0}{\longrightarrow}p_0 \iff \forall\ M_k \in D$ -
+последовательности Гейне для точки 
+\[M_0 \in \R^n \implies f(M_k)\underset{k \to \infty}{\longrightarrow}p_0 \in \R\]   
+
+На основании этого критерия и соответствующих свойств сходимости $n$-мерных
+последовательностей доказываются основный свойства сходимости ФНП
+в пространстве: $(\R^n, d)$: единственность предела, предел линейной комбинации,
+произведение и частное сходящихся ФНП.
+
+Кроме того, в $(\R^n, d)$ справедлива \emph{теорема о сжатой ФНП}:
+
+Если $\forall x \in \dot{V}(x_0) \subset D(f) \cap D(g) \cap D(h) \implies
+g(x) \leq f(x) \leq h(x)$, то тогда в случае, когда
+$g(x)\underset{x \to x_0}{\longrightarrow}p_0
+$ и $h(x)\underset{x \to x_0}{\longrightarrow}p_0$,
+имеем также, что $f(x)\underset{x \to x_0}{\longrightarrow}p_0$.
+
+\textbf{Пример:}
+
+Пусть \[ \left\{\begin{aligned}
+	f(x) = \dfrac{x_1^4 + x_2^4 + \ldots + x_n^4}{x_1^2 + x_2^2 + \ldots + x_n^2} \\
+	\forall x \ne \vec{0} = (0, 0, \ldots 0) \in \R^n
+\end{aligned}\right. \]
+
+\begin{gather*}
+	\forall x \ne \vec{0}\ \text{имеем}\ 0 \leq f(x) =
+	\displaystyle\sum_{k=1}^{n}{\dfrac{x_k^4}{x_1^2 + \dots + x_k^2 + \ldots + x_n^2}} \le
+	\displaystyle\sum_{k=1}^{n}{\dfrac{x_k^4}{x_k^2}} = \\ =
+	(x_1^2 + \ldots + x_k^2 + \ldots + x_n^2)
+	\underset{x \to \vec{0}}{\longrightarrow}0, \text{поэтому}
+	\exists\displaystyle\lim_{x \to \vec{0}}f(x) = 0.
+\end{gather*}
+
+По аналогии с Ф1П в случае, когда $f(x)\underset{x \to x_0}{\longrightarrow}0$
+говорим, что имеем бесконечно малую ФНП (бмФНП). В частности, в разобранном выше примере
+имеем бмФНМ в окрестности нулевого вектора. Бесконечно большой ФНП (ББФНП) будем
+называть функцию, для которой $f(x)\underset{x \to x_0}{\longrightarrow}\infty$, т.е.
+
+\[\forall\ \eps > 0, \exists\ \delta > 0\ |\
+\forall x \in \dot{V}(x_0) \subset D(f), d(x, x_0) \leq \delta
+\implies |f(x)| \geq \eps\]
+
+Здесь также можно рассматривать случай ББФНП, стемящейся к $\pm \infty$.
+\begin{itemize}
+	\item[а)] $f(x)\underset{x \to x_0}{\longrightarrow} -\infty \iff
+	\forall\ \eps > 0, \exists\ \delta > 0\ |\
+	\forall x \in \dot{V}(x_0) \subset D(f), d(x, x_0) \leq \delta
+	\implies f(x) \leq -\eps$
+	\item[б)] $f(x)\underset{x \to x_0}{\longrightarrow} +\infty \iff
+	\forall\ \eps > 0, \exists\ \delta > 0\ |\
+	\forall x \in \dot{V}(x_0) \subset D(f), d(x, x_0) \leq \delta
+	\implies f(x) \geq \eps$
+\end{itemize}
+
+Кроме бесконечных пределов в конечных точках определяют предел ФНП на бесконечности:
+$f(x)\underset{x \to \infty}{\longrightarrow}  p_0 \in \R \iff
+\forall\ \eps > 0, \exists\ \delta > 0\ |\
+\forall x \in D(f), d(x, \vec{0}) \geq \delta
+\implies |f(x) - p_0| \leq \eps$.
+
+В данном случае знак бесконечности не уточняется.
+
+Используя бесконечные пределы в конечных точках и конечные пределы на бесконечности,
+естественным образом рассматриваются смешанные пределы:
+
+\begin{itemize}
+	\item[а)] $f(x)\underset{x \to \infty}{\longrightarrow} +\infty \in \R \iff
+	\forall\ \eps > 0, \exists\ \delta > 0\ |\
+	\forall x \in D(f), d(x, \vec{0}) \geq \delta
+	\implies f(x) \geq \eps$
+	\item[б)] $f(x)\underset{x \to \infty}{\longrightarrow} -\infty \in \R \iff
+	\forall\ \eps > 0, \exists\ \delta > 0\ |\
+	\forall x \in D(f), d(x, \vec{0}) \geq \delta
+	\implies f(x) \leq -\eps$
+	\item[в)] $f(x)\underset{x \to \infty}{\longrightarrow} \infty \in \R \iff
+	\forall\ \eps > 0, \exists\ \delta > 0\ |\
+	\forall x \in D(f), d(x, \vec{0}) \geq \delta
+	\implies |f(x)| \geq \eps$
+\end{itemize}
+	
+Если $f(x)$ является бмФНП при $x \to x_0$, где $x_0$ может быть как конечной,
+так и бесконечной, то в случае, когда $\forall x \in \dot{V}{(x_0)} \implies
+f(x) \ne 0$, то $\dfrac{1}{f(x)}$ - ББФНП при $x \to x_0$ и наоборот.
+	
 \end{document}
