@@ -4,6 +4,7 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{textcomp}
+\usepackage{tikz}
 
 % Теоремы, следствия, замечания, ...
 \theoremstyle{plain}
@@ -53,6 +54,27 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Z}{\mathbb{Z}}
 
+% Специальная команда обрамления в кружочек
+\newcommand*{\encircle}[1]{
+  \relax
+  \ifmmode
+    \mathpalette\@encircle@math{#1}
+  \else
+    \@encircle{#1}
+  \fi
+}
+\newcommand*{\@encircle@math}[2]{
+  \@encircle{$\m@th#1#2$}
+}
+\newcommand*{\@encircle}[1]{
+  \tikz[baseline,anchor=base] {
+    \node[draw,circle,outer sep=0pt,inner sep=.1ex] {#1};
+  }
+}
+
 % Необходимость, достаточность
-\newcommand{\nec}{\textbigcircle\hspace{-1em}$\Rightarrow$}
-\newcommand{\suff}{\textbigcircle\hspace{-1em}$\Leftarrow$}
+\newcommand{\nec}{\encircle{$\Rightarrow$}}
+\newcommand{\suff}{\encircle{$\Leftarrow$}}
+
+% Лопиталь
+\newcommand{\lopital}{\encircle{\text{Л}}}
