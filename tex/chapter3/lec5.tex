@@ -1,0 +1,266 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+\begin{document}
+\section{Достаточное условие дифференцируемости ФНП}
+
+Необходимыми условиями дифференцируемости ФНП в точке являются:
+\begin{itemize}
+\item непрерывность этой ФНП в рассматриваемой точке
+\item существование конечных частных производных в этой точке
+\end{itemize}
+В случае функции одной переменной существование конечной производной было
+не только необходимым, но и достаточным условием дифференцируемости, но
+для ФНП это не так.
+\begin{exmp}
+Рассмотрим Ф2П $f(x,y) = \sqrt{\abs{xy}}$. $f$ непрерывна для $\forall x,y
+\in \R^2$.
+
+Рассмотрим частные производные в точке $M_0(0,0)$.
+
+\[
+f'_x(M_0) = 
+\lim_{\D x \to 0} \frac{f(0+\D x, 0) -f(0,0)}{\D x}=
+\lim_{\D x \to 0} \frac{\sqrt{\abs{\D x \cdot 0}}-\sqrt{\abs{0}}}{\D x}=
+\lim_{\D x \to 0} \frac{0}{\D x}=
+0
+\]
+\[
+f'_y(M_0) = 
+\lim_{\D y \to 0} \frac{f(0,0+\D y) -f(0,0)}{\D y}=
+\lim_{\D y \to 0} \frac{\sqrt{\abs{0 \cdot \D y}}-\sqrt{\abs{0}}}{\D y}=
+\lim_{\D y \to 0} \frac{0}{\D y}=
+0
+\]
+
+Теперь проверим дифференцируемость функции.
+
+\[\Delta f(0,0) = f'_x(0,0)\D x+f'_y(0,0)\D y + o(\sqrt{\D x^2+\D y^2})
+\iff\]
+\[\iff f(0+\D x,0+\D y)-f(0,0)=0\D x+0\D y+o(\sqrt{\D x^2+\D y^2})\iff\]
+\[\iff \exists\lim_{\substack{\D x \to 0\\ \D y \to 0}}
+\frac{\sqrt{\abs{\D x\D y}}}{\sqrt{\D x^2+\D y^2}}=0\]
+Находим частный предел при $\D x = \D y$:
+\[\lim_{\D x \to 0}\frac{\sqrt{\D x^2}}{\sqrt{2\D x^2}} = \sqrt{\frac{1}
+{2}}\]
+$\sqrt{\frac{1}{2}}\neq 0$, значит, двойного предела не существует и
+функция не дифференцируема в $M_0$, несмотря на существование конечных
+частных производных.
+\end{exmp}
+
+
+
+\begin{thm}[достаточное условие дифференцируемости ФНП]
+Пусть $f(x)$ определена в области $D \subseteq \R^n$. Если её
+частные производные в некоторой окрестности $V(M_0)\subset D$ точки
+$M_0$ существуют и непрерывны, то $f(x)$ дифференцируема в $M_0$.
+\end{thm}
+\begin{proof}
+Для простоты рассмотрим Ф2П $f(x,y)$ и $M_0(a,b)\in D$.
+
+Пусть существуют непрерывные частные производные в $M_0$. Придавая $M_0$ 
+произвольное приращение $\D M(\D x,\D y)\in \R^2$ так, чтобы $M_0+\D M\in 
+V(M_0)$, и считая дополнительно, что $(a+\D x,b)\in V(M_0)$, имеем:
+\[ g(t)=f(t,b), h(\tau) = f(a+\D x,\tau) \]
+\[ \D g(a)=g(a+\D x) -g(a) = f(a+\D x, b)-f(a,b) \]
+\[ \D h(b)=h(b+\D y) -h(b) = f(a+\D x, b+\D y)-f(a+\D x,b) \]
+
+По формуле Лагранжа конечных приращений получаем:
+\begin{enumerate}
+\item $ \exists \theta_1\in\left]0;1\right[\mid
+\D g(a) = g'_t(a+\theta_1\D x)\D x=f'_x(a+\theta_1\D x,b)\D x $
+\item $ \exists \theta_2\in\left]0;1\right[\mid
+\D h(b) = h'_\tau(b+\theta_2\D y)\D y=f'_y(a+\D x, b+\theta_2\D y)\D y $
+\end{enumerate}
+
+Поэтому
+\[\D f(a,b) = \D g(a) +\D h(b) = f'_x(a+\theta_1\D x,b)\D x+
+f'_y(a+\D x, b+\theta_2\D y)\D y =\]
+\begin{equation}
+= f'_x(a,b)\D x +f'_y(a,b)\D y + \alpha,
+\label{l5:diff}
+\end{equation}
+
+где $\alpha = A\D x+B\D y$, где
+\[A = f'_x(a+\theta_1\D x,b)-f'_x(a,b),\]
+\[B = f'_y(a+\D x, b+\theta_2\D y) - f'_y(a,b)\]
+
+Осталось показать, что
+\begin{equation}
+\alpha = o(\sqrt{\D x^2 + \D y^2}) \mid \D x \to 0, \D y \to 0
+\label{l5:alpha_o}
+\end{equation}
+
+Используя неравенство Коши-Буняковского, получаем:
+\[\abs{\alpha} = \abs{A\D x+B\D y} \leq \sqrt{(A^2+B^2)(\D x^2+\D y^2)}\]
+
+Также в силу непрерывности производных имеем:
+\[f'_x(a+\theta_1\D x,b)\appr{\D x\to 0} f'_x(a,b)
+\implies A \appr{\D x\to 0} 0\]
+\[f'_y(a+\D x, b+\theta_2\D y) \appr{\substack{\D x\to 0 \\
+\D y \to 0}} f'_y(a,b)
+\implies B \appr{\substack{\D x\to 0 \\\D y \to 0}} 0\]
+
+Из вышеописанного получаем, что \eqref{l5:alpha_o} верно:
+\[\abs{\frac{\alpha}{\sqrt{\D x^2 + \D y^2}}} \leq
+\sqrt{A^2+B^2} \appr{\substack{\D x\to 0 \\
+\D y \to 0}} 0\]
+
+Из \eqref{l5:diff} и \eqref{l5:alpha_o} получаем дифференцируемость
+$f(x,y)$ в $M_0(a,b)$.
+\end{proof}
+
+
+
+\section{Дифференцирование сложных ФНП. Инвариантность формы 1-го
+дифференциала ФНП.}
+\begin{defn}
+Функция $f(x)$, определённая на некотором множестве $D\subseteq\R^n$,
+называется непрерывно дифференцируемой на этом множестве, если в каждой 
+точке $x\in D$ эта функция имеет непрерывные частные производные.
+\end{defn}
+\begin{thm}[о дифференцировании сложных ФНП]
+Пусть $g_k(t),k=\overline{1,n}$ -- функции, определённые на 
+$D\subseteq\R^m$ и непрерывно дифференцируемые в некоторой окрестности 
+точки $t_0\in D$.
+
+Пусть также $f(x)$ -- функция, определённая на $E\subseteq\R^n$ и
+непрерывно дифференцируемая в соответствующей окрестности точки $x_0 = 
+(g_1(t_0),g_2(t_0),\dots,g_n(t_0))\in E$.
+
+Тогда, если существует их композиция $h(t) = f(g(t)) =
+f(g_1(t),g_2(t),\dots,g_n(t))$, то она также является непрерывно 
+дифференцируемой в окрестности $t_0$, причём
+\[\pderiv{h(t_0)}{t_j}=\sum_{i=1}^{n}
+\pderiv{f(x_0)}{x_i}\cdot
+\pderiv{g_i(t_0)}{t_j}, j=\overline{1,m}\]
+\end{thm}
+
+\begin{proof}
+В силу непрерывной дифференцируемости $f(x)$ в $x_0$ на соответствущем 
+приращении $\D x \in \R^n$ имеем
+\begin{equation}
+\D f(x_0) = \sum_{j=1}^{n} \pderiv{f(x_0)}{x_j}dx_j+\alpha
+\mid \alpha=o(\abs{\D x})
+\label{l5:df}
+\end{equation}
+
+В силу непрерывной дифференцируемости $g_k(x)$ в $t_0$ на соответствущем
+приращении $\D t \in \R^m$ имеем
+\begin{equation}
+\D g_k(t_0) = \sum_{j=1}^{m} \pderiv{g_k(t_0)}{t_j}\D t_j+\beta_k
+\mid \beta_k=o(\abs{\D t})
+\label{l5:dg}
+\end{equation}
+
+Для $h(t)=f(g(t))$ в $t_0 \in D \subseteq \R^m$ имеем
+\[\D h(t_0) = h(t_0+\D t)-h(t_0)=f(g(t_0+\D t))-f(g(t_0))=\]
+\[=f\big((g(t_0+\D t)-g(t_0))+g(t_0)\big)-f(g(t_0))\]
+
+В силу непрерывности $g_k(t)$ имеем, что $g(t_0+\D t) -g(t_0)=
+\D g(t_0)=\D x \appr{\D t \to 0} 0$, тогда
+\[\D h(t_0) = f(\D x + x_0) - f(x_0) = \D f(x_0)\]
+
+В силу \eqref{l5:df} имеем
+\[\D h(t_0) = \sum_{j=1}^{n} \pderiv{f(x_0)}{x_j}dx_j+\alpha\]
+
+В силу \eqref{l5:dg} и того, что $dx_j = \D g_j(t_0)$, имеем 
+
+\[\D h(t_0) = \sum_{j=1}^{n} \pderiv{f(x_0)}{x_j}\left(
+\sum_{k=1}^{m} \pderiv{g_j(t_0)}{t_k}\D t_k+\beta_j
+\right)+\alpha=\]
+\[=\sum_{k=1}^{m}\sum_{j=1}^{n} \pderiv{f(x_0)}{x_j}\cdot
+\pderiv{g_j(t_0)}{t_k}\D t_k+\sum_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j
++\alpha=\]
+\[=\sum_{k=1}^{m}\pderiv{h(t_0)}{t_k}\D t_k+
+\sum_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j+\alpha\]
+
+Пусть $\gamma=\sum_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j+\alpha$.
+Тогда:
+\begin{equation}
+\D h(t_0)=\sum_{k=1}^{m}\pderiv{h(t_0)}{t_k}\D t_k+\gamma
+\label{l5:dh}
+\end{equation}
+Для доказательства теоремы осталось лишь показать, что
+$\gamma = o(\abs{\D t})$.
+\begin{itemize}
+\item
+	Во-первых, имеем $\alpha = o(\abs{\D x})$. Во-вторых:
+	\[\abs{\D x_k} = \abs{\D g_k(t_0)} = \abs{\sum_{j=1}^{m}
+	\pderiv{g_k(t_0)}{t_j}\D t_j+o(\abs{\D t})}\leq
+	\sum_{j=1}^{m}
+	\abs{\pderiv{g_k(t_0)}{t_j}}\abs{\D t_j}+\abs{o(\abs{\D t})}\leq\]
+	\[\leq\text{[нер-во Коши-Буняковского]}\leq
+	\sqrt{\left(\sum_{j=1}^{m}\left(
+	\pderiv{g_k(t_0)}{t_j}\right)^2\right)\cdot
+	\left(\sum_{j=1}^{m}\D t_j^2\right)}=\]
+	\[=\left[c=\sum_{j=1}^{m}\left(
+	\pderiv{g_k(t_0)}{t_j}\right)^2=const\right]=\sqrt c\abs{\D t}+
+	\abs{o(\abs{\D t})}=\]
+	\[=\abs{\D t}\cdot\left(\sqrt c + \abs{\frac{o(\abs{\D t})}
+	{\abs{\D t}}}\right)=\abs{\D t}\cdot O(1)\]
+	
+	Мы получили, что при $\D t \neq 0 \implies \abs{\frac{\D x_k}{\D t}}
+	\leq O(1)$, следовательно, $\frac{\D x_k}{\abs{\D t}}=O(1)$ для
+	всех $k=\overline{1,n}$. Тогда также выполняется:
+	\[\frac{\abs{\D x}}{\abs{\D t}}=\sqrt{\sum_{k=1}^{n}\left(
+	\frac{\D x_k}{\abs{\D t}}\right)^2}=O(1)\]
+	
+	Отсюда получаем:
+	\[\lim_{\D t \to 0}\frac{\alpha}{\abs{\D t}}=
+	\lim_{\D t \to 0}\left(\frac{\alpha}{\abs{\D x}}\cdot
+	\frac{\abs{\D x}}{\abs{\D t}}\right)=\lim_{\D t \to 0}0\cdot O(1) = 0\]
+	
+	Т.е. $\alpha = o(\abs{\D t})$.
+\item
+	Аналогично ограничим первую части $\gamma$:
+	\[\abs{\sum_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j}\leq\text{
+	[нер-во Коши-Буняковского]}\leq\]
+	\[\leq\sqrt{\left(\sum_{j=1}^{n}\left(\pderiv{f(x_0)}{x_j}\right)^2
+	\right)\cdot\left(\sum_{j=1}^{n}\beta_j^2\right)}=
+	O(1)\cdot\sqrt{\sum_{j=1}^{n}o(\abs{\D t})^2}\]
+	
+	Получим порядок суммы:
+	\[\lim_{\D t \to 0}\frac{\abs{\sum_{j=1}^{n}\pderiv{f(x_0)}{x_j}
+	\beta_j}}{\abs{\D t}}\leq
+	\lim_{\D t \to 0}O(1)\cdot\sqrt{\sum_{j=1}^{n}
+	\left(\frac{o(\abs{\D t})}{\abs{\D t}}\right)^2} =\]
+	\[=\lim_{\D t \to 0}O(1)\cdot\sqrt{\sum_{j=1}^{n}
+	0^2}=0\]
+	
+	Т.е. $\sum_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j=o(\abs{\D t})$.
+\end{itemize}
+Из двух пунктов выше получаем $\gamma = o(\abs{\D t})$, что в сочетании
+с \eqref{l5:dh} даёт доказательство теоремы.
+\end{proof}
+
+\begin{crl}[инвариантность формы 1-го дифференциала ФНП]
+Для $h(t) = f(g(t))$ в случае непрерывно дифференцируемых в 
+соответствующих окрестностях $f(x), g(x)$ имеем
+\[dh=\sum_{j=1}^m\pderiv{h(t)}{t_j}dt_j=
+\sum_{i=1}^n\pderiv{f(x)}{x_i}dx_i,\]
+где $dt_j$ -- приращение независимой переменной, а $dx_i=dg_i(t)$ --
+произвольное приращение $g_i(t)$.
+\end{crl}
+\begin{proof}
+В случае независимой переменной $t$ равенство следует из определения
+дифференциала:
+\[dh = \sum_{j=1}^m\pderiv{h(t)}{t_j}\D t_j = 
+\sum_{j=1}^m\pderiv{h(t)}{t_j}dt_j\]
+
+В случае $x_i = g_i(t)$ имеем:
+\[dh = \sum_{j=1}^m\pderiv{h(t)}{t_j}dt_j = 
+\sum_{i=1}^{n}\sum_{j=1}^m
+\pderiv{f(x)}{x_i}\cdot\pderiv{g_i(t)}{t_j}dt_j=\]
+\[=\sum_{i=1}^{n}\left(\pderiv{f(x)}{x_i}\cdot
+\sum_{j=1}^m\pderiv{g_i(t)}{t_j}dt_j\right)=\sum_{i=1}^{n}
+\pderiv{f(x)}{x_i}dx_i\]
+\end{proof}
+
+\end{document}
