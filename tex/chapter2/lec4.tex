@@ -1,0 +1,192 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+	
+	\section{Непрерывные ФНП}	
+	
+	Рассмотрим $u = f(x) = f(x_1, x_2, \ldots, x_n)$, которая определена на 
+	$D \subset \R^n$ (открытое связное множество). Эта ФНП называется
+	\emph{непрерывной} в точке $M_0 = (x_{01}, x_{02}, \ldots, x_{0n}) \in D$
+	, если
+	\begin{equation}
+	\label{continuity}
+	\forall M = (x_1, \ldots, x_n) \in D \iff \exists 
+	\lim\limits_{M \to M_0}f(M) = f(M_0)
+	\end{equation}
+	%\eqref{eq42}
+	\begin{equation}
+	\label{contin_e/d}
+	\eqref{continuity} \iff \forall \eps > 0 \exists \delta > 0 \ : \ 
+	\forall M \in D
+	, d(M, M_0) \leq \delta \implies |f(M) - f(M_0)| \leq \eps
+	\end{equation}
+	Отличие \eqref{contin_e/d} от предела состоит в том, что :
+	\begin{enumerate}
+		\item  Рассмотренная точка $M$ должна принадлежать области 
+		       определения $D$;
+		\item Заранее известно предельное значени $p = f(M_0)$.
+	\end{enumerate}
+    В дальнейшем будем использовать как точечную, так и векторную запись\\
+    В случае, когда множесто $D$ будет иметь более сложную структуру 
+    (например, изолированные точки), то по определению ФНП непрерывны в этих
+    точках. Если у $D$ есть граничные точки, то рассматривается непрерывность 
+    вдоль множества $D$, то есть :
+    \[
+      f(x) \text{ непрерывна в точке } M_0 \iff \exists \lim\limits_{M \to M_0}
+       f(M) = f(M_0), \ M \in D.
+    \]
+    Множество всех непрерывных на $D \subset \R^n$ будем обозначать $C(D)$.
+    $f \in C(D) \implies f$ непрерывна $\forall M \in D$. Как и для Ф1П 
+    показывается, что для ФНП, непрерывной на $D \subset \R^n$, имеем :
+    \begin{enumerate}
+    	\item $f, g \in C(D),$ то $\forall \lambda, \mu \in R \iff 
+    	      \lambda f + \mu g \in C(D)$;
+    	\item $f, g \in C(D),$ то $f \cdot g \in C(D)$;
+    	\item $f, g \in C(D),$ то $\frac{f}{g}$ непрерывна  во всех точках 
+    	      $M_0 \in D$, таких, что  $g(M_0) != 0$.
+    \end{enumerate}
+    Имеют место локальные свойства непрерывных ФНП:
+    \begin{enumerate}
+    	\item Локальная ограниченность: \\
+    	Если $f(x)$ непрерывна в точке $M_0 \in D(f)$, то $\exists V(M_0)
+    	\subset D : \forall M \in V(M) \iff |f(M)| \leq const$
+    	\item Стабилизация знака: \\
+    	Если $f(x)$ непрерывна в точке $M_0 \in D(f)$ и $f(M_0) \ne 0$, то 
+       $\exists V(M_0) \subset D \ : \ \forall M \in V(M_0) \iff \text{sign }
+       f(M)	= \text{sign }f(M_0)$
+    \end{enumerate}
+    \begin{thm}[о непрерывности композиции ФНП]
+    	Если $n$ функций $g_k(t), k = 
+    	\overline{1,n}$ от $m$ переменных $t = (t_1, \ldots, t_m) \in D(g) 
+    	\subset \R^n$ непрерывна в точке $t_0 = \left( t_{01}, \ldots, t_{0m} 
+    	\right) \in D(g),$ где $g = (g_1, \ldots, g_n$, a $f(x), 
+    	x = (x_1, \ldots, x_n)$ непрерывна в точке $x_0 = g(t_0) \in D(f)$,
+    	то, в случае существования композиции 
+    	\begin{equation}
+    	\label{composition}
+    		h(t) = f(g(t)) = f(g_1(t), g_2(t), \ldots, g_n(t))
+    	\end{equation}
+        сложная функция \eqref{composition} будет непрерывна в точке 
+        $t_0 \in D(g)$.
+    \end{thm}
+    \begin{exc}
+    	Доказать данную теорему по аналогии с теоремой для Ф1П.
+    \end{exc}
+    \begin{crl*}[о пределе композиции ФНП]
+    	Пусть $\exists \lim\limits_{t \to t_0}g_k(t) = p_k, \ 
+    	\forall k = \overline{1, n}, \  g(t) = (g_1(t), \ldots, g_m(t)) t = (t_1,
+    	 \ldots, t_m) \in D(g) \subset \R^m, t_0 = (t_{01}, \ldots, t_{0m}) - $
+    	предельная точка для $D(g)$. Если функция $f(x)$ непрерывна в точке 
+    	$x_0 = (p_1, \ldots, p_n) \in D \subset \R^n$, то в случае 
+    	существования композиции $h(t) = f(g(t))$ соответствующих окрестностей
+    	$t_0$ и $x_0$ 
+    	\[
+    	    \exists \lim\limits_{t \to t_0}h(t) = \lim\limits_{t \to t_0}f(g(t)) =
+    		\left[f - \text{непрерывна}\right] = f(\lim\limits_{t \to t_0}g(t)) = 
+    		\left[
+    		\begin{array}{l}
+    			x = g(t) \underset{t \to t_0}{\to} x_0 \\
+    			x_0 = (p_1, \ldots, p_n) 
+    		\end{array}
+    		\right] = 
+    	\]
+    	\[
+    		= f(p_1, \ldots, p_n) = f(x_0).
+    	\]
+    \end{crl*}
+    \begin{proof}
+    	Для доказательства достаточно рассмотреть доопределённую до непрерывной
+    	функцию \begin{equation*}
+    		G(t) = \begin{cases}
+    			g(t), t \ne t_0\\
+    			x_0, t = t_0 
+    		\end{cases}.
+    	\end{equation*} 
+    $G(t) -$ непрерывна, так как $\exists \lim\limits_{t \to t_0} G(t) = 
+    \left[ t \ne t_0 \right] \lim\limits_{t \to t_0} g(t) = x_0 = G(t_0)$.
+    \\
+    Применяя предыдущую теорему для композиции непрерывной функции, имеем:\\
+    \[
+      	\forall t \ne t_0 \iff G(t) = g(t) \iff H(t) = f(G(t)) = f(g(t)) = h(t),
+      	тогда \exists \lim\limits_{t \to t_0} h(t) 
+      	= \lim\limits_{t \to t_0} H(t) 
+    \] 
+    \[
+   		= H(t_0) = f(G(t_0)) = f(x_0).
+    \]
+    \end{proof}
+	Полученный результат как и Ф1П даёт возможность использовать метод замены
+	переменных при вычислении пределов сложных ФНП.
+	\begin{thm}[о промежуточном значении непрерывной на связном множестве ФНП]
+		Пусть $f \in C(D), D \subset \R^n - $ связное множество, то есть 
+		множество, у которого 2 любые точки можно соединить линией  $\in D$.
+		Если $f(x)$ принимает на $D$ значения $u_1, u_2$,то есть $\exists 
+		a, b \in D: \ u_1 = f(a), u_2 = f(b),$ тогда $u = f(x)$ принимает
+		на $D$ все промежуточные значения между $u_1$ и $u_2$.
+	\end{thm}
+	\begin{proof}
+		Соединим произвольные $a, b \in D$ непрерывной линией, заданной 
+		параметрически. $l: x = x(t) = (x_1(t), \ldots, x_n(t))\in D,$
+		где любая $x_k(t) $ - непрерывна на промежутке с концами $t_1$ и $t_2,
+		\ x(t_1) = a, \ x(t_2) = b$. Для сложной функции $h(t) = f(x(t))$, 
+		являющейся непрерывной ФНП от $t$\\
+		$h(t_1) = f(x(t_1)) = f(a) = u_1, h(t_2) = f(x(t_2)) = f(b) = u_2$\\
+		По теореме о множестве значений непрерывной Ф1П получим:
+		\[
+		\forall u_0 \text{, лежащего между } u_1\text{ и } u_2 , \ \exists \ t_0
+		\text{, лежащее между } t_1\text{ и } t_2 :f(x(t_0)) = h(t_0) = u_0 \iff
+		\]
+		\[
+		\iff \exists x_0 = x(t_0) \in D : f(x_0) = u_0.
+		\]
+	\end{proof}
+    %\begin{ЗАмечание}
+		Полученный результат показывает, что для ФНП непрерывность на связном
+		множестве, её множеством значений является некоторый промежуток,
+		соответствующий связному множеству $\R^n$.\\
+	%\end{ЗАмечание}
+    \begin{crl*}[О прохождении непрерывной ФНП через 0]
+			Если $f(x)$ непрерывна на $D \subset \R^n$ и $\exists a,b \in D: 
+			f(a) \cdot f(b) > 0,$ то $\exists x_0 \in D : f(x_0) = 0.$
+	\end{crl*}
+    \begin{proof}
+    	Доказательство проводится по той же схеме, что и для Ф1П и следует из 
+    	того, что если $u_1 = f(a)$ и $u_2 = f(b)$ удовлетворяют условию, то 
+    	они разных знаков. Тогда по теореме о промежуточных значениях для 
+    	$u_0 = 0$, лежащего между $u_1$ и $u_2$ получим:
+    	$\exists x_0 \in D: f(x_0) = u_0 = 0.$ 
+    \end{proof}
+	Кроме локальных свойств ФНП справедливы глобальные свойства ФНП(Например,
+	теоремы Кантора, Вейерштрасса)
+	\begin{thm}[Теорема Вейерштрасса]
+		Если $f(x)$ непрерывна на компакте $D \subset \R^n$(ограниченом 
+		замкнутом множестве), то $\exists \overline{x}, \widetilde{x}\ in D :
+		\min f(x) = f(\overline{x}), x \in D, \max f(x) = f(\widetilde{x}), x 
+		\in D$
+	\end{thm}
+	\begin{exc}
+		Доказать данную теорему.
+	\end{exc}
+	Как и для Ф1П определена \emph{равномерно непрерывная} ФНП.
+	\begin{defn}
+		$f(x)$ - равномерно непрерывна на $D \subset \R^n$ если 
+		\[
+			\forall \eps > 0 \ \exists \ \delta > 0 : \forall s, t \in D,
+			d(s, t) \leq \delta \implies |f(s) - f(t)| \leq \eps.
+		\]
+	\end{defn}
+	Используя фиксированный $s = x_0 \in D$ и произвольный $t = x \in D$, 
+	получим, что если $d(x_0, x) \leq \delta$, то $|f(x) - f(x_0)| \leq \eps$,
+	что соответствует непрерывности $f(x)$ в точке $x_0 \in D$.(Из равномерной 
+	непрерывности следует непрерывность.) Обратное не всегда верно.
+	\begin{thm}[Теорема Кантора]
+		Если $f(x)$ непрерынва на компакте $D \subset \R^n$, то $f(x)$ - 
+		равномерно непрерывна на $D$.
+	\end{thm} 
+	\begin{exc}
+		Ну как всегда. Доказать самостоятельно.
+	\end{exc}
+\end{document}

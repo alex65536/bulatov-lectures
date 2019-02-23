@@ -1,0 +1,91 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+	\section{Частные производные и дифференциал ФНП}
+	Рассмотрим $f(x)$, определённую на множестве $D \subset \R^n$. Для
+	внутренней точки $x_0 = (x_{01}, \ldots, x_{0n}) \in D$ и $\forall 
+	\Delta x = (\Delta x_1, \ldots, \Delta x_n) : x + \Delta x \in D$ получим
+	соответствующее приращение функции 
+	\begin{equation}
+		\label{increment}
+		\Delta f(x) = f\left(x + \Delta x\right) - f(x).
+	\end{equation}
+	\begin{defn}
+		$f(x)$ дифференцируема в рассматриваемой точке $x_0$, если
+		\begin{equation}
+			\label{differenc}
+			\begin{array}{l}
+			\exists \ p_k \in \R, \ k = \overline{1,n} : \Delta f(x_0)= p_1 
+			\Delta x_1 + p_2 \Delta x_2 + \ldots + p_n \Delta x_n + \alpha, 
+    		\alpha = o(|\Delta x|) = \\ =o(\sqrt{\Delta x_1^2 + \ldots + \Delta
+    		x_n}), \Delta x \to 0 \ (\lim\limits_{\Delta x \to 0} 
+    		\frac{\alpha}{|\Delta x|} = 0)
+    	    \end{array}
+		\end{equation}
+	\end{defn}
+	Первым необходимым условие дифференцируемости является непрерывность, так
+	как из $\eqref{differenc} \implies \exists \lim\limits_{\Delta x \to 0}
+	\Delta f(x_0) = \lim\limits_{\Delta x \to 0} (p_1 \Delta x_1 + \ldots + 
+	p_n \Delta x_n + \alpha) = 0 \implies \Delta f(x_0) = f\left(x_0 + 
+	\Delta x\right) - f(x_0) \underset{\Delta x \to 0}{\to} \implies 
+	f\left(x_0 + \Delta x\right) \underset{\Delta x \to 0}{\to} f(x_0)$, что 
+	соответствует  непрерывности $f(x)$ в точке $x_0$.
+	Для получения второго необходисого условия рассмотрим для фиксированного 
+	$k, \ 1 \leq k \leq n$ частные приращения, то есть $\Delta x_1 = \ldots = 
+	\Delta x_{k-1} = \Delta x_{k + 1} = \ldots = \Delta x_n,$ а $\Delta x_k
+	\ne 0$. В результате получим соответствующие частные приращения по каждой 
+	координате.$\Delta_k f(x_0) = f(x_{01}, \ldots, x_{0k-1}, x_{0k} + 
+	\Delta x_k, x_{0k+1}, \ldots, x_{0n})$. Из $\eqref{differenc} \implies
+	\Delta_k f(x_0) = p_k \Delta x_k + 0(|\Delta x_k|), k = \overline{1, n}
+	\implies \frac{\Delta_k f(x_0)}{\Delta x_k} = p_k + 
+	\frac{0(|\Delta x_k|)}{\Delta x_k} = p_k + \alpha_k.$ Учитывая, что $
+	\alpha_k = \frac{0(|\Delta x_k|)}{\Delta x_k} = 
+	\frac{0(|\Delta x_k|)}{|\Delta x_k|} \cdot \frac{|\Delta x_k|}{\Delta x_k}
+	\underset{\Delta x \to 0}{\to} 0 $, получим, переходя к пределу: 
+	$\lim\limits_{\Delta x \to 0} \frac{\Delta_k f(x_0)}{\Delta x_k} = p_k$\\
+	Далее получаемые пределы будем называть $\emph{частными производными}$
+	первого порядка рассматриваемой ФНП в точке $x_0$ по $k$-ой координате и
+	обозначать: 
+	\begin{equation}
+		\label{partial}
+		\frac{\delta f(x)}{\delta x_k} = \lim\limits_{\Delta x \to 0}
+		\frac{\Delta f(x_0)}{\Delta x_k} \in \R, \ k = \overline{1, n}.
+	\end{equation} 
+	Вторым необходимым условием дифференцируемости ФНП является существование 
+	всех частных производных 1-го порядка $\eqref{partial}$ в точке $x_0$. В
+	связи с этимп определение дифференцируемости можно записать так:
+	\begin{equation}
+		\label{defn_of_diff}
+		\Delta f(x_0) = \sum_{k = 1}^{n} \frac{\delta f(x_0)}{\delta x_k} 
+		\Delta x_k + o(\sqrt{\Delta x_1^2 + \ldots + \Delta x_n^2})
+	\end{equation}
+	Применяя $\eqref{defn_of_diff}$ в $f_k(x) = f_k(x_1, \ldots x_n) = x_k,
+	fix 1 \leq k \leq n \implies$
+	\begin{equation}
+		\label{deriv}
+		\frac{\delta f_k(x)}{\delta x_j} = \delta_{jk}
+	\end{equation}
+	В $\eqref{deriv}$ величина 
+	\begin{equation}
+	\label{differential}
+	\sum_{k = 1}^{n} \frac{\delta f_k(x)}{\delta x_k} \Delta x_k
+	\end{equation}
+	являющаяся линейной функцией от $(\delta x_1, \ldots, \delta x_n)$ 
+	называется $\emph{дифференциалом первого порядка}$ рассматриваемой ФНП в
+	точке $x_0$. Используя $\eqref{differential}$ в $\eqref{defn_of_diff}$ 
+	получим: $dx_k = \Delta x_k \forall \ fix 1\leq k \leq n$.\\
+	Для независимых переменных $x_1, \ldots, x_n$ под их дифференциалом
+	$dx_k , k = \overline{1, n}$ понимается произвольное допустимое приращение.
+	\\
+	В результате $\eqref{differential}$ перепишется, как 
+	\begin{equation}
+		\label{other_different}
+		df(x_0) = \sum_{k = 1}^{n} \frac{\delta f(x_0)}{\delta x_k}\Delta x_k.
+	\end{equation}
+	В дальнейшем будем обозначать $\frac{\delta f(x_0)}{\delta x_k} = 
+	f_{x_k}'(x_0)$.\\
+	$\eqref{other_different} \iff \sum_{k = 1}^{n} f_{x_k}'(x_0) dx_k$
+\end{document}
