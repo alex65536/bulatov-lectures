@@ -1,0 +1,119 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+\begin{document}
+\section{Достаточное условие дифференцируемости ФНП}
+
+Необходимыми условиями дифференцируемости ФНП в точке являются:
+\begin{itemize}
+\item непрерывность этой ФНП в рассматриваемой точке
+\item существование конечных частных производных в этой точке
+\end{itemize}
+В случае функции одной переменной существование конечной производной было
+не только необходимым, но и достаточным условием дифференцируемости, но
+для ФНП это не так.
+\begin{exmp}
+Рассмотрим Ф2П $f(x,y) = \sqrt{\abs{xy}}$. $f$ непрерывна для $\forall x,y
+\in \R^2$.
+
+Рассмотрим частные производные в точке $M_0(0,0)$.
+
+\[
+f'_x(M_0) = 
+\lim_{\D x \to 0} \frac{f(0+\D x, 0) -f(0,0)}{\D x}=
+\lim_{\D x \to 0} \frac{\sqrt{\abs{\D x \cdot 0}}-\sqrt{\abs{0}}}{\D x}=
+\lim_{\D x \to 0} \frac{0}{\D x}=
+0
+\]
+\[
+f'_y(M_0) = 
+\lim_{\D y \to 0} \frac{f(0,0+\D y) -f(0,0)}{\D y}=
+\lim_{\D y \to 0} \frac{\sqrt{\abs{0 \cdot \D y}}-\sqrt{\abs{0}}}{\D y}=
+\lim_{\D y \to 0} \frac{0}{\D y}=
+0
+\]
+
+Теперь проверим дифференцируемость функции.
+
+\[\Delta f(0,0) = f'_x(0,0)\D x+f'_y(0,0)\D y + o(\sqrt{\D x^2+\D y^2})
+\iff\]
+\[\iff f(0+\D x,0+\D y)-f(0,0)=0\D x+0\D y+o(\sqrt{\D x^2+\D y^2})\iff\]
+\[\iff \exists\lim_{\substack{\D x \to 0\\ \D y \to 0}}
+\frac{\sqrt{\abs{\D x\D y}}}{\sqrt{\D x^2+\D y^2}}=0\]
+Находим частный предел при $\D x = \D y$:
+\[\lim_{\D x \to 0}\frac{\sqrt{\D x^2}}{\sqrt{2\D x^2}} = \sqrt{\frac{1}
+{2}}\]
+$\sqrt{\frac{1}{2}}\neq 0$, значит, двойного предела не существует и
+функция не дифференцируема в $M_0$, несмотря на существование конечных
+частных производных.
+\end{exmp}
+
+
+
+\begin{thm}[достаточное условие дифференцируемости ФНП]
+Пусть $f(x)$ определена в области $D \subseteq \R^n$. Если её
+частные производные в некоторой окрестности $V(M_0)\subset D$ точки
+$M_0$ существуют и непрерывны, то $f(x)$ дифференцируема в $M_0$.
+\end{thm}
+\begin{proof}
+Для простоты рассмотрим Ф2П $f(x,y)$ и $M_0(a,b)\in D$.
+
+Пусть существуют непрерывные частные производные в $M_0$. Придавая $M_0$ 
+произвольное приращение $\D M(\D x,\D y)\in \R^2$ так, чтобы $M_0+\D M\in 
+V(M_0)$, и считая дополнительно, что $(a+\D x,b)\in V(M_0)$, имеем:
+\[ g(t)=f(t,b), h(\tau) = f(a+\D x,\tau) \]
+\[ \D g(a)=g(a+\D x) -g(a) = f(a+\D x, b)-f(a,b) \]
+\[ \D h(b)=h(b+\D y) -h(b) = f(a+\D x, b+\D y)-f(a+\D x,b) \]
+
+По формуле Лагранжа конечных приращений получаем:
+\begin{enumerate}
+\item $ \exists \theta_1\in\left]0;1\right[\mid
+\D g(a) = g'_t(a+\theta_1\D x)\D x=f'_x(a+\theta_1\D x,b)\D x $
+\item $ \exists \theta_2\in\left]0;1\right[\mid
+\D h(b) = h'_\tau(b+\theta_2\D y)\D y=f'_y(a+\D x, b+\theta_2\D y)\D y $
+\end{enumerate}
+
+Поэтому
+\[\D f(a,b) = \D g(a) +\D h(b) = f'_x(a+\theta_1\D x,b)\D x+
+f'_y(a+\D x, b+\theta_2\D y)\D y =\]
+\begin{equation}
+= f'_x(a,b)\D x +f'_y(a,b)\D y + \alpha,
+\label{l5:diff}
+\end{equation}
+
+где $\alpha = A\D x+B\D y$, где
+\[A = f'_x(a+\theta_1\D x,b)-f'_x(a,b),\]
+\[B = f'_y(a+\D x, b+\theta_2\D y) - f'_y(a,b)\]
+
+Осталось показать, что
+\begin{equation}
+\alpha = o(\sqrt{\D x^2 + \D y^2}) \mid \D x \to 0, \D y \to 0
+\label{l5:alpha_o}
+\end{equation}
+
+Используя неравенство Коши-Буняковского, получаем:
+\[\abs{\alpha} = \abs{A\D x+B\D y} \leq \sqrt{(A^2+B^2)(\D x^2+\D y^2)}\]
+
+Также в силу непрерывности производных имеем:
+\[f'_x(a+\theta_1\D x,b)\underset{\D x\to 0}\longrightarrow f'_x(a,b)
+\implies A \underset{\D x\to 0}\longrightarrow 0\]
+\[f'_y(a+\D x, b+\theta_2\D y) \underset{\substack{\D x\to 0 \\
+\D y \to 0}}\longrightarrow f'_y(a,b)
+\implies B \underset{\substack{\D x\to 0 \\\D y \to 0}}\longrightarrow 0\]
+
+Из вышеописанного получаем, что \eqref{l5:alpha_o} верно:
+\[\abs{\frac{\alpha}{\sqrt{\D x^2 + \D y^2}}} \leq
+\sqrt{A^2+B^2} \underset{\substack{\D x\to 0 \\
+\D y \to 0}}\longrightarrow 0\]
+
+Из \eqref{l5:diff} и \eqref{l5:alpha_o} получаем дифференцируемость
+$f(x,y)$ в $M_0(a,b)$.
+
+\end{proof}
+\end{document}
