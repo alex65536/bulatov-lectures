@@ -50,14 +50,14 @@ f'_y(M_0) =
 \[\lim_{\D x \to 0}\frac{\sqrt{\D x^2}}{\sqrt{2\D x^2}} = \sqrt{\frac{1}
 {2}}\]
 $\sqrt{\frac{1}{2}}\neq 0$, значит, двойного предела не существует и
-функция не дифференцируема в $M_0$, несмотря на существование конечных
+функция недифференцируема в $M_0$, несмотря на существование конечных
 частных производных.
 \end{exmp}
-
+а
 
 
 \begin{thm}[достаточное условие дифференцируемости ФНП]
-Пусть $f(x)$ определена в области $D \subseteq \R^n$. Если её
+Пусть $f(x)$ определена в области $D \subset \R^n$. Если её
 частные производные в некоторой окрестности $V(M_0)\subset D$ точки
 $M_0$ существуют и непрерывны, то $f(x)$ дифференцируема в $M_0$.
 \end{thm}
@@ -67,23 +67,25 @@ $M_0$ существуют и непрерывны, то $f(x)$ дифферен
 Пусть существуют непрерывные частные производные в $M_0$. Придавая $M_0$ 
 произвольное приращение $\D M(\D x,\D y)\in \R^2$ так, чтобы $M_0+\D M\in 
 V(M_0)$, и считая дополнительно, что $(a+\D x,b)\in V(M_0)$, имеем:
-\[ g(t)=f(t,b), h(\tau) = f(a+\D x,\tau) \]
+\[ g(t)=f(t,b),\ h(\tau) = f(a+\D x,\tau) \]
 \[ \D g(a)=g(a+\D x) -g(a) = f(a+\D x, b)-f(a,b) \]
 \[ \D h(b)=h(b+\D y) -h(b) = f(a+\D x, b+\D y)-f(a+\D x,b) \]
 
 По формуле Лагранжа конечных приращений получаем:
 \begin{enumerate}
-\item $ \exists \theta_1\in\left]0;1\right[\mid
+\item $ \exists \theta_1\in\left]0;1\right[\quad
 \D g(a) = g'_t(a+\theta_1\D x)\D x=f'_x(a+\theta_1\D x,b)\D x $
-\item $ \exists \theta_2\in\left]0;1\right[\mid
+\item $ \exists \theta_2\in\left]0;1\right[\quad
 \D h(b) = h'_\tau(b+\theta_2\D y)\D y=f'_y(a+\D x, b+\theta_2\D y)\D y $
 \end{enumerate}
 
 Поэтому
-\[\D f(a,b) = \D g(a) +\D h(b) = f'_x(a+\theta_1\D x,b)\D x+
-f'_y(a+\D x, b+\theta_2\D y)\D y =\]
 \begin{equation}
+\begin{array}{l}
+\D f(a,b) = \D g(a) +\D h(b) = f'_x(a+\theta_1\D x,b)\D x+
+f'_y(a+\D x, b+\theta_2\D y)\D y = \\
 = f'_x(a,b)\D x +f'_y(a,b)\D y + \alpha,
+\end{array}
 \label{l5:diff}
 \end{equation}
 
@@ -101,8 +103,10 @@ f'_y(a+\D x, b+\theta_2\D y)\D y =\]
 \[\abs{\alpha} = \abs{A\D x+B\D y} \leq \sqrt{(A^2+B^2)(\D x^2+\D y^2)}\]
 
 Также в силу непрерывности производных имеем:
-\[f'_x(a+\theta_1\D x,b)\appr{\D x\to 0} f'_x(a,b)
-\implies A \appr{\D x\to 0} 0\]
+\[f'_x(a+\theta_1\D x,b)\appr{\substack{\D x\to 0 \\
+\D y \to 0}} f'_x(a,b)
+\implies A \appr{\substack{\D x\to 0 \\
+\D y \to 0}} 0\]
 \[f'_y(a+\D x, b+\theta_2\D y) \appr{\substack{\D x\to 0 \\
 \D y \to 0}} f'_y(a,b)
 \implies B \appr{\substack{\D x\to 0 \\\D y \to 0}} 0\]
@@ -116,21 +120,19 @@ f'_y(a+\D x, b+\theta_2\D y)\D y =\]
 $f(x,y)$ в $M_0(a,b)$.
 \end{proof}
 
-
-
 \section{Дифференцирование сложных ФНП. Инвариантность формы 1-го
 дифференциала ФНП.}
 \begin{defn}
-Функция $f(x)$, определённая на некотором множестве $D\subseteq\R^n$,
-называется непрерывно дифференцируемой на этом множестве, если в каждой 
+Функция $f(x)$, определённая на некотором множестве $D\subset\R^n$,
+называется \emph{непрерывно дифференцируемой} на этом множестве, если в каждой 
 точке $x\in D$ эта функция имеет непрерывные частные производные.
 \end{defn}
 \begin{thm}[о дифференцировании сложных ФНП]
 Пусть $g_k(t),k=\overline{1,n}$~--- функции, определённые на 
-$D\subseteq\R^m$ и непрерывно дифференцируемые в некоторой окрестности 
+$D\subset\R^m$ и непрерывно дифференцируемые в некоторой окрестности 
 точки $t_0\in D$.
 
-Пусть также $f(x)$~--- функция, определённая на $E\subseteq\R^n$ и
+Пусть также $f(x)$~--- функция, определённая на $E\subset\R^n$ и
 непрерывно дифференцируемая в соответствующей окрестности точки $x_0 = 
 (g_1(t_0),g_2(t_0),\dots,g_n(t_0))\in E$.
 
@@ -139,7 +141,7 @@ f(g_1(t),g_2(t),\dots,g_n(t))$, то она также является непр
 дифференцируемой в окрестности $t_0$, причём
 \[\pderiv{h(t_0)}{t_j}=\sum_{i=1}^{n}
 \pderiv{f(x_0)}{x_i}\cdot
-\pderiv{g_i(t_0)}{t_j}, j=\overline{1,m}\]
+\pderiv{g_i(t_0)}{t_j},\ j=\overline{1,m}\]
 \end{thm}
 
 \begin{proof}
@@ -159,7 +161,7 @@ f(g_1(t),g_2(t),\dots,g_n(t))$, то она также является непр
 \label{l5:dg}
 \end{equation}
 
-Для $h(t)=f(g(t))$ в $t_0 \in D \subseteq \R^m$ имеем
+Для $h(t)=f(g(t))$ в $t_0 \in D \subset \R^m$ имеем
 \[\D h(t_0) = h(t_0+\D t)-h(t_0)=f(g(t_0+\D t))-f(g(t_0))=\]
 \[=f\big((g(t_0+\D t)-g(t_0))+g(t_0)\big)-f(g(t_0))\]
 
@@ -181,7 +183,7 @@ f(g_1(t),g_2(t),\dots,g_n(t))$, то она также является непр
 \[=\sum_{k=1}^{m}\pderiv{h(t_0)}{t_k}\D t_k+
 \sum_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j+\alpha\]
 
-Пусть $\gamma=\sum_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j+\alpha$.
+Пусть $\gamma=\sum\limits_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j+\alpha$.
 Тогда:
 \begin{equation}
 \D h(t_0)=\sum_{k=1}^{m}\pderiv{h(t_0)}{t_k}\D t_k+\gamma
@@ -206,7 +208,7 @@ $\gamma = o(\abs{\D t})$.
 	\[=\abs{\D t}\cdot\left(\sqrt c + \abs{\frac{o(\abs{\D t})}
 	{\abs{\D t}}}\right)=\abs{\D t}\cdot O(1)\]
 	
-	Мы получили, что при $\D t \neq 0 \implies \abs{\frac{\D x_k}{\D t}}
+	Мы получили, что при $\D t \neq 0 \quad \abs{\frac{\D x_k}{\D t}}
 	\leq O(1)$, следовательно, $\frac{\D x_k}{\abs{\D t}}=O(1)$ для
 	всех $k=\overline{1,n}$. Тогда также выполняется:
 	\[\frac{\abs{\D x}}{\abs{\D t}}=\sqrt{\sum_{k=1}^{n}\left(
@@ -219,7 +221,7 @@ $\gamma = o(\abs{\D t})$.
 	
 	Т.е. $\alpha = o(\abs{\D t})$.
 \item
-	Аналогично ограничим первую части $\gamma$:
+	Аналогично ограничим первую часть $\gamma$:
 	\[\abs{\sum_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j}\leq\text{
 	[нер-во Коши-Буняковского]}\leq\]
 	\[\leq\sqrt{\left(\sum_{j=1}^{n}\left(\pderiv{f(x_0)}{x_j}\right)^2
@@ -234,7 +236,7 @@ $\gamma = o(\abs{\D t})$.
 	\[=\lim_{\D t \to 0}O(1)\cdot\sqrt{\sum_{j=1}^{n}
 	0^2}=0\]
 	
-	Т.е. $\sum_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j=o(\abs{\D t})$.
+	Т.е. $\sum\limits_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j=o(\abs{\D t})$.
 \end{itemize}
 Из двух пунктов выше получаем $\gamma = o(\abs{\D t})$, что в сочетании
 с \eqref{l5:dh} даёт доказательство теоремы.
