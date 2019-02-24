@@ -61,9 +61,13 @@ Use equation and \eqref{}.'
 	      'Better use \emph instead of \textit'
 	
 	check -- "$1" \
-	      '( - *[а-яА-Я])|([а-яА-Я] *- )|([а-яА-Я](\$[^\$]{1,20}\$| |\})*- *$)' \
+	      '( - *[а-яА-Я])|([а-яА-Я] *- )|([а-яА-Я](\$[^\$]{1,20}\$| |\})*- *$)|( \- *\$)' \
 	      'Use ~--- for a dash. Example:
 Это~--- тире'
+	
+	check -- "$1" \
+	      '(\\in|\\subset)\s+R' \
+	      'Use \R instead of R (if it'\''s set of real numbers)'
 }
 
 export -f error
