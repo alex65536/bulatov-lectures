@@ -26,9 +26,9 @@
 		\Big(f (x) < f (x_0)\Big).
 	\]
 	Если $\forall x \in V (x_0)$ мы можем гарантировать
-	только нестрогие неравенства $f (x_0) \leqslant f (x)
+	только нестрогие неравенства $f (x_0) \le f (x)
 	\\ \displaystyle
-	\Big(f (x) \leqslant f (x_0)\Big)$,
+	\Big(f (x) \le f (x_0)\Big)$,
 	то $x_0$ называется просто \emph{точкой локального минимума (максимума)}.
 	
 	Общее название таких точек
@@ -73,11 +73,11 @@
 	Тогда, учитывая, что $\D f (x_0)
 	= f (x_0 + \D x) - f (x_0)$,
 	в случае, когда $x_0 = x_{min}$, получим
-	$f (x_0 + \D x) - f (x_0) \geqslant 0
+	$f (x_0 + \D x) - f (x_0) \ge 0
 	\implies
-	\D f (f_0) \geqslant 0$.
+	\D f (f_0) \ge 0$.
 	Аналогично, если $x_0 = x_{max}$,
-	то тогда $\D f (x_0) \leqslant 0$.
+	то тогда $\D f (x_0) \le 0$.
 
 	Таким образом, $x_0$ --- точка локального экстремума ФНП
 	тогда и только тогда, когда
@@ -127,12 +127,12 @@
 		$\D_k f (x_0)
 		= f (x_0 + \D x) - f (x_0)$.
 		Если $x_0$ --- точка локального минимума (максимума)
-		для $f (x)$, то $\D f (x_0) \geqslant 0
+		для $f (x)$, то $\D f (x_0) \ge 0
 		\displaystyle
-		\Big(\D f (x_0) \leqslant 0\Big)$,
-		откуда следует, что $\D_k f (x_0) \geqslant 0
+		\Big(\D f (x_0) \le 0\Big)$,
+		откуда следует, что $\D_k f (x_0) \ge 0
 		\displaystyle
-		\Big(\D_k f (x_0) \leqslant 0\Big)$,
+		\Big(\D_k f (x_0) \le 0\Big)$,
 		т.е. точка $t_k = x_{0 k}$ будет точкой локального минимума (максимума)
 		Ф1П $F_k (t)
 		= f (x_{0 1}, \ldots, x_{0, k - 1}, t,
@@ -141,7 +141,7 @@
 		\[
 			\D F_k (t_k)
 			= F_k (x_{0 k} + \D t) - F (x_{0 k})
-			= \D_k f (x_0) \geqslant 0.
+			= \D_k f (x_0) \ge 0.
 		\]
 		Используя далее необходимое условие локального экстремума Ф1П получим,
 		что точка $t_k = x_{0 k}$ является для $F_k (t)$
@@ -280,8 +280,8 @@
 	
 	В дальнейшем, КФ \eqref{quad form} будем называть \emph{неположительной
 	(неотрицательной)}, если $\forall h \in \R^n \implies
-	\Phi(h) \geqslant 0
-	\Big(\Phi(h) \leqslant 0\Big)$.
+	\Phi(h) \ge 0
+	\Big(\Phi(h) \le 0\Big)$.
 	
 	КФ \eqref{quad form} называют \emph{положительно (отрицательно) определённой}
 	или \emph{знакоположительной (знакоотрицательной)},
@@ -291,8 +291,8 @@
 	КФ \eqref{quad form} называют \emph{вырожденной}, если
 	$\exists h_0 \ne \vec{0} \implies \Phi(h_0) = 0$.
 	Вырожденные КФ \eqref{quad form}, для которых
-	$\forall h \in \R^n \implies \Phi(h) \geqslant 0
-	\Big(\Phi(h) \leqslant 0\Big)$,
+	$\forall h \in \R^n \implies \Phi(h) \ge 0
+	\Big(\Phi(h) \le 0\Big)$,
 	называют \emph{полуопределёнными}.
 	
 	На практике, как правило, будем рассматривать симметрические КФ
@@ -377,7 +377,7 @@
 				+ 2 h_2^2}_{\Phi_0}
 				= \left[\dfrac{1}{2} \pderiv{\Phi_0}{h_1}
 				= h_1 - h_2\right]
-				= \\ = (h_3 + h_1 - h_2)^2 + (h_1 - h_2)^2 + h_2^2 \geqslant 0.
+				= \\ = (h_3 + h_1 - h_2)^2 + (h_1 - h_2)^2 + h_2^2 \ge 0.
 			\end{gather*}
 			Значит, рассматриваемая КФ неотрицательна.
 			Осталось показать, что она не вырождена,
@@ -406,7 +406,7 @@
 		\label{eval form}
 			\exists C_0 = const > 0,
 			\forall h \in \R^n, \abs{h} = \sqrt{h_1^2 + \ldots + h_n^2} = 1
-			\implies \Phi(h) \geqslant C_0.
+			\implies \Phi(h) \ge C_0.
 		\end{equation}
 	\end{lem}
 	\begin{proof}
@@ -422,7 +422,7 @@
 		\[
 			\exists h_0 \in S \implies
 			C_0 = \min_{h \in S} \abs{\Phi(h)}
-			= \abs{\Phi(h_0)} \geqslant 0.
+			= \abs{\Phi(h_0)} \ge 0.
 		\]
 		В данном случае, так как $h_0 \in S$, то
 		$\abs{h_0} = 1 \implies h_0 \ne \vec{0} \in \R^n$,
