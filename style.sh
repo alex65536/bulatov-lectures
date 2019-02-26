@@ -68,6 +68,10 @@ Use equation and \eqref{}.'
 	check -- "$1" \
 	      '(\\in|\\subset)\s+R' \
 	      'Use \R instead of R (if it'\''s set of real numbers)'
+	
+	check -- "$1" \
+	      '\\[lg]eqslant' \
+	      'You don'\''t need it, because \leq and \geq are redefined as \leqslant and \geqslant in matanhelper'
 }
 
 export -f error
