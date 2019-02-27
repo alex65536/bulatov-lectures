@@ -19,16 +19,16 @@
 	$f(x)$,
 	если
 	\[
-		\exists V (x_0) \subset D,
-		\forall x \in \dot{V} (x_0)
+		\exists V (x_0) \subset D:
+		\ \forall x \in \dot{V} (x_0)
 		= V (x_0) \setminus \{x_0\}
 		\implies f (x_0) < f (x)
-		\Big(f (x) < f (x_0)\Big).
+		\quad \big(f (x) < f (x_0)\big).
 	\]
 	Если $\forall x \in V (x_0)$ мы можем гарантировать
 	только нестрогие неравенства $f (x_0) \le f (x)
 	\\ \displaystyle
-	\Big(f (x) \le f (x_0)\Big)$,
+	\big(f (x) \le f (x_0)\big)$,
 	то $x_0$ называется просто \emph{точкой локального минимума (максимума)}.
 	
 	Общее название таких точек
@@ -49,7 +49,7 @@
 		\]
 		Для этой функции в пространстве $\R^3$ графиком $\Gamma_f$
 		будет являться поверхность $z = x^2 + y^2$,
-		соответствующая однополостному параболоиду в ДПСК $Oxyz$.
+		соответствующая эллиптическому параболоиду в ДПСК $Oxyz$.
 		\[
 			\forall (x, y) \ne (0, 0)
 			\implies
@@ -86,7 +86,7 @@
 	
 	В случае, когда для допустимых произвольных $\D x \ne 0 \implies
 	\D f (x_0) > 0 \displaystyle
-	\Big(\D f (x_0) < 0\Big)$
+	\quad \big(\D f (x_0) < 0\big)$
 	имеем в $x_0$ строгий локальный минимум (максимум).
 	
 	\begin{thm}[Необходимое условие ЛЭФНП]
@@ -107,32 +107,32 @@
 		\end{equation}
 	\end{thm}
 	\begin{proof}
-		Придав точке $x_0 \in V (x_0) \subset D$
+		Придавая точке $x_0 \in V (x_0) \subset D$
 		произвольное приращение \\
-		$\D x = (\D x_1, \ldots, \D x_n) \in \R$ так,
+		$\D x = (\D x_1, \ldots, \D x_n) \in \R^n$ так,
 		чтобы $(x_0 + \D x) \in V (x_0)$,
 		наряду с общим приращением функции
 		$\D f (x_0) = f (x_0 + \D x) - f (x_0)$,
 		рассмотрим для фиксированного $k = \overline{1, n}$
 		соответствующее специальное приращение
 		$\D_k x = \left(0, \ldots, 0,
-		\underbracket{\D x_k}_{k\text{-е место}}, 0, \ldots, 0\right)$,
+		\underbrace{\D x_k}_{k\text{-е место}}, 0, \ldots, 0\right)$,
 		для которого
 		$(x_0 + \D_k x)
 		= \left(x_{0 1}, \ldots, x_{0, k - 1}, x_{0 k} + \D x_k,
 		x_{0, k + 1}, \ldots, x_{0 n}\right) \in V (x_0)$.
 		
-		В результате, получим соответствующие специальные приращения
+		В результате получим соответствующие специальные приращения
 		рассматриваемой функции по $k$-й координате
 		$\D_k f (x_0)
-		= f (x_0 + \D x) - f (x_0)$.
+		= f (x_0 + \D_k x) - f (x_0)$.
 		Если $x_0$ --- точка локального минимума (максимума)
 		для $f (x)$, то $\D f (x_0) \ge 0
 		\displaystyle
-		\Big(\D f (x_0) \le 0\Big)$,
+		\quad \big(\D f (x_0) \le 0\big)$,
 		откуда следует, что $\D_k f (x_0) \ge 0
 		\displaystyle
-		\Big(\D_k f (x_0) \le 0\Big)$,
+		\quad \big(\D_k f (x_0) \le 0\big)$,
 		т.е. точка $t_k = x_{0 k}$ будет точкой локального минимума (максимума)
 		Ф1П $F_k (t)
 		= f (x_{0 1}, \ldots, x_{0, k - 1}, t,
@@ -152,14 +152,14 @@
 		Отсюда, учитывая, что 
 		\[
 			F'_k (t_k)
-		= \pderiv{f (x_0)}{x_k}, k = \overline{1, n},
+		= \pderiv{f (x_0)}{x_k},\ k = \overline{1, n},
 		\]
 		имеем
 		\[
 			df (x_0)
 			= \sum_{k = 1}^{n}
-			\underbracket{\pderiv{f (x_0)}{x_k}}_{= 0} dx_k
-			= 0.
+			\underbrace{\pderiv{f (x_0)}{x_k}}_{= 0} dx_k
+			= 0. \qedhere
 		\]
 	\end{proof}
 	\begin{rem}
@@ -191,7 +191,7 @@
 			\begin{cases}
 				\D x = 0, \\
 				\D y \ne 0; \\
-			\end{cases}
+			\end{cases},
 			\]
 			то
 			\[
@@ -211,8 +211,8 @@
 			= x^2 > 0.
 			\]
 		\end{enumerate}
-		Значит, $\forall V (M_0) \subset \R^2$ приращение функции
-		не сохраняет один и тот же знак, значит, стационарная точка $M_0$
+		Значит, $\forall V (M_0) \subset \R^2$ (приращение функции)
+		не сохраняет один и тот же знак, т. е. стационарная точка $M_0$
 		не будет экстремальной.
 	\end{rem}
 	
@@ -223,7 +223,7 @@
 	\begin{equation}
 	\label{quad form}
 		\Phi(h) = \sum_{i, j = 1}^n a_{i j} h_i h_j,
-		\forall a_{i j} \in \R, i = \overline{1, n}, j = \overline{1, n}.
+		\quad \forall a_{i j} \in \R,\ i = \overline{1, n},\ j = \overline{1, n}.
 	\end{equation}
 	Для \eqref{quad form} матрица
 	\begin{equation}
@@ -232,12 +232,12 @@
 		\begin{bmatrix}
 			a_{1 1} & a_{1 2} & \ldots & a_{1 n} \\
 			a_{2 1} & a_{2 2} & \ldots & a_{2 n} \\
-			\ldots & \ldots & \ddots & \ldots \\
+			\vdots & \vdots & \ddots & \vdots \\
 			a_{n 1} & a_{n 2} & \ldots & a_{n n} \\
 		\end{bmatrix}
 		\text{ ---}
 	\end{equation}
-	матрица квадратной формы \eqref{quad form}.
+	матрица квадратичной формы \eqref{quad form}.
 	
 	\begin{exmp}
 		Для $n = 3$ имеем $\Phi(h_1, h_2, h_3) \stk{quad form}{=} \ldots
@@ -259,19 +259,22 @@
 	определители
 	\begin{equation}
 	\label{main corner minors}
-		\D_1 = a_{1 1}, \D_2 =
+	\begin{array}{c}
+		\D_1 = a_{1 1}, \\ \\
+		\D_2 =
 		\begin{vmatrix}
 			a_{1 1} & a_{1 2} \\
 			a_{2 1} & a_{2 2} \\
-		\end{vmatrix},
+		\end{vmatrix}, \\ \\
 		\D_3 =
 		\begin{vmatrix}
 			a_{1 1} & a_{1 2} & a_{1 3} \\
 			a_{2 1} & a_{2 2} & a_{2 3} \\
 			a_{3 1} & a_{3 2} & a_{3 3} \\
-		\end{vmatrix}
-		\text{ и т.д. В конце, }
+		\end{vmatrix}, \\
+		\dots \\
 		\D_n = \det A.
+    \end{array}
 	\end{equation}
 	
 	Нетрудно видеть, что на тривиальном наборе
@@ -281,24 +284,24 @@
 	В дальнейшем, КФ \eqref{quad form} будем называть \emph{неположительной
 	(неотрицательной)}, если $\forall h \in \R^n \implies
 	\Phi(h) \ge 0
-	\Big(\Phi(h) \le 0\Big)$.
+	\quad \big(\Phi(h) \le 0\big)$.
 	
 	КФ \eqref{quad form} называют \emph{положительно (отрицательно) определённой}
 	или \emph{знакоположительной (знакоотрицательной)},
-	если $\forall h \ne \vec{0} \implies \Phi(h) > 0 \Big(\Phi(h) < 0\Big)$.
+	если $\forall h \ne \vec{0} \implies \Phi(h) > 0 \quad \big(\Phi(h) < 0\big)$.
 	Общее название таких КФ --- знакопостоянные (знакоопределённые) КФ.
 	
 	КФ \eqref{quad form} называют \emph{вырожденной}, если
 	$\exists h_0 \ne \vec{0} \implies \Phi(h_0) = 0$.
 	Вырожденные КФ \eqref{quad form}, для которых
 	$\forall h \in \R^n \implies \Phi(h) \ge 0
-	\Big(\Phi(h) \le 0\Big)$,
+	\quad \big(\Phi(h) \le 0\big)$,
 	называют \emph{полуопределёнными}.
 	
 	На практике, как правило, будем рассматривать симметрические КФ
 	\eqref{quad form}, т.е. у которых матрица \eqref{form matrix} симметрическая
 	$\left(A^T = A \iff a_{i j} = a_{j i},
-	\forall i = \overline{1, n}, \forall j = \overline{1, n}\right)$.
+	\forall i = \overline{1, n},\ \forall j = \overline{1, n}\right)$.
 	Например, симметрическая матрица 3-го порядка
 	\[
 		A =
@@ -330,7 +333,7 @@
 		для того, чтобы симметрическая КФ \eqref{quad form}
 		была знакоотрицательной, необходимо и достаточно, чтобы все главные
 		угловые миноры \eqref{main corner minors} имели знакочередующиеся
-		значения, а именно $\D_1 < 0, \D_2 > 0, \D_3 < 0,
+		значения, а именно: $\D_1 < 0, \D_2 > 0, \D_3 < 0,
 		\ldots, (-1)^n \D_n > 0$.
 	\end{enumerate}
 	
@@ -354,14 +357,14 @@
 		\]
 		\begin{description}
 			\item[I способ (по критерию Сильвестра):]
-			имеем $\D_1 = 2 > 0, \D_2 =
+			имеем $\D_1 = 2 > 0,\ \D_2 =
 			\begin{vmatrix}
 				2 & -2 \\
 				-2 & 3 \\
 			\end{vmatrix}
 			= 2 > 0, \\
 			\D_3 = \det A = \ldots = 1 > 0$,
-			поэтому рассматриваемая матрица, а значит и соответствующая ей КФ,
+			поэтому рассматриваемая матрица, а, значит, и соответствующая ей КФ,
 			положительно определена (знакоположительна);
 			
 			\item[II способ (метод Лагранжа выделения полных квадратов):]
@@ -369,19 +372,19 @@
 			\begin{gather*}
 				\Phi
 				= (h_3^2 + 2(h_1 - h_2) h_3) + 2 h_1^2 + 3 h_2^2 - 4 h_1 h_2
-				= \\ = \left[\dfrac{1}{2} \pderiv{\Phi}{h_3}
+				= \\ = \left[\dfrac{1}{2}\cdot \pderiv{\Phi}{h_3}
 				= h_3 + h_1 - h_2\right]
 				= (h_3 + h_1 - h_2)^2 - (h_1 - h_2)^2 + 2 h_1^2 + 3 h_2^2
 				- 4 h_1 h_2
-				= \\ = (h_3 + h_1 - h_2)^2 + \underbracket{h_1^2 - 2 h_1 h_2
+				= \\ = (h_3 + h_1 - h_2)^2 + \underbrace{h_1^2 - 2 h_1 h_2
 				+ 2 h_2^2}_{\Phi_0}
 				= \left[\dfrac{1}{2} \pderiv{\Phi_0}{h_1}
 				= h_1 - h_2\right]
 				= \\ = (h_3 + h_1 - h_2)^2 + (h_1 - h_2)^2 + h_2^2 \ge 0.
 			\end{gather*}
 			Значит, рассматриваемая КФ неотрицательна.
-			Осталось показать, что она не вырождена,
-			т.е. что только на наборе $h_0 = (0, 0, 0) \implies
+			Осталось показать, что она невырождена,
+			т.е. только на наборе $h_0 = (0, 0, 0) \implies
 			\Phi(h_0) = 0$:
 			\begin{gather*}
 				\Phi(h = 0)
@@ -395,7 +398,7 @@
 				h_1 = h_2 = h_3 = 0.
 			\end{gather*}
 			Поэтому рассматриваемая КФ невырождена, неотрицательна,
-			а значит положительно определена.
+			а, значит, положительно определена.
 		\end{description}
 	\end{exmp}
 	
@@ -404,8 +407,8 @@
 		Если КФ \eqref{quad form} является знакопостоянной, то
 		\begin{equation}
 		\label{eval form}
-			\exists C_0 = const > 0,
-			\forall h \in \R^n, \abs{h} = \sqrt{h_1^2 + \ldots + h_n^2} = 1
+			\exists C_0 = const > 0,\ 
+			\forall h \in \R^n,\ \abs{h} = \sqrt{h_1^2 + \ldots + h_n^2} = 1
 			\implies \Phi(h) \ge C_0.
 		\end{equation}
 	\end{lem}
