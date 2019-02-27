@@ -12,22 +12,22 @@
 \begin{document}
 	\begin{exmp}
 		Для трижды непрерывно дифференцируемой Ф3П
-		$u = \left(x, y, z\right)$ имеем:
+		$u = f\left(x, y, z\right)$ имеем:
 		\begin{gather*}
 			d^3 u =
 			\left(\pderiv{\left(.\right)}{x} dx
-			+ \pderiv{\left(.\right)}{y} dx
-			+ \pderiv{\left(.\right)}{z} dx\right)^3 f
+			+ \pderiv{\left(.\right)}{y} dy
+			+ \pderiv{\left(.\right)}{z} dz\right)^3 f
 			= \\ = \left[
 			\begin{aligned}
-				& n = 3, p = 3 \\
-				& \encircle{1}~3
+				& n = 3,\ p = 3 \\
+				& \encircle{1}\ 3
 				= 3 + 0 + 0
 				= 0 + 3 + 0
 				= 0 + 0 + 3 \\
 				& \text{Коэффициент: }
-				\dfrac{3!}{3!0!0!} = 1 \\
-				& \encircle{2}~3
+				\dfrac{3!}{3!\cdot0!\cdot0!} = 1 \\
+				& \encircle{2}\ 3
 				= 2 + 1 + 0
 				= 2 + 0 + 1
 				= 1 + 2 + 0
@@ -35,11 +35,11 @@
 				= 0 + 1 + 2
 				= 0 + 2 + 1 \\
 				& \text{Коэффициент: }
-				\dfrac{3!}{2!1!0!} = 3 \\
-				& \encircle{3}~3
+				\dfrac{3!}{2!\cdot1!\cdot0!} = 3 \\
+				& \encircle{3}\ 3
 				= 1 + 1 + 1 \\
 				& \text{Коэффициент: }
-				\dfrac{3!}{1!1!1!} = 6 \\
+				\dfrac{3!}{1!\cdot1!\cdot1!} = 6 \\
 			\end{aligned}
 			\right] = \\ =
 			\left[
@@ -66,34 +66,34 @@
 	\section{Формула Тейлора для ФНП}
 	Рассмотрим ФНП $u = f\left(x\right),
 	x = \left(x_1, \ldots, x_n\right) \in D \subset \R^n$,
-	являющуюся $\left(m + 1\right)$ непрерывно дифференцируемой
+	являющуюся $\left(m + 1\right)$ раз непрерывно дифференцируемой
 	в некоторой окрестности $V \left(x_0\right)$ внутренней точки $x_0 \in D$.
-	Рассматривая произвольные $\forall \D x \in \R^n$,
-	такие что $\left(x_0 + t \D x\right) \in V\left(x_0\right),
+	Рассматривая произвольные $\forall \D x \in \R^n$
+	такие, что $\left(x_0 + t \D x\right) \in V\left(x_0\right) \:\:
 	\forall t \in \left[0, 1\right]$,
 	рассмотрим $F \left(t\right)
-	= f\left(x_0 + t \D x\right), t \in \left[0, 1\right]$.
+	= f\left(x_0 + t \D x\right),\ t \in \left[0, 1\right]$.
 	Во-первых, имеем
 	\[
 	\begin{cases}
-		F \left(0\right) = f \left(x_0\right), \\
-		F \left(1\right) = f \left(x_0 + \D x\right); \\
+		F\left(0\right) = f\left(x_0\right), \\
+		F\left(1\right) = f\left(x_0 + \D x\right); \\
 	\end{cases}
 	\implies
-	\D F \left(0\right)
-	= f \left(x_0 + \D x\right) - f \left(x_0\right)
-	= \D f \left(x_0\right).
+	\D F\left(0\right)
+	= f\left(x_0 + \D x\right) - f \left(x_0\right)
+	= \D f\left(x_0\right).
 	\]
 	Используя для сложной функции $F \left(t\right)$ формулу дифференцирования
-	в силу инвариантности 1-го дифференциала при $\D t = 1 - 0 = 1$
+	в силу инвариантности первого дифференциала при $\D t = 1 - 0 = 1$
 	имеем
 	\[
-		\D F \left(0\right)
+		\D F\left(0\right)
 		= \D f \left(x_0\right)
-		= \sum_{k = 1}^{m} \dfrac{d^k F \left(0\right)}{k!} + R_m.
+		= \sum_{k = 1}^{m} \dfrac{d^k F\left(0\right)}{k!} + R_m.
 	\]
 	Отсюда, учитывая, что $\D t = 1$
-	и $d^k F \left(0\right)
+	и $d^k F\left(0\right)
 	= d^k f \left(x_0\right), k = \overline{1, m}$
 	(доказывается по индукции), имеем
 	\[
@@ -104,14 +104,15 @@
 	\[
 		R_m
 		= \dfrac{d^{m+1} f \left(x_0 + \Theta \D x\right)}
-		{\left(m + 1\right)!},
+		{\left(m + 1\right)!},\:\:
 		\exists \Theta \in \left]0, 1\right[.
 	\]
 	В результате получили формулу Тейлора-Лагранжа для ФНП:
 	\[
 		\D f \left(x_0\right)
 		= \sum_{k + 1}^{m} \dfrac{d^k f \left(x_0\right)}{k!}
-		+ \dfrac{d^{m+1} f \left(x_0\right)}{\left(m + 1\right)},
+		+ \dfrac{d^{m+1} f \left(x_0 + \Theta \D x
+		\right)}{\left(m + 1\right)!},
 		\Theta \in \left]0, 1\right[.
 	\]
 	Аналогичным образом из соответствующей формулы Тейлора-Пеано для Ф1П
@@ -123,6 +124,6 @@
 		\text{ где } \abs{dx}
 		= \sqrt{x_1^2 + \ldots + x_n^2}.
 	\]
-	В дальнейшем, эти формулы будут использоваться
+	В дальнейшем, эту формулу будем использовать
 	при исследовании ФНП на экстремум.
 \end{document}
