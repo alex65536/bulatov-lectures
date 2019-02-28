@@ -1,0 +1,337 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+	\begin{exmp}
+		Рассмотрим сложную Ф3П $u=f(x+y+z,xyz)$, полученную из Ф2П $f(s,t)$ 
+		подстановкой $s=x+y+z$, $t=xyz$.
+		
+		Считая, что $f(s,t)$ дифференцируемая Ф2П для рассматриваемой 
+		функции $u(x,y,z)$, действуя сначала с промежуточными переменными, имеем
+		\begin{gather*}
+			du = df(s,t) = f'_sds + f'_tdt = \left[\begin{aligned}
+				& ds = d(x + y + z) = dx + dy + dz\\
+				& dt = d(xyz) = yzdx + xzdy + xydz
+			\end{aligned}\right] = \\
+			= f'_s\left(dx + dy + dz\right) + 
+			f'_t\left(yzdx + xzdy + xydz\right) = 
+			\left(f'_s + yzf'_t\right)dx + 
+			\left(f'_s + xzf'_t\right)dy + 
+			\left(f'_s + xyf'_t\right)dz.
+		\end{gather*}
+		
+		Отсюда, в частности, в виду инвариантности формулы первого 
+		дифференциала, находим частные производные первого порядка
+		\[\begin{cases}
+			u'_x = f'_s + yzf'_t,\\
+			u'_y = f'_s + xzf'_t,\\
+			u'_z = f'_s + xyf'_t.
+		\end{cases}\]
+		При использовании этих формул подразумевается, что сначала 
+		вычисляют $f'_s$, $f'_t$ и потом подставляют 
+		$t = xyz$, $s = x + y + z$.
+	\end{exmp}
+
+	\section{Производные и дифференциалы высших порядков ФНП}
+	
+	Для простоты ограничимся дифференцируемыми Ф2П $u=f(x,y)$, $(x,y)\in 
+	D\subset \R^2$.
+	
+	В силу дифференцируемости получаем, что
+	\[\exists g(x,y) = f'_x,\ \exists h(x,y) = f'_y.\]
+	Если эти функции также являются дифференцируемыми, то их производные 
+	первого порядка $g'_x$, $g'_y$, $h'_x$, $h'_y$ называют производными 
+	второго порядка исходной Ф2П и обозначают 
+	\[f''_{x^2} = \left(f'_x\right)'_x = g'_x = \pderiv{f'_x}{x} =
+	 \pderiv{}{x}\left(\pderiv{f}{x}\right) = \pderiv{^2f}{x^2},\]
+	\[f''_{xy} = \left(f'_x\right)'_y = g'_y = 
+	\pderiv{}{y}\left(\pderiv{f}{x}\right) = \pderiv{^2f}{x\partial y},\]
+	\[f''_{yx} = \left(f'_y\right)'_x = h'_x = 
+	\pderiv{}{x}\left(\pderiv{f}{y}\right) = \pderiv{^2f}{y\partial x},\]
+	\[f''_{y^2} = \left(f'_y\right)'_y = h'_y = 
+	\pderiv{}{y}\left(\pderiv{f}{y}\right) = \pderiv{^2f}{y^2}.\]
+	Среди этих производных второго порядка производные $f''_{xy}$ и 
+	$f''_{yx}$ называются \emph{смешанными}.
+	
+	По аналогичной схеме вводятся дифференциалы более высоких порядков. 
+	Например:
+	\[f'''_{xy^2} = \left(f'_x\right)''_{y^2} =
+	 \pderiv{^2}{y^2}\left(\pderiv{f}{x}\right) = 
+	 \pderiv{^3f}{y^2\partial x}.\]
+	Для этой смешанной производной третьего порядка 
+	\emph{соответствующими смешанными производными} будут $f'''_{y^2x}$, 
+	$f'''_{yxy}$.
+	
+	Аналогично и для функции трёх переменных.
+	
+	\begin{exc}
+		Расписать производные третьего порядка для Ф3П $u=f(x,y,z)$.
+	\end{exc}
+
+	Далее ФНП, у которой существуют производные $n$-го порядка будем 
+	называть $n$-раз дифференцируемой.
+	
+	\begin{exmp}
+		$u = x^{\left(y^z\right)}$.
+		\[u'_x = \left[\begin{aligned}
+			& y\ \text{фиксировано}\\
+			& z\ \text{фиксировано}
+		\end{aligned}\right] = y^zx^{\left(y^z - 1\right)},\]
+		\[u'_y = \left[\begin{aligned}
+			& x\ \text{фиксировано}\\
+			& z\ \text{фиксировано}
+		\end{aligned}\right] = x^{y^z}\ln x\cdot z\cdot y^{z-1},\]
+		\[u'_z = \left[\begin{aligned}
+			& x\ \text{фиксировано}\\
+			& y\ \text{фиксировано}
+		\end{aligned}\right] = \left(e^{y^z\ln x}\right)'_z = 
+		e^{y^z\ln x}\cdot\left(y^z\ln x\right)'_z = x^{y^z}y^z\ln y\ln x.\]
+		
+		Для смешанных производных получаем
+		\begin{gather*}
+			u''_{xz} = \left(u'_x\right)'_z = 
+			\left(y^zx^{y^z - 1}\right)'_z = 
+			y^z\ln y\cdot x^{y^z - 1} + 
+			y^{z}\left(e^{(y^z - 1)\ln x}\right)'_z =\\
+			= y^z\ln y\cdot x^{y^z - 1} + y^zx^{y^z - 1}\cdot y^z\ln y\ln x,
+		\end{gather*}
+		
+		\begin{gather*}
+			u''_{zx} = \left(u'_z\right)'_x =
+			 \left(x^{y^z}y^z\ln y\ln x\right)'_x
+			 = y^zx^{y^z - 1}y^z\ln y\ln x + x^{y^z - 1}y^z\ln y.
+		\end{gather*}
+		
+		Получили, что $u''_{xz}=u''_{zx}$.
+	\end{exmp}
+
+	\begin{thm}[О равенстве смешанных производных второго порядка ФНП]
+		\label{secdiffeq}
+		Если ФНП $u = f(x)$, $x = \left(x_1, x_2, \dots, x_n\right)\in 
+		D\subset\R^n$, дифференцируема в некоторой окрестности внутренней 
+		точки $x_0 = \left(x_{01}, x_{02}, \dots, x_{0n}\right)\in D$ и имеет 
+		непрерывные смешанные производные $u''_{x_ix_j}(x_0)$, 
+		$u''_{x_jx_i}(x_0)$, $k\ne j$, $k, j = \overline{1, n}$, то тогда, 
+		в силу непрерывности этих производных в окрестности $x_0$ выполняется
+		\begin{equation}
+			u''_{x_ix_j} = u''_{x_jx_i}
+			\label{11:diff}
+		\end{equation}
+	\end{thm}
+
+	\begin{proof}
+		Для простоты ограничимся Ф2П $u=f(x,y)$, где $(x,y)\in D\subset\R^2$, 
+		у которой существуют непрерывные смешанные производные второго порядка 
+		$u''_{xy}$ и $u''_{yx}$ в некоторой окрестности $V\left(M_0\right)
+		\subset D$ внутренней точки $M_0 = (a,b)\in D$.
+		
+		Выбирая произвольное приращение $\left(\D x, \D y\right)\in\R^2$ 
+		так, чтобы $\left(a + \D x, b + \D y\right)\in V(M_0)$, и считая, 
+		что при этом $\left(a + \D x, b\right)\in V(M_0)$, 
+		$\left(a, b + \D y\right)\in V(M_0)$, рассмотрим выражение
+		\begin{equation}
+			F=f\left(a + \D x, b + \D y\right) - f\left(a + \D x, b\right) - 
+			f\left(a, b + \D y\right) + f\left(a, b\right).
+			\label{12:diff}
+		\end{equation}
+		
+		При указанных выше предположениях \eqref{12:diff} корректно определено 
+		для достаточно малых $\D x$, $\D y$.
+		
+		Для ффиксированных допустимых $\D y$ для функции $g(t)=f(t, b + \D y) - 
+		f(t, b)$
+		в точке $t=a$ на приращении $\D x$ имеем
+		\[\D g(a)=g(a + \D x) - g(a) = f(a + \D x, b + \D y) - f(a + \D x, b) - 
+		f(a, b + \D y) + f(a, b) = F.\]
+		
+		Далее, применяя формулу Лагранжа конечных приращений для функции 
+		одной переменной, получаем, что $\exists\Theta_1\in\left]0;1\right[$ 
+		такое, что
+		\begin{equation}
+			F = \D g(a) = g'_t\left(a + \Theta_1\D x\right)\D x = 
+			\left(f'_x\left(a + \Theta_1\D x, b + \D y\right) - 
+			f'_x\left(a + \Theta_1\D x, b\right)\right)\D x.
+			\label{13:diff}
+		\end{equation}
+		
+		Фиксируя дальше $\D x$ и $\Theta_1$ для Ф1П $h(\tau) = 
+		f'_x\left(a+\Theta_1\D x, \tau\right)$ на соответствующем приращении 
+		$\D y$ в точке $\tau = b$ получаем
+		\begin{equation}
+			\D h(b) = h(b + \D y) - h(b) = 
+			f'_x\left(a + \Theta_1\D x, b + \D y\right) - 
+			f'_x\left(a + \Theta_1\D x, b\right).
+			\label{14:diff}
+		\end{equation}
+		
+		Поэтому 
+		\begin{equation}
+			F\overset{\eqref{13:diff},\eqref{14:diff}}{=} \D h(b)\D x
+			\label{15:diff}
+		\end{equation}
+		
+		Применяя снова формулу Лагранжа конечных приращений для Ф1П в точке 
+		$\tau = b$ на приращении $\D y$ имеем 
+		$\exists \Theta_2\in\left]0;1\right[$ такое, что
+		\[\D h(b) = h'_\tau\left(b + \Theta_2\D y\right)\D y = 
+		f''_{xy}\left(a + \Theta_1\D x, b + \Theta_2\D y\right)\D y\implies\]
+		\begin{equation}
+			\implies F\overset{\eqref{15:diff}}{=} f''_{xy}\left(A\right)\D x
+			\D y,
+			\label{16:diff}
+		\end{equation}
+		\begin{equation}
+			A = \left(a + \Theta_1\D x, b + \Theta_2\D y\right)
+			\underset{\substack{\D x\rightarrow 0\\
+			\D y\rightarrow 0}}{\overset{\Theta_1,\Theta_2\ 
+			\text{огран.}}{\longrightarrow}} M_0\left(a, b\right)
+			\label{17:diff}
+		\end{equation}
+		
+		Аналогично показывается, что если действовать в другом порядке, то 
+		$\exists \Theta_3, \Theta_4\in\left]0;1\right[$ такие, что
+		\begin{equation}
+			F = f''_{yx}\left(B\right)\D y\D x
+			\label{18:diff}
+		\end{equation}
+		\begin{equation}
+			B = \left(a + \Theta_3\D x, b + \Theta_4\D y\right)
+			\underset{\substack{\D x\rightarrow 0\\
+			\D y\rightarrow 0}}{\overset{\Theta_3,\Theta_4\ 
+			\text{огран.}}{\longrightarrow}} M_0\left(a, b\right)
+			\label{19:diff}
+		\end{equation}
+		
+		Сравнение \eqref{16:diff} и \eqref{18:diff} для $\D x\ne0$, 
+		$\D y\ne0$ даёт равенство
+		\[f''_{xy}\left(A\right)\D x\D y = f''_{yx}\left(B\right)\D y\D x
+		\implies f''_{xy}\left(A\right) = f''_{yx}\left(B\right).\]
+		
+		Отсюда, используя непрерывность рассматриваемых смешанных 
+		производных и в силу \eqref{17:diff}, \eqref{19:diff}, получим
+		\[\lim_{
+			\substack{\D x\rightarrow0\\
+					\D y\rightarrow 0}
+				}f''_{xy}\left(A\right)\overset{\eqref{17:diff}}{=}
+		f''_{xy}\left(M_0\right)\overset{\eqref{19:diff}}{=}
+		\lim_{
+			\substack{\D x\rightarrow0\\
+					\D y\rightarrow0}
+				}f''_{yx}\left(M_0\right).\]
+	\end{proof}
+
+	\begin{remark}
+		Аналогичная теорема имеет место в случае соответствующих 
+		произвольных смешанных производных для достаточного числа 
+		раз непрерывно дифференцируемой ФНП, т.е. если для 
+		$u = f\left(x_1, x_2,\dots, x_n\right)$ во внутренней 
+		точке $x_0 = \left(x_{01}, x_{02},\dots, x_{0n}\right)
+		\in D\subset \R^n$ существуют соответствующие смешанные 
+		производные $\pderiv{^{m+k}u\left(x_0\right)}{x_j^k\partial x_i^m}$ и 
+		$\pderiv{^{m+k}u\left(x_0\right)}{x_i^m\partial x_j^k}$, $i\ne j$, 
+		то в соответствующей окрестности $V\left(x_0\right)\subset D$ эти 
+		смешанные производные будут равны между собой. Аналогично и для более 
+		общего случая всех смешанных производных. Например, для трижды 
+		непрерывно дифференцируемой Ф3П $u=f\left(x, y, z\right)$ в точке 
+		$M_0\left(x_0, y_0, z_0\right)$ имеем
+		\[f''_{x^2y}\left(M_0\right) = f''_{yx^2}\left(M_0\right) = 
+		f''_{xyx}\left(M_0\right)\ \text{и т.д.}\]
+	\end{remark}
+
+	Чтобы определить дифференциалы высших порядков ФНП рассмотрим для 
+	дифференцируемой функции $u=f\left(x\right)$, $x\in D\subset \R^n$, 
+	её первый дифференциал
+	\begin{equation}
+		F = df\left(x\right) = \sum_{j = 1}^nf'_{x_j}\left(x\right)dx_j,
+		\label{20:diff}
+	\end{equation}
+	вычисленный на соответствующих $dx_j = \D x_j$, $j = \overline{1, n}$.
+	
+	Если в \eqref{20:diff} зафиксировать $dx_j$, $j = \overline{1, n}$, то 
+	получим опять новую ФНП $F = F(x)$. Используя для независимой переменной 
+	$x$ новые приращения $\delta x_j$ получим выражение
+	\[\delta F(x) = \sum_{i = 1}^nF'_{x_i}\delta x_i.\]
+	
+	Отсюда, после использования \eqref{20:diff}, имеем
+	\begin{equation}
+		\delta F(x) = \sum_{i = 1}^n\left(\sum_{j = 1}^nf'_{x_j}dx_j\right)
+		\delta x_i = \sum_{i, j = 1}^nf''_{x_jx_i}dx_j\delta x_i
+		\label{21:diff}
+	\end{equation}
+	
+	\eqref{21:diff} представляет собой \emph{билинейную форму} относительно 
+	старых приращений $d_j$ и новых $\delta x_i$. Если в этой билинейной форме 
+	в качестве новых приращений использовать старые, т.е. 
+	$\forall k = \overline{1, n}$ $\delta x_k = dx_k$, то получим 
+	\emph{квадратичную форму}
+	\begin{equation}
+		dF(x) = \delta F(x) \overset{\eqref{21:diff}}{=} 
+		\sum_{i, j = 1}^nf''_{x_jx_i}dx_jdx_i
+		\label{22:diff}
+	\end{equation}
+	относительно старых приращений. Эта квадратичная форма \eqref{22:diff} 
+	называется \emph{дифференциалом второго порядка} исходной ФНП $f(x)$ 
+	и обозначается
+	\[d^2f(x) = dF(x) \overset{\eqref{22:diff}}{=} 
+	\sum_{i, j = 1}^nf''_{x_jx_i}dx_jdx_i.\]
+		
+	Если у нас в рассматриваемых точках все смешанные частные производные 
+	непрерывны, то, по теореме о равенстве смешанных частных производных 
+	\eqref{secdiffeq}, имеем $f''_{x_ix_j} = f''_{x_jx_i}$. Поэтому у $d^2f$ 
+	матрица квадратичной формы относительно $dx_1, dx_2,\dots, dx_n\in\R$ в 
+	\eqref{22:diff} будет симметричной, т.е. имеем 
+	\emph{симметричную квадратичную форму}.
+	
+	В этом случае на практике удобно использовать дифференциальный оператор
+	\begin{equation}
+		d = \pderiv{\left(.\right)}{x_1}dx_1 + \dots + 
+		\pderiv{\left(.\right)}{x_n}dx_n,
+		\label{23:diff}
+	\end{equation}
+	действие которого производится по формуле
+	\[du = \pderiv{u}{x_1}dx_1 + \dots + \pderiv{u}{x_n}dx_n.\]
+	
+	Формальное использование алгебраической формулы для возведения в квадрат 
+	даёт
+	\begin{gather*}
+		d^2 = \left(\sum_{k = 1}^n\pderiv{\left(.\right)}{x_k}dx_k\right)^2 = 
+		\left(\sum_{k = 1}^n\pderiv{\left(.\right)}{x_k}dx_k\right)
+		\left(\sum_{k = 1}^n\pderiv{\left(.\right)}{x_k}dx_k\right) = \\
+		= \sum_{i, j = 1}^n\pderiv{\left(.\right)}{x_i}\cdot
+		\pderiv{\left(.\right)}{x_j}dx_idx_j = \left[\begin{aligned}
+			\pderiv{\left(.\right)}{x_i}\cdot\pderiv{\left(.\right)}{x_j} = 
+			\pderiv{^2\left(.\right)}{x_i\partial x_j}
+		\end{aligned}\right] = 
+		\sum_{i, j = 1}^n\pderiv{^2\left(.\right)}{x_i\partial x_j}dx_idx_j.
+	\end{gather*}
+	
+	В результате для дважды непрерывно дифференцируемой ФПН получаем
+	\[d^u = \sum_{i, j = 1}^n\pderiv{^2u}{x_i\partial x_j}dx_idx_j.\]
+	
+	Дифференциалы более высоких порядков определяются реккурентным образом 
+	$d^pf(x) = f\left(d^{p - 1}f(x)\right)$, $p\in\N$, при этом 
+	$d^0f(x) = f(x)$. В данном случае опять для $p$-раз непрерывно 
+	дифференцируемой ФНП имеем следующую операторную формулу
+	\begin{equation}
+		d^pf(x) = \left(\pderiv{\left(.\right)}{x_1}dx_1 + \dots + 
+		\pderiv{\left(.\right)}{x_n}dx_n\right)^p f.
+		\label{24:diff}
+	\end{equation}
+	
+	Применение этой формулы на практике основано на следующем обобщении бинома 
+	Ньютона
+	\[\left(a_1 + a_2 + \dots + a_n\right)^p = \sum_{
+		\substack{
+			\left(i_1, i_2, \dots, i_n\right):\\
+			i_1 + i_2 + \dots + i_n = p
+	}}\frac{p!}{i_1!i_2!\dots i_n!}\cdot a_1^{i_1}a_2^{i_2}\dots a_n^{i_n},\]
+	где суммирование проводится по всевозможным индексам $\forall i_k\ge 0$, 
+	$k = \overline{1, n}$ таким, что $\sum_{k = 1}^ni_k = p$.
+\end{document}
