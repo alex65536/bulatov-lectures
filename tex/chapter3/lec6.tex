@@ -13,7 +13,7 @@
 		Рассмотрим сложную Ф3П $u=f(x+y+z,xyz)$, полученную из Ф2П $f(s,t)$ 
 		подстановкой $s=x+y+z$, $t=xyz$.
 		
-		Считая, что $f(s,t)$ дифференцируемая Ф2П для рассматриваемой 
+		Считая, что $f(s,t)$~--- дифференцируемая Ф2П для рассматриваемой 
 		функции $u(x,y,z)$, действуя сначала с промежуточными переменными, имеем
 		\begin{gather*}
 			du = df(s,t) = f'_sds + f'_tdt = \left[\begin{aligned}
@@ -27,7 +27,7 @@
 			\left(f'_s + xyf'_t\right)dz.
 		\end{gather*}
 		
-		Отсюда, в частности, в виду инвариантности формулы первого 
+		Отсюда, в частности, ввиду инвариантности формулы первого 
 		дифференциала, находим частные производные первого порядка
 		\[\begin{cases}
 			u'_x = f'_s + yzf'_t,\\
@@ -35,7 +35,7 @@
 			u'_z = f'_s + xyf'_t.
 		\end{cases}\]
 		При использовании этих формул подразумевается, что сначала 
-		вычисляют $f'_s$, $f'_t$ и потом подставляют 
+		вычисляют $f'_s$, $f'_t$, а потом подставляют 
 		$t = xyz$, $s = x + y + z$.
 	\end{exmp}
 
@@ -76,21 +76,23 @@
 	\end{exc}
 
 	Далее ФНП, у которой существуют производные $n$-го порядка будем 
-	называть $n$-раз дифференцируемой.
+	называть $n$ раз дифференцируемой.
 	
 	\begin{exmp}
 		$u = x^{\left(y^z\right)}$.
 		\[u'_x = \left[\begin{aligned}
-			& y\ \text{фиксировано}\\
-			& z\ \text{фиксировано}
+			& y - \text{fix}\\
+			& z - \text{fix}
 		\end{aligned}\right] = y^zx^{\left(y^z - 1\right)},\]
 		\[u'_y = \left[\begin{aligned}
-			& x\ \text{фиксировано}\\
-			& z\ \text{фиксировано}
-		\end{aligned}\right] = x^{y^z}\ln x\cdot z\cdot y^{z-1},\]
+			& x - \text{fix}\\
+			& z - \text{fix}
+		\end{aligned}\right] = \left(e^{y^z\ln x}\right)'_y = 
+		e^{y^z\ln x}\cdot\left(y^z\ln x\right)'_y = x^{y^z}\ln x\cdot 
+		z\cdot y^{z-1},\]
 		\[u'_z = \left[\begin{aligned}
-			& x\ \text{фиксировано}\\
-			& y\ \text{фиксировано}
+			& x - \text{fix}\\
+			& y - \text{fix} 
 		\end{aligned}\right] = \left(e^{y^z\ln x}\right)'_z = 
 		e^{y^z\ln x}\cdot\left(y^z\ln x\right)'_z = x^{y^z}y^z\ln y\ln x.\]
 		
@@ -106,7 +108,7 @@
 		\begin{gather*}
 			u''_{zx} = \left(u'_z\right)'_x =
 			 \left(x^{y^z}y^z\ln y\ln x\right)'_x
-			 = y^zx^{y^z - 1}y^z\ln y\ln x + x^{y^z - 1}y^z\ln y.
+			 = y^zx^{y^z - 1}\ln y\ln x + x^{y^z - 1}y^z\ln y.
 		\end{gather*}
 		
 		Получили, что $u''_{xz}=u''_{zx}$.
@@ -118,8 +120,8 @@
 		D\subset\R^n$, дифференцируема в некоторой окрестности внутренней 
 		точки $x_0 = \left(x_{01}, x_{02}, \dots, x_{0n}\right)\in D$ и имеет 
 		непрерывные смешанные производные $u''_{x_ix_j}(x_0)$, 
-		$u''_{x_jx_i}(x_0)$, $k\ne j$, $k, j = \overline{1, n}$, то тогда, 
-		в силу непрерывности этих производных в окрестности $x_0$ выполняется
+		$u''_{x_jx_i}(x_0)$,\ \ $k\ne j$,\ \ $k, j = \overline{1, n}$, то тогда, 
+		в силу непрерывности этих производных в окрестности $x_0$, выполняется
 		\begin{equation}
 			u''_{x_ix_j} = u''_{x_jx_i}
 			\label{11:diff}
@@ -145,7 +147,7 @@
 		При указанных выше предположениях \eqref{12:diff} корректно определено 
 		для достаточно малых $\D x$, $\D y$.
 		
-		Для ффиксированных допустимых $\D y$ для функции $g(t)=f(t, b + \D y) - 
+		Для фиксированных допустимых $\D y$ для функции $g(t)=f(t, b + \D y) - 
 		f(t, b)$
 		в точке $t=a$ на приращении $\D x$ имеем
 		\[\D g(a)=g(a + \D x) - g(a) = f(a + \D x, b + \D y) - f(a + \D x, b) - 
@@ -180,18 +182,21 @@
 		Применяя снова формулу Лагранжа конечных приращений для Ф1П в точке 
 		$\tau = b$ на приращении $\D y$ имеем 
 		$\exists \Theta_2\in\left]0;1\right[$ такое, что
-		\[\D h(b) = h'_\tau\left(b + \Theta_2\D y\right)\D y = 
-		f''_{xy}\left(a + \Theta_1\D x, b + \Theta_2\D y\right)\D y\implies\]
 		\begin{equation}
+		\begin{array}{c}
+            \D h(b) = h'_\tau\left(b + \Theta_2\D y\right)\D y = 
+            f''_{xy}\left(a + \Theta_1\D x, b + \Theta_2\D y\right)\D 
+            y\implies \\
 			\implies F\overset{\eqref{15:diff}}{=} f''_{xy}\left(A\right)\D x
 			\D y,
 			\label{16:diff}
+		\end{array}
 		\end{equation}
 		\begin{equation}
 			A = \left(a + \Theta_1\D x, b + \Theta_2\D y\right)
 			\underset{\substack{\D x\rightarrow 0\\
-			\D y\rightarrow 0}}{\overset{\Theta_1,\Theta_2\ 
-			\text{огран.}}{\longrightarrow}} M_0\left(a, b\right)
+			\D y\rightarrow 0}}{\overset{\Theta_1, \Theta_2 = O(1)}
+			{\longrightarrow}} M_0\left(a, b\right)
 			\label{17:diff}
 		\end{equation}
 		
@@ -204,8 +209,8 @@
 		\begin{equation}
 			B = \left(a + \Theta_3\D x, b + \Theta_4\D y\right)
 			\underset{\substack{\D x\rightarrow 0\\
-			\D y\rightarrow 0}}{\overset{\Theta_3,\Theta_4\ 
-			\text{огран.}}{\longrightarrow}} M_0\left(a, b\right)
+			\D y\rightarrow 0}}{\overset{\Theta_3,\Theta_4 = O(1)}
+			{\longrightarrow}} M_0\left(a, b\right)
 			\label{19:diff}
 		\end{equation}
 		
@@ -224,7 +229,7 @@
 		\lim_{
 			\substack{\D x\rightarrow0\\
 					\D y\rightarrow0}
-				}f''_{yx}\left(M_0\right).\]
+				}f''_{yx}\left(B\right).\]
 	\end{proof}
 
 	\begin{remark}
@@ -241,12 +246,12 @@
 		общего случая всех смешанных производных. Например, для трижды 
 		непрерывно дифференцируемой Ф3П $u=f\left(x, y, z\right)$ в точке 
 		$M_0\left(x_0, y_0, z_0\right)$ имеем
-		\[f''_{x^2y}\left(M_0\right) = f''_{yx^2}\left(M_0\right) = 
-		f''_{xyx}\left(M_0\right)\ \text{и т.д.}\]
+		$f''_{x^2y}\left(M_0\right) = f''_{yx^2}\left(M_0\right) = 
+		f''_{xyx}\left(M_0\right)$ и т.д.
 	\end{remark}
 
-	Чтобы определить дифференциалы высших порядков ФНП рассмотрим для 
-	дифференцируемой функции $u=f\left(x\right)$, $x\in D\subset \R^n$, 
+	Чтобы определить дифференциалы высших порядков ФНП, рассмотрим для 
+	дифференцируемой функции $u=f\left(x\right)$, $x\in D\subset \R^n$ 
 	её первый дифференциал
 	\begin{equation}
 		F = df\left(x\right) = \sum_{j = 1}^nf'_{x_j}\left(x\right)dx_j,
