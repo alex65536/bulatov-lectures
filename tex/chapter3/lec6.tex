@@ -318,11 +318,11 @@
 	\end{gather*}
 	
 	В результате для дважды непрерывно дифференцируемой ФПН получаем
-	\[d^u = \sum_{i, j = 1}^n\pderiv{^2u}{x_i\partial x_j}dx_idx_j.\]
+	\[d^2u = \sum_{i, j = 1}^n\pderiv{^2u}{x_i\partial x_j}dx_idx_j.\]
 	
-	Дифференциалы более высоких порядков определяются реккурентным образом 
-	$d^pf(x) = f\left(d^{p - 1}f(x)\right)$, $p\in\N$, при этом 
-	$d^0f(x) = f(x)$. В данном случае опять для $p$-раз непрерывно 
+	Дифференциалы более высоких порядков определяются рекуррентным образом 
+	$d^pf(x) = d\left(d^{p - 1}f(x)\right)$, $p\in\N$, при этом 
+	$d^0f(x) = f(x)$. В данном случае опять для $p$ раз непрерывно 
 	дифференцируемой ФНП имеем следующую операторную формулу
 	\begin{equation}
 		d^pf(x) = \left(\pderiv{\left(.\right)}{x_1}dx_1 + \dots + 
@@ -336,7 +336,8 @@
 		\substack{
 			\left(i_1, i_2, \dots, i_n\right):\\
 			i_1 + i_2 + \dots + i_n = p
-	}}\frac{p!}{i_1!i_2!\dots i_n!}\cdot a_1^{i_1}a_2^{i_2}\dots a_n^{i_n},\]
+	}}\frac{p!}{i_1!\cdot i_2!\cdot \dots i_n!}\cdot a_1^{i_1}a_2^{i_2}
+	\dots a_n^{i_n},\]
 	где суммирование проводится по всевозможным индексам $\forall i_k\ge 0$, 
-	$k = \overline{1, n}$ таким, что $\sum_{k = 1}^ni_k = p$.
+	$k = \overline{1, n}$ таким, что $\sum\limits_{k = 1}^ni_k = p$.
 \end{document}
