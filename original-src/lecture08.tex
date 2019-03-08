@@ -1,0 +1,626 @@
+\section{Криволинейные интегралы (КРИ).}
+
+\subsection{Гладкие и кусочно-гладкие кривые в $ \RN $.}
+
+\begin{definition}
+	\important{Линия (кривая)} в $ \RN $ - произвольное отображение
+\end{definition} 
+\begin{equation}
+\label{81}
+f: [\alpha, \beta] \to \RN,
+\end{equation}
+ставящее в соответствие для $\forall t \in [\alpha, \beta]$ единственную точку (образ) $M = f(t) \in \RN$, где $f(t) = (f_1(t), f_2(t), \ldots, f_n(t))$ и $\forall f_k(t)$ - Ф1П на $[\alpha, \beta], k = \overline{1,n}$. Для $\forall M = (x_1, x_2, \ldots, x_n) \in l$ в силу \eqref{81} имеем
+\begin{equation}
+\label{82}
+\begin{cases}
+x_k = f_k(t), k = \overline{1,n},\\
+t \in [\alpha, \beta].
+\end{cases}
+\end{equation}
+\eqref{82} - \important{параметрическое представление} кривой $l \subset \RN$, соответствующей отрезку $[\alpha, \beta]$ в \eqref{81}. В общем случае одна и та же кривая $l \subset \RN$ как образ отображения $f$ может иметь различные параметрические представления вида \eqref{82}.
+
+Для $n = 2$ в $Oxy$ для единичной окружности $x^2 + y^2 = 1, t \in [0, 2\pi]$ мы можем использовать как параметрическое представление 
+$\begin{cases}
+x = cos t,\\
+y = sin t.
+\end{cases}$, так и параметрическое представление 
+$\begin{cases}
+x = sin t,\\
+y = cos t.
+\end{cases}$, в результате которых образ - одна и та же кривая, где точка $M_\alpha = f(\alpha) \in l$ - \important{начало} кривой $l$ в $\RN$, а точка $ M_\beta = f(\beta) \in l$ - \important{конец}. При необходимости для краткости буде использовать запись $\arc{M_\alpha M_\beta}$.
+% nice
+
+\begin{definition}
+	Кривая $l \subset \RN$, на которой указано направление, т.е. порядок следования точек, называется \important{ориентированной}. Часть кривой $l$, ориентированной от точки $A$ до точки $B \in l$ будем называть \important{путём $\overrightarrow{AB}$}. В частности, для пути $l^{+} = \overrightarrow{M_\alpha M_\beta}$ следования точек на $l$ рассмотрим от начала $M_\alpha$ до её конца $M_\beta$, а для пути $l^{-} = \overrightarrow{M_\beta M_\alpha}$ - наоборот. 
+\end{definition}
+
+\begin{definition}
+	Кривая $l \subset \RN$ без самопересечений называется \important{простой}.
+\end{definition}	
+
+\begin{definition}
+	Простая кривая $l \subset \RN$, у которой начало совпадает с её концом, называется \important{замкнутой}.	
+\end{definition}	
+В дальнейшем ориентированную простую замкнутую кривую в $\RN$ будем называть \important{контуром}.
+
+Если у кривой $l \subset \RN$ существует параметрическое представление \eqref{82}, у которого $\forall f_k(t), k =$ \\ $= \overline{1,n}$, непрерывно дифференцируемы на $[\alpha, \beta]$, причём на концах подразумевается соответствующая односторонняя дифференцируемость, то эта кривая называется \important{гладкой}.
+
+Для гладкой кривой $l \subset \RN$ точка $ M_0 = f(t_0)$ называется \important{особой}, если $\forall f_k^{'} (t_0) = 0, k = \overline{1,n}$.
+
+Кривая $l \subset \RN$ с параметрическим представлением \eqref{82} называется $\important{кусочно-гладкой}$, если существует такое разбиение $P = \{ t_k \}, k = \overline{0,m}$ отрезка $[\alpha, \beta]$ на конечное число частей точками $\alpha = t_0 < t_1 < \ldots < t_m = \beta$ такое, что:
+\begin{enumerate}
+	\item $\forall f_k(t)$ непрерывно диффеернцируема на $] t_{i-1}, t_i[, i = \overline{1,m}$, причём в любой из этих точек $t_j, j = \overline{1, m}$ не является особой для $l \subset \RN$ и $\sum\limits_{k=1}^{n} \left(f_k^{'} (t)\right)^2 > 0$.
+	\item Предполагается, что в этих точках $t_j \in [\alpha, \beta], j = \overline{1,m}$ и у $\forall f_k(t)$ существует конечная односторонняя производная.
+\end{enumerate}
+По той же схеме, как для плоскости и пространственных линий, определяются спрямляемые кривые $l \subset \RN$ и показывается, что $\forall l \subset \RN$ спрямляема, и её длина в соответствии с \eqref{82} вычисляется по формуле
+\begin{equation}
+\label{83}
+L = \text{Длина } l = \dint\limits_{\alpha}^{\beta} \sqrt{\sum_{k=1}^{m} \left(f_k^{'} (t)\right)^2 } dt.
+\end{equation}
+
+Если рассмотреть длину $S = S(t)$ части кусочно-гладкой кривой $l \subset \RN$ на отрезке $[\alpha, \beta]$, где $t \in [\alpha, \beta]$, тогда в соответствии с \eqref{83} имеем
+\begin{equation}
+\label{84}
+S = S(t) = \dint\limits_{\alpha}^{\beta} \sqrt{\sum_{k=1}^{m} \left(f_k^{'} (t)^2\right) } dt.
+\end{equation}
+
+Отсюда для $\forall t \in [\alpha, \beta]$ по теореме Барроу $\exists S'(t) = \dint\limits_{\alpha}^{\beta} \sqrt{\sum_{k=1}^{m} \left(f_k^{'} (t)^2\right) } dt$. Значит, $S = S(t)$ монотонно возрастает на $[\alpha, \beta]$ от начального значения $S_k(\alpha) = 0$ до конечного $S_k(\beta) = L$. Поэтому уравнение $S(t) = S$ для $\forall S \in [0, 1]$ имеет единственное решение $t = t(S) \in [\alpha, \beta]$.
+
+Используя это решение в \eqref{82} приходим к новой параметризации рассматриваемой кривой 
+\begin{equation}
+\label{85}
+\begin{cases}
+x_k = f_k(t(S)) = g_k(S), k = \overline{1, n}, \\
+S \in [0, L].
+\end{cases}
+\end{equation}
+в которой параметр - длина $S$ соответствующей дуги кривой $l \subset \RN$.
+
+\begin{definition}
+	Параметр $S \in [0, L]$ называется \important{натуральным параметром} для \eqref{81}, а сама параметризация \eqref{85} - \important{натуральным} представлением для рассматриваемой кривой $l \subset \RN$. 
+\end{definition}
+
+Можно показать, что для любой кусочно-гладкой кривой $l \subset \RN$ \important{любая её параметризация вида \eqref{82}} на $[\alpha, \beta] \in \RN$ приводит к одному и тому же \important{натуральному представлению} \eqref{85} на $[\alpha, \beta]$.
+
+\begin{example}
+	Рассмотрим $n = 2$ в плоскости $Oxy$, тогда для двух различных параметризаций единичной окружности имеем:
+	\begin{itemize}
+		\item если $\begin{cases}
+		x = cost, \\
+		y = sint.
+		\end{cases}$, где $t \in [-\pi, \pi]$, то $S = \dint\limits_{-\pi}^{\pi} \sqrt{(-sin \pi)^2 + (cos \pi)^2} dt = t + \pi \in [0, 2 \pi]$. Отсюда следует, что $t = S - \pi$, и, значит, натуральное представление в этом случае будет следующим:
+		$\begin{cases}
+		x = cos (S - \pi) = - cos S, \\
+		y = sin (S - \pi) 	= - sin S, \\
+		S \in [0, 2 \pi].
+		\end{cases}$
+		\item аналогично в случае параметризации $\begin{cases}
+		x = sint, \\
+		y = cost.
+		\end{cases}$, где $t \in [-\pi, \pi], S = t + \pi \Rightarrow t = S - \pi$, и, поэтому, приходим к тому же натуральному представлению, что и в первом случае.
+	\end{itemize}
+\end{example}
+\begin{exercise}
+	Найти натуральное представление единичной окружности $x^2 + y^2 = 1$ в $Oxy$ для \eqref{81} в случае отрезка $[0, 2 \pi]$. 
+\end{exercise}
+
+Общепринято, в случае использования натуральной параметризации $S$, т.е. параметризации \eqref{85}, для производных используется обозначение $g_n^{'} (S) = j_k(S), k = \overline{1,n}$.
+
+\begin{lemma}
+	В случае натуральной параметризации \eqref{85} для кусочно-гладкой кривой $l \subset \RN$ имеем:
+	\begin{equation}
+	\label{86}
+	\sum\limits_{k=1}^{n} (j_k(S))^2 = 1
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	Учитывая, что для \eqref{84} имеем: $dS^2 = (S'(t) dt)^2 = \sum\limits_{k=1}^{n} (f_k(t) dt)^2 = \sum\limits_{k=1}^{n} (d f_k (t))^2$. Тогда в силу инвариантности формы первого дифференциала имеем: $dS^2 = \sum\limits_{k=1}^{n} (d j_k (S))^2 =$ \\ $= \sum\limits_{k=1}^{n} (j_k(S) dS)^2$, что после сокращения на $dS^2$ даёт \eqref{86}. 
+\end{proof}
+
+\subsection{Криволинейные интегралы 1-ого рода (типа) (КРИ-1).}
+Будем считать, что кусочно-гладкая кривая $l \subset \RN$ задана своим натуральным представлением \eqref{85}. Рассмотрим \important{произвольное разбиение} кривой $l$ на конечное число дуг последовательными точками $M_k, k = \overline{0,m}$, где $M_0 = M_{\alpha}$ - начало $l$, $M_m = M_{\beta}$ - конец $l$.
+
+Для $n = 2$ выбирая на 	каждой дуге $ l_k  \; = \; \arc{M_{k-1} M_k} \; \subset l$ произвольным образом отмеченную точку $ N_k \in l_k, k = \overline{1, m} $. Для дуги $ F(x) $, определённой на $ l $, составим соответствующую интегральную сумму:
+\begin{equation}
+\label{87}
+\sigma = \sum_{k=1}^{n} F(N_k) \Delta S_k,
+\end{equation}
+где $ \Delta S_k $ - длина $ l_k, k = \overline{1, m} $. Полагая $ d = \max\limits_{ k = \overline{1, m}} \set{\Delta S_k} $, рассмотрим
+\begin{equation}
+\label{88}
+I = \lim\limits_{d \to 0} \sigma.
+\end{equation}
+
+Число $ I \in \mathbb{R} $ называется \important{значением криволинейного интеграла 1-ого рода (КРИ-1)}, если
+\begin{equation*}
+\text{для } \forall \; \varepsilon > 0 \; \exists \; \delta > 0
+\text{ такое, что } \forall \; d \leq \delta \Rightarrow \abs{\sigma - I} \leq \varepsilon.
+\end{equation*}
+В этом случае пишут:
+\begin{equation}
+\label{89-kri1}
+I = \lim\limits_{d \to 0} \sum_{k=1}^{n} F(N_k) \Delta S_k = \intl_l F(x) \; dS.
+\end{equation}
+
+В случае представления \eqref{85}, после подстановки в \eqref{89-kri1}, приходим к ОИ:
+\begin{equation}
+\intl_l F(x) \; dS =
+\begin{sqcases}
+x = g(S)  \overset{\eqref{85}}{=}
+(g_1(S), \ldots g_m (S))
+\end{sqcases}
+= \intl_0^L F(g(S)) \; dS,
+\end{equation}
+в предположении, что $ F $ непрерывна на $ l \subset \RN $.
+
+\begin{theorem}[о вычислении КРИ-1 при общей параметризации кривой]
+	Если F(x) непрерывна на кусочно-гладкой кривой $ l \subset \RN $, то в случае общей параметризации \eqref{82}, при условии соответствующей гладкости используемых функций $ f_k(t), k = \overline{1, m}, t \in [\alpha, \beta] $, имеем:
+	\begin{equation}
+	\intl_l F(x) \; dS =
+	\begin{sqcases}
+	x = x(t) = (f_1(t), \ldots, f_n(t)) \\
+	dS = \sqrt{\sum\limits_{k=1}^n (f_k' (t))^2 } \; dt \\
+	t \in [\alpha, \beta]
+	\end{sqcases}
+	= \intl_{\alpha}^{\beta} F(f(t)) \sqrt{\sum_{k=1}^n (f_k' (t))^2 } \; dt.
+	\end{equation}
+\end{theorem}
+
+\begin{proof}$  $
+	
+	Рассмотрим произвольное разбиение $ \; P = \{t_k\}, k = \overline{1, m}, $ точками на отрезке $ [\alpha, \beta] $ такое, что 
+	$ \alpha = t_0 < t_1 < \ldots < t_{k-1} < t_{k} < t_{k+1} < \ldots < t_{m-1} < t_m = \beta $.     
+	В силу \eqref{82} разбиение $ P $ порождает соответствующее разбиение кривой 
+	$ l = \arc{M_0 M_1 \ldots M_{k-1} M_{k} M_{k+1} \ldots M_{m-1} M_m} $ на
+	последовательные дуги $ \arc{ M_{k-1} M_{k}} \subset l, k = \overline{1, m}  $ точками $ M_k = f(t_k) \in l , k = \overline{0, m} $. 
+	Тогда:
+	\begin{equation}
+	\label{812}
+	\Delta S_k = \text{ Длина $ l_k $ } = \dintl_{ t_{k-1} }^{t_k}
+	\sqrt{\sum\limits_{i=1}^n (f_i' (\tau))^2 } \;\; d \tau.
+	\end{equation}
+	
+	Из непрерывности подынтегральной функции в \eqref{812}, в силу теоремы о среднем для ОИ, получаем, что
+	\begin{equation}
+	\label{813}
+	\exists \; \tau_k \in ]t_{k-1}, t_k[, k = \overline{1, m}
+	\text{ такие, что: }
+	\Delta S_k = \sqrt{\sum\limits_{i=1}^n (f_i' (\tau))^2 } \;\; \Delta t_k,
+	\end{equation}
+	где $ \Delta t_k = t_k - t_{k-1}, \;\; k = \overline{1, m} $. В соответствии с этим:
+	\begin{enumerate}
+		\item для отрезка $ [\alpha, \beta] $ получаем специальное множество отмеченных точек $ Q = \set{\tau_k} $, \\
+		где $ \tau_k \in [t_{k-1}, t_k],  k = \overline{1, m} $.
+		\item получаем соответствующее множество промежуточных точек $ N_k = f(t_k) \subset l_k,  k = \overline{1, m} $.        
+	\end{enumerate}
+	Пусть $ \lambda = \diam P = \underset{1 \leqslant k \leqslant m}{max} \Delta t_k \to 0,  k = \overline{1, m} $. Тогда нетрудно видеть, что  $ {d = \underset{1 \leqslant k \leqslant m}{max} \Delta S_k \to 0},$ 
+	$  k = \overline{1, m} $.
+	Поэтому для интегральной суммы \eqref{87} для рассматриваемого КРИ-1:
+	\begin{equation}
+	\label{814}
+	\sigma = \sum_{k=1}^{n} F(f(\tau_k)) \Delta S_k \overset{\eqref{813}}{=}
+	\sum_{k=1}^{n} P(f(\tau_k)) \sqrt{\sum\limits_{i=1}^n (f_i' (\tau_k))^2 } \;\; \Delta t_k,
+	\end{equation}
+	что соответствует специальной интегральной сумме разбиения $ (P, Q) $ отрезка $ [\alpha, \beta] $ для подынтегральной функции правой части \eqref{813}. Отсюда, учитывая что $ \lambda \to 0 \Leftrightarrow d \to 0 $, имеем:
+	\begin{equation*}
+	I = \dintl_l F(x) dS \overset{\eqref{87}}{=} \lim\limits_{d \to 0} \sigma 
+	\overset{\eqref{814}}{=} \lim\limits_{\lambda \to 0} \sum_{k=1}^{m}
+	F(f(\tau_k)) \sqrt{\sum\limits_{i=1}^n (f_i' (\tau_k))^2 } \;\; \Delta t_k
+	= \intl_{\alpha}^{\beta} F(f(x)) \sqrt{\sum_{k=1}^n (f_k' (x))^2 } \; dx.
+	\end{equation*}
+\end{proof}
+
+\begin{notes}
+	\item В дальнейшем по аналогии с ОИ множество функций, для которых существует КРИ-1 на кусочно-гладкой прямой $ l \subset \RN $ будем обозначать ${R} (l) $, а множество функций, непрерывных на $ l $, будем обозначать $ {C}(l) $.
+	
+	Исходя из определения и доказательства теоремы, имеем следующие свойства КРИ-1, аналогичные свойствам $ n-$кратного интеграла:
+	\begin{enumerate}
+		\item \textbf{Линейность}. Если $f_1, f_2 \in R(l)$, то для $\forall \lambda_1, \lambda_2 \Rightarrow \dintl_l (\lambda_1 f_1 + \lambda_2 f_2) ds = \lambda_1 \dintl_l f_1 ds +$ \\ $ + \lambda_2 \dintl_l f_2 ds$. По методу математической индукции данное свойство обобщается на любое конечное количество слагаемых.
+		
+		\item \textbf{Аддитивность}. Пусть $F \in C(l)$. Если для $l = \arc{AB} = l_1 \cup l_2$, где $\arc{AB}$ - кусочно-гладкий контур, а $l_1 \cup l_2$ - множество кусочно-гладкий объединённых контуров $l_1 = \arc{AC}, l_2 = \arc{CB}$, то тогда: $\dintl_{l_1 \cup l_2} F ds = \dintl_{l_1} F ds + \dintl_{l_2} F ds$. Здесь $l_1$ и $l_2$ состыковываются в одной точке $C$.
+		
+		\item \textbf{Монотонность}. Если $F_1, F_2 \in R(l)$ и для $\forall x \in l: F_1(x) \leqslant F_2(x)$, то $\dintl_l F_1(x) ds \leqslant$ $\leqslant \dintl_l F_2 (x) ds$. В частности, если для $\forall x \in l \Rightarrow F(x) \geqslant 0$, то если $F(x) \in R(l)$, получаем неотрицательность КРИ-1: $\dintl_l F(x) ds \geqslant 0$.
+		
+		\item \textbf{Основная оценка}. Пусть $F \in R(l)$ и  для $\forall x \in l \Rightarrow m \leqslant F(x) \leqslant M, m, M \in \mathbb{R}$. Тогда $m \cdot L \leqslant \dintl F ds \leqslant M \cdot L$, где $L$ - длина $l$. В частности, для $F \in R(l) \Rightarrow \abs{\dintl_l F ds} \leqslant$ $\leqslant \dintl_l |F| ds$. В более общем случае, когда $F \in C(l)$, а $G \in R(l)$, и для $\forall x \in l \Rightarrow G(x)$ сохраняет, то $\dintl_l G(x) ds \leqslant \dintl_l F(x) G(x) ds \leqslant \dintl_l G(x) ds$.
+		
+		\item \textbf{Теорема о среднем}. Пусть $F \in C(l)$, а $G \in R(l)$, тогда $\exists x_0 \in l$ такое, что $\dintl_l F(x)G(x)dx = F(x_0) \dintl_l G(x)dx$.
+	\end{enumerate}
+	
+	\item По аналогии с $ n-$кратными интегралами, устанавливается следующий геометрический смысл КРИ-1:
+	
+	Если $ l \subset \RN $ является кусочно-гладкой кривой, то $ L = \text{длина } l = \dintl_l dS $.
+	
+	Считая, что кусочно-гладкая кривая $ l \subset \RN $ является материальной линией, для которой в каждой точке из $l$ известна $\rho (x), \forall \; x \in l$ - плотность, которая является непрерывной ФНП на $l$, то тогда $ M_0 = \dint_l \rho d S $ соответствует массе всей кривой $l$. Кроме этого механического смысла КРИ-1 использует статические моменты относительно соответствующей координаты $S_k = \dintl_l x_k \rho ds, k = \overline{1,n}$, относительно них определён центр тяжести $C_{c_1, c_2, \ldots, c_n}$ материальной кривой $l$, где $c_k = \dfrac{S_k}{m_0}, k = \overline{1,n}$. 
+\end{notes}
+\subsection{КРИ-1 на плоскости $\mathbb{R}^2$ и в пространстве $\mathbb{R}^3$.}
+Рассмотрим $\mathbb{R}^2$ с ПДСК $Oxy$. Пусть на плоскости кривая $l$ задана непрерывной Ф2П $u = u(x,y), (x,y) \in \mathbb{R}^2$. Если $l$ - кусочно-гладкая кривая и имеет соответствующую параметризацию $\begin{cases}
+x = x(t), \\ y = y(t).\end{cases}$, где  $t \in [\alpha, \beta]$, то тогда в силу предыдущей теоремы имеем: $ $
+\begin{equation}
+\label{815}
+\dintl_{l \in \mathbb{R}^2} u(x,y) ds = [ds = \sqrt{(x'(t))^2 + y'(t))^2} dt] = \dintl_{\alpha}^{\beta} u(x(t), y(t)) = \sqrt{(x'(t))^2 + y'(t))^2} dt,
+\end{equation}
+В частности, для кусочно-гладкой плоской линии $l$, заданной явно уравнением $y = h(x), x \in$ \\ $\in [a, b]$. В случае, когда $h$ кусочно непрерывно дифференцируема  и использует естественную параметризацию $\begin{cases}
+x = t, \\ y = h(t).\end{cases}$, где $a \leqslant t \leqslant b$, в случае \eqref{814} имеем:
+\begin{equation}
+\label{816}
+\dintl_l u(x,y) ds = [ds = \sqrt{1 + (h'(x))^2} dx] =\dintl_a^b u(x, h(x)) \sqrt{1 + (h'(x))^2} dx.
+\end{equation}
+Аналогично, в случае полярно заданной $r = r(\phi), \phi_1 \leqslant \phi \leqslant \phi_2$, где $r(\phi)$ кусочно непрерывно дифференцируемая функция, $\phi \in [\phi_1, \phi_2]$. Используя связь $\begin{cases} x = r cos \phi, \\ y = r sin \phi. \end{cases}$, в силу того, что $ds = \sqrt{(x'(\phi))^2 + y'(\phi))^2} d \phi = \sqrt{r^2 (\phi) + (r' (\phi))^2}$.
+
+На основании \eqref{815} получаем:
+\begin{equation}
+\label{817}
+\dintl_l u(x,y) ds = \dintl_{\phi_1}^{\phi_2} \phi (r(\phi) \; cos \phi \; r(\phi) \; sin \phi) \sqrt{r^2(\phi) + (r'(\phi))^2} d \phi.
+\end{equation}
+%TODO примеры
+Рассмотрим случай $\mathbb{R}^3$, снабжённая ПДСК $Oxyz$. Если на кусочно-гладкой пространственной кривой $l \subset R\mathbb{R}^3$, заданной соответственно параметризацией: $\begin{cases}
+x = x(t), \\ y = y(t), \\ z = z(t). \end{cases}$, где $\ \alpha \leqslant t \leqslant$ \\ $\leqslant \beta$, определённой Ф3П $u = u(x,y,z)$, то тогда имеем:
+\begin{equation*}
+\dintl_l u(x,y,z) ds = [ds = \sqrt{(x'(t))^2 + (y'(t))^2 + (z'(t))^2} dt] =
+\end{equation*}
+\begin{equation}
+\label{818}
+= \dintl_\alpha^\beta u\left(x(t), y(t), z(t)\right) \sqrt{(x'(t))^2 + (y'(t))^2 + (z'(t))^2} dt.
+\end{equation}
+
+На практике, в случае, когда кусочно-гладкая кривая $l$ задана как пересечение двух поверхностей в $\mathbb{R}^3$, следует вначале параметризовать $l$, а затем воспользоваться \eqref{818}.
+%TODO примеры
+
+\subsection{Криволинейные интегралы 2-ого рода (типа) (КРИ-2).}
+В $D \subset \RN$ рассмотрим кусочно-гладкую кривую $l \subset \RN$, заданную параметризацией
+\begin{equation}
+\label{819}
+l = x(t) = \left(x_1(t), x_2(t), \ldots, x_n(t)\right),
+\end{equation}
+где $x_k(t), k = \overline{1,n}$, - кусочно непрерывно дифференцируемая функция на интервале с концами $\alpha$ и $\beta$, причём может быть, что как $\alpha < \beta$, так и $\alpha > \beta$. В соответствии с этим ориентированную кривую $l$ от начала $A = x(\alpha)$ до конца $B = x(\beta)$ считаем положительной, и для обозначения этого используем запись $l = l^{+} = \arc{AB}$. Противоположно ориентированную кривую $l$ от $B$ к $A$ будем записывать в виде $l = l^{-} = \arc{BA}$ и считать отрицательно ориентированной. Когда ориентация на $l$ фиксирована (задана) вместо $l^{+}$ и $l^{-}$ будем писать $l$. Если на ориентированной гладко-кусочной кривой $l \subset \RN$ заданы функции $F_k(x), k = \overline{1,n}$, для которых в соответствии с \eqref{819} есть сложная ФНП $F(x(t)) = (F_1(x(t)), F_2(x(t)), \ldots, F_n(x(t)))$ - непрерывна при $t \in [\alpha,\beta]$, то тогда интегральное выражение вида
+\begin{equation}
+\label{820}
+I_k = \dintl_{\alpha}^{\beta} F_1(x(t)) x_k^{'}(t) dt, k = \overline{1,n},
+\end{equation}
+будем называть КРИ-2 по $l = l^{+} = \arc{AB}$ и обозначать
+
+\begin{equation}
+\label{821}
+I_k = \dintl_{l^{+}} F_k (x) dx_k, k = \overline{1,n}.
+\end{equation}
+Используя \eqref{821}, будем рассматривать также общий КРИ-2.
+\begin{equation}
+\label{822}
+I = \sum_{k=1}^{n} I_k = \sum_{k=1}^{n} \dintl_{l} F_k (x) dx_k.
+\end{equation}
+Из определения \eqref{820}, \eqref{821}, \eqref{822} в силу соответствующих свойств ОИ получаем следующие \important{основные свойства КРИ-2}: 
+\begin{enumerate}
+	\item \textbf{Зависимость от ориентации кривой}. $I = \sum\limits_{k=1}^{n} \dintl_{l^{+}} F_k(x) dx_k = \sum_{k=1}^{n} \dintl_{\alpha}^{\beta} F_k(x(t)) x_k^{'}(t) dt = - \sum_{k=1}^{n} \dintl_{\alpha}^{\beta} F_k (x(t)) x_k^{'}(t) dt = \sum_{k=1}^{n} \dintl_{l^{-}} F_k(x) dx_k$, т.е. при изменении ориентации на $l$ значение КРИ-2 меняется на противоположное. 
+	\item \textbf{Линейность}. При существовании КРИ-2 для $\forall \lambda, \mu \in \mathbb{R} \Rightarrow \\	
+	\lambda \sum\limits_{k=1}^{n} \dintl_l F_k(x) dx_k + \mu \lambda \sum\limits_{k=1}^{n} \dintl_l G_k(x) dx_k = \sum\limits_{k=1}^{n} \left(\lambda F_k(x) + \mu G_k(x)\right)dx_k$.
+	\item \textbf{Аддитивность}. Пусть $l^+ = \arc{AB} = l_1^+ \cup l_2^+$, где $l_1^+ = \arc{AC}, l_2^+ = \arc{CB}, C \in l$, т.е. на частях $l_1, l_2$ рассматриваемой кривой $l$ ориентация та же, что и у $l$. Тогда в случае существования КРИ-2 имеем:
+	$\sum\limits_{k=1}^{n} \dintl_{{l_1^{+} \cup l_2^{+}}} F_k(x) dx_k = \sum_{k=1}^{n} \left( \dintl_{l_1^{+}} F_k(x) dx_k + \dintl_{l_2^{+}} F_k(x) dx_k \right)$.
+	
+	Используя интегральные суммы для соответствующих ОИ, можно показать, что, если в области $D \subset \RN$ задано некоторое силовое поле $\overrightarrow{F} = (f_1, f_2, \ldots, f_n)$, то для кусочно-гладкой ориентированной кривой $l$ из $D$ значение \eqref{822} соответствует работе этой силы $\overrightarrow{F}$ по перемещению материальной точки единичной массы по $l$ в направлении от $A$ до $B$. В случае плоскости $\mathbb{R}^2$ с ПДСК $Oxy$ для \eqref{822} будем использовать запись
+	\begin{equation}
+	\label{823}
+	I = \dint_l P(x,y)dx + Q(x,y)dy ,
+	\end{equation}
+	а для $\mathbb{R}^3$ с ПДСК $Oxyz$ будем писать
+	\begin{equation}
+	\label{824}
+	I = \dintl_l P(x,y,z)dx + Q(x,y,z)dy + R(x,y,z)dz,
+	\end{equation}
+	где подынтегральные функции \eqref{823}, \eqref{824} считаются для простоты непрерывными на $l$, а саму $l$ берут соответствующей ориентации.
+\end{enumerate}
+
+Для установления \important{связи между КРИ-2 и КРИ-1} для простоты ограничимся случаем $\mathbb{R}^2$ с ПДСК $Oxy$, т.е. интегрального вида \eqref{823}. Пусть кусочно-гладкая кривая $l \subset \mathbb{R}^2$ имеет параметризацию
+$\begin{cases}
+x = x(t),\\ y = y(t).
+\end{cases}$, где $t \in [\alpha, \beta]$, а $x(t), y(t)$ - соответствующие кусочно-дифференцируемые функции. 
+
+Можно показать, что $\overrightarrow{r} = (x'(t), y'(t))$ - касательная к кривой $l$ в рассмотренной точке, а тогда $\overrightarrow{r_0} = \dfrac{\overrightarrow{r}}{|\overrightarrow{r}|}$ будет единичным вектором касательной, т.е. $\overrightarrow{r_0} =  \dfrac{\abs{\overrightarrow{r}}}{|\overrightarrow{r}|} = 1$. Имеем: $cos \phi = \dfrac{x'(t)}{\sqrt{(x'(t))^2 + (y'(t))^2}}, sin \phi = \dfrac{y'(t)}{\sqrt{(x'(t))^2 + (y'(t))^2}}$, где $\phi$ - направляющий угол единичного вектора касательной. 
+
+Используя связь КРИ-1 и ОИ имеем: $\dintl_l \left(P(x(t), y(t)) cos \phi + Q(x(t), y(t) ) sin \phi \right) ds = $
+\begin{equation*}
+\begin{split}
+& = \begin{sqcases}ds = \sqrt{(x'(t))^2 + (y'(t))^2} dt, t \in [\alpha, \beta]\end{sqcases} = \\
+& = \dint\limits_{\alpha}^{\beta} \left(P(x(t), y(t)) \dfrac{x'(t)}{{\sqrt{(x'(t))^2 + (y'(t))^2}}} + Q(x(t), y(t)) \dfrac{y'(t)}{\sqrt{(x'(t))^2 + (y'(t))^2}} \right) \sqrt{(x'(t))^2 + (y'(t))^2} dt = \\
+& = \dint\limits_{\alpha}^{\beta} P(x(t), y(t)) x'(t)dt + Q(x(t), y(t)) y'(t)dt = \dint\limits_{\alpha}^{\beta} P(x(t), y(t)) dx(t) + Q(x(t), y(t)) dy(t) = \\
+& = \dint\limits_l P(x,y) dx + Q(x,y)dy.
+\end{split}
+\end{equation*}
+
+Получаем формулу, связывающую КРИ-2 с КРИ-1, на практике использующуюся в виде:
+\begin{equation}
+\label{825}
+\dintl_l Pdx + Qdy = \dintl_l (P cos \phi + Q cos \psi) ds,
+\end{equation}
+где $\psi = \dfrac{\pi}{2} - \phi$ - угол между вектором касательной и $Oy$ в положительном направлении, $\phi$ - угол между вектором касательной и $Ox$ в положительном направлении. Формула \eqref{825} естественным образом обобщается на случай пространства $\mathbb{R}^3$. 
+
+В этом случае $\dintl_l P(x,y,z)dx + Q(x,y,z)dy + R(x,y,z)dz = $
+\begin{equation}
+\label{826}
+\dint_l \left( P cos \alpha_0 + Q cos \beta_0 + R cos \gamma_0 \right) 	ds,
+\end{equation}
+где $cos \alpha_0, cos \beta_0, cos \gamma_0$ - \important{направляющие косинусы} вектора касательной к $l$ в соответствующей точке, и, значит, $\alpha_0, \beta_0, \gamma_0$ - соответствующие углы, которые образует единичный вектор касательной $\overrightarrow{r_0}$ с $Ox, Oy, Oz$ в положительном направлении.
+
+\subsection{Формула Грина.}
+
+В пространстве $ \mathbb{R}^2 $ с ДПСК $ Oxy $ ограниченную замкнутую плоскую область будем назвать \important{правильной} (выпуклой в направлении некоторой оси), если:
+\begin{enumerate}
+	\item Граница области является кусочно-гладкой кривой;
+	\item Любая прямая, параллельная рассматриваемой оси, пересекает эту границу в не более чем в двух точках.
+\end{enumerate}
+Для таких плоских областей ориентированную границу считают положительной, если при движении против часовой стрелки сама область будет расположена всё время слева.
+
+
+\begin{theorem}[Грина]
+	Пусть у ограниченной замкнутой области $ D \subset \RN $ граница $ l = \partial D $ является положительно-ориентированной кусочно-гладкой плоской кривой. 
+	Если $ D $ состоит из объединения конечного числа правильных связных частей, то в случае, когда в замыкании $ \arc{D} = D \cup l$ 
+	определены непрерывные функции $ P(x, y) $ и $ Q(x, y) $, у которых существуют в $ \arc{D} $ непрерывные производные $ P_y' $ и $ Q_x' $, то справедлива формула Грина:
+	\begin{equation}
+	\label{lect08-eq27-GreenF}
+	\oint\limits_{l = \partial D} \; P\; dx + Q\;dy \;
+	= \iintl_D \left(Q_x' - P_y' \right) \; dx \; dy .
+	\end{equation}
+\end{theorem}
+
+\begin{proof}
+	Пусть рассмотренная ограниченная связная область $D \subset \mathbb{R}^2$ - правильная вдоль $Oy$. Проводя к $D$ крайнюю вертикальную касательную получаем, что точка касания $A$ и $B$ кусочно-гладкая положительно ориентированная кривая $l = \partial D$ разбивается на соответственно кусочно-гладкие положительно и отрицательно ориентированные кривые $l_1, l_2$. В силу правильности $D$ вдоль $Oy$ из $l_1, l_2$ в соответствии с ориентацией можно записать явное уравнение $l_1 : y = h_1(x), l_2: h_2(x)$, где для $l_1$ $x$ меняется от $a$ до $b$, а для $l_2$ - от $b$ до $a$. 
+	
+	Вычислим через повторный интеграл 2И
+	\begin{equation}
+	\label{828}
+	I_1 = \diint\limits_D P'_y dy dx,
+	\end{equation} 
+	имеем $I_1 = \dint\limits_a^b dx \dint\limits_{h_1(x)}^{h_2(x)} P'_y dy = \dint\limits_a^b \begin{sqcases} P(x,y) \end{sqcases}_{h_1(x)}^{h_2(x)} dx = $
+	\begin{equation}
+	\label{829}
+	= - \left( \dint\limits_a^b P(x, h_1(x))dx + \dint\limits_b^a P(x, h_2(x)) dx \right).
+	\end{equation}
+	Нетрудно видеть, что 1-ый интеграл \eqref{829} - результат вычисления через ОИ соответственно КРИ-2 по $l_1,$, а 2-ой - по $l_2$. Значит,
+	\begin{equation}
+	\label{830}
+	I_1 = - \left(  \dintl\limits_{l_1} P(x, y)dx + \dintl\limits_{l_2} P(x, y) dx \right) = - \dintl\limits_{l = \partial D} P dx,
+	\end{equation}
+	В случае, когда $D$ - правильная вдоль $Ox$, рассмотрим 2И
+	\begin{equation}
+	\label{831}
+	I_2 = \diint\limits_D Q_x^{'} dx dy,
+	\end{equation}
+	А после перехода к повторному интегралу аналогично получаем:
+	\begin{equation}
+	\label{832}
+	I_2 = \oint\limits_{l = l_1 \cup l_2} Q dy,
+	\end{equation}
+	В общем случае, когда $D$ - объединение конечного числа правых частей либо вдоль $Ox$, либо вдоль $Oy$, используя аддитивность 2И и КРИ-2, переходят к общей формуле Грина: 
+	
+	$I = \diint\limits_D (Q_x - P_y )dx dy = \diint\limits_D Q'_x dx dy - \dint\limits_D P'_y dx dy = \oint\limits_{l = \partial D} Qdy + Pdx \Leftrightarrow \eqref{lect08-eq27-GreenF}$.
+\end{proof} 
+
+\begin{notes}
+	\item Формула Грина \eqref{lect08-eq27-GreenF} устанавливает связь между КРИ-2 по кусочно-гладкой замкнутой положительно-ориентиованной плоской кривой и соответствующим двойным интегралом по области, ограниченной этой кривой.
+	\item Хотя формула Грина доказана в предположении односвязной области $D$, она естественным образом обобщается на случаи многосвязных областей. Для этого следует провести соответствующие разрезы, соединив внутренние и внешние границы для многосвязной области $D$, а далее воспользоваться линейностью и аддитивностью КРИ-2. $D = D_1 \cup D_2$, т.к. по линиям разреза для $D_1$ и $D_2$ движение противоположно, то сумму соответствующих КРИ-2 по этим разрезам при использовании аддитивности даст $0$. Используя далее формулу Грина для $D_1$ и $D_2$, получаем справедливую формулу и для $D = D_1 \cup D_2$.
+	\item Рассмотрим частные случаи формулы Грина для площади $S = $ площади $D = \diint\limits_D dxdy$, имеем:
+	\begin{itemize}
+		\item $P = 0, Q = x \Rightarrow Q'_x - P'_y = 1$, отсюда $S = \diint\limits_D \left( Q'_x - P'_y \right) dx dy = $ 
+		
+		$= \oint\limits_{\partial D} Pdx + Qdy = \oint\limits_{\partial D} xdy$.
+		\item $P = -y, Q = 0 \Rightarrow Q'_x - P'_y = 1$, отсюда $S = \diint\limits_D \left( Q'_x - P'_y \right) dx dy = - \oint\limits_{\partial D} ydx$.
+		\item $P = -\frac{1}{2} y, Q = \frac{1}{2} x \Rightarrow Q'_x - P'_y = 1$, отсюда $S = \diint\limits_D \left( Q'_x - P'_y \right) dx dy = \frac{1}{2}  \oint\limits_{\partial D} xdy - ydx$.
+	\end{itemize}
+\end{notes}
+
+Считая, что используемая кусочно-гладкая замкнутая кривая $l = \partial D$ задана параметризацией $\begin{cases}
+x = x(t), \\ y = y(t).\end{cases}$, где в соответствии с ориентацией $l$ параметр $t$ меняется  от $\alpha$ до $\beta$, после перехода в полученных формулах к ОИ имеем:
+\begin{equation*}
+	S = \begin{sqcases} dx = x' (t)dt \\ dy = y'(t)dt \end{sqcases} = \dint\limits_\alpha^\beta x(t)y'(t)dt = -\dint\limits_\alpha^\beta y(t)x'(t)dt = \frac{1}{2} \dint\limits_\alpha^\beta \left(x(t)y'(t) - y(t) x'(t) \right)dt,
+\end{equation*}
+что соответствует предыдущим формулам для вычисления плоских фигур через ОИ.
+
+\subsection{Условие независимости КРИ-2 от пути интегрирования.}
+Будем говорить, что КРИ-2 $I = \dint\limits_{l \subset D} Pdx + Qdy$ \important{не зависит} в $D$ от пути интегрирования $l = \arc{AB}$, если для $\forall l_1, l_2 \subset D$ и соединяющих любых точек $A, B \in D$ интегралы $I_1 = \dint\limits_{l_1} Pdx + Qdy, I_2 = \dint\limits_{l_2} Pdx + Qdy$ совпадали для любых кусочно-гладких $l_1, l_2$ и их значений, определённых только началом и концом. В дальнейшем также будем использовать понятие /important{первообразной дифференциального выражения}
+\begin{equation}
+\label{833}
+V = Pdx + Qdy,
+\end{equation}
+Будем говорить, что любая дифференцируемая функция $u = u(x,y), (x,y) \in D \subset \mathbb{R}^2$ - первообразная для дифференциального выражения \eqref{833}, если 
+\begin{equation}
+\label{834}
+\exists \; du = V = Pdx + Qdy.
+\end{equation}
+Учитывая, что в общем случае $du = u'_x dx + u'_y dy$, получаем, что при выполнимости \eqref{834} $\Rightarrow u'_x = P$ и $u'_y = Q$. Отсюда, если $\exists P'_y$ и $\exists Q'_x$, то по теореме о равенстве симметричных производных Ф2П имеем: $P'_y  = (u'_x)'_y = u_{xy}^{''} = (u'_y)'_x = Q'_x$.
+
+В дальнейшем соответственно непрерывно дифференцируемые функции $P = P(x,y)$ и $Q = Q(x,y)$, для которых
+		\begin{equation}
+		\label{835}
+ P'_y = Q'_x
+ \end{equation} будем называть \important{удовлетворяющими условию Эйлера}.
+\begin{theorem}[о независимости КРИ-2 от пути интегрирования]
+	Пусть $P = P(x,y)$ и $Q = Q(x,y)$ непрерывны в односвязной области $D \subset \mathbb{R}^2$ вместе со своими частными производными $P'_y$ и $Q'_x$. Тогда в случае, когда $l = \partial D$ - кусочно-гладкая, выполняются следующие условия:
+	\begin{enumerate}
+		\item Для любого кусочно-гладкого замкнутого контура 
+		\begin{equation}
+		\label{836}
+		\Rightarrow \oint\limits_{l} Pdx + Qdy = 0
+		\end{equation}
+		\item КРИ-2 в $D$ $I = \dint\limits_l Pdx + Qdy$ не зависит от кусочно-гладкого пути интегрирования $l = \arc{AB}$ и определён только началом $A$ и концом $B$.
+		\item Для дифференцируемого выражения $V = Pdx + Qdy$ в $D$ $\exists$ первообразная $u = u(x,y)$, т.е. $du = Pdx + Qdy$.
+		\item Для $\forall (x,y) \in D$ для рассмотренных $P$ и $Q$ выполняется условие Эйлера \eqref{835}.
+	\end{enumerate}
+\end{theorem}
+\begin{proof}
+	Будем проводить по циклической схеме: $1 \Rightarrow 2 \Rightarrow 3 \Rightarrow 4 \Rightarrow 1$.
+	\begin{enumerate}
+		\item $1\Rightarrow2$. Пусть выполняется \eqref{836}, тогда для любых фиксированных точек $A,B \in D,$ выберем 2 любых кусочно-гладких контура $l_1, l_2 \in D$, соединим $A$ и $B$, рассмотрим $l^+ = l_1 \cup l_2$, ограничивая некоторую область $G \subset D$ имеем $l^+ = l_2^{+} \cup l_1^{-}$. Используя аддитивность КРИ-2, в силу \eqref{836}, имеем: $0 = \oint\limits_{l_1^- \cup l_2^+} Pdx + Qdy = \dint\limits_{l_1^-} + \dint\limits_{l_2^+} = -\dint\limits_{l_1^+} + \dint\limits_{l_2^+} \Rightarrow \dint\limits_{l_1^+}  Pdx + Qdy = \dint\limits_{l_2^+} Pdx + Qdy$, что соответствует свойству независимости КРИ-2 от пути интегрирования.
+		\item $2\Rightarrow3$. Рассмотрим $\forall M(x,y) \in D$. Для фиксированной точки $M_0 (x_0, y_0)\in D$ всегда найдётся точка $N(a,b) \in D$, достаточно близкая к $M$, что использованные ниже пути содержатся в $D$. 
+		\begin{enumerate}
+			\item В силу независимости КРИ-2 от пути интегрирования, получаем, что 
+		\begin{equation}
+		\label{37}
+		u = \dint\limits_{(x_0, y_0)}^{(x,y)} P(t, \tau) dt + Q(t, \tau) d\tau,
+		\end{equation}
+		корректна определена в том смысле, что его значение не зависит от путей, соединяющих $M$ и $M_0$.
+		
+		В силу аддитивности КРИ-2 имеем:
+		
+		\begin{equation}
+		\label{838}
+		\begin{split}
+		& u = \dint\limits_{\overrightarrow{M_0 N}} + \dint\limits_{\overrightarrow{NK}}+ \dint\limits_{\overrightarrow{K M}} = \begin{sqcases} N(x_1, y_1) \in D, \overrightarrow{NK}: \tau = y = y_1 = fix, t \in [x_1, x], \\ \overrightarrow{K M}: t = x = fix, \tau \in [y_1, y] \end{sqcases} = \\
+		& = \dint\limits_{\overrightarrow{M_0 N}} + \dint\limits_{x_1}^x 	P(t, y_1) dt + \dint\limits_{y_1}^y 	Q(x, \tau) d \tau \text{ для } \forall fix \; x.
+		\end{split}
+		\end{equation}
+		
+		Используя теорема Барроу для ОИ при $fix \; x$ из \eqref{838} $\Rightarrow $		
+		\begin{equation}
+		\label{839}
+		\exists \; u'_y = \begin{sqcases}\dint\limits_{\overrightarrow{M_0 N}}\end{sqcases}_y^1 + \begin{sqcases}\dint\limits_{x_1}^x P(t, y)\end{sqcases}_y^1 + \begin{sqcases}\dint\limits_{y_1}^y Q(x, \tau)\end{sqcases}_y^1 = Q(x, \tau) |_{\tau = y} = Q(x,y)
+		\end{equation}
+		\item
+		\begin{equation*}		
+		\begin{split}
+			& u = \dint\limits_{\overrightarrow{M_0 N}} + \dint\limits_{\overrightarrow{N L}}+ \dint\limits_{\overrightarrow{LM}}  = \begin{sqcases} \overrightarrow{NL}: \tau = x = fix, t \in [y_1, y], \\ \overrightarrow{LM}: t = y = fix, \tau \in [x_1, x] \end{sqcases} = \\
+			& = \dint\limits_{\overrightarrow{M_0 N}} + \dint\limits_{y_1}^y 	Q(x, \tau) d\tau + \dint\limits_{x_1}^x 	P(t, y) d t \text{ для } \forall fix \; y.
+			\end{split}
+		\end{equation*}
+		\begin{equation}
+		\label{840}
+		\exists \; u'_x = (const)' + \begin{sqcases}\dint\limits_{x_1}^x P(t, y)\end{sqcases}_y^1 = P(t,y) |_{t = x} = P(x,y)
+		\end{equation}
+		\end{enumerate}
+		Значит, $\exists \; du = u'_x dx + u'_y dy = Pdx + Qdy = V$.
+		\item $3\Rightarrow4$. Имеем: $\exists \; u = u(x,y)$ такое, что $du = V = Pdx + Qdy$. Отсюда получаем: $u'_x = P, u'_y = Q$. Учитывая непрерывность $P'_y$ и $Q'_x$ в $D$ имеем: $\exists u^{''}_{xy} = (u'_x)'_y = P'_y$ - непрерывна; $\exists u^{''}_{xy} = (u'_y)'_x = Q'_x$ - непрерывна. Отсюда в силу признака совпадения симметричных производных Ф2П имеем: $P'_y = u^{''}_{xy} = u^{''}_{yx} = Q'_x$, т.е. выполняется условие Эйлера \eqref{835}.
+		\item $4 \Rightarrow 1$. Рассмотрим любой кусочно-гладкий замкнутый контур $l \subset D$, ориентированный и ограниченный некоторой областью $G \subset D$, т.е. $\partial G = l$, в силу формулы Грина получаем:
+		\begin{equation*}
+			\oint\limits_{l \subset D} Pdx + Qdy = \diint\limits_{G} \left( Q'_x - P'_y \right) dx dy = \begin{sqcases} Q'_x = P'_y \end{sqcases} =\diint\limits_{G} 0 dx dy = 0 
+		\end{equation*}
+		Теорема доказана.
+	\end{enumerate} 
+\end{proof}
+\begin{notes}
+	\item Для КРИ-2 в пространстве $\mathbb{R}^3$
+	\begin{equation}
+	\label{842}
+	I = \oint\limits_{l \subset D} Pdx + Qdy + Rdz
+	\end{equation}
+	по аналогичной схеме при выполнении соответствующих требований для $P = P(x,y,z), Q = Q(x,y,z), R = R(x,y,z)$ в $D \subset R\mathbb{R}^3$, как и выше, получаем аналогичное условие независимости построения КРИ-2 \eqref{842} от пути интегрирования, но при этом для последнего перехода в доказательстве вместо формулы Грина нужно использовать формулу Стокса, которую будем рассматривать позже. 
+	
+	Кроме того, условие Эйлера для существования первообразной $u = u(x,y,z)$ для $V = Pdx + Qdy + Rdz$ дифференциально выражается в данном случае и имеет вид: $\begin{cases}
+	Q'_x = P'_y, \\ R'_y = Q'_z, \\ P'_z = R'_x.
+	\end{cases}$
+	\item Из доказательства теоремы следует, что саму первообразную $u = u(x,y)$ можно находить не только как решение соответствующих частных производных, но и по одной из формул вычисления КРИ-2 по следующим путям, параллельным координатным осям, в предположении, что эти пути содержатся в $D \subset \mathbb{R}^2$.
+	\begin{enumerate}
+		\item $u = \dint_{(x_0, y_0)}^{(x,y)} P(t, \tau) dt + Q(t, \tau)d \tau = \dint_{x_0}^x P(t, y_0)dt + \dint_{y_0}^yx Q(x, \tau)d \tau$,
+		\item $\dint_{y_0}^y Q(x_0, \tau) dt + \dint_{x_0}^x P(t, y)d \tau$.
+	\end{enumerate}
+	
+	На практике вычисления по этим формулам удобно проводить на используемой $Ot \tau$, а работая в $Oxy$, но при этом интеграл проводить от $M_0 (x_0, y_0)$ до $M(a,b)$, при этом получить $u = u(x,y)$, после чего переобозначить $a$ в $x$, а $b$ в $y$ и найденную функцию записать в привычном виде $u(x,y)$.
+	
+	Кроме указанного способа нахождения первообразной, используется также \important{метод интегрируемых комбинаций}, основанных на формулах $d(h(g)) = gdh + hdg$ и $d \left(\dfrac{g}{h} \right) = \dfrac{hdg - gdh}{h^2}$.
+\end{notes}
+
+\subsection{Вычисление площадей плоских фигур в криволинейных координатах через Якобиан.}
+
+Рассмотрим отображение
+\begin{equation}
+\label{843}
+\begin{cases}
+x = x(u,v), \; (u, v) \in G \subset \mathbb{R}^2, \\
+y = y(u,v), \; (u, v) \in D \subset \mathbb{R}^2.
+\end{cases}
+\end{equation}
+плоской области $G$ в ПДСК $Ouv$ в плоской области $D$ в ПДСК $Oxy$.
+
+Считая, что:
+\begin{enumerate}
+	\item Границы $\partial G$ и $\partial D$ являются кусочно-гладкими.
+	\item Используемая в \eqref{843} функция непрерывно дифференцируема, причём $J = \frac{\partial (x,y)}{\partial (u,v)}$.
+\end{enumerate}
+
+В этом случае \eqref{843} - \important{диффеоморфизм} областей $G$ и $D$ (взаимно однозначное отображение). Если в \eqref{843} зафиксировать $u = u_0$, то получим, что при дифференцировании \eqref{843} $u = u_0$ в $Ouv$ перейдёт в некоторую линию 
+\begin{equation*}
+l_1 = \begin{cases}
+x = x(u_0, v),\\
+y = y(u_0, v).
+\end{cases}
+\end{equation*}
+в $Oxy$. Аналогично рассматривая линию $v = v_0$ $Ouv$ при \eqref{843} в $Oxy$
+\begin{equation*}
+l_2 = \begin{cases}
+x = x(u, v_0),\\
+y = y(u, v_0).
+\end{cases}
+\end{equation*}
+
+В результате любая точка $N_0(u_0, v_0)$ плоскости $Ouv$ является пересечением координатных линий $u = u_0$ и $v = v_0$. Перейдя в $Oxy$ в $M(x_0, y_0)$, где
+$\begin{cases}
+x_0 = x(N_0),\\
+y_0 = y(N_0).
+\end{cases}$ - точка пересечения $l_1$ и $l_2$.
+
+Таким образом, прямоугольная координатная сетка для $G$ в $Ouv$ при \eqref{843} порождает соответствующую криволинейную координатную сетку для $D$ в $Oxy$. В связи с этим координаты точки $N_0(u_0, v_0)$ из $G$ называются криволинейными координатами образа $M_0(x_0, y_0) \in D$ при \eqref{843} $x_0 = x(u_0, v_0), y_0 = y(u_0, v_0)$.
+
+Ранее мы при замене переменных в двойном интеграле использовали выражение площади плоских фигур через Якобиан диффеоморфизм \eqref{843}.
+\begin{equation}
+\label{845}
+S = \text{Площадь } D = \diint\limits_{G} \abs{I(u,v)} du dv
+\end{equation}
+- функция площади в криволинейных координатах. Для её обоснования воспользуемся формулой Грина в предположении, что в \eqref{843} не только непрерывно дифференцируема, но и 2-ы (???) дифференцируемы.
+
+Пусть $l = \partial D, l_0 = \partial G$. Пусть $l, l_0$ - кусочно-гладкие контуры. Если для \eqref{843} выполняется \eqref{844}, то по теореме о стабилизации знака непрерывной ФНП либо $J(u,v) > 0$ или $J(u,v) < 0$. В первом случае $l_0$ и $l$ будут одинаковой ориентированы, а во втором - противоположно.
+
+Предположим, что положительно ориентированный контур $l_0 = \partial G$ имеет параметризацию:
+\begin{equation}
+\label{846}
+l_0 = \begin{cases}
+u = u(t), \\ v = v(t).
+\end{cases},
+\end{equation}
+где в соответствии с обходом $l_0$ против часовой стрелки $t$ меняется от $\alpha$ до $\beta$. Из \eqref{843}, \eqref{846} для контура $l = \partial D$ получаем:
+$\begin{cases}
+	x = x_0(t) = x (u(t), v(t)), \\
+	y = y_0(t) = y (u(t), v(t)).
+\end{cases}$
+
+Используя правила дифференцирования сложных ФНП в силу формулы площади плоских фигур через КРИ-2, имеем:
+
+\begin{equation*}
+\begin{split}
+& S = \text{Площадь } D = \oint\limits_{l} xdy - ydx = \begin{sqcases} dy = \left( y'_u u'(t) + y'_v v'(t) \right) dt, \\ dx = \left( x'_u u'(t) + x'_v v'(t) \right) dt \end{sqcases} = \\
+& = \frac{1}{2} \dint\limits_\alpha^\beta \left( x (y'_u u'(t) + y'_v v'(t)) - y(x'_u u'(t) + x'_v v'(t)) \right) dt = \\
+& = \frac{1}{2} \dint\limits_\alpha^\beta P(u(t), v(t)) u'(t) dt + Q(u(t), v(t)) v'(t) dt =
+\end{split}
+\end{equation*}
+\begin{equation}
+\label{848}
+= \pm \frac{1}{2} \oint\limits_{l_0} Pdu + Qdv 
+\end{equation}
+- знак может меняться из-за \important{ориентации}.
+
+\begin{equation}
+\label{849}
+\begin{cases}
+P = P(u,v) = x y'_u - y x'_u, \\
+Q = Q(u,v) = x y'_v - y x'_v.
+\end{cases}
+\end{equation}
+
+$Q'_u = (x y'_v - y x'_v)'_u = (x'_u y'_v - u'_u x'_v) + xy^{''}_{vu} - yx^{''}_{vu}$.
+
+Учитывая, что первое и второе слагаемые в силу теоремы о равенстве смешанных производных ФНП.
+
+$Q'_u - P'_v = 2 (x'_u y'_v - y'_u x'_v) = 2 J(u,v)$. Отсюда, применяя в \eqref{848} формулу Грина, имеем:
+\begin{equation}
+\label{851}
+S = \pm \frac{1}{2} \diint\limits_G (Q'_v - P'_u) du dv = \pm \diint\limits_G J(u,v) du dv,
+\end{equation}
+где $+$, если при \eqref{843} у $l_0$ и $l$ одна и та же ориентация, т.е. когда для $\forall u, v \in G \Rightarrow J(u,v) > 0$, и $-$, если для $\forall u, v \in G \Rightarrow J(u,v) < 0$, т.е. в противоположном случае.
+
+Поэтому формулу \eqref{851} можно записать в виде \eqref{845}. Формула \eqref{845}, используемая ранее при обосновании замены переменных в 2И также устанавливает \important{геометрический смысл модуля Якобиана} в диффеоморфизме \eqref{843}.
+
+Применяя теорему о среднем в \eqref{845} для интеграла, имеем:
+$S = \begin{sqcases} \exists \; N_0 \in G \end{sqcases} = J(N_0) \diint\limits_{G} du dv = J(N_0)S_0$.
+
+$S_0 = \diint_{G} du dv = \text{Площадь } G$, откуда следует, что:
+\begin{equation}
+\label{852}
+\abs{J(N_0)} = \dfrac{S}{S_0}
+\end{equation}
+Из \eqref{852} следует, что $\abs{J(N_0)}$ при дифференцировании \eqref{843} - коэффициент пропорциональности площадей между образом $D \subset \mathbb{R}^2$ и прообразом $G \subset \mathbb{R}^2$.

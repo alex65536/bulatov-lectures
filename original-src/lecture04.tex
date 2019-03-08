@@ -1,0 +1,404 @@
+\section{Локальный экстремум ФНП.}
+
+\subsection{Необходимое условие локального экстремума ФНП (Л.Э.ФНП)}
+
+Рассмотрим ФНП $ u = f(x) $, где $ x = (x_1, \ldots , x_n) \in D \subset \RN $.
+
+Внутренняя точка ${ x_0 = (x_{01}, \ldots , x_{0n}) \in D }$ называется
+\important{точкой строгого локального минимума (максимума)} функции $ f(x) $, если
+$ \exists \; V(x_0) \subset D $ такая, что
+$ \forall x \in \text{\r{V}}(x_0) = V(x_0) \setminus \{x_0\} \Rightarrow $
+$ \Rightarrow f(x_0) < f(x) ( f(x) < f(x_0) ) $.
+
+Если $ \forall \; x \in V(x_0) $ имеем нестрогие неравенства $ f(x_0) \leqslant f(x) \;\; (f(x) \leqslant f(x_0)) $, то $ x_0 $ называется просто
+\important{точкой локального минимума (макисмума)} для $ f(x) $.
+
+Общее название таких точек - \important{экстремальные точки локального экстремума} для ФНП (Л. Э. ФНП).
+
+Значение $ f(x) $ в точке локального экстремума $ x_0 $ соответственно обозначается либо\\
+${ f_{min} = f(x_0) }$, либо $ f_{max} = f(x_0) $ и называется \important{экстремальными значениями} Л.Э. ФНП.
+
+\begin{example}
+    Рассмотрим Ф2П $ u = f(x, y) = x^2 + y^2 $.
+    В пространстве $ \mathbb{R}^3 $ графиком \plot{f} в соответствующей декартовой прямоугольной системе координат $ Oxyz $ имеем однополостный параболоид $ z = x^2 + y^2 $.
+
+	%\begin{equation*}
+		Для $ \forall (x, y) \neq (0, 0) \Rightarrow f(x, y) = x^2 + y^2 > 0 = f(0, 0). $
+	%\end{equation*}
+	Поэтому $M_0(0, 0) \in \R{2}$ является точкой строгого локального минимума рассматриваемой Ф2П, и
+	при этом $f_{\min} = f(M_0) = 0$. Этот минимум является не только локальным, но и глобальным.
+\end{example}
+
+Придавая внутренней точке $x_0 \in D \subset \R{n}$ соответствующие приращения так, чтобы $\Delta{x} \in \RN$,
+на языке приращений
+получаем, что $x_0$ - точка локального экстремума ФНП тогда и только тогда, когда приращение функции
+$\Delta{f(x_0)} = f(x_0 + \Delta{x}) - f(x_0)$ на используемых допустимых приращениях $\Delta{x} \in \R{n}$
+сохраняет один и тот же знак. 
+
+При этом если $\Delta{f(x_0)} \geqslant 0$, то $x_0$ - точка локального
+$\max f(x)$, 
+а если $\Delta{f(x_0)} \leqslant 0$, то $x_0$ - точка локального максимума $ f(x)$. 
+
+В случае
+строгих неравенств при $\Delta{x} \neq 0$ имеем строгий локальный максимум и локальный минимум.
+
+\begin{theorem}[необходимое условие локального экстремума ФНП]
+	Пусть $f(x), x = \parenthesis{x_1, \ldots, x_n} \in$ $\in D \subset \R{n}$ дифференцируема в некоторой
+	окрестности $V(x_0) \in D$ внутренней точки $x_0 = \parenthesis{x_{01}, \ldots, x_{0n}} \in D$. Если
+	эта точка $x_0$ является точкой локального экстремума для $f(x)$, то $x_0$ - стационарная точка
+	для $f(x)$, т.е.
+	\begin{equation}
+		\label{eq:4.1-theorem1}
+		df(x_0) = 0.
+	\end{equation}
+\end{theorem}
+\begin{proof}$  $\\
+	Придавая точке $x_0 \in V(x_0)$ произвольные приращения $\Delta{x} =
+	\parenthesis{\Delta{x_1}, \ldots, \Delta{x_n}} \in \R{n}$ так, чтобы $x_0 + \Delta{x} =
+	\parenthesis{x_{01} + \Delta{x_1}, \ldots, x_{0n} + \Delta{x_n}} \in V(x_0)$, рассмотрим  для
+	$\fix k = \overline{1, n}$ соответствующее специальное приращение
+	$\Delta_k x = \parenthesis{0, \ldots, 0, \underbrace{\Delta{x_k}}_{k \text{-ая координата}}, 0, \ldots, 0}$,
+	для которого ${x_0 + \Delta_k x = \parenthesis{x_{01}, \ldots, x_{0k - 1}, x_{0k} + \Delta{x_k},
+		x_{0k + 1}, \ldots, x_{0n}} \in V(x_0)}$. 
+
+    Если $x_0$ - точка локального минимума (максимума) для $f(x)$,
+	то $\Delta{f(x_0)} = f(x_0 + \Delta{x}) - f(x_0) \geqslant 0 \;$  $ (\Delta f(x_0) = 0) $, и,
+	значит, $\Delta_kf(x_0) = f(x_0 + \Delta_kx) - f(x_0) \geqslant 0\; $  $ (\Delta_kf(x_0) \leqslant 0) $
+	для всех допустимых $\Delta_k x \in \R{}$. Поэтому для Ф1П
+	\begin{equation*}
+		F_k(t) = f(x_{01}, \ldots, x_{0k - 1}, t, x_{0k + 1}, \ldots, x_{0n})
+	\end{equation*}
+	в точке $t_k = x_{0n} \in \R{}$ на использованном приращении $\Delta{t} = \Delta_k x \in \R{}$,
+	имеем:
+	\begin{equation*}
+		\Delta{F_k(t_k)} = F_k(x_{0k} + \Delta{t}) - F(x_{0k}) = \Delta_kf(x_0) \geqslant 0 \;\;\; (\Delta F_k(t_k) \leq 0),
+	\end{equation*}
+	т.е. $t_k = x_{0k} \in \R{}$ будет для $F_k(t)$ точкой локального минимума (максимума).
+    Отсюда по необходимому
+	условию локального экстремума дифференцируемой Ф1П получаем, что точка ${t_k = x_{0k}}$ является
+	для $F_k(t)$ стационарной, т.е. $F'_k(x_{0k}) = 0$. 
+    
+    Учитывая, что $F'_k(t_k) =\dfrac{\partial f(x_0)}{\partial x_k}$, имеем $
+	\dfrac{\partial f(x_0)}{\partial x_k} = 0, \forall k = \overline{1, n}$, что в силу произвольности
+	$k = \overline{1, n}$ даёт $df(x_0) = \sum\limits_{k = 1}^n\dfrac{\partial f(x_0)}{\partial x_k} dx_k = 0$.
+\end{proof}
+
+\begin{note}
+	Как и для Ф1П, условие \eqref{eq:4.1-theorem1} в общем случае необходимо лишь для экстремальности
+	точки $x_0$ рассматриваемой ФНП. Например, для Ф2П $u = f(x, y) = x^2 - y^2$ имеем:
+	\begin{equation*}
+		df(x, y) = f'_xdx + f'_ydy = 2xdx - 2ydy, \text{ и, значит, }
+		df(0, 0) = 0, \forall (dx, dy) \in \R{2},
+	\end{equation*}
+	т.е. точка $M_0(0, 0) \in \R{2}$ - стационарная для этой Ф2П. В данном случае стационарная точка
+	$M_0$ не будет экстремальной, т.к. на соответствующих специальных приращениях 
+    ${(\Delta x, \Delta y) \in \R{2}}$ имеем:
+	\begin{itemize}
+	  \item Если $\Delta{x} = 0, \Delta{y} \neq 0$, то $\Delta f(M_0) = f(0, \Delta{y}) - f(0, 0) =
+		 - \Delta{y}^2 < 0$.
+	   \item Если $\Delta{y} = 0, \Delta{x} \neq 0$, то $\Delta f(M_0) = f(\Delta{x}, 0) - f(0, 0) = \Delta{x}^2 > 0$.
+	\end{itemize}
+	Поэтому в любой окрестности $V(M_0) \subset \R{2}$ приращение $\Delta{f(M_0)}$ не будет
+	сохранять один и тот же знак, и, значит, стационарная точка $M_0$ не будет экстремальной.
+\end{note}
+
+\subsection{Квадратичные формы (К.Ф.) и некоторые их свойства}
+Для использования и получения достаточных условий экстремальности стационарных точек дифференцируемых
+ФНП нам понадобятся соответствующие свойства квадратичных форм (К.Ф.), т.е. функций от $n$
+переменных $h = \parenthesis{h_1, \ldots, h_n} \in \R{n}$ вида
+\begin{equation}
+	\label{eq:4.2-qfdefinition}
+	\Phi(h) = \sum\limits_{i, j = 1}^na_{ij}h_ih_j,\;
+    \text{ где $\forall a_{ij} \in \R{}, i = \overline{1, n}, j = \overline{1, n}$.}
+\end{equation}
+ Для \eqref{eq:4.2-qfdefinition}
+матрица
+\begin{equation}
+	\label{eq:4.2-qfmatrix}
+	A = (a_{ij}) = \begin{bmatrix}
+		a_{11} & a_{12} & \ldots & a_{1n}\\
+		\vdots & \vdots & \ddots & \vdots\\
+		a_{n1} & a_{n2} & \ldots & a_{n}\\
+		\end{bmatrix}
+\end{equation}
+называется матрицей квадратичной формы \eqref{eq:4.2-qfdefinition}.
+
+\begin{example}$  $      
+	При $  n = 3 $ получаем:
+    \begin{equation*}
+        \Phi(h) = \Phi(h_1, h_2, h_3) \overset{\eqref{eq:4.2-qfdefinition}}{=}
+        a_{11}h_1^2 + a_{22}h_2^2 + a_{33}h_3^2 + (a_{12} + a_{21})h_1h_2 + (a_{13} + a_{31})h_1h_3 +
+        (a_{23} + a_{32})h_2h_3.
+    \end{equation*}
+	Здесь матрица \eqref{eq:4.2-qfmatrix} имеем вид:
+	\begin{equation*}
+		A = (a_{ij}) = \begin{bmatrix}
+			a_{11} & a_{12} & a_{13}\\
+			a_{21} & a_{22} & a_{23}\\
+			a_{31} & a_{32} & a_{33}\\
+		\end{bmatrix}
+	\end{equation*}.
+\end{example}
+
+В общем случае для матрицы \eqref{eq:4.2-qfmatrix} К.Ф. \eqref{eq:4.2-qfdefinition} её главными угловыми
+минорами будем называть определители
+\begin{equation}
+	\label{eq:4.2-qfdet}
+	\Delta_1 = a_{11}, \Delta_2 =
+	\begin{vmatrix}
+		a_{11} & a_{12}\\
+		a_{21} & a_{22}\\
+	\end{vmatrix},
+	\Delta_3 = \begin{vmatrix}
+		a_{11} & a_{12} & a_{13}\\
+		a_{21} & a_{22} & a_{23}\\
+		a_{31} & a_{32} & a_{33}\\
+	\end{vmatrix},
+	\ldots, \Delta_n = \det A.
+\end{equation}
+
+Очевидно, что для каждой К.Ф. \eqref{eq:4.2-qfdefinition} на тривиальном наборе
+${\overline{0} = (0, \ldots, 0) \in \R{n} \Rightarrow \Phi(\overline{0}) = 0}$.
+
+В дальнейшем К.Ф. \eqref{eq:4.2-qfdefinition} будем называть неотрицательной (неположительной), если\\
+${\forall h \in \R{n} \Rightarrow \Phi(h) \geqslant 0 \;\; (\Phi(h) \leqslant 0)}$. 
+
+Квадратичная
+форма \eqref{eq:4.2-qfdefinition} называется положительно (отрицательно) определённой или
+знакоположительной (знакоотрицательной), если $\forall h \neq \overline{0} \Rightarrow \Phi(h) > 0 \;\; (\Phi(h) < 0)$. Общее название таких К.Ф. - знакопостоянные или знакоопределённые К.Ф.
+
+Квадратичная форма \eqref{eq:4.2-qfdefinition} называется вырожденной, если $\exists h_0 \neq \overline{0} \Rightarrow \Phi(h_0) = 0$. Вырожденная К.Ф. \eqref{eq:4.2-qfdefinition}, для
+которой $\forall h \in \R{n} \Rightarrow \Phi(h) \geqslant 0 \;\; (\Phi(h) \leqslant 0)$,
+называется полуопределённой.
+
+На практике как правило будем рассматривать симметрические К.Ф. \eqref{eq:4.2-qfdefinition}, т.е.
+у которых матрица \eqref{eq:4.2-qfmatrix} симметрическая ($A^T = A \Leftrightarrow
+\forall a_{ij} = a_{ji}, i, j = \overline{1, n}$). В этом случае, например для $n = 3 \Rightarrow$
+${a_{12} = a_{21}, a_{13} = a_{31}, a_{23} = a_{32}}$, и поэтому для матрицы \eqref{eq:4.2-qfmatrix}
+имеем
+\begin{equation*}
+	A = \begin{bmatrix}
+		a_{11} & a_{12} & a_{13}\\
+		a_{12} & a_{22} & a_{23}\\
+		a_{13} & a_{23} & a_{33}\\
+	\end{bmatrix},
+\end{equation*}
+а сама К.Ф. \eqref{eq:4.2-qfdefinition} примет вид:
+\begin{equation*}
+	\Phi(h) = \Phi(h_1, h_2, h_3) = a_{11}h_1^2+ a_{22}h_2^2 + a_{33}h_3^2 + 2a_{12}h_1h_2 +
+	2a_{13}h_1h_3 + 2a_{23}h_2h_3.
+\end{equation*}
+Имеет место критерий Сильвестра знакоопределённости К.Ф:
+\begin{enumerate}
+  \item Симметрическая К.Ф. \eqref{eq:4.2-qfdefinition} является знакоположительной тогда и только
+	тогда, когда все главные угловые миноры \eqref{eq:4.2-qfdet} матрицы \eqref{eq:4.2-qfmatrix} К.Ф.
+	\eqref{eq:4.2-qfdefinition} положительны, т.е. $\forall \Delta_k > 0$, $ k = \overline{1, n}$.
+  \item Для того, чтобы симметрическая К.Ф. \eqref{eq:4.2-qfdefinition} была знакоотрицательной,
+	необходимо и достаточно, чтобы все главные угловые миноры \eqref{eq:4.2-qfdet} матрицы
+	\eqref{eq:4.2-qfmatrix} имели знакочередующиеся значения, а именно:
+	${\Delta_1 < 0, \Delta_2 > 0, \ldots, (-1)^n\Delta_n > 0}$.
+\end{enumerate}
+Исследование симметрических К.Ф. \eqref{eq:4.2-qfdefinition} на знакоопределённость можно проводить
+и методом выделения полных квадратов.
+
+\begin{example}
+	Рассмотрим $\Phi(h_1, h_2, h_3) = 2h_1^2 + 3h_2^2 + h_3^2 - 4h_1h_2 + 2h_1h_3 - 2h_2h_3$. Имеем
+	квадратичную симметрическую форму с матрицей
+	\begin{equation*}
+		A =
+		\begin{pmatrix}
+			2 & -2 & 1\\
+			-2 & 3 & -1\\
+			1 & -1 & 1\\
+		\end{pmatrix}.
+	\end{equation*}
+	Исследуем эту форму на знакоопределённость двумя способами:
+	\begin{enumerate}
+	  \item По критерию Сильвестра:
+		\begin{equation*}
+			\Delta_1 = 2 > 0, \Delta_2 =
+			\begin{vmatrix}
+				2 & -2\\
+				-2 & 3\\
+			\end{vmatrix} = 2 > 0,
+			\Delta_3 =
+			\begin{vmatrix}
+				2 & -2 & 1\\
+				-2 & 3 & -1\\
+				1 & -1 & 1\\
+			\end{vmatrix} = 10 - 9 = 1 > 0.
+		\end{equation*}
+		Поэтому матрица, а значит и сама К.Ф. положительно определены или знакоположительна.
+	  \item Метод выделения полных квадратов: будем выделять полные квадраты, начиная с $h_3$:
+		\begin{equation*}
+			\begin{split}
+				&\Phi(h) = h_3^2 + 2(h_1 - h_2)h_3 + (2h_1^2 - 4h_1h_2 + 3h_2^2) =
+				\begin{sqcases}
+					\dfrac{1}{2}\dfrac{\partial \Phi(h)}{\partial h_3} = h_3 + h_1 - h_2
+				\end{sqcases} =\\
+				&=(h_3 + h_1 - h_2)^2 - (h_1 - h_2)^2 + 2h_1^2 + 4h_1h_2 + 3h_2^2 =
+				(h_3 + h_1 - h_2)^2 + \underbrace{h_1^2 - 2h_1h_2 + h_2^2}_{\text{f}} =\\
+				&=\begin{sqcases}
+					\dfrac{1}{2}\dfrac{\partial f}{\partial h_1} = h_1 - h_2
+				\end{sqcases}=
+				(h_3 + h_1 - h_2)^2 + (h_1 - h_2)^2 - h_2^2 + 2h_2^2 =\\
+				&=(h_3 + h_1 - h_2)^2 + (h_1 - h_2)^2 + h_2^2 \geqslant 0, \forall h_1, h_2, h_3 \in \R{}.
+			\end{split}
+		\end{equation*}
+		При этом
+		\begin{equation*}
+			\Phi(h) = 0 \Leftrightarrow
+			\begin{cases}
+				h_3 + h_1 - h_2 = 0\\
+				h_1 - h_2 = 0\\
+				h_2 = 0
+			\end{cases} \Leftrightarrow
+			h_1 = h_2 = h_3 = 0,
+		\end{equation*}
+		т.е. К.Ф. обращается в ``0'' только на тривиальном наборе $h = \overline{0} = (0, 0, 0) \in \R{3}$.
+		Поэтому $\forall h \neq \overline{0} \Rightarrow \Phi(h) > 0$. Рассматриваемая К.Ф.
+		является положительно определённой или знакоположительной.
+	\end{enumerate}
+\end{example}
+
+В дальнейшем понадобится следующая вспомогательная
+\begin{lemma}[оценка знакопостоянных К.Ф.]
+	Если К.Ф. \eqref{eq:4.2-qfdefinition} является знакопостоянной, то
+	\begin{equation}
+		\label{eq:4.2-qflemma}
+        \exists C_0 = \const > 0,
+       \text{ такая, что }\forall h \in \R{n},
+		\abs{h} = 1, \text{ следует } \abs{\Phi(h)} > C_0.
+	\end{equation}
+\end{lemma}
+\begin{proof}
+	Множество $h = (h_1, \ldots, h_n) \in \R{n}$, для для элементов которого выполняется
+	$\abs{h} = \sqrt{h_1^2 + \ldots + h_n^2} = 1$ представляет собой $n$-мерную единичную сферу
+	$S = S_1(\overline{0})$, которая является ограниченным замкнутым множеством в $\R{n}$, т.е.
+	компактом. Поэтому, по теореме Вейерштрасса для ФНП, непрерывная функция $\abs{\Phi(h)}$, для К.Ф.
+	\eqref{eq:4.2-qfdefinition} достигает на $S$ своего минимального значения, т.е.
+	\begin{equation*}
+        \exists h_0 \in S \Rightarrow C_0 = \underset{\forall h \in S}{\min}\abs{\Phi(h)} =
+			\abs{\Phi(h_0)} \geqslant 0.
+	\end{equation*}
+    Так как $ \abs{h_0} = 1 \neq 0, \text{ то } h_0 \neq \overline{0} \in \R{n} $, а следовательно
+	знакопостоянная К.Ф. \eqref{eq:4.2-qfdefinition} является невырожденной, и поэтому
+    $ C_0 = \abs{\Phi(h_0)} > 0 $. Отсюда
+	\begin{equation*}
+		\text{ для } \forall h \in \R{n}, \abs{h} = 1 \Rightarrow
+		\abs{\Phi(h)} \geqslant \abs{\Phi(h_0)} = C_0 > 0.
+	\end{equation*}
+\end{proof}
+
+\subsection{Достаточное условие экстремальности стационарных точек ФНП}
+%п3, добавить ссылки \eqref42, 46
+
+Пусть $u = f(x), x = (x_1, x_2, \ldots, x_n) \in D \subset \RN$ - дважды непрерывно дифференцируема в окрестности $V(x_0) \subset D$ внутри точки $x_0 \in D$. В этом случае
+\begin{equation}
+\label{46}
+\exists d^2 f(x_0) = \sum\limits_{i,j=1}^{n} \dfrac{\partial^2 f(x_0)}{\partial x_i \partial x_j} d x_i d x_j.
+\end{equation}
+
+Выражение \eqref{46} можно рассматривать как соответствующую квадратичную форму \eqref{eq:4.2-qfdefinition} относительно $h_k = d x_k, k = \overline{1,n}$, с матрицей \eqref{eq:4.2-qfmatrix} этой формы $A = \left( \dfrac{\partial^2 f(x_0)}{\partial x_i \partial x_j} \right),$  $ i = \overline{1,n}, $  $j = \overline{1,n}$.
+
+\begin{theorem}[достаточное условие Л.Э. ФНП]
+	Если для дважды непрерывно дифференцируемой функции $f(x), x \in D \subset \RN$, в некоторой окрестности $V(x_0) \subset D$ стационарной точки $x_0 \in D$ второй дифференциал \eqref{46} является знакопостоянной квадратичной формой относительно дифференциалов $d x_k, k = \overline{1,n},$ независимой переменной $x = (x_1, x_2, \ldots, x_n)$, то стационарная точка $x_0$ будет точкой Л.Э. ФНП. При этом, если квадратичная форма \eqref{46} положительно определена, то стационарная точка $x_0$ - точка локального минимума $f(x)$. Если \eqref{46} является отрицательно определённой квадратичной формой, то $x_0$ - точка локального максимума $f(x)$.
+\end{theorem}
+\begin{proof}
+	Для стационарной точки $x_0 = (x_{01}, x_{02}, \ldots, x_{0n}) \in D(f)$, рассматривая $\forall \Delta x = (\Delta x_1, \Delta x_2, \ldots, \Delta x_n) \in \RN$, такое, что $(x_0 + \Delta x) \in V(x_0)$, где $V(x_0)$ - некоторая окрестность из $D(f)$, в которой $f(x)$ дважды непрерывно дифференцируема, по формуле Тейлора-Пеано второго порядка имеем: $\Delta f(x_0) = f(x_0 + \Delta x) - f(x_0) = df(x_0) + \frac{d^2 f(x_0)}{2} + o(|dx|^2)$, где $|dx| = \sqrt{dx_1^2 + dx_2^2 + \ldots dx_n^2} = \sqrt{\Delta x_1^2 + \Delta  x_2^2 + \ldots \Delta  x_n^2} = |\Delta x|$.
+
+	Из стационарности точки $x_0$ следует, что $df(x_0) = 0$, и значит,  $\Delta f(x_0) = \dfrac{d^2 f(x_0)}{2}  + o(|\Delta x|^2)$. Учитывая, что в квадратичной форме \eqref{46} $\forall d x_k = \Delta x_k, k = \overline{1,n}$, в случае, когда $\Delta x \ne 0$, получаем:
+	\begin{equation}
+	\label{47}
+	\Delta f(x_0) = \left( \dfrac{1}{2} \sum\limits_{i,j=1}^{n} \dfrac{\partial^2 f(x_0)}{\partial x_i \partial x_j} h_i h_j + o(1) \right) |\Delta x|^2,
+	\end{equation}
+	где $\forall h_k  = \dfrac{\Delta x_k}{|\Delta x|} = \dfrac{\Delta x_k}{\sqrt{dx_1^2 + dx_2^2 + \ldots dx_n^2}}, k = \overline{1,n}$.
+
+    \newpage
+
+	Отсюда для $h = (h_1, h_2, \ldots, h_n) \in \RN \Rightarrow |h| = \abs{\dfrac{\Delta x}{|\Delta x|}} = \dfrac{|\Delta x|}{|\Delta x|} = 1$, и, значит, $h \in S = S_1 (\overline{0})$. На основании леммы об оценке знакопостоянных квадратичных форм имеем:
+    \begin{equation*}
+        \exists C_0 = const > 0 \Rightarrow \abs{ \Phi(n) } \overset{\eqref{46}}{\geqslant} C_0  > 0.
+    \end{equation*}
+
+	Учитывая, что $ p = \left( \dfrac{1}{2} \sum\limits_{i,j=1}^{n} \dfrac{\partial^2 f(x_0)}{\partial x_i \partial x_j} + o(1) \right) \underset{\Delta x \to 0}{\to} \dfrac{1}{2} C_0 > 0$, для достаточно малых приращений $\Delta x$ будем иметь, что $p > 0$. А тогда в силу \eqref{47} $f(x_0 + \Delta x) - f(x_0) = \Delta f(x_0)  \overset{\eqref{47}}{=} $ 
+     $\overset{\eqref{47}}{=} (p + o(1)) |\Delta x|^2 \geqslant 0$, когда рассматриваемая квадратичная форма \eqref{46} является положительно определённой.
+
+	Таким образом, $f(x_0 + \Delta x) \geqslant f(x_0)$, и, значит, в рассматриваемом случае стационарная точка $x_0$ - точка локального минимума. 
+    Случай отрицательно определённой квадратичной формы \eqref{46} $(\Phi(h) < 0, \forall h \ne 0 \Rightarrow |\Phi(h)| = - \Phi(h), \forall h)$ рассматривается аналогично.
+    
+    $  $
+\end{proof}
+\begin{note}
+     можно показать, что, если квадратичная форма \eqref{46} не является знакоопределённой относительно дифференциалов независимой переменной $ x $, то стационарная точка $x_0$ для $f(x)$ не является экстремальной. Если же квадратичная форма \eqref{46} является вырожденной и либо положительно полуопределённой, либо отрицательно полуопределённой, т.е. $\forall \; h_k = d \;x_k, \;k = \overline{1,n} \Rightarrow \Phi(n) \geqslant 0 \;\;\;(\Phi(n) \leqslant 0)$ и $\exists h_0 \ne \overline{0} \in \RN \Rightarrow \Phi (h_0) \overset{\eqref{46}}{=}0$, то в этом случае нужны дополнительные исследования.
+\end{note}
+
+$  $
+$  $\\
+\textbf{Важный пример.}
+	Пусть Ф2П $u = f(x,y), (x,y) \in D \subset \mathbb{R}^2$ является дважды непрерывно дифференцируемой функцией в окрестности стационарной точки $M_0 = (x_0, y_0) \in D$. Тогда, во-первых, $df(M_0) = f^{'}_x (M_0) dx + f^{'}_y (M_0) dy = 0$ для $\forall (dx, dy) \in \mathbb{R}^2 \Leftrightarrow \begin{cases}
+	f^{'}_x (M_0) = 0\\
+	f^{'}_y (M_0) = 0
+	\end{cases}$. 
+    
+    Для второго дифференциала имеем: $d^2 f (M_0)  = A_0 dx^2 + 2B_0 dx dy + C_0 dy^2$, где $A_0 = f^{''}_{x^2} (M_0), B_0 = f^{''}_{xy} (M_0), C_0 = f^{''}_{y^2} (M_0)$. Исследуя эту квадратичную форму относительно $dx$ и $dy$ на знакопостоянство по критерию Сильвестра и используя главные угловые миноры матрицы квадратичной формы $\begin{bmatrix}
+	A_0 & B_0           \\[0.3em]
+	B_0 & C_0
+	\end{bmatrix}$, получаем:
+	$\Delta_1 = A_0, \Delta_2 = A_0 C_0 - B_0^2 = D_0$. 
+    
+    Поэтому, если
+	\begin{enumerate}
+		\item $A_0 > 0, D_0 > 0$, то $d^2 f(M_0) > 0$ (положительно определённая квадратичная форма) и тогда следует, что стационарная точка $M_0$ - точка локального минимума $f(x,y)$.
+		\item $A_0 < 0, D_0 > 0$, то $d^2 f(M_0) < 0$ (отрицательно определённая квадратичная форма) и тогда следует, что стационарная точка $M_0$ - точка локального максимума $f(x,y)$.
+		\item $D_0 = A_0 C_0 - B_0^2 < 0$, то  рассматриваемая квадратичная форма $d^2 f(M_0)$ не будет знакопостоянной, и поэтому стационарная точка $M_0$ не является экстремальной.
+		\item $D_0 = 0$, то требуются дополнительные исследования.
+    \end{enumerate}
+        
+         В таких случаях, когда стационарная точка $M_0$ не будет экстремальной, она называется седловой.
+\newpage
+
+\begin{examples}
+		\item Пусть $u = x^3 + 3xy + y^3$. Для определения стационарных точек имеем систему 
+        \begin{equation*}
+            \begin{cases}
+            u^{'}_x = 3 x^2 + 3y = 0 \\
+            u^{'}_y = 3 x + 3 y^2 = 0
+            \end{cases},
+          \end{equation*}	
+          решениями которой будут точки с координатами $M_0 (0,0)$ и $M_1(-1, -1)$.
+          
+           Учитывая, что $A = u^{''}_{x^2} = 6x, B = u^{''}_{xy} = 3, C = u^{''}_{y^2} = 6y$, получаем:
+		\begin{enumerate}
+		\item $M_0(0,0)$\\
+		$\begin{cases}
+		A_0 = A(M_0) = 0 \\
+		B_0 = B(M_0) = 3 \\
+		C_0 = C(M_0) = 0
+		\end{cases} \Rightarrow D_0 = A_0 C_0 - B_0^2 = -9 < 0$ - в стационарной точке $M_0$ нет экстремума.
+		\item $M_1(-1,-1)$\\
+		$\begin{cases}
+		A_1 = A(M_1) = -6 \\
+		B_1 = B(M_1) = 3 \\
+		C_1 = C(M_1) = -6
+		\end{cases} \Rightarrow D_1 = A_1 C_1 - B_1^2 = 36-9 = 27 > 0$ - стационарная точка $M_1$ является экстремумом и, т.к. $A_1 < 0$, то $M_1$ - точка локального максимума.\\
+		$u_{max} = f(-1, -1) = 1$.
+		\end{enumerate}
+		\item Рассмотрим $u = x^2 + 2y^2 + 3z^2 - 4x 	+ 6y + 12z - 1$. Для определения стационарных точек имеем систему: 
+        \begin{equation*}
+            \begin{cases}
+            u^{'}_x = 2x - 4 = 0 \\
+            u^{'}_y = 4y + 6 = 0 \\
+            u^{'}_z = 6z + 12 = 0
+            \end{cases} \Rightarrow \begin{cases}
+            x = 2 \\
+            y = -\frac{3}{2} \\
+            z = -2
+            \end{cases}
+        \end{equation*}
+        Точка $M_0 (2, -\frac{3}{2}, -2)$ - стационарна. Для исследования её на экстремальность рассмотрим $d^2 u = d(du) = d(u^{'}_x dx + u^{'}_y dy + u^{'}_z dz) = d((2x-4)dx) + d((4y+6)dy) + d((6z+12)dz) = $ 
+        $= [dx = \fix, dy = \fix, dz = \fix] = 2 dx^2 + 4dy^2 + 6 dz^2 \geqslant 0$, причём $d^2 u (M_0) = 0 \Leftrightarrow$ 
+        $ \Leftrightarrow 2dx^2 + 4dy^2 + 6dz^2 = 0 \Leftrightarrow dx = dy = dz = 0$ - тривиальный набор. Поэтому $d^2 u (M_0) > 0$ - положительно определённая квадратичная форма, и, значит, $M_0$ - точка локального минимума, $u_{min} = u(2, -\frac{3}{2}, -2) = -\frac{43}{2}$. В данном случае $M_0$ - точка не только локального минимума, но и глобального, т.к. выделяя полные квадраты, имеем: $u = (x-2)^2 + 2 (y+\frac{3}{2})^2 + 3(z+2)^2 - \frac{43}{2} \geqslant - \frac{43}{2}$, и при этом полученная оценка снизу достигается в точке $M_0: u(M_0) = -\frac{43}{2}$.
+\end{examples}
+
+$  $\newpage $  $

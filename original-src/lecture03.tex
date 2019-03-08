@@ -1,0 +1,617 @@
+\section{Дифференцируемые ФНП.}
+
+\subsection{Частные производные первого порядка и дифференциал ФНП.}
+
+Пусть $f(x)$ определена в некоторой окрестности $V(x_0) \subset \RN$ точки $x_0 = (x_{01}, x_{02}, \ldots, x_{0n}) \in$ $\in \RN$. Выбирая любое $\Delta x = (\Delta x_1, \Delta x_2, \ldots, \Delta x_n) \in \RN$ такое, что $(x_0 + \Delta x) \in V(x_0)$, рассмотрим приращение $\Delta f(x_0) = f(x_0 + \Delta x) - f(x_0)$ функции $f(x)$ в точке $x_0$, соответствующее приращению $\Delta x \in \RN$ независимой переменной $x \in V(x_0)$.
+
+ФНП $f(x)$ называется \important{дифференцируемой} в точке $x_0$, если $\exists p_k \in \mathbb{R}, k = \overline{1,n}$, такое, что 
+\begin{equation}
+\label{31}
+\Delta f(x_0) = p_1 \Delta x_1 +  p_2 \Delta x_2 + \ldots +  p_n \Delta x_n + \alpha, 
+\end{equation}
+где $\alpha = o \left(\sqrt{\Delta x_1^2 + \Delta x_2^2 + \ldots + \Delta x_n^2}\right) = o(|\Delta x|)$, т.е. $\exists \lim\limits_{\Delta x \to 0} \dfrac{\alpha}{|\Delta x|} = 0$.
+
+Отметим, что в \eqref{31} конечные величины $p_k, k = \overline{1, n}$, не зависят от выбора допустимых приращений $\Delta x_1, \Delta x_2, \ldots, \Delta x_n$, но могут зависеть от используемой точки $x_0 \in V(x_0) \subset D(f)$. Если $f(x)$ дифференцируема в точке $x_0$, то, выбирая соответствующие частные приращения $\Delta_k x = (0, 0, \ldots, 0, \underbrace{\Delta x_k}_{\text{k-ое место}}, 0, \ldots, 0) \in \RN$ независимой переменной ${x = (x_1, x_2, \ldots, x_n) \in V(x_0)}$ 
+для получаемых частных приращений функции $\Delta_k f(x_0) = f(x_0+\Delta_k x) - f(x_0) =$ \\
+$= f(x_{01}, x_{02}, \ldots, x_{0k-1}, x_{0k} + \Delta x_k, x_{0k+1}, \ldots, x_{0n}) - f(x_{01}, x_{02}, \ldots, x_{0n})$ в силу \eqref{31} имеем:
+\begin{equation}
+\label{32}
+\Delta_k f(x_0) = p_k \Delta x_k + \alpha_k,
+\end{equation}
+где $\alpha_k = o(|\Delta x_k|) = o(\Delta x_k), k = \overline{1,n}$. Из \eqref{32} следует, что
+\begin{equation}
+\label{33}
+\exists \lim\limits_{\Delta x_k \to 0} \dfrac{\Delta_k f(x_0)}{\Delta x_k} \overset{\eqref{32}}{=} \lim\limits_{\Delta x_k \to 0} (p_k + \dfrac{o(\Delta x_k)}{\Delta x_k}) = p_k \in \mathbb{R}, k = \overline{1, n}.
+\end{equation}
+
+В общем случае конечные величины \eqref{33} называются частными производными первого порядка дифференцируемой в точке $x_0$ функции $f(x)$ и обозначаются
+\begin{equation}
+\label{34}
+\begin{split}
+& p_k = \dfrac{\partial f(x_0)}{\partial x_k} \overset{\eqref{32}}{=} \lim\limits_{\Delta x_k \to 0} \dfrac{\Delta_k f(x_0)}{\Delta x_k} = \\
+& = \lim\limits_{\Delta x_k \to 0} \dfrac{f(x_{01}, x_{02}, \ldots, x_{0k-1}, x_{0k} + \Delta x_k, x_{0k+1}, \ldots, x_{0n})  - f(x_{01}, x_{02}, \ldots, x_{0n})}{\Delta x_k}.
+\end{split}
+\end{equation}
+
+На практике для удобства будем также писать $\dfrac{\partial f(x_0)}{\partial x_k} = f_{x_k} ^{'} (x_0), k = \overline{1, n}$.
+
+Таким образом, необходимым условием дифференцируемости ФНП $f(x)$ в точке $x_0$ является существование конечных частных производных первого порядка \eqref{34} и в этом случае \eqref{31} принимает вид
+\begin{equation}
+\label{35}
+\Delta f(x_0) = \sum_{k=1}^{n} \dfrac{\partial f(x_0)}{\partial x_k} \Delta x_k + o \left(\sqrt{\Delta x_1^2 + \Delta x_2^2 + \ldots + \Delta x_n^2}\right).
+\end{equation}
+
+В \eqref{35} величина 
+\begin{equation}
+\label{36}
+d f(x_0) = \sum\limits_{k=1}^{n} \dfrac{\partial f(x_0)}{\partial x_k} \Delta x_k.
+\end{equation}
+называется \important{дифференциалом первого порядка} дифференцируемой в точке $x_0$ функции $f(x)$ и представляет собой в силу \eqref{35} линейную часть приращения $\Delta f(x_0)$ этой функции, вычисленную на соответствующих допустимых приращениях $\Delta x_k \in \mathbb{R}, k = \overline{1,n}$, независимой переменной $x \in V(x_0)$. Как и в случае Ф1П, при фиксированном $k = \overline{1,n}$ для $f_k(x) = x_k$ имеем: $d f_k(x_0) \overset{\eqref{36}}{=} \Delta x_k$, т.е. $d x_k = \Delta x_k, k = \overline{1,n}$. В связи с этим, как и для Ф1П, в дальнейшем под дифференциалом независимой переменной $x = (x_1, x_2, \ldots, x_n)$ будем подразумевать её произвольное допустимое приращение $\Delta x = (\Delta x_1, \Delta x_2, \ldots, \Delta x_n)$, т.е. $dx = (dx_1, dx_2, \ldots, dx_n) = $ \\
+$ = \Delta x = (\Delta x_1, \Delta x_2, \ldots, \Delta x_n)$. В результате \eqref{36} принимает вид 
+\begin{equation}
+\label{37}
+d f(x_0) = \sum\limits_{k=1}^{n} \dfrac{\partial f(x_0)}{\partial x_k} dx_k.
+\end{equation}
+Поэтому условие дифференцируемости \eqref{35} можно записать в виде $f(x_0 + \Delta x) = f(x_0) +$ $+	 df(x_0) + o(|dx|)$, где $d x = \Delta x$. 
+
+В равенстве \eqref{37} для дифференцируемой Ф2П $z = f(x,y), x \in$ $\in \mathbb{R}, y \in \mathbb{R}$ в окрестности точки $M_0 (x_0, y_0) \in D(f)$, полагая $\Delta x = x - x_0, \Delta y = y - y_0$, имеем: $f(x,y) = f(x_0, y_0) + f_x^{'} (x_0, y_0)(x-x_0) + f_y^{'} (x_0, y_0)(y-y_0) + o\left(\sqrt{(x-x_0)^2 + (y-y_0)^2}\right)$. Отбрасывая остаток, приходим к уравнению плоскости 
+\begin{equation}
+\label{38}
+z = f(x_0, y_0) + f_x^{'} (x_0, y_0)(x-x_0) + f_y^{'} (x_0, y_0)(y-y_0),
+\end{equation}
+являющейся касательной плоскостью к поверхности (графику функции $\text{Г}_{f})$, заданной уравнением $z = f(x,y), (x,y) \in D(f)$, проходящей через точку $M_0 (x_0, y_0) \in \text{Г}_f$.
+
+Из \eqref{38} следует, что уравнение нормали к поверхности $\text{Г}_f$ Ф2П в точке $M_0$, т.е. прямой, перпендикулярной к использованной касательной плоскости \eqref{38} к точке $M_0 (x_0, y_0) \in \text{Г}_f$ имеет следующий канонический вид: $\dfrac{z - z_0}{(-1)} = \dfrac{x-x_0}{f_x^{'} (M_0)} = \dfrac{y-y_0}{f_y^{'}(M_0)}$.
+
+Если для рассматриваемой Ф2П $ z = f(x, y) $ для точки $ M_0 \in \text{\plot{f}} $ использовать произвольное допустимое приращение $\Delta M = (\Delta x, \Delta y)$ и через точки $M_0 + \Delta M = (x_0 + \Delta x, y_0 + \Delta y) \in \text{Г}_f$ и $M_0$ провести новую плоскость, то по аналогии с Ф1П приращение аппликаты (вдоль оси $Oz$) при переходе от касательной плоскости к новой плоскости будет соответствовать $d f (M_0)$. В этом геометрический смысл дифференциала Ф2П.
+
+Если в $\mathbb{R}^2$ рассматривается поверхность, заданная неявным уравнением $F(x,y,z)=0$, $F(M_0) = F(x_0,y_0,z_0) = 0$, то в точке $M_0(x_0,y_0,z_0) \in \text{Г}_f$ для касательной плоскости имеем: $F_x^{'} (M_0) (x-x_0) + F_y^{'} (M_0) (y-y_0) + F_z^{'} (M_0) (z-z_0) = 0$, а для нормали:
+$\dfrac{x - x_0}{F_x^{'} (M_0)} = \dfrac{y-y_0}{F_y^{'} (M_0)} =$ $= \dfrac{z-z_0}{F_z^{'} (M_0)}$.
+
+\newpage
+
+\subsection{Условия дифференцируемости ФНП.}
+В отличие от Ф1П, где существование конечной производной не только необходимо, но и достаточно для дифференцируемости этой Ф1П, у ФНП существование конечных частных производных первого порядка в общем случае не гарантирует дифференцируемость этой ФНП.
+
+\begin{example}
+	Рассмотрим Ф2П $f(x,y) = \sqrt{|xy|}$ в окрестности точки $M_0(0,0)$. Имеем
+    
+    \begin{equation*}
+        \exists f_x^{'}(M_0) = \lim\limits_{\Delta x \to 0}\dfrac{f(0 + \Delta x; 0) - f(0,0)}{\Delta x} = \lim\limits_{\Delta x \to 0} \dfrac{0}{\Delta x} = 0 \in \mathbb{R}. 
+    \end{equation*}
+    
+    Аналогично, в силу симметрии, 
+    
+    \begin{equation*}
+        \exists f_y^{'}(M_0) = \lim\limits_{\Delta y \to 0}\dfrac{f(0 + \Delta y; 0) - f(0,0)}{\Delta y} = \lim\limits_{\Delta y \to 0} \dfrac{0}{\Delta y} = 0 \in \mathbb{R}.
+    \end{equation*}
+
+    Если бы в данном случае Ф2П была дифференцируема в точке $M_0$, то получили бы, что 
+    \begin{equation*}
+       \Delta f(M_0) = f_x^{'}(M_0)\Delta x + f_y^{'}(M_0)\Delta y + o\left( \sqrt{(\Delta x)^2 + (\Delta y)^2} \right).
+    \end{equation*}
+    
+     Отсюда, учитывая, что $\Delta f(M_0) = f(\Delta x, \Delta y) - f(0,0) = \sqrt{\abs{\Delta x \cdot \Delta y}}$, следовало бы:           
+     \begin{equation*}         
+         \sqrt{\abs{\Delta x \cdot \Delta y}} = 0 \Delta x + 0 \Delta y + 
+         o\left( \sqrt{(\Delta x)^2 + (\Delta y)^2} \right) = o\left( \sqrt{(\Delta x)^2 + (\Delta y)^2} \right),
+     \end{equation*}
+     что равносильно условию $p_0 = \limlim{\Delta x \to 0}{\Delta y \to 0} \dfrac{\sqrt{|\Delta x \cdot \Delta y|}}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} = 0$, а тогда любой частный предел также равнялся бы $0$. 
+    
+    Но $\exists p_n = \limlimlim{\Delta x \to 0}{\Delta y \to 0}{\Delta x = \Delta y} \dfrac{\sqrt{(\Delta x) ^ 2}}{\sqrt{2 (\Delta x)^2}} = \lim\limits_{\Delta x \to 0} \dfrac{1}{\sqrt{2}} = \dfrac{1}{\sqrt{2}} \ne 0$.
+    
+    Значит, $\nexists p_0 \in \mathbb{R}$, поэтому рассматриваемая Ф2П, несмотря на существование конечных частных производных первого порядка в точке $M_0(0,0)$, не является дифференцируемой в этой точке. 
+\end{example}
+
+\begin{theorem}[достаточное условие дифференцируемости ФНП]
+    $  $
+    
+	Если у ФНП $u = f(x)$ в некоторой окрестности $V(x_0) \subset D(f)$ существуют конечные частные производные первого порядка, то в случае их непрерывности в рассматриваемой окрестности $V(x_0)$, эта ФНП будет дифференцируема в точке $x_0 \in D(f)$.
+\end{theorem}
+
+\textit{Доказательство} для простоты проведём для Ф2П $u = f(x,y), (x,y) \in D(f) \subset \mathbb{R}^2$, имеющей непрерывные частные производные $u_x^{'}$ и $u_y^{'}$ в некоторой окрестности $V(M_0) \in D(f)$ точки $M_0 = (a, b) \in D(f)$. 
+
+Придавая точке $M_0 \in V(M_0)$ произвольное приращение $\Delta M = (\Delta x, \Delta y) \in \mathbb{R}^2$ так, чтобы $M_0 + \Delta M = (a + \Delta x, b + \Delta y) \in V(M_0)$, рассмотрим соответствующие Ф1П $g(t) = f(t, b)$ и $h(\tau) = f(a + \Delta x, \tau)$. 
+
+Имеем
+$\Delta u (M_0) = f(a + \Delta x, b + \Delta y) - f(a, b) = \left(f(a + \Delta x, b) - f(a, b) \right) +$ \\
+$+ \left(f(a + \Delta x, b+\Delta y) - f(a + \Delta x, b) \right) $ %=$ \\
+$= \Delta_1 g(a) + \Delta_2 h(b)$, \\
+где $\Delta_1 g(a) = g(a+\Delta x) - g(a) = f(a+\Delta x, b) - f(a, b)$\\ и $\Delta_2 h(b) = h(b+\Delta y) - h(b) =  f(a + \Delta x, b + \Delta y) - f(a + \Delta x, b)$. 
+
+$  $
+
+Используя формулу конечных приращений Лагранжа для Ф1П, имеем:
+\begin{equation}
+\label{39}
+1) \ \exists \Theta_1 \in ]0;1[ \Rightarrow \Delta_1 g(a) = g_t^{'}(a+\Theta_1 \Delta x) \Delta x = f_x^{'}(a + \Theta_1 \Delta x, b)\Delta x
+\;\;\;\;\;\;\;\;\;\;\;\;\;
+\end{equation}
+\begin{equation}
+\label{310}
+2) \ \exists \Theta_2 \in ]0;1[ \Rightarrow \Delta_2 h(b) = h_\tau^{'}(b+\Theta_2 \Delta y) \Delta y = f_y^{'}(a + \Delta x, b + \Theta_2 \Delta y)\Delta y
+\; \;
+\end{equation}
+
+Отсюда следует, что 
+\begin{equation}
+\label{311}
+\begin{split}
+& \Delta u(M_0) = f_x^{'}(a + \Theta_1 \Delta x, b)\Delta x + f_y^{'}(a + \Delta x, b + \Theta_2 \Delta y) \Delta y = \\
+& = f_x^{'}(a, b)\Delta x + f_y^{'}(a, b)\Delta y + \alpha,
+\end{split}
+\end{equation}
+где $\alpha = A \Delta x + B \Delta y, A = f_x^{'}(a + \Theta_1 \Delta x, b) - f_x^{'}(a, b), B = f_y^{'}(a + \Delta x, b + \Theta_2 \Delta y) - f_y^{'}(a, b)$.
+
+$  $
+
+Осталось показать, что $\alpha = o\left(\sqrt{(\Delta x)^2 + (\Delta y)^2}\right)$, т.е. 
+\begin{equation}
+\label{312}
+\exists \limlim{\Delta x \to 0}{\Delta y \to 0} \dfrac{A \Delta x + B \Delta  y}{\sqrt{(\Delta x)^2 + (\Delta y)^2}} = 0
+\end{equation}
+В силу ограниченности $\Theta_1, \Theta_2 \in ]0;1[$ и непрерывности $f_x^{'}(x, y)$ и $f_y^{'}(x, y)$ в соответствующей окрестности точки $M_0(a, b)$ имеем 
+$A \xrightarrow[\Delta x \to 0, \Delta y \to 0]{} 0$ и $B \xrightarrow[\Delta x \to 0, \Delta y \to 0]{} 0$.\\
+
+Применяя неравенство Коши-Буняковского, получаем: \\
+\begin{equation*}
+    |A \Delta x + B \Delta y| \leqslant \sqrt{(A^2 + B^2)((\Delta x)^2 + (\Delta y)^2)} \Rightarrow \abs{\dfrac{A \Delta x + B \Delta y}{\sqrt{(\Delta x)^2 + (\Delta y)^2}}} \leqslant \sqrt{A^2 + B^2}  {\xrightarrow[\Delta x \to 0, \Delta y \to 0]{} 0}
+\end{equation*}
+что даёт \eqref{312}. Поэтому в рассматриваемом случае имеем: 
+\begin{equation*}
+    \Delta u (a, b) = u_x^{'}(M_0)\Delta x + u_y^{'}(M_0)\Delta y + \alpha = f_x^{'}(M_0)\Delta x + f_y^{'}(M_0)\Delta y + o\left(\sqrt{(\Delta x)^2 + (\Delta y)^2}\right),
+\end{equation*}
+что соответствует определению дифференцируемости Ф2П $u = f(x,y)$ в точке $M_0 (a,b)$.
+
+\begin{flushright} 	$\Box$	\end{flushright}
+
+$  $\\
+
+В дальнейшем ФНП, дифференцируемую в каждой точке рассматриваемого множества, будем называть \important{дифференцируемой} на этом множестве. Если же все частные производные первого порядка у ФНП непрерывны в соответствующих окрестностях каждой точки используемого множества, то эту ФНП считаем \important{непрерывно дифференцируемой} на рассматриваемом множестве.
+\newpage
+
+\begin{theorem}[о дифференцировании сложных ФНП]
+	Пусть $\forall g_k(t), t \in G \subset \mathbb{R}^m$ является дифференцируемой в некоторой окрестности точки $t_0 = (t_{01}, t_{02}, \ldots, t_{0m}) \in G, k = \overline{1,n}$. Если $f(x), x \in D \subset \RN$, дифференцируема в соответствующей окрестности точки $x_0 = g(t_0) = \left(g_1(t_0), g_2(t_0), \ldots, g_m(t_0) \right)$, где $g(t	) = \left(g_1(t), g_2(t), \ldots, g_m(t) \right)$, то в случае существования в рассматриваемых окрестностях композиции $h(t) = (f \circ g)(t) = f(g(t))$ эта сложная ФНП 
+	\begin{equation}
+	\label{313}
+	h(t) = f\left(g_1(t), g_2(t), \ldots, g_n(t)\right),
+	\end{equation}
+	будет дифференцируемой в точке $t_0$, причём
+	\begin{equation}
+	\label{314}
+	\dfrac{\partial h(t_0)}{\partial t_j} = \sum_{k=1}^{n} \dfrac{\partial f(x_0)}{\partial x_k} \cdot \dfrac{\partial g_k(t_0)}{\partial t_j}, j = \overline{1,n}.
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	Из дифференцируемости $f(x)$ в окрестности $V(x_0) \subset D$ для соответствующих приращений $\Delta x = \left(\Delta x_1, \Delta x_2, \ldots, \Delta x_n \right) \in \RN$ в случае, когда $(x_0 + \Delta x) \in V(x_0)$, следует, что 
+	\begin{equation}
+	\label{315}
+	\exists \Delta f(x_0) = f(x_0 + \Delta x) - f(x_0) = \sum_{k=1}^{n} \dfrac{\partial f(x_0)}{\partial x_k} \Delta x_k + \alpha,
+	\end{equation}
+	где $\alpha = o \left(\sqrt{\Delta x_1^2 + \Delta x_2^2 + \ldots + \Delta x_n^2}\right) = o(|\Delta x|)$.
+	
+		Аналогично из дифференцируемости любой $g_k(t), k = \overline{1,n}$ в некоторой окрестности \\
+        ${\widetilde{V}(t_0) \subset G}$ на соответствующих приращениях $\Delta t = \left(\Delta t_1, \Delta t_2, \ldots, \Delta t_m \right) \in \mathbb{R}^m$ в случае, \\когда ${(t_0 + \Delta t) \in \widetilde{V}(t_0)}$, имеем: 
+		\begin{equation}
+		\label{316}
+		\exists \Delta g(t_0) = g_k(t_0 + \Delta t) - g_k(t_0) = \sum_{j=1}^{m} \dfrac{\partial g_k(t_0)}{\partial t_j} \Delta t_j + \beta_k,
+		\end{equation}
+		где любое $\beta_k = o \left(\sqrt{\Delta t_1^2 + \Delta t_2^2 + \ldots + \Delta t_m^2}\right) = o(|\Delta t|), k = \overline{1,n}.$
+		
+		Поэтому в случае существования сложной ФНП \eqref{313} в рассматриваемых окрестностях $V(x_0)$ и $\widetilde{V}(t_0)$, где $x_0 = g(t_0)$, получаем: $\exists \Delta h(t_0) = h(t_0 + \Delta t) - h(t_0) = f(g(t_0 + \Delta t)) - f(g(t_0)) =$ \\
+		$ = \begin{sqcases} g(t_0) = x_0, \Delta x = \Delta g(t_0) = g(t_0 + \Delta t) - g(t_0) \xrightarrow[\Delta t \to 0]{} 0, g(t_0 + \Delta t) = g(t_0) + \Delta g(t_0) = x_0 + \Delta x \end{sqcases} =$ 
+        $= f(x_0 + \Delta x) - f(x_0) \overset{\eqref{315}, \eqref{316}}{=} \sum\limits_{k=1}^{n} \dfrac{\partial f(x_0)}{\partial x_k} \left( \sum\limits_{j=1}^{m} \dfrac{\partial g_k (t_0)}{\partial t_j} \Delta t_j + \beta_k \right) + \alpha =$
+		
+		\begin{equation}
+		\label{317}
+		=\sum_{j=1}^{m} \left(
+		\sum_{k=1}^{n} \dfrac{\partial f(x_0)}{\partial x_k} \cdot \dfrac{\partial  g_k(t_0)}{\partial t_j} \Delta t_j
+		\right) + \gamma,
+		\end{equation}
+		где 
+		\begin{equation}
+		\label{318}
+		\gamma = \sum\limits_{k=1}^{n} \dfrac{\partial f(x_0)}{\partial x_k} \beta_k + \alpha
+		\end{equation}
+		
+		Покажем, что $\gamma = o\left(|\Delta t|\right)$, т.е.
+		\begin{equation}
+		\label{319}
+		\exists \lim\limits_{\Delta t \to 0} \dfrac{\gamma}{|\Delta t|} = \lim\limits_{\Delta t_k \to 0}\dfrac{\gamma}{\sqrt{\Delta t_1^2 + \Delta t_2^2 + \ldots + \Delta t_m^2}} = 0.
+		\end{equation}
+		Во-первых, имеем: $\exists \lim\limits_{\Delta t \to 0} \dfrac{\alpha}{|\Delta x|} =  \lim\limits_{\Delta t \to 0} \dfrac{o(|\Delta x|)}{|\Delta x|} = 0$. \\
+		Во-вторых, получаем: $\forall |\Delta x_k| = |g_k(t_0 + \Delta t) - g_k(t_0)| = \abs{ \sum\limits_{j=1}^{m} \dfrac{\partial g_k(t_0)}{\partial t_j}\Delta t_j + o(|\Delta t|)} \leqslant$\\
+		$ \leqslant \abs{ \sum\limits_{j=1}^{m} \dfrac{\partial g_k(t_0)}{\partial t_j}\Delta t_j} +  \abs{o(|\Delta t|)} \leqslant \begin{sqcases} \text{неравенство Коши-Буняковского } \end{sqcases} \leqslant $\\
+		$\leqslant \left(  \underbrace{\sum\limits_{j=1}^{m} \left(\dfrac{\partial g_k(t_0)}{\partial t_j}\right)^2}_\text{c = const > 0} \cdot \underbrace{\left(\sum\limits_{j=1}^{m} \Delta t_j ^ 2\right)}_\text{$|\Delta t|^2$} \right)^{\frac{1}{2}} + o(|\Delta t|) = \sqrt{c} \cdot |\Delta t| + o(|\Delta t|) = \left( \underbrace{ \sqrt{c} + \dfrac{o(|\Delta t|)}{|\Delta t|} }_{\text{ограничена}} \right)
+        \cdot \abs{\Delta t}
+        \leqslant$ \\
+		$ \leqslant c_0 \abs{\Delta t}$, где $c_0 = const \geqslant 0$. 
+		
+		Поэтому при $\Delta t \ne 0 \Rightarrow \forall \dfrac{\abs{\Delta x_k}}{\abs{\Delta t}} \leqslant c_0 \Rightarrow$  $\dfrac{\Delta x_k}{|\Delta t|}$ — ограничено, $k = \overline{1,n}$. А тогда будет ограничена и величина $\dfrac{|\Delta x|}{|\Delta t|} = \sqrt{\sum\limits_{k=1}^{n} \left(\dfrac{\Delta x_k}{|\Delta t|}\right)^2}$. Отсюда получаем, что
+		\begin{equation}
+		\label{320}
+		\exists \lim\limits_{\Delta t \to 0} \dfrac{\alpha}{|\Delta t|} = \limlim{\Delta t \to 0}{(\Delta x \to 0)} \left(\dfrac{o|\Delta x|}{|\Delta x|} \cdot \underbrace{\dfrac{|\Delta x|}{|\Delta t|}}_\text{ограничена}\right) = 0
+		\end{equation}
+		
+		Аналогично, используя неравенство Коши-Буняковского при $\Delta t \ne 0$, имеем: \\ $\dfrac{1}{|\Delta t|} \abs{\sum\limits_{k=1}^{n} \dfrac{\partial f(x_0)}{\partial x_k} \cdot \beta_k} \leqslant \dfrac{1}{|\Delta t|} \underbrace{\left( \sum\limits_{k=1}^{n} \left(\dfrac{\partial f(x_0)}{\partial x_k}\right)\right)^2}_\text{$c_1 = const \geqslant 0$} \cdot \left( \sum\limits_{k=1}^{n} \beta_k^2\right)^{\frac{1}{2}} = \sqrt{c_1} \left(\sum\limits_{k=1}^{n} \left(\dfrac{\beta_k}{\Delta t}\right)^2\right)^{\frac{1}{2}} \xrightarrow[\Delta t \to 0]{} \\
+		\xrightarrow[\Delta t \to 0]{} \begin{sqcases}\forall \beta_k = o(|\Delta t|), \dfrac{\beta_k}{|\Delta t|} \xrightarrow[\Delta t \to 0]{} 0 \end{sqcases} \xrightarrow[\Delta t \to 0]{} 0$, т.е. сумма \eqref{318} является величиной порядка $o(|\Delta t|)$ при $\Delta t \to 0$. 
+		
+		Отсюда в силу \eqref{320} следует: \\
+		 $\exists \lim\limits_{\Delta t \to 0} \dfrac{\gamma}{|\Delta t|} = \lim\limits_{\Delta t \to 0}\left(\dfrac{o(|\Delta t|)}{|\Delta t|} + \dfrac{\alpha}{|\Delta t|}\right) \overset{\eqref{320}}{=} 0$, т.е. в \eqref{317} $\Rightarrow \gamma = o(|\Delta t|)$ при $\Delta t \to 0$, что соответствует определению дифференцируемости сложной ФНП \eqref{313} в точке $t_0$. 
+         	 
+		 При этом, учитывая, что $\Delta h(t_0) = \sum\limits_{k=1}^{n} \dfrac{\partial h(t_0)}{\partial t_k} t_k + \gamma$, после сравнения с полученным представлением \eqref{317} с $\gamma = o(|\Delta t|)$, в силу произвольности используемых $\Delta t_k \in \mathbb{R}, k = \overline{1,n}$, получаем $\eqref{314}$.         
+                  
+\end{proof}
+\begin{consequence}[инвариантность формы первого дифференциала ФНП]
+	Для сложной ФНП $h(t) = f(g(t))$ в случае дифференцируемости $f(x)$ и $g(t)$ на соответствующих множествах 
+    $D_0 \subset \RN$ и $G_0 \subset \mathbb{R}^m$, где $x = (x_1, x_2, \ldots, x_n) \in D_0$, $t = (t_1, t_2, \ldots, t_m) \in G_0, g(t) = (g_1(t), g_2(t), \ldots, g_n(t)) \in D_0$, \\    
+    при условии существования композиции, имеем:
+	\begin{equation}
+	\label{321}
+	d h = \sum\limits_{k=1}^{n}\dfrac{\partial f(x)}{\partial x_k} dx_k = \sum\limits_{j=1}^{m} \dfrac{\partial h(t)}{\partial t_j} dt_j,
+	\end{equation}
+	где $dt_j = \Delta t_j$ — приращение независимой переменной $t$, а для $x_k = g_k(t) \Rightarrow d x_k = dg_k(t)$ —  дифференциал компонент промежуточной переменной $x = g(t)$.
+\end{consequence}
+\begin{proof}
+	Во-первых, для независимой переменной $t$ в силу определения следует:\\
+    \begin{equation*}
+        dh = \sum\limits_{j=1}^{m} \dfrac{\partial h(t)}{\partial t_j} dt_j = \sum\limits_{j=1}^{m}  \dfrac{\partial h(t)}{\partial t_j} \Delta t_j
+    \end{equation*}
+	Во-вторых, используя \eqref{314}, получаем:\\
+    \begin{align*}
+        & dh \overset{\eqref{314}}{=} \sum\limits_{j=1}^{m} \left( \sum\limits_{k=1}^{n} \dfrac{\partial f(x)}{\partial x_k} \dfrac{\partial g_k(t)}{\partial t_j} \right) \Delta t_j = \sum\limits_{k=1}^{n}  \dfrac{\partial f(x)}{\partial x_k} \left( \sum\limits_{j=1}^{m} \dfrac{\partial g_k(t)}{\partial t_j} \Delta t_j \right) = \sum\limits_{k=1}^{n}  \dfrac{\partial f(x)}{\partial x_k} d g_k(t) =  \\
+        & = \begin{sqcases} g_k(t) = x_k \end{sqcases} = \sum\limits_{k=1}^{n} \dfrac{\partial f(x)}{\partial x_k} dx_k \; .
+    \end{align*}
+\end{proof}
+
+\subsection{Производные и дифференциалы высших порядков ФНП. \\ $ \text{ } \;\;\;\;\; $ Формула Тейлора для ФНП.}
+
+Для простоты ограничимся Ф2П, т.е. $ u = f(x, y) $, где $ (x, y) \in D \subset \mathbb{R}^2 $. Если $ f(x, y) $ дифференцируема на $ D $ , то  $ \exists \; g(x, y) = u_x ' = \dfrac{\partial f}{\partial x}, \exists \; h(x,y) = u_y ' =  \dfrac{\partial f}{\partial y}, \forall (x, y)$.
+Предположим, что $ g(x, y) $ и $ h(x, y) $ также дифференцируемы на $ D $. 
+Тогда $ \exists \; g_x' = \dfrac{\partial g}{\partial x}, \exists \; g_y' = \dfrac{\partial g}{\partial y}, \exists \; h_x' = \dfrac{\partial h}{\partial x}, \exists \; h_y' = \dfrac{\partial h}{\partial y} $.
+
+Эти производные называют \important{производными 2-го порядка} от исходной функции $ f(x, y) $ и обозначают: 
+$ \;\;\;\; $
+$ g_x' = \dfrac{\partial g}{\partial x} = \dfrac{\partial}{\partial x} \left( \dfrac{\partial f}{\partial x} \right) = \dfrac{\partial^2 f}{\partial x^2} $,
+$  \;\;\;\; $
+$ g_y' = \dfrac{\partial g}{\partial y} = \dfrac{\partial}{\partial y} \left( \dfrac{\partial f}{\partial x} \right) = \dfrac{\partial^2 f}{\partial y \partial x} $,\\
+ $ \text{ } \;\;\;\;\;\;\; $ 
+ $ \text{ } \;\;\;\;\;\;\;\;\; $
+ $ \;\;\;\; $
+ $ h_x' = \dfrac{\partial h}{\partial x} = \dfrac{\partial}{\partial x} \left( \dfrac{\partial f}{\partial y} \right) = \dfrac{\partial^2 f}{\partial x \partial y} $,
+$  \;\;\; $
+ $ h_y' = \dfrac{\partial h}{\partial y} = \dfrac{\partial}{\partial y} \left( \dfrac{\partial f}{\partial y} \right) = \dfrac{\partial^2 f}{\partial y^2} $.
+ 
+ Из этих производных второго порядка производные $ \dfrac{\partial^2 f}{\partial x \partial y} $ и $ \dfrac{\partial^2 f}{\partial y \partial x } $ называют \important{смешанными}. 
+ 
+ На практике все производные второго порядка записываются в виде:\\\\ 
+\begin{tabular}{l r r}    
+  $  
+         u_{x^2}'' = (u_x')_x' = \dfrac{\partial}{\partial x}(u_x') = 
+         \dfrac{\partial}{\partial x} \left( \dfrac{\partial f}{\partial x} \right) = 
+         \dfrac{\partial^2 f}{\partial x^2},
+ $        
+     & $ \; $ &
+$     
+        u_{xy}'' = (u_x')_y' = \dfrac{\partial}{\partial y}(u_x') = 
+        \dfrac{\partial}{\partial y} \left( \dfrac{\partial f}{\partial x} \right) = 
+        \dfrac{\partial^2 f}{\partial y \partial x},
+ $         
+     \\\\
+$      
+        u_{y^2}'' = (u_y')_y' = \dfrac{\partial}{\partial y}(u_y') = 
+        \dfrac{\partial}{\partial y} \left( \dfrac{\partial f}{\partial y} \right) = 
+        \dfrac{\partial^2 f}{\partial y^2},
+ $         
+     & $ \; $ &
+$      
+         u_{yx}'' = (u_y')_x' = \dfrac{\partial}{\partial x}(u_y') = 
+         \dfrac{\partial}{\partial x} \left( \dfrac{\partial f}{\partial y} \right) = 
+         \dfrac{\partial^2 f}{\partial x \partial y}.
+ $         
+\end{tabular}
+
+$  $\\
+
+\begin{theorem}[о равенстве смешанных производных ФНП]
+    Если ФНП $ u = f(x_1, \ldots , x_n) $ в окрестности точки  $ x_0 = (x_{01}, \ldots , x_{0n}) \in D(f) $ имеет непрерывные смешанные производные 
+    $ u_{x_k, x_j}'' (x_0)$  и $ u_{x_j, x_k}'' (x_0), k \neq j,$ то в случае их непрерывности в соответствующей окрестности точки $ x_0 $, имеем равенство:
+    \begin{equation*}
+        u_{x_k, x_j}'' (x_0) = u_{x_j, x_k}'' (x_0), \; k \neq j, \; k,j = \overline{1, n}.
+    \end{equation*}
+\end{theorem}
+
+\begin{proof}$  $
+    
+    Для простоты ограничимся Ф2П $ u = f(x, y), \; (x,y) \in D \subset \mathbb{R}^2 $, дважды непрерывно дифференцируемой в окрестности $ V(M_0) \in D$ точки $ M_0 = (a,b) \in D$, 
+    т.е. предположим, что у рассматриваемой функции частные производные 2-го порядка непрерывны для $ \forall \; (x, y) \in V (M_0) $.
+    В данном случае достаточна непрерывность только смешанных производных. 
+    
+    Выбирая $ \forall \; (\Delta x, \Delta y) \in \mathbb{R}^2 $ так, чтобы 
+    $ (a + \Delta x, b + \Delta y)  \in V(M_0), (a + \Delta x, b) \in V(M_0), $ 
+    $(a, b + \Delta y)  \in V(M_0)$,
+    рассмотрим выражение    
+    \begin{equation}
+        \label{322}
+         F = f(a + \Delta x, b + \Delta y) - 
+         f(a + \Delta x, b) - f(a, b + \Delta y) + f(a, b).
+    \end{equation}
+    
+    Для фиксированного $ \Delta y $ для функции $ g(t) = f(t, b + \Delta y) - f(t, b)$ на соответствующем приращении $ \Delta x $ имеем: 
+    \\
+    $ \Delta g(a) = g(a + \Delta x) - g(a) = 
+    \left( \nullFrac f(a + \Delta x, b + \Delta y) - f(a + \Delta x, b) \nullFrac  \right)
+    - \left( \nullFrac  f(a, b + \Delta y) - f(a, b) \nullFrac  \right) 
+    {\overset{\eqref{322}}{=} F.}
+    $\\
+    
+    Далее по формуле конечных приращений Лагранжа для Ф1П получаем, что 
+    \begin{equation}
+        \label{323}
+        \exists \; \Theta_1 \in ]0;1[ \; \Rightarrow F = 
+        \Delta g(a) = g_t' (a + \Theta_1 \Delta x) \Delta x =
+        \left( \nullFrac
+            f_x' (a + \Theta_1 \Delta x, b + \Delta y) - f_x' (a + \Theta_1  \Delta x, b)
+        \nullFrac \right)
+        \Delta x
+    \end{equation}
+    
+    Фиксируя $ \Delta x $ и $ \Theta_1 $,  для функции 
+    $ h( \tau ) = f_x' (a + \Theta_1 \Delta x, \tau)$
+    на соответствующем приращении $ \Delta y $ имеем:
+    \begin{equation*}
+        \Delta h (b) = h (b + \Delta y) - h(b) =
+        f_x' (a + \Theta_1 \Delta x , b + \Delta y )
+        - f_x' (a + \Theta_1  \Delta x , b ),
+        \text{
+             и, значит, $ F \overset{\eqref{323}}{=} \Delta h (b) \Delta x$. 
+        }
+    \end{equation*}
+    
+    Применяя снова формулу конечных приращений Лагранжа для Ф1П, получаем, что:\\
+    $   
+        \exists \; \Theta_2 \in ]0;1[ \; \Rightarrow \Delta h(b) = 
+        h_{\tau}' (b + \Theta_2 \Delta y) \Delta y
+        \text{, и поэтому } 
+    $
+    
+    \begin{equation}
+        \label{324}        
+        F = h_{\tau}' (b + \Theta_2 \Delta y) \Delta x \Delta y =
+        f_{xy}''(a + \Theta_1 \Delta x, b + \Theta_2 \Delta y)
+        \Delta x \Delta y.
+    \end{equation}
+    
+    Аналогично показывается, что 
+    \begin{equation}
+        \label{325}       
+        \exists \; \Theta_3, \Theta_4 \in ]0; 1[ 
+        \text{, для которых }
+        F = f_{yx}'' ( a + \Theta_3 \Delta x, b + \Theta_4 \Delta y)
+        \Delta x \Delta y.        
+    \end{equation}
+    
+    Из \eqref{324} и \eqref{325} для $ \Delta x \neq 0 $ и $ \Delta y \neq 0 $ имеем:
+    \begin{equation}
+        \label{326}
+        f_{xy}'' \; (K) = f_{yx}'' \; (N), 
+    \end{equation}
+    где $ K = (a + \Theta_1 \Delta x, b + \Theta_2 \Delta y) $,
+    $  N = (a + \Theta_3 \Delta x, b + \Theta_4 \Delta y) $.
+    
+    В силу ограниченности $ Q_k \in ]0;1[ \; , \; k = \overline{1, 4}$, 
+    имеем:
+    $ 
+        \begin{cases}
+            K \underset{ 
+                \substack{
+                        \Delta x \to 0 \\ \Delta y \to 0
+                    }
+                }{\xrightarrow{\;\;\;\;\;\;\;}}
+            (a, b) = M_0 \; ,
+            \\
+            N \underset{ 
+                \substack{
+                    \Delta x \to 0 \\ \Delta y \to 0
+                   }
+               }{\xrightarrow{\;\;\;\;\;\;\;}}
+           (a, b) = M_0 \; .
+        \end{cases}
+    $
+    
+    $  $\newline
+    
+    Отсюда на основании непрерывности 
+    $ u_{xy}'' $ и $ u_{yx}'' $ в $ V(M_0) $  следует
+    
+    $ 
+    f_{xy}'' (M_0) = \limlim{K \to M_0}{(N \to M_0)} f(K)
+    \overset{\eqref{326}}{=} 
+    \limlim{N \to M_0}{(K \to M_0)} f(N)
+    = f_{yx} '' (M_0)$ .
+\end{proof}
+
+\begin{note}
+    в общем случае для ФНП $ u = f(x), x \in D \subset \RN  $, определяя последовательно частные производные высших порядков 
+    $ \dfrac{ \partial^{m+k} u }{ \partial x_i^m \partial x_j^k } = 
+      \dfrac{ \partial^{m}  }{ \partial x_i^m } 
+      \left( \dfrac{ \partial^{k} u }{ \partial x_j^k } \right)  $
+    и рассматривая соответствующие производные 
+    $ \dfrac{ \partial^{m+k} u }{ \partial x_j^k \partial x_i^m } = 
+    \dfrac{ \partial^{k}  }{ \partial x_j^k } 
+    \left( \dfrac{ \partial^{m} u }{ \partial x_i^m } \right)  $,
+    в случае их непрерывности при $ i \neq j $ также получим равенство этих производных между собой в рассматриваемых точках.
+\end{note}
+
+$  $
+
+Чтобы определить дифференциалы высших порядков ФНП, рассмотрим для дифференцируемой функции
+$ h = f(x), x \in D \subset \RN $, её дифференциал 1-го порядка 
+\begin{equation}
+    \label{327}
+     du = \sum_{j=1}^{n} \dfrac{\partial f(x)}{\partial x_j} d x_j,
+\end{equation}
+вычисленный на соответствующем приращении $ \Delta x_j = dx, j = \overline{1, n} $ независимой переменной $ x $. 
+Если в \eqref{327} зафиксировать $ dx_1, \ldots, dx_n $, то получаем новыую ФНП 
+$ g(x) = df(x), x \in D \subset \RN $.
+Если в свою очередь эта ФНП дифференцируема, то на новых приращениях $ \delta x_i, i = \overline{1,n} $, можем вычислить
+\begin{equation}
+    \label{328}
+    \delta g(x) = \sum_{i=1}^{n} \dfrac{\partial g(x)}{\partial x_i} \; \delta x_i.
+\end{equation}
+
+Подставляя в \eqref{328} равенство \eqref{327}, имеем:
+\begin{equation}
+\label{329}
+\delta g(x) = \sum_{i=1}^{n} \dfrac{\partial}{\partial x_i} \; \left( 
+       \sum_{j=1}^{n} \dfrac{\partial f(x)}{\partial x_j} d x_j
+\right) \; \delta x_i
+=
+\sum_{i,j=1}^{n} \dfrac{\partial^2 f(x)}{\partial x_i \; \partial x_j} \; \delta x_i \; d x_j
+\;.
+\end{equation}
+
+В \eqref{329} получаемая сумма представляет собой билинейную форму относительно новых приращений $ \delta x_i $ и старых $ d x_j $, где $ i,j = \overline{1, n} $.
+Если в этой билинейной форме \eqref{329} взять 
+$ \forall \; \delta x_k = d x_k, k = \overline{1, n} $, то получаем квадратичную форму
+\begin{equation}
+    \label{330}
+    d g(x) =
+    \sum_{i,j=1}^{n} \dfrac{\partial^2 f(x)}{\partial x_i \; \partial x_j} \; d x_i \; d x_j
+\end{equation}
+относительно старых приращений $ dx_1, \ldots, dx_n $. 
+Эта квадратичная форма \eqref{330} называется вторым дифференциалом исходной ФНП $ u = f(x) $  и обозначается
+\begin{equation*}
+    d^2 f(x) = d(df(x)) = dg(x) \overset{\eqref{330}}{=}
+    \sum_{i,j=1}^{n} \dfrac{\partial^2 f(x)}{\partial x_i \; \partial x_j} \; d x_i \; d x_j
+    \; .
+\end{equation*}
+
+Для $ f(x) $, дважды непрерывно дифференцируемой в рассматриваемых точках, т.е. когда все её частные производные 2-го порядка непрерывны, по теореме о равенстве смешанных производных имеем:
+$ \dfrac{\partial^2 f(x)}{\partial x_i \; \partial x_j} = 
+  \dfrac{\partial^2 f(x)}{\partial x_j \; \partial x_i} $
+  , и, значит, 2-ой дифференциал $ d^2 f(x) $ будет симметрической квадратичной формой относительно дифференциалов $ dx_1, \ldots, dx_n $.
+  
+Если в рассматриваемом случае  ввести дифференциальный оператор 
+\begin{equation}
+      \label{331}
+      d = \dfrac{\partial \; (.)}{\partial \; x_1} \; d x_1 + 
+      \ldots + \dfrac{\partial \; (.)}{\partial \; x_n} \; d x_n,
+\end{equation}
+действующий по правилу  $ df = \dfrac{df}{dx_1} dx_1  + \ldots + \dfrac{df}{dx_n} dx_n$,
+то формальное возведение в квадрат даёт:
+\begin{align*}
+    &
+    d^2 \overset{\eqref{331}}{=}
+    \left( \sum_{k = 1}^{n} \dfrac{\partial \; (.)}{\partial \; x_k} \; d x_k \right)^2 = 
+    \left( \sum_{i = 1}^{n} \dfrac{\partial \; (.)}{\partial \; x_i} \; d x_i \right) \cdot
+    \left( \sum_{j = 1}^{n} \dfrac{\partial \; (.)}{\partial \; x_j} \; d x_j \right) =
+    \\ & =
+    \left[ \dfrac{\partial \; (.)}{\partial \; x_i} \cdot \dfrac{\partial \; (.)}{\partial \; x_j} = \dfrac{\partial^2 \; (.)}{\partial x_i \; \partial x_j}\right] =
+    \sum_{i,j=1}^{n} \dfrac{\partial^2 \; (.)}{\partial x_i \; \partial x_j} \; d x_i \; d x_j
+    \; ,
+\end{align*}
+поэтому опять получаем $ d^2 f =  \sum_{i,j=1}^{n} \dfrac{\partial^2 \;f}{\partial x_i \; \partial x_j} \; d x_i \; d x_j  \;$.
+
+Если условиться считать ФНП $ u = f(x) $ $ m $ раз непрерывно дифференцируемой, когда у неё все частные производные $ m $-го порядка существуют и непрерывны, 
+то получается формула для второго дифференциала с использованием \eqref{331}, обощается на дифференциалы высших порядков:
+\begin{equation}
+    \label{332}
+    d^m f(x) =
+    \left( \dfrac{\partial \; (.)}{\partial \; x_1} \; d x_1 + 
+    \ldots + \dfrac{\partial \; (.)}{\partial \; x_n} \; d x_n \right)^m \;f(x)
+    \; .
+\end{equation}
+При этом сами дифференциалы высших порядков вводятся рекуррентным образом: 
+$ d^m f(x) = d(d ^{m-1}f(x)), m \in \mathbb{N} $, где подразумеваем, что $ d^0 f(x) = f(x) $ и
+всё время используется первоначальное приращение $ \Delta x_k = d x_k, k = \overline{1, n}. $
+
+При применении \eqref{332} на практике можно воспользоваться следующим обобщением бинома Ньютона
+$ (a_1 + a_2 + \ldots + a_n)^m = \sum \dfrac{m!}{(i_1!) \ldots (i_n!)} a_1^{i_1} \ldots a_n^{i_n}, $ где суммирование ведётся по всем $ i_1, \ldots, i_n $ для которых $\;\;i_1 + \ldots + i_n = m, \forall \; i_k \geqslant 0, k = \overline{1, n}. $
+
+$  $
+
+\begin{example}
+    Рассмотрим $ n = 3 $. При $ m = 3 $ для трижды непрерывной дифференцируемой Ф3П:
+    $ u = f(x, y, z), \; (x, y, z) \in D \subset \mathbb{R}^{3} 
+    \Rightarrow d^3 u = 
+    \left( \dfrac{\partial \; (.)}{\partial \; x} \; d x + \dfrac{\partial \; (.)}{\partial \; y} \; d y +  \dfrac{\partial \; (.)}{\partial \; z} \; d z \right)^3 f
+    = $\\
+    %\begin{center}
+        \\
+        $ \displaystyle 
+        {=        
+            \begin{sqcases}
+                (a_1 + a_2 + a_3)^3 = \sum_{i_1 + i_2 + i_3 = 3}^{} 
+                \dfrac{3!}{ (i_1!) (i_2!) (i_3!) } \; a_1^{i_1} a_1^{i_2} a_1^{i_3} =
+                \\
+                = \begin{sqcases}
+                3 = 3+0+0 = 0+3+0 = 0+0+3, 
+                3 = 2+1+0 = 2+ 0+ 1 = \\
+                =1+2+0 = 1+0+2 = 0+1+2 = 0+2+1, 
+                3 = 1+1+1
+                \end{sqcases}
+                =
+                \\
+                \;\;\;
+                = a_1^3 + a_2^3 + a_3^3
+                + \dfrac{ 3! }{ 0! \; 1! \; 2! } \left(
+                    a_1^2 a_2 + a_1^2 a_3 + a_1 a_2^2 + a_1 a_3^2 + a_2 a_3^2 + a_2^2 a_3
+                \right) + \dfrac{ 3! }{ (1!)^3 } \; a_1 a_2 a_3
+                =
+                \;\;\;
+                \\
+                =
+                a_1^3 + a_2^3 + a_3^3 
+                + 3(a_1^2 a_2 + a_1^2 a_3 + a_1 a_2^2 + a_1 a_3^2 + a_2 a_3^2 + a_2^2 a_3)
+                + 6(a_1 a_2 a_3)
+            \end{sqcases}   
+            =}
+        $
+        \\\\
+        $ 
+            = u_{x^3}''' d x^3 + u_{y^3}''' d y^3 + u_{z^3}''' d z^3 +
+            3\; ( 
+            u_{x^2 y}''' \; dx^2 \; dy + u_{x^2 z}''' \; dx^2 \; dz +
+            u_{x y^2}''' \; dx \; dy^2 + u_{x z^2}''' \; dx \; dz^2 + 
+            \\
+            + u_{y z^2}''' \; dy \; dz^2 + u_{y^2 z}''' \; dy^2 \; dz 
+            )            
+            + 6 \; u_{xyz}''' \; dx  \; dy \; dz.
+        $
+    %\end{center}    
+\end{example}
+    
+$  $
+
+Для получения формулы Тейлора для ФНП предположим, что $ u = f(x), x \in D \subset \RN $
+является $ (n+1) $-раз непрерывно дифференцируемой в некоторой окрестности $ V(x_0) \subset D $ внутренней точки $ x_0 = (x_{01}, \ldots , x_{0n}) \in D $.
+Используя $ \forall \; \Delta x = (\Delta x_1, \ldots, \Delta x_n) \in \RN $, такое, что 
+$ x_0 + t \Delta x = (x_{01} +  t \Delta x_1, \ldots , x_{0n} +  t \Delta x_n) \in V(x_0), \forall t \in [0; 1]$, 
+рассмотрим Ф1П 
+${ F(t) = f(x_0 + t \Delta x) }$. 
+Имеем: $ F(0) = f(x_0), F(1) = f(x_0 + \Delta x) 
+\Rightarrow \Delta f(x_0) = f(x_0 + \Delta x ) - f(x_0) = $ 
+$ =F(1) - F(0) = \Delta F (0) $.
+В данном случае для независимой переменной $ t \in [0;1] $ будем использовать её приращение $ \Delta t = 1 - 0 = 1 $. 
+Применяя для рассматриваемой Ф1П $ F(t) $ формулу Тейлора $ m $-го порядка в дифференциалах, имеем $ \displaystyle \Delta F(0) = \sum_{k = 1}^{m} \dfrac{d^k \; F(0)}{k!} + R_m $. 
+Отсюда, учитывая, что $ \Delta t = 1  $ получаем, что 
+в данном случае, например, $ R_m $ в форме Лагранжа имеет вид: 
+\begin{center}
+    $ R_m = \dfrac{d^{m+1} F(\Theta)}{(m+1)!} $, где $ \Theta \in ]0; 1[ $.
+\end{center}
+Отсюда, учитывая, что $ d^k F(0) = d^k f(x_0), k = \overline{0, m} $, и $ d^{m+1} F(\Theta) = d^{m+1} f(x_0 + \Theta \Delta x) $, окончательно имеем формулу Тейлора-Лагранжа для ФНП:
+\begin{equation*}
+    \Delta f(x_0) = \sum_{k = 1}^{m} \dfrac{d^k f(x_0)}{k!} + \dfrac{d^{m+1} f(x_0 + \Theta \Delta x) }{(m+1)!}
+    \text{, где $ \Theta \in ]0; 1[ $.}
+\end{equation*}
+Аналогом формулы Тейлора-Пеано для ФНП является:
+\begin{equation*}
+    \Delta f(x_0) = \sum_{k = 1}^{m} \dfrac{d^k f(x_0)}{k!} + o(\abs{dx}^m)        
+    \text{, где $ \abs{dx} = \sqrt{dx_1^2 + \ldots + dx_n^2} = 
+        \sqrt{\Delta x_1^2 + \ldots + \Delta x_n^2}
+        \;$.}
+\end{equation*}
+
+\newpage
+$  $

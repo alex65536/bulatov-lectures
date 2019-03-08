@@ -1,0 +1,218 @@
+\documentclass[twoside,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{tikz}
+\usepackage{multicol}
+\usepackage{xparse}
+\usepackage{enumitem}
+
+\usepackage[top=1.5cm, bottom=2cm, inner=2.25cm, outer=1.35cm]{geometry}
+
+\usepackage{setspace}
+\usepackage{epstopdf}
+\usepackage{graphicx}
+\usepackage{titlesec}
+
+\newcommand{\norma}{}
+\usepackage{mainstyle}
+
+\usetikzlibrary{shapes,backgrounds,arrows,matrix,decorations.markings,patterns}
+
+\numberwithin{equation}{section}
+
+\allowdisplaybreaks
+
+\newtheorem*{theorem}{Теорема}
+\newtheorem*{lemma}{Лемма}
+
+%\setstretch{2}
+\setstretch{1.25}
+
+% For cyrillic symbols in "enumerate" environment.
+\renewcommand{\theenumii}{\asbuk{enumii}}
+\AddEnumerateCounter{\asbuk}{\@asbuk}{ы}
+
+
+%====================================================================================
+%   ENVIORONMENTS
+
+\newenvironment{definition}
+{\begin{statement}{Определение}}
+    {\end{statement}}
+
+\newenvironment{characteristics}
+{\begin{statementItemed}{Свойства}}
+    {\end{statementItemed}}
+
+\newenvironment{note}
+{\begin{statementDotted}{Замечание}}
+    {\end{statementDotted}}
+
+\newenvironment{notes}
+{\begin{statementItemed}{Замечания}}
+    {\end{statementItemed}}
+
+\NewDocumentEnvironment{consequence}{o}
+{\raggedright \textbf{Следствие}\IfValueTF{#1}{ (\textit{#1})}{}.}
+{}
+
+\NewDocumentEnvironment{consequences}{o}
+{\raggedright \textbf{Следствия}\IfValueTF{#1}{(\textit{#1})}{}:\begin{enumerate}}
+    {\end{enumerate}}
+
+\newenvironment{exercise}
+{\begin{statementDotted}{Упражнение}}
+    {\end{statementDotted}}
+
+\newenvironment{exerciseColoned}
+{\begin{statement}{Упражнение}}
+    {\end{statement}}
+
+\newenvironment{example}
+{\begin{statementDotted}{Пример}}
+    {\end{statementDotted}}
+
+\newenvironment{examples}
+{\begin{statementItemed}{Примеры}}
+    {\end{statementItemed}}
+
+% =================================
+% math functions
+\newcommand{\abs}[1]{
+    \left\lvert #1 \right\rvert
+}
+
+\newcommand{\maxf}[1]{
+    \max \left\{ #1 \right\}
+}
+
+\newcommand{\suchthat}{
+    \;\ifnum\currentgrouptype=16 \middle\fi|\;
+}
+
+\newcommand{\arc}[1]{
+    \buildrel\,\,\frown\over{#1}
+}
+
+\DeclareMathOperator{\const}{\text{const}}
+
+\DeclareMathOperator{\fix}{\text{fix }}
+\DeclareMathOperator{\diam}{diam\,}
+\DeclareMathOperator{\mes}{mes}
+\DeclareMathOperator{\divergence}{div}
+
+\DeclareMathOperator{\arcsh}{arcsh}
+\DeclareMathOperator{\arth}{{arth}}
+\DeclareMathOperator{\arcth}{{arcth}}
+\DeclareMathOperator{\sgn}{sgn}
+
+\newcommand{\parenthesis}[1]{%
+    \left( #1 \right)
+}
+
+\newcommand{\plot}[1]{$ \text{Г}_{#1} $}
+
+\newcommand{\limlim}[2]
+{ \lim\limits_{ \substack{ #1 \\ #2 } } }
+
+\newcommand{\limitslimits}[2]
+{ \limits_{ \substack{ #1 \\ #2 } } }
+
+\newcommand{\limlimlim}[3]
+{ \lim\limits_{ \substack{ #1 \\ #2 \\ #3 } } }
+
+\newcommand{\nullFrac}{\dfrac{ }{}}
+
+\renewcommand{\emptyset}{\varnothing}
+
+\newcommand{\diint}{\displaystyle\iint}
+
+\newcommand{\intl}{\int\limits}
+\newcommand{\iintl}{\iint\limits}
+\newcommand{\diintl}{\diint\limits}
+\newcommand{\dintl}{\dint\limits}
+
+
+%========================================================
+% text style
+
+\newcommand{\important}[1]{\textit{#1}}
+
+\newcommand{\dint}{\displaystyle\int}
+\newcommand{\dsum}{\displaystyle\sum}
+
+\newcommand{\oiint}[2]{
+    \begin{tikzpicture}[baseline=(C.base)]
+        \node(C) {$ \displaystyle \iintl_{#1}^{#2} $};
+        \draw (0,0.15) circle (0.25); 
+        %\node[draw,circle,inner sep=1pt](C) ++ (0, 0.1) {$ \;\;\;\; $};
+    \end{tikzpicture}
+}
+
+\newcommand{\circled}[1]{
+    \begin{tikzpicture}[baseline=(C.base)]
+    \node[draw,circle,inner sep=1pt](C) {#1};
+    \end{tikzpicture}
+}
+
+\newcommand{\eqlhopital}{%
+    \overset{\circled{Л}}{=}}
+
+\newcommand{\neqlhopital}{%
+    \overset{\circled{Л}}{\neq}}
+
+\newcommand{\sqcase}[1]{%
+    \left[\begin{matrix}#1\end{matrix}\right]
+}
+
+\newcommand{\dvert}[2]{\left.\dfrac{ }{}\right\vert^{#1}_{#2}}
+
+\renewcommand{\r}[1]{$\overset{\text{ }_\bullet\text{ }}{\text{#1}}$}
+
+\renewcommand{\norma}[1]{\left\lvert\left\lvert#1\right\rvert\right\rvert}
+
+\newcommand{\RN}{\mathbb{R}^n}
+\newcommand{\R}[1]{\mathbb{R}^{#1}}
+
+% =================================
+% sets utilities
+
+\newcommand{\defineset}[2]{
+    \left\{ #1 \, \middle\vert \, #2 \right\}
+}
+
+\newcommand{\set}[1]{
+    \left\{ #1 \right\}
+}
+
+%====================================================================================
+%   DOCUMENT
+
+
+%\includeonly{lecture09}
+%\includeonly{lecture01,lecture02,lecture03,lecture04,lecture05}
+
+%\usepackage[pages=ALL]{background}
+%\backgroundsetup{scale=1,color=black,opacity=0.05,angle=0,contents={\includegraphics[width=\paperwidth,height=\paperheight]{notFinal.jpg}}}
+
+\begin{document}
+    \include{header}
+    \titleformat{\section}{\LARGE\bfseries}{}{0pt}{\underline{Лекция \thesection.}\newline}
+    \titleformat{\subsection}{\Large\bfseries}{}{0pt}{\thesubsection. }
+    \large
+    \include{lecture01}
+    \include{lecture02}
+    \include{lecture03}
+    \include{lecture04}
+    %\include{lecture05-temp}
+    \include{lecture05}
+    \include{lecture06}
+    \include{lecture07}
+    \include{lecture08}
+    \include{lecture09}
+    \include{lecture10}
+
+\end{document}
