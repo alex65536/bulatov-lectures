@@ -81,7 +81,7 @@ export -f check_file
 echo Running style checks...
 echo
 
-find . -name "*.tex" -exec bash -c 'check_file "$0" "$1"' '{}' "$WORK_DIR" ';'
+find . -name "*.tex" ! -path "./original-src/*" -exec bash -c 'check_file "$0" "$1"' '{}' "$WORK_DIR" ';'
 
 if [[ -f err.stamp ]]; then
 	echo "There were errors"

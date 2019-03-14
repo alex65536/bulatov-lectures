@@ -1,0 +1,535 @@
+\section{Числовые ряды}
+\subsection{Сходимость и расходимость числовых рядов}
+
+Предположим, что имеется некоторая числовая последовательность $\left( a_n \right), n \in \mathbb{N}$. По этой последовательности строим новую числовую последовательность:
+\begin{equation}
+\label{71}
+S_n = \sum\limits_{k=1}^n a_k = a_1 + a_2 + \ldots + a_n
+\end{equation}
+Если последовательность \eqref{71} сходится, т.е. $\exists \lim\limits_{n \to \infty} S_n = S \in \mathbb{R}$, то говорим, что имеется \important{сходящийся числовой ряд}:
+\begin{equation}
+\label{72}
+\sum\limits a_n = a_1 + a_2 + \ldots + a_n + \ldots
+\end{equation}
+При этом, во-первых, саму последовательность $\left( a_n \right), n \in \mathbb{N}$ называют \important{общим членом ряда} \eqref{72}, а, во-вторых, последовательность $\sum\limits_{k=1}^{n}$ - $n$-ой частичной суммой \eqref{72} или последовательностью частных сумм.
+
+Величина $S = \lim\limits_{n \to \infty} S_n \in \mathbb{R}$ принимается за \important{сумму ряда} \eqref{72} и записывается
+\begin{equation*}
+S = \sum\limits_{n=1}^{\infty} a_n.
+\end{equation*}
+
+Если числовой ряд \eqref{72} не сходится, то он называется \important{расходящимся}. Для него:
+\begin{equation*}
+S_n \xrightarrow[n \to \infty]{\eqref{71}} \infty
+\text{ либо }\nexists \lim\limits_{n \to \infty} S_n.
+\end{equation*}
+
+\begin{examples}
+    %\begin{enumerate}
+        \item 
+        Рассмотрим числовой ряд:
+        \begin{equation*}
+        \sum\limits (-1)^{n-1} = 1 - 1 + 1 - \ldots + (-1)^{n-1} + \ldots
+        \end{equation*}
+        $a_n = (-1)^{n-1}, n \in \mathbb{N}$ - общий член.\\
+        $S_n = \sum\limits_{k=1}^{n}(-1)^{k-1} = \begin{cases}
+        0, n - \text{чётное,} \\
+        1, n - \text{нечётное.} \end{cases}$ \\
+        Поэтому здесь $\nexists \lim\limits_{n \to \infty} S_n$, т.е. рассматриваемый ряд расходится.
+        \item Для частных сумм геометрического ряда:
+        \begin{equation*}
+        \sum\limits_{n = 1}^{\infty} q^{n-1} = 1 + q + q^2 + \ldots + q^{n-1} + \ldots
+        \end{equation*}
+        имеем $S_n = \sum\limits_{k=1}^{n} q^{k-1} = \begin{cases}
+        \dfrac{1 - q^n}{1-q}, q \ne 1, \\
+        n, q = 1. \end{cases}$\\
+        Отсюда получаем, что:
+        \begin{equation*}
+        \lim\limits_{n \to \infty} q^n = \begin{cases}
+        0, |q| < 1, \\
+        1, q = 1, \\
+        \infty, |q| > 1, \\
+        \not\exists, q \ne -1.
+        \end{cases}
+        \end{equation*}
+        Получаем, что этот ряд будет сходящимся тогда и только тогда, когда $|q| < 1$ и выполняется:
+        \begin{equation*}
+        \sum\limits_{n=1}^{\infty} q^{n-1} \overset{|q|<1}{=}  \dfrac{1}{1-q},
+        \end{equation*}			
+        где $\dfrac{1}{1-q}$ - формула для суммы всех членов бесконечно убывающей геометрической прогрессии.
+    %\end{enumerate}
+\end{examples}
+
+\begin{theorem}[критерий Коши сходимости числовых рядов]
+	\begin{equation*}
+	\sum a_n \text{ сходится тогда и только тогда, когда }  \left( S_n \right) \text{является фундаментальной, т.е.}
+	\end{equation*}
+	\begin{equation}
+	\label{73}
+	\text{для } \forall \varepsilon>0 \ \exists \nu \in \mathbb{R} : \text{для }\forall n \geqslant \nu \; \wedge \;  \text{для }\forall m \in \mathbb{N} \Rightarrow \abs{S_{n+m} - S_n} \overset{\eqref{71}}{=} \abs{a_{n+1} + a_{n+2} + \ldots + a_{n+m}} \leqslant \varepsilon
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	\item[\circled{$\Rightarrow$}] Пусть $ \exists \lim\limits_{n \rightarrow \infty} S_n = p \in \mathbb{R}$. Тогда 
+	\begin{equation*}
+	\text{для }\forall \varepsilon > 0 \; \exists \; \nu \in \mathbb{R} \; : \; \text{для } \forall \; n \geqslant \nu
+	\Rightarrow \abs{S_n - p} \leqslant \varepsilon .
+	\end{equation*}
+	Аналогично, заменяя $n$ на $ n + m $ (для $\forall m \in \mathbb{N}$),
+	получим $\abs{S_{n+m} - p} \leqslant \varepsilon$.
+	
+	Тогда для $\forall n \geqslant \nu \; \wedge \text{ для }\forall m \in \mathbb{N}$ имеем:
+	\begin{equation*}
+	\abs{S_{n+m} - S_n} = \abs{(S_{n+m} - p) - (S_n - p)} \leqslant  \abs{S_{n+m} - p} + \abs{S_n - p} \leqslant 2 \cdot \varepsilon,
+	\end{equation*}  что соответствует условию
+	(\ref{M_lemma_for_fundamential}), где $ M = 2 \geqslant 0$. Таким образом, получаем, что последовательность $ (S_n) $ фундаментальная.
+	\item[\circled{$\Leftarrow$}] Во-первых, если $ (S_n) $ удовлетворяет условию Коши \eqref{73}, то имеем:
+	\begin{equation*}
+	\text{для } \varepsilon_0 = 1 > 0 \; \exists \; \nu_0 \in \mathbb{R} :
+	\text{для }\forall n \geqslant \nu_0 \wedge \text{для }\forall m \in \mathbb{N} \Rightarrow \abs{S_{n+m} - S_n} \leqslant \varepsilon_0,
+	\end{equation*} т.е. $ S_{n+m} - 1 \leqslant S_n \leqslant S_{n+m} + 1 $.
+	Фиксируя здесь $ n+m \geqslant \nu_0 $, получаем, что все остатки у $(S_n)$, начиная с $n \geqslant \nu_0$, ограничены, а значит,
+	ограничена и сама последовательность $(S_n)$, т. к. она отлична от каждого из этих остатков на конечное число элементов.
+	
+	Из ограниченной последовательности $ (S_n) $ в силу принципа выбора можно выбрать сходящуюся подпоследовательность
+	${S_{k_i} \xrightarrow[k_i \to \infty]{} p \in \mathbb{R}}$. Тогда из \eqref{73} получаем:
+	\begin{equation*} 
+	\text{для } {n+m = k_i \geqslant \nu \Rightarrow \abs{S_{k_i} - S_n} \leqslant \varepsilon}, \text{ т.е. }
+	{S_{k_i} - \varepsilon \leqslant S_n \leqslant S_{k_i} + \varepsilon, \text{ для } \forall n \in \mathbb{N}}.
+	\end{equation*}
+	Беря $ \fix \; n \geqslant \nu $ при $ k_i \rightarrow \infty $ по теореме о сжатой последовательности имеем:
+	\begin{align*}
+	&p - \varepsilon = \lim\limits_{k_i \rightarrow \infty} S_{k_i} - \varepsilon \leqslant S_n \leqslant
+	\lim\limits_{k_i \rightarrow \infty} S_{k_i} + \varepsilon = p + \varepsilon \Rightarrow\\
+	&\Rightarrow  p - \varepsilon \leqslant S_n \leqslant p + \varepsilon
+	\text{, т.е. для } \forall n \geqslant \nu \Rightarrow
+	\abs{S_n - p} \leqslant \varepsilon
+	\text{ и, значит, }
+	S_n \underset{n \rightarrow \infty}{\longrightarrow} p \in \mathbb{R}.
+	\end{align*}
+\end{proof}
+
+\begin{consequence}[необходимое условие сходимости числового ряда]
+	Если ряд $\sum a_n$ сходится, то $ a_n = o(1), n \to \infty$.
+\end{consequence}
+\begin{proof}
+	Для доказательства достаточно взять $m=1$. Тогда $\forall \varepsilon \ \exists \nu \in \mathbb{R}, \forall n \geqslant \nu \Rightarrow$ $\Rightarrow \abs{a_{n+1}} \leqslant \varepsilon$, т.е. $a_{n+1} \xrightarrow[n \to \infty]{} 0 \Leftrightarrow  a_n = o(1), n \xrightarrow[\eqref{73}]{} \infty$.
+\end{proof}
+
+\begin{note}
+	Критерий Коши числового ряда в виде \eqref{73} сформулирован в смысле сходимости числового ряда. Используя правило де Моргана построения отрицания логических утверждений имеем \important{критерий Коши расходимости числового ряда}.
+	\begin{equation*}
+	\sum\limits a_n \text{ расходится} \Leftrightarrow \exists \varepsilon_0 > 0 : \text{для } \forall \nu \in \mathbb{R} \; \exists \; n_{\nu} \geqslant \nu \; \wedge \; \exists m_{\nu} \in \ \mathbb{N} \Rightarrow \abs{S_{n_{\nu}+m_{\nu}} - S_{n_{\nu}}} =
+	\end{equation*}
+	\begin{equation*}
+	= \abs{a_{n_{\nu}+1} + a_{n_{\nu}+2} + \ldots + a_{n_{\nu}+m_{\nu}}} > \varepsilon_0
+	\end{equation*}
+\end{note}
+
+\begin{theorem}[критерий сходимости положительных числовых рядов]
+	\begin{equation*}
+	\text{Полжительный }	\sum a_n \text{ сходится } \Leftrightarrow \left( S_n \right) \text{ограничены сверху.}
+	\end{equation*}
+\end{theorem}
+\begin{proof}
+	\circled{$\Rightarrow$} Пусть $a_n \geqslant 0, \forall n \in \mathbb{N}$. Тогда:
+	\begin{enumerate}
+		\item для последователи его частных сумм \eqref{71} имеем: любая $S_n \geqslant 0$ - ограничена снизу.
+		\item $S_{n+1} = a_1 + \ldots + a_n + a_{n+1} = S_n + a_{n+1} \geqslant S_n,$ для $\forall n \in \mathbb{N}$, т.е. $\left( S_n \right)$ возрастает, для $\forall n \in \mathbb{N}$.
+		
+		Из критерия сходимости монотонных последовательностей следует, что в случае сходимости ряда $\sum a_n \left( S_n \right)$ будет ограничена сверху.
+	\end{enumerate}
+	
+	\circled{$\Leftarrow$}
+	Пусть для положительного ряда \eqref{72} последовательность его частичных сумм \eqref{71} ограничена сверху, т.е. $\exists S_0 \in \mathbb{R} \Rightarrow \begin{cases}
+	S_n \leqslant S_0, \\
+	\text{для }\forall n \in \mathbb{N}.
+	\end{cases}$
+	Как и в 1-ом пункте: $0 \leqslant S_n \leqslant S_0, \text{для }\forall n \in \mathbb{N}$, $\left( S_n \right)$ возрастает, для $\forall n \in \mathbb{N}$ - монотонная последовательность. Отсюда $\left( S_n \right)$ сходится к $S_0$, отсюда будет сходится и ряд $\sum a_n$.
+\end{proof}
+
+Из определения сходимости числового ряда и значения его суммы, на основе соответствующих свойств сходимости числовых последовательностей, получаем следующие \important{свойства сходящихся числовых рядов}:
+\begin{enumerate}
+	\item Линейность: если ряды $\sum a_n$ и $\sum b_n$ - сходящиеся, то для $\forall \lambda, \mu \in \mathbb{R} \Rightarrow \sum c_n$, где $c_n = \lambda a_n + \mu b_n, $    для $\forall n \in \mathbb{N}$ - сходящийся, причём для суммы используемых рядов имеем:
+	\begin{equation*}
+	\sum\limits (\lambda a_n + \mu b_n) = \lambda \sum\limits a_n + \mu \sum\limits b_n
+	\end{equation*} 
+	\item Единственность суммы сходящегося числового ряда:
+	
+	Если $\sum a_n $ - сходящийся, то он имеет единственную сумму.
+	\item Характер сходимости (расходимости) числового ряда сохранится, если изменить, дописать или отбросить в этом ряду конечное количество членов, хотя само значение суммы в этом случае может измениться.
+\end{enumerate}
+
+\begin{theorem}[Признак сравнения сходимости Ч.Р.]
+	Если для $\forall n \in \mathbb{N} \Rightarrow 0 \leqslant a_n \leqslant b_n$, то из
+	сходимости $\sum b_n$ следует сходимость $\sum a_n$.
+\end{theorem}
+\begin{proof}
+	Рассмотрим ${S_n = a_1 + \ldots + a_n}$ и $T_n = b_1 + \ldots + b_n$. Учитывая, что
+	для $\forall k \in \mathbb{N} \Rightarrow a_k \leqslant b_k$, получаем:
+	\begin{equation*}
+		S_n = \sum\limits_{k = 1}^na_k \leqslant \sum\limits_{k = 1}^nb_k = T_n.
+	\end{equation*}
+	Поэтому, если положительный ряд	 $\sum b_n$ сходится, то по критерию сходимости рядов
+	получаем, что $(T_n)$ ограничена сверху, т.е. $\exists T_0$ такое, что
+	$T_n \leqslant T_0 \text{ для }\forall n \in \mathbb{N}$, тогда ${S_n \leqslant T_n \leqslant T_0}$,
+	для $\sum a_n \; (S_n)$ ограничена сверху, тогда из критерия сходимости положительных рядов получаем,
+	что $\sum a_n$ сходится.
+\end{proof}
+
+\begin{note}
+	\begin{enumerate}
+		\item Используя свойство сходимости Ч.Р. получаем, что если $\exists c = const \geqslant 0 \; \wedge \; \exists m \in \mathbb{N} \Rightarrow \begin{cases}
+		0 \leqslant a_n \leqslant c \cdot b_n, \\
+		\text{для } \forall n \geqslant m.
+		\end{cases}$ то из сходимости $\sum b_n \Rightarrow$ сходимость $\sum a_n$.
+		\item Используя правило Де Моргана в силу предыдущего пункта получаем, что если $\begin{cases}
+		0 \leqslant a_n \leqslant c \cdot b_n, \\
+		\text{для } \forall n \geqslant m.
+		\end{cases}$, где $c = const \geqslant 0$, то из расходимости $\sum a_n \Rightarrow$ расходимость $\sum b_n$.
+	\end{enumerate}
+\end{note}
+
+\begin{theorem}[Предельный признак сравнения сходимости строго положительных Ч.Р.]
+	Пусть для $\forall n \in \mathbb{N} \Rightarrow a_n > 0$ и $b_n > 0$. Если $\exists p = \lim\limits_{n \to \infty} \dfrac{a_n}{b_n}$,
+	то:
+	\begin{enumerate}
+	  \item В случае $0 < p < +\infty$ рассмотренные строго-положительные ряды
+		$a_n$ и $b_n$ либо одновременно сходятся либо одновременно расходятся,
+		т.е. имеем один и тот же характер сходимости (расходимости).
+	  \item В случае $p = 0$ из сходимости $\sum b_n$ получаем сходимость $\sum a_n$.
+	  \item В случае $p = +\infty$, получаем: из расходимости ряда $\sum b_n$ следует, что ряд $\sum a_n$ расходится.
+	\end{enumerate}
+\end{theorem}
+\begin{proof}
+	\begin{enumerate}
+	  \item Если $p \in \interval]{0; +\infty}[$, то $\left( \dfrac{a_n}{b_n}\right)$ имеет конечный предел, т.е. сходится,
+		а значит ограничена, поэтому $\exists c = \const > 0$, такая, что ${0 < \dfrac{a_n}{b_n} < c \Rightarrow}$ ${\Rightarrow
+		  a_n < c b_n, \text{ для  }\forall n \in \mathbb{N}}$. Отсюда в силу замечания к предыдущей теореме получаем, что
+		из сходимости $\sum b_n$ следует сходимость $\sum a_n$. Из $\exists p = \lim\limits_{n \to \infty} \dfrac{a_n}{b_n}$ также получаем, что
+		$\exists \lim \dfrac{b_n}{a_n} = \dfrac{1}{p} > 0$, поэтому в силу вышесказанного из сходимости $\sum a_n$
+		следует сходимость $\sum b_n$, т.е. рассматриваемые ряды $a_n$ и $b_n$ имеют один и тот же характер
+		сходимости (расходимости).
+	  \item Пусть $p = 0$, тогда, например, для $\varepsilon_0 = 1, \exists m \in \mathbb{N}$, такое, что
+		$\text{для }{\forall n \geqslant m \Rightarrow 0 < \dfrac{a_n}{b_n} \leqslant \varepsilon_0 = 1 \Rightarrow}$
+		${\Rightarrow 0 < a_n \leqslant b_n}$,
+		поэтому из сходимости $\sum b_n$ следует сходимость $\sum a_n$.
+	  \item Если $p = +\infty$, то $\exists \lim\limits_{n \to \infty}\dfrac{b_n}{a_n} = 0$, поэтому из 2) получаем:
+		$0 < b_n \leqslant a_n, \text{для } \forall n \geqslant m$, т.е. из расходимости $\sum b_n$ следует расходимость $\sum a_n$.
+	\end{enumerate}
+\end{proof}
+
+\begin{consequence}[о сходимости знакопостонянных рядов с эквивалентными членами]
+	Если последовательности $(a_n)$ и $(b_n)$, начиная с некоторого номера сохраняют один и тот же
+	знак. то в случае $a_n \sim b_n$, $\sum a_n$ и $\sum b_n$ имеют один и тот же характер сходимости (расходимости).
+\end{consequence}
+\begin{proof}
+	Для доказательства нужно заметить, что $\lim\limits_{n \to \infty}\dfrac{a_n}{b_n} = 1 > 0$, а далее перейти к п.1
+	доказательства предыдущей теоремы.
+\end{proof}
+
+\begin{note}
+	Используя условную сходимость (расходимость) обобщённого гармонического ряда, получаем, что если
+	$\exists \alpha = \const \in \R{}$ и $\exists c = \const \neq 0$, такая, что $a_n \underset{n \to \infty}{\sim} \dfrac{c}{n^\alpha}$,
+	то $\sum a_n$ имеем тот же характер сходимости, что и использованный гармонический ряд, т.е.
+	\begin{equation*}
+		\sum a_n -
+		\begin{cases}
+			\text{сходится}, \alpha > 1,\\
+			\text{расходится}, \alpha \leqslant 1,
+		\end{cases}
+	\end{equation*}
+	Указанный признак сходимости числовых рядов называется степенным.
+\end{note}
+
+\begin{theorem}[Признак сравнения отношений для сходимости Ч.Р.]
+	Если $\exists m \in \mathbb{N} : \text{ для }\forall n \geqslant m \Rightarrow a_n > 0 \; \wedge \; b_n > 0$, то если
+	\begin{equation}
+		\label{eq:45-theorem}
+		\begin{cases}
+			\dfrac{a_{n + 1}}{a_n} \leqslant \dfrac{b_{n + 1}}{b_n}, \\
+			\text{для }\forall n \geqslant m,
+		\end{cases}
+	\end{equation}
+	то из сходимости $\sum b_n$ следует сходимость $\sum a_n$ и наоборот: из расходимости $\sum a_n$
+	следует расходимость $\sum b_n$.
+\end{theorem}
+\begin{proof}
+	Из \eqref{eq:45-theorem}, для любого $\fix n \geqslant m$ получаем:
+	\begin{equation*}
+		\begin{cases}
+			\dfrac{a_{m + 1}}{a_m} \leqslant \dfrac{b_{m + 1}}{b_m}, \\
+			\dfrac{a_{m + 2}}{a_{m + 1}} \leqslant \dfrac{b_{m + 2}}{b_{m + 1}}, \\
+			\ldots\\
+			\dfrac{a_{n + 1}}{a_n} \leqslant \dfrac{b_{n + 1}}{b_n}. \\
+		\end{cases}
+	\end{equation*}
+	Последовательно перемножая получаем:
+	$ 0 < \dfrac{a_{n + 1}}{a_m} \leqslant \dfrac{b_{n + 1}}{b_m},
+    \text{т.е. } 0 < a_{n + 1} \leqslant c b_{n + 1}, $ \\ $\text{ для }\forall n \geqslant m,
+    \text{где } c = \dfrac{a_m}{b_m} = \const > 0. $
+    
+	Отсюда из признака сходимости числовых рядов и соответствующего замечания получаем, что
+	$\sum b_{n+1}$ сходится $\Leftrightarrow$ сходится $\sum a_{n+1}$. Т.к. изменение конечного числа
+	членов числового ряда не изменяет характера сходимости, то и для исходных рядов имеем
+	аналогичный результат.
+\end{proof}
+
+\begin{theorem}[признак Даламбера]
+	Пусть для $\forall n \in \mathbb{N} \Rightarrow a_n > 0$. Если
+	\begin{equation}
+		\label{eq:46-theorem1}
+		\exists d = \lim\limits_{n \to \infty}\dfrac{a_{n + 1}}{a_n},
+	\end{equation}
+	то тогда
+	\begin{equation*}
+		\sum a_n -
+		\begin{cases}
+			\text{сходится}, d < 1, \\
+			\text{расходится}, d > 1, \\
+			\text{требуется дополнительное исследование}, d = 1.
+		\end{cases}
+	\end{equation*}
+\end{theorem}
+\begin{proof}
+	Если $d \in \R{}, d \neq 1$, для $\varepsilon_0 = \dfrac{\abs{1 - d}}{2} > 0$ в силу \eqref{eq:46-theorem1}
+	\begin{equation}
+		\label{eq:46-theorem-proof}
+		\exists m \in \mathbb{N}, \text{ для }\forall n \geqslant m \Rightarrow \abs{\dfrac{a_{n + 1}}{a_n} - d} < \varepsilon_0, \text{ т.е. }
+		d - \varepsilon_0 \leqslant \dfrac{a_{n + 1}}{a_n} \leqslant d + \varepsilon_0.
+	\end{equation}
+	Тогда для \eqref{eq:46-theorem-proof} имеем:
+	\begin{enumerate}
+	  \item $0 \leqslant d < 1$.\\
+		\begin{equation*}
+			\begin{split}
+				&\varepsilon_0 = \dfrac{\abs{1 - d}}{2} = \dfrac{1 - d}{2} > 0\\
+				& \text{для }\forall n \geqslant m, \dfrac{a_{n + 1}}{a_n} \leqslant \dfrac{1 - d}{2} + d = \dfrac{1 + d}{2} = \dfrac{b_{n + 1}}{b_n}\\
+				&b_n = \parenthesis{\dfrac{1 + d}{2}}^{n - 1} > 0, \text{ для }\forall n \in \mathbb{N}.
+			\end{split}
+		\end{equation*}
+		Отсюда в силу сходимости $\sum b_n$ получаем:
+		\begin{equation*}
+			\sum b_n = \sum q^{n - 1}, \text{ где } q = \dfrac{1 + d}{2} \in \interval[{\dfrac{1}{2}; 1}[
+		\end{equation*}
+	  \item $d \in \R{}, d > 1$.\\
+		\begin{equation*}
+			\begin{split}
+				&\varepsilon_0 = \dfrac{\abs{1 - d}}{2} = \dfrac{d - 1}{2} > 0\\
+				&\text{ для }\forall n \geqslant m, \dfrac{a_{n + 1}}{a_n} \geqslant d - \dfrac{d - 1}{2} = \dfrac{1 + d}{2} > 1
+			\end{split}
+		\end{equation*}
+		Т.е. $a_{n + 1} > a_n, \text{ для } \forall n \geqslant m$. Значит в рассматриваемом случае положительного ряда $(a_n)$ есть возрастающий остаток.
+		А тогда $\lim\limits_{n \to \infty}a_n \neq 0$, т.е. $\sum a_n$ - расходится.
+	  \item $d = +\infty$ - аналогично, $(a_n)$ - расходится.
+	\end{enumerate}
+\end{proof}
+\begin{notes}
+  \item Из доказательства теоремы, \eqref{eq:46-theorem1} - $d$ может быть как конечной, так и бесконечной.
+  \item Если в \eqref{eq:46-theorem1} $d = 1$ или $\nexists \lim\limits_{n \to \infty}\dfrac{a_{n + 1}}{a_n}$, то
+	$\sum a_n$ - может как сходится, так и расходится. В этом случае говорят, что признак Даламбера не работает и требуется
+	дополнительное исследование.
+\end{notes}
+\begin{theorem}[признак Коши]
+	Пусть
+	\begin{equation}
+		\label{eq:46-theorem2}
+		\text{ для }\forall n \in \mathbb{N} \Rightarrow \text{если } a_n \geqslant 0, \text{ то } \exists k = \lim\limits_{n \to \infty}\sqrt[n]{a_n}
+	\end{equation}
+	\begin{equation}
+		\label{eq:46-theoremmain2}
+		\text{Тогда } \sum a_n -
+		\begin{cases}
+			\text{сходится}, k < 1,\\
+			\text{расходится}, k > 1.
+		\end{cases}
+	\end{equation}
+\end{theorem}
+\begin{proof}
+	По той же схеме, что и в признаке Даламбера.
+\end{proof}
+\begin{notes}
+	\item Как и в признаке Даламбера \eqref{eq:46-theorem2} может быть как конечным, так и бесконечным. При этом соответствующее
+	  неравенства $a_n > 0$ или $a_n \geqslant 0, \text{ для }\forall n \in \mathbb{N}$ могут выполняться начиная лишь с некоторого места.
+	\item Можно показать, что если имеем \eqref{eq:46-theorem1}, то выполняется и \eqref{eq:46-theorem2}. При этом $k = d$.
+	  Поэтому, если признак Коши не работает, т.е. $k = 1$ или $\nexists \lim\limits_{n \to \infty}\sqrt[n]{a_n}$, то не будет работать
+	  и признак Даламбера.
+	\item если для числовой последовательности $c_n = \sqrt[n]{a_n}$, где любое $a_n \geqslant 0$, используется понятие верхнего предела
+	\begin{equation}
+	\label{4612}
+	p_0 = \overline{\lim\limits} c_n = \overline{\lim\limits} \sqrt[n]{a_n},
+	\end{equation}
+	которое определяется как верхняя грань множества всех пределов сходящихся подпоследовательностей последовательности $\left(c_n\right), \text{ для }\forall n \in \mathbb{N}$, то в этом случае можно показать, что справедлив следующий \important{обобщённый признак Коши сходимости Ч.Р.:}
+	\begin{equation}
+	\label{4613}
+	\sum a_n \begin{cases}
+	\text{сходится, } p_0 < 1,\\
+	\text{расходится, } p_0 > 1,
+	\end{cases}
+	\end{equation}
+	Преимущество \eqref{4613} по сравнению с \eqref{eq:46-theoremmain2} состоит в том, что величина \eqref{4612} всегда существует (конечная или бесконечная), в отличие от \eqref{eq:46-theorem2}.
+\end{notes}
+
+Следующими по силе после признака Даламбера являются признаки Раабе-Дюамеля и Гаусса сходимости строго положительных Ч.Р.
+\begin{theorem}[Признак Раабе-Дюамеля сходимости строго положительных Ч.Р.]
+	Если для $\forall n \in \mathbb{N} \Rightarrow a_n > 0$, то в случае 
+	\begin{equation}
+	\label{4714}
+	\exists r = \lim\limits_{n \to \infty} n \left(\dfrac{a_n}{a_{n+1}} - 1 \right),
+	\end{equation}
+	имеем:
+	\begin{equation}
+	\label{4715}
+	\sum a_n	 = \begin{cases}
+	\text{сходится, если } r > 1, \\
+	\text{расходится, если } r < 1,
+	\end{cases}
+	\end{equation}
+	причём в \eqref{4714}, \eqref{4715} $r$ может быть и как конечным числом, и как бесконечностью.
+	
+	Признак \eqref{4714}, \eqref{4715} не слабее признака Даламбера в том смысле, что в случае, когда $\lim\limits_{n \to \infty} \dfrac{a_n}{a_{n+1}} = 1$ и значит, признак Даламбера не работает, признак Раабе \eqref{4714}, \eqref{4715} может дать положительный результат.
+\end{theorem}
+
+\begin{theorem}[Признак Гаусса сходимости строго положительных Ч.Р.]
+	Пусть для $\forall n \in \mathbb{N} \Rightarrow a_n > 0$. Если $\exists d_0, r = const \in \mathbb{R}$ и $\exists \alpha > 1$ такие, что:
+	\begin{equation}
+	\label{4716}
+	\dfrac{a_n}{a_{n+1}} = d_0 + \dfrac{r}{n} + O^{\star} \left(\dfrac{1}{n^\alpha} \right),
+	\end{equation}
+	то ряд
+	\begin{equation}
+	\label{4717}
+	\sum a_n	 = \begin{cases}
+	\text{сходится, если } \begin{lsqcases} d_0 > 1, \\
+	d_0 = 1, r > 1 \end{lsqcases}, \\
+	\text{расходится, если } \begin{lsqcases} d_0 < 1, \\
+	d_0 = 1, r \leqslant 1 \end{lsqcases},
+	\end{cases}
+	\end{equation}
+	В \eqref{4716} запись $b_n = O^\star (c_n)$ для строго положительных последовательностей означает, что $\left(\dfrac{b_n}{c_n}\right)$ является строго ограниченной последовательностью, т.е.
+	\begin{equation*}
+	\exists c_0 = const \; | \; \text{для } \forall n \in \mathbb{N} \Rightarrow 0 < b_n \leqslant c_0 c_n
+	\end{equation*}
+\end{theorem}
+Признак Гаусса является следующим по силе признаком после Даламбера и Раабе-Дюамеля в том смысле, что из \eqref{4716}:
+\begin{equation*}
+d_0 \overset{\eqref{eq:46-theorem1}}{=} \dfrac{1}{d},
+\end{equation*}
+а при $d_0 = 1 \Rightarrow$ $r$ в \eqref{4716} совпадает с $r$ в \eqref{4714}, т.е. в соответствующих случаях из признака Гаусса \eqref{4716}, \eqref{4717} получаем как частные случаи признаки Даламбера и Раабе-Дюамеля. При этом признаки \eqref{4716}, \eqref{4717} превосходят эти признаки в случаях, когда $d_0 = 1$ и $r = 1$, т.е. когда:
+\begin{equation*}
+\begin{cases}
+\dfrac{a_n}{a_{n+1}} = 1 + \dfrac{1}{n} + O^{\star} \left( \dfrac{1}{n^{\alpha}} \right),\\
+\alpha = const > 1.
+\end{cases}
+\end{equation*}
+В этом случае признаки Даламбера и Раабе-Дюамеля не работают, а по признаку Гаусса \eqref{4717} получаем расходимость ряда $\sum a_n$.
+
+\begin{theorem}[Интегральный критерий Коши-Маклорена сходимости Ч.Р. с монотонными членами]
+	Если для положительного ряда $\sum a_n$ с монотонным общим членом $\left(a_n\right) \downarrow 0, n \to \infty$, существует интегральная производящая функция $f(x), f(x) \downarrow$ для $\forall x \geqslant 1$, т.е. функция, для которой $a_n = f(n) \; \forall n \in \mathbb{N}$, то тогда характеристическая сходимость (расходимость) у положительного ряда $\sum a_n$ будет совпадать с характеристической сходимостью (расходимостью) несобственного интеграла.
+	\begin{equation*}
+	\int\limits_1^{+ \infty} f(x) dx = \lim\limits_{A \to \infty} \int\limits_1^{A} f(x) dx.
+	\end{equation*}
+\end{theorem}
+\begin{example}[условие сходимости обобщённого гармонического ряда]
+	Рассмотрим ряд $\sum \dfrac{1}{n^{\alpha}}, \alpha = const \in \mathbb{R}$. Ранее мы показали, что $\forall \alpha \leqslant 1 \Rightarrow$ ряд $\sum \dfrac{1}{n^{\alpha}}$ расходится. Рассмотрим $\alpha > 1$; для положительной последовательности $a_n = \dfrac{1}{n^{\alpha}} \downarrow 0, n \to \infty$, при $\alpha > 1$ рассмотрим производящую функцию $f(x) = \dfrac{1}{x^{\alpha}}, x \in [ 1; +\infty ]$, тогда $\forall n \in \mathbb{N} \Rightarrow f(n) = \dfrac{1}{n^{\alpha}} = a_n$, тогда $\begin{cases}
+		\exists f'(x) = \dfrac{-\alpha}{x^{\alpha+1}} < 0,\\
+		\forall x \geqslant 1, fix \; \alpha > 1,
+	\end{cases}$, то $f(x) \downarrow 0, x \to +\infty$.
+	
+	Поэтому сходимость рассматриваемого Ч.Р. равносильна сходимости несобственного интеграла:
+	\begin{equation*}
+	\int\limits_1^{+ \infty} \dfrac{dx}{x^\alpha} = \lim\limits_{A \to +\infty} \left[x^{1-\alpha} \cdot \dfrac{1}{1-\alpha}\right]^A_1 = -\lim\limits_{A \to + \infty} \dfrac{1 - A^{1-\alpha}}{\alpha-1} = \dfrac{1}{\alpha - 1} \in \mathbb{R}, 
+	\end{equation*}
+	т.е. рассматриваемый ряд сходится, а значит, и обобщённый гармонический ряд будет сходиться при $\alpha > 1$.
+	\begin{equation*}
+	\sum \dfrac{1}{n^{\alpha}} = \begin{cases}
+	\text{сходится, если } \alpha > 1, \\
+	\text{расходится, если } \alpha \leqslant 1.
+	\end{cases}
+	\end{equation*}
+	
+	Полученный результат был нами ранее использован при получении степенного признака сходимости Ч.Р.
+	
+	Отметим, что в некоторых книгах интегральный критерий Коши-Маклорена называют интегральным признаком Коши-Маклорена, хотя его можно использовать как на исследование сходимости, так и расходимости Ч.Р.
+\end{example}
+
+\begin{theorem}[о сходимости абсолютно сходящихся Ч.Р.]
+	Любой абсолютно сходящихся Ч.Р. также сходится и в обычном смысле.
+\end{theorem}
+\begin{proof}
+	[По критерию Коши для сходящихся Ч.Р.] Из сходимости ряда $\sum a_n$ следует, что:
+	\begin{equation*}
+	\forall \varepsilon > 0 \; \exists \nu \in \mathbb{R} \; | \; \forall n \geqslant \nu \wedge \forall m \in \mathbb{N} \Rightarrow \abs{a_{n+1}} + \abs{a_{n+2}} + \ldots + \abs{a_{n+m}} \leqslant \varepsilon,
+	\end{equation*}
+	Отсюда для частных сумм исходного ряда имеем:
+	$S_n = a_1 + a_2 + \ldots + a_n,$\\
+	$\abs{S_{n+m} - S_m} = \abs{a_{n+1} + a_{n+2} + \ldots + a_{n+m}} \leqslant \abs{a_{n+1}} + \abs{a_{n+2}} + \ldots + \abs{a_{n+m}} = \\
+	= \abs{\abs{a_{n+1}} + \abs{a_{n+2}} + \ldots + \abs{a_{n+m}}}$,
+	\begin{equation*} \text{т.е. для } \forall \varepsilon > 0 \; \exists \nu \in \mathbb{R} \; | \; \forall n \geqslant \nu \wedge \forall m \in \mathbb{N} \Rightarrow \abs{S_{n+m} - S_n} \leqslant  \abs{\abs{a_{n+1}} + \abs{a_{n+2}} + \ldots + \abs{a_{n+m}}} \leqslant \varepsilon,
+	\end{equation*}
+	поэтому ряд $\sum a_n$ - сходится по критерию Коши для сходящихся Ч.Р.
+\end{proof}
+\begin{notes}
+	\item При исследовании на абсолютную Ч.Р. $\sum a_n$ для положительного ряда $\sum |a_n|$ можно использовать ранее полученные признаки сходимости знакопостоянных рядов.
+	\item В общем случае сходимость ряда $\sum |a_n|$ - лишь достаточное условие сходимости ряда $\sum a_n$, т.е. может быть, что ряд $\sum a_n$ сходится, но ряд $\sum |a_n|$ расходится. Такие ряды называются не абсолютно (условно) сходящимися. В то же время, если оказалось, что $\sum |a_n|$ расходящийся либо по признаку Даламбера или по признаку Коши, то в силу того, что $|a_n| \text{ не} \to 0$ и значит, $a_n \text{ не} \to 0$ получаем, что в этом случае ряд $\sum a_n$ также будет расходящимся из невыполнения необходимого условия сходимости Ч.Р.
+\end{notes}
+
+В дальнейшем без ограничения общности будем считать, что в таких знакочередующихся рядах
+\begin{equation}
+\label{5018}
+\sum (-1)^{n-1} b_n  = b_1 - b_2 + b_3 - \ldots + (-1)^{n-1} b_n + \ldots
+\end{equation}
+$b_n \geqslant 0, \forall n \in \mathbb{N}$.
+\begin{theorem}[Признак Лейбница сходимости знакочередующихся Ч.Р.]
+	Если $\left( b_n \right) \downarrow 0, n \to \infty$, то знакочередующийся ряд \eqref{5018} сходится.
+\end{theorem}
+\begin{proof}
+	Рассмотрим частные суммы \eqref{5018} с чётными и нечётными индексами, имеем:
+	
+	$S_{2n} - S_{2n-2} \overset{\eqref{5018}}{=} \left( b_1 - b_2 + b_3 - \ldots + b_{2n-1} - b_{2n} \right) - \left(b_1 - b_2 + b_3 - \ldots + b_{2n-3} - b_{2n-2} \right) = b_{2n-1} - b_{2n} \geqslant 0, \forall n \in \mathbb{N}$.
+	
+	Т.к. $\left( b_n \right) \downarrow$, таким образом последовательность $\left( S_{2n} \right) \uparrow$, в то же время последовательность $\left(S_{2n} \right)$:
+	
+		\begin{equation*}S_{2n} = b_1 - (b_2 - b_3) - (b_4 - b_5) - \ldots - (b_{2n-2} - b_{2n-1}) - b_{2n} \leqslant b_1 - b_{2n} \leqslant b_1, \forall n \in \mathbb{N}, 
+		\end{equation*}
+	Поэтому $\left( S_{2n} \right) \uparrow$ и является ограниченной сверху, а значит, сходящейся, т.е. 
+	
+	$\exists \lim\limits_{n \to \infty} S_{2n} = S_0 \in \mathbb{R}$, отсюда имеем: \\
+	\begin{equation*}
+	\exists \lim\limits_{n \to \infty} S_{2n+1} = \lim\limits_{n \to \infty} (S_{2n} + b_{2n+1}) = \begin{sqcases} S_{2n} \xrightarrow[n \to \infty]{}  S_0 \\ b_{2n+1} \xrightarrow[n \to \infty]{} 0 \end{sqcases} = S_0 \in \mathbb{R},
+	\end{equation*}
+	
+	Поэтому последовательность общих частных сумм $S_n \xrightarrow[n \to \infty]{} S_0 \in \mathbb{R}$, т.е. ряд \eqref{5018} сходится.
+\end{proof}
+\begin{note}
+	Более общим, чем признак Лейбница для знакопеременных Ч.Р. является признак Дерихле:
+	\begin{theorem}[признак Дерихле]
+		Если $\left( b_n \right) \downarrow 0, n \to \infty$, а для $\left( c_n \right)$ для $\forall n \in \mathbb{N}$ следует, что $\left( c_1 + c_2 + \ldots + c_n \right) \leqslant c_0$, где $c_0 = const \geqslant 0$, то ряд $\sum b_n c_n$ - сходится.
+	\end{theorem}
+		Этот признак Дерихле даёт признак Лейбница, если взять $c_n = (-1)^{n-1}, n \in \mathbb{N}$, с учётом того, что $\abs{c_1 + c_2 + \ldots + c_n} = \abs{1 - 1 + 1 \ldots + (-1)^{n-1}} \leqslant 1, \forall n  \in \mathbb{N}$.
+\end{note}
+
+\begin{theorem}[Признак Абеля сходимости Ч.Р.]
+	Ряд $\sum b_n c_n$ сходится, если последовательность $\left( b_n \right), n \in \mathbb{N}$ монотонна и ограничена, а ряд $\sum c_n$ - сходящийся.
+\end{theorem}
+\begin{proof}
+	Из того, что последовательность $ \left( b_n \right) \downarrow$ и $\left( b_n \right) = O(1)$ следует, что последовательность $\left( b_n \right)$ сходится, т.е. $\exists \lim\limits_{n \to \infty} b_n = p \in \mathbb{R}$, тогда $\beta_n = (b_n - p) \xrightarrow[n \to \infty]{} 0$ и будет монотонной.
+	
+	Без ограничения общности, $\beta_n \downarrow 0, n \to \infty$. Имеем для $a_n = b_n c_n$:\\
+	$a_n = (p + \beta_n) c_n = p c_n + \beta_n c_n$.
+	
+	Для первого слагаемого: $\sum p c_n = p \sum c_n$ - сходится в силу условия и свойства линейности.
+	
+	Для второго слагаемого: $\sum \beta_n c_n$ - сходится по признаку Дирихле, т.к.
+	\begin{enumerate}
+		\item $\left( \beta_n \right) \downarrow 0$,
+		\item из сходимости ряда $\sum c_n \Rightarrow S_n = c_1 + c_2 + \ldots + c_n$ (ограниченность его частных сумм), т.е. $\exists c_0 = const \geqslant 0 \Rightarrow|S_n| \leqslant c_0, \forall n \in \mathbb{N}$.
+	\end{enumerate}
+	Поэтому по свойству сходящихся рядов $\sum b_n c_n = \left( p \underbrace{ \sum c_n}_{\text{сходится}} + \underbrace{ \sum \beta_n c_n}_{\text{сходится}} \right)$ - сходится. 
+\end{proof}
+\begin{note}
+	\begin{enumerate}
+		\item Признаки Лейбница, Дирихле и Абеля являются лишь достаточными условиями сходимости Ч.Р., т.е. в случае невыполнения какого-либо условия в этих признаках они не работают, и требуются дополнительные исследования.\\
+		\item На практике, как правило, признак Дерихле наиболее эффективен для знакопеременных рядов в силу использования в нём условия ограниченности частных сумм $\sum c_n$. В то же время признак Абеля часто эффективен не только для знакопеременных, но и для знакопостоянных Ч.Р.
+	\end{enumerate}
+\end{note}

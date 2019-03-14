@@ -1,0 +1,322 @@
+\section{Функциональные уравнения (ФУ) и системы ФУ (СФУ). Условный и глобальный экстремум ФНП.}
+\subsection{Неявные ФНП и условия однозначной разрешимости ФУ и СФУ}
+
+Для функции $F(x,u)$ от (n+1) переменной $x = (x_1, x_2, \ldots, x_n) \in \RN, u \in \mathbb{R}$ уравнение 
+\begin{equation}
+\label{51}
+F(x,u) = 0.
+\end{equation} 
+даёт неявное задание соответствующей ФНП $u = f(x)$. Такие уравнения \eqref{51} будем называть \important{функциональными уравнениями (ФУ)}, а заданную через \eqref{51} ФНП будем называть \important{неявной ФНП}.
+
+При рассмотрении неявных ФНП, заданных \eqref{51}, важную роль играет вопрос однозначной разрешимости $u$ через $ x $, а также свойства непрерывности и дифференцируемости полученных решений, проходящих через некоторые фиксированные точки $x_0 \in D \subset \RN$ и $u_0 \in I \subset \mathbb{R}$, для которых 
+\begin{equation}
+\label{52}
+F(x_0, u_0) = 0.
+\end{equation}
+
+Под решением ФУ \eqref{51} с начальным условием \eqref{52} будем подразумевать произвольную функцию $u = u(x)$, для которой, во-первых, $u (x_0) = u_0$, и, во-вторых, в соответствующей окрестности точек $x_0$ и $u_0$ получаем тождество
+\begin{equation}
+\label{53}
+F(x, u(x)) \equiv 0.
+\end{equation}
+\begin{example}
+	Пусть имеем $F(x,u) = x^2 - u^2$, где $(x,u) \in \mathbb{R}^2$. В точке $M_0(0,0) $ получаем ${ F(M_0) = 0}$. Выполняется условие \eqref{52}, поэтому для определения неявной Ф1П $u = u(x)$, удовлетворяющей условию $u(0) = 0$, имеем неявное уравнение $F(x,u) = x^2 - u^2 = 0$. Данное уравнение, кроме очевидного решения $u = x, u = -x$, имеет бесконечное число решений, проходящих через точку $M_0$, например, $u = |x|, u = -|x|, \ldots$ 
+\end{example}
+
+% ---- From here goes Maria`s conspect
+
+\begin{equation}
+TODO
+\end{equation}
+\begin{equation}
+TODO
+\end{equation}
+\begin{equation}
+    TODO
+\end{equation}
+\newpage
+% TODO: Ending of 5.1
+
+\begin{theorem}[об однозначной разрешимости функциональных уравнений (ФУ)]
+    Пусть функция от (n+1) переменной $F(x,u)$ - непрерывна по $(x_1, x_2, \ldots, x_n) \in D \subset \RN, u \in I \subset \mathbb{R}$ в соответствующей окрестности точек $x_0 = (x_{01}, x_{02}, \ldots, x_{0n}) \in D$ и $u_0 \in \mathbb{R}$, удовлетворяет условию $F(x_0, u_0) = 0$.
+    
+    Если $F(x, u)$ непрерывно дифференцируема по $u$ в рассмотренной окрестности и
+    \begin{equation}
+    \label{234}
+    F^{'}(x_0,u_0) \ne 0,
+    \end{equation}
+    то функциональное уравнение
+    \begin{equation}
+    \label{231}
+    F(x,u) = 0
+    \end{equation}
+    с начальным условием
+    \begin{equation}
+    \label{232}
+    F(x_0, u_0) = 0
+    \end{equation}
+    имеет единственное решение $u = u(x)$ в соответствующей окрестности $V(x_0) \subset D$, т.е. имеем
+    \begin{equation}
+    \label{233}
+    F(x, u) = 0,
+    \end{equation}
+    при этом
+    \begin{equation}
+    \label{235}
+    u(x_0) = u_0
+    \end{equation} 
+\end{theorem}
+\begin{proof}
+    В силу \eqref{234} на основании теоремы о стабилизации знака непрерывных Ф1П получаем, что $F_u^{'} (x_0,u)$ сохраняет один и тот же знак в некоторой окрестности точки $u_0$. Без ограничения общности будем считать, что это выполняется для $\forall u \in [u - \delta; u + \delta] \subset I$, где $\delta = const > 0$. Тогда $F(x_0, u)$ - строго монотонная Ф1П.
+    
+    Без ограничения общности будем считать, что $\forall u \in [u - \delta; u + \delta] F_u^{'} (x_0,u) > 0$ и значит, $F_u^{'} (x_0,u)$ - строго возрастающая функция. А т.к. $F(x_0, u_0) \overset{\eqref{232}}{=} 0$, то $\begin{cases} F(x_0, u_0 - \delta) < 0, \\ F(x_0, u_0 + \delta) > 0. \end{cases}$
+    
+    Отсюда при необходимости решая для $\delta > 0$, получаем, что в силу непрерывности $F(x,u)$ по теореме о стабилизации знака
+    \begin{equation*}
+    \exists N (x_0) \subset D, \forall x \in V(x_0) \Rightarrow \begin{cases} F(x_0, u_0 - \delta) < 0, \\ F(x_0, u_0 + \delta) > 0. \end{cases}
+    \end{equation*}
+    Используя теорему о прохождении непрерывной Ф1П через 0 и следствия из неё (теорема о промежуточном значении непрерывной Ф1П) получаем, что:
+    $\forall fix \text{ } x \in V(x_0) \Rightarrow \exists ! u = u(x) \subseteq [u_0 - \delta, u_0 + \delta] \Rightarrow$ уравнению \eqref{231} удовлетворяет найденное $u(x)$ (т.е. имеет место \eqref{233}); при этом точки $x_0$ в соответствующей $F(x_0, u(x_0))  = 0$ в силу строгой монотонности $F(x,u)$ по "u", существует единственное решение $u(x_0) \subseteq [u_0 - \delta, u_0 + \delta]$; при этом на основании \eqref{232} получаем, что $u(x_0) = u_0$, т.е. выполняется \eqref{235}.
+\end{proof}
+\begin{note}
+    \begin{enumerate}
+        \item Можно показать, что при выполнении всех условий указанной теоремы получается решение $u = u(x)$ из \eqref{231}, т.е. удовлетворяет \eqref{233} с начальными условиями \eqref{232}, будет не только проходить через точку ($x_0, y_0$) в силу \eqref{235}, но и будет непрерывна в некоторой окрестности точек $u_0 \subset V(x_0) \subset D \subset \RN$ и $u_0 \in [u_0 - \delta, u_0 + \delta] \subset I \subset \mathbb{R}$.
+        \item Если дополнительно условию теоремы функция $F(x,u)$ не только непрерывно дифференцируема по $u$, но и дифференцируема по $x$, то тогда получаем решение $u = u(x)$ при условии \eqref{234} также будет непрерывно дифференцируемой функцией от x, для которой:
+        \begin{equation}
+        \label{236}
+        u^{'}_{x_k} = \dfrac{F^{'}_{x_k} (x,u)}{F^{'}_{u} (x,u)},
+        \end{equation}
+        в некоторой окрестности рассмотренных точек $x_0$ и $u_0, k = \overline{1,n}$.
+    \end{enumerate}
+\end{note}
+
+\subsection{Системы функциональных уравнений (СФУ). Дальше прочитать не смог.}
+
+Пусть имеется $ m $ функций, $ k = \overline{1, m} $, переменных 
+$ x = (x_1, \ldots, x_n) \subset D \subset \RN$ и\\
+${ u = (u_1, \ldots, u_m) \subset G \subset \mathbb{R}^m }$.
+
+Под системой функциональных уравнений (СФУ) будем подразумевать систему вида:
+\begin{equation}
+    \begin{cases}
+        F_k (x;u) = 0 , \\
+        k = \overline{1, m} ,
+    \end{cases}
+\end{equation}
+в которых требуется выразить $ u = (u_1, \ldots, u_n) $ через ${ u = (u_1, \ldots, u_m) }$, т.е. найти:
+\begin{equation*}
+    u = u(x) = (u_1(x), \ldots, u_n(x)), \\
+    \forall \; F_k (x; u(x)) = 0, \\
+    k = \overline{1, m}.
+\end{equation*} 
+   
+При этом если имеются точки $ x_0 \in D $ и $ u_0 \in G $, то в случае, когда
+\begin{equation}
+    F_k(x_0, u_0) = 0, k = \overline{ 1, m} 
+\end{equation}
+имеется такое решение ($ \partial $), для которого $ u = u(x) $, $ u_0 = u(x_0) $.
+
+$  $\\
+==================================\\
+-- TODO --\\
+==================================\\
+
+
+\begin{equation}
+    \label{eq59}
+    F(x, u) = \overline{0}, \overline{0} = (0, 0, \ldots, 0) \in \mathbb{R}^{m}.
+\end{equation}
+
+При этом имеем решение $ u = u(x) $ для \eqref{eq59} такое, что
+\begin{equation}
+    F(x, u(x_0)) \equiv 0
+\end{equation}
+и при этом, считая, что $ F(x_0, u_0) = 0 $, будем решать задачу $ u(x_0) = u_0 $.
+Для СФУ \eqref{eq59} будем использовать \important{матрицу Якоби}, т. е. квадратную матрицу вида:
+\begin{equation}
+    \label{eq511}
+    \dfrac{\partial \; F}{\partial \; u}   = 
+    \dfrac{\partial \; (F_1, \ldots, F_m)}{\partial \; (u_1, \ldots, u_m)}   =    
+    \left[ 
+    \begin{matrix}
+        \dfrac{\partial F_1 }{\partial  u_1 } & \ldots & \dfrac{\partial F_1 }{\partial  u_m } \\
+        \vdots & \ddots & \vdots \\
+        \dfrac{\partial F_m }{\partial  u_1 } & \ldots & \dfrac{\partial F_m }{\partial  u_m }
+    \end{matrix}
+    \right]
+    \; .
+\end{equation}
+Определитель матрицы Якоби \eqref{eq511} называется \important{якобианом}, который будем обозначать:
+\begin{equation}
+    J = \det \; \dfrac{\partial F}{\partial u}.
+\end{equation}
+
+Используя доказанную ранее теорему об однозначной разрешимости ФУ, с помощью ММИ можно показать, что справедлива
+\begin{theorem}[о функциональной разрешимости СФУ]
+\end{theorem}
+Пусть функция $ F_n \; (x,y) $ от $ (m+n) $ переменных $ x \in D  \subset \RN $ и ${ u \subset G \subset \mathbb{R}^m }$ непрерывны в некоторой окрестности точек $ x_0 \in D $ и $ u_0 \in G $, причём
+\begin{equation}
+    \forall \; F_k (x_0, y_0) = 0, \; k = \overline{1, m}.
+\end{equation}
+Если векторная функция $ F(x, u) = (F(x, u), \ldots) $
+
+
+\begin{definition}
+    Пусть имеется множество из (точечных?) функций $u_k = f_k(x)$ с общим множеством определения $D \subset \RN, k = \overline{1, m}$. Эту систему считают \important{функционально зависимой} в D, если $\exists j = \overline{1,n}$, что для $\forall x \in D \Rightarrow$
+    \begin{equation}
+    \label{2416}
+    f_j (x) = h (f_1(x), \ldots, f_{j-1}(x), f_{j+1}(x), \ldots, f_m(x)), 
+    \end{equation}
+    где $h = h(t_1, \ldots, t_{j-1}, t_{j+1}, \ldots, t_m)$ - соответствующая ФНП от $(m-1)$ переменной.
+\end{definition}
+\begin{equation}
+\label{2417}
+A =  \begin{bmatrix}
+\frac{\partial f_1(x_0)}{\partial x_1} & \frac{\partial f_1(x_0)}{\partial x_2} & \cdots & \frac{\partial f_1(x_0)}{\partial x_1} \\
+\frac{\partial f_2(x_0)}{\partial x_1} & \frac{\partial f_2(x_0)}{\partial x_2} & \cdots & \frac{\partial f_2(x_0)}{\partial x_n} \\
+\vdots  & \vdots  & \ddots & \vdots  \\
+\frac{\partial f_m(x_0)}{\partial x_1} & \cdots & \cdots &\frac{\partial f_m(x_0)}{\partial x_n}
+\end{bmatrix}
+\end{equation}
+\begin{theorem}[Признак независимости систем ФУ]
+    Если для матрицы Якоби \eqref{2417} системы из m непрерывно дифференцируемых функций $f_k (x), x \in V(x_0) \in D \subset \RN, k = \overline{1,n}$, удовлетворяющее условию:
+    \begin{equation}
+    \label{2418}
+    rank A = m,
+    \end{equation}
+    то тогда рассмотренная система является функционально независимой в $V(x_0)$.
+\end{theorem}
+\begin{proof}
+    Метод: от противного. Пусть выполняется \eqref{2418}, но тем не менее рассмотренная система зависима в $V(x_0)$. Из условия \eqref{2418} следует, что в матрице A $m \times n$ хотя бы 1 минор $m-$того порядка ненулевой.
+    
+    Без ограничения общности будем считать, что такой минор находится в левом верхнем углу.
+    
+    \begin{equation}
+    \label{2419}
+    \begin{cases}
+    I = det \dfrac{\partial (f_1(x), f_2(x), \ldots, f_m(x)}{\partial (x_1, x_2, \ldots, x_m)} =  \begin{vmatrix}
+    \frac{\partial f_1(x_0)}{\partial x_1} & \frac{\partial f_1(x_0)}{\partial x_2} & \cdots & \frac{\partial f_1(x_0)}{\partial x_1} \\
+    \frac{\partial f_2(x_0)}{\partial x_1} & \frac{\partial f_2(x_0)}{\partial x_2} & \cdots & \frac{\partial f_2(x_0)}{\partial x_n} \\
+    \vdots  & \vdots  & \ddots & \vdots  \\
+    \frac{\partial f_m(x_0)}{\partial x_1} & \cdots & \cdots &\frac{\partial f_m(x_0)}{\partial x_n}
+    \end{vmatrix} \\
+    I \ne 0
+    \end{cases}
+    \end{equation}
+    Из функциональной зависимости имеем \eqref{2416}, из которой в точке $x_0$ последовательно дифференцирование по $x_1, x_2, \ldots, x_m$ даёт:
+    \begin{equation}
+    \label{2420}
+    \dfrac{\partial f_j(x_0)}{\partial x_i} = \dfrac{\partial h}{\partial t_1} \cdot \dfrac{\partial f(x_0)}{\partial x_i} + \ldots + \dfrac{\partial h}{\partial t_{j-1}} \cdot \dfrac{\partial f_{j-1}(x_0)}{\partial x_i} + \dfrac{\partial h}{\partial t_{j+1}} \cdot \dfrac{\partial f_{j+1}(x_0)}{\partial x_i} + \ldots + \dfrac{\partial h}{\partial t_m} \cdot \dfrac{\partial f_m(x_0)}{\partial x_i}
+    \end{equation}
+    Если теперь в силу \eqref{2420} в якобиане \eqref{2419} сделаем подстановку для $j-$той строки, то эта строка будет соответствовать линейной комбинации остальных строк, а поэтому, по свойствам определителя, используемый минор \eqref{2417} $r-$того порядка будет равен 0 в точке $x_0$, что противоречит условию $\eqref{2418}$; значит, рассматриваемая система будет независимой в рассматриваемой окрестности 	$V(x_0) \subset D$.
+\end{proof}
+\begin{note}
+    Полученные результаты допускают следующие естественные обобщения:
+    \begin{enumerate}
+        \item если в матрице Якоби \eqref{2417} есть минор $r$-того порядка $\ne 0$, а все остальные миноры $(r+1)$ порядка равны $0$ (т.е. если $rankA = r$), $1 \leqslant r \leqslant min(n,m)$, то тогда в рассмотренной системе функций есть подсистема из $r$ независимых функций в соответствующей окрестности $V(x_0) \in D$, через которую будут выражаться все остальные функции этой системы.
+        \item Кроме обычной (функциональной) зависимости и независимости выделяют также линейно зависимые и линейно независимые функции; определения этих систем такое же, как и выше с той лишь разницей, что использованная в \eqref{2416} функция имеет вид:
+        \begin{equation*}
+        u(t_1, \ldots, t_{j-1}, t_{j+1}, \ldots, t_m) = \alpha_1 t_1 + \ldots + \alpha_{j-1} t_{j-1} + \alpha_{j+1} t_{j+1} + \ldots + \alpha_m t_m,
+        \end{equation*}
+        где $\forall \alpha_1, \ldots, \alpha_{j-1}, \alpha_{j+1}, \ldots, \alpha_m = const \in \mathbb{R}$.
+        
+        Нетрудно видеть, что в общем случае из линейной зависимости следует функциональная зависимость, а из функциональной независимости следует линейная независимость.
+    \end{enumerate}
+\end{note}
+
+\subsection{Условный локальный экстремум ФНП (УЛЭ ФНП). Прямой метод и метод дифференциалов исследования на условный экстремум.}
+\textbf{TODO}
+
+\begin{equation}
+\label{2524}
+J =  \begin{vmatrix}
+\frac{\partial F_1}{\partial y_1} & \frac{\partial F_1}{\partial y_2} & \cdots & \frac{\partial F_1}{\partial y_m} \\
+\frac{\partial F_2}{\partial y_1} & \frac{\partial F_2}{\partial y_2} & \cdots & \frac{\partial F_2}{\partial y_m} \\
+\vdots  & \vdots  & \ddots & \vdots  \\
+\frac{\partial F_m}{\partial y_1} & \frac{\partial F_m}{\partial y_2} & \cdots & \frac{\partial F_m}{\partial y_m}
+\end{vmatrix} \ne 0
+\end{equation}
+Пусть функции $u = u(x,y)$ и $F(x,y) = (F_1 (x,y), F_2(x,y), \ldots, F_m(x,y)$ - дифференцируемы в некоторой окрестности в точке условного локального экстремума (УЛЭ) $(x_0, y_0)$. При этом в этой точке выполнено \eqref{2524}. Тогда система функциональных уравнений $F(x,y) \equiv \overline{0} \in \mathbb{R}^{n+m}$ однозначно разрешима в соответствующей окрестности $V(x_0, y_0) \in \mathbb{R}^{n+m}, \exists ! y = \phi(x), x \in \widetilde{V} (x_0) \in \RN$ такая, что: $F(x, \phi(x)) = 0, \forall x \in \widetilde{V}(x_0) \subset \RN$.
+\begin{equation}
+\label{2525}
+u = \phi(x) = f(x, \phi(y))
+\end{equation}
+Считая функцию дифференцируемой для $\forall x \in \widetilde{V}(x_0)$, в силу необходимого условия локального экстремума: $du(x_0, y_0) = d \phi (x_0) = 0$.
+
+Отсюда в силу инвариантной формы первого дифференциала.
+\begin{equation}
+\label{2526}
+d \phi(x) \overset{\eqref{2525}}{=} \sum\limits_{k=1}^{n} \dfrac{\partial f(x_0, y_0)}{\partial x_k} d x_k + \sum\limits_{j=1}^{n} \dfrac{\partial f(x_0, y_0)}{\partial y_j} d y_j = 0
+\end{equation}
+
+Аналогично дифференцируя равенство $F (x, \phi(x)) \equiv \overline{0} \Rightarrow \forall F_i(x, \phi(x)) = 0, x \in \widetilde{V}(x_0), i = \overline{1, m}$, имеем:
+\begin{equation}
+\label{2527}
+d F_i (x_0, y_0) = \sum\limits_{k=1}^{n} \dfrac{\partial F_i (x_0, y_0)}{\partial x_k} d x_i + \sum\limits_{j=1}^{n} \dfrac{\partial F_i (x_0, y_0)}{\partial y_j} d \phi_j = 0
+\end{equation}
+
+Рассматривая \eqref{2527} как линейную систему из $n$ уравнений относительно $m$ неизвестных $(d \phi_1, \ldots, d \phi_m)$.
+
+\begin{equation*}
+\begin{cases}
+\sum\limits_{j=1}^m \dfrac{\partial F_i (x_0, y_0)}{\partial y_j} d \phi_j = - \sum\limits_{k=1}^n \dfrac{\partial F_i (x_0, y_0)}{\partial x_k} d x_k, \\
+i = \overline{1, n}.
+\end{cases}
+\end{equation*}
+где матрица этой системы не вырождена в силу \eqref{2524}. Потому эта система однозначно разрешима относительно $d \phi_j, j = \overline{1,m}$ и будет любое её решение линейно выражаться через $d x_1, d x_2, \ldots, d x_k$.
+\begin{equation}
+\label{2528}
+\forall d \phi_i = \sum\limits_{k=1}^{n} = A_{kj} \cdot d x_k, j = \overline{1,n},
+\end{equation}
+где использованные $A_{kj}$ - соответствующие коэффициенты.
+
+Подставив \eqref{2528} в \eqref{2526} и приводя подобные слагаемые, получим выражение вида:
+\begin{equation*}
+\sum\limits_{k=1}^{n} = B_k d x_k \overset{\eqref{2524}}{=} 0
+\end{equation*}
+Здесь уже $d x_k, k = \overline{1,m}$ - произвольные, поэтому будем иметь, что 
+\begin{equation}
+\label{2529}
+\forall B_k = 0, k = \overline{1,n}
+\end{equation}
+Присоединяя к этим $n$ уравнениям $m$ уравнений:
+\begin{equation}
+\label{2530}
+\begin{cases}
+F_i (x_0, y_0) = 0 \\
+i = \overline{1,m}
+\end{cases}
+\end{equation}
+Получаем систему из $m+n$ уравнением относительно исследуемой стационарной точки:
+\begin{equation*}
+(x_0, y_0) \in V(x_0, y_0) \in \mathbb{R}^{m+n}
+\end{equation*}
+На практике основная трудность - решение систем \eqref{2529}, \eqref{2530}.
+
+Найдя из \eqref{2529}, \eqref{2530} стационарные точки $(x_0, y_0)$, дальнейшее исследование их на экстремальность проводим на основе достаточности условия локального экстремума ФНП, для чего выражаем второй дифференциал $d^2 u (x_0, y_0)$ через независимые дифференциалы $dx, dx_1, \ldots, dx_n$ на основе \eqref{2528} и далее смотрим знакоопределённость: $d^2 u (x_0, y_0)$.
+
+\subsection{Метод множителей Лагранжа. Исследование на локальный и условный экстремум. Глобальный экстремум ФНП.}
+\textbf{TODO}
+
+Недостатком метода дифференциалов является то, что использованные переменные $x = (x_1, x_2, \ldots, x_n) \in \RN$ и $y = (y_1, y_2, \ldots, y_m) \in \mathbb{R}^m$ неравноправные, т.к. $x_1, x_2, \ldots, x_n$ считаются независимыми, а $y_1, y_2, \ldots, y_m$ - зависимыми от $x_k$ засчёт уравнений связи.
+
+Лагранж предложил метод исследования на локальный и условный экстремум, где $x$ и $y$ равноправны. Для этого используется функция Лагранжа:
+\begin{equation}
+\label{2631}
+L (x,y,z) = f(x,y) + \sum\limits_{k=1}^n \lambda_k F(x,y),
+\end{equation}
+зависима от $m + 2n$ переменных $x = (x_1, x_2, \ldots, x_n) \in \RN$ и $y = (y_1, y_2, \ldots, y_m) \in \mathbb{R}^m, \lambda = (\lambda_1, \lambda_2, \ldots, \lambda_n) \in \RN$.
+
+Оказывается, что исследование на локальный и условный экстремум в силу метода дифференциалов равносильно исследованию функции Лагранжа \eqref{2631} на ? локального экстремума относительно использованных переменных $x, y, z$. Для обоснования этого домножим любое уравнение \eqref{2527} на соответствующий множитель Лагранжа $\lambda_i, i = \overline{1,n}$ и, используя необходимое условие локального экстремума:
+\begin{equation}
+\label{2632}
+\left( \dfrac{\partial f}{\partial x_1} + \lambda_1 \dfrac{\partial F_1}{\partial x_1} + \ldots + \lambda_m \dfrac{\partial F_m}{\partial x_1}\right) dx_1 + \ldots + \left( \dfrac{\partial f}{\partial x_1} + \lambda_1 \dfrac{\partial F_1}{\partial x_1} + \ldots +  \lambda_n \dfrac{\partial F_n}{\partial x_1}\right) d x_n + \sum\limits_{j=1}^m \left( \dfrac{\partial f}{\partial y_j} + \lambda  \dfrac{\partial F_1}{\partial y_j} + \ldots + \lambda_n \dfrac{\partial F_n}{\partial y_j}\right) dy_j
+\end{equation} 
+Подберём множитель Лагранжа так, чтобы все слагаемые, записанные в \eqref{2632} в сумме равнялись 0, т.е.:
+\begin{equation}
+\label{2633}
+\dfrac{\partial f}{\partial y_j} + \lambda_1 \dfrac{\partial F_1}{\partial y_j} + \ldots + \lambda_n \dfrac{\partial F_m}{\partial y_j} = 0
+\end{equation}
+Система \eqref{2633} является линейной системой относительно $(\lambda_1, \lambda_2, \ldots, \lambda_n)$, матрица которой удовлетворяет условию \eqref{2524}, т.е. является невырожденной, поэтому система \eqref{2633} однозначно разрешима относительно $(\lambda_1, \lambda_2, \ldots, \lambda_n)$.
+
+В силу \eqref{2633}, \eqref{2632} примет вид:

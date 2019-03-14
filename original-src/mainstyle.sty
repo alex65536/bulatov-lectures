@@ -1,0 +1,70 @@
+\ProvidesPackage{mainstyle}
+
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+
+% =================================
+
+\NewDocumentCommand{\INTERVALINNARDS}{m m}{
+	#1 {;}\, #2
+}
+\NewDocumentCommand{\interval}{s m >{\SplitArgument{1}{;}}m m o} {
+	\IfBooleanTF{#1}{
+		verrygoodd\left#2 \INTERVALINNARDS #3 \right#4
+	}{
+	\IfValueTF{#5}{
+		#5 {#2} \INTERVALINNARDS #3 #5 {#4}
+	}{
+	%      \phantom{#4}#2\phantom{#4} \INTERVALINNARDS #3 \phantom{#2}#4\phantom{#2}
+	\,\left#2 \INTERVALINNARDS #3 \right#4\,
+}
+}
+}
+
+
+% =================================
+% logical parts of text
+
+\NewDocumentEnvironment{statement}{m o}
+{\begin{raggedright}\textbf{#1}\IfValueTF{#2}{ (\textit{#2})}{}:\end{raggedright}}
+    {}
+
+\NewDocumentEnvironment{statementDotted}{m o}
+{\begin{raggedright}\textbf{#1}\IfValueTF{#2}{ (\textit{#2})}{}.\end{raggedright}}
+{}
+
+\newenvironment{statementUncoloned}[1]
+{\begin{raggedright} \textbf{#1} \end{raggedright}}
+{}
+
+\newenvironment{statementItemed}[1]
+{\begin{statement}{#1}\begin{enumerate}}
+{\end{enumerate}\end{statement}}
+
+
+% =================================
+% square cases
+
+\newenvironment{lsqcases}
+{\left[\begin{matrix}}
+	{\end{matrix}\right.}
+
+\newenvironment{rsqcases}
+{\left.\begin{matrix}}
+	{\end{matrix}\right]}
+
+\newenvironment{sqcases}
+{\left[\begin{matrix}}
+	{\end{matrix}\right]}
+
+\newenvironment{tproof}
+{{$\blacktriangleleft$}}
+{{$\blacktriangleright$}}
+
+%===================================
+%\begin{tikzpicture}
+%\draw[fill=black] (0.0, 0.30) -- (0.4, 0.30);  
+%\draw (0.2, 0.0) node {Y};    
+%\draw (0.2, 0.8) node {$   $};    
+%\end{tikzpicture}				
+%\overset{}{T}

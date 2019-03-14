@@ -121,7 +121,7 @@ $\displaystyle \lim_{x \to x_0}{f(x)} = p_0 \in \R$.
 
 На основании этого критерия и соответствующих свойств сходимости $n$-мерных
 последовательностей доказываются основные свойства сходимости ФНП
-в пространстве: $(\R^n, d)$: единственность предела, предел линейной
+в пространстве $(\R^n, d)$: единственность предела, предел линейной
 комбинации, произведение и частное сходящихся ФНП.
 
 Кроме того, в $(\R^n, d)$ справедлива \emph{теорема о сжатой ФНП}:
@@ -186,15 +186,15 @@ p_0 \in \R \iff
 естественным образом рассматриваются смешанные пределы:
 
 \begin{itemize}
-	\item[а)] $f(x)\underset{x \to \infty}{\longrightarrow} +\infty \in \R \iff
+	\item[а)] $f(x)\underset{x \to \infty}{\longrightarrow} +\infty \iff
 	\forall\ \eps > 0, \exists\ \delta > 0\ |\
 	\forall x \in D(f), d(x, \vec{0}) \geq \delta
 	\implies f(x) \geq \eps$
-	\item[б)] $f(x)\underset{x \to \infty}{\longrightarrow} -\infty \in \R \iff
+	\item[б)] $f(x)\underset{x \to \infty}{\longrightarrow} -\infty \iff
 	\forall\ \eps > 0, \exists\ \delta > 0\ |\
 	\forall x \in D(f), d(x, \vec{0}) \geq \delta
 	\implies f(x) \leq -\eps$
-	\item[в)] $f(x)\underset{x \to \infty}{\longrightarrow} \infty \in \R \iff
+	\item[в)] $f(x)\underset{x \to \infty}{\longrightarrow} \infty \iff
 	\forall\ \eps > 0, \exists\ \delta > 0\ |\
 	\forall x \in D(f), d(x, \vec{0}) \geq \delta
 	\implies |f(x)| \geq \eps$
@@ -246,9 +246,9 @@ p_0 = \underset{\substack{
 \eqref{rep-lim} можно также называть пределом вдоль координатных осей.
 Поясняющие рисунки: \\
 a) 
-\includegraphics[scale=0.33]{rep-lim-case-a.png}
+\includegraphics[scale=1.0]{rep-lim-case-a.png}
 б) 
-\includegraphics[scale=0.33]{rep-lim-case-b.png}
+\includegraphics[scale=1.0]{rep-lim-case-b.png}
 
 Кроме \eqref{double-lim} и \eqref{rep-lim} рассматривают частные
 пределы пределы Ф2П, когда независимые переменные стемятся к $x_0, y_0$
@@ -286,10 +286,10 @@ $\exists$ двойной предел \eqref{double-lim} и $\exists$ повто
 		&f(x, y) = x \cos{\dfrac{1}{y}} + y \cos{\dfrac{1}{x}} \\
 		&xy \ne 0
 	\end{aligned}\right.\]
-	В данном случае в точке $M_0(0, 0)$, являющейся предельно для
+	В данном случае в точке $M_0(0, 0)$, являющейся предельной для
 	$D = \R^2 \backslash M_0$, имеем
 	\[|f(x, y) \leq |x| \cdot |\cos{\dfrac{1}{y}}| + |y| \cdot 
-	|\cos{\dfrac{1}{x}}| | \leq (|x| + |y|) 
+	|\cos{\dfrac{1}{x}}| \leq (|x| + |y|) 
 	\underset{\substack{x \to 0 \\ y \to 0}}{\longrightarrow}0\]
 	$f(x, y) \underset{\substack{x \to 0 \\ y \to 0}}{\longrightarrow}0$, т.е. 
 	$\exists$ двойной предел, но в то же время 

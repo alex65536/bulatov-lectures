@@ -1,0 +1,1060 @@
+\section{Поверхностные интегралы (ПОВИ)}
+
+\subsection{Гладкие поверхности в $ \mathbb{R}^3 $.}
+
+Поверхностью $\text{П} \subset \mathbb{R}^3 $ будем называть произвольное множество точек $ (x, y,z) \in \mathbb{R}^3 $, для которых в ДПСК $ Oxyz $ имеем
+\begin{equation}
+    \label{eq:9.1-paramPoverh}
+    \begin{cases}
+        x = x(u, v), \\
+        y = y(u, v), \\
+        z = z(u, v),
+    \end{cases}
+\end{equation}
+где используемые функции являются непрерывными для $ \forall \; (u, v) \in H \subset \mathbb{R}^2 $.
+
+Выражение \eqref{eq:9.1-paramPoverh}  называется параметрическим заданием поверхности П в $ \mathbb{R}^3 $.
+Две поверхности, для которых множества точек вида \eqref{eq:9.1-paramPoverh} совпадает, считаются равными, и для них возникают различные параметрические представления. 
+
+Обозначая 
+\begin{equation}
+    \label{eq:9.2-vect_paramPoverh}
+    r = r(u, v) = (x(u,v), y(u,v), z(u,v)),
+\end{equation}
+от параметрического представления  \eqref{eq:9.1-paramPoverh} переходим к векторно-параметрическому представлению \eqref{eq:9.2-vect_paramPoverh}.
+
+Если функции в \eqref{eq:9.1-paramPoverh} непрерывно дифференцируемы, то:
+\begin{equation}
+    \label{eq:9.3}
+    \begin{matrix}
+        & \exists r_u' \overset{\eqref{eq:9.2-vect_paramPoverh}}{=} (x_u', y_u', z_u'), \\
+        & \exists r_v' \overset{\eqref{eq:9.2-vect_paramPoverh}}{=} (x_v', y_v', z_v').
+    \end{matrix}
+\end{equation}
+
+Если эти векторы не коллинеарны, то поверхность \eqref{eq:9.1-paramPoverh} называется \important{гладкой}.
+
+Если дополнительно у гладкой поверхности $\text{П} \subset \mathbb{R}^3 $ нет самопересечений, то она называется \important{простой гладкой поверхностью}.
+
+Поверхность $\text{П} \subset \mathbb{R}^3 $ считается \important{простой кусочно-гладкой}, если её можно разбить на конечное число простых гладких частей.
+
+Для точки $ N_0 (u_0, v_0) \in \partial $ в ДПСК $ Ouv $ для гладкой поверхности \eqref{eq:9.1-paramPoverh} векторы $ r_u'(N_0) $ и  $ r_v'(N_0) $ из \eqref{eq:9.3} 
+определяют в силу их неколлинеарности единственную плоскость, проходящую через точку 
+$ M_0 \overset{\eqref{eq:9.1-paramPoverh}}{=} (x(N_0), y(N_0), z(N_0)) \in \text{П} $. 
+Эта плоскость принимается за касательную плоскость к рассматриваемой поверхности $\text{П} \subset \mathbb{R}^3 $ в точке $ M_0(x_0, y_0, z_0) $, где 
+$ x_0 = x(N_0), $  $y_0 = y(N_0),$  $ z_0 = z(N_0) $.
+Для этой поверхности вектор
+\begin{equation}
+    \label{eq:9.4-nVect}
+    \vec{n} = \sqcase{r_u'(N_0), r_v'(N_0)} = 
+    \left|
+    \begin{matrix}
+        & \vec{i} & \vec{j} & \vec{k} & \\
+        & x_u'(N_0) & y_u'(N_0) & z_u'(N_0) & \\
+        & x_v'(N_0) & y_v'(N_0) & z_v'(N_0) & \\
+    \end{matrix}
+    \right|
+\end{equation}
+будет являться вектором нормали поверхности П в точке $ M_0 \in \text{П} $. 
+
+$  $\newpage
+
+Разлагая определитель \eqref{eq:9.4-nVect} по первой строке, имеем
+\begin{equation}
+    \label{eq:9.5-nVect-ABC}
+    \vec{n} \overset{\eqref{eq:9.4-nVect}}{=} (A_0, B_0, C_0),
+\end{equation}
+где $ A_0 = A(N_0) $, $ B_0 = B(N_0) $, $ C_0 = C(N_0) $,
+\begin{equation}
+    \label{eq:9.6}
+     \;A = \left|\begin{matrix}
+        & y_u'(N_0) & z_u'(N_0) & \\
+        & y_v'(N_0) & z_v'(N_0) & \\
+    \end{matrix}\right| ,
+     \;B = \left|\begin{matrix}
+        & z_u'(N_0) & x_u'(N_0) & \\
+        & z_v'(N_0) & x_v'(N_0) & \\
+    \end{matrix}\right| ,
+     \;C = \left|\begin{matrix}
+        & x_u'(N_0) & y_u'(N_0) & \\
+        & x_v'(N_0) & y_v'(N_0) & \\
+    \end{matrix}\right| .
+\end{equation}
+
+В связи с этим, во-первых, уравнением касательной плоскости к П  в точке  ${ M_0 = (x_0, y_0, z_0) \in \text{П} }$ будет
+\begin{equation}
+    \label{eq:9.7-kasatPlosk}
+    A_0(x-x_0) + B_0(y-y_0) + C_0(z-z_0) = 0,
+\end{equation}
+а каноническое уравнение соответствующей нормали:
+\begin{equation}
+    \label{eq:9.8-normalCanonical}
+    \dfrac{x-x_0}{A_0} = \dfrac{y-y_0}{B_0} = \dfrac{z-z_0}{C_0}.
+\end{equation}
+
+В силу гладкости поверхности, имеем:
+\begin{equation}
+    \label{eq:9.9}
+    \vec{n} = (A, B, C) \neq \vec{0} \text{ и, значит, } 
+    \begin{cases}
+        A^2 + B^2 + C^2 > 0, \\
+        \forall \; (u, v) \in \partial.
+    \end{cases}
+\end{equation}
+
+Смысл условия \eqref{eq:9.9} состоит в том, что на поверхности П нет особых точек, где одновременно $ A=B=C=0 $, причём если, например, $ C \neq 0 $, то уравнение
+${ \begin{cases}
+    x = x(u, v), \\
+    y = y(u, v), \\
+\end{cases} (u, v) \in \partial }$
+преобразования имеет ненулевой я	кобиан 
+\begin{equation*}
+     J = \left|\begin{matrix}
+        & x_u'(N_0) & y_u'(N_0) & \\
+        & x_v'(N_0) & y_v'(N_0) & \\
+    \end{matrix}\right| = C \neq 0,
+\end{equation*}
+и поэтому имеем имеем диффеоморфизм, в силу которого существует на соответствующих множествах обратное преобразование
+$ \begin{cases}
+    u = u(x, y), \\
+    v = v(x, y), \\
+\end{cases} $
+из которого в силу \eqref{eq:9.1-paramPoverh} получаем:
+\begin{equation*}
+    z = z(u, v) = z(u(x,y), v(x, y)) = f(x, y),
+\end{equation*}
+т. е. имеем явное уравнение рассматриваемой поверхности П.
+
+В свою очередь, если гладкая поверхность в $ \mathbb{R}^3 $ задана как
+$ \begin{cases}
+    z = f(x, y),\\
+    (x,y) \in D \subset \mathbb{R}^2
+\end{cases} $
+в ДПСК $ Oxyz $, то используя для неё естественную параметризацию 
+$ \begin{cases}
+    x = u, \\
+    y = v, \\
+    z = f(u,v),
+\end{cases} $
+имеем:
+\begin{align*}
+    A \overset{\eqref{eq:9.6}}{=} 
+    \left|\begin{matrix}
+        & 0 & 1 & \\
+        & f_x' & f_y' & \\
+    \end{matrix}\right|^{\text{т}} = - f_x' , \;\;\;\;\;
+    B \overset{\eqref{eq:9.6}}{=} 
+    \left|\begin{matrix}
+        & f_x' & f_y' & \\
+        & 1 & 0 & \\
+    \end{matrix}\right|^{\text{т}} = - f_y' ,  \;\;\;\;\;
+    C \overset{\eqref{eq:9.6}}{=} 
+    \left|\begin{matrix}
+        & 1 & 0 & \\
+        & 0 & 1 & \\
+    \end{matrix}\right|^{\text{т}} = 1.
+\end{align*}
+
+В связи с этим, в данном случае уравнением \eqref{eq:9.7-kasatPlosk} для касательной плоскости в точке $ N_0 (x_0, y_0) \in D_0 \subset \mathbb{R}^2 $ имеем
+\begin{equation}
+    \label{eq:9.10}
+    z = -f(M_0) = f_x'(x_0)(x-x_0)+f_y'(x_0)(y-y_0),
+\end{equation}
+а уравнением нормали будет:
+\begin{equation*}
+    \dfrac{x-x_0}{f_x'(M_0)} = \dfrac{y-y_0}{f_y'(M_0)} = \dfrac{z-z_0}{-1}.
+\end{equation*}
+
+В дальнейшем кроме вектора нормали $ \vec{n} = (A, B, C) \perp \text{П} $ будем также использовать единичный вектор нормали
+\begin{equation}
+    \label{eq:9.11}
+    \vec{n}_0 = \pm \dfrac{\vec{n}}{\abs{\vec{n}}} = 
+    \left(
+        \pm \dfrac{A}{\sqrt{A^2+B^2+C^2}},\;
+        \pm \dfrac{B}{\sqrt{A^2+B^2+C^2}},\;
+        \pm \dfrac{C}{\sqrt{A^2+B^2+C^2}}
+    \right).
+\end{equation}
+
+В зависимости от выбора знака в \eqref{eq:9.11}, получаем противоположно направленные нормали, каждая из которых определяет ту или иную сторону рассматриваемой поверхности 
+$\text{П} \subset \mathbb{R}^3 $.
+
+В дальнейшем условимся ту сторону поверхности П, при которой в \eqref{eq:9.11} берётся знак ``+'', в соответствии с параметризацией \eqref{eq:9.1-paramPoverh} считать
+\important{положительно ориентированной}, а при ``-'' - \important{отрицательно ориентированной}.
+
+Геометрически выбор стороны поверхности в зависимости от используемого вектора нормали $ \vec{n_0} $ состоит в следующем:
+если на поверхности П взять любой кусочно-гладкий замкнутый контур $ l $, то он должен быть положительно ориентированным, если смотреть с конца используемого вектора нормали.
+
+
+$  $ \\\\-картинка-\\\\\\\\\\
+
+Такие поверхности, у которых при перемещении вектора $ \vec{n}_0 $  по любой замкнутой положительно-ориентированной линии $ l \in \text{П} $ направление $ \vec{n}_0 $ не меняется называется двухсторонними. Примером простейшей односторонней поверхности является лист Мёбиуса.
+
+Ранее было отмечено, что в случае неявного задания простой гладкой поверхности, т.е. $ (F_x')^2 + (F_y')^2 + (F_z')^2 > 0 $ в предположении,
+что $ F(x, y, z) $ непрервына дифференцируемая функция в П, уравнение касательной плоскости имеет вид:
+\begin{equation*}
+    F_x' (x_0, y_0, z_0) \;\; (x-x_0) + 
+    F_y' (x_0, y_0, z_0) \;\; (y-y_0) + 
+    F_z' (x_0, y_0, z_0) \;\; (z-z_0) = 0,
+\end{equation*}
+а уравнение соответствующей нормали:
+\begin{equation*}
+    \dfrac{x-x_0}{F_x'(x_0, y_0, z_0)} = \dfrac{y-y_0}{F_y'(x_0, y_0, z_0)} = \dfrac{z-z_0}{F_z'(x_0, y_0, z_0)} \;\; .
+\end{equation*}
+
+\subsection{Первая квадратичная форма поверхности в $ \mathbb{R}^3 $.}
+
+Пусть гладкая поверхность $ \text{П} \subset \mathbb{R}^3 $ задана в ДПСК $ Ouv $ векторно-параметрическим уравнением \eqref{eq:9.2-vect_paramPoverh}, где
+$ (u,v) \in H \subset \mathbb{R}^2 $. Имеем:
+\begin{equation}
+    \label{eq:9.12}
+    \begin{matrix}
+    & dr \overset{\eqref{eq:9.2-vect_paramPoverh}}{=} (dx, dy, dz) = 
+    (x_u' \; du + x_v' \; dv \;;\; y_u' \; du + y_v' \; dv \;;\; z_u' \; du + z_v' \; dv ) = \\
+    & = (x_u' ; y_u' ; z_u') du + (x_u' ; y_u' ; z_u') dv = r_u \; du + r_v \; dv.
+    \end{matrix}
+\end{equation}
+
+Рассмотрим 
+$ \text{Ф} = <dr, dr> = dx^2 + dy^2 + dz^2 \overset{\eqref{eq:9.12}}{=}  (r_u \; du  + r_v \; dv) (r_u \; du  + r_v \; dv) = $ 
+${ = r_u^2 \; du^2 + 2 \; r_u \; r_v \; du \; dv + r_v^2 \; dv^2}$ .
+
+Полученная квадратичная форма относительно 	$ du $ и $ dv $ называется \important{первой квадратичной формой поверхности} и обозначается :
+\begin{equation}
+    \label{eq:9.13}
+    \text{Ф} = dx^2 + dy^2 + dz^2 = E\; du^2 + 2F\;du \; dv + G\; dv^2,
+\end{equation}
+\begin{equation}
+    \label{eq:9.14}
+    \begin{split}
+        & \text{ где } E = r_u^2  = <r_u, r_u>  = (x_u')^2 + (y_u')^2 + (z_u')^2,\\
+        & F =  r_u r_v  = <r_u, r_v>  = x_u' x_v' + y_u' y_v' + z_u' z_v', \\
+        & G = r_v^2  = <r_v, r_v>  = (x_v')^2 + (y_v')^2 + (z_v')^2,
+    \end{split}
+\end{equation}
+
+Коэффициенты \eqref{eq:9.14} в КФ \eqref{eq:9.13} называют \important{гауссовыми коэффициентами}.
+\\\\
+
+\begin{example}$  $
+    
+    Для сферы $ x^2 + y^2 + z^2 = a^2 $, используя сферические координаты, имеем:
+    \begin{equation*}
+        \begin{cases}
+            x = x(\varphi, \psi) = a \cos \varphi \cos \psi, \\
+            y = y(\varphi, \psi) = a \sin \varphi \cos \psi, \\
+            z = z(\varphi, \psi) = a \sin \psi, 
+        \end{cases}
+    \end{equation*}
+    где $ (\varphi, \psi) \subset H = [0, 2\pi]  [-\frac{\pi}{2} ; \frac{\pi}{2}]$.
+    
+    В силу \eqref{eq:9.14}, где $ u = \varphi \in [0, 2 \pi] $, $ v = \psi \in[-\frac{\pi}{2} ; \frac{\pi}{2}] $, получаем:
+    \begin{align*}
+        & E = E(\varphi, \psi) \overset{\eqref{eq:9.14}}{=} (x_u')^2 + (y_u')^2 + (z_u')^2 = \ldots = a^2 \cos^2\psi, \\
+        & F = F(\varphi, \psi) \overset{\eqref{eq:9.14}}{=} x_u' x_v' + y_u' y_v' + z_u' z_v' = \ldots = 0, \\
+        & G = G(\varphi, \psi) \overset{\eqref{eq:9.14}}{=} (x_v')^2 + (y_v')^2 + (z_v')^2 = \ldots = a^2.
+    \end{align*}
+    В связи с этим, в данном случае первая КФ сферы в силу \eqref{eq:9.13} принимает вид
+    \begin{equation*}
+        \text{Ф} = (a^2 \cos^2 \psi) \; d \phi + a^2 \; d \psi.
+    \end{equation*}
+    
+    В общем случае, зная только для поверхности  $ \text{П} \subset \mathbb{R}^3 $ её первую КФ \eqref{eq:9.13}, то есть коэффициенты Гаусса \eqref{eq:9.14}, можно вычислять длину линий,
+    а также площадь поверхности.   
+     \newpage
+    Для вычисления площади $ S = \text{пл. П} $ в криволинейных координатах, следуя общей методике использования соответствующих разбиений и предела интегральных сумм, действуем по следующей схеме:
+    \begin{multicols}{3}
+        картинка 1 \\\\\\\\\\\\\\\\
+        картинка 2 \\\\\\\\\\\\\\\\
+        картинка 3 \\\\\\\\\\\\
+    \end{multicols}
+        
+    В области $ H $ берём элементарный прямоугольник со сторонами  $ du $ и $ dv $. При отображении \eqref{eq:9.2-vect_paramPoverh} он перейдёт в какой-то криволинейный прямоугольник.
+    Далее проводим к точке М касательную плоскость и строим касательные вектора.
+
+Беря в $ H \subset R^2 $ элементарный прямоугольник с параллельными осям $ O_u, O_v $ со сторонами соответственно $ du $ и $ dv $ при отображении \eqref{eq:9.2-vect_paramPoverh}
+ получим его образ - криволинейный параллелограмм с площадью $ dS $. 
+ 
+Если рассмотреть соответствующую плоскость, определяемую векторами $ \vec{a} = r_u \; du $ и ${ \vec{b} = r_v \; dv }$ в $ Oxyz $, то она будет являться касательной к поверхности П в соответствующей точке
+$ M \in \mathbb{R}^3 $. Площадь $ \stackrel{\sim}{S} $ этого параллелограмма в силу определения векторного произведения  будет равна
+\begin{equation*}
+    \stackrel{\sim}{S} \;  = \abs{\nullFrac [\vec{a},\vec{b}] \nullFrac} =
+    \abs{\nullFrac [r_u, r_v]\nullFrac } \; du \; dv =
+    \sqcase{[r_u, r_v] = (A;B;C)} = \sqrt{ A^2 + B^2 + C^2 } \; du \; dv.
+\end{equation*}
+
+При достаточно малых $ du $ м $ dv $ имеем 
+%\begin{equation*}
+$
+    dS \approx \; \stackrel{\sim}{S} = \sqrt{A^2+B^2+C^2} \; du \; dv.
+$
+%\end{equation*}
+Используя это в соответствующих интегральных суммах, после предельного переходим приходим к функции
+\begin{equation}
+    \label{eq:9.15}
+     S = \text{площадь П} = \iintl_H dS = \iintl_H \sqrt{A^2+B^2+C^2} \; du \; dv,
+\end{equation}
+где $ A $, $ B $, $ C $ определяются формулами \eqref{eq:9.6}.
+
+Для того, чтобы записать \eqref{eq:9.15} через коэффициенты Гаусса, имеем
+\begin{align*}
+    & A^2+B^2+C^2 = \abs{[r_u, r_v]}^2 = \abs{r_u}^2 \abs{r_v}^2 \sin^2 \varphi =
+    \abs{r_u}^2 \cdot \abs{r_v}^2 - \abs{r_u}^2 \cdot \abs{r_v}^2 \cdot \cos^2 \varphi = \\
+    & =
+    \begin{sqcases}
+        \abs{r_u}^2 = (x_u')^2 + (y_u')^2 + (z_u')^2 \overset{\eqref{eq:9.14}}{=} E, \\
+        \abs{r_v}^2 = (x_v')^2 + (y_v')^2 + (z_v')^2 \overset{\eqref{eq:9.14}}{=} G, \\        
+        \cos \varphi = \dfrac{F}{EG}
+    \end{sqcases}
+    = EG - F^2.
+\end{align*}
+Отсюда:
+\begin{equation}
+    \label{eq:9.16}
+    S = \text{площадь П} \overset{\eqref{eq:9.15}}{=} \iintl_H \sqrt{EG-F^2} \; du \; dv.
+\end{equation}
+
+\newpage
+Если гладкая поверхность $ \text{П} \subset R ^2 $ задана явным уравнением $ z=f(x,y), (x,y)\in H \subset \mathbb{R}^2 $, 
+где $ f(x,y) $ - непрерывная дифференцируемая функция на $ H $, то используя естественную параметризацию 
+\begin{equation*}
+    \begin{cases}
+        x = u, \\
+        y = v, \\
+        z = f(u,v),
+    \end{cases}
+    \;\;\;\; 
+    (u, v) \in H \subset \mathbb{R}^2,
+\end{equation*}
+нетрудно получить, что \eqref{eq:9.15} и \eqref{eq:9.16} принимают вид:
+\begin{equation}
+    \label{eq:9.17}
+    S = \text{площадь П} = \iintl_H \sqrt{1+(f_x')^2 +(f_y')^2} \; dx \; dy.
+\end{equation}
+Ранее \eqref{eq:9.15} и \eqref{eq:9.16} использовались для вычисления площади поверхности через 2И.\\
+
+\end{example}
+
+\begin{example}$  $
+
+    Учитывая, что для сферы 
+%    \begin{equation*}
+    $
+        \begin{cases}
+            x = a \cos \varphi \cos \psi, \\
+            y = a \sin \varphi \cos \psi, \\
+            z = a \sin \psi, 
+        \end{cases}
+    $
+    $ u = \varphi \in [0, 2 \pi] $, 
+    $ v = \psi \in[-\frac{\pi}{2} ; \frac{\pi}{2}] $
+%    \end{equation*}
+    её первая КФ имеет вид 
+    $ \text{Ф} = (a^2 \cos^2 \psi) \; d \phi + a^2 \; d \psi $,
+    имеем:
+    \begin{equation*}
+        EG-F^2 = 
+        \begin{sqcases}
+            E = a^2 \cos^2 \psi, \\
+            G = 0,   \;\;\;\;\;\;\;\;\;\;\; \\
+            F = a^2  \;\;\;\;\;\;\;\;\;\; \\
+        \end{sqcases}    
+         = a^4 \cos^2 \psi,
+    \end{equation*}
+    \begin{equation*}
+        S_\text{сф.} \overset{\eqref{eq:9.16}}{=} \intl_{\substack{0 \leq \varphi  \leq 2 \pi, \\ -\frac{\pi}{2} \leq \psi \leq \frac{\pi}{2} }} \sqrt{a^4 \cos^2 \psi} \; d\varphi \; d \psi
+        = a^2 \intl_0^{2\pi} \; d \varphi \intl_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \; \cos \psi \; d \psi =
+        a^2 \left( [\varphi]_0^{2\pi} \right)  \left( [\sin \psi]_{-\frac{\pi}{2}}^{\;\frac{\pi}{2}} \right) = 4 \pi a^2.
+    \end{equation*}    
+\end{example}
+
+$  $\\\\
+
+\subsection{Поверхностные интегралы первого рода (типа) (ПОВИ-1).}
+
+Пусть гладкая квадрируемая поверхность $\text{П} \subset \mathbb{R}^3 $ задана векторно-параметрическим уравнением
+\begin{equation*}
+    r = r(u,v) = \left(\nullFrac x(u,v),\; y(u,v),\; z(u,v)\nullFrac\right), \; (u,v) \in  H \subset \mathbb{R}^3,
+\end{equation*}
+где $ H $ - компакт в $ \mathbb{R}^3 $. Рассмотрим произвольное разбиение поверхности 
+$\text{П} \subset \mathbb{R}^3 $ кусочно-гладкими линиями на части $ \text{П}_k $, $ k = \overline{1, m} $, что $ \bigcup\limits_{k=1}^m \text{П}_k = \text{П} $, 
+причём при $ i \ne j $ у  $ \text{П}_i $ и  $ \text{П}_j $ могут быть общими лишь только граничные точки, сами $ \text{П}_k $ считаем квадрируемыми компактами в $ \mathbb{R}^3 $.
+Обозначение $ w = \max\limits_{1\leq k \leq m} \{\diam \text{П}_k\} $ подразумевает диаметр круга конечного радиуса, в который входит $ \text{П}_k $.
+
+\newpage
+
+Предположим, что имеется непрерывная функция $ f(x,y,z), \forall \; (x,y,z) \in \text{П} $. 
+Если на каждой части $ \text{П}_k $ произвольным образом выбрать отмеченные точки $ \text{М}_k $, то можно составить интегральные суммы
+\begin{equation}
+    \label{eq:9.18}
+    \sigma = \sum_{k=1}^{m} f(M_k) \; \Delta S_k, 
+\end{equation}
+где $ \Delta S_k $ - площадь $ \text{П}_k $. Если $ \exists I  = \lim\limits_{w \to 0} \sigma \in \mathbb{R} $, то полученное число $ I \in \mathbb{R} $, не зависящее ни от производимого разбиения, ни от выбора отмеченных точек, называется значением ПОВИ-1 по поверхности $\text{П} \subset \mathbb{R}^3 $ от $ f(x,y,z) $. В этом случае пишут:
+\begin{equation}
+    \label{eq:9.19}
+    I = \lim\limits_{w \to 0} \;  \sum_{k=1}^{m} f(M_k) \; \Delta S_k = \iintl_\text{П} f(x,y,z) dS.
+\end{equation}
+
+\begin{example}
+    Пусть $ \forall \; (x,y,z) \in \text{П} \Rightarrow f(x,y,z) = C = const $. В этом случае:
+    \begin{align*}
+        & I = \lim\limits_{w \to 0} \;  \sum_{k=1}^{m} C \cdot \Delta S_k = 
+          C \cdot \lim\limits_{w \to 0} \left( \text{площадь} \bigcup\limits_{k=1}^m \text{П}_k \right) =
+           C \cdot \lim\limits_{w \to 0}  (\text{площадь П}) = C \cdot S \Rightarrow
+        \\ & \Rightarrow
+        \iintl_\text{П} C dS = C \cdot \text{площадь П}.
+    \end{align*}
+    
+    В частности, при $ C = 0 $ имеем $ \displaystyle\iintl_\text{П} 0 \; dS = 0 $,
+    а при $ C = 1 $, получаем $  \displaystyle\iintl_\text{П} dS = \text{площадь П} $.
+    
+    В общем случае, на $ (\varepsilon, \delta)-$языке, выражения \eqref{eq:9.18} и \eqref{eq:9.19} равносильны следующему:
+    \begin{equation*}
+        \text{для }\forall \; \varepsilon > 0 \;  \exists \; \delta > 0 \text{ такое, что для } \forall \{\text{П}_k\}, w \leq \delta \Rightarrow \abs{I - \delta} \leq \varepsilon.
+    \end{equation*}
+\end{example}
+
+\begin{theorem}[о вычислении ПОВИ-1 через 2И] $  \\ $
+    Для непрерывной функции $ f(x,y,z) $, определённой на гладкой поверхности П, являющейся квадрируемым компактом в $ \mathbb{R}^3 $ с кусочно-гладкой границей $ \partial \text{П} $, 
+   в  случае непрерывности и дифференцируемости  на квадрируемом компакте  $ H \subset \mathbb{R}^2 $ функций в \eqref{eq:9.1-paramPoverh}, имеем:    
+    \begin{equation}
+        \label{eq:9.20}
+        \begin{matrix}
+            \diintl_\text{П} f(x,y,z) \; dS \overset{\eqref{eq:9.1-paramPoverh}}{=} \sqcase{dS = \sqrt{EG-F^2} \; du \; dv} \overset{\eqref{eq:9.14}}{=} \\
+            = \diintl_\text{H} f(x(u,v),y(u,v),z(u,v)) \sqrt{E(u,v)G(u,v) - F^2(u,v)} \; du \; dv.
+        \end{matrix}
+    \end{equation}
+\end{theorem}
+\begin{proof}
+    Рассмотрим произвольное разбиение квадрируемого компакта  $ H \subset \mathbb{R}^2 $ на части $ H_k, k = \overline{1, m} $, являющиеся также компактами с кусочно-гладкими границами.
+    При этом $ \bigcup\limits_{k=1}^m  H_k = H$, а при $ i \ne j $ у  $ H_i $ и  $ H_j $ могут быть общими лишь граничные точки. 
+    
+    Используя \eqref{eq:9.16}, получаем:
+    \begin{equation*}
+        \Delta S_k = \text{площадь П}_k \overset{\eqref{eq:9.16}}{=} \iintl_{\text{П}_k} dS
+        \overset{\eqref{eq:9.14}}{=} \iintl_{\text{H}_k} \sqrt{EG - F^2} \; du \; dv.
+    \end{equation*}
+    
+    Используя здесь теорему о среднем для 2И, получим, что
+    \begin{equation*}
+        \text{$ \exists N_k \in H_k, k = \overline{1, m} $  такое, что 
+            $ \Delta S_k = \sqrt{E_k G_k - F_k^2} \cdot  \underbrace{\diintl_{H_k} du \; dv}_{\text{площадь } H_k} = \sqrt{E_k G_k - F_k^2} \cdot \Delta H_k $, }
+    \end{equation*}
+    где $ \Delta H_k $ - площадь $ H_k $, 
+    $ E_k \overset{\eqref{eq:9.16}}{=} E(N_k)$,    
+    $ G_k \overset{\eqref{eq:9.16}}{=}  G(N_k)$,    
+    $ F_k \overset{\eqref{eq:9.16}}{=}  F(N_k)$.
+    
+    $  $
+    
+    Отсюда, полагая $ M_k = (x(N_k), y(N_k), z(N_k)) \in \text{П}_k, k = \overline{1,m}$, имеем:
+    \begin{equation}
+        \label{eq:9.21}
+        \sigma \overset{\eqref{eq:9.18}}{=} \sum_{k = 1}^{m} f(M_k) \Delta S_k = \sum_{k = 1}^{m} f(x(N_k), y(N_k), z(N_k)) \cdot \sqrt{E_k G_k - F_k^2} \cdot \Delta H_k.
+    \end{equation}
+    
+    $  $
+    
+    В силу специального выбора точек $ N_k \in H_k, k = \overline{1, m} $, \eqref{eq:9.21} можно рассматривать как специальную интегральную сумму для функции
+    \begin{equation*}
+        g(u,v) \overset{\eqref{eq:9.1-paramPoverh}}{=} f(x(u,v), y(u,v), z(u,v)) \cdot \sqrt{E(u,v)G(u,v) - F^2(u,v)}
+    \end{equation*}
+    по используемому разбиению $ \set{H_k} $ квадрируемого компакта $ H \subset \mathbb{R}^2 $. 
+    
+    В связи с этим, учитывая, что в силу непрерывности используемых функций, условия 
+    $ w = \max\limits_{1\leq k \leq m} \{\diam \text{П}_k\} \to 0$ и 
+    $ W = \max\limits_{1\leq k \leq m} \{\diam \text{H}_k\} \to 0$
+    равносильны, получаем на основании интегрируемости непрерывных ФНП, что
+    \begin{equation*}
+        \diintl_\text{П} f(x,y,z) \; dS \overset{\eqref{eq:9.18}}{=} \lim\limits_{w \to 0} \sigma  
+        \overset{\eqref{eq:9.21}}{=} \lim\limits_{W \to 0} \sum_{k=1}^{m} g(N_k) \Delta H_k
+        = \diintl_\text{H} g(u,v) \; du \; dv \Leftrightarrow \text{\eqref{eq:9.20}}.
+    \end{equation*}
+\end{proof}
+
+$  $
+
+\begin{notes}
+    \item Из основных свойств 2И в силу \eqref{eq:9.20} получаем соответствующие свойства ПОВИ-1:
+    линейность, аддитивность, монотонность, неотрицательность, основная оценка, теорема о среднем.
+        
+    \item Для явно заданной гладкой поверхности П:
+    $
+        \begin{cases}
+            z = z(x,y), \\
+            (x,y)\in H \subset \mathbb{R}^2
+        \end{cases} 
+    $
+    в случае непрерывной дифференцируемости $ z(x,y) $ на квадрируемом компакте $ H \subset \mathbb{R}^2 $, с учётом того, что $ dS = \sqrt{1 + (z_x')^2 + (z_y')^2} \; dx \; dy $,
+    формула \eqref{eq:9.20} принимает вид:
+    \begin{equation}
+        \label{eq:9.22}
+        \diintl_\text{П} f(x,y,z) \; dS = \diintl_\text{H} f(x,y,z) \sqrt{1 + (z(x, y)_x')^2 + (z(x, y)_y')^2} \; dx \; dy.
+    \end{equation}
+    
+    \newpage
+
+    \item По аналогии с 2И имеем следующие мехнические приложения ПОВИ-1:
+    \begin{enumerate}
+        \item Если для материальной гладкой поверхности из $ \mathbb{R}^3 $ в каждой точке известна плотность $ \rho(x,y,z), $ то тогда масса $ m_0 = \diintl_{\text{П}}  \rho dS$.
+        
+        \item Для статических моментов получаем:
+        \begin{equation*}        
+            M_{yz} = M_{zy} = \iintl_{\text{П}}  x \; \rho \; dS, \;\;\;\;
+            M_{xz} = M_{zx} = \iintl_{\text{П}}  y \; \rho \; dS, \;\;\;\;
+            M_{xy} = M_{yx} = \iintl_{\text{П}}  z \; \rho \; dS.
+        \end{equation*}
+        
+        \item Координаты центра тяжести (центра масс) $ M_0(x_0, y_0, z_0) $ вычисляются по формулам:
+        \begin{equation*}        
+            \begin{matrix}
+                &                 x_0 = \dfrac{M_{yz}}{m_0},
+                & \;\;\;\;\;\; &  y_0 = \dfrac{M_{xz}}{m_0},
+                & \;\;\;\;\;\; &  z_0 = \dfrac{M_{xy}}{m_0}.
+            \end{matrix}
+        \end{equation*}
+        
+        \item Кроме статических моментов, используют моменты инерции:
+        \begin{equation*}        
+            \begin{matrix}
+                &                   I_{x \circ y} = \diintl_{\text{П}} z^2 \; \rho \; dS,
+                & \;\;\;\;\;\;\;  & I_{y \circ z} = \diintl_{\text{П}} x^2 \; \rho \; dS,
+                & \;\;\;\;\;\;\;  & I_{x \circ z} = \diintl_{\text{П}} y^2 \; \rho \; dS.
+            \end{matrix}
+        \end{equation*} 
+    \end{enumerate}
+\end{notes}
+
+
+\subsection{Поверхностные интегралы второго рода (типа) (ПОВИ-2).}
+
+Для гладкой	двусторонней поверхности $\text{П} \subset \mathbb{R}^3 $ зададим единичный вектор нормали 
+\begin{equation}
+\label{eq:9.23}
+\vec{n}_0 =  (\cos \alpha, \cos \beta, \cos \gamma),
+\end{equation}
+\begin{equation}
+\label{eq:9.24}
+\cos \alpha \overset{\eqref{eq:9.6}}{=} \dfrac{\pm A }{\sqrt{A^2+B^2+C^2}}, \;\;\;
+\cos \beta  \overset{\eqref{eq:9.6}}{=} \dfrac{\pm B }{\sqrt{A^2+B^2+C^2}}, \;\;\;
+\cos \gamma \overset{\eqref{eq:9.6}}{=} \dfrac{\pm C }{\sqrt{A^2+B^2+C^2}},
+\end{equation}
+т.е. фиксирование знака ``+'' или ``-'' в \eqref{eq:9.24}  определяет ту или иную сторону этой поверхности в соответствии с параметризацией \eqref{eq:9.1-paramPoverh}. 
+
+В дальнейшем при выборе в	 \eqref{eq:9.24} знака ``+'' сторона поверхности, которая видна с конца вектора нормали \eqref{eq:9.23}, считается положительной, 
+а при выборе  ``-'' - отрицательной.
+Положительную сторону поверхности будем обозначать $ \text{П}^+ $, а отрицательную - $\text{П}^-$.
+
+Использование той или иной стороны поверхности индуцирует на ней соответственно ориентацию (обход) замкнутого контура: 
+положительную ориентацию, если обход происходит против часовой стрелки (если смотреть с конца единичного вектора нормали), и отрицательную в противном случае. 
+
+$  $\\\\- Тут две картинки -\\\\\\\\\\
+
+Углы $ \alpha, \beta, \gamma $, фигурирующие в \eqref{eq:9.23} и \eqref{eq:9.24}, соответствуют углам используемого вектора с положительными направлениями осей $ Ox, Oy, Oz $ соответственно.
+
+ Тут картинка и рядом ``$ \cos^2 \alpha + \cos^2 \beta + \cos^2 \gamma = 1 $ - направляющие косинусы.'' -\\\\\\\\\\\\\\\\
+
+Используя единичные базисные векторы $ \vec{i}, \vec{j}, \vec{k} $ в дальнейшем будем писать при выборе того или иного знака:
+%соответственно на осях $ Ox, Oy, Oz $, соответственно будем писать: 
+$ \alpha = {(\vec{n}_0   \;\widehat{,}\;   \vec{i})} $,
+$ \beta  = {(\vec{n}_0   \;\widehat{,}\;   \vec{j})} $,
+$ \gamma = {(\vec{n}_0   \;\widehat{,}\;   \vec{k})} $.
+
+Считая поверхность положительно 	ориентированной, в соответствии с параметризацией \eqref{eq:9.1-paramPoverh} для Ф3П
+$ P = P (x,y,z) $,
+$ Q = Q (x,y,z) $ и
+$ R = R (x,y,z) $,
+определённых на П, рассмотрим 3 соответствующих ПОВИ-1:
+\begin{equation*}
+    I_1 = \diintl_{\text{П}} P \; \cos \alpha \; dS, \;\;\;\;\;\;\;\;
+    I_2 = \diintl_{\text{П}} Q \; \cos \beta  \; dS, \;\;\;\;\;\;\;\;
+    I_3 = \diintl_{\text{П}} R \; \cos \gamma \; dS.
+\end{equation*}
+
+Эти ПОВИ-1 называются ПОВИ-2 по $ \text{П}^+ $ и обозначаются соответственно:
+\begin{equation}
+    \label{eq:9.25}
+    \begin{matrix}
+        & I_1 = \diintl_{\text{П}^+} P(x, y, z) \; dy \; dz, & \;       
+        & I_2 = \diintl_{\text{П}^+} Q(x, y, z) \; dz \; dx, & \;
+        & I_3 = \diintl_{\text{П}^+} R(x, y, z) \; dx \; dy.
+    \end{matrix}
+\end{equation}
+
+На основании \eqref{eq:9.25} вводят ПОВИ-2 общего вида: 
+\begin{equation}
+    \label{eq:9.26}
+    I = I_1 + I_2 + I_3 = \diintl_{\text{П}^+} P \; dy \; dz + Q \; dz \; dx + R \; dx \; dy.
+\end{equation}
+
+Аналогичным образом определяется ПОВИ-2 по отрицательно ориентированной поверхности $ \text{П}^- $, т. е. когда в соответствии с \eqref{eq:9.1-paramPoverh} в \eqref{eq:9.23} выбран знак ``-''.
+Нетрудно видеть, что в этом случае 
+$ I = \diintl_{\text{П}^-} P \; dy \; dz + Q \; dz \; dx + R \; dx \; dy = - \diintl_{\text{П}^+} P \; dy \; dz + Q \; dz \; dx + R \; dx \; dy $, 
+т. е. при изменении используемой стороны поверхности знак ПОВИ-2 изменяется на противоположный.
+
+Из определения ПОВИ-2 \eqref{eq:9.25}, \eqref{eq:9.26} получаем при параметризации \eqref{eq:9.1-paramPoverh} следующую формулу вычисления ПОВИ-2 через 2И:
+\begin{equation}
+    \label{eq:9.27}
+    \begin{matrix}
+        & I \overset{\eqref{eq:9.26}}{=}
+        \diintl_{\text{П}} (P \; \cos \alpha + Q \; \cos \beta + R \; \cos \gamma) \; dS 
+        \overset{\eqref{eq:9.24}}{=} \sqcase{dS = \sqrt{A^2 + B^2 + C^2} \;  du \; dv} = \\
+        & = \diintl_{\text{П}^+} P \; dy \; dz + Q \; dz \; dx + R \; dx \; dy = \ldots 
+        = \diintl_H (AP + BQ + CR) \; du \; dv.
+    \end{matrix}
+\end{equation}
+
+Из полученных формул и соответствующих свойств ПОВИ-1 получим основные свойства ПОВИ-2 (линейность и аддитивность, причём для аддитивности используется одна и та же сторона поверхности).
+
+Если гладкая поверхность П задана явным уравнением
+$
+    \begin{cases}
+        z = z(x,y), \\
+        (x,y)\in H \subset \mathbb{R}^2,
+    \end{cases} 
+$\\
+где $ z(x,y) \; -$ непрерывная дифференцируемая на квадрируемом компакте H, \\
+то для вектора нормали имеем:
+\begin{equation}
+    \label{eq:9.28}
+    \vec{n}_0 = \pm \left(
+        \dfrac{ - z_x' }{\sqrt{1 + (z_x')^2+ (z_y')^2}}, 
+        \dfrac{ - z_y' }{\sqrt{1 + (z_x')^2+ (z_y')^2}}, 
+        \dfrac{ 1 }{\sqrt{1 + (z_x')^2+ (z_y')^2}}, 
+    \right).
+\end{equation}
+
+Выбирая в \eqref{eq:9.28} перед вектором знак ``+'', получим положительно ориентированную поверхность $ \text{П}^+ $.
+В связи с этим, используя $ dS = \sqrt{1+(z_x')^2 +(z_y')^2} \; dx \; dy$, для общего ПОВИ-2 получим:
+\begin{equation}
+    \label{eq:9.29} \text{
+    \begin{tabular}{l}
+         $ I = \diintl_{\text{П}^+} P \; dy \; dz + Q \; dz \; dx + R \; dx \; dy =  $ \\\\
+        $ = \diintl_{\text{H}} 
+        \left(
+        -P(x, y, z(x,y)) z_x' - Q(x, y, z(x,y)) z_y' + R(x, y, z(x,y)) 
+        \right) dx \; dy. $
+    \end{tabular}
+    }
+\end{equation}
+
+В \eqref{eq:9.29} H является проекцией $ \text{П}^+ $ на плоскость $ Oxy $.\\\\\\
+
+\begin{example}\\
+    Вычислим  $ I = \diintl_{\text{П}^+} x \; dy \; dz + y \; dz \; dx + z \; dx \; dy $, где    
+    $ \text{П}^+ $ - внешняя сторона сферы ${ x^2 + y^2 + z^2 = a^2 }$.
+    
+    В данном случае, используя сферические координаты, имеем:
+    $ 
+        \begin{cases}
+            x = a \cos \varphi \cos \psi, \\
+            y = a \sin \varphi \cos \psi, \\
+            z = a \sin \psi,
+        \end{cases} 
+    $
+    где $ 0 \leq \varphi \leq 2 \pi $, $ - \dfrac{\pi}{2} \leq \psi \leq \dfrac{\pi}{2} $. 
+    
+    $  $\\\\ -- Рисуночек сферочки --- \\\\\\\\\\\\
+    
+    \newpage
+    В соответствии с этой параметризацией, сфера положительно ориентированна. Таким образом, получаем:
+    \begin{align*}    
+         & A \overset{\eqref{eq:9.6}}{=}
+         \abs{\begin{matrix}
+             & y_\varphi' & z_\varphi' & \\
+             & y_\psi' & z_\psi'
+        \end{matrix}} =
+         \abs{\begin{matrix}
+             & a \cos \varphi \cos \psi & 0 & \\
+             & - a \sin \varphi \sin \psi & a \cos \psi
+         \end{matrix}} =
+        a^2 \cos \varphi \cos^2 \psi, \\        
+        & B \overset{\eqref{eq:9.6}}{=}
+        \abs{\begin{matrix}
+            & z_\varphi' & x_\varphi' & \\
+            & z_\psi' & x_\psi'
+            \end{matrix}} =
+        \abs{\begin{matrix}
+            & 0 &  - a \cos \varphi \cos \psi &  \\
+            & a \cos \psi & - a \cos \varphi \sin \psi 
+            \end{matrix}} =
+        a^2 \sin \varphi \cos^2 \psi, \\      
+        & C \overset{\eqref{eq:9.6}}{=}
+        \abs{\begin{matrix}
+            & x_\varphi' & y_\varphi' & \\
+            & x_\psi' & y_\psi'
+            \end{matrix}} =
+        \abs{\begin{matrix}
+            &  - a \cos \varphi \cos \psi &  a \cos \varphi \cos \psi & \\
+            & - a \cos \varphi \sin \psi  & - a \sin \varphi \sin \psi
+            \end{matrix}} =
+        a^2 \cos \psi \sin \psi, \\        
+        & I = \underset{\substack{ 0 \leq \varphi \leq 2 \pi \\ - \frac{\pi}{2} \leq \psi \leq \frac{\pi}{2} }}{\diint} 
+        \left(
+            a \cos \varphi \cos \psi \;%\cdot
+            a^2 \cos \varphi \cos^2 \psi +          
+            a \sin \varphi \cos \psi  \; %\cdot
+            a^2 \sin \varphi \cos^2 \psi +            
+            a \sin \psi \; %\cdot         
+            a^2 \cos \psi \sin \psi
+        \right) d \varphi \; d \psi = \\
+        & = a^3 \intl_0^{2\pi} d\varphi \intl_{-\frac{\pi}{2}}^{\frac{\pi}{2}}
+        \left(
+            \cos^2 \varphi \cos^3 \psi +
+            \sin ^2 \varphi \cos^3 \psi +            
+            \cos \psi \sin^2 \psi
+        \right) d \psi = \ldots = 4 \pi a^3.
+        %& a^3 \left( \left[\psi\right]_0^{2\pi}\right)        
+        %= 4 \pi a^3.
+    \end{align*}
+\end{example}
+
+\subsection{Сведение ПОВИ-2 к 3И. Теорема Остроградского-Гаусса.} % 9.5
+
+Пусть $ T \subset \mathbb{R}^3 $ - односвязный компакт, состоящий из объединения конечного числа цилиндроидов вдоль координатных осей, границей которого является 
+простая кусочно-гладкая замкнутая поверхность П = $ \partial T $, внешняя сторона которой положительно ориентирована. Если на $ T $ введены непрерывные функции 
+$ P = P(x,y,z) $, $ Q = Q(x,y,z), $ $ R = R(x,y,z) $, для которых существуют непрерывные производные $ P_x', Q_y', R_z' $, то тогда справедлива
+\textbf{формула $ \text{Гаусса-Остроградского} $ (Остроградского-Гаусса)}:
+\begin{equation}
+    \label{930}
+    \oiint{\text{П}^{+}}{} P \; dz \; dy + Q \; dx \; dz + R \; dx \; dy =
+    \iiint\limits_T (P_x' + Q_y' + R_z') \; dx \; dy \; dz.
+\end{equation}
+
+\begin{proof}
+    Рассмотрим вначале случай, когда $ T $ является цилиндром вдоль оси $ Oz $, т.е. 
+    \begin{equation}
+        T = \defineset{(x, y, z) \in \mathbb{R}^3}{p(x,y) \leq z \leq q(x,y), (x,y) \in D},
+    \end{equation}
+    где $ p(x,y) $ и $ q(x,y) $ - непрерывные функции на односвязном компакте $ D \subset \mathbb{R}^2 $. Для интеграла
+    \begin{equation}
+        I = \iiint\limits_T R_z' \; dx \; dy \; dz 
+    \end{equation}
+    имеем:
+    \begin{equation*}
+        I = \iintl_D \; dx \; dy \intl_{p(x,y)}^{q(x,y)} R_z' \; dz  = \iintl_D \left[\nullFrac R(x,y,z) \nullFrac\right]_{z=p(x,y)}^{z=q(x,y)} \; dx \; dy = 
+    \end{equation*}    
+    \begin{equation}
+        \label{933}
+        = \iintl_D R(x,y,q(x,y)) \; dx \; dy - \iintl_D R(x,y,p(x,y)) \; dx \; dy.
+    \end{equation}
+    
+    Используя вычисление ПОВИ-2 через 2И и учитывая, что $ \text{П}^{+} = \partial T = \text{П}_1^{+} \cup \text{П}_2^{+} \cup \text{П}_3^{+}$, где для положительно ориентированных поверхностей 
+    $ \text{П}_1^+: z = q(x,y) $ и $ \text{П}_2^+: z = p(x,y) $ проекциями на $ Oxy $ являются соответственно $ D^{+} $ и $ D^{-} $, а $ \text{П}_3^+ $ - боковая поверхность, формулу \eqref{933} можно записать в виде:
+    \begin{equation}
+         \label{934}
+         I \overset{\eqref{933}}{=} 
+          \iintl_{\text{П}_1^+} R(x,y,z) \; dx \; dy - 
+          \iintl_{\text{П}_2^-} R(x,y,z) \; dx \; dy =
+          \iintl_{\text{П}_1^+} R \; dx \; dy + 
+          \iintl_{\text{П}_2^+} R \; dx \; dy =
+          \iintl_{\text{П}_1^+ \cup \text{П}_2^+} R \; dx \; dy.
+    \end{equation}
+    
+      $  $ \\ - Тут будет картинка - \\\\\\\\\\\\\\\\\\\\
+      
+      А так как вектор нормали $ \vec{n} $ перпендикулярен боковой поверхности $ \text{П}_3^+ $ и, значит, \\
+      $ \cos \gamma = {\cos ( \overset{\wedge}{\vec{n},O} z) } = 0 =\cos \dfrac{\pi}{2}$, то:
+      $ \displaystyle \iintl_{\text{П}_3^+} R \; dx \; dy = \iintl_{\text{П}_3^+} R \cos \gamma \; ds = 0$, а из \eqref{934} следует, что
+      \begin{equation*}
+          I\;\; = \;\iintl_{\text{П}_1^+ \cup \text{П}_2^+} R \; dx \; dy + 
+          \underbrace{\iintl_{\text{П}_3^+} R \; dx \; dy}_{=0} \;\;= \;\;
+          \iintl_{\text{П}_1^+ \cup \text{П}_2^+\cup \text{П}_3^+} R \; dx \; dy
+          \;\;=\;\; \oiint{\text{П}^+}{} R \; dx \; dy.
+      \end{equation*}
+      
+      Таким образом, получили первую простейшую формулу Остроградского-Гаусса:
+      \begin{equation}      
+          \oiint{\text{П}^+}{} R \; dx \; dy = \iiint\limits_T R_z' \; dx \;dy \; dz.
+      \end{equation}
+      
+      Аналогичным образом, в случае, когда $ T $ является цилиндроидом соответственно вдоль осей $ Oy $ и $ Ox $, доказывается вторая и третья простейшие формулы Остроградского-Гаусса:
+      \begin{equation}
+          \oiint{\text{П}^+}{} Q \; dz \; dx = \iiint\limits_T Q_y' \; dx \;dy \; dz,
+      \end{equation}
+      \begin{equation}
+          \oiint{\text{П}^+}{} P \; dy \; dz = \iiint\limits_T P_x' \; dx \;dy \; dz.
+      \end{equation}
+      
+      \newpage
+      В общем случае, используя линейность и аддитивность ПОВИ-2 и 3И, в случае, когда $ T $ можно разбить на фиксированное число цилиндроидов вдоль какой-либо из осей, получаем, что:
+      \begin{equation*}
+          \iiint\limits_T (P_x' + Q_y' + R_z') \; dx \; dy \; dz =
+          \iiint\limits_T P_x' \; dx \; dy \; dz +
+          \iiint\limits_T Q_y' \; dx \; dy \; dz +
+          \iiint\limits_T R_z' \; dx \; dy \; dz =                    
+      \end{equation*}
+      \begin{equation*}
+          = \ldots = 
+          \oiint{\text{П}^{+}}{} P \; dz \; dy + Q \; dx \; dz + R \; dx \; dy.
+      \end{equation*}
+\end{proof}
+
+\begin{notes}
+    \item Формула \eqref{930}, связывающая ПОВИ-2 по замкнутой поверхности с 3И по телу, ограниченному этой поверхностью, естественным образом обобщается на случай неодносвязных тел в $ \mathbb{R}^3 $, т.е. тел, в которых есть ``дыры''.
+    При этом, в \eqref{930} используется полная граница этого тела, являющаяся объединением соответствующим образом ориентированных как внешних поверхностей, так и поверхностей ``дыр'', имеющихся в $ T $.
+    
+    \item Используя для векторной функции $ \vec{f} = ( P(x, y, z), Q(x, y, z), R(x, y, z) ) $ скалярную функцию $ \text{div} \; \vec{f} = P_x' + Q_y' + R_z' $, называемую дивергенцией $ \vec{f} $,  формулу \eqref{930} можно переписать в виде:
+    \begin{equation*}
+        \iintl_{\text{П}^{+}} P \; dz \; dy + Q \; dx \; dz + R \; dx \; dy
+        = \iiint\limits_T (\text{div} \vec{f}) \; dx \; dy \; dz.
+    \end{equation*}
+    Отсюда в свою очередь, в силу связи ПОВИ-2 с ПОВИ-1, имеем следующую формулу Остроградского-Гаусса для ПОВИ-1:
+    \begin{align*}
+&        \iintl_{\text{П}^{+}} (\vec{f}, \vec{n_0}) \; dS = 
+        \iintl_{\text{П}^{+}} (P \cos \alpha + Q \cos \beta + R \cos \gamma) \; dS = \\
+&       = \iintl_{\text{П}^{+}} P \; dz \; dy + Q \; dx \; dz + R \; dx \; dy =         \iiint\limits_T (\text{div} \vec{f}) \; dx \; dy \; dz,
+    \end{align*}
+    где $ \vec{n_0} = (\cos \alpha, \cos \beta, \cos \gamma) $ - единичный вектор нормали к положительно ориентированной поверхности $ \text{П}^{+} = \partial T $.    
+    
+    $  $
+    
+    \item По аналогии с полученными формулами для вычисления площадей через КРИ-2, как следствие из формулы Грина, имеем следующие формулы для вычисления объёмов тел через ПОВИ-2:
+    \begin{enumerate}
+        \item  Если
+        $ 
+            \begin{cases}
+                P = x, \\ Q = 0, \\ R = 0,
+            \end{cases}
+        $
+        то   
+        $
+            \divergence \vec{f} = P_x' + Q_y' + R_z' = 1,
+        $
+        \\
+        а тогда:
+        $ \displaystyle
+            V = \text{объём } T = \iiint\limits_T (P_x' + Q_y' + R_z') \; dx \; dy \; dz \overset{\eqref{930}}{=} \oiint{{\text{П}^{+}}}{} x \; dy \; dz.
+        $
+        \item Аналогично, если 
+        $  
+            \begin{cases}
+                P = 0, \\ Q = y, \\ R = 0
+            \end{cases}        
+            \Rightarrow
+            \divergence \vec{f} = 1 
+        $,
+        имеем:
+        $
+            V = \text{объём } T = \ldots = \oiint{{\text{П}^{+}}}{} y \; dx \; dz.
+        $
+        \item Если 
+        $  
+        \begin{cases}
+        P = 0, \\ Q = 0, \\ R = z
+        \end{cases}        
+        \Rightarrow
+        \divergence \vec{f} = 1 
+        $, то 
+        $
+        V = \text{объём } T = \ldots = \oiint{{\text{П}^{+}}}{} z \; dx \; dy.
+        $
+        \item А в случае, когда
+        $  
+            \begin{cases}
+                P = \frac{1}{3}\;x, \\ Q = \frac{1}{3}\;y, \\ R = \frac{1}{3}\;z,
+            \end{cases}        
+        $ 
+        получаем
+        $
+            \divergence \vec{f} = 1 
+        $
+        и\\
+        $
+            V = \text{объём } T = \ldots = \dfrac{1}{3} \oiint{{\text{П}^{+}}}{} 
+            x \; dy \; dz + y \; dx \; dz + z \; dx \; dy .
+        $
+    \end{enumerate}
+\end{notes}
+
+\subsection{Формула Стокса.} % 9.6
+
+Формула Стокса является обобщением формулы Грина в пространстве ${ \mathbb{R} ^2  \text{ на пространство } \mathbb{R}^3 }$.
+
+\begin{statement}{Теорема Стокса}
+    Пусть $ \text{П} \subset \mathbb{R}^3 $ - простая гладкая двухсторонняя поверхность с кусочно-гладкой границей (краем) $ l = \partial \text{П} $.
+    Если функции $ P=P(x, y, z) $, $ Q=Q(x, y, z) $, $ R=R(x, y, z) $ непрерывно дифференцируемы на замыкании $ \overline{\text{П}} \subset \text{П} \cup l $, то тогда:
+    \begin{equation}
+    \label{938}
+    \oint P \; dx + Q \; dy + R \; dz = \iintl_{\text{П}} (R_y' - Q_z')\; dy \; dz  + (P_z’ - R_x’) \;dx \; dz + (Q_x’ - P_y’)\; dx \; dy,
+    \end{equation}
+    где обход контура $ l = \partial \text{П} $ согласован с выбранной стороной поверхности П.
+\end{statement}
+
+%\begin{proof}
+    \begin{flushleft}
+        \textit{Доказательство}
+    проводим по той же схеме, как и для формулы Грина.
+    \end{flushleft}
+    
+    Докажем вначале первую малую формулу Стокса:
+    \begin{equation}
+        \label{939}
+        \intl_{l} P \; dx =  \iintl_{\text{П}} P_z' \;  dx \; dz - P_y' \;  dx \; dy
+    \end{equation}
+    
+    Пусть П имеет векторно-параметрическое уравнение
+    $ r = r(u, v) = (x(u,v), y(u,v), z(u,v)), $  $\;\; (u,v) \in D \subset \mathbb{R}^2$, а $ D $ - односвязный компакт в $ \mathbb{R}^2 $. 
+    Рассмотрим соответствующую параметризацию $ l_0 \subset \partial \text{П} $: 
+    $ 
+        \begin{cases}
+            u = u(t), \\
+            v = v(t), \\
+        \end{cases}
+    $
+    где $ t $ меняется от $ \alpha $ до $ \beta $.
+    
+    В результате получим соответствующую параметризацию для $ l = \partial $П:
+    \begin{equation*}
+        \begin{cases}
+            x = x(u(t), v(t)) = x(t), \\
+            y = y(u(t), v(t)) = y(t), \\
+            z = z(u(t), v(t)) = z(t), \\                
+        \end{cases}
+            \;\;\;
+         t \in ]{\alpha, \beta}[
+    \end{equation*}
+    
+    Используя формулу вычисления КРИ-2 через ОИ имеем с использованием соответствующей ориентации $ l $ и П:
+    \begin{align*}
+        & \intl_l P \; dx = \intl_\alpha^\beta P(x(t), y(t), z(t)) \cdot 
+        (x_u' u'(t) + x_v' v'(t)) \; dt =
+        \begin{sqcases}
+            u'(t) \; dt = du, \\
+            v'(t) \; dt = dv 
+        \end{sqcases} = \\
+        & = \intl_{l_0}  
+        \underbrace{ P \; x_u' \; du }_{ P_0(u,v) } + 
+        \underbrace{ P \; x_v' \; dv }_{ Q_0(u,v) } =
+        \left[\nullFrac\text{формула Грина}\nullFrac\right] = \pm \iintl 
+        \left(\dfrac{\partial Q_0}{\partial u}-\dfrac{\partial P_0}{\partial u}\right)
+        du \; dz = \\
+        & = \left[ (P \; x_v')_u' - (P \; x_u')_v' = 
+            (P_x' x_u' + P_y' y_u' + P_z' z_u') \; x_v' + \underline{P \; x_{vu}''} -
+            (P_x' x_v' + P_y' y_v' + P_z' z_v') \; x_u' - \underline{P \; x_{uv}''}           
+        \right] =\\
+        & = \ldots = \pm \iintl_D (P_z' \cdot B - P_y' \cdot C) \; du \; dv =
+        \iintl_\text{П} P_z' \; dx dz - P_y' \; dx dy.
+    \end{align*}
+    
+    Здесь и далее предполагается, что рассматриваемые функции дважды непрерывно дифференцируемы и величины $ A, B, C $ определены формулами \eqref{eq:9.6}, а также используется связь ПОВИ-2 с ПОВИ-1.
+    
+    Аналогичным образом доказывается соответственно вторая и третья малые формулы Стокса:
+    \begin{equation}
+        \label{940}
+        \intl_{l} Q \; dy =  \iintl_{\text{П}} Q_x' \;  dx \; dy - Q_z' \;  dy \; dz ,
+    \end{equation}
+    \begin{equation}
+        \label{941}
+        \intl_{l} R \; dz =  \iintl_{\text{П}} R_y' \;  dy \; dz - R_x' \;  dx \; dz .
+    \end{equation}
+    
+    Складывая последовательно \eqref{939}, \eqref{940} и \eqref{941}, получаем общую формулу Стокса \eqref{938}.
+%\end{proof}
+
+\begin{flushright}
+    $ \boxed{ } $
+\end{flushright}
+
+\begin{notes}
+    \item Формула Стокса естественным образом обобщается на случай многосвязных поверхностей, для которых используется соответствующим образом ориентированная полная граница.
+    \item Вводя для векторной функции $ \vec{f} = (P, Q, R) $ ротор по формуле 
+    \begin{equation*}
+        \text{rot } \vec{f} = (R_y' - Q_z'; P_z' - R_x' ; Q_x' - P_y')
+    \end{equation*}
+    и используя операторы дифференцирования
+    $ \dfrac{\partial}{\partial x} $,
+    $ \dfrac{\partial}{\partial y} $,
+    $ \dfrac{\partial}{\partial z} $,
+    на основании символического определителя
+    \begin{equation*}
+        \left|\begin{matrix}
+        & \vec{i}  & \vec{j} & \vec{k} & \\
+        & \dfrac{\partial}{\partial x}
+        & \dfrac{\partial}{\partial y}
+        & \dfrac{\partial}{\partial z}
+        & \\
+        & P & Q & R &
+        \end{matrix}\right|
+        =
+        \vec{i} \; 
+        \left|\begin{matrix}
+        & \dfrac{\partial}{\partial y}
+        & \dfrac{\partial}{\partial z}
+        & \\& Q & R &
+        \end{matrix}\right|        
+        -\vec{j} \; 
+        \left|\begin{matrix}
+        & \dfrac{\partial}{\partial x}
+        & \dfrac{\partial}{\partial z}
+        & \\& P & R &
+        \end{matrix}\right|     
+        +\vec{k} \; 
+        \left|\begin{matrix}
+        & \dfrac{\partial}{\partial x}
+        & \dfrac{\partial}{\partial y}
+        & \\& P & Q &
+        \end{matrix}\right| =        
+        \end{equation*}
+    \begin{equation*}
+        = \ldots = (R_y' - Q_z'; P_z' - R_x' ; Q_x' - P_y') = \text{rot } \vec{f},
+    \end{equation*}
+    формулу Стокса можно записать в следующих компактных видах:
+    \begin{align*}
+        & \oint P \; dx + Q \; dy + R \; dz = \iintl_\text{П} (\text{rot } \vec{f}, \vec{n_0})  \; dS = \\
+        & =
+            \iintl_\text{П}
+            \left|\begin{matrix}
+            & \cos\alpha  & \cos\beta & \cos\gamma & \\
+            & \dfrac{\partial}{\partial x}
+            & \dfrac{\partial}{\partial y}
+            & \dfrac{\partial}{\partial z}
+            & \\
+            & P & Q & R &
+            \end{matrix}\right|
+            dS = 
+            \iintl_\text{П}
+            \left|\begin{matrix}
+            & dydz  & dzdx & dxdy & \\
+            & \dfrac{\partial}{\partial x}
+            & \dfrac{\partial}{\partial y}
+            & \dfrac{\partial}{\partial z}
+            & \\
+            & P & Q & R &
+            \end{matrix}\right|
+            ,
+    \end{align*}
+    где $ \vec{n_0} = (\cos\alpha, \cos\beta, \cos\gamma)\perp$П - соответствующим образом направленный единичный вектор нормали к используемой стороне поверхности П.
+    
+    \item По той же схеме, что и в доказательстве независимости КРИ-2 на плоскости от пути интегрирования, где использовалась формула Грина,
+    доказываются с использованием формулы Стокса аналогичные условия независимости ПОВИ-2 в пространстве от пути интегрирования.
+    
+    В частности, условие Эйлера существования первообразной $ V = P dx + Q dy + R dz $, т. е.  существование функции $ u = u(x, y, z) $, для которой $ v = du $, в данном случае имеет вид:
+    \begin{equation}
+        \label{942}
+        Q_x' = P_y', \;\; 
+        P_z' = R_x', \;\;
+        R_y' = Q_z'.
+    \end{equation}
+    
+    При выполнении \eqref{942} саму первообразную функцию $ u = u(x, y, z) $, так же, как и в плоском случае, находят методом интегрируемых комбинаций или через решение дифференциальной системы:
+    $ \begin{cases}
+            u_x' = P, \\ u_y' = Q,  \\ u_z' = R,
+    \end{cases} $
+    либо с помощью вычисления соответствующего КРИ-2 в пространстве по путям вдоль координатных осей, например, по формуле:
+    \begin{align*}
+        & u(x, y, z) = \const + \intl_{(x_0, y_0, z_0)}^{(x, y, z) } P(t, \tau, s) dt + Q(t, \tau, s) d \tau + R(t, \tau, s) ds = \\
+        & = \left[\nullFrac
+            (x_0, y_0, z_0) \xrightarrow{Ot}
+            (x, y_0, z_0) \xrightarrow{O\tau}
+            (x, y, z_0) \xrightarrow{Os}
+            (x, y, z)
+        \nullFrac\right] = \\
+        & = \const + \intl_{x_0}^x P(t, y_0, z_0) \; dt + 
+        \intl_{y_0}^y Q(x, \tau, z_0) \; d\tau + \intl_{z_0}^z R(x, y, s) \; ds. 
+    \end{align*}
+\end{notes}
+
+$  $
+\newpage
+$  $
