@@ -59,11 +59,13 @@
 	2 \cdot \frac{2xdy + 2x \left(-\frac{1}{2}dx + dy\right)}{4x^2}dy = \]
 	
 	\[= -\dfrac{1}{2x}\left(2dx^2 + \dfrac{1}{2}dx^2 - dxdy + 2dy^2 - 
-	dxdy + 2dy^2 \right) = -\dfrac{1}{2x} \left( \dfrac{5}{2} dx^2 - 2dxdy + 4dy^2 \right) \implies \]
+	dxdy + 2dy^2 \right) = -\dfrac{1}{2x} \left( \dfrac{5}
+	{2} dx^2 - 2dxdy + 4dy^2 \right) \implies \]
 	
 	\[\implies d^2u\left(M_1\right) = \left[x_1 = \dfrac{1}{3}\right] = 
 	-\dfrac{3}{2}\cdot(\dfrac{5}{2}dx^2 - 2dxdy + 4dy^2) < 0\ \; 
-	\forall \left(dx, \; dy\right) \neq \vec{0} \implies M_1 \text{~--- т. лок. max}\]
+	\forall \left(dx, \; dy\right) \neq \vec{0} \implies 
+	M_1 \text{~--- т. лок. max}\]
 	
 	Аналогично:
 	
@@ -109,7 +111,8 @@
 	
 	Аналогично из уравнения связи поулчаем:
 	\begin{equation}
-	dF_x\left(x, \; y\right) = 0 \implies \dfrac{\partial F_k}{\partial x_1}dx_1 + 
+	dF_x\left(x, \; y\right) = 0 \implies \dfrac{\partial 
+	F_k}{\partial x_1}dx_1 + 
 	\ldots + \dfrac{\partial F_k}{\partial x_n}dx_n + 
 	\dfrac{\partial F_k}{\partial y_1}dy_1 + \ldots + 
 	\dfrac{\partial F_k}{\partial y_m}dy_m = 0 \;\;\; x = \overline{1, \; m} 
@@ -120,11 +123,18 @@
 	$\lambda_k$ и суммируя для $k = \overline{1,\;m}$ 
 	вместе с \eqref{lec10.1:9}, получим
 	\begin{equation}
-	\left(\dfrac{\partial f}{\partial x_1} + \sum\limits_{k = 1}^m \lambda_k \dfrac{\partial F_k}{\partial x_1} \right)dx_1 + \ldots + \left(\dfrac{\partial f}{\partial x_n} + \sum\limits_{k = 1}^m \lambda_k \dfrac{\partial F_k}{\partial x_n} \right)dx_n + \ldots + \left(\dfrac{\partial f}{\partial y_m} + \sum\limits_{k = 1}^m \lambda_k \dfrac{\partial F_k}{\partial y_m} \right)dy_m = 0 \label{lec10.1:11}
+	\left(\dfrac{\partial f}{\partial x_1} + \sum\limits_{k
+	= 1}^m \lambda_k \dfrac{\partial F_k}{\partial x_1} 
+	\right)dx_1 + \ldots + \left(\dfrac{\partial f}
+	{\partial x_n} + \sum\limits_{k = 1}^m \lambda_k 
+	\dfrac{\partial F_k}{\partial x_n} \right)dx_n + \ldots 
+	+ \left(\dfrac{\partial f}{\partial y_m} + 
+	\sum\limits_{k = 1}^m \lambda_k \dfrac{\partial F_k}
+	{\partial y_m} \right)dy_m = 0 \label{lec10.1:11}
 	\end{equation}
 	
 	Считая, что для связей выполняется условие существование 
-	решений подберем $\lambda_k \in R$ так, чтобы:
+	решений подберем $\lambda_k \in \R$ так, чтобы:
 	\begin{equation}
 	\dfrac{\partial f}{\partial y_i} + \sum\limits_{k = 1}^m \lambda_k 
 	\dfrac{\partial F_k}{\partial y_i} = 0 \;\;\; i = \overline{1, \; m} 
@@ -135,7 +145,7 @@
 	$\left( 12 \right) $ % сделай ссылкой  
 	имеет единственное решение в силу того, что определитель
 	
-	\[
+	\begin{equation}
 	\label{QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQkek_label_1}
 	\begin{vmatrix}
 	\frac{\partial F_1}{\partial y_1} & \frac{\partial F_1}{\partial y_2}
@@ -146,7 +156,7 @@
 	\frac{\partial F_m}{\partial y_1} & \frac{\partial F_m}{\partial y_2}
 	& \cdots & \frac{\partial F_m}{\partial y_m}
 	\end{vmatrix} \ne 0 
-	\]
+	\end{equation}
 	\smallskip
 	
 	~--- якобиан соответсвующих связей, который в силу теоремы о существовании
@@ -213,11 +223,12 @@
 	
 	\textbf{Пример}
 	
-	Решим предыдущий пример $u = x - 2y + 27$. В соответствии с $\left( 8 \right)$ 
+	Решим предыдущий пример $u = x - 2y + 27$. В 
+	соответствии с $\left( 8 \right)$ 
 	имеем 
 	
 	$L \left( x, y, \lambda \right) = x - 2y + 27 + \lambda \left( x^2 + y^2 
-	+ z^2 - 1 \right) \Rightarrow$ 
+	+ z^2 - 1 \right) \implies$ 
 	
 	\begin{equation}
 	\begin{cases}
@@ -225,13 +236,13 @@
 	L'_y = -2 + 2 \lambda y = 0 \\
 	L'_z = 2 + 2 \lambda z = 0 \\
 	L'_\lambda = x^2 + y^2 + z^2 = 1
-	\end{cases} \Rightarrow
+	\end{cases} \implies
 	\begin{cases}
 	x = -\dfrac{1}{2\lambda} \\
 	y = \dfrac{1}{\lambda} \\
 	z = -\dfrac{1}{\lambda} \\
 	\dfrac{1}{4\lambda^2} + \dfrac{1}{\lambda^2} + \dfrac{1}{\lambda^2} = 1
-	\end{cases} \Rightarrow
+	\end{cases} \implies
 	\begin{cases}
 	x_{1, 2} = \mp \dfrac{1}{3} \\
 	y_{1, 2} = \pm \dfrac{2}{3} \\
@@ -251,7 +262,8 @@
 	+ \left( 2 + 2 \lambda_0 \right) dz $.
 	\smallskip
 	
-	Отсюда, в силу 	уравнения $d\left( x^2 + y^2 + z^2 - 1 \right) = 0 \Rightarrow$
+	Отсюда, в силу 	уравнения $d\left( x^2 + y^2 + z^2 - 1 
+	\right) = 0 \implies$
 	
 	\[ dz = - \frac{xdx + ydy}{z}\]
 	В рассмотренных стационарных точках получаем
@@ -264,19 +276,21 @@
 	\right] = \frac{1}{2}dx - dy \implies d^2G = d\left(dG\right) = 
 	d\left(\left(1 + 2\lambda_0x\right)d_x + \left(-2 
 	+ 2\lambda_0y\right)dy\right) +\] 
-	\[ + \left(2 - 2\lambda_0z\right)\left(-\frac{1}{2}dx + dy\right)\right) \] 
+	\[ + \left(2 - 2\lambda_0z\right)\left(-\frac{1}{2}dx + dy\right) \] 
 	\[d^2G(M_1) = \left[\lambda_1 = \frac{3}{2}\right] > 0\]
-	Если $f\left(x\right)$, где $x \in D \subset \mathds{R}^n$, непрерывна на $D$,
+	Если $f\left(x\right)$, где $x \in D \subset \R^n$, непрерывна на $D$,
 	где $D$ ~--- компакт, то по т.Вейерштрасса получаем
-	\[ \exists M = \max_{\limits{x \in D}} f(x) \in \mathds{R},
-	m = \min_{\limits{x \in D}} f(x) \in \mathds{R} \]
+	\[ \exists M = \max\limits_{x \in D} f(x) \in \R,
+	m = \min\limits_{x \in D} f(x) \in \R \]
 	Эти значения называются \emph{глобальными эктремумами} $f(x)$ на $D$.
 	В общем случае, если $f(x)$ не является непрерывной, либо когда $D$ 
 	не компакт, задача на глобальный экстремум может быть неразрешимой.
-	\[ \exists M_0 = \sup_{\limits{x \in D}} f(x),
-	m = \inf_{\limits{x \in D}} f(x) \]
-	Если $M_0 \in \mathds{R}$ и $M_0 \in E(f)$, то $M_0 = M = \max_{\limits{x \in D}} f(x)$. \\
-	Если $m_0 \in \mathds{R}$ и $m_0 \in E(f)$, то $m_0 = m = \min_{\limits{x \in D}} f(x)$. \\
+	\[ \exists M_0 = \sup\limits_{x \in D} f(x),
+	m = \inf\limits_{x \in D} f(x) \]
+	Если $M_0 \in \R$ и $M_0 \in E(f)$, то $M_0 = M = 
+	\max\limits_{x \in D} f(x)$. \\
+	Если $m_0 \in \R$ и $m_0 \in E(f)$, то $m_0 = m = 
+	\min\limits_{x \in D} f(x)$. \\
 	Для исследования функции на глобальный экстремум, во-первых, 
 	находят критические точки, т.е. точки, 
 	где либо функция разрывна, либо недифференцируема. Кроме того, с помощью 
@@ -285,7 +299,8 @@
 	Если этих точек конечное число, то на практике не нужно проверять каждую из 
 	этих точек на экстремум.
 	Нужно только вычислить значения и выбрать наибольшее и наименьшее значения, 
-	а далее сравнить, входят они в $E(f)$ или нет и получить окончательный ответ.\\
+	а далее сравнить, входят они в $E(f)$ или нет и 
+	получить окончательный ответ.\\
 	
 	\begin{exmp}
 		Рассмотрим функцию $D = |x - y| + |x + y| \leq 2$.
@@ -296,22 +311,27 @@
 		\[(x - y) + (x + y) \leq 2\]
 		\[ x \leq 1 \implies y \leq 1  \implies x \geq -1\]
 		Квадрат, который в этом случае является компактом.\\
-		Рассмотрим задачу на локальный экстремум на этом компакте для функции $u = x^2 + y^2$. 
+		Рассмотрим задачу на локальный экстремум на этом 
+		компакте для функции $u = x^2 + y^2$. 
 		\begin{enumerate}
 			\item[a)] внутри $D$\\
-			\begin{cases}
+			$\begin{cases}
 				u_{x}' = 2x = 0\\
 				u_{y}' = 2y = 0\\
-			\end{cases} \implies O(0; 0) \in $D$.\\
+			\end{cases} \implies O(0; 0) \in D$.\\
 			
-			\item[б)] на \partial D \\
-			x = -1, u = y^2 + 1 $\implies$ M_1(-1; 0)\\
-			x = 1 $\implies$ M_2(1; 0)\\
-			y = 1 $\implies$ M_3(0; 1)\\
-			y = -1 $\implies$ M_4(0; -1)\\
-			К этим точкам надо прибавить точки недифференцируемости $\partial D$, т.е где к $\partial$ D нет касательных. 
-			Этими точками будут $N_1(1; 1), N_2(1; -1), N_3(-1; 1), N_4(-1; -1)$.
-			Далее вычислим значения функции во всех этих точках:
+			\item[б)] на $\partial D \\
+			x = -1, u = y^2 + 1 \implies M_1(-1; 0)\\
+			x = 1 \implies M_2(1; 0)\\
+			y = 1 \implies M_3(0; 1)\\
+			y = -1 \implies M_4(0; -1)$\\
+			К этим точкам надо прибавить точки 
+			недифференцируемости $\partial D$, т.е где к $
+			\partial$ D нет касательных. 
+			Этими точками будут $N_1(1; 1), N_2(1; -1), 
+			N_3(-1; 1), N_4(-1; -1)$.
+			Далее вычислим значения функции во всех этих 
+			точках:
 			$u(0; 0) = 0 - \min$\\
 			$u(N_{1, 2, 3, 4}) = 2 - \max$\\
 			$\exists M = \max f(x) = 2$\\
