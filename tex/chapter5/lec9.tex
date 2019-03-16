@@ -427,14 +427,15 @@ $I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$
 \section{Зависимые и независимые CФУ}
 Пусть в некоторой общей области $D \subset \R^n$ 
 заданы $m$ ФНП
-$f_k\left(x\right),\ k = \overline{1, m}, x \in D$.
+$f_k\left(x\right),\ k = \overline{1, m},\ x \in D$.
 Эта система функций называется \emph{зависимой}, 
 если $\exists H$ от $(m - 1)$ переменной такая, что 
 какая-то из функций $f_j,\ 1 \leq j \leq m$, 
 выражается через другие:
-\[
+\begin{equation}
+\label{lec9-depend}
 f_j = H(f_1, f_2, \dots, f_{j-1}, f_{j+1}, \dots, f_m)
-\]
+\end{equation}
 
 Система, не являющаяся зависимой, называется \emph{независимой}.
 
