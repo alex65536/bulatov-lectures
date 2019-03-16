@@ -39,7 +39,7 @@
 	
 	$ M_2\left(-\dfrac{1}{3},\; \dfrac{2}{3}, \; -\dfrac{2}{3}\right)$.
 	
-	Для исследования их на экстремальностьвыразим $d^2u$ 
+	Для исследования их на экстремальность выразим $d^2u$ 
 	через независимые дифференциалы $dx$ и $dy$.
 	
 	\[d^2u = d\left( \left(1 - \dfrac{2x}{3}\right)dx - 
@@ -79,7 +79,7 @@
 	u_{min} = u\left(-\dfrac{1}{3}, \; 
 	\dfrac{2}{3}, -\dfrac{2}{3}\right) = -3$ 
 	
-	\section{Метод множителей лагранжа} 
+	\section{Метод множителей Лагранжа} 
 	
 	Недостатком предыдущего метода является то, что используемые переменные 
 	$x = $ $=\left(x_1, \ldots, x_n\right), \; y = \left(y_1,\ldots, y_n\right)$
@@ -109,7 +109,7 @@
 	 + \ldots + \dfrac{\partial f}{\partial y_n} dy_n = 0 \label{lec10.1:9}
 	\end{equation}
 	
-	Аналогично из уравнения связи поулчаем:
+	Аналогично из уравнения связи получаем:
 	\begin{equation}
 	dF_x\left(x, \; y\right) = 0 \implies \dfrac{\partial 
 	F_k}{\partial x_1}dx_1 + 
@@ -142,11 +142,9 @@
 	\end{equation}
 	
 	Линейные отношения $\lambda_1, \lambda_2, \ldots, \lambda_m$ система 
-	$\left( 12 \right) $ % сделай ссылкой  
-	имеет единственное решение в силу того, что определитель
+	\eqref{12} имеет единственное решение в силу того, что определитель
 	
 	\begin{equation}
-	\label{QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQkek_label_1}
 	\begin{vmatrix}
 	\frac{\partial F_1}{\partial y_1} & \frac{\partial F_1}{\partial y_2}
 	& \cdots & \frac{\partial F_1}{\partial y_m} \\
@@ -163,27 +161,26 @@
 	и единственности решения ненулевой 
 	
 	
-	В результате $\left( 11 \right)$ % сделай ссылкой 
+	В результате \eqref{11} 
 	примет вид
 	
 	\begin{equation}
-	\label{QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQkek_label_2}
+	\label{13}
 	\sum\limits_{j=1}^{n}\left(  \dfrac{\partial f }{\partial x_j} + 
 	\sum\limits_{k=1}^{m} \lambda_k\dfrac{\partial F_k }{\partial x_j}  
 	\right) \partial x_j =0 
 	\end{equation}
 	
-	$\left( 13 \right) $ % сделай ссылкой 
-	уже дифф. % что значит дифф. ?
+	\eqref{13} уже дифференциалы
 	$d x_1,\ldots,d x_n$ являются независимыми величинами, поэтому
 	
 	\[\dfrac{\partial f }{\partial x_j} + \sum\limits_{k=1}^{m}
-	\lambda_k \dfrac{\partial F_k }{\partial x_j} = 0,\; j = \overline{1, n}
+	\lambda_k \dfrac{\partial F_k }{\partial x_j} = 0,\; j = \overline{1, n} \label{14}
 	\]
-	Присоед. к $\left( 14 \right) $ и уравнение $\left( 14 \right) $ по 
+	Присоединяя к \eqref{14}  и уравнение $\left( 14 \right) $ по 
 	уравн. связи получаем \smallskip систему из $\left( 12 \right) $, 
-	$\left( 14 \right) $,
-	$\left( 15 \right) $ из $ \left( n + 2m \right) $ уравнений:
+	\eqref{14},
+	\eqref{15} из $ \left( n + 2m \right) $ уравнений:
 	
 	\begin{equation}
 	\begin{cases}
@@ -198,7 +195,7 @@
 	\ldots, \lambda_m \right) $.
 	
 	Покажем, что эта система соответсвует системе стационарных точек для
-	функции Лангранжа $\left( 8 \right) $, где все переменные равноправны.
+	функции Лангранжа \eqref{8}, где все переменные равноправны.
 	
 	Действительно, 
 	\[dL\left( x, y, \lambda \right) = d\left( f\left( x, y\right) 
@@ -221,7 +218,7 @@
 	считать постоянными, что облегчает вычисления при решении практических
 	примеров.
 	
-	\textbf{Пример}
+	\textbf{Пример:}
 	
 	Решим предыдущий пример $u = x - 2y + 27$. В 
 	соответствии с $\left( 8 \right)$ 
