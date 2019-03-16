@@ -12,35 +12,41 @@
 \begin{document}
 
 \begin{exmp}
-Зная производные и дифференциал 1-ого порядка находится последовательно
-производная и дифференциал высших порядков. \\
-Рассмотрим функцию:
-$\begin{cases}
+Зная производные и дифференциал 1-го порядка находятся последовательно
+производные и дифференциалы высших порядков.
+
+
+Рассмотрим функцию
+\[\begin{cases}
     x + y + z = e^z \\
-    z = \left(x, y\right). \\
-\end{cases}$
+    z = z\left(x, y\right) \\
+\end{cases}\]
 
 Имеем:
 \[
 \begin{array}{l}
 d\left(x + y + z\right) = d(e^z) \\
-dx + dx + dz = e^zdz \implies dz = \frac{dx}{e^z - 1}
+dx + dy + dz = e^zdz \implies 
+\begin{cases}
+dz = \frac{dx}{e^z - 1}
 + \frac{dy}{e^z - 1} = z'_xdx + z'_ydy \\
-z'_x = \frac{1}{e^z - 1};\ z'_y = \frac{1}{e^z - 1}
+z'_x = \frac{1}{e^z - 1}\\
+z'_y = \frac{1}{e^z - 1}
+\end{cases}
 \end{array}
 \]
 
 \[z''_x = \left(z'_x\right)'_x = \left(\frac{1}{e^z - 1}\right)'_x
 = -\frac{\left(e^z\right)'_x}{\left(e^z - 1\right)^2} =
-- \frac{e^zz'x}{\left(e^z - 1\right)^2} = \left[z'_x
+- \frac{e^zz'_x}{\left(e^z - 1\right)^2} = \left[z'_x
 = \frac{1}{e^z - 1} \right] =
 - \frac{e^z}{\left(e^z - 1\right)^3}\]
 
-В силу того что $\displaystyle z''_{yz} = ... = - 
-\frac{e^z}{\left(e^z - 1\right)^3}$:
+В силу симметрии \[\displaystyle z''_{y^2} = \dots = - 
+\frac{e^z}{\left(e^z - 1\right)^3}\]
 
-\[z''_{xy} = \left(z'_x\right)'_y = \left(\frac{1}{e^z - 1} \right)'_y = ... =
-- \frac{e^z}{\left(e^z - 1\right)^3}\]
+\[z''_{xy} = \left(z'_x\right)'_y = \left(\frac{1}{e^z - 1} \right)'_y =
+\dots = - \frac{e^z}{\left(e^z - 1\right)^3}\]
 
 Отсюда
 \[d^2z = z''_{x^2}dx^2 + 2z''_{xy}dxdy + z''_{y^2}dy^2 =
@@ -50,11 +56,11 @@ z'_x = \frac{1}{e^z - 1};\ z'_y = \frac{1}{e^z - 1}
 \end{exmp}
 
 \section{Системы функциональных уравнений (СФУ)}
-Пусть имеется $n$ функций от $\left(n + m\right)$ переменных:
+Пусть имеется $m$ функций от $\left(n + m\right)$ переменных:
 \[\begin{cases}
     F_k\left(x, u \right),\ k = \overline{1, m} \\
-    x = \left(x_1, x_2, ..., x_n\right) \in D \subset \R^n \\
-    u = \left(u_1, u_2, ..., u_m\right) \in G \subset \R^m
+    x = \left(x_1, x_2, \dots, x_n\right) \in D \subset \R^n \\
+    u = \left(u_1, u_2, \dots, u_m\right) \in G \subset \R^m
 \end{cases}
 \]
 
@@ -63,13 +69,13 @@ z'_x = \frac{1}{e^z - 1};\ z'_y = \frac{1}{e^z - 1}
 \begin{equation}
     \label{lec_9.num_7}
     \begin{cases} 
-        F_k\left(x, u\right) = 0 \\ 
+        F_k\left(x, u\right) = 0, \\ 
         k = \overline{1, m} \\
     \end{cases}    
 \end{equation}
 
 Предполагается, что в \eqref{lec_9.num_7} $x$~--- независимая
-переменная, а $u = u\left(x\right)$~--- искомые функции.
+переменная, а $u = u\left(x\right)$~--- искомая функция.
 
 Наряду с \eqref{lec_9.num_7} будем рассматривать начальные условия
 \begin{equation}
@@ -81,20 +87,19 @@ z'_x = \frac{1}{e^z - 1};\ z'_y = \frac{1}{e^z - 1}
 \end{equation}
 в соответствии с которыми под решением системы
 \eqref{lec_9.num_7}, \eqref{lec_9.num_8}
-подразумевается $u = u(x_1, x_2, ..., x_n)$,
+подразумевается $u = u(x_1, x_2, \dots, x_n)$,
 удовлетворяющее условию
-$u\left(x_0\right) = u_0$
-
-При этом в соответствующих окрестностях точек $x_0$, $u_0$
+$u\left(x_0\right) = u_0$,
+при этом в соответствующих окрестностях точек $x_0$, $u_0$
 решение системы \eqref{lec_9.num_7}
 с начальными условиями 
-\eqref{lec_9.num_8} удовлетворяют тождеству:
+\eqref{lec_9.num_8} удовлетворяют тождеству
 \[F(x, u(x)) \equiv 0\]
 
-Пусть $F = \left(F_1, F_2, ...,F_m\right) \in \R^m$,
-тогда система \eqref{lec_9.num_7}
+Пусть $F = \left(F_1, F_2, \dots,F_m\right) \in \R^m$,
+тогда систему \eqref{lec_9.num_7}
 с начальными условиями 
-\eqref{lec_9.num_8} можно записать в виде:
+\eqref{lec_9.num_8} можно записать в виде
 
 \begin{equation}
     \label{lec_9.num_9}
@@ -105,7 +110,7 @@ $u\left(x_0\right) = u_0$
 \end{equation}
 
 
-В дальнейшем для системы СФУ \eqref{lec_9.num_7} 
+В дальнейшем для СФУ \eqref{lec_9.num_7} 
 будем рассматривать \emph{матрицу Якоби}, которую будем обозначать:
 
 \begin{equation}
@@ -123,26 +128,25 @@ $u\left(x_0\right) = u_0$
 \end{equation}
 
 Определитель квадратной матрицы Якоби 
-    \eqref{lec_9.num_10} называется \emph{якобианом}
+\eqref{lec_9.num_10} называется \emph{якобианом}
 и записывается в виде:
 \begin{equation}
     \label{lec_9.num_11}   
-    I = \det\pderiv{F\left(x,u\right)}{u} =
-    \pderiv{\left(F_1,F_2,...,F_m\right)}{\left(u_1, u_2,..., u_m\right)}
+    I(x, u) = \left|\pderiv F u\right| = 
+    \det\pderiv{F\left(x,u\right)}{u} =
+    \pderiv{\left(F_1,F_2,\dots,F_m\right)}{\left(u_1, u_2,\dots, u_m\right)}
 \end{equation}
 
-\begin{thm}[об однозначности решения СФУ]
+\begin{thm}[об однозначной разрешимости СФУ]
 Пусть функции $F_k\left(x, u\right)$, $k = \overline{1, m}$
 от $(n+ m)$ переменных 
-$x = \left(x_1, x_2, ..., x_n\right) \in D \in \R^n,
-u = \left(u_1, u_2, ..., u_m\right) \in G \in \R^m$
+$x = \left(x_1, x_2, \dots, x_n\right) \in D \subset \R^n$,
+$u = \left(u_1, u_2, \dots, u_m\right) \in G \subset \R^m$
 непрерывны по $x$ и по $u$ в некоторых окрестностях точек
-$x_0 = \left(x_{01}, x_{02}, ..., x_{0n}\right) \in D 
-\subset \R^n. $
-$u_0 = \left(u_{01}, u_{02}, ..., u_{0m}\right) \in D
-\subset \R^m$
-
-Если выполнено первоначальное условие
+$x_0 = \left(x_{01}, x_{02}, \dots, x_{0n}\right) \in D 
+\subset \R^n$,
+$u_0 = \left(u_{01}, u_{02}, \dots, u_{0m}\right) \in G
+\subset \R^m$. Если выполнено начальное условие
 \begin{equation}
     \label{lec_9.num_12}
     F_k(x_0, u_0) = \vec{0},\ k = \overline{1, m},
@@ -150,46 +154,48 @@ $u_0 = \left(u_{01}, u_{02}, ..., u_{0m}\right) \in D
 то в случае непрерывной дифференцируемости
 \begin{equation}
     \label{lec_9.num_13}
-    \left(F_1, F_2, ..., F_m\right) \in \R^m
+    F = \left(F_1, F_2, \dots, F_m\right) \in \R^m
 \end{equation}
-
-по $u = \left(u_1, u_2, ..., u_m\right) \in \R^m$,
+по $u = \left(u_1, u_2, \dots, u_m\right) \in \R^m$,
 то если якобиан
-$I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$, 
+$I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$
 рассматриваемой СФУ $F\left(x, u\right) = \vec{0}$
-в точке $\left(x_0, u_0\right)$
+в точке $\left(x_0, u_0\right)$ удовлетворяет условию
 \begin{equation}
     \label{lec_9.num_14}
-    I(x_0, u_0) \neq 0 
+    I(x_0, u_0) \neq 0,
 \end{equation}
-
-То тогда система \eqref{lec_9.num_7} будет иметь в 
+тогда система \eqref{lec_9.num_7} будет иметь в 
 соответствующих окрестностях точек $x_0\ \text{и}\ u_0$
 единственное решение, т.е. $\exists!u = u(x)$ удовлетворяющая начальному
  условию $u(x_0) = u_0$.
 \end{thm}
 
 \begin{proof}
-    Доказательство проведём, используя ММИ.
+    Доказательство проведём, используя ММИ
+    (метод математической индукции).
+    
     Во-первых, при $m = 1$ СФУ \eqref{lec_9.num_7} 
-    даёт ФУ \eqref{lec8.1:1} для которой теорема об
+    даёт ФУ \eqref{lec8.1:1}, для которого теорема об
     однозначности решения уже доказана.
+    
     Во-вторых, предполагая, что теорема доказана
     при $m = k,\ k \in \N$, рассмотрим случай
     $m = k + 1$.
+    
     Из условия \eqref{lec_9.num_14} в силу правила Лапласа
     вычисления определителя разложением по какой-либо
     строке (столбцу) следует, что в силу \eqref{lec_9.num_14} 
     в точках $x_0,\ u_0$ хотя бы один из миноров 
-    $k$-ого порядка рассматриваемого якобиана не нулевой.
-    Без ограничения общности,(перестановкой строк, столбцов)
+    $k$-ого порядка рассматриваемого якобиана ненулевой.
+    Без ограничения общности (перестановкой строк, столбцов)
     считаем, что этот минор $k$-ого порядка
     \begin{equation}
         \label{lec_9.num_15}
-        I = \pderiv{\left(F_1, F_2, ..., F_k\right)}
-        {\left(u_1, u_2, ..., u_k\right)}(x_0, y_0) \neq 0
+        I_0 = \pderiv{\left(F_1, F_2, \dots, F_k\right)}
+        {\left(u_1, u_2, \dots, u_k\right)}(x_0, y_0) \neq 0
     \end{equation}
-    является главным угловым минором матрицы Якоби, рассматриваемой
+    является главным угловым минором матрицы Якоби рассматриваемой
     СФУ. Тогда, во-первых, в силу индуктивного
     предположения, при $m = k$ СФУ
     \begin{equation}
@@ -199,15 +205,16 @@ $I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$,
             i = \overline{1, k}
         \end{cases}
     \end{equation}
-    для $fix\ u_{k+1}$ однозначно разрешена относительно 
-    $v = \left(u_1, u_2, ..., u_k\right)$, т.е. 
+    для $\text{fix}\ u_{k+1}$ однозначно разрешена относительно 
+    $v = \left(u_1, u_2, \dots, u_k\right)$, т.е. 
     $\exists!v = v\left(x, u_{k+1}\right)$, удовлетворяющее
-    \eqref{lec_9.num_16} соответствующих окрестностях
-    рассматриваемых точек и при этом выполнено условие\
-    $v\left(x_0\right) = v\left(x_0, u_{0,k+1}\right) = v_0$
+    \eqref{lec_9.num_16} в соответствующих окрестностях
+    рассматриваемых точек, и при этом выполнено начальное 
+    условие
+    $v(x_0) = v(x_0, u_{0,k+1}) = v_0$.
     
     Представляя это решение в последнем уравнении из
-    \eqref{lec_9.num_7} получим ФУ вида
+    \eqref{lec_9.num_7}, получим ФУ вида
     \begin{equation}
         \label{lec_9.num_17}
         H(x, u_{k+1}) = 0,
@@ -215,44 +222,44 @@ $I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$,
     где
     \begin{equation}
         \label{lec_9.num_18}
-        H\left(x, u_{k+1}\right) = 
-        F_{k+1}\left(x, v\left(x, u_{k+1}\right), 
-        u_{k+1}\right)
+        H(x, u_{k+1}) = 
+        F_{k+1}\left(x, v(x, u_{k+1}), 
+        u_{k+1}\right).
     \end{equation}
     
     \eqref{lec_9.num_17} определяет некоторую функцию
     \begin{equation}
         \label{lec_9.num_19}
         \begin{cases}
-        u_{k+1} = u_{k+1}\left(x\right)\\
-        u_{k+1}\left(x_0\right) = u_{0,k+1}
+        u_{k+1} = u_{k+1}(x)\\
+        u_{k+1}(x_0) = u_{0,k+1}.
         \end{cases}
     \end{equation}
     
     Осталось показать, что \eqref{lec_9.num_18} с начальным
     условием \eqref{lec_9.num_19} имеет единственное решение относительно 
     $u_{k+1}$ в рассматриваемых окрестностях начальных
-    точек. Для этого, в силу теоремы о однозначном разрешении СФУ
+    точек. Для этого, в силу теоремы о однозначной 
+    разрешимости СФУ
     достаточно проверить, что
     \begin{equation}
     \label{lec_9.num_20}
-    \det\pderiv{H\left(x, u_{k+1}\right)}{u_{k+1}} 
+    \det\pderiv{H(x, u_{k+1})}{u_{k+1}} 
     \vline\underset{\left(x_0, u_{0,k+1}\right)}{} \neq 0
     \end{equation}
     
     Дифференцируя равенство
     \begin{equation}
     \label{lec_9.num_21}
-    F_{k+1}\left(x, v\left(x, u_{k+1}\right), 
+    F_{k+1}\left(x, v(x, u_{k+1}), 
     u_{k+1}\right) \equiv 0
     \end{equation}
-    
-    по $u_{k+1}$ в соответствующих точках $x_0\ \text{и}\ u_0$
+    по $u_{k+1}$ в соответствующих точках $x_0\ \text{и}\ u_0$,
     получаем
     \begin{equation}
         \label{lec_9.num_22}
-        \sum_{j = 1}^{n}
-        \pderiv{F_j}{v_j} \cdot \pderiv{v_j}{u_{k+1}} + 
+        \sum_{j = 1}^{k}
+        \pderiv{F_{k+1}}{v_j} \cdot \pderiv{v_j}{u_{k+1}} + 
         \pderiv{F}{u_{k+1}} \equiv 0
     \end{equation}
     
@@ -262,7 +269,7 @@ $I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$,
     \[I\left(x_0, u_0\right)= \dots = 
     \det\pderiv{H\left(x_0,u_{k+1}\right)}{u_{k+1}} \neq 0,\]
     поэтому для полученного ФУ выполнены все условия 
-    однозначной разрешимости ФУ и значит 
+    однозначной разрешимости ФУ и, значит, 
     $\exists! u_{k+1} = u_{k+1}\left(x\right)$, 
     удовлетворяющее, во-первых, начальному условию
     $u_{k+1} = u_{0,k+1}$ и, во-вторых, после подстановки
@@ -279,28 +286,26 @@ $I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$,
 ~
 
     \begin{enumerate}
-        \item Как и для ФУ при выполнении условий 
-        теоремы о однозначности решения ФУ можно показать,
+        \item Как и для ФУ, при выполнении условий 
+        теоремы об однозначной разрешимости ФУ, можно показать,
         что полученное решение $u = u\left(x\right)$
         будет непрерывно в соответствующих окрестностях
-        точек $x_0$ и $u_0$
+        точек $x_0$ и $u_0$.
         \item Если к условиям доказанной теоремы для
-        СФУ присоединить условие для непрерывной 
+        СФУ присоединить условие непрерывной 
         дифференцируемости
-        $F = \left(F_1, F_2, ..., F_m\right)$ по
-        $x = \left(x_1, x_2, ..., x_n\right)$, т.е 
-        существует
-        
-        \[
+        $F = \left(F_1, F_2, \dots, F_m\right)$ по
+        $x = \left(x_1, x_2, \dots, x_n\right)$, т.е 
+        \[\exists\:
         \pderiv{F_k\left(x, u\right)}{x_j},\ 
-        j = \overline{1, n},\ k = \overline{1, m}\] то в некторых окрестностях
+        j = \overline{1, n},\ k = \overline{1, m}\] то в некоторых окрестностях
         этих точек полученные решения 
         $u = u\left(x\right)$ будет не только 
         непрерывны, но и дифференцируемы.
         Для нахождения частных производных решения
         рассматриваемой СФУ надо продифференцировать
-        заданные уравнения по правилу сложной функции.
-        Далее из полученной системы найти требуемые частные производные. 
+        заданные уравнения по правилу сложной функции и
+        далее из полученной системы найти требуемые частные производные. 
     \end{enumerate}
 \end{rems}
 
@@ -322,11 +327,11 @@ $I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$,
     \end{cases}
     \]
     
-    Во-первых, рассматриваемые первоначальные условия для
+    Во-первых, рассматриваемые начальные условия для
     $x_0 = 1,\ y_0=0\ u_{01} = 1,\ u_{02} = -2$
-    удовлетворяет рассматриваемой СФУ, т.е задача 
+    удовлетворяют рассматриваемой СФУ, т.е задача 
     поставлена корректно.
-    Во-вторых
+    Во-вторых, рассмотрим
     
     \[
     \begin{cases}
@@ -334,8 +339,8 @@ $I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$,
         F_2(x, y, u_1, u_2) = x^2 + y^2 + u_1^2 + u_2^2 - 6
     \end{cases}     
     \]
-    для соответствующего якобиана в начальной точке 
-    получаем
+    
+    Якобиан в начальной точке равен 
     \[
     I = \begin{bmatrix}
         \pderiv{F_1}{u_1} & \pderiv{F_1}{u_2} \\
@@ -345,12 +350,12 @@ $I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$,
     	\substack{
     		(x_0,y_0) = (1,0)\\
     		(u_{01},u_{02}) = (1,-2)
-    	}} = \dots =  2(u_1 - u_2) \Big|_{(1, -2)} = -6 \neq 0
+    	}} = \dots =  2(u_1 - u_2) \Big|_{(1, -2)} = -6 \neq 0,
     \]
     
-    Поэтому в силу непрерывной дифференцируемости рассматриваемых
-    функций $F_1\text{,}\ F_2$ на основании
-    предыдущей теоремы и замечаний к ней 
+    поэтому в силу непрерывной дифференцируемости рассматриваемых
+    функций $F_1,\ F_2$ на основании
+    предыдущей теоремы и замечания к ней 
     рассматриваемая СФУ имеет единственное 
     дифференцируемое решение
     
@@ -360,7 +365,7 @@ $I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$,
         u_2 = u_2\left(x, y\right), 
     \end{cases} 
     \]
-    удовлетворяющих заданным начальным условиям.
+    удовлетворяющее заданным начальным условиям.
     Для нахождения частных производных этого решения 
     в силу исходной СФУ имеем
     
@@ -374,40 +379,33 @@ $I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$,
     \implies
     \begin{cases}
         du_1 + du_2 = -\left(dx + dy\right)\\
-        2u_1du_1 + 2u_2du_2 = -\left(2xdx + 2ydy\right)
+        2u_1du_1 + 2u_2du_2 = -\left(2xdx + 2ydy\right),
     \end{cases}
     \]
-    
-    Откуда при $x = 1$, $y = 0$, $u_1 = 1$, $u_2 = -2$,
+    откуда при $x = 1$, $y = 0$, $u_1 = 1$, $u_2 = -2$
     получаем
+    
     \[
+    \begin{array}{l}
     \begin{cases}
         du_1 = du_2 = -\left(dx + dy\right) \\
         2du_1 - 4du_2 = -2dx
-    \end{cases}
-    \]
-    
-    \[
+    \end{cases} \implies \\ \implies
     \begin{cases}
      du_1 = du_2 = -\left(dx + dy\right) \\
      du_1 - 2du_2 = -dx
-    \end{cases}
-    \vline{\text{сначала разность,
-    1-ю строку $\cdot$ 2 $+$ ко 2-й}}{}
-    \]
-    
-    \[
+    \end{cases} \implies
+    \left[\text{сначала разность,
+    1-ю строку $\cdot$ 2 $+$ ко 2-й}\right] \implies \\ \implies
     \begin{cases}
         3du_2 = -dy \\
         3du_1 = -3dx + 2dy \\
-    \end{cases}
-    \]
-    
-    \[
+    \end{cases} \implies \\ \implies
     \begin{cases}
         du_2 = -\frac{1}{3}dy \\
         du_1 = -dx-\frac{2}{3}dy
     \end{cases}
+    \end{array}
     \]
 
     Отсюда для частных производных получаем
@@ -426,19 +424,19 @@ $I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$,
     высших порядков.
 \end{exmp}
 
-\section{Зависимые и независимые ФУ}
+\section{Зависимые и независимые CФУ}
 Пусть в некоторой общей области $D \subset \R^n$ 
 заданы $m$ ФНП
-$f_k\left(x\right), k = \overline{1, m}, x \in D$.
-Эта система функций называется зависимой, 
-если $\exists H = H(y_1, y_2, \dots, y_m)$ такая, что 
+$f_k\left(x\right),\ k = \overline{1, m}, x \in D$.
+Эта система функций называется \emph{зависимой}, 
+если $\exists H$ от $(m - 1)$ переменной такая, что 
+какая-то из функций $f_j,\ 1 \leq j \leq m$, 
+выражается через другие:
 \[
-H\left(f_1\left(x\right), 
-f_2\left(x\right), \dots, f_m\left(x\right)\right) = 0,
-\ x \in D
+f_j = H(f_1, f_2, \dots, f_{j-1}, f_{j+1}, \dots, f_m)
 \]
 
-Система не являющаяся зависимой называется независимой.
+Система, не являющаяся зависимой, называется \emph{независимой}.
 
 Будем рассматривать зависимость (независимость) ФНП
 в соответствующих окрестностях внутренних точек
@@ -465,14 +463,6 @@ $V(x_0) \subset D$; $x_0 \in D$
 составленные из элементов \eqref{lec_9,num_23}, 
 стоящих на пересечении каких-либо $r$ строк или 
 $r$ столбцов, где 
-$r \leq \min\left\{ m, n\right\}$
-
-
-
-
-
-
-
-
+$r \leq \min\left\{ m, n\right\}$.
 
 \end{document}
