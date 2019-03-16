@@ -72,6 +72,10 @@ Use equation and \eqref{}.'
 	check -- "$1" \
 	      '\\[lg]eqslant' \
 	      'You don'\''t need it, because \leq and \geq are redefined as \leqslant and \geqslant in matanhelper'
+	
+	check -- "$1" \
+	      '\.\.\.' \
+	      'Use \dots (or \ldots)'
 }
 
 export -f error
