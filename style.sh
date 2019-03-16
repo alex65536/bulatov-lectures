@@ -52,7 +52,7 @@ check_file() {
 	      'Use \iff'
 	
 	check -- "$1" \
-	      '[^a-zA-Z]\s(\\left)?\([0-9]+\.?[0-9]*(\\right)?\)' \
+	      '([^a-zA-Z]\s|$\s)\$?(\\left)?\( *[0-9]+\.?[0-9]* *(\\right)?\) ?\$?' \
 	      'Seems that you are trying to reference a formula directly, like (1.5).
 Use equation and \eqref{}.'
 	
