@@ -1,0 +1,187 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+\begin{thm}[признак функциональной независимости системы функций]
+	Пусть функции $f_k\left(x\right)$, $k = \overline{1,m}$,
+	$x \in D \subset \R^n$ непрерывно дифференцируемы в некоторой 
+	окрестности $V(x_0) \subset D$ внутренней точки $x_0 \in D$. Если 
+	для матрицы Якоби \eqref{lec_9,num_23} в точке $x_0 \implies$ 
+	\begin{equation} \label{lec_10, num_24}
+		\rank A = m,
+	\end{equation}
+ 	то тогда рассматриваемая функциональная система 
+ 	является независимой в $V(x_0)$.
+\end{thm}
+
+\begin{proof}
+	От противного:
+	
+	Пусть для рассматриваемой функциональной системы (ФС) 
+	выполнено \eqref{lec_10, num_24} в точке $x_0$, но эта система 
+	зависима в $V(x_0) \subset D$.
+	
+	Из \eqref{lec_10, num_24} $\implies$ хотя бы один минор $m$-ого 
+	порядка матрицы Якоби в точке $x_0$ ненулевой.
+	
+	Предположим, что таким минором является якобиан
+	
+	\begin{equation} \label{lec_10, num_25}
+		I_0 = \pderiv{\left( f_1, \ldots, f_m \right)}{ \left(x_1, 
+		\ldots, x_m \right) } = \left.\det 
+		\begin{bmatrix}
+		\pderiv{f_1}{x_1} & \pderiv{f_1}{x_2} & \ldots & \pderiv{f_1}{x_m} \\
+		\pderiv{f_2}{x_1} & \pderiv{f_2}{x_2} & \ldots & \pderiv{f_2}{x_m}\\
+		\vdots & \vdots & \ddots & \vdots \\
+		\pderiv{f_m}{x_1} & \pderiv{f_m}{x_2} & \ldots & \pderiv{f_m}{x_m}
+		\end{bmatrix} \right|_{x_0}
+		\neq 0
+	\end{equation} 
+	
+	Из предположения зависимости ФУ в силу равенства 
+	\eqref{lec9-depend},
+	$\exists f_j = H( f_1, \ldots, f_{j-1}, f_{j+1}, \ldots, 
+	f_n)$, $1 \le j \le m$.
+	После последовательного дифференцирования по $x_1, \ldots, 
+	x_n$ в точке $x_0$ получим:
+	\begin{equation} \label{lec_10, num26}
+		\pderiv{f_j(x_0)}{x_i} = \pderiv{H}{t_1}\cdot
+		\pderiv{f_1(x_0)}{x_i} + \ldots + \pderiv{H}{ t_{j-1} } \cdot
+		\pderiv{ f_{j-1}(x_0) }{x_i} + \pderiv{H}{ t_{j+1} } \cdot
+		\pderiv{ f_{j+1}(x_0) }{x_i} + \ldots + \pderiv{H}{t_m} \cdot
+	    \pderiv{ f_m(x_0) }{x_i},\ i = \overline{1, m},
+	\end{equation}
+	
+	где $H = H\left( t_1, \ldots, t_{j-1}, t_{j+1}, \ldots, t_m 
+	\right)$ ~--- функция $(m-1)$ переменной.
+	
+	Если вместо $j$-ой строки в якобиане \eqref{lec_10, num_25}
+	подставить равенство \eqref{lec_10, num26}, то эта $j$-ая 
+	строка будет линейной комбинацией строк с соответствующими 
+	коэффициентами. А тогда по свойствам определителя, 
+	используемый минор $I_0$ будет нулевым, что противоречит 
+	\eqref{lec_10, num_25}.
+	
+	Поэтому исходное предположение неверно.
+\end{proof}
+
+\begin{remarks}
+
+	\begin{enumerate}
+		Полученные результаты обощаются в следующем виде:
+		
+		\item
+		Если в матрице Якоби \eqref{lec_9,num_23} есть ненулевой 
+		минор $r$-ого порядка, а все миноры $(r+1)$-го 
+		порядка нулевые 
+		в рассматриваемой точке $x_0$ (т.е $\rank A = r$), то в 
+		рассматриваемой функциональной системе есть подмножество 
+		из $r$ независимых функций в соответствующей окрестности 
+		$V(x_0)$, а все остальные функции будут выражаться через 
+		эти $r$ независимых функций.
+		
+		\item
+		Кроме общей функциональной зависимости и независимости 
+		функций расссматривают \emph{линейно зависимые и независимые} 
+		системы функций. В этом случае используют функцию 
+		$H( t_1, \ldots, t_{j-1}, t_{j+1}, \ldots, t_m 
+		) = \alpha_1 t_1 + \ldots + \alpha_{j-1} t_{j-1} + 
+		\alpha_{j+1} t_{j+1} + \ldots + \alpha_m t_m$~--- 
+		линейная функция от $(m-1)$ переменной с действительными 
+		коэффициентами $\alpha_1, \ldots, \alpha_{j-1}, 
+		\alpha_{j+1}, \ldots, \alpha_m \in \R$.
+	
+		Нетрудно видеть, что из линейной зависимости следует 
+		общая функциональная зависимость, а из функциональной 
+		независимости следует линейная независимость.
+	\end{enumerate}
+\end{remarks}
+
+\begin{examples}
+
+~
+
+	\begin{enumerate}
+		\item
+		Пусть $n = 1$, $m = 2$.
+		
+		\[ \begin{cases}
+		f_1(x) = \cos x \\
+		f_2(x) = \sin x \\
+		x \in \R
+		\end{cases}  \]
+		
+		В данном случае эта система функционально зависима, так как 
+		\[\forall x \in \R \implies f_1^2 + f_2^2 = 1.\]
+		В тоже время система линейно независима, так как если 
+		$\exists\:\alpha_1, \alpha_2 \in \R $ такие, что
+		$\alpha_1 \cos x + \alpha_2 \sin x = 0,\ \forall x \in 
+		\R$, то для $x = 0 \text{ и } x = \frac\pi2$:
+		
+		\[\begin{cases}
+		\alpha_1 \cdot 1 + \alpha_2 \cdot 0 = 0 \\
+		\alpha_1 \cdot 0 + \alpha_2 \cdot 1 = 0 
+		\end{cases} \implies \alpha_1 = \alpha_2 = 0, \] 
+		
+		что гарантирует линейную независимость.
+		
+		\item
+		
+		Пусть $n = 2, m = 2$.
+		
+		\[ \begin{cases}
+		f_1 \left( x_1, x_2 \right) = x_1 - 2x_2 \\
+		f_2 \left( x_1, x_2 \right) = 2x_1 + x_2
+		\end{cases} \]
+		
+		В данном случае $\forall x_1, x_2 \in \R^2$, для якобиана получаем
+		
+		\[ I = \det \begin{bmatrix}
+		\pderiv{f_1}{x_1} & \pderiv{f_1}{x_2} \\
+		
+		\pderiv{f_2}{x_1} & \pderiv{f_2}{x_2}
+		\end{bmatrix} =
+		\begin{vmatrix}
+        1 & -2 \\
+        2 & 1
+		\end{vmatrix} = 5 \ne 0 \]
+		
+		Данная система в силу признака функциональной 
+		независимости системы функций
+		будет функционально независима,
+		а также в этой ситуации она будет линейно независима, 
+		так как из условия \[\alpha_1 f_1 + \alpha_2 f_2 = 0 \implies
+		\forall (x_1, x_2) \in \R^2 \ \ \left(\alpha_1 + 
+		2\alpha_2\right) x_1 + \left( -2\alpha_1 + \alpha_2 
+		\right) x_2 = 0,\]
+		откуда при $x_1 = 1$, $x_2 = 0$: \[\alpha_1 + 2\alpha_2 = 0,\]
+		а при $x_1 = 0$, $x_2 = 1$: \[-2\alpha_1 + \alpha_2 = 0.\]
+		
+		Решая систему
+		\[ \begin{cases}
+		\alpha_1 + 2\alpha_2 = 0 \\
+		-2\alpha_1 + \alpha_2 = 0
+		\end{cases} \implies \alpha_1 = \alpha_2 = 0 \implies
+		\text{линейная независимость $f_1 \text{ и } f_2$.}
+		\]
+	\end{enumerate}
+\end{examples}
+
+\begin{remark}
+	\;
+	
+	Доказанный признак (достаточное условие функциональной 
+	независимости системы функций) 
+	в случае линейной зависимости (независимости) будет также и 
+	необходимым условием, т.~е. критерием линейной независимости.
+\end{remark}
+
+\end{document}
