@@ -1,15 +1,18 @@
 .PHONY: build clean distclean
 
+LATEXMK = latexmk
+LATEXMK_FLAGS =
+
 all: style build
 
 build:
-	latexmk -pdf -Werror main.tex </dev/null
+	$(LATEXMK) -pdf $(LATEXMK_FLAGS) main.tex </dev/null
 
 style:
 	bash style.sh
 
 clean:
-	latexmk -c
+	$(LATEXMK) -c
 
 distclean: clean
 	rm -f main.pdf main.dvi

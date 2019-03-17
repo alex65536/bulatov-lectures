@@ -5,20 +5,28 @@ language: tex
 addons:
   apt:
     packages:
+      # required to build
       - cm-super
       - texlive
       - texlive-lang-cyrillic
       - texlive-science
       - texlive-latex-extra
       - latexmk
+      # required only for CI
       - pgf
+      - curl
 
 before_install:
     # display Ubuntu version
     lsb_release -a
 
+install:
+    # download a newer latexmk
+    - curl https://personal.psu.edu/jcc8/latexmk/latexmk-461.zip -o "$TMPDIR/latexmk.zip"
+    - unzip "$TMPDIR/latexmk.zip" latexmk/latexmk.pl
+
 script:
-    make
+    make LATEXMK="./latexmk/latexmk.pl" LATEXMK_FLAGS="-Werror"
 
 before_deploy:
     # rename the pdf file
