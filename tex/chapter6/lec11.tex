@@ -94,19 +94,19 @@
 	связи строится \emph{уравнение Лагранжа}:
 	\[
 	L\left(x, \; y\right) = f\left(x, \; y\right) + \sum\limits_{k = 1}^m 
-	\lambda_k F_k\left(x, \; y\right) \label{lec10.1:8}
+	\lambda_k F_k\left(x, \; y\right) \label{lec11.1:8}
 	\]
 	
 	
 	Покажем, что из исследования на локальный условный экстремум в исходной 
 	функции равносильно исследованию функции Лагранжа 
-	\eqref{lec10.1:8} на обычный локальный экстремум относительно $x, y,\lambda$
+	\eqref{lec11.1:8} на обычный локальный экстремум относительно $x, y,\lambda$
 	
 	Во-первых, из необходимого условия локального локального экстремума:
 	\[
 	du = 0 \implies \dfrac{\partial f}{\partial x_1} dx_1 + \ldots + 
 	\dfrac{\partial f}{\partial x_n} dx_n + \dfrac{\partial f}{\partial y_1}dy_1
-	 + \ldots + \dfrac{\partial f}{\partial y_n} dy_n = 0 \label{lec10.1:9}
+	 + \ldots + \dfrac{\partial f}{\partial y_n} dy_n = 0 \label{lec11.1:9}
 	\]
 	
 	Аналогично из уравнения связи получаем:
@@ -116,12 +116,12 @@
 	\ldots + \dfrac{\partial F_k}{\partial x_n}dx_n + 
 	\dfrac{\partial F_k}{\partial y_1}dy_1 + \ldots + 
 	\dfrac{\partial F_k}{\partial y_m}dy_m = 0 \;\;\; x = \overline{1, \; m} 
-	\label{lec10.1:10}
+	\label{lec11.1:10}
 	\end{equation}
 	
-	Умножая каждое из соотношений \eqref{lec10.1:10} на соответствующий множитель 
+	Умножая каждое из соотношений \eqref{lec11.1:10} на соответствующий множитель 
 	$\lambda_k$ и суммируя для $k = \overline{1,\;m}$ 
-	вместе с \eqref{lec10.1:9}, получим
+	вместе с \eqref{lec11.1:9}, получим
 	\begin{equation}
 	\left(\dfrac{\partial f}{\partial x_1} + \sum\limits_{k
 	= 1}^m \lambda_k \dfrac{\partial F_k}{\partial x_1} 
@@ -130,7 +130,7 @@
 	\dfrac{\partial F_k}{\partial x_n} \right)dx_n + \ldots 
 	+ \left(\dfrac{\partial f}{\partial y_m} + 
 	\sum\limits_{k = 1}^m \lambda_k \dfrac{\partial F_k}
-	{\partial y_m} \right)dy_m = 0 \label{lec10.1:11}
+	{\partial y_m} \right)dy_m = 0 \label{lec11.1:11}
 	\end{equation}
 	
 	Считая, что для связей выполняется условие существование 
@@ -138,11 +138,11 @@
 	\begin{equation}
 	\dfrac{\partial f}{\partial y_i} + \sum\limits_{k = 1}^m \lambda_k 
 	\dfrac{\partial F_k}{\partial y_i} = 0 \;\;\; i = \overline{1, \; m} 
-	\label{lec10.1:12}
+	\label{lec11.1:12}
 	\end{equation}
 	
 	Линейные отношения $\lambda_1, \lambda_2, \ldots, \lambda_m$ система 
-	\eqref{lec10.1:12} имеет единственное решение в силу того, что определитель
+	\eqref{lec11.1:12} имеет единственное решение в силу того, что определитель
 	
 	\[
 	\begin{vmatrix}
@@ -161,31 +161,30 @@
 	и единственности решения ненулевой 
 	
 	
-	В результате \eqref{lec10.1:11} 
-	примет вид
+	В результате \eqref{lec11.1:11} примет вид
 	
 	\begin{equation}
-	\label{lec10.1:13}
+	\label{lec11.1:13}
 	\sum\limits_{j=1}^{n}\left(  \dfrac{\partial f }{\partial x_j} + 
 	\sum\limits_{k=1}^{m} \lambda_k\dfrac{\partial F_k }{\partial x_j}  
 	\right) \partial x_j =0 
 	\end{equation}
 	
-	\eqref{lec10.1:13} уже дифференциалы
+	\eqref{lec11.1:13} уже дифференциалы
 	$d x_1,\ldots,d x_n$ являются независимыми величинами, поэтому
 	
 	\[
-	\label{lec10.1:14}
+	\label{lec11.1:14}
 	\dfrac{\partial f }{\partial x_j} + \sum\limits_{k=1}^{m}
 	\lambda_k \dfrac{\partial F_k }{\partial x_j} = 0,\; j = \overline{1, n}
 	\]
-	Присоединяя к \eqref{lec10.1:14}  и уравнение \eqref{lec10.1:14} по 
-	уравн. связи получаем \smallskip систему из \eqref{lec10.1:12}, 
-	\eqref{lec10.1:14},
-	\eqref{lec10.1:15} из $ \left( n + 2m \right) $ уравнений:
+	Присоединяя к \eqref{lec11.1:14}  и уравнение \eqref{lec11.1:14} по 
+	уравн. связи получаем \smallskip систему из \eqref{lec11.1:12}, 
+	\eqref{lec11.1:14},
+	\eqref{lec11.1:15} из $ \left( n + 2m \right) $ уравнений:
 	
 	\begin{equation}
-	\label{lec10.1:15}
+	\label{lec11.1:15}
 	\begin{cases}
 	\dfrac{\partial f }{\partial x_j} + \sum\limits_{k=1}^{m}
 	\lambda_k \dfrac{\partial F_k }{\partial x} = 0,\; j = \overline{1, n}\\
@@ -198,7 +197,7 @@
 	\ldots, \lambda_m \right) $.
 	
 	Покажем, что эта система соответствует системе стационарных точек для
-	функции Лангранжа \eqref{lec10.1:8}, где все переменные равноправны.
+	функции Лангранжа \eqref{lec11.1:8}, где все переменные равноправны.
 	
 	Действительно, 
 	\[dL\left( x, y, \lambda \right) = d\left( f\left( x, y\right) 
@@ -215,7 +214,7 @@
 	исследования проводят обычным образом при поиске локального экстремума 
 	находят $d^2L$ и избавляются от зависимых дифф. $d y_1, \ldots, d y_m $ 
 	через $d x_1, \ldots, d x_n$ в силу уравнения связи, исследования КФ на 
-	знакоопр. При этом в силу специфики функции Лагранжа \eqref{lec10.1:8} 
+	знакоопр. При этом в силу специфики функции Лагранжа \eqref{lec11.1:8} 
 	$\left( \text{Линейность по } \lambda \right) $ при вычислении $d^2 L$
 	в стационарной точке величины $d \lambda_1, \ldots, d \lambda_m$ можно
 	считать постоянными, что облегчает вычисления при решении практических
@@ -226,8 +225,7 @@
 	\end{exmp}
 	
 	Решим предыдущий пример $u = x - 2y + 27$. В 
-	соответствии с \eqref{lec10.1:8} 
-	имеем 
+	соответствии с \eqref{lec11.1:8} имеем 
 	
 	$L \left( x, y, \lambda \right) = x - 2y + 27 + \lambda \left( x^2 + y^2 
 	+ z^2 - 1 \right) \implies$ 
