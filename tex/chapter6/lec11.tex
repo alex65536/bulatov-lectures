@@ -227,7 +227,8 @@
 	\end{cases}
 	\]
 	
-	от $ \left( n + 2m \right) $ неизвестных $x = \left( x_1, \ldots, x_n \right),\ 
+	от $ \left( n + 2m \right) $ неизвестных $x = \left( 
+	x_1, \ldots, x_n \right),\ 
 	y = \left( y_1, \ldots, y_m \right),\ \lambda = \left( \lambda_1,
 	\ldots, \lambda_m \right) $.
 	
@@ -244,8 +245,12 @@
 	\dfrac{\partial f}{\partial x_j} 
 	+ \sum\limits_{k=1}^{m}\lambda_k \dfrac{\partial F_k}
 	{\partial x_j}  
-	\right)d x_j}_{= 0\ \eqref{lec11.1:14}} + \underbrace{\sum\limits_{i=1}^{m} \left( \dfrac{\partial f}{\partial y_i} 
-	+ \sum\limits_{k=1}^{m}\lambda_k \dfrac{\partial F_k}{\partial y_i}  \right) dy_i}_{= 0\ \eqref{lec11.1:12}}
+	\right)d x_j}_{= 0\ \eqref{lec11.1:14}} + 
+	\underbrace{\sum\limits_{i=1}^{m} \left( 
+	\dfrac{\partial f}{\partial y_i} 
+	+ \sum\limits_{k=1}^{m}\lambda_k \dfrac{\partial F_k}
+	{\partial y_i}  \right) dy_i}_{= 0\ 
+	\eqref{lec11.1:12}}
 	+ \underbrace{\sum\limits_{k=1}^{m} F_k d \lambda_k}
 	_{= 0\ \eqref{lec_10.num_1}} = 0
 	\end{multline}
@@ -253,9 +258,11 @@
 	То есть, $dL\left( x, y, z \right) = 0$, что соответствует уравнению 
 	стационарной точки для функции Лагранжа. Найдя эту функцию, дальнейшие
 	исследования проводят обычным образом: при поиске локального экстремума 
-	находят $d^2L$ и избавляются от зависимых дифференциалов $d y_1, \ldots, d y_m $ 
+	находят $d^2L$ и избавляются от зависимых 
+	дифференциалов $d y_1, \ldots, d y_m $ 
 	через $d x_1, \ldots, d x_n$ в силу уравнения связи, исследуют КФ на 
-	знакоопределенность. При этом в силу специфики функции Лагранжа \eqref{lec11.1:8} 
+	знакоопределенность. При этом в силу специфики функции 
+	Лагранжа \eqref{lec11.1:8} 
 	$\left( \text{линейности по } \lambda \right) $ при вычислении $d^2 L$
 	в стационарной точке величины $d \lambda_1, \ldots, d \lambda_m$ можно
 	считать постоянными, что облегчает вычисления при решении практических
