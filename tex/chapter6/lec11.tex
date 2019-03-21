@@ -114,65 +114,68 @@
 	
 	Недостатком предыдущего метода является то, что используемые переменные 
 	$x = $ $=\left(x_1, \ldots, x_n\right), \; y = \left(y_1,\ldots, y_n\right)$
-	не равноправны между собой, т.к. $x_k \;\; k = \overline{1,\; n}$, 
-	независимые переменные $y_j \;\; j = \overline{1,\; m}$, зависят и 
-	должны быть выраженны через $x_k$ засчет уравнения связи. 
-	Чтобы уравновесить эти переменные межд собой Лагранж расширил 
+	неравноправны между собой, т.~к. $x_k,\ k = \overline{1, n}$~--- 
+	независимые переменные, а $y_j,\ j = \overline{1, m}$, зависимы и 
+	должны быть выражены через $x_k$ за счет уравнения связи. 
+	Чтобы уравновесить эти переменные между собой, Лагранж расширил 
 	число переменных и добавил к ним множество 
-	$\lambda_1,\; \ldots,\; \lambda_m \;\; \forall 
-	\lambda_i \in \mathbb{R}, \; i = \overline{1,\; m}$, 
-	с помощью которых на рассматриваемой ФНП и уравнению 
+	$\lambda_1,\; \ldots,\; \lambda_m\quad \forall 
+	\lambda_i \in \mathbb{R},\ i = \overline{1,\; m}$, 
+	с помощью которых на рассматриваемой ФНП и уравнении 
 	связи строится \emph{уравнение Лагранжа}:
-	\[
-	L\left(x, \; y\right) = f\left(x, \; y\right) + \sum\limits_{k = 1}^m 
-	\lambda_k F_k\left(x, \; y\right) \label{lec11.1:8}
-	\]
+	\begin{equation}
+	L\left(x, y\right) = f\left(x, y\right) + \sum\limits_{k = 1}^m 
+	\lambda_k F_k\left(x, y\right) \label{lec11.1:8}
+	\end{equation}
 	
 	
-	Покажем, что из исследования на локальный условный экстремум в исходной 
+	Покажем, что исследование на локальный условный экстремум в исходной 
 	функции равносильно исследованию функции Лагранжа 
-	\eqref{lec11.1:8} на обычный локальный экстремум относительно $x, y,\lambda$
-	
-	Во-первых, из необходимого условия локального локального экстремума:
-	\[
+	\eqref{lec11.1:8} на обычный локальный экстремум относительно $x, y,\lambda$.
+	Во-первых, из необходимого условия локального экстремума:
+	\begin{equation}
 	du = 0 \implies \dfrac{\partial f}{\partial x_1} dx_1 + \ldots + 
 	\dfrac{\partial f}{\partial x_n} dx_n + \dfrac{\partial f}{\partial y_1}dy_1
 	 + \ldots + \dfrac{\partial f}{\partial y_n} dy_n = 0 \label{lec11.1:9}
-	\]
+	\end{equation}
 	
 	Аналогично из уравнения связи получаем:
 	\begin{equation}
-	dF_x\left(x, \; y\right) = 0 \implies \dfrac{\partial 
+	dF_k\left(x, \; y\right) = 0 \implies \dfrac{\partial 
 	F_k}{\partial x_1}dx_1 + 
 	\ldots + \dfrac{\partial F_k}{\partial x_n}dx_n + 
 	\dfrac{\partial F_k}{\partial y_1}dy_1 + \ldots + 
-	\dfrac{\partial F_k}{\partial y_m}dy_m = 0 \;\;\; x = \overline{1, \; m} 
+	\dfrac{\partial F_k}{\partial y_m}dy_m = 0,\ k = \overline{1, m} 
 	\label{lec11.1:10}
 	\end{equation}
 	
 	Умножая каждое из соотношений \eqref{lec11.1:10} на соответствующий множитель 
-	$\lambda_k$ и суммируя для $k = \overline{1,\;m}$ 
+	$\lambda_k$ и суммируя для $k = \overline{1, m}$ 
 	вместе с \eqref{lec11.1:9}, получим
-	\begin{equation}
+	\begin{multline}
 	\left(\dfrac{\partial f}{\partial x_1} + \sum\limits_{k
 	= 1}^m \lambda_k \dfrac{\partial F_k}{\partial x_1} 
 	\right)dx_1 + \ldots + \left(\dfrac{\partial f}
 	{\partial x_n} + \sum\limits_{k = 1}^m \lambda_k 
-	\dfrac{\partial F_k}{\partial x_n} \right)dx_n + \ldots 
+	\dfrac{\partial F_k}{\partial x_n} \right)dx_n + \\ +
+	\left(\dfrac{\partial f}{\partial y_1} + 
+	\sum\limits_{k = 1}^m \lambda_k \dfrac{\partial F_k}
+	{\partial y_1} \right)dy_1 +
+	\ldots 
 	+ \left(\dfrac{\partial f}{\partial y_m} + 
 	\sum\limits_{k = 1}^m \lambda_k \dfrac{\partial F_k}
 	{\partial y_m} \right)dy_m = 0 \label{lec11.1:11}
-	\end{equation}
+	\end{multline}
 	
-	Считая, что для связей выполняется условие существование 
-	решений подберем $\lambda_k \in \R$ так, чтобы:
+	Считая, что для связей выполняется условие существования 
+	решений, подберем $\lambda_k \in \R$ так, чтобы
 	\begin{equation}
 	\dfrac{\partial f}{\partial y_i} + \sum\limits_{k = 1}^m \lambda_k 
-	\dfrac{\partial F_k}{\partial y_i} = 0 \;\;\; i = \overline{1, \; m} 
+	\dfrac{\partial F_k}{\partial y_i} = 0,\ i = \overline{1,m} 
 	\label{lec11.1:12}
 	\end{equation}
 	
-	Линейные отношения $\lambda_1, \lambda_2, \ldots, \lambda_m$ система 
+	Линейная относительно $\lambda_1, \lambda_2, \ldots, \lambda_m$ система 
 	\eqref{lec11.1:12} имеет единственное решение в силу того, что определитель
 	
 	\[
@@ -184,13 +187,11 @@
 	\vdots  & \vdots  & \ddots & \vdots  \\
 	\frac{\partial F_m}{\partial y_1} & \frac{\partial F_m}{\partial y_2}
 	& \cdots & \frac{\partial F_m}{\partial y_m}
-	\end{vmatrix} \ne 0 
+	\end{vmatrix} \ne 0
 	\]
-	\smallskip
 	
-	~--- якобиан соответсвующих связей, который в силу теоремы о существовании
-	и единственности решения ненулевой 
-	
+    --- якобиан соответствующих связей, который в силу теоремы о существовании
+	и единственности решения ненулевой.
 	
 	В результате \eqref{lec11.1:11} примет вид
 	
@@ -201,44 +202,50 @@
 	\right) \partial x_j =0 
 	\end{equation}
 	
-	\eqref{lec11.1:13} уже дифференциалы
-	$d x_1,\ldots,d x_n$ являются независимыми величинами, поэтому
-	
-	\[
-	\label{lec11.1:14}
-	\dfrac{\partial f }{\partial x_j} + \sum\limits_{k=1}^{m}
-	\lambda_k \dfrac{\partial F_k }{\partial x_j} = 0,\; j = \overline{1, n}
-	\]
-	Присоединяя к \eqref{lec11.1:14}  и уравнение \eqref{lec11.1:14} по 
-	уравнению связи получаем \smallskip систему из \eqref{lec11.1:12}, 
-	\eqref{lec11.1:14},
-	\eqref{lec11.1:15} из $ \left( n + 2m \right) $ уравнений:
+	В\eqref{lec11.1:13} дифференциалы
+	$d x_1,\ldots,d x_n$ уже являются независимыми величинами, поэтому
 	
 	\begin{equation}
-	\label{lec11.1:15}
-	\begin{cases}
+	\label{lec11.1:14}
 	\dfrac{\partial f }{\partial x_j} + \sum\limits_{k=1}^{m}
-	\lambda_k \dfrac{\partial F_k }{\partial x} = 0,\; j = \overline{1, n}\\
+	\lambda_k \dfrac{\partial F_k }{\partial x_j} = 0,\ j = \overline{1, n}
+	\end{equation}
+	Присоединяя к $n$ уравнениям \eqref{lec11.1:14} $m$
+	уравнений связи, получаем систему
+	\eqref{lec11.1:12},
+	\eqref{lec11.1:14},
+	\eqref{lec_10.num_1}
+	из $ \left( n + 2m \right) $ уравнений
+	% здесь непонятно, как правильно
+	\[
+	\begin{cases}
+	\dfrac{\partial f}{\partial y_i} + \sum\limits_{k = 1}^m \lambda_k 
+	\dfrac{\partial F_k}{\partial y_i} = 0,\ i = \overline{1,m} \\
+	\dfrac{\partial f }{\partial x_j} + \sum\limits_{k=1}^{m}
+	\lambda_k \dfrac{\partial F_k }{\partial x_j} = 0,\ j = \overline{1, n}\\
 	F_k\left( x, y \right) = 0,\; k = \overline{1, m}
 	\end{cases}
-	\end{equation}
+	\]
 	
-	от $ \left( 2m + n \right) $ неизвестных $x = \left( x_1, \ldots, x_n \right),
-	y = \left( y_1, \ldots, y_m \right), \lambda = \left( \lambda_1,
+	от $ \left( n + 2m \right) $ неизвестных $x = \left( x_1, \ldots, x_n \right),\ 
+	y = \left( y_1, \ldots, y_m \right),\ \lambda = \left( \lambda_1,
 	\ldots, \lambda_m \right) $.
 	
 	Покажем, что эта система соответствует системе стационарных точек для
 	функции Лангранжа \eqref{lec11.1:8}, где все переменные равноправны.
 	
 	Действительно, 
-	\[dL\left( x, y, \lambda \right) = d\left( f\left( x, y\right) 
-	+ \sum\limits_{k=1}^{m}\lambda_k F_k\left( x, y \right) \right) =\]
-	\[
+	\begin{multline}
+	\label{lec11.1:15}
+	dL\left( x, y, \lambda \right) = d\left( f\left( x, y\right) 
+	+ \sum\limits_{k=1}^{m}\lambda_k F_k\left( x, y \right) \right) =
+	\\
 	\sum\limits_{j=1}^{n}\left( \dfrac{\partial f}{\partial x_j} 
 	+ \sum\limits_{k=1}^{m}\lambda_k \dfrac{\partial F_k}{\partial x_j}  
 	\right)d x_j + \sum\limits_{k=1}^{m} \left( \dfrac{\partial f}{\partial y_k} 
 	+ \sum\limits_{i=1}^{m}\lambda_i \dfrac{\partial F_i}{\partial y_k}  \right)
-	d 	y_k + \sum\limits_{i=1}^{m} F_k d \lambda_k = 0\]
+	d 	y_k + \sum\limits_{i=1}^{m} F_k d \lambda_k = 0
+	\end{multline}
 	
 	То есть $dL\left( x, y, z \right) = 0$, что соответствует уравнению 
 	стационарной точки для функции Лагранжа. Найдя эту фукнцию дальнейшие
@@ -275,9 +282,9 @@
 	\dfrac{1}{4\lambda^2} + \dfrac{1}{\lambda^2} + \dfrac{1}{\lambda^2} = 1
 	\end{cases} \implies
 	\begin{cases}
-	x_{1, 2} = \mp \dfrac{1}{3} \\
-	y_{1, 2} = \pm \dfrac{2}{3} \\
-	z_{1, 2} = \mp \dfrac{2}{3} 
+	x_{1, 2} = \mp \frac{1}{3} \\
+	y_{1, 2} = \pm \frac{2}{3} \\
+	z_{1, 2} = \mp \frac{2}{3} 
 	\end{cases}
 	\]
 	
