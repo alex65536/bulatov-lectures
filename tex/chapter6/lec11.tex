@@ -219,10 +219,10 @@
 	% здесь непонятно, как правильно
 	\[
 	\begin{cases}
-	\dfrac{\partial f}{\partial y_i} + \sum\limits_{k = 1}^m \lambda_k 
-	\dfrac{\partial F_k}{\partial y_i} = 0,\ i = \overline{1,m} \\
 	\dfrac{\partial f }{\partial x_j} + \sum\limits_{k=1}^{m}
 	\lambda_k \dfrac{\partial F_k }{\partial x_j} = 0,\ j = \overline{1, n}\\
+	\dfrac{\partial f}{\partial y_i} + \sum\limits_{k = 1}^m \lambda_k 
+	\dfrac{\partial F_k}{\partial y_i} = 0,\ i = \overline{1,m} \\
 	F_k\left( x, y \right) = 0,\; k = \overline{1, m}
 	\end{cases}
 	\]
@@ -240,27 +240,28 @@
 	dL\left( x, y, \lambda \right) = d\left( f\left( x, y\right) 
 	+ \sum\limits_{k=1}^{m}\lambda_k F_k\left( x, y \right) \right) =
 	\\
-	\sum\limits_{j=1}^{n}\left( \dfrac{\partial f}{\partial x_j} 
-	+ \sum\limits_{k=1}^{m}\lambda_k \dfrac{\partial F_k}{\partial x_j}  
-	\right)d x_j + \sum\limits_{k=1}^{m} \left( \dfrac{\partial f}{\partial y_k} 
-	+ \sum\limits_{i=1}^{m}\lambda_i \dfrac{\partial F_i}{\partial y_k}  \right)
-	d 	y_k + \sum\limits_{i=1}^{m} F_k d \lambda_k = 0
+	\underbrace{\sum\limits_{j=1}^{n}\left( 
+	\dfrac{\partial f}{\partial x_j} 
+	+ \sum\limits_{k=1}^{m}\lambda_k \dfrac{\partial F_k}
+	{\partial x_j}  
+	\right)d x_j}_{= 0\ \eqref{lec11.1:14}} + \underbrace{\sum\limits_{i=1}^{m} \left( \dfrac{\partial f}{\partial y_i} 
+	+ \sum\limits_{k=1}^{m}\lambda_k \dfrac{\partial F_k}{\partial y_i}  \right) dy_i}_{= 0\ \eqref{lec11.1:12}}
+	+ \underbrace{\sum\limits_{k=1}^{m} F_k d \lambda_k}
+	_{= 0\ \eqref{lec_10.num_1}} = 0
 	\end{multline}
 	
-	То есть $dL\left( x, y, z \right) = 0$, что соответствует уравнению 
-	стационарной точки для функции Лагранжа. Найдя эту фукнцию дальнейшие
-	исследования проводят обычным образом при поиске локального экстремума 
-	находят $d^2L$ и избавляются от зависимых дифф. $d y_1, \ldots, d y_m $ 
-	через $d x_1, \ldots, d x_n$ в силу уравнения связи, исследования КФ на 
-	знакоопр. При этом в силу специфики функции Лагранжа \eqref{lec11.1:8} 
-	$\left( \text{Линейность по } \lambda \right) $ при вычислении $d^2 L$
+	То есть, $dL\left( x, y, z \right) = 0$, что соответствует уравнению 
+	стационарной точки для функции Лагранжа. Найдя эту функцию, дальнейшие
+	исследования проводят обычным образом: при поиске локального экстремума 
+	находят $d^2L$ и избавляются от зависимых дифференциалов $d y_1, \ldots, d y_m $ 
+	через $d x_1, \ldots, d x_n$ в силу уравнения связи, исследуют КФ на 
+	знакоопределенность. При этом в силу специфики функции Лагранжа \eqref{lec11.1:8} 
+	$\left( \text{линейности по } \lambda \right) $ при вычислении $d^2 L$
 	в стационарной точке величины $d \lambda_1, \ldots, d \lambda_m$ можно
 	считать постоянными, что облегчает вычисления при решении практических
 	примеров.
 	
 	\begin{exmp}
-		Пример:
-	\end{exmp}
 	
 	Решим предыдущий пример $u = x - 2y + 27$. В 
 	соответствии с \eqref{lec11.1:8} имеем 
@@ -338,7 +339,8 @@
 	этих точек на экстремум.
 	Нужно только вычислить значения и выбрать наибольшее и наименьшее значения, 
 	а далее сравнить, входят они в $E(f)$ или нет и 
-	получить окончательный ответ.\\
+	получить окончательный ответ.
+	\end{exmp}
 	
 	\begin{exmp}
 		Рассмотрим функцию $D = |x - y| + |x + y| \leq 2$.
