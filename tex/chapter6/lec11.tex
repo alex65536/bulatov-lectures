@@ -68,9 +68,9 @@
 	независимые $dx$ и $dy$:
 	% на самом деле, лекция 10 кончается здесь
 	
-	\[d^2u = d\left( \left(1 - \dfrac{2x}{3}\right)dx - 
+	\[d^2u = d\left( \left(1 - \dfrac{2x}{z}\right)dx - 
 	2\left(1 + \dfrac{y}{z}\right)dy\right) = 
-	\left[dx, dy - f_ix\right] = -2 \cdot 
+	\left[dx, dy - \fix\right] = -2 \cdot 
 	\dfrac{zdx - xdz}{z^2}dx - 2 \cdot \dfrac{zdy - ydz}{z^2}dy\]
 	
 	\[\implies d^2u\left(M_{1, 2}\right) = \left[
@@ -81,24 +81,28 @@
 	-\dfrac{1}{2}dx + dy 
 	\right] =\]
 	
-	\[ = -2 \cdot \frac{2xdx - x\left(-\frac{1}{2}dx + dy\right)}{4x^2}dx - 
-	2 \cdot \frac{2xdy + 2x \left(-\frac{1}{2}dx + dy\right)}{4x^2}dy = \]
+	\[= -2 \cdot \frac{2xdx - x\left(-\frac{1}{2}dx + dy\right)}{4x^2}dx - 
+	2 \cdot \frac{2xdy + 2x \left(-\frac{1}{2}dx + dy\right)}{4x^2}dy =\]
 	
 	\[= -\dfrac{1}{2x}\left(2dx^2 + \dfrac{1}{2}dx^2 - dxdy + 2dy^2 - 
 	dxdy + 2dy^2 \right) = -\dfrac{1}{2x} \left( \dfrac{5}
-	{2} dx^2 - 2dxdy + 4dy^2 \right) \implies \]
+	{2} dx^2 - 2dxdy + 4dy^2 \right) \implies\]
 	
 	\[\implies d^2u\left(M_1\right) = \left[x_1 = \dfrac{1}{3}\right] = 
-	-\dfrac{3}{2}\cdot(\dfrac{5}{2}dx^2 - 2dxdy + 4dy^2) < 0\ \; 
-	\forall \left(dx, \; dy\right) \neq \vec{0} \implies 
-	M_1 \text{~--- т. лок. max}\]
+	-\dfrac{3}{2}\cdot\left(\dfrac{5}{2}dx^2 - 2dxdy + 
+	4dy^2\right) < 0 \quad 
+	\forall \left(dx, \; dy\right) \neq \vec{0} \implies\]
+	
+	\[\implies M_1 \text{~--- точка локального максимума}.\]
 	
 	Аналогично:
 	
 	\[d^2u \left(M_2\right) = \left[x_2 = -\dfrac{1}{3} \right] = 
 	\dfrac{3}{2} \cdot \left( \dfrac{5}{2} dx^2 - 2dxdy + 4dy^2\right) < 0 
-	\; \forall \left(dx, dy\right) \neq \vec{0} \implies M_2 
-	\text{~--- т. лок. min}\]
+	\quad \forall \left(dx, dy\right) \neq \vec{0} \implies\]
+	
+	\[ \implies M_2 
+	\text{~--- точка локального минимума}\]
 	
 	$u_{max} = u\left(\dfrac{1}{3}, \; -\dfrac{2}{3}, 
 	\dfrac{2}{3}\right) = 3 \;\;\; 
