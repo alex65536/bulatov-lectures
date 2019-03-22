@@ -76,6 +76,11 @@ Use equation and \eqref{}.'
 	check -- "$1" \
 	      '\.\.\.' \
 	      'Use \dots (or \ldots)'
+	
+	check -- "$1" \
+	      '\\int\s*\\int' \
+	      'Use \iint for double integral, \iiint for triple integral'
+	
 }
 
 export -f error
