@@ -13,7 +13,7 @@
 \section{Двойной интеграл ( 2 И ) }
 
 Рассмотрим Ф2П $ f \left( x, y \right) $  , где 
-$ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое множество 
+$ \left( x, y \right) \in D \subset \R^n $ и $ D $~--- измеримое множество 
 в $ \R^2 $ (плоская квадрируемая фигура). 
 В этом случае имеем \emph{2И}:
 
@@ -24,7 +24,7 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
 
 \begin{thm}[О вычислении 2И по прямоугольнику для 
 непрерывных Ф2П]
-    Пусть $ f \left( x, y \right)  $ - непрерывна на прямоугольнике
+    Пусть $ f \left( x, y \right)  $~--- непрерывна на прямоугольнике
     $ \text{П} = \left[\ a, b\ \right] \times \left[\ c, d\ \right] =  
     \left\lbrace \ \left( x, y \right) \in \R^2\ |\ 
     a \leq x \leq b, \ c \leq y \leq d\ \right\rbrace $.
@@ -33,7 +33,8 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
     \label{lec_13, num_13}
     I = \int\limits_a^b 
     \left( \int\limits_c^d f \left( x, y \right) dy  \right) dx =
-     \int\limits_c^d \left( \int\limits_a^b f \left( x, y \right) dx  \right) dy
+     \int\limits_c^d \left( \int\limits_a^b 
+     f \left( x, y \right) dx  \right) dy
     \end{equation}
 \end{thm}
 
@@ -41,8 +42,8 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
 	Рассмотрим произвольное разбиение $ \widetilde{P} = 
 	\left\lbrace x_i \right\rbrace  $, $i = \overline{1,m} $ 
 	отрезка $ \left[ a, b\right]  $. T.e $a = x_0 < x_1 < \dots 
-	< x_{i-1} < x_i < \dots < x_m = b $. Пусть $ \overline{P} $
-	 - разбиение точками $ \left\lbrace y_j \right\rbrace  $, 
+	< x_{i-1} < x_i < \dots < x_m = b $. Пусть $ \overline{P} $~--- 
+	разбиение точками $ \left\lbrace y_j \right\rbrace  $, 
 	 где $j = \overline{1, l} $ отрезка $ \left[ c, d\right]  $. 
 	 T.e $c = y_0 < y_1 < \dots < y_{j-1} < y_j < \dots < y_l = d $.
 	 
@@ -91,7 +92,7 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
  	\sum\limits_{i = 1}^m 
  	\sum\limits_{j = 1}^l f \left( M_{ij} \right) \Delta \text{П}_{ij}
  	\end{equation}
- 	где $\Delta \text{П}_{ij} = \Delta x_i \Delta y_j$ - 
+ 	где $\Delta \text{П}_{ij} = \Delta x_i \Delta y_j$~---  
  	площадь $\text{П}_{ij}$ 
  	( $ \Delta x_i = x_i - x_{i-1}, \Delta y_j = y_j - y_{j - 1} $ )
  	
@@ -204,7 +205,7 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
 
 \begin{crl}[о вычислении 2И по криволинейной трапеции]
 	Если $ f \in C \left( \widetilde{T} \right) $, 
-	где $ \widetilde{T} \subset \R^2 $ - 
+	где $ \widetilde{T} \subset \R^2 $~---  
 	криволинейная трапеция вдоль $ Oy $, т.е 
 	\begin{equation}
 	\label{lec_13, num_19}
@@ -213,7 +214,7 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
 	\ c \left( x \right) \leq y \leq d \left( x \right),
 	 a \leq x \leq b \right\rbrace
 	 \end{equation}
-	 То когда $c \left( x \right), d \left( x \right) $ - непрерывны на 
+	 То когда $c \left( x \right), d \left( x \right) $~---  непрерывны на 
 	 $ \left[ a, b \right] $, то имеем
 	 \begin{equation}
 	 \label{lec_13, num_20}
@@ -223,7 +224,7 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
 	 \end{equation}
 	 
 	 Аналогично в случае, когда $ f \in C \left( \overline{T} \right) $, 
-	 где $ \overline{T} $ - криволинейная трапеция вдоль $ Ox $, т.е 
+	 где $ \overline{T} $~---  криволинейная трапеция вдоль $ Ox $, т.е 
 	 \begin{equation}
 	 \label{lec_13, num_21}
 	 \overline{T} = \left\lbrace 
@@ -233,7 +234,7 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
 	 \end{equation}
 	 
 	 Когда $ a \left( y \right), b \left( y \right) $
-	  - непрерывны на $ \left[ c, d \right] $, получаем:
+	 ~--- непрерывны на $ \left[ c, d \right] $, получаем:
 	 \begin{equation}
 	 \label{lec_13, num_22}
 	 \iint\limits_{\overline{T}} f \left( x, y \right) dx dy = 
@@ -294,7 +295,7 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
 \begin{exmp}
 	Рассмотрим $ I = \iint\limits_{x^2 + y^2 \leq 2x} 
 	f \left(x, y \right) dxdy $, 
-	где для простоты считаем, что $ f \left( x, y \right) $ - непрерывна. 
+	где для простоты считаем, что $ f \left( x, y \right) $~---  непрерывна. 
 	Получим представление этого 2И через повторные.
 	
 	Выделяя полные квадраты для области интегрирования $ \implies $
