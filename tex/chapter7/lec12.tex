@@ -1,0 +1,325 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+\section{Измеримые множества в $\R^n$\\}
+
+Для $a_i, b_i \in \R,\ a_i < b_i,\ i = \overline{1,n}$ 
+\emph{прямоугольным параллелепипедом}
+$\Pi \subset \R^n$ будем называть множество точек
+\[
+	\Pi = \{x = (x_1, x_2, \ldots, x_n) \in \R^n\ \vline\ 
+	a_i \le x_i \le b_i,\ i =
+	 \overline{1,n}\} = [a_1; b_1] \times [a_2; b_2] 
+	 \times \dots \times [a_n; b_n]
+\]
+
+Для таких параллелепипедов $\Pi\subset \R^n$ за 
+\emph{меру} $\mes\Pi$ примем число
+\begin{equation}
+\label{611}
+\mes\Pi = (b_1 - a_1) \cdot (b_2 - a_2) \cdot \ldots \cdot (b_n - a_n).
+\end{equation}
+
+\begin{example}
+    ~
+    
+	\begin{enumerate}
+		\item Для $\Pi \subset \R \implies \Pi = \{x\ |\ 
+		a \le x \le b \} = [a, b] $\\
+		$\mes\Pi = b - a$~--- длина. 
+		\item Для $\Pi \subset \R^2 \implies \Pi = 
+		\{(x,y)\ |\ a \le x \le b,\ c \le y \le d \} = [a, b] \times [c, d]$\\
+		$\mes \Pi = (b - a)(d - c)$~--- площадь. 
+		\item Для $\Pi \subset \R^3 \implies \Pi = 
+		\{(x,y,z)\ |\ a \le x \le b,\ c \le y \le d,\ e \le z \le h \} = 
+		[a, b] \times [c, d] \times [e, h] $\\
+		$\mes\Pi = (b - a)(d - c)(h - e)$~--- объем. 
+	\end{enumerate}
+\end{example}
+
+\emph{Многогранником} $H \subset \R^n$ будем называть произвольное 
+конечное объединение параллелепипедов в $\R^n$.
+Если этот многогранник разбит на конечное число  составляющих параллелепипедов 
+$H_k,\ k = \overline{1,m}$, т.~е.
+\[H = \bigcup\limits_{k=1}^m H_k,\]
+у каждого из которых общими могут быть лишь
+граничные точки, то в этом случае полагают:
+
+\begin{equation}
+\label{mes_sum}
+\mes H = \sum\limits_{k=1}^{m}  \mes H_k.
+\end{equation}
+
+Можно показать, что \eqref{mes_sum} не зависит от способа разбиения $H$ 
+на составляющие его параллелепипеды.
+
+Дальнейшая теория меры для множеств из $\R^n$ строится по тем же
+схемам, что и квадрирование фигур в $\R^2$ и кубирование тел в $\R^3$.
+
+Для произвольного $D \subset \R^n$ многогранник $P$ 
+считается \emph{вписанным} в $D$, 
+если $P \subset D$. Аналогично, многогранник Q 
+считается \emph{описанным} около $D$, если $D \subset Q$.
+
+Величины
+\begin{equation}
+\begin{cases}
+m_* = \underset{P \subset D}{\sup} \{ \mes P \}, \\
+m^* = \underset{Q \supset D}{\inf} \{ \mes Q \}
+\end{cases}
+\end{equation}
+называются соответственно \emph{нижней мерой} для $D$ и 
+\emph{верхней мерой} для $D$.
+По теореме о гранях, эти меры существуют (конечные или бесконечные).
+
+В случае, когда $ m^* = m_* \in \R$,
+множество $D$ называется \emph{измеримым по Жордану} в пространстве $\R^n$,
+и за его меру принимается $\mes D = m^* = m_*$.
+
+Необходимым условием существования конечной меры (измеримости) 
+является ограниченность рассматриваемого множества $D \subset \R^n$. 
+Для пустого множества по определению полагают $\mes\emptyset = 0$.
+В общем случае, $D_0 \subset \R^n$ будем называть \emph{множеством меры нуль}, 
+если для $\forall\; \eps > 0\quad \exists P_\eps \subset D_0$ 
+и $\exists Q_\varepsilon \supset D_0$~--- многогранники такие, что
+
+\begin{equation}
+\label{614}
+\mes Q_\varepsilon - \mes P_\varepsilon \le \varepsilon.
+\end{equation}
+
+Для множеств меры нуль имеем следующие свойства:
+\begin{enumerate}
+	\item Пустое множество, одноточечное множество и множество, 
+	состоящее из конечного числа точек в $\R^n$, является множествами меры нуль.
+	\item Объединение конечного или счётного числа множеств меры нуль 
+	в $\R^n$ является множеством меры нуль.
+	\item Любое подмножество множества меры нуль является множеством меры нуль.
+\end{enumerate}
+
+Из этих свойств следует, что критерием измеримости множества $D \subset \R^n$ 
+является его ограниченность и условие, что мера его границы равна нулю
+ ($ \mes\partial D = 0 $).
+
+В общем случае для любых измеримых $D_1, D_2 \subset \R^n$ имеем
+
+\begin{equation}
+\label{lec7-1-5}
+\mes (D_1 \cup D_2) = \mes D_1 + \mes D_2 - \mes(D_1 \cap D_2),
+\end{equation}
+
+Если в \eqref{lec7-1-5} мера пересечения $\mes(D_1 \cap 
+D_2) = 0$, что, например, имеет место, когда у $D_1$ и 
+$D_2$ общими могут быть лишь граничные точки, имеем
+\[
+	\mes(D_1 \cup D_2) = \mes D_1 + \mes D_2,
+\]
+что выражает свойство \emph{конечной аддитивности} меры Жордана в $\R^n$.
+
+Аналогично, если $\mes(D_i \cap D_j) = 0\quad 
+\forall i \ne j,\ i = \overline{1,m},\ j = \overline{1,m}$, 
+то по ММИ доказывается, что
+
+\begin{equation}
+\label{mes_equity}
+\mes\left(\bigcup_{k=1}^m D_k \right) = \sum_{k=1}^{m} \mes D_k.
+\end{equation}
+
+Равенство \eqref{mes_equity} справедливо для измеримых множеств 
+$D_k \subset \R^n,\ k = \overline{1,m}$ в случае, 
+когда у них общими являются лишь, может быть, граничные точки.
+
+\section{Интегральные суммы и интеграл ФНП}
+
+Рассмотрим произвольное разбиение $P = \{P_k\}$, ${k = 
+\overline{1, m}}$ измеримого множества $D$
+на измеримые части $\forall P_k \subset D,\ k = 
+\overline{1, m}$, для которых:
+
+\begin{enumerate}
+	\item $\bigcup\limits_{k = 1}^m P_k = D$,
+	\item $\mes(P_i \cap P_j) = 0,\ i \neq j,\ i = 
+	\overline{1, m},\ j = \overline{1, m}$.
+\end{enumerate}
+
+Выбирая произвольным образом отмеченное множество точек 
+$Q = \{M_k\}\quad \forall M_k \in P_k,\ k = \overline{1, m}$,
+для ФНП $f(x)\quad \forall x \in D \subset \R^n $ 
+рассмотрим \emph{интегральную сумму}
+
+\begin{equation}
+\sigma = \sigma(f, \{P; Q\}) = \sum\limits_{k = 1}^mf(M_k)\Delta{P_k},
+\end{equation}
+где \[\Delta{P_k} = \mes P_k,\ k = \overline{1, m}.\]
+
+В дальнейшем величину $d_k = \underset{\forall A, B \in 
+D_k}\sup \{d(A; B)\}$
+будем называть \emph{диаметром} множества $P_k \subset 
+D$, $k = \overline{1, m}$. 
+Геометрически $d_k$ соответствует диаметру $n$-мерного шара
+наименьшего размера, содержащего $P_k$.
+
+Величину ${d_0 = \underset{1 \le k \le m}\max \{r_k\}}$ 
+будем называть \emph{диаметром} используемого разбиения и
+обозначать $d_0 = \diam P$.
+
+Функция $f(x)$, $x \in D \subset \R^n$, где $D$~--- измеримое
+множество, считается \emph{интегрируемой} на $D$, если
+\begin{equation}
+\label{7.8}
+\exists I \subset \R^n \quad
+\forall \varepsilon > 0 \quad \exists \delta > 0 \quad 
+\forall \{P; Q\} \ 
+\diam P \le \delta \implies \abs{I  - \delta} \le \eps.
+\end{equation}
+
+Число $ I \in \R $ в \eqref{7.8}
+будем называть \emph{значением $n$-кратного интеграла} от 
+$f(x)$ по $D \subset \R^n$ и записывать:
+
+\begin{equation}
+	I \stk{7.8} = \lim_{\diam P\to 0} \sum_{k=1}^m f(M_k) \Delta P_k
+	= \underset{D}{\idotsint} f(x_1, \ldots, x_n) d x_1 \ldots dx_n =
+	 \int\limits_{D}f(x)dx
+\end{equation}
+
+
+\begin{example}
+	Пусть $f(x) = 1\ \forall x \in D \subset \R^n$. В этом случае
+	\begin{equation}
+	\label{7.10}
+	\sigma = \sum\limits_{k = 1}^m\Delta{P_k} = 
+	\sum\limits_{k=1}^m \mes P_k =
+	\mes\left(\bigcup\limits_{k = 1}^m P_k\right) = \mes D
+	\implies \int\limits_D dx = \mes D = \lim\limits_{d_0 \to 0} \sigma
+	\end{equation}
+	
+	Доказательство \eqref{7.10} соответствует 
+	простейшему геометрическому смыслу $n$-кратного 
+	интеграла.
+	
+	В случае $n = 1$ \eqref{7.10} дает длину отрезка на $[a, b]$.
+	
+	В случае $n = 2$ \eqref{7.10} соответствует площади $S = \mes D$ 
+	измеримого множества $D \subset \R^2$.
+	
+	В случае $n = 3$ \eqref{7.10} соответствует объему $V = \mes D$
+	кубируемого тела $D \subset \R^3$.
+	
+	Далее, в случае $n=2$, для измеримого $D \subset \R^2$ в ДПСК 
+	$Oxy$ для Ф2П $f(x, y)$ получаем \emph{двойной интеграл}:
+	\[
+		\iint\limits_D f(x, y)\:dxdy.
+	\]
+	В частности, $\iint\limits_D dxdy = \mes D$~--- площадь $D$.
+	
+	Далее, в случае $n=3$, для Ф3П $f(x, y, z)$ получаем 
+	\emph{тройной интеграл}:
+	\[
+	\iiint\limits_D f(x,y,z)\:dxdydz
+	\]
+	В частности, $\iiint\limits_D dxdydz = \mes D$~--- объем $D$.
+\end{example}
+
+
+Как и для однократного интеграла ($n = 1$), множество 
+интегрируемых на измеримом множестве 
+$D \subset \R^n$ функций будем обозначать
+$R(D)$. Имеем следующие основные свойства $n$-кратных интегралов:
+
+\begin{enumerate}
+	\item Линейность:
+	
+	Если $f, g \in R(D)$ для измеримого $D \subset \R^n$, то
+	
+	\[
+			\forall \lambda, \mu \in \R \implies (\lambda f + \mu g) \in R(D)
+	\]
+	\[
+			\int\limits_D (\lambda f(x) + \mu g(x))dx = \lambda \int\limits_D f(x)dx +
+			\mu \int\limits_D g(x)dx.
+	\]
+	
+	\item Аддитивность:
+	
+	Если $f \subset R(D)$, где $D = D_1 \cup D_2$, 
+	а $D_1$, $D_2$~--- измеримые множества в $\R^n$,
+	общими у которых могут быть лишь только граничные точки 
+	(${ \mes(D_1 \cap D_2) = 0 }$), то
+	
+	\[
+		\int\limits_{D}f(x)dx = \int\limits_{D_1}f(x)dx + \int\limits_{D_2}f(x)dx.
+	\]
+		
+	\item Монотонность и неотрицательность:
+	
+	Пусть $f, g \in R(D)$ на измеримом множестве $D$, то 
+	в случае, когда 
+	$\forall x \in D \subset \R^n \implies f(x) \ge g(x)$, имеем
+	
+	\[
+	\int\limits_Df(x)dx \le \int\limits_Dg(x)dx.
+	\]
+	
+	Отсюда, учитывая, что $\int\limits_D0\:dx=0$ получаем, что в случае, когда 
+	$\forall x \in D \implies g(x) \ge 0$, то $\int\limits_Dg(x)dx \ge 0$, 
+	что соответствует неотрицательности $n$-кратного интеграла.
+	
+	\item Основная оценка:
+	
+	Пусть $\forall x \in D \subset \R^n \implies m_0 \le f(x) \le M_0$, где
+	$m_0, M_0 \in \R$, а $D$~--- измеримое множество в $\R^n$. Тогда
+	
+	\[
+		m_0 \cdot \mes D \le \int\limits_D f(x) dx \le M_0 \cdot \mes D.
+	\]
+\end{enumerate}
+
+
+Обоснование всех этих свойств проводится по той же схеме, 
+что и для однократного интеграла Римана.
+
+Аналогично Ф1П обосновываются \emph{критерий Гейне} 
+и \emph{критерий Коши} интегрируемости ФНП,
+а также \emph{$N$-лемма} для критерия Коши интегрируемости ФНП. 
+На основании этого, так же, как и для
+интегралов Римана, доказывается
+
+\begin{thm}[об интегрируемости непрерывных ФНП]
+	Если $f \in C(D)$, т.~е. $f$ непрерывна на измеримом компакте
+	 $D \subset \R^n$, то $f \in R(D)$,
+	т.~е. интегрируема на $D$.
+\end{thm}
+
+\begin{crl*}[теорема о среднем для ФНП]
+	Пусть $f \in C(D)$, а $g \subset R(D)$, где $D \subset \R^n$~---
+	 измеримый компакт. Если функция $g(x)$ сохраняет один и 
+	 тот же знак $\forall x \in D $, то тогда $\exists 
+	 x_0 \in D \subset \R^n \implies$
+	
+	\begin{equation}
+	\label{integral-formula}
+	\int\limits_D f(x)g(x)dx =
+	f(x_0)\int\limits_Dg(x)dx.
+	\end{equation}
+\end{crl*}
+
+Обоснование \eqref{integral-formula} проводится по той же 
+схеме, что и для интеграла Римана.
+
+\begin{rem}
+	Если взять в \eqref{integral-formula} 
+	$g(x) \equiv 1\ \forall x \in D$, то получаем
+	\[
+		\text{если } f \in C(D), 
+		\text{ то }\exists x_0 \in D 
+		\text{ такое, что } \int\limits_Df(x)dx = f(x_0) \mes D,
+	\]
+	Это равенство соответствует простейшей теореме о 
+	среднем для непрерывных ФНП.
+\end{rem}
+	
+\end{document}

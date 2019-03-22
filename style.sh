@@ -11,7 +11,7 @@ finish() {
 trap 'finish 2' SIGHUP SIGINT SIGQUIT SIGTERM
 
 error() {
-	EXITCODE=1
+	local EXITCODE=1
 	echo "------------"
 	echo "ERROR: $*"
 	echo
@@ -19,19 +19,24 @@ error() {
 }
 
 check() {
-	GREP_PARAMS=(--color -C 1 -nEH)
+	local GREP_PARAMS=(--color -C 1 -nH)
+	local GREP_MODE=-E
 	while :; do
 		case "$1" in
 			--)
 				shift
 				break
 			;;
+			-P)
+				GREP_MODE=-P
+				shift
+			;;
 			*)
 				break
 			;;
 		esac
 	done
-	grep "${GREP_PARAMS[@]}" "$2" "$1" && error "$3"
+	grep "${GREP_MODE}" "${GREP_PARAMS[@]}" -- "$2" "$1" && error "$3"
 }
 
 check_file() {
@@ -65,8 +70,8 @@ Use equation and \eqref{}.'
 	      'Use ~--- for a dash. Example:
 Это~--- тире'
 	
-	check -- "$1" \
-	      '(\\in|\\subset)\s+R' \
+	check -P -- "$1" \
+	      '(\\in|\\subset)\s+R(?!\s*\\left\s*\(|\s*\()' \
 	      'Use \R instead of R (if it'\''s set of real numbers)'
 	
 	check -- "$1" \
@@ -76,6 +81,11 @@ Use equation and \eqref{}.'
 	check -- "$1" \
 	      '\.\.\.' \
 	      'Use \dots (or \ldots)'
+	
+	check -- "$1" \
+	      '\\int\s*\\int' \
+	      'Use \iint for double integral, \iiint for triple integral'
+	
 }
 
 export -f error
