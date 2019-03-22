@@ -211,12 +211,18 @@
 	\lambda_k \dfrac{\partial F_k }{\partial x_j} = 0,\ j = \overline{1, n}
 	\end{equation}
 	Присоединяя к $n$ уравнениям \eqref{lec11.1:14} $m$
-	уравнений связи, получаем систему
+	уравнений связи
+	
+	\begin{equation}
+	 \label{lec11.1:15}
+	 F_k(x, y) = 0,\ k = \overline{1, m},
+	\end{equation}
+	получаем систему
 	\eqref{lec11.1:12},
 	\eqref{lec11.1:14},
-	\eqref{lec_10.num_1}
+	\eqref{lec11.1:15}
 	из $ \left( n + 2m \right) $ уравнений
-	% здесь непонятно, как правильно
+	
 	\[
 	\begin{cases}
 	\dfrac{\partial f }{\partial x_j} + \sum\limits_{k=1}^{m}
@@ -236,8 +242,7 @@
 	функции Лангранжа \eqref{lec11.1:8}, где все переменные равноправны.
 	
 	Действительно, 
-	\begin{multline}
-	\label{lec11.1:15}
+	\begin{multline*}
 	dL\left( x, y, \lambda \right) = d\left( f\left( x, y\right) 
 	+ \sum\limits_{k=1}^{m}\lambda_k F_k\left( x, y \right) \right) =
 	\\
@@ -252,8 +257,8 @@
 	{\partial y_i}  \right) dy_i}_{= 0\ 
 	\eqref{lec11.1:12}}
 	+ \underbrace{\sum\limits_{k=1}^{m} F_k d \lambda_k}
-	_{= 0\ \eqref{lec_10.num_1}} = 0
-	\end{multline}
+	_{= 0\ \eqref{lec11.1:15}} = 0
+	\end{multline*}
 	
 	То есть, $dL\left( x, y, z \right) = 0$, что соответствует уравнению 
 	стационарной точки для функции Лагранжа. Найдя эту функцию, дальнейшие
@@ -324,8 +329,12 @@
 	+ 2\lambda_0y\right)dy\right) +\] 
 	\[ + \left(2 - 2\lambda_0z\right)\left(-\frac{1}{2}dx + dy\right) \] 
 	\[d^2G(M_1) = \left[\lambda_1 = \frac{3}{2}\right] > 0\]
-	Если $f\left(x\right)$, где $x \in D \subset \R^n$, непрерывна на $D$,
-	где $D$ ~--- компакт, то по т.Вейерштрасса получаем
+	
+	\section{Глобальный экстремум ФНП}
+	
+	Рассмотрим ФНП $f\left(x\right)$, $x = (x_1, \dots, 
+	x_n) \in D \subset \R^n$. Если $f(x)$ непрерывна на $D$,
+	где $D$~--- компакт, то по т.Вейерштрасса получаем
 	\[ \exists M = \max\limits_{x \in D} f(x) \in \R,
 	m = \min\limits_{x \in D} f(x) \in \R \]
 	Эти значения называются \emph{глобальными эктремумами} $f(x)$ на $D$.
