@@ -5,7 +5,8 @@ LATEXMK_FLAGS =
 
 all: style build
 
-build:
+build: git-revision.out
+	bash git_rev.sh
 	$(LATEXMK) -pdf $(LATEXMK_FLAGS) main.tex </dev/null
 
 style:
