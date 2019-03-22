@@ -92,12 +92,14 @@
 	\end{equation}
 	являющаяся линейной функцией от $(\Delta x_1, \ldots, \Delta x_n)$ 
 	называется $\emph{дифференциалом первого порядка}$ рассматриваемой ФНП в
-	точке $x_0$. Используя $\eqref{differential}$ в $\eqref{defn_of_diff}$ 
+	точке $x_0$. Используя $\eqref{deriv}$ в $\eqref{differential}$ 
 	получим:
 	\[dx_k = \Delta x_k \quad \forall \ \text{fix } 1\leq k \leq n\].
 	
-	Для независимых переменных $x_1, \ldots, x_n$ под их дифференциалом
-	$dx_k,\ k = \overline{1, n}$ понимается произвольное допустимое приращение.
+	В связи с этим,
+	для независимых переменных $x_1, \ldots, x_n$ под их дифференциалом
+	$dx_k$ понимается произвольное допустимое приращение
+	$\Delta x_k,\ k = \overline{1, n}$.
 	
 	В результате $\eqref{differential}$ перепишется как 
 	\begin{equation}
@@ -105,6 +107,8 @@
 		df(x_0) = \sum_{k = 1}^{n} \pderiv{f(x_0)}{x_k}\Delta x_k.
 	\end{equation}
 	В дальнейшем будем обозначать $\displaystyle\pderiv{f(x_0)}{x_k} = 
-	f_{x_k}'(x_0)$.\\
-	\[\eqref{other_different} \iff \sum_{k = 1}^{n} f_{x_k}'(x_0) dx_k.\]
+	f_{x_k}'(x_0)$.
+	Поэтому
+	\[\eqref{other_different} \iff 
+	df(x_0) = \sum_{k = 1}^{n} f_{x_k}'(x_0) dx_k.\]
 \end{document}
