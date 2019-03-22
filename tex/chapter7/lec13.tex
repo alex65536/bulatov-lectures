@@ -131,99 +131,128 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
  	Аналогично доказывается равенство и в левой части \eqref {lec_13, num_13} 
 \end{proof}
 
+\begin{rems} 
+	
+	\quad
+	
+	\begin{enumerate}
+		\item  На практике формулы eqref (6 надо сделать ссылкой), 
+		\eqref {lec_13, num_13} записываются в виде 
+		\[ I = \int\limits_a^b dx \int\limits_c^d f \left( x, y \right) dy = 
+		\int\limits_c^d dy \int\limits_a^b f \left( x, y \right) dx \]
+		
+		Такое представление 2И называется представлением через 
+		повторные однократные интегралы.
+		
+		\item Полученный результат естественным образом обобщается
+		общим случаем $ f \in \R(\text{П}) $ и когда
+		\[
+		\begin{cases}
+		G \left( x \right) = \int\limits_c^d f \left( x, y \right) dy \\
+		\left[ a, b \right] 
+		\end{cases}
+		\]
+		также интегрируема на $ \left[ a, b \right] $
+		
+		Здесь двойной интеграл
+		\begin{equation}
+		\label{lec_13, num_17}
+		\underset{\substack{
+				a \leq x \leq b \\
+				c \leq y \leq d
+		}}{\iint} f \left( x, y \right) dx dy = 
+		\int\limits_a^b G \left( x \right) dx  =
+		\int\limits_a^b dx \int\limits_c^d f \left( x, y \right) dy
+		\end{equation}
+		
+		Аналогично, когда вместо $ G \left( x \right) $ используется
+		$ U \left( y \right) = \int\limits_a^b f \left( x, y \right) dx $, 
+		которая предполагается также интегрируемой на 
+		$ \left[ c, d \right]  $. Здесь
+		
+		\begin{equation}
+		\label{lec_13, num_18}
+		\underset{\substack{
+				a \leq x \leq b \\
+				c \leq y \leq d
+		}}{\iint} f \left( x, y \right) dx dy = 
+		\int\limits_c^d U \left( y \right) dy  =
+		\int\limits_c^d dy \int\limits_a^b f \left( x, y \right) dx
+		\end{equation}
+		
+	\end{enumerate}
+	
+\end{rems}
 
-
-
-\begin{defn}[Коши]
-    \[\forall \eps > 0 \quad \exists \delta > 0 \quad \forall x \in D(f) \quad
-      0 < \abs{x-x_0} < \delta \implies \abs{f(x) - a} \le \eps\]
-\end{defn}
-
-\begin{thm}[Про \LaTeX]
-    \LaTeX\ крут :)
-\end{thm}
-
-\begin{proof}
-    По определению.
-\end{proof}
-
-\begin{crl}[\texttt{alex65536}]
-    Электронный конспект стоит вести в \LaTeX'е.
+\begin{crl}[о вычислении 2И по криволинейной трапеции]
+	Если $ f \in C \left( \widetilde{T} \right) $, где $ \widetilde{T} \subset \R^2 $ - 
+	криволинейная трапеция вдоль $ Oy $, т.е 
+	\begin{equation}
+	\label{lec_13, num_19}
+	\widetilde{T} = \left\lbrace 
+	\left( x, y\right) \in \R^2\ | \ c \left( x \right) \leq y \leq d \left( x \right),
+	 a \leq x \leq b \right\rbrace
+	 \end{equation}
+	 То когда $c \left( x \right), d \left( x \right) $ - непрерывны на 
+	 $ \left[ a, b \right] $, то имеем
+	 \begin{equation}
+	 \label{lec_13, num_20}
+	 \iint\limits_{\widetilde{T}} f \left( x, y \right)  dxdy = 
+	 \int\limits_a^b dx \int\limits_{c \left( x \right) }^{ d \left( x \right) } 
+	 f \left( x, y \right) dy
+	 \end{equation}
+	 
+	 Аналогично в случае, когда $ f \in C \left( \overline{T} \right) $, где $ \overline{T} $ - 
+	 криволинейная трапеция вдоль $ Ox $, т.е 
+	 \begin{equation}
+	 \label{lec_13, num_21}
+	 \overline{T} = \left\lbrace 
+	 \left( x, y\right) \in \R^2\ | \ a \left( y \right) \leq x \leq b \left( y \right),
+	 c \leq y \leq d \right\rbrace
+	 \end{equation}
+	 
+	 Когда $ a \left( y \right), b \left( y \right) $ - непрерывны на $ \left[ c, d \right] $
+	 получаем:
+	 \begin{equation}
+	 \label{lec_13, num_22}
+	 \iint\limits_{\overline{T}} f \left( x, y \right) dx dy = \int\limits_c^d dy 
+	 \int\limits_{a \left( y \right) } ^ {b \left( y \right) } f \left( x, y \right) dx
+	 \end{equation}
 \end{crl}
 
-\begin{crl}
-    \LaTeX-документы текстовые,
-    поэтому можно использовать \texttt{git} для конроля версий.
-\end{crl}
-
-\begin{rem}
-    Числовые множества в \LaTeX: $\R\C\Q\N\Z$.
-\end{rem}
-
-\begin{exmp}
-    Пример примера :)
-\end{exmp}
-
-
-\begin{lem}[О единственном следствии из теоремы]
- Следствие может быть без номера (если оно одно)
-\end{lem}
-
 \begin{proof}
- Используйте \texttt{crl*}!
-\end{proof}
-
-\begin{crl*}
-    Получится как-то так
-\end{crl*}
-
-\begin{exc}
-    За\LaTeX'ать весь матан.
-\end{exc}
-
-\bigskip
-
-Заметим, что строчки лучше делать короткими.
-Так будет проще смотреть изменения.
-
-\begin{exmp}[Маяковский]
-
-    Такой текст
-
-\begin{verbatim}
-    Послушайте!
-    Ведь, если звезды зажигают~--
-    значит~-- это кому-нибудь нужно?
-    Значит~-- кто-то хочет, чтобы они были?
-    Значит~-- кто-то называет эти плевочки
-                                  жемчужиной?
-\end{verbatim}
-
-    отформатируется как
-
-    \medskip
-
-    Послушайте!
-    Ведь, если звезды зажигают~--
-    значит~-- это кому-нибудь нужно?
-    Значит~-- кто-то хочет, чтобы они были?
-    Значит~-- кто-то называет эти плевочки
-                                  жемчужиной?
-
-\end{exmp}
-
-\begin{thm}[Критерий]
- В критерии надо доказывать как необходимость, так и
- достаточность.
-\end{thm}
-
-\begin{proof}
- \quad
-
- \nec Необходимость критерия надо доказать!
-
- \suff Достаточность критерия тоже надо доказать!
-
+	Докажем \eqref {lec_13, num_20} 
+	
+	Рассмотрим 
+	\[ 
+	f_0 \left( x, y \right) =  
+	\begin{cases}
+	f \left( x, y \right),  \left( x, y \right) \in \widetilde{T} \\
+	0, \left( x, y \right) \notin \widetilde{T}
+	\end{cases}
+	\]
 \end{proof}
 
 \end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
