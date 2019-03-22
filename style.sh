@@ -23,13 +23,13 @@ check() {
 	local GREP_MODE=-E
 	while :; do
 		case "$1" in
-			--)
-				shift
-				break
-			;;
 			-P)
 				GREP_MODE=-P
 				shift
+			;;
+			--)
+				shift
+				break
 			;;
 			*)
 				break
