@@ -1,0 +1,442 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\begin{document}
+
+\begin{thm}[неравенство Коши-Буняковского]
+ В любом линейном евклидовом пространстве $P$ над полем $\R$
+ выполняется неравенство
+ 
+ \begin{equation}
+  \label{kosh-bun}
+  (\left<x, y\right>)^2 \leq \left(\left<x, x\right>\right) 
+  \cdot \left(\left<y, y\right>\right)
+ \end{equation}
+\end{thm}
+\begin{crl*}[неравенство Минковского]
+ В линейном евклидовом пространстве $P$ для любых $x, y \in P$ имеем:
+ 
+ \begin{equation}
+  \label{mink}
+  \sqrt{\left<x+y, x+y\right>} \le
+  \sqrt{\left<x, x\right>} + \sqrt{\left<y, y\right>}
+ \end{equation}
+
+\end{crl*}
+\begin{thm}[О нормируемости линейного евклидова пространства $\R^n$]
+ Любое линейное евклидово пространство $\R^n$ с произвольным скалярным
+ произведением нормируется с помощью естественной нормы
+ 
+ \begin{equation}
+  \label{rn-norm}
+  \norm x = \sqrt{\left<x, x\right>} \quad \forall x \in \R^n
+ \end{equation}
+ 
+\end{thm}
+\begin{thm}[О метризируемости произвольного линейного нормируемого 
+	пространства $\R^n$]
+ Любое линейное нормированное пространство $\R^n$ с нормой
+ \eqref{norm-disp} метризируется с помощью естественного расстояния
+
+ \begin{equation}
+  \label{nat-dist}
+  \rho(x, y) = \norm{x-y}\quad \forall x, y \in \R^n
+ \end{equation}
+ 
+\end{thm}
+\begin{thm}[о непрерывности композиции ФНП]
+    	Если $n$ функций $g_k(t),\ k = 
+    	\overline{1,n}$ от $m$ переменных $t = (t_1, \ldots, t_m) \in D(g) 
+    	\subset \R^m$ непрерывны в точке $t_0 = \left( t_{01}, \ldots, t_{0m} 
+    	\right) \in D(g),$ где $g = (g_1, \ldots, g_n)$, a $f(x) = 
+    	f(x_1, \ldots, x_n)$ непрерывна в точке $x_0 = g(t_0) \in D(f)$,
+    	то, в случае существования композиции 
+    	\begin{equation}
+    	\label{composition}
+    		h(t) = f(g(t)) = f(g_1(t), g_2(t), \ldots, g_n(t))
+    	\end{equation}
+        сложная функция \eqref{composition} будет непрерывна в точке 
+        $t_0 \in D(g)$.
+    \end{thm}
+\begin{crl*}[о пределе композиции ФНП]
+    	Пусть $\exists \lim\limits_{t \to t_0}g_k(t) = p_k, \ 
+    	\forall k = \overline{1, n}, \  g(t) = (g_1(t), 
+    	\ldots, g_m(t)),\ t = (t_1,
+    	 \ldots, t_m) \in D(g) \subset \R^m,$ а $t_0 = 
+    	 (t_{01}, \ldots, t_{0m})$~---
+    	предельная точка для $D(g)$. Если функция $f(x)$ непрерывна в точке 
+    	$x_0 = (p_1, \ldots, p_n) \in D \subset \R^n$, то в случае 
+    	существования композиции $h(t) = f(g(t))$ соответствующих окрестностей
+    	$t_0$ и $x_0$ 
+    	\[
+    	    \exists \lim\limits_{t \to t_0}h(t) = \lim\limits_{t \to t_0}f(g(t)) =
+    		\left[f\text{~--- непрерывна}\right] = f(\lim\limits_{t \to t_0}g(t)) = 
+    		\left[
+    		\begin{array}{l}
+    			x = g(t) \underset{t \to t_0}{\to} x_0 \\
+    			x_0 = (p_1, \ldots, p_n) 
+    		\end{array}
+    		\right] = 
+    	\]
+    	\[
+    		= f(p_1, \ldots, p_n) = f(x_0).
+    	\]
+    \end{crl*}
+\begin{thm}[О промежуточном значении непрерывной на связном множестве ФНП]
+		Пусть $f \in C(D), D \subset \R^n$~--- связное множество, то есть 
+		множество, у которого две любые точки можно соединить линией  $\in D$.
+		Если $f(x)$ принимает на $D$ значения $u_1, u_2$,то есть $\exists 
+		a, b \in D: \ u_1 = f(a), u_2 = f(b),$ тогда $u = f(x)$ принимает
+		на $D$ все промежуточные значения между $u_1$ и $u_2$.
+	\end{thm}
+\begin{crl*}[О прохождении непрерывной ФНП через ноль]
+			Если $f(x)$ непрерывна на $D \subset \R^n$ и $\exists a,b \in D: 
+			f(a) \cdot f(b) > 0$, то $\exists x_0 \in D : f(x_0) = 0.$
+	\end{crl*}
+\begin{thm}[Вейерштрасс]
+		Если $f(x)$ непрерывна на компакте $D \subset \R^n$(ограниченном 
+		замкнутом множестве), то $\exists\ \overline{x}, \widetilde{x} \in D:$
+		\[ 
+		\begin{cases}
+		\min f(x) = f(\overline{x}),& x \in D, \\
+		\max f(x) = f(\widetilde{x}),& x \in D
+		\end{cases}
+		\]
+	\end{thm}
+\begin{thm}[Кантор]
+		Если $f(x)$ непрерывна на компакте $D \subset \R^n$, то $f(x)$~---
+		равномерно непрерывна на $D$.
+	\end{thm}
+\begin{thm}[Критерий сходимости n-мерных последовательностей]
+    Последовательность $M_k = (x_{k1}, \dots, x_{kn}) \in \R^n, k 
+    \in \N$ сходится в линейном метрическом пространстве $(\R^n, d)$
+    с евклидовой метрикой $d$ к точке $M_0 = (x_{01}, \dots, x_{0n})
+    \in \R^n$ тогда и только тогда, когда
+    \begin{equation}
+    \label{krit-posl}
+      \forall fix\ j = \overline{1, n} \implies
+      x_{kj}\underset{k\rightarrow\infty}{\longrightarrow} x_{0j}
+    \end{equation}
+  \end{thm}
+\begin{thm}[О равенстве смешанных производных второго порядка ФНП]
+		\label{secdiffeq}
+		Если ФНП $u = f(x)$, $x = \left(x_1, x_2, \dots, x_n\right)\in 
+		D\subset\R^n$, дифференцируема в некоторой окрестности внутренней 
+		точки $x_0 = \left(x_{01}, x_{02}, \dots, x_{0n}\right)\in D$ и имеет 
+		непрерывные смешанные производные $u''_{x_ix_j}(x_0)$, 
+		$u''_{x_jx_i}(x_0)$,\ \ $k\ne j$,\ \ $k, j = \overline{1, n}$, то тогда, 
+		в силу непрерывности этих производных в окрестности $x_0$, выполняется
+		\begin{equation}
+			u''_{x_ix_j} = u''_{x_jx_i}
+			\label{11:diff}
+		\end{equation}
+	\end{thm}
+\begin{thm}[достаточное условие дифференцируемости ФНП]
+Пусть $f(x)$ определена в области $D \subset \R^n$. Если её
+частные производные в некоторой окрестности $V(M_0)\subset D$ точки
+$M_0$ существуют и непрерывны, то $f(x)$ дифференцируема в $M_0$.
+\end{thm}
+\begin{thm}[о дифференцировании сложных ФНП]
+Пусть $g_k(t),k=\overline{1,n}$~--- функции, определённые на 
+$D\subset\R^m$ и непрерывно дифференцируемые в некоторой окрестности 
+точки $t_0\in D$.
+
+Пусть также $f(x)$~--- функция, определённая на $E\subset\R^n$ и
+непрерывно дифференцируемая в соответствующей окрестности точки $x_0 = 
+(g_1(t_0),g_2(t_0),\dots,g_n(t_0))\in E$.
+
+Тогда, если существует их композиция $h(t) = f(g(t)) =
+f(g_1(t),g_2(t),\dots,g_n(t))$, то она также является непрерывно 
+дифференцируемой в окрестности $t_0$, причём
+\[\pderiv{h(t_0)}{t_j}=\sum_{i=1}^{n}
+\pderiv{f(x_0)}{x_i}\cdot
+\pderiv{g_i(t_0)}{t_j},\ j=\overline{1,m}\]
+\end{thm}
+\begin{crl}[инвариантность формы 1-го дифференциала ФНП]
+Для $h(t) = f(g(t))$ в случае непрерывно дифференцируемых в 
+соответствующих окрестностях $f(x), g(x)$ имеем
+\[dh=\sum_{j=1}^m\pderiv{h(t)}{t_j}dt_j=
+\sum_{i=1}^n\pderiv{f(x)}{x_i}dx_i,\]
+где $dt_j$~--- приращение независимой переменной, а $dx_i=dg_i(t)$ --
+произвольное приращение $g_i(t)$.
+\end{crl}
+\begin{thm}[Достаточное условие локального экстремума ФНП]
+        Если у дважды дифференцируемой ФНП $u=f(x),\ x \in D \subset \R^n$
+        в некоторой окрестности $V(x_0) \subset D$ внутренней стационарной
+        точки $x_0 \in D$ второй дифференциал \eqref{lec8:6} является
+        знакопостоянной квадратичной формой относительно $dx_k,\ k =
+        \overline{1, n}$, то стационарная точка $x_0$ будет точкой локального
+        экстремума ФНП. При этом если квадратичная форма \eqref{lec8:6}
+        положительно определена, то стационарная точка $x_0$ является точкой
+        локального минимума. Если \eqref{lec8:6} является отрицательно
+        определённой квадратичной формой, то $x_0$ является точкой локального
+        максимума $f(x)$.
+    \end{thm}
+\begin{thm}[Необходимое условие ЛЭФНП]
+		Пусть ФНП
+		\[
+		\begin{cases}
+			u = f (x), \\
+			x = (x_1, \ldots, x_n) \in D \subset \R^n; \\
+		\end{cases}
+		\]
+		дифференцируема в некоторой окрестности $V (x_0) \subset D$
+		внутренней точки $x_0 \in D$. Если эта $x_0$ является экстремальной
+		для $f (x)$, то $x_0$ --- стационарная точка
+		для $f (x)$, т.е. для произвольных допустимых
+		\begin{equation}
+		\label{nec cond loc extr}
+			\forall dx = \D x \in \R^n \implies df (x_0) = 0.
+		\end{equation}
+	\end{thm}
+\begin{thm}[Об однозначной разрешимости ФУ]
+		Пусть задана функция от $(n+1)$ переменной $F(x, u)$, непрерывная 
+		относительно $x = (x_1, x_2, \ldots,
+	 	x_n) \in \R^n$, $u \in \R$ в соответствующих окрестностях $x_0 \in D 
+	 	\subset \R^n$, $u_0 \in I \subset \R$, причём $F(x_0,u_0)=0$. Если $F(x,u)$ 
+	 	непрерывно дифференцируема по $u$, а также 
+		\begin{equation}
+			F'_u(x_0, u_0) \ne 0, \label{lec8.1:4}
+		\end{equation}
+		то тогда ФУ \eqref{lec8.1:1} с начальным условием \eqref{lec8.1:2} имеет 
+		единственное решение $u = u(x)$ в некоторой окрестности $V(x_0) 
+		\subset D$, удовлетворяющее
+	 	\begin{equation}
+			u(x_0) = u_0. \label{lec8.1:5}
+		\end{equation}
+	 \end{thm}
+\begin{thm}[О дифференцировании неявных ФНП]
+		Пусть наряду со всеми условиями предыдущей теоремы дополнительно 
+		функция $F(x, u)$ непрерывно дифференцируема по $x$. Тогда ФУ 
+		\eqref{lec8.1:1} с начальным условием \eqref{lec8.1:2} также разрешимо, 
+		и его единственное решение в соответствующих окрестностях 
+		рассматриваемых точек $x_0 \in D, u_0 \in I$ будет удовлетворять 
+		начальному условию $u(x_0)=u_0$, а также будет дифференцируемо в 
+		этой точке по $x$, а частные производные полученной ФНП $u = u(x)$ в 
+		соответствующих окрестностях $x_0, u_0$ находятся по формуле
+		\begin{equation}
+			u'_{x_k} = -\frac{F'_{x_k}(x,u)}{F'_u(x,u)}. \label{lec8.1:6}
+		\end{equation}
+    \end{thm}
+\begin{thm}[признак функциональной независимости системы функций]
+	Пусть функции $f_k\left(x\right)$, $k = \overline{1,m}$,
+	$x \in D \subset \R^n$ непрерывно дифференцируемы в некоторой 
+	окрестности $V(x_0) \subset D$ внутренней точки $x_0 \in D$. Если 
+	для матрицы Якоби \eqref{lec_9,num_23} в точке $x_0 \implies$ 
+	\begin{equation} \label{lec_10, num_24}
+		\rank A = m,
+	\end{equation}
+ 	то тогда рассматриваемая функциональная система 
+ 	является независимой в $V(x_0)$.
+\end{thm}
+\begin{thm}[об однозначной разрешимости СФУ]
+Пусть функции $F_k\left(x, u\right)$, $k = \overline{1, m}$
+от $(n+ m)$ переменных 
+$x = \left(x_1, x_2, \dots, x_n\right) \in D \subset \R^n$,
+$u = \left(u_1, u_2, \dots, u_m\right) \in G \subset \R^m$
+непрерывны по $x$ и по $u$ в некоторых окрестностях точек
+$x_0 = \left(x_{01}, x_{02}, \dots, x_{0n}\right) \in D 
+\subset \R^n$,
+$u_0 = \left(u_{01}, u_{02}, \dots, u_{0m}\right) \in G
+\subset \R^m$. Если выполнено начальное условие
+\begin{equation}
+    \label{lec_9.num_12}
+    F_k(x_0, u_0) = \vec{0},\ k = \overline{1, m},
+\end{equation}
+то в случае непрерывной дифференцируемости
+\begin{equation}
+    \label{lec_9.num_13}
+    F = \left(F_1, F_2, \dots, F_m\right) \in \R^m
+\end{equation}
+по $u = \left(u_1, u_2, \dots, u_m\right) \in \R^m$,
+то если якобиан
+$I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$
+рассматриваемой СФУ $F\left(x, u\right) = \vec{0}$
+в точке $\left(x_0, u_0\right)$ удовлетворяет условию
+\begin{equation}
+    \label{lec_9.num_14}
+    I(x_0, u_0) \neq 0,
+\end{equation}
+тогда система \eqref{lec_9.num_7} будет иметь в 
+соответствующих окрестностях точек $x_0\ \text{и}\ u_0$
+единственное решение, т.е. $\exists!u = u(x)$ удовлетворяющая начальному
+ условию $u(x_0) = u_0$.
+\end{thm}
+\begin{thm}[об интегрируемости непрерывных ФНП]
+	Если $f \in C(D)$, т.е. непрерывна на измеримом компакте
+	 $D \subset \R^n$, то $f \in \R(D)$,
+	т.е. интегрируема на $D$.
+\end{thm}
+\begin{crl*}[теорема о среднем для ФНП]
+	Пусть $f \in C(D)$, а $g \subset \R(D)$, где $D \subset \R^n$~---
+	 измеримый компакт. Если функция $g(x)$ сохраняет один и 
+	 тот же знак $\forall x \in D $, то $\exists x_0 \in D \subset \R^n \implies$
+	
+	\begin{equation}
+	\label{integral-formula}
+	\int\limits_D f(x)g(x)dx =
+	f(x_0)\int\limits_Dg(x)dx.
+	\end{equation}
+	
+	Доказательство по той же схеме, что и для Ф1П.
+\end{crl*}
+\begin{thm}[неравенство Коши-Буняковского]
+ В любом линейном евклидовом пространстве $P$ над полем $\R$
+ выполняется неравенство
+ 
+ \begin{equation}
+  \label{kosh-bun}
+  (\left<x, y\right>)^2 \leq \left(\left<x, x\right>\right) 
+  \cdot \left(\left<y, y\right>\right)
+ \end{equation}
+\end{thm}
+\begin{crl*}[неравенство Минковского]
+ В линейном евклидовом пространстве $P$ для любых $x, y \in P$ имеем:
+ 
+ \begin{equation}
+  \label{mink}
+  \sqrt{\left<x+y, x+y\right>} \le
+  \sqrt{\left<x, x\right>} + \sqrt{\left<y, y\right>}
+ \end{equation}
+
+\end{crl*}
+\begin{thm}[О нормируемости линейного евклидова пространства $\R^n$]
+ Любое линейное евклидово пространство $\R^n$ с произвольным скалярным
+ произведением нормируется с помощью естественной нормы
+ 
+ \begin{equation}
+  \label{rn-norm}
+  \norm x = \sqrt{\left<x, x\right>} \quad \forall x \in \R^n
+ \end{equation}
+ 
+\end{thm}
+\begin{thm}[О метризируемости произвольного линейного нормируемого 
+	пространства $\R^n$]
+ Любое линейное нормированное пространство $\R^n$ с нормой
+ \eqref{norm-disp} метризируется с помощью естественного расстояния
+
+ \begin{equation}
+  \label{nat-dist}
+  \rho(x, y) = \norm{x-y}\quad \forall x, y \in \R^n
+ \end{equation}
+ 
+\end{thm}
+\begin{thm}[о непрерывности композиции ФНП]
+    	Если $n$ функций $g_k(t),\ k = 
+    	\overline{1,n}$ от $m$ переменных $t = (t_1, \ldots, t_m) \in D(g) 
+    	\subset \R^m$ непрерывны в точке $t_0 = \left( t_{01}, \ldots, t_{0m} 
+    	\right) \in D(g),$ где $g = (g_1, \ldots, g_n)$, a $f(x) = 
+    	f(x_1, \ldots, x_n)$ непрерывна в точке $x_0 = g(t_0) \in D(f)$,
+    	то, в случае существования композиции 
+    	\begin{equation}
+    	\label{composition}
+    		h(t) = f(g(t)) = f(g_1(t), g_2(t), \ldots, g_n(t))
+    	\end{equation}
+        сложная функция \eqref{composition} будет непрерывна в точке 
+        $t_0 \in D(g)$.
+    \end{thm}
+\begin{crl*}[о пределе композиции ФНП]
+    	Пусть $\exists \lim\limits_{t \to t_0}g_k(t) = p_k, \ 
+    	\forall k = \overline{1, n}, \  g(t) = (g_1(t), 
+    	\ldots, g_m(t)),\ t = (t_1,
+    	 \ldots, t_m) \in D(g) \subset \R^m,$ а $t_0 = 
+    	 (t_{01}, \ldots, t_{0m})$~---
+    	предельная точка для $D(g)$. Если функция $f(x)$ непрерывна в точке 
+    	$x_0 = (p_1, \ldots, p_n) \in D \subset \R^n$, то в случае 
+    	существования композиции $h(t) = f(g(t))$ соответствующих окрестностей
+    	$t_0$ и $x_0$ 
+    	\[
+    	    \exists \lim\limits_{t \to t_0}h(t) = \lim\limits_{t \to t_0}f(g(t)) =
+    		\left[f\text{~--- непрерывна}\right] = f(\lim\limits_{t \to t_0}g(t)) = 
+    		\left[
+    		\begin{array}{l}
+    			x = g(t) \underset{t \to t_0}{\to} x_0 \\
+    			x_0 = (p_1, \ldots, p_n) 
+    		\end{array}
+    		\right] = 
+    	\]
+    	\[
+    		= f(p_1, \ldots, p_n) = f(x_0).
+    	\]
+    \end{crl*}
+\begin{thm}[О промежуточном значении непрерывной на связном множестве ФНП]
+		Пусть $f \in C(D), D \subset \R^n$~--- связное множество, то есть 
+		множество, у которого две любые точки можно соединить линией  $\in D$.
+		Если $f(x)$ принимает на $D$ значения $u_1, u_2$,то есть $\exists 
+		a, b \in D: \ u_1 = f(a), u_2 = f(b),$ тогда $u = f(x)$ принимает
+		на $D$ все промежуточные значения между $u_1$ и $u_2$.
+	\end{thm}
+\begin{crl*}[О прохождении непрерывной ФНП через ноль]
+			Если $f(x)$ непрерывна на $D \subset \R^n$ и $\exists a,b \in D: 
+			f(a) \cdot f(b) > 0$, то $\exists x_0 \in D : f(x_0) = 0.$
+	\end{crl*}
+\begin{thm}[Вейерштрасс]
+		Если $f(x)$ непрерывна на компакте $D \subset \R^n$(ограниченном 
+		замкнутом множестве), то $\exists\ \overline{x}, \widetilde{x} \in D:$
+		\[ 
+		\begin{cases}
+		\min f(x) = f(\overline{x}),& x \in D, \\
+		\max f(x) = f(\widetilde{x}),& x \in D
+		\end{cases}
+		\]
+	\end{thm}
+\begin{thm}[Кантор]
+		Если $f(x)$ непрерывна на компакте $D \subset \R^n$, то $f(x)$~---
+		равномерно непрерывна на $D$.
+	\end{thm}
+\begin{thm}[Критерий сходимости n-мерных последовательностей]
+    Последовательность $M_k = (x_{k1}, \dots, x_{kn}) \in \R^n, k 
+    \in \N$ сходится в линейном метрическом пространстве $(\R^n, d)$
+    с евклидовой метрикой $d$ к точке $M_0 = (x_{01}, \dots, x_{0n})
+    \in \R^n$ тогда и только тогда, когда
+    \begin{equation}
+    \label{krit-posl}
+      \forall fix\ j = \overline{1, n} \implies
+      x_{kj}\underset{k\rightarrow\infty}{\longrightarrow} x_{0j}
+    \end{equation}
+  \end{thm}
+\begin{thm}[О равенстве смешанных производных второго порядка ФНП]
+		\label{secdiffeq}
+		Если ФНП $u = f(x)$, $x = \left(x_1, x_2, \dots, x_n\right)\in 
+		D\subset\R^n$, дифференцируема в некоторой окрестности внутренней 
+		точки $x_0 = \left(x_{01}, x_{02}, \dots, x_{0n}\right)\in D$ и имеет 
+		непрерывные смешанные производные $u''_{x_ix_j}(x_0)$, 
+		$u''_{x_jx_i}(x_0)$,\ \ $k\ne j$,\ \ $k, j = \overline{1, n}$, то тогда, 
+		в силу непрерывности этих производных в окрестности $x_0$, выполняется
+		\begin{equation}
+			u''_{x_ix_j} = u''_{x_jx_i}
+			\label{11:diff}
+		\end{equation}
+	\end{thm}
+\begin{thm}[достаточное условие дифференцируемости ФНП]
+Пусть $f(x)$ определена в области $D \subset \R^n$. Если её
+частные производные в некоторой окрестности $V(M_0)\subset D$ точки
+$M_0$ существуют и непрерывны, то $f(x)$ дифференцируема в $M_0$.
+\end{thm}
+\begin{thm}[о дифференцировании сложных ФНП]
+Пусть $g_k(t),k=\overline{1,n}$~--- функции, определённые на 
+$D\subset\R^m$ и непрерывно дифференцируемые в некоторой окрестности 
+точки $t_0\in D$.
+
+Пусть также $f(x)$~--- функция, определённая на $E\subset\R^n$ и
+непрерывно дифференцируемая в соответствующей окрестности точки $x_0 = 
+(g_1(t_0),g_2(t_0),\dots,g_n(t_0))\in E$.
+
+Тогда, если существует их композиция $h(t) = f(g(t)) =
+f(g_1(t),g_2(t),\dots,g_n(t))$, то она также является непрерывно 
+дифференцируемой в окрестности $t_0$, причём
+\[\pderiv{h(t_0)}{t_j}=\sum_{i=1}^{n}
+\pderiv{f(x_0)}{x_i}\cdot
+\pderiv{g_i(t_0)}{t_j},\ j=\overline{1,m}\]
+\end{thm}
+\begin{crl}[инвариантность формы 1-го дифференциала ФНП]
+Для $h(t) = f(g(t))$ в случае непрерывно дифференцируемых в 
+соответствующих окрестностях $f(x), g(x)$ имеем
+\[dh=\sum_{j=1}^m\pderiv{h(t)}{t_j}dt_j=
+\sum_{i=1}^n\pderiv{f(x)}{x_i}dx_i,\]
+где $dt_j$~--- приращение независимой переменной, а $dx_i=dg_i(t)$ --
+произвольное приращение $g_i(t)$.
+\end{crl}
+\end{document}
