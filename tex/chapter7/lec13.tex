@@ -14,7 +14,8 @@
 
 Рассмотрим Ф2П $ f \left( x, y \right) $  , где 
 $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое множество 
-в $ \R^2 $ (плоская квадрируемая фигура). В этом случае имеем \emph{2И}:
+в $ \R^2 $ (плоская квадрируемая фигура). 
+В этом случае имеем \emph{2И}:
 
 \begin{equation}
 	\label{lec_13, num_12}
@@ -24,8 +25,9 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
 \begin{thm}[О вычислении 2И по прямоугольнику для 
 непрерывных Ф2П]
     Пусть $ f \left( x, y \right)  $ - непрерывна на прямоугольнике
-    $ \text{П} = \left[\ a, b\ \right] \times \left[\ c, d\ \right] =  \left\lbrace \ 
-    \left( x, y \right) \in \R^2\ |\ a \leq x \leq b, \ c \leq y \leq d\ \right\rbrace $.
+    $ \text{П} = \left[\ a, b\ \right] \times \left[\ c, d\ \right] =  
+    \left\lbrace \ \left( x, y \right) \in \R^2\ |\ 
+    a \leq x \leq b, \ c \leq y \leq d\ \right\rbrace $.
     Тогда для \eqref{lec_13, num_12} $ \implies $
     \begin{equation}
     \label{lec_13, num_13}
@@ -61,14 +63,16 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
  	$ fix\ i = \overline{1, m} $ рассмотрим функцию $ F_i \left( y \right) = 
  	\int\limits_{ x_{i - 1} } ^ {x_i} f \left( x, y \right) dx $, $ i = \overline{1, m} $
  	
- 	Эта функция корректно определена, т.к $ \forall fix\ y \implies f \left( x, y\right) $
+ 	Эта функция корректно определена, 
+ 	т.к $ \forall fix\ y \implies f \left( x, y\right) $
  	непрерывна по $ x \implies $ интегрируема по $ x $. По теореме о среднем
  	для однократных интегралов $ \implies \exists t_{ij} \in \left[ x_{i - 1}, x_i \right] $, 
  	т.ч $ F_j \left( y_j \right) = \int\limits_{x_{i - 1} } ^ {x_i} f \left( x, y_j \right) dx = 
  	f \left(  t_{ij}, y_j \right) \Delta x_i$, $ \Delta x_i = x_i - x_{i - 1}$, где 
  	$ i = \overline{1, m} $
  	
- 	В соответствии с этим получаем множество $ Q = \left\lbrace M_{ij} \right\rbrace $,
+ 	В соответствии с этим получаем множество 
+ 	$ Q = \left\lbrace M_{ij} \right\rbrace $,
  	где $ M_{ij} = \left( t_{ij}, y_j \right) \in \text{П}_{ij} $, $ i = \overline{1, m} $, 
  	$ j = \overline{1, l} $
  	
@@ -112,15 +116,17 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
  	является одной из интегральных сумм для Ф1П  \eqref{lec_13, num_16}.
  	Отсюда при 
  	\[ \widetilde{d} = diam \widetilde{P} = 
- 	\max \left\lbrace \Delta y_j \right\rbrace \underset{1 \leq j \leq l}{\longrightarrow} 0 \]
+ 	\max \left\lbrace \Delta y_j \right\rbrace 
+ 	\underset{1 \leq j \leq l}{\longrightarrow} 0 \]
  	В силу непрерывности, а значит интегрируемости получаем: 
  	\[ \exists \lim\limits_{ \widetilde{d} \to 0 } \sigma = 
- 	\lim\limits_{ \widetilde{d} \to 0 } \sum\limits_{j = 1}^l F \left( y_j \right) \Delta y_j =
+ 	\lim\limits_{ \widetilde{d} \to 0 } 
+ 	\sum\limits_{j = 1}^l F \left( y_j \right) \Delta y_j =
  	\int\limits_c^d F \left( y \right)dy  \]
  	
  	В силу непрерывности и интегрируемости с использованием
- 	специальных интегральный сумм за счет выбора точек, предел $ \sigma $
- 	будет такой же, как и предел общих интегральных сумм 
+ 	специальных интегральный сумм за счет выбора точек, предел 
+ 	$ \sigma $ будет такой же, как и предел общих интегральных сумм 
  	в силу критерия Гейне
  	
  	Таким образом получим, что
@@ -136,7 +142,7 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
 	\quad
 	
 	\begin{enumerate}
-		\item  На практике формулы eqref (6 надо сделать ссылкой), 
+		\item  На практике формулы (6) (надо сделать ссылкой), 
 		\eqref {lec_13, num_13} записываются в виде 
 		\[ I = \int\limits_a^b dx \int\limits_c^d f \left( x, y \right) dy = 
 		\int\limits_c^d dy \int\limits_a^b f \left( x, y \right) dx \]
@@ -261,7 +267,26 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
 	\]
 \end{proof}
 
-
+\begin{exmp}
+	Рассмотрим $ I = \iint\limits_{x^2 + y^2 \leq 2x} f \left( x, y \right) dx dy $, где
+	для простоты считаем, что $ f \left( x, y \right) $ - непрерывна. Получим
+	представление этого 2И через повторные.
+	
+	Выделяя полные квадраты для области интегрирования $ \implies $
+	\[
+	x^2 -2x + y^2 \leq 0 \implies (x-1)^2 + y^2 \leq 1
+	\]
+	\[
+	C \left( 1, 0 \right), R = 1
+	\]
+	Рассмотрим 2 случая:
+	\begin{enumerate}
+		\item   \[ I = \int\limits_a^b dx \int\limits_{c \left( x \right) } ^ 
+		 {d \left( x \right) } f \left( x, y \right) dy \]
+		 Для этого изображаем область интегрирования
+		\item Foo
+	\end{enumerate}
+\end{exmp}
 
 \end{document}
 
