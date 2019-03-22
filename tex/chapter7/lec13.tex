@@ -31,7 +31,8 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
     Тогда для \eqref{lec_13, num_12} $ \implies $
     \begin{equation}
     \label{lec_13, num_13}
-    I = \int\limits_a^b \left( \int\limits_c^d f \left( x, y \right) dy  \right) dx =
+    I = \int\limits_a^b 
+    \left( \int\limits_c^d f \left( x, y \right) dy  \right) dx =
      \int\limits_c^d \left( \int\limits_a^b f \left( x, y \right) dx  \right) dy
     \end{equation}
 \end{thm}
@@ -48,10 +49,12 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
 	 С помощью вертикальных прямых $ x = x_i $, $ i = \overline{1, m} $
 	 и горизонтальных прямых $ y = y_j $, $ j = \overline{1, l} $
 	 прямоугольник $ \text{П} $ разобъется на части: $ \text{П}_{ij} = 
-	 \left[ x_{i - 1}, x_i \right] \times \left[ y_{i - 1}, y_i \right] $, образующим
-	 соответствующее разбиение $ P = \left\lbrace \text{П}_{ij} \right\rbrace $,
-	 $ i = \overline{1, m} $, $ j = \overline{1, l} $ исходного $ \text{П} $. Т.е. 
-	 $ \text{П} = \bigcup\limits_{i = 1}^m \bigcup\limits_{j = 1}^l \text{П}_{ij}$, 
+	 \left[ x_{i - 1}, x_i \right] \times \left[ y_{i - 1}, y_i \right] $, 
+	 образующим соответствующее разбиение 
+	 $ P = \left\lbrace \text{П}_{ij} \right\rbrace $,
+	 $ i = \overline{1, m} $, $ j = \overline{1, l} $ 
+	 исходного $ \text{П} $. Т.е. $ \text{П} = 
+	 \bigcup\limits_{i = 1}^m \bigcup\limits_{j = 1}^l \text{П}_{ij}$, 
 	 которые могут иметь общими лишь граничные точки
 	 
 	 \begin{center}
@@ -61,42 +64,49 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
  	Т.к $ f \in C( \text{П} )$ (т.е непрерывна), то $ f \in C( \text{П}_{ij} )$,
  	$ \forall i = \overline{1, m} , \forall j = \overline{1, l}$. Для каждого 
  	$ fix\ i = \overline{1, m} $ рассмотрим функцию $ F_i \left( y \right) = 
- 	\int\limits_{ x_{i - 1} } ^ {x_i} f \left( x, y \right) dx $, $ i = \overline{1, m} $
+ 	\int\limits_{ x_{i - 1} } ^ {x_i} f \left( x, y \right) dx $, 
+ 	$ i = \overline{1, m} $
  	
  	Эта функция корректно определена, 
  	т.к $ \forall fix\ y \implies f \left( x, y\right) $
  	непрерывна по $ x \implies $ интегрируема по $ x $. По теореме о среднем
- 	для однократных интегралов $ \implies \exists t_{ij} \in \left[ x_{i - 1}, x_i \right] $, 
- 	т.ч $ F_j \left( y_j \right) = \int\limits_{x_{i - 1} } ^ {x_i} f \left( x, y_j \right) dx = 
- 	f \left(  t_{ij}, y_j \right) \Delta x_i$, $ \Delta x_i = x_i - x_{i - 1}$, где 
+ 	для однократных интегралов $ \implies \exists t_{ij} \in 
+ 	\left[ x_{i - 1}, x_i \right] $, т.ч $ F_j \left( y_j \right) = 
+ 	\int\limits_{x_{i - 1} } ^ {x_i} f \left( x, y_j \right) dx = 
+ 	f \left(  t_{ij}, y_j \right) \Delta x_i$, 
+ 	$ \Delta x_i = x_i - x_{i - 1}$, где 
  	$ i = \overline{1, m} $
  	
  	В соответствии с этим получаем множество 
  	$ Q = \left\lbrace M_{ij} \right\rbrace $,
- 	где $ M_{ij} = \left( t_{ij}, y_j \right) \in \text{П}_{ij} $, $ i = \overline{1, m} $, 
+ 	где $ M_{ij} = \left( t_{ij}, y_j \right) \in \text{П}_{ij} $, 
+ 	$ i = \overline{1, m} $, 
  	$ j = \overline{1, l} $
  	
  	Т.к все используемые множества измеримы (квадрируемы в $ \R^2 $), 
  	то для полной \emph{специальной} интегральой суммы
  	\begin{equation}
  	\label{lec_13, num_14}
- 	\sigma = \sigma \left( t, \left( P, Q \right) \right) = \sum\limits_{i = 1}^m 
+ 	\sigma = \sigma \left( t, \left( P, Q \right) \right) = 
+ 	\sum\limits_{i = 1}^m 
  	\sum\limits_{j = 1}^l f \left( M_{ij} \right) \Delta \text{П}_{ij}
  	\end{equation}
- 	где $\Delta \text{П}_{ij} = \Delta x_i \Delta y_j$ - площадь $\text{П}_{ij}$ 
+ 	где $\Delta \text{П}_{ij} = \Delta x_i \Delta y_j$ - 
+ 	площадь $\text{П}_{ij}$ 
  	( $ \Delta x_i = x_i - x_{i-1}, \Delta y_j = y_j - y_{j - 1} $ )
  	
  	Имеем:
- 	\[ \sigma = \sum\limits_{i = 1}^m \sum\limits_{j = 1}^l f \left( M_{ij} \right) 
- 	\Delta x_i \Delta y_j = \]
+ 	\[ \sigma = \sum\limits_{i = 1}^m 
+ 	\sum\limits_{j = 1}^l f \left( M_{ij} \right) \Delta x_i \Delta y_j = \]
  	
- 	\[ = \sum\limits_{j = 1}^l \sum\limits_{i = 1}^m F_i \left( y_j \right) \Delta y_j = 
+ 	\[ = \sum\limits_{j = 1}^l 
+ 	\sum\limits_{i = 1}^m F_i \left( y_j \right) \Delta y_j = 
  	\sum\limits_{j = 1}^l \left( 
  	\int\limits_{x_0 = a}^{ x_1 } + \int\limits_{x_1}^{ x_2 } + \dots + 
  	\int\limits_{ x_{m-1} }^{x_m = b} \right) \Delta y_j = \]
  	
- 	\[ = \sum\limits_{j = 1}^l \left( \int\limits_a^b f \left( x, y_j\right) dx \right)
- 	 \Delta y_j =  \]
+ 	\[ = \sum\limits_{j = 1}^l \left( \int\limits_a^b f 
+ 	\left( x, y_j\right) dx \right) \Delta y_j =  \]
  	
  	\begin{equation}
  	\label{lec_13, num_15}
@@ -130,8 +140,10 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
  	в силу критерия Гейне
  	
  	Таким образом получим, что
- 	\[ I = \lim\limits_{ \widetilde{d} \to 0 } \sigma = \int\limits_c^d F \left( y \right) dy =  \]
- 	\[ = \int\limits_c^d \left( \int\limits_a^b f \left( x, y\right) dx \right) dy \]
+ 	\[ I = \lim\limits_{ \widetilde{d} \to 0 } \sigma = 
+ 	\int\limits_c^d F \left( y \right) dy =  \]
+ 	\[ = \int\limits_c^d \left( \int\limits_a^b 
+ 	f \left( x, y\right) dx \right) dy \]
  	что соответсвует правой части \eqref {lec_13, num_13} 
  	
  	Аналогично доказывается равенство и в левой части \eqref {lec_13, num_13} 
@@ -142,7 +154,7 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
 	\quad
 	
 	\begin{enumerate}
-		\item  На практике формулы (6) (надо сделать ссылкой), 
+		\item  На практике формулы (???), 
 		\eqref {lec_13, num_13} записываются в виде 
 		\[ I = \int\limits_a^b dx \int\limits_c^d f \left( x, y \right) dy = 
 		\int\limits_c^d dy \int\limits_a^b f \left( x, y \right) dx \]
@@ -191,12 +203,14 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
 \end{rems}
 
 \begin{crl}[о вычислении 2И по криволинейной трапеции]
-	Если $ f \in C \left( \widetilde{T} \right) $, где $ \widetilde{T} \subset \R^2 $ - 
+	Если $ f \in C \left( \widetilde{T} \right) $, 
+	где $ \widetilde{T} \subset \R^2 $ - 
 	криволинейная трапеция вдоль $ Oy $, т.е 
 	\begin{equation}
 	\label{lec_13, num_19}
 	\widetilde{T} = \left\lbrace 
-	\left( x, y\right) \in \R^2\ | \ c \left( x \right) \leq y \leq d \left( x \right),
+	\left( x, y\right) \in \R^2\ | 
+	\ c \left( x \right) \leq y \leq d \left( x \right),
 	 a \leq x \leq b \right\rbrace
 	 \end{equation}
 	 То когда $c \left( x \right), d \left( x \right) $ - непрерывны на 
@@ -204,25 +218,28 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
 	 \begin{equation}
 	 \label{lec_13, num_20}
 	 \iint\limits_{\widetilde{T}} f \left( x, y \right)  dxdy = 
-	 \int\limits_a^b dx \int\limits_{c \left( x \right) }^{ d \left( x \right) } 
+	 \int\limits_a^b dx \int\limits_{c \left( x \right) }^{d \left( x \right)} 
 	 f \left( x, y \right) dy
 	 \end{equation}
 	 
-	 Аналогично в случае, когда $ f \in C \left( \overline{T} \right) $, где $ \overline{T} $ - 
-	 криволинейная трапеция вдоль $ Ox $, т.е 
+	 Аналогично в случае, когда $ f \in C \left( \overline{T} \right) $, 
+	 где $ \overline{T} $ - криволинейная трапеция вдоль $ Ox $, т.е 
 	 \begin{equation}
 	 \label{lec_13, num_21}
 	 \overline{T} = \left\lbrace 
-	 \left( x, y\right) \in \R^2\ | \ a \left( y \right) \leq x \leq b \left( y \right),
+	 \left( x, y\right) \in \R^2\ | 
+	 \ a \left( y \right) \leq x \leq b \left( y \right),
 	 c \leq y \leq d \right\rbrace
 	 \end{equation}
 	 
-	 Когда $ a \left( y \right), b \left( y \right) $ - непрерывны на $ \left[ c, d \right] $
-	 получаем:
+	 Когда $ a \left( y \right), b \left( y \right) $
+	  - непрерывны на $ \left[ c, d \right] $, получаем:
 	 \begin{equation}
 	 \label{lec_13, num_22}
-	 \iint\limits_{\overline{T}} f \left( x, y \right) dx dy = \int\limits_c^d dy 
-	 \int\limits_{a \left( y \right) } ^ {b \left( y \right) } f \left( x, y \right) dx
+	 \iint\limits_{\overline{T}} f \left( x, y \right) dx dy = 
+	 \int\limits_c^d dy 
+	 \int\limits_{a \left( y \right) } ^ 
+	 {b \left( y \right) } f \left( x, y \right) dx
 	 \end{equation}
 \end{crl}
 
@@ -240,8 +257,9 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
 	\]
 	Для непрерывных на $ \left[ a, b \right] $ функций 
 	$ c \left( x \right), d \left( x \right) $ из теоремы Вейерштрасса
-	$ \implies \exists c_0 = \min\limits_{\left[ a, b \right] } c \left( x \right) \in \R $ и 
-	$ \exists d_0 = \max\limits_{\left[ a, b \right] } d \left( x \right) \in \R $.
+	$ \implies \exists c_0 = 
+	\min\limits_{\left[ a, b \right] } c \left( x \right) \in \R $ и 
+	$ \exists d_0 = \max\limits_{\left[a, b \right] } d \left(x\right) \in \R $.
 	
 	Рассматривая прямоугольник $ \text{П}_0 = \left[ a, b \right] \times 
 	\left[ c_0, d_0 \right]  $ и учитывая, что $ f_0 \left( x, y \right) $ для 
@@ -251,26 +269,33 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
 	\[
 	\iint\limits_{ \widetilde{T} } f \left( x, y \right) dx dy = 
 	\iint\limits_{ \widetilde{T} } \underset{ = f_0 \left( x, y \right) } 
-	{f \left( x, y \right)} dx dy + \iint\limits_{ \text{П}_0 \smallsetminus \widetilde{T} } 
+	{f \left( x, y \right)} dx dy + 
+	\iint\limits_{ \text{П}_0 \smallsetminus \widetilde{T} } 
 	\underset{ = f_0 \left( x, y \right) }  0 dx dy =
 	\]
 	\[
-	= \iint\limits_{ \text{П}_0} f_0 \left( x, y \right) dx dy = \int\limits_a^b dx
+	= \iint\limits_{ \text{П}_0} f_0 \left( x, y \right) dx dy = 
+	\int\limits_a^b dx
 	\int\limits_{c_0}^{d_0} f_0 \left( x, y \right) dy = 
 	\]
 	\[
-	\left[ \int\limits_{c_0}^{d_0} f_0 dy = \int\limits_{c_0} ^ {c \left( x \right) } 
-	\underset{ = 0} {f_0} dy + \int\limits_{c \left( x \right) } ^ {d \left( x \right) } 
-	\underset{ = f} {f_0} dy + \int\limits_{d \left( x \right) } ^ {d_0} 
-	\underset{ = 0} {f_0} dy \right] = \int\limits_a^b dx \int\limits_{c \left( x \right) } ^
+	\left[ \int\limits_{c_0}^{d_0} f_0 dy =
+	 \int\limits_{c_0} ^ {c \left( x \right) } 
+	\underset{ = 0} {f_0} dy + 
+	\int\limits_{c \left( x \right) } ^ {d \left( x \right) } 
+	\underset{ = f} {f_0} dy +
+	 \int\limits_{d \left( x \right) } ^ {d_0} 
+	\underset{ = 0} {f_0} dy \right] = 
+	\int\limits_a^b dx \int\limits_{c \left( x \right) } ^
 	{d \left( x \right) } f \left( x, y \right) dy
 	\]
 \end{proof}
 
 \begin{exmp}
-	Рассмотрим $ I = \iint\limits_{x^2 + y^2 \leq 2x} f \left( x, y \right) dx dy $, где
-	для простоты считаем, что $ f \left( x, y \right) $ - непрерывна. Получим
-	представление этого 2И через повторные.
+	Рассмотрим $ I = \iint\limits_{x^2 + y^2 \leq 2x} 
+	f \left(x, y \right) dxdy $, 
+	где для простоты считаем, что $ f \left( x, y \right) $ - непрерывна. 
+	Получим представление этого 2И через повторные.
 	
 	Выделяя полные квадраты для области интегрирования $ \implies $
 	\[
