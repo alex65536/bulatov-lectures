@@ -31,7 +31,7 @@
   S_r(x_0) = \{x \in \R^n\ |\ \rho(x, x_0) = r\}
   \] 
   Шары $B_r, \overline{B_r}$ будем называть также \emph{открытыми} и 
-  \emph{замкнутыми окрестностями} для $x_0 \in \R^n$. В случае, 
+  \emph{замкнутыми $r$-окрестностями} для $x_0 \in \R^n$. В случае, 
   когда размеры окрестностей не существенны или фиксированы, 
   будем их обозначать для краткости $V(x_0) = B_r(x_0)$ и 
   $\overline{V}(x_0) = \overline{B_r}(x_0)$.
@@ -39,7 +39,7 @@
   \smallskip
   \textbf{Примеры:}
   \begin{itemize}
-  \item Для $n = 1 \implies d(x, x_0) = |x - x_0|, x, x_0 \in \R.
+  \item Для $n = 1 \implies d(x, x_0) = |x - x_0|,\text{где } x, x_0 \in \R.
   $ В этом случае 
   \[
     B_r(x_0) = \{x \in \R\ |\ |x - x_0| < r\} =\ ] x_0 - r, x_0 + r [,
@@ -53,7 +53,7 @@
   \includegraphics[width=\linewidth]{2019-02-15_17-21-02.png}
   \includegraphics[width=\linewidth]{2019-02-15_17-21-17.png}
   
-  \item  Для $M(x, y) \in \R^2$ в ДПСК имеем для $M_0(x_0, y_0)$:
+  \item  Для $M(x, y) \in \R^2$ и $M_0(x_0, y_0)$ в ДПСК имеем:
   \[
     d(M, M_0) = \sqrt{(x - x_0)^2 + (y - y_0)^2}.
   \]
@@ -104,7 +104,7 @@
       \dot{B_r}(M_0) = B_r(M_0) \backslash \{M_0\},
     \]
     \[
-      \dot{\overline{M_r}}(M_0) = \overline{B_r}(M_0) \backslash \{M_0\},
+      \dot{\overline{B_r}}(M_0) = \overline{B_r}(M_0) \backslash \{M_0\},
     \]
     которые для краткости иногда будем обозначать $\dot{V}(M_0) $ и 
     $\dot{\overline{V}}(M_0)$ соответственно. 
@@ -122,9 +122,8 @@
   Точку $M_0 \in D$ будем называть \emph{внутренней} для $D \subset \R^n$, 
   если $\exists V(M_0) \subset D$.
   
-  Точку $M_0 \in D$ будем называть \emph{предельной} для $D \subset \R^n$, 
-  если $\forall V(M_0) \subset \R^n$ есть точки как входящие, так и 
-  не входящие в $D$.
+  Точку $M_0 \in \R^n$ будем называть \emph{предельной} для $D \subset \R^n$, 
+  если $\forall \dot V(M_0) \subset \R^n$ есть точки, входящие в $D$.
   Можно показать, что $M_0 \in \R^n$ будет предельной для $D \subset 
   \R^n$ тогда и только тогда, когда $M_0$ либо внутренняя для $D$, 
   либо граничная.
@@ -133,7 +132,7 @@
   
   Для $D \subset \R^n$ множество его граничных точек называют 
   \emph{границей множества} и обозначают $\partial D$. 
-  $\forall D \subset \R^n$ множество $\overline D = D \cup \partial D$ 
+  Для $\forall D \subset \R^n$ множество $\overline D = D \cup \partial D$ 
   называется \emph{замыканием множества} $D$. 
   Множество $D \subset \R^n$ считают \emph{замкнутым} в $\R^n$, если
   $D = \overline D$.

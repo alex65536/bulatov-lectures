@@ -4,7 +4,7 @@
 \documentclass[../../main.tex]{subfiles}
 
 \begin{document}
-\section{Предел последовательностей и функций в $\R^n$.}
+\section{Предел последовательностей в $\R^n$.}
 
   \emph{Последовательностью} в $\R^n$ будем называть произвольное 
   отображение
@@ -16,7 +16,7 @@
   Эти $n$-мерные последовательности будем также называть 
   \emph{точечными последовательностями} в $\R^n$ и обозначать $
   (M_k), k \in \N$.
-  Используя координатную запись, $\forall (M_k)$:
+  Используя координатную запись, для $\forall (M_k)$ имеем:
   \[
     M_k = (x_{k1}, x_{k2}, \dots, x_{kn}),
   \] 
@@ -46,7 +46,7 @@
   \begin{lem}[N-лемма сходимости $n$-мерных последовательностей]
     Если 
     \[
-      \exists N = const \geq 0:\ 
+      \exists N = const \geq 0 \text{ такое, что } 
       \forall \eps > 0\ \exists\ \nu_\eps \in \R\ |\ \forall k \geq 
       \nu_\eps \implies \rho(M_k, M_0) \leq N \eps,
     \]
@@ -57,16 +57,16 @@
   $M_0$ будем называть пределом рассматриваемой последовательности 
   $(M_k)$ и кроме записи $M_k \underset{k\rightarrow\infty}
   {\longrightarrow}  M_0$ будем использовать запись 
-  $ \lim\limits_{k \to \infty}{M_k} = M_0$
+  $ \lim\limits_{k \to \infty}{M_k} = M_0$.
   \begin{thm}[Критерий сходимости n-мерных последовательностей]
     Последовательность $M_k = (x_{k1}, \dots, x_{kn}) \in \R^n, k 
-    \in \N$ сходится в линейном метрическом пространстве $(\R^n, d)$
+    \in \N$, сходится в линейном метрическом пространстве $(\R^n, d)$
     с евклидовой метрикой $d$ к точке $M_0 = (x_{01}, \dots, x_{0n})
     \in \R^n$ тогда и только тогда, когда
     \begin{equation}
     \label{krit-posl}
-      \forall fix\ j = \overline{1, n} \implies
-      x_{kj}\underset{k\rightarrow\infty}{\longrightarrow} x_{0j}
+      x_{kj}\underset{k\rightarrow\infty}
+      {\longrightarrow} x_{0j}, \quad \forall j = \overline{1, n}.
     \end{equation}
   \end{thm}
   \begin{proof}
@@ -77,17 +77,17 @@
     
     Тогда, используя евклидово расстояние 
     \[
-      d(M_k, M_0) = \sqrt{\sum_{j = 0}^{n}{(x_{kj} - x_{0j})^2}}
+      d(M_k, M_0) = \sqrt{\sum_{j = 0}^{n}{(x_{kj} - x_{0j})^2}},
     \]
     получаем, что
     \[
-      d(M_k, M_0) \underset{k\rightarrow\infty}{\longrightarrow} = 0 
+      d(M_k, M_0) \underset{k\rightarrow\infty}{\longrightarrow} 0 
       \implies
       \forall \eps > 0\ \exists \nu \in \R\ |\ \forall k \geq \nu 
       \implies d(M_k, M_0) \leq \eps.
     \]
     Отсюда, учитывая, что для произвольного фиксированного $j = 
-    \overline{1, n}$
+    \overline{1, n}$ имеем
     \[
       |x_{kj} - x_{0j}| \leq \sqrt{(x_{k1} - x_{01})^2 + (x_{k2} - 
       x_{02})^2 + \dots + (x_{kj} - x_{0j})^2 + \dots + (x_{kn} - 
@@ -105,11 +105,11 @@
     \suff: Пусть для каждого фиксированного $j = \overline{1, n}$ 
     выполняется \eqref{krit-posl}. Тогда
     \[
-      \forall \eps > 0\ \exists\ \nu_j \in \R\ |\ \forall k > \nu_j 
+      \forall \eps > 0\ \exists\ \nu_j \in \R\ |\ \forall k \ge \nu_j 
       \implies |x_{kj} - x_{0j}| \leq \eps
     \]
     Выбирая $\displaystyle\nu = \max_{1 \le i \le n}(\nu_i)$, 
-    получаем, что для $\forall k > \nu \implies |x_{kj} - x_{0j}| 
+    получаем, что для $\forall k \ge \nu \implies |x_{kj} - x_{0j}| 
     \leq \eps$
      и 
      \[
@@ -117,7 +117,7 @@
        x_{0j})^2}} \leq \sqrt{\sum_{j = 1}^{n}{\eps^2}} = 
        \eps\sqrt{n}, 
      \]
-     Т.е. $\exists N = \sqrt{n} \leq 0$ такое, что $d(M_k, M_0) \leq 
+     Т.е. $\exists N = \sqrt{n} \geq 0$ такое, что $d(M_k, M_0) \leq 
      N \eps,$ а значит, по N-лемме сходимости $n$-мерных 
      последовательностей, имеем:
      \[
@@ -139,8 +139,8 @@
      и вывести на основании этого, что если в одном из метрических 
      пространств $(\R^n, d)$, $(\R^n, \rho_1)$ или $(\R^n, \rho_2)$ 
      имеем $M_k \underset{k\rightarrow\infty}{\longrightarrow}  M_0,$
-     то в силу N-леммы для $n$-мерных последовательностей она будет
-     сходиться и в остальных рассматриваемых метрических пространствах.
+     то в силу N-леммы для $n$-мерных последовательностей 
+     то же самое будет и в остальных рассматриваемых метрических пространствах.
   \end{exc}
   
   \begin{rem}
@@ -157,7 +157,7 @@
   \end{rem}
   
   \begin{exmp}
-    Рассмотрим пространство $\R^n$ с элементами
+    Рассмотрим пространство $\R^2$ с элементами
     $M=(x,y) \in \R^2, x,y \in \R$. 
     Покажем, что если последовательность $M_k=(x_k,y_k)$ ограничена 
     при $k \in \N$, т. е.
@@ -165,7 +165,7 @@
     \exists r>0 \; | \; \forall k \in \N 
     \implies d(M_k; \vec0)=\sqrt{x^2_k+y^2_k} \leq r,
     \]
-    то из нее можно выбрать сходящуюся.
+    то из нее можно выбрать сходящуюся последовательность.
     
     Из неравенств
     \[ 
@@ -189,15 +189,15 @@
     
     Для получаемых индексов $1 \leq m_1 \leq \ldots 
     \leq m_i \leq \ldots $ из множества
-    $\{k_{1_j}, k_{2_j}, \dots, k_{i_j}\}$
-    последовательность $ x_{m_i} $ будет являться 
-    подпоследовательностью $ x_{k_j} $ и, значит, 
+    $\{k_{1_j}, k_{2_j}, \dots, k_{i_j}, \dots\}$
+    последовательность $ (x_{m_i}) $ будет являться 
+    подпоследовательностью $ (x_{k_j}) $ и, значит, 
     \[  \lim_{m_i \to \infty}{x_{m_i}}= 
     \lim_{k_i \to \infty}{x_{k_i}}=  x_0\]
     В результате получим двумерную подпоследовательность 
     $(x_{m_i}, y_{m_i}) \underset{m_i\longrightarrow \infty}
     {\longrightarrow} (x_0, y_0) \in \R^2$,
-    то есть в этом случае имеем принцип выбора.
+    то есть в этом случае справедлив принцип выбора.
     
     Аналогичным образом принцип выбора доказывается в пространстве $
     (\R^n, d)$
@@ -215,10 +215,10 @@
 
   Далее, по аналогии с числовой последовательностью, 
   $n$-мерную последовательность $(M_k),  k \in \N $
-  будем называть бесконечно малой последовательностью, если
+  будем называть \emph{бесконечно малой последовательностью}, если
   \[
     M_k \underset{k \longrightarrow \infty}
-    {\longrightarrow}\vec{0} = (0,0,\dots,0).
+    {\longrightarrow}\vec{0} = (0,0,\dots,0) \in \R^n.
   \]
   Как и для ЧП, показывается, что любая линейная 
   комбинация бесконечно малых $n$-мерных последовательностей с 
@@ -226,12 +226,13 @@
   \[
     \forall \lambda_k, \mu_{k} = O(1),
   \]
-  то
+  то в случае, когда $\widetilde{M}_k \appr{k \to \infty}\vec0$ и
+  $\overline{M}_k \appr{k \to \infty}\vec0$ имеем
   \[
     \lambda_k \widetilde{M}_k + \mu_k \overline{M}_k =
-    (\lambda_k \widetilde{x}_{k_1} + \mu_k \overline{x}_{k_1}, 
+    (\lambda_k \widetilde{x}_{k1} + \mu_k \overline{x}_{k1}, 
     \dots,
-    \lambda_k \widetilde{x}_{k_n} + \mu_k \overline{x}_{k_n},
+    \lambda_k \widetilde{x}_{kn} + \mu_k \overline{x}_{kn}
     )
     \underset{k \longrightarrow \infty}{\longrightarrow}
     \vec{0} = (0,0,\dots,0).
