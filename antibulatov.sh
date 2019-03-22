@@ -20,6 +20,8 @@ done
 
 shopt -s globstar
 
+sed -i -E 's/% add new headers if necessary/\\textit{Конспект был улучшен с применением} \\texttt{antibulatov.sh}./g' tex/title.tex
+
 sed -i -E 's/([Уу])быв/\1бив/g' **/*.tex
 sed -i -E 's/конечн/кончен/g' **/*.tex
 sed -i -E 's/ескончен/есконечн/g' **/*.tex
