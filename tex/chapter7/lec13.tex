@@ -112,7 +112,7 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
  	является одной из интегральных сумм для Ф1П  \eqref{lec_13, num_16}.
  	Отсюда при 
  	\[ \widetilde{d} = diam \widetilde{P} = 
- 	max \left\lbrace \Delta y_j \right\rbrace \underset{1 \leq j \leq l}{\longrightarrow} 0 \]
+ 	\max \left\lbrace \Delta y_j \right\rbrace \underset{1 \leq j \leq l}{\longrightarrow} 0 \]
  	В силу непрерывности, а значит интегрируемости получаем: 
  	\[ \exists \lim\limits_{ \widetilde{d} \to 0 } \sigma = 
  	\lim\limits_{ \widetilde{d} \to 0 } \sum\limits_{j = 1}^l F \left( y_j \right) \Delta y_j =
@@ -221,7 +221,8 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
 \end{crl}
 
 \begin{proof}
-	Докажем \eqref {lec_13, num_20} 
+	Докажем \eqref {lec_13, num_20}. Обоснование \eqref {lec_13, num_22}
+	аналогично.
 	
 	Рассмотрим 
 	\[ 
@@ -231,7 +232,36 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $ - измеримое мно�
 	0, \left( x, y \right) \notin \widetilde{T}
 	\end{cases}
 	\]
+	Для непрерывных на $ \left[ a, b \right] $ функций 
+	$ c \left( x \right), d \left( x \right) $ из теоремы Вейерштрасса
+	$ \implies \exists c_0 = \min\limits_{\left[ a, b \right] } c \left( x \right) \in \R $ и 
+	$ \exists d_0 = \max\limits_{\left[ a, b \right] } d \left( x \right) \in \R $.
+	
+	Рассматривая прямоугольник $ \text{П}_0 = \left[ a, b \right] \times 
+	\left[ c_0, d_0 \right]  $ и учитывая, что $ f_0 \left( x, y \right) $ для 
+	$ \left( x, y \right) \in \text{П}_0 $ вне трапеции $\widetilde{T}$ дает
+	$ f_0 \left( x, y \right) = 0 $ в силу аддитивности ОИ и 2И имеем:
+	
+	\[
+	\iint\limits_{ \widetilde{T} } f \left( x, y \right) dx dy = 
+	\iint\limits_{ \widetilde{T} } \underset{ = f_0 \left( x, y \right) } 
+	{f \left( x, y \right)} dx dy + \iint\limits_{ \text{П}_0 \smallsetminus \widetilde{T} } 
+	\underset{ = f_0 \left( x, y \right) }  0 dx dy =
+	\]
+	\[
+	= \iint\limits_{ \text{П}_0} f_0 \left( x, y \right) dx dy = \int\limits_a^b dx
+	\int\limits_{c_0}^{d_0} f_0 \left( x, y \right) dy = 
+	\]
+	\[
+	\left[ \int\limits_{c_0}^{d_0} f_0 dy = \int\limits_{c_0} ^ {c \left( x \right) } 
+	\underset{ = 0} {f_0} dy + \int\limits_{c \left( x \right) } ^ {d \left( x \right) } 
+	\underset{ = f} {f_0} dy + \int\limits_{d \left( x \right) } ^ {d_0} 
+	\underset{ = 0} {f_0} dy \right] = \int\limits_a^b dx \int\limits_{c \left( x \right) } ^
+	{d \left( x \right) } f \left( x, y \right) dy
+	\]
 \end{proof}
+
+
 
 \end{document}
 
