@@ -22,7 +22,7 @@
     
     \begin{center}
         \emph{Собрано на основе коммита} \texttt{%
-            \input{git-revision.out}
+            \IfFileExists{git-revision.out}{\input{git-revision.out}}{unknown}
         }\hspace{-1em}.
         
         \emph{Дата сборки:} \texttt{\today}
