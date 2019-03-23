@@ -90,6 +90,9 @@ Use equation and \eqref{}.'
 	      '\\int\s*\\int' \
 	      'Use \iint for double integral, \iiint for triple integral'
 	
+	check -- "$1" \
+	      '[Тт]\s*\.(\s*|\s+~\s*|\s*~\s+)[ке]|[Тт]~\.|[Тт]\.~[ке]([^\.]|$)' \
+	      '"Т. к." and "т. е" are better to write as "т.~к." and "т.~е."'
 }
 
 export -f error
