@@ -50,8 +50,8 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $~--- измеримое мн�
 	 С помощью вертикальных прямых $ x = x_i $, $ i = \overline{1, m} $
 	 и горизонтальных прямых $ y = y_j $, $ j = \overline{1, l} $
 	 прямоугольник $ \text{П} $ разобъется на части: $ \text{П}_{ij} = 
-	 \left[ x_{i - 1}, x_i \right] \times \left[ y_{i - 1}, y_i \right] $, 
-	 образующим соответствующее разбиение 
+	 \left[ x_{i - 1}, x_i \right] \times \left[ y_{j - 1}, y_j \right] $, 
+	 образуя соответствующие разбиения 
 	 $ P = \left\lbrace \text{П}_{ij} \right\rbrace $,
 	 $ i = \overline{1, m} $, $ j = \overline{1, l} $ 
 	 исходного $ \text{П} $. Т.е. $ \text{П} = 
@@ -72,7 +72,7 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $~--- измеримое мн�
  	т.к $ \forall fix\ y \implies f \left( x, y\right) $
  	непрерывна по $ x \implies $ интегрируема по $ x $. По теореме о среднем
  	для однократных интегралов $ \implies \exists t_{ij} \in 
- 	\left[ x_{i - 1}, x_i \right] $, т.ч $ F_j \left( y_j \right) = 
+ 	\left[ x_{i - 1}, x_i \right] $, т.ч $ F_i \left( y_j \right) = 
  	\int\limits_{x_{i - 1} } ^ {x_i} f \left( x, y_j \right) dx = 
  	f \left(  t_{ij}, y_j \right) \Delta x_i$, 
  	$ \Delta x_i = x_i - x_{i - 1}$, где 
@@ -85,7 +85,7 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $~--- измеримое мн�
  	$ j = \overline{1, l} $
  	
  	Т.к все используемые множества измеримы (квадрируемы в $ \R^2 $), 
- 	то для полной \emph{специальной} интегральой суммы
+ 	то для полученной \emph{специальной} интегральой суммы
  	\begin{equation}
  	\label{lec_13, num_14}
  	\sigma = \sigma \left( t, \left( P, Q \right) \right) = 
@@ -126,9 +126,9 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $~--- измеримое мн�
  	Из \eqref{lec_13, num_15} $ \implies $ что рассматриваемая $\sigma$
  	является одной из интегральных сумм для Ф1П  \eqref{lec_13, num_16}.
  	Отсюда при 
- 	\[ \widetilde{d} = diam \widetilde{P} = 
- 	\max \left\lbrace \Delta y_j \right\rbrace 
- 	\underset{1 \leq j \leq l}{\longrightarrow} 0 \]
+ 	\[ \widetilde{d} = diam\ \widetilde{P} = 
+ 		\underset{1 \leq j \leq l} {\max} \left\lbrace \Delta y_j \right\rbrace 
+ 	\longrightarrow 0 \]
  	В силу непрерывности, а значит интегрируемости получаем: 
  	\[ \exists \lim\limits_{ \widetilde{d} \to 0 } \sigma = 
  	\lim\limits_{ \widetilde{d} \to 0 } 
@@ -338,7 +338,7 @@ $ \left( x, y \right) \in D \subset \R^n $ и $ D $~--- измеримое мн�
 		
 		$ \left( x - 1 \right)^2 + y^2 = 1 \implies x = 1 \pm \sqrt{1 - y^2} $
 		
-		Вход: $ x = 1 - \sqrt{1 - y^2 }$/
+		Вход: $ x = 1 - \sqrt{1 - y^2 }$
 		
 		Выход: $ y = 1 + \sqrt{1 - y^2 } $
 		
