@@ -13,8 +13,8 @@
 		Рассмотрим сложную Ф3П $u=f(x+y+z,xyz)$, полученную из Ф2П $f(s,t)$ 
 		подстановкой $s=x+y+z$, $t=xyz$.
 		
-		Считая, что $f(s,t)$~--- дифференцируемая Ф2П для рассматриваемой 
-		функции $u(x,y,z)$, действуя сначала с промежуточными переменными, имеем
+		Считая, что $f(s,t)$~--- непрерывно дифференцируемая Ф2П для рассматриваемой 
+		функции $u=u(x,y,z)$, действуя сначала с промежуточными переменными, $s$ и $t$ имеем
 		\begin{gather*}
 			du = df(s,t) = f'_sds + f'_tdt = \left[\begin{aligned}
 				& ds = d(x + y + z) = dx + dy + dz\\
@@ -54,7 +54,7 @@
 	\[f''_{xy} = \left(f'_x\right)'_y = g'_y = 
 	\pderiv{}{y}\left(\pderiv{f}{x}\right) = \pderiv{^2f}{x\partial y},\]
 	\[f''_{yx} = \left(f'_y\right)'_x = h'_x = 
-	\pderiv{}{x}\left(\pderiv{f}{y}\right) = \pderiv{^2f}{y\partial x},\]
+	\pderiv{}{x}\left(\pderiv{f}{y}\right) = \pderiv{^2f}{x\partial y},\]
 	\[f''_{y^2} = \left(f'_y\right)'_y = h'_y = 
 	\pderiv{}{y}\left(\pderiv{f}{y}\right) = \pderiv{^2f}{y^2}.\]
 	Среди этих производных второго порядка производные $f''_{xy}$ и 
