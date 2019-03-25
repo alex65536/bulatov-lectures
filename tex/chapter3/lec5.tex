@@ -106,7 +106,7 @@ B = f'_y(a+\D x, b+\theta_2\D y) - f'_y(a,b).
 Используя неравенство Коши-Буняковского, получаем:
 \[\abs{\alpha} = \abs{A\D x+B\D y} \leq \sqrt{(A^2+B^2)(\D x^2+\D y^2)}\]
 
-Также в силу непрерывности производных имеем:
+Также в силу непрерывности производных $f'_x$ и $f'_y$ и ограниченности $\theta_1$ и $\theta_2$ имеем:
 \[f'_x(a+\theta_1\D x,b)\appr{\substack{\D x\to 0 \\
 \D y \to 0}} f'_x(a,b)
 \implies A \appr{\substack{\D x\to 0 \\
@@ -115,7 +115,7 @@ B = f'_y(a+\D x, b+\theta_2\D y) - f'_y(a,b).
 \D y \to 0}} f'_y(a,b)
 \implies B \appr{\substack{\D x\to 0 \\\D y \to 0}} 0\]
 
-Из вышеописанного получаем, что \eqref{l5:alpha_o} верно:
+Из этого следует, что \eqref{l5:alpha_o} верно, т. к.
 \[\abs{\frac{\alpha}{\sqrt{\D x^2 + \D y^2}}} \leq
 \sqrt{A^2+B^2} \appr{\substack{\D x\to 0 \\
 \D y \to 0}} 0\]
@@ -133,16 +133,16 @@ $f(x,y)$ в $M_0(a,b)$.
 \end{defn}
 \begin{thm}[о дифференцировании сложных ФНП]
 Пусть $g_k(t),k=\overline{1,n}$~--- функции, определённые на 
-$D\subset\R^m$ и непрерывно дифференцируемые в некоторой окрестности 
-точки $t_0\in D$.
+$G\subset\R^m$ и непрерывно дифференцируемые в некоторой окрестности 
+точки $t_0\in G$.
 
-Пусть также $f(x)$~--- функция, определённая на $E\subset\R^n$ и
+Пусть также $f(x)$~--- функция, определённая на $D\subset\R^n$ и
 непрерывно дифференцируемая в соответствующей окрестности точки $x_0 = 
-(g_1(t_0),g_2(t_0),\dots,g_n(t_0))\in E$.
+(g_1(t_0),g_2(t_0),\dots,g_n(t_0))\in D$.
 
-Тогда, если существует их композиция $h(t) = f(g(t)) =
+Тогда, если существует композиция $h(t) =
 f(g_1(t),g_2(t),\dots,g_n(t))$, то она также является непрерывно 
-дифференцируемой в окрестности $t_0$, причём
+дифференцируемой в некоторой окрестности $t_0$, причём
 \[\pderiv{h(t_0)}{t_j}=\sum_{i=1}^{n}
 \pderiv{f(x_0)}{x_i}\cdot
 \pderiv{g_i(t_0)}{t_j},\ j=\overline{1,m}\]
@@ -153,28 +153,28 @@ f(g_1(t),g_2(t),\dots,g_n(t))$, то она также является непр
 приращении $\D x \in \R^n$ имеем
 \begin{equation}
 \D f(x_0) = \sum_{j=1}^{n} \pderiv{f(x_0)}{x_j}dx_j+\alpha
-\mid \alpha=o(\abs{\D x})
-\label{l5:df}
+\text{, где } \alpha=o(\abs{\D x})
+\label{l5:df}.
 \end{equation}
 
 В силу непрерывной дифференцируемости $g_k(x)$ в $t_0$ на соответствущем
 приращении $\D t \in \R^m$ имеем
 \begin{equation}
 \D g_k(t_0) = \sum_{j=1}^{m} \pderiv{g_k(t_0)}{t_j}\D t_j+\beta_k
-\mid \beta_k=o(\abs{\D t})
-\label{l5:dg}
+\text{, где } \beta_k=o(\abs{\D t})
+\label{l5:dg}, k=\overline{1,m}.
 \end{equation}
 
-Для $h(t)=f(g(t))$ в $t_0 \in D \subset \R^m$ имеем
+Для $h(t)=f(g(t))$, где $g(t)=(g_1(t),g_2(t),\dots,g_n(t))$, в $t_0 \in G \subset \R^m$ имеем
 \[\D h(t_0) = h(t_0+\D t)-h(t_0)=f(g(t_0+\D t))-f(g(t_0))=\]
 \[=f\big((g(t_0+\D t)-g(t_0))+g(t_0)\big)-f(g(t_0))\]
 
-В силу непрерывности $g_k(t)$ имеем, что $g(t_0+\D t) -g(t_0)=
-\D g(t_0)=\D x \appr{\D t \to 0} 0$, тогда
-\[\D h(t_0) = f(\D x + x_0) - f(x_0) = \D f(x_0)\]
+В силу непрерывности $g_k(t)$ имеем $g(t_0+\D t) -g(t_0)=
+\D g(t_0)=\D x \appr{\D t \to 0} 0$, и, значит,
+\[\D h(t_0) = f(x_0 + \D x) - f(x_0) = \D f(x_0)\]
 
-В силу \eqref{l5:df} имеем
-\[\D h(t_0) = \sum_{j=1}^{n} \pderiv{f(x_0)}{x_j}dx_j+\alpha\]
+Из \eqref{l5:df} следует
+\[\D h(t_0) = \sum_{j=1}^{n} \pderiv{f(x_0)}{x_j}dx_j+\alpha.\]
 
 В силу \eqref{l5:dg} и того, что $dx_j = \D g_j(t_0)$, имеем 
 
@@ -185,19 +185,19 @@ f(g_1(t),g_2(t),\dots,g_n(t))$, то она также является непр
 \pderiv{g_j(t_0)}{t_k}\D t_k+\sum_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j
 +\alpha=\]
 \[=\sum_{k=1}^{m}\pderiv{h(t_0)}{t_k}\D t_k+
-\sum_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j+\alpha\]
+\sum_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j+\alpha.\]
 
-Пусть $\gamma=\sum\limits_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j+\alpha$.
+Пусть $\gamma=\alpha + \beta$, где $\beta =\sum\limits_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j$.
 Тогда:
 \begin{equation}
 \D h(t_0)=\sum_{k=1}^{m}\pderiv{h(t_0)}{t_k}\D t_k+\gamma
-\label{l5:dh}
+\label{l5:dh}.
 \end{equation}
 Для доказательства теоремы осталось лишь показать, что
 $\gamma = o(\abs{\D t})$.
 \begin{itemize}
 \item
-	Во-первых, имеем $\alpha = o(\abs{\D x})$. Во-вторых:
+	Во-первых, $\alpha = o(\abs{\D x})$. Во-вторых:
 	\[\abs{\D x_k} = \abs{\D g_k(t_0)} = \abs{\sum_{j=1}^{m}
 	\pderiv{g_k(t_0)}{t_j}\D t_j+o(\abs{\D t})}\leq
 	\sum_{j=1}^{m}
@@ -207,10 +207,10 @@ $\gamma = o(\abs{\D t})$.
 	\pderiv{g_k(t_0)}{t_j}\right)^2\right)\cdot
 	\left(\sum_{j=1}^{m}\D t_j^2\right)}=\]
 	\[=\left[c=\sum_{j=1}^{m}\left(
-	\pderiv{g_k(t_0)}{t_j}\right)^2=const\right]=\sqrt c\abs{\D t}+
+	\pderiv{g_k(t_0)}{t_j}\right)^2=const \geq 0\right]=\sqrt c\abs{\D t}+
 	\abs{o(\abs{\D t})}=\]
 	\[=\abs{\D t}\cdot\left(\sqrt c + \abs{\frac{o(\abs{\D t})}
-	{\abs{\D t}}}\right)=\abs{\D t}\cdot O(1)\]
+	{\abs{\D t}}}\right)=\abs{\D t}\cdot O(1).\]
 	
 	Мы получили, что при $\D t \neq 0 \quad \abs{\frac{\D x_k}{\D t}}
 	\leq O(1)$, следовательно, $\frac{\D x_k}{\abs{\D t}}=O(1)$ для
@@ -221,46 +221,40 @@ $\gamma = o(\abs{\D t})$.
 	Отсюда получаем:
 	\[\lim_{\D t \to 0}\frac{\alpha}{\abs{\D t}}=
 	\lim_{\D t \to 0}\left(\frac{\alpha}{\abs{\D x}}\cdot
-	\frac{\abs{\D x}}{\abs{\D t}}\right)=\lim_{\D t \to 0}0\cdot O(1) = 0\]
+	\frac{\abs{\D x}}{\abs{\D t}}\right)=\lim_{\D t \to 0}o(1)\cdot O(1) = 0\]
 	
 	Т.~е. $\alpha = o(\abs{\D t})$.
 \item
-	Аналогично ограничим первую часть $\gamma$:
-	\[\abs{\sum_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j}\leq\text{
+	Аналогично
+	\[\abs{\beta}=\abs{\sum_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j}\leq\text{
 	[нер-во Коши-Буняковского]}\leq\]
 	\[\leq\sqrt{\left(\sum_{j=1}^{n}\left(\pderiv{f(x_0)}{x_j}\right)^2
 	\right)\cdot\left(\sum_{j=1}^{n}\beta_j^2\right)}=
-	O(1)\cdot\sqrt{\sum_{j=1}^{n}o(\abs{\D t})^2}\]
+	O(1)\cdot\sqrt{\sum_{j=1}^{n}o(\abs{\D t})^2}=O(1)\cdot o(\abs{\D t})\]
 	
-	Получим порядок суммы:
-	\[\lim_{\D t \to 0}\frac{\abs{\sum_{j=1}^{n}\pderiv{f(x_0)}{x_j}
-	\beta_j}}{\abs{\D t}}\leq
-	\lim_{\D t \to 0}O(1)\cdot\sqrt{\sum_{j=1}^{n}
-	\left(\frac{o(\abs{\D t})}{\abs{\D t}}\right)^2} =\]
-	\[=\lim_{\D t \to 0}O(1)\cdot\sqrt{\sum_{j=1}^{n}
-	0^2}=0\]
+	Значит,
+	$\lim_{\D t \to 0}\cfrac{\abs{
+	\beta}}{\abs{\D t}}\leq 0$, т. е. $\beta = o(\abs{\D t })$.
 	
-	Т.~е. $\sum\limits_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j=o(\abs{\D t})$.
 \end{itemize}
-Из двух пунктов выше получаем $\gamma = o(\abs{\D t})$, что в сочетании
+Из двух пунктов выше получаем $\gamma = \alpha + \beta = o(\abs{\D t})$, что в сочетании
 с \eqref{l5:dh} даёт доказательство теоремы.
 \end{proof}
 
 \begin{crl}[инвариантность формы 1-го дифференциала ФНП]
-Для $h(t) = f(g(t))$ в случае непрерывно дифференцируемых в 
-соответствующих окрестностях $f(x), g(x)$ имеем
+Для $h(t) = f(g(t))$ в случае непрерывно дифференцируемых $f(x), g(t)$, где $x=g(t)=(g_1(t),g_2(t),\dots,g_n(t)\in D\subset \R^{n}$, а $t=(t_1,t_2,\dots t_m)\in G\subset \R^{m}$ имеем 
 \[dh=\sum_{j=1}^m\pderiv{h(t)}{t_j}dt_j=
 \sum_{i=1}^n\pderiv{f(x)}{x_i}dx_i,\]
-где $dt_j$~--- приращение независимой переменной, а $dx_i=dg_i(t)$ --
-произвольное приращение $g_i(t)$.
+где $dt_j$~--- приращение независимой переменной $t_j, j=\overline{1,m}$, а $dx_i=dg_i(t)$ --
+дифференциал $g_i(t), i=\overline{1,n}$.
 \end{crl}
 \begin{proof}
-В случае независимой переменной $t$ равенство следует из определения
-дифференциала:
+В случае независимой переменной $t=(t_1,\dots,t_m)$ из определения
+дифференциала следует:
 \[dh = \sum_{j=1}^m\pderiv{h(t)}{t_j}\D t_j = 
 \sum_{j=1}^m\pderiv{h(t)}{t_j}dt_j\]
 
-В случае $x_i = g_i(t)$ имеем:
+Для $x_i = g_i(t)$ имеем:
 \[dh = \sum_{j=1}^m\pderiv{h(t)}{t_j}dt_j = 
 \sum_{i=1}^{n}\sum_{j=1}^m
 \pderiv{f(x)}{x_i}\cdot\pderiv{g_i(t)}{t_j}dt_j=\]
