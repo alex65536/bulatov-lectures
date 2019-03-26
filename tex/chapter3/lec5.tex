@@ -106,7 +106,8 @@ B = f'_y(a+\D x, b+\theta_2\D y) - f'_y(a,b).
 Используя неравенство Коши-Буняковского, получаем:
 \[\abs{\alpha} = \abs{A\D x+B\D y} \leq \sqrt{(A^2+B^2)(\D x^2+\D y^2)}\]
 
-Также в силу непрерывности производных $f'_x$ и $f'_y$ и ограниченности $\theta_1$ и $\theta_2$ имеем:
+Также в силу непрерывности производных $f'_x$ и $f'_y$ 
+и ограниченности $\theta_1$ и $\theta_2$ имеем:
 \[f'_x(a+\theta_1\D x,b)\appr{\substack{\D x\to 0 \\
 \D y \to 0}} f'_x(a,b)
 \implies A \appr{\substack{\D x\to 0 \\
@@ -115,7 +116,7 @@ B = f'_y(a+\D x, b+\theta_2\D y) - f'_y(a,b).
 \D y \to 0}} f'_y(a,b)
 \implies B \appr{\substack{\D x\to 0 \\\D y \to 0}} 0\]
 
-Из этого следует, что \eqref{l5:alpha_o} верно, т. к.
+Из этого следует, что \eqref{l5:alpha_o} верно, т.~к.
 \[\abs{\frac{\alpha}{\sqrt{\D x^2 + \D y^2}}} \leq
 \sqrt{A^2+B^2} \appr{\substack{\D x\to 0 \\
 \D y \to 0}} 0\]
@@ -128,8 +129,9 @@ $f(x,y)$ в $M_0(a,b)$.
 формы первого дифференциала}
 \begin{defn}
 Функция $f(x)$, определённая на некотором множестве $D\subset\R^n$,
-называется \emph{непрерывно дифференцируемой} на этом множестве, если в каждой 
-точке $x\in D$ эта функция имеет непрерывные частные производные.
+называется \emph{непрерывно дифференцируемой} на 
+этом множестве, если в каждой точке $x\in D$
+ эта функция имеет непрерывные частные производные.
 \end{defn}
 \begin{thm}[о дифференцировании сложных ФНП]
 Пусть $g_k(t),k=\overline{1,n}$~--- функции, определённые на 
@@ -165,7 +167,8 @@ f(g_1(t),g_2(t),\dots,g_n(t))$, то она также является непр
 \label{l5:dg}, k=\overline{1,m}.
 \end{equation}
 
-Для $h(t)=f(g(t))$, где $g(t)=(g_1(t),g_2(t),\dots,g_n(t))$, в $t_0 \in G \subset \R^m$ имеем
+Для $h(t)=f(g(t))$, где $g(t)=(g_1(t),g_2(t),
+\dots,g_n(t))$, в $t_0 \in G \subset \R^m$ имеем
 \[\D h(t_0) = h(t_0+\D t)-h(t_0)=f(g(t_0+\D t))-f(g(t_0))=\]
 \[=f\big((g(t_0+\D t)-g(t_0))+g(t_0)\big)-f(g(t_0))\]
 
@@ -187,7 +190,8 @@ f(g_1(t),g_2(t),\dots,g_n(t))$, то она также является непр
 \[=\sum_{k=1}^{m}\pderiv{h(t_0)}{t_k}\D t_k+
 \sum_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j+\alpha.\]
 
-Пусть $\gamma=\alpha + \beta$, где $\beta =\sum\limits_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j$.
+Пусть $\gamma=\alpha + \beta$, где 
+$\beta =\sum\limits_{j=1}^{n}\pderiv{f(x_0)}{x_j}\beta_j$.
 Тогда:
 \begin{equation}
 \D h(t_0)=\sum_{k=1}^{m}\pderiv{h(t_0)}{t_k}\D t_k+\gamma
@@ -234,18 +238,23 @@ $\gamma = o(\abs{\D t})$.
 	
 	Значит,
 	$\lim_{\D t \to 0}\cfrac{\abs{
-	\beta}}{\abs{\D t}}\leq 0$, т. е. $\beta = o(\abs{\D t })$.
+	\beta}}{\abs{\D t}}\leq 0$, т.~е.$\beta = o(\abs{\D t })$.
 	
 \end{itemize}
-Из двух пунктов выше получаем $\gamma = \alpha + \beta = o(\abs{\D t})$, что в сочетании
+Из двух пунктов выше получаем $\gamma = 
+\alpha + \beta = o(\abs{\D t})$, что в сочетании
 с \eqref{l5:dh} даёт доказательство теоремы.
 \end{proof}
 
 \begin{crl}[инвариантность формы 1-го дифференциала ФНП]
-Для $h(t) = f(g(t))$ в случае непрерывно дифференцируемых $f(x), g(t)$, где $x=g(t)=(g_1(t),g_2(t),\dots,g_n(t)\in D\subset \R^{n}$, а $t=(t_1,t_2,\dots t_m)\in G\subset \R^{m}$ имеем 
+Для $h(t) = f(g(t))$ в случае непрерывно
+ дифференцируемых $f(x), g(t)$, где $x=g(t)=(g_1(t),g_2(t),
+ \dots,g_n(t)\in D\subset \R^{n}$, а $t=(t_1,t_2,
+ \dots t_m)\in G\subset \R^{m}$ имеем 
 \[dh=\sum_{j=1}^m\pderiv{h(t)}{t_j}dt_j=
 \sum_{i=1}^n\pderiv{f(x)}{x_i}dx_i,\]
-где $dt_j$~--- приращение независимой переменной $t_j, j=\overline{1,m}$, а $dx_i=dg_i(t)$ --
+где $dt_j$~--- приращение независимой переменной
+ $t_j, j=\overline{1,m}$, а $dx_i=dg_i(t)$ --
 дифференциал $g_i(t), i=\overline{1,n}$.
 \end{crl}
 \begin{proof}
