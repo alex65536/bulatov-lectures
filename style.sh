@@ -91,8 +91,9 @@ Use equation and \eqref{}.'
 	      'Use \iint for double integral, \iiint for triple integral'
 	
 	check -- "$1" \
-	      '[Тт]\s*\.(\s*|\s+~\s*|\s*~\s+)[ке]|[Тт]~\.|[Тт]\.~[ке]([^\.]|$)' \
-	      '"Т. к." and "т. е" are better to write as "т.~к." and "т.~е."'
+	      '[Тт]\s*\.(\s*|\s+~\s*|\s*~\s+)[кедп]|[Тт]~\.|[Тт]\.~[кедп]([^\.]|$)' \
+	      '"Т. к." and "т. е" are better to write as "т.~к." and "т.~е."
+Use "make autofix" to fix this error'
 }
 
 export -f error

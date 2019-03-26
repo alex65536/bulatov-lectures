@@ -1,4 +1,4 @@
-.PHONY: build clean distclean
+.PHONY: build clean distclean style autofix
 
 LATEXMK = latexmk
 LATEXMK_FLAGS =
@@ -13,6 +13,9 @@ build: git-revision.out
 
 style:
 	bash style.sh
+
+autofix:
+	bash autofix.sh
 
 clean:
 	$(LATEXMK) -c
