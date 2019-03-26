@@ -49,11 +49,11 @@ check_file() {
 	      '$$ found, better use \[ \]'
 	
 	check -- "$1" \
-	      '\\Rightarrow'\
+	      '\\Rightarrow|\\Longrightarrow'\
 	      'Use \implies'
 	
 	check -- "$1" \
-	      '\\Leftrightarrow' \
+	      '\\Leftrightarrow|\\Longleftrightarrow' \
 	      'Use \iff'
 	
 	check -- "$1" \

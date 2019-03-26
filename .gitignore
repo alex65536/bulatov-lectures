@@ -1,5 +1,6 @@
-## Gummi swap files
+## Swap files
 .*.swp
+.*.kate-swp
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
