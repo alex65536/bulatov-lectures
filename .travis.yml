@@ -22,7 +22,7 @@ before_install:
 
 install:
     # download a newer latexmk
-    - curl https://personal.psu.edu/jcc8/latexmk/latexmk-461.zip -o /tmp/latexmk.zip
+    - curl https://mirrors.ctan.org/support/latexmk.zip -o /tmp/latexmk.zip
     - unzip /tmp/latexmk.zip latexmk/latexmk.pl
 
 script:
