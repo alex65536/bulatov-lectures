@@ -41,7 +41,7 @@ check() {
 
 check_file() {
 	check -- "$1" \
-	      '^.{80,}$' \
+	      '^.{81,}$' \
 	      'Some lines exceed 80 characters in length'
 	 
 	check -- "$1" \
