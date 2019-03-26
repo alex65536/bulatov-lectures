@@ -1,3 +1,5 @@
+#!/usr/bin/env -S awk -f
+
 BEGIN {
 	if (!width) {
 		width = 79;
@@ -6,15 +8,19 @@ BEGIN {
 
 {
 	gsub(/\r/, $0, "");
-	cur_line = "";
+	match($0, /^[[:space:]]*/);
+	indent_len = RLENGTH;
+	indent = substr($0, 1, indent_len);
+	$0 = substr($0, indent_len + 1);
+	cur_line = indent;
 	wrap = 0;
 	while (length != 0) {
-		if (match($0, /^[[:blank:]]*$/) && wrap) {
+		if (match($0, /^[[:space:]]*$/) && wrap) {
 			break;
 		}
-		add = match($0, /[[:blank:]]/) ? RSTART : length;
+		add = match($0, /[[:space:]]/) ? RSTART : length;
 		cur_width = length(cur_line);
-		if (add > width) {
+		if (add + indent_len > width) {
 			printf( \
 				"error: word \"%s\" too long (%d chars long, but max allowed is %d)\n", \
 				substr($0, 1, add), add, width \
@@ -24,7 +30,7 @@ BEGIN {
 		}
 		if (cur_width + add > width) {
 			print cur_line;
-			cur_line = "";
+			cur_line = indent;
 			wrap = 1;
 		}
 		cur_line = cur_line substr($0, 1, add);
