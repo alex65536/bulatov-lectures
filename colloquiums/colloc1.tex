@@ -3,7 +3,51 @@
 \makeatother
 \documentclass[../main.tex]{subfiles}
 
-\begin{document}\begin{thm}[неравенство Коши-Буняковского]
+\begin{document}
+
+\section{Коллоквиум 1. Формулировки.}
+
+Аксиомы скалярного произведения:
+\begin{enumerate}
+ \item Неотрицательность:
+ \[\forall x \in P \implies \left<x, x\right> \ge 0,\]
+ причем
+ \[\left<x, x\right> = 0 \iff x = \vec 0\]
+ \item Симметричность:
+ \[\forall x, y \in P \implies \left<x, y\right> = \left<y, x\right>\]
+ \item Линейность:
+ \[\forall \lambda, \mu \in \R, \quad \forall x, y, z \in P \implies
+ \left<\lambda x + \mu y, z\right> = \lambda\left<x, z\right> + 
+ \mu\left<y, z\right>\]
+\end{enumerate}
+
+Аксиомы нормы:
+\begin{enumerate}
+ \item Невырожденность:
+ \[\forall x \in \R^n, \quad \norm x = 0 \iff x = \vec 0 \in \R^n.\]
+ \item Однородность:
+ \[\forall x \in \R^n, \quad \forall \lambda \in \R \implies 
+   \norm{\lambda x} = \abs\lambda \cdot \norm x.\]
+ \item Неравенство треугольника:
+ \[\forall x, y \in \R^n \implies \norm{x+y} \le \norm x + \norm y.\]
+\end{enumerate}
+
+Аксиомы расстояния:
+\begin{enumerate}[label=\Roman*.]
+ \item Неотрицательность:
+ \[\forall x, y \in \R^n \implies \rho(x, y) \ge 0\text{, причем }
+   \rho(x, y) = 0 \iff x = y.\]
+ 
+ \item Симметричность:
+ \[\forall x, y \in \R^n \implies \rho(x, y) = \rho(y, x).\]
+ 
+ \item Неравенство треугольника для расстояния:
+ \[\forall x, y, z \in \R^n \implies \rho(x, y) \le \rho(x, z) + 
+   \rho(z, y).\]
+ 
+\end{enumerate}
+
+\begin{thm}[неравенство Коши-Буняковского]
  В любом линейном евклидовом пространстве $P$ над полем $\R$
  выполняется неравенство
  
@@ -555,34 +599,5 @@ $I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$
         далее из полученной системы найти требуемые частные производные. 
     \end{enumerate}
 \end{rems}
-\begin{thm}[об интегрируемости непрерывных ФНП]
-	Если $f \in C(D)$, т.~е. непрерывна на измеримом компакте
-	 $D \subset \R^n$, то $f \in \R(D)$,
-	т.~е. интегрируема на $D$.
-\end{thm}
-\begin{crl*}[теорема о среднем для ФНП]
-	Пусть $f \in C(D)$, а $g \subset \R(D)$, где $D \subset \R^n$~---
-	 измеримый компакт. Если функция $g(x)$ сохраняет один и 
-	 тот же знак $\forall x \in D $, то $\exists x_0 \in D \subset \R^n \implies$
-	
-	\begin{equation}
-	\label{integral-formula}
-	\int\limits_D f(x)g(x)dx =
-	f(x_0)\int\limits_Dg(x)dx.
-	\end{equation}
-	
-	Доказательство по той же схеме, что и для Ф1П.
-\end{crl*}
-\begin{rem}
-	Если взять в \eqref{integral-formula} 
-	$g(x) \equiv 1, \forall x \in D$, то получаем:
-	\[
-		\text{если } f \in C(D), 
-		\text{ то }\exists x_0 \in D 
-		\text{ такое, что } \int\limits_Df(x)dx = f(x_0) mes D,
-	\]
-	Это равенство соответствует простейшей теореме о 
-	среднем для непрерывной ФНП.
-\end{rem}
 
 \end{document}
