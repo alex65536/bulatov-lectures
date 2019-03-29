@@ -141,7 +141,10 @@
 \begin{thm}[О метризируемости произвольного линейного нормируемого 
 	пространства $\R^n$]
  Любое линейное нормированное пространство $\R^n$ с нормой
- \eqref{norm-disp} метризируется с помощью естественного расстояния
+ \begin{equation}
+ \label{norm-disp}
+ \lVert\ \rVert: \R^n \to \R,
+\end{equation} метризируется с помощью естественного расстояния
 
  \begin{equation}
   \label{nat-dist}
@@ -385,7 +388,11 @@ f(g_1(t),g_2(t),\dots,g_n(t))$, то она также является непр
 \begin{thm}[Достаточное условие локального экстремума ФНП]
         Если у дважды дифференцируемой ФНП $u=f(x),\ x \in D \subset \R^n$
         в некоторой окрестности $V(x_0) \subset D$ внутренней стационарной
-        точки $x_0 \in D$ второй дифференциал \eqref{lec8:6} является
+        точки $x_0 \in D$ второй дифференциал \begin{equation}
+        \exists \; d^2f(x_0) = \sum_{i, j = 1}^n\pderiv{^2f(x_0)}{x_i
+        \partial x_j}dx_idx_j.
+        \label{lec8:6}
+    \end{equation} является
         знакопостоянной квадратичной формой относительно $dx_k,\ k =
         \overline{1, n}$, то стационарная точка $x_0$ будет точкой локального
         экстремума ФНП. При этом если квадратичная форма \eqref{lec8:6}
@@ -480,7 +487,11 @@ f(g_1(t),g_2(t),\dots,g_n(t))$, то она также является непр
 		\begin{equation}
 			F'_u(x_0, u_0) \ne 0, \label{lec8.1:4}
 		\end{equation}
-		то тогда ФУ \eqref{lec8.1:1} с начальным условием \eqref{lec8.1:2} имеет 
+		то тогда ФУ \begin{equation}
+		F(x,u) = 0 \label{lec8.1:1}
+	 \end{equation} с начальным условием \begin{equation}
+		F(x_0, u_0) = 0, \label{lec8.1:2}
+	 \end{equation} имеет 
 		единственное решение $u = u(x)$ в некоторой окрестности $V(x_0) 
 		\subset D$, удовлетворяющее
 	 	\begin{equation}
@@ -517,7 +528,19 @@ f(g_1(t),g_2(t),\dots,g_n(t))$, то она также является непр
 	Пусть функции $f_k\left(x\right)$, $k = \overline{1,m}$,
 	$x \in D \subset \R^n$ непрерывно дифференцируемы в некоторой 
 	окрестности $V(x_0) \subset D$ внутренней точки $x_0 \in D$. Если 
-	для матрицы Якоби \eqref{lec_9,num_23} в точке $x_0 \implies$ 
+	для матрицы Якоби \begin{equation}
+ \label{lec_9,num_23}
+ \begin{bmatrix}
+        \pderiv{f_1}{x_1} 
+        & \pderiv{f_1}{x_2} & \dots & 
+        \pderiv{f_1}{x_n} \\
+        \pderiv{f_2}{x_1} & \pderiv{f_2}{x_2} &\dots & 
+        \pderiv{f_2}{x_n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \pderiv{f_m}{x_1} & \pderiv{f_m}{x_2} & \dots & 
+        \pderiv{f_m}{x_n} 
+    \end{bmatrix}
+\end{equation} в точке $x_0 \implies$ 
 	\begin{equation} \label{lec_10, num_24}
 		\rank A = m,
 	\end{equation}
@@ -591,7 +614,13 @@ $I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$
     \label{lec_9.num_14}
     I(x_0, u_0) \neq 0,
 \end{equation}
-тогда система \eqref{lec_9.num_7} будет иметь в 
+тогда система \begin{equation}
+    \label{lec_9.num_7}
+    \begin{cases} 
+        F_k\left(x, u\right) = 0, \\ 
+        k = \overline{1, m} \\
+    \end{cases}    
+\end{equation} будет иметь в 
 соответствующих окрестностях точек $x_0\ \text{и}\ u_0$
 единственное решение, т.~е. $\exists!u = u(x)$ удовлетворяющая начальному
  условию $u(x_0) = u_0$.
