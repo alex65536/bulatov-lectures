@@ -195,19 +195,46 @@
  \end{enumerate}
 
 \end{rems}
-\begin{rem}
-    Кроме полных окрестностей $B_r(x_0), \overline{B_r}(x_0)$ в $
-    (\R^n, \rho)$ будем рассматривать выколотые окрестности в $
-    (\R^n, \rho)$ то есть множества
-    \[
-      \dot{B_r}(M_0) = B_r(M_0) \backslash \{M_0\},
-    \]
-    \[
-      \dot{\overline{M_r}}(M_0) = \overline{B_r}(M_0) \backslash \{M_0\},
-    \]
-    которые для краткости иногда будем обозначать $\dot{V}(M_0) $ и 
-    $\dot{\overline{V}}(M_0)$ соответственно. 
-  \end{rem}
+
+По аналогии с $M$-леммой для Ф1П доказывается \emph{$C$-лемма для ФНП}:
+
+Если $\exists\ C = const \ge 0\ |\ \forall\ \eps > 0, \exists\ \delta > 0\ |\
+\forall x \in \dot{V}(x_0), d(x, x_0) \leq \delta \implies |f(x) - p_0|
+\leq C \cdot \eps$,
+то тогда $f(x)\underset{x \to x_0}{\longrightarrow}p_0$. 
+
+Так же, как и для Ф1П,
+доказывается \emph{критерий Гейне} сходимости ФНП в пространстве $\R^n$:
+
+Для того, чтобы $f(x)\underset{x \to x_0}{\longrightarrow}p_0$
+необходимо и достаточно, чтобы
+$\forall\ M_k \in D$~--- последовательности Гейне точки 
+$M_0 \in \R^n \implies$ 
+\[f(M_k)\underset{k \to \infty}
+{\longrightarrow}p_0 \in \R\]   
+
+\begin{thm}[критерий сходимости n-мерных последовательностей]
+    Последовательность $M_k = (x_{k1}, \dots, x_{kn}) \in \R^n, k 
+    \in \N$, сходится в линейном метрическом пространстве $(\R^n, d)$
+    с евклидовой метрикой $d$ к точке $M_0 = (x_{01}, \dots, x_{0n})
+    \in \R^n$ тогда и только тогда, когда
+    \begin{equation}
+    \label{krit-posl}
+      x_{kj}\underset{k\rightarrow\infty}
+      {\longrightarrow} x_{0j}, \quad \forall j = \overline{1, n}.
+    \end{equation}
+\end{thm}
+
+Кроме того, в $(\R^n, d)$ справедлива \emph{теорема о сжатой ФНП}:
+
+Если $\forall x \in \dot{V}(x_0) \subset D(f) \cap D(g) \cap D(h) \implies
+g(x) \leq f(x) \leq h(x)$, то тогда в случае, когда
+$g(x)\underset{x \to x_0}{\longrightarrow}p_0
+$ и $h(x)\underset{x \to x_0}{\longrightarrow}p_0$,
+имеем также, что $f(x)\underset{x \to x_0}{\longrightarrow}p_0$.
+
+
+
 \begin{thm}[о непрерывности композиции ФНП]
     	Если $n$ функций $g_k(t),\ k = 
     	\overline{1,n}$ от $m$ переменных $t = (t_1, \ldots, t_m) \in D(g) 
