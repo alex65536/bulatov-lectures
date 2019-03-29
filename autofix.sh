@@ -3,7 +3,7 @@
 shopt -s globstar
 
 sedfix() {
-	sed -E -i "$1" tex/**/*.tex
+	sed -E -i "$1" tex/**/*.tex colloquiums/**/*.tex
 }
 
 foldfix() {
