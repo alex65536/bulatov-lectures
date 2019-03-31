@@ -31,7 +31,8 @@
 		
 	\begin{proof}
 		Доказательство проводится по той же схеме, что и при вычислении 2И по 
-		прямоугольнику. В начале рассмотрим произвольное разбиение $P_0 = \left\{ z_k \right\}$, $k = 
+		прямоугольнику. В начале рассмотрим произвольное разбиение $P_0 = \left\{ 
+		z_k \right\}$, $k = 
 		\overline{0, m}$ отрезка $\left[p, q\right]$, $p = z_0 < z_1 < \ldots < z_{m 
 		- 1} < z_m = q.$ Далее в силу непрерывности $f$ на $H$ имеем:
 		
@@ -39,11 +40,13 @@
 		\exists F\left(x, y\right) = \int\limits_{p}^{q} f\left(x, y, z\right) dz.
 		\label{lec14:3}
 		\end{equation}\\
-		Далее, проведя произвольное разбиение $\widetilde{P_0}$ квадрируемого компакта $D \subset 
+		Далее, проведя произвольное разбиение $\widetilde{P_0}$ квадрируемого 
+		компакта $D \subset 
 		\R^2$, являющегося проекцией $H \subset \R^3$ на $Oxy$, получим
 		$\widetilde{P_0} = \left\{D_j \right\},\ j = \overline{1, l}, \text{ где } 
 		\bigcup\limits_{j = 1}^l D_j = D$ и $\mes(D_i \cap D_j) = 0,\ \forall i \neq 
-		j$, т.~е. квадрируемые части разбиения $\widetilde{P_0}$ между собой могут иметь общими 
+		j$, т.~е. квадрируемые части разбиения $\widetilde{P_0}$ между собой могут 
+		иметь общими 
 		лишь, может быть, граничные точки.
 		
 		Выбирая произвольным образом множество отмеченных точек $\widetilde{Q_0} = 
@@ -106,7 +109,8 @@
 		при $d = \diam P \to 0$ получаем $0 \leq \diam \widetilde{P} < d \implies d 
 		\to 0$ для рассматриваемого кубируемого компакта $H \subset \R^3$ следует
 		\begin{equation}
-		I = \lim\limits_{d \to 0} \sigma_0 = \iint\limits_D  F\left(x, y\right) dxdy = 
+		I = \lim\limits_{d \to 0} \sigma_0 = \iint\limits_D  F\left(x, y\right) dxdy 
+		= 
 		\iint\limits_D \left(\int\limits_{p}^{q} f(x, y,z) dz\right) 
 		dxdy, \label{lec14:9}
 		\end{equation}
@@ -116,7 +120,8 @@
 	\begin{rems}
 		\quad
 		\begin{enumerate}
-			\item По аналогии с 2И, \eqref{lec14:9} на практике записывается в виде повторных 
+			\item По аналогии с 2И, \eqref{lec14:9} на практике записывается в виде 
+			повторных 
 			интегралов:
 			\begin{equation}
 			\iiint\limits_{H} f \left( x, y, z \right) dx dy dz = \iint\limits_{D} 
@@ -124,19 +129,22 @@
 			z\right) dz. \label{lec_14, num_1}
 			\end{equation}
 			
-			\item Если кубируемый компакт $H \subset \R$ является цилиндроидом вдоль оси $Oz$, 
+			\item Если кубируемый компакт $H \subset \R$ является цилиндроидом вдоль 
+			оси $Oz$, 
 			т.~е. 
 			\[H = \left\{\left(x, y, z \right) \in \R^3 \; \vline \; p \left(x, 
 			y\right) \leq z \leq q \left(x, y \right);\  \left(x, y\right) \in D,
 			\right\} \]
 			где $p\left(x, y\right)$ и $q\left(x, y\right)$ непрерывны на квадрируемом 
-			компакте $D \subset \R^2$, который является проекцией $H$ на плоскость $Oxy$, то тогда для $f 
+			компакте $D \subset \R^2$, который является проекцией $H$ на плоскость 
+			$Oxy$, то тогда для $f 
 			\in C\left(H\right)$, как и для 2И получаем представление
 			\[\iiint\limits_{H} f \left( x, y, z \right) dx dy dz = \iint\limits_{D} 
 			dx dy \int\limits_{p\left(x, y\right)}^{q\left(x, y \right)} f\left(x, y, 
 			z\right) dz.\]
 			
-			\item Если кубируемый компакт $H \subset \R^3$ является цилиндроидом вдоль оси 
+			\item Если кубируемый компакт $H \subset \R^3$ является цилиндроидом вдоль 
+			оси 
 			$Oz$, то в случае \eqref{lec_14, num_1} для квадрируемого компакта $D 
 			\subset \R^2$, являющегося криволинейной трапецией вдоль оси $Oy$, т.~е.
 			\[D = \left\{\left(x, y\right) \in \R^2 \; \vline \; c \left(x\right) \leq 
@@ -173,7 +181,8 @@
 		В данном случае имеем
 		
 		\[I_0 = \iiint\limits_{H} g(z) dxdydz,\]
-		где $H$~--- компакт в $\R^3$, ограниченный в пространстве параболлой $z = x^2 + 
+		где $H$~--- компакт в $\R^3$, ограниченный в пространстве параболлой $z = 
+		x^2 + 
 		y^2$ и плоскостью $z = 1$, проекцией которой на плоскость $Oxy$ является 
 		круг $D: x^2 + y^2 \leq 1$.
 		
@@ -184,7 +193,8 @@
 		Рассматривая $H$ как составную часть цилиндроида вдоль $Oy$, имеем:
 		
 		\[H = \left\{\left(x, y, z\right) \in \R^3 \ |\ -\sqrt{z - x^2} \leq y 
-		\leq \sqrt{z - x^2},\ -\sqrt{z} \leq x \leq \sqrt{z},\ 0 \le z \le 1 \right\}.\]
+		\leq \sqrt{z - x^2},\ -\sqrt{z} \leq x \leq \sqrt{z},\ 0 \le z \le 1 
+		\right\}.\]
 		
 		Переходя в таком виде снова к повторным пределам, имеем:
 		
@@ -278,7 +288,8 @@
 	показать, что якобианы \eqref{lec14:13}, \eqref{lec14:14} для диффеоморфизмов 
 	\eqref{lec14:11}, \eqref{lec14:12}
 	удовлетворяют условию $I(t)\cdot J(x) = 1$.
-	Отсюда, в частности, следует, что для диффеоморфизмов \eqref{lec14:13}, \eqref{lec14:14} 
+	Отсюда, в частности, следует, что для диффеоморфизмов \eqref{lec14:13}, 
+	\eqref{lec14:14} 
 	их якобианы ненулевые. Можно показать, что 
 	при диффеоморфизме \eqref{lec14:11} для мер образа $G$ и прообраза $D$ следует
 	\begin{equation}
@@ -301,7 +312,8 @@
 	сделано позже. На основании этих формул справедлива 
 	
 	\begin{thm}[о замене переменных в $n$-кратном интеграле]
-		Если для диффеоморфизма \eqref{lec14:11} и функции $h(x), x\in D$ существует непрерывная композиция
+		Если для диффеоморфизма \eqref{lec14:11} и функции $h(x), x\in D$ существует 
+		непрерывная композиция
 		\[
 		\left( h \circ f \right) (t) = h(f(t)) = h(f_1(t), \ldots, f_n(t)),\  
 		t \in G \subset \R^n,
