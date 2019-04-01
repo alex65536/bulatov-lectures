@@ -16,7 +16,8 @@
 	Будем использовать формулу \eqref{lec14:15} в предположении, что
 	$D$ и $G$ ~--- квадрируемые компакты в $\R^n$. Рассмотрим $\forall P =
 	\{ D_k \},\; k = \overline{1, m}$ измеримого компакта $D \subset 
-	\mathbb{R}^n$ на измеримые компакты $D_k,\; D = \bigcup\limits_{k = 1}^{m} D_k$ 
+	\mathbb{R}^n$ на измеримые компакты $D_k,\; D = \bigcup\limits_{k = 1}^{m} 
+	D_k$ 
 	и $mes\left(D_i \cap D_j\right) = 0,\; i = j$ (общими могут быть лишь
 	граничные точки).
 		   
@@ -44,7 +45,8 @@
 	
 		
 	Получаем таким образом для разбиения $\widetilde{P} = \{ G_k  \},\; 
-	k = \overline{1, m}$, множества отмеченных точек $\widetilde{Q} : M_k = f(N_k) 
+	k = \overline{1, m}$, множества отмеченных точек $\widetilde{Q} : M_k = 
+	f(N_k) 
 	\in D_k$. В результате для соответствующей интегральной суммы:
 	
 	\[
@@ -66,7 +68,8 @@
 	
 	Поэтому, учитывая, что при диффеоморфизме \eqref{lec14:11}, \eqref{lec14:12} 
 	имеем $d = \diam D \to 0$ $ \iff \widetilde{d} = \diam \widetilde{P} \to 0$ 
-	получаем, что, несмотря на использование специальных интегральных сумм, засчёт 
+	получаем, что, несмотря на использование специальных интегральных сумм, 
+	засчёт 
 	выбора точки и в силу непрерывности подынтегральной функции  предел общих 
 	интегральных сумм будет такой же, как и у специальных, так как непревная ФНП 
 	является интегрируемой. Поэтому
@@ -103,7 +106,8 @@
 	\sin\phi & r\cos\phi \\
 	\end{vmatrix} = r$.
 	Если в рассмотренной области для \smallskip $ \left( r, \phi \right) \in G $, 
-	являющейся соответствующим образом при отображении \eqref{lec15:42} квадрируемого 
+	являющейся соответствующим образом при отображении \eqref{lec15:42} 
+	квадрируемого 
 	компакта $ D \subset \mathbb{R}^2 \implies r > 0$, в результате имеем 
 	диффеоморфизм	 \eqref{lec15:42}. В этом случае замена переменной 
 	\eqref{lec15:41} даёт:
@@ -124,18 +128,21 @@
 	\begin{exmp} \textbf{C иллюстрацией}
 		\smallbreak
 		
-	Рассмотрим $\displaystyle I_0 = \iint\limits_{x^2+y^2 \leq 2x+2y} (x+y)dx dy$\\
+	Рассмотрим $\displaystyle I_0 = \iint\limits_{x^2+y^2 \leq 2x+2y} (x+y)dx 
+	dy$\\
 		
 	$D: (x - 1) ^ 2 + (y - 1) ^ 2 \leq 2$
 	
 	\includegraphics[scale=0.7]{lec15_1}
 	\smallskip
 	
-	В данном случае, проводя касательную в $(0, 0)$, полагая $-\dfrac{\pi}{4}\leq \phi 
+	В данном случае, проводя касательную в $(0, 0)$, полагая $-\dfrac{\pi}{4}\leq 
+	\phi 
 	\leq \dfrac{3\pi}{4},\;\\ r_1(\phi)=0,\; r_2(\phi)=2(\cos{\phi} + \sin{\phi})$
 	
 	$\displaystyle I_0 = \iint\limits_{G} r(r\cos{\phi}+r\sin{\phi})dr d\phi=
-	\int\limits_{-\frac{\pi}{4}}^{\frac{3\pi}{4}}d\phi \int\limits_{0}^{2(\cos{\phi}
+	\int\limits_{-\frac{\pi}{4}}^{\frac{3\pi}{4}}d\phi 
+	\int\limits_{0}^{2(\cos{\phi}
 	+\sin{\phi})}r^2(\cos{\phi}	+\sin{\phi})dr=\\=	2\int\limits_{-\frac{\pi}{4}}^
 	{\frac{3\pi}{4}}\left[\frac{r^3}{3}(\cos(\phi)+\sin(\phi))\right]_{r=0}^
 	{r=\cos{\phi}+\sin{\phi}}d\phi=\frac{2}{3}\int\limits_{-\frac{\pi}{4}}^
@@ -192,7 +199,8 @@
 			x = r \cos{\phi} \sin{\psi},\;\;\;\;\;\;\;\;\;\;\;
 			 -\frac{\pi}{2}\leq \psi \leq \frac{\pi}{2}\\
 			y = r \sin{\phi} \cos{\psi},\;\;\;\;\;\;\;\;\;\;\;\; r \geq 0\\
-			z = r \sin{\phi},\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; 0 \leq \phi \leq 2\pi
+			z = r \sin{\phi},\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; 0 \leq \phi \leq 
+			2\pi
 			\end{cases}$
 			
 			 $I = \begin{vmatrix}
@@ -218,9 +226,11 @@
 		\textbf{Без иллюстрации}
 		
 		
-		$x^2 + y^2 + z^2 \geq R^2, \;\; r^2 \leq R^2, \;\; 0 \leq \phi \leq 2\pi, \;\; -\dfrac{\pi}{2} \leq \psi \leq \dfrac{\pi}{2}$
+		$x^2 + y^2 + z^2 \geq R^2, \;\; r^2 \leq R^2, \;\; 0 \leq \phi \leq 2\pi, 
+		\;\; -\dfrac{\pi}{2} \leq \psi \leq \dfrac{\pi}{2}$
 		
-		\[V_{\text{ш}} = \iiint\limits_{x^2 + y^2 + z^2 \leq R^2} dxdydz = \iiint\limits_{
+		\[V_{\text{ш}} = \iiint\limits_{x^2 + y^2 + z^2 \leq R^2} dxdydz = 
+		\iiint\limits_{
 			\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;
 			\begin{cases}
 			r \leq R\\
@@ -230,11 +240,13 @@
 		}r^2\cos \phi \; dr d\phi d\psi = \int\limits_{0}^{R}r^2dr\int\limits_{0}^
 	{2\pi}\cos\phi \; d\phi \int\limits_{-\frac{\pi}{2}}^{\frac{\pi}{2}}d\psi\]
 		
-		Переменные полностью разделились, поэтому 3И можно рассматривать как произведение
+		Переменные полностью разделились, поэтому 3И можно рассматривать как 
+		произведение
 		 однократных интегралов
 		
 		\[
-		\left[\dfrac{r^3}{3}\right]_{0}^{R} \cdot \Big[\sin \psi \Big]_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \cdot \Big[\phi\Big]_{0}^{2\pi} = 
+		\left[\dfrac{r^3}{3}\right]_{0}^{R} \cdot \Big[\sin \psi 
+		\Big]_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \cdot \Big[\phi\Big]_{0}^{2\pi} = 
 		\dfrac{4}{3} \pi R^3 
 		\]
 	\end{exmp}
@@ -285,7 +297,8 @@
 				1 \leq \upsilon \leq 4\\
 				\frac{1}{4} \leq \vartheta \leq 4
 				\end{cases}} \upsilon \cdot \dfrac{1}{2\vartheta} \; d\upsilon 
-			d\vartheta = \dfrac{1}{2}\int\limits_{1}^{4} \upsilon d\upsilon \int\limits_{\frac{1}{4}}^{4} \dfrac{d\vartheta}{\vartheta} =
+			d\vartheta = \dfrac{1}{2}\int\limits_{1}^{4} \upsilon d\upsilon 
+			\int\limits_{\frac{1}{4}}^{4} \dfrac{d\vartheta}{\vartheta} =
 			 \dfrac{1}{2} \left[\dfrac{\upsilon ^ 2}{2}\right]_1^4 \cdot 
 			 \big[ \ln{\vartheta}\big]_{\frac{1}{4}}^4 = 2^3 \ln{4} = 16 \ln{2}$
 			\item Рассмотрим тело ограниченное поверхностью 2 порядка
