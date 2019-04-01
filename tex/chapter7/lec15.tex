@@ -1,0 +1,318 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+	
+	\begin{proof}
+		
+	Будем использовать формулу \eqref{lec14:15} в предположении, что
+	$D$ и $G$ ~--- квадрируемые компакты в $\R^n$. Рассмотрим $\forall P =
+	\{ D_k \},\; k = \overline{1, m}$ измеримого компакта $D \subset 
+	\mathbb{R}^n$ на измеримые компакты $D_k,\; D = \bigcup\limits_{k = 1}^{m} D_k$ 
+	и $mes\left(D_i \cap D_j\right) = 0,\; i = j$ (общими могут быть лишь
+	граничные точки).
+		   
+	При диффеоморфизме \eqref{lec14:11} и \eqref{lec14:12} разбиения $P$ 
+	множества $D$ порождает соответствующее разбиение измеримого компакта 
+	$G \subset \mathbb{R}^n$, на соответствующие измеримые компакты
+	$G_k = g(D_k)$, которые являются соответствующими образами диффеоморфизма 
+	\eqref{lec14:12} по отношению к \eqref{lec14:11}. При этом так же, как и выше,
+	
+	\[
+	\bigcup\limits_{k = 1}^{m} = G,\; mes\left(G_i \cap G_j\right) = 0, i \neq j
+	\]
+	
+	Используя теорему о среднем для $n$-кратного интеграла (формулируется и 
+	доказывается аналогично соответствующей теореме для ОИ). 
+	В силу интегрируемости имеем:
+	
+	\[
+	\begin{array}{c}
+	\exists N_k \in D_k,\; k = \overline{1, m} \implies \Delta D_k = mes D_k 
+	= \int\limits_{G_k} |I\left( t \right)| dt = \\ = |I \left( N_k \right) |
+	 \Delta G_k,\; \Delta G_k = mes G_k = \int\limits_{G_k} dt
+	\end{array}
+	\]
+	
+		
+	Получаем таким образом для разбиения $\widetilde{P} = \{ G_k  \},\; 
+	k = \overline{1, m}$, множества отмеченных точек $\widetilde{Q} : M_k = f(N_k) 
+	\in D_k$. В результате для соответствующей интегральной суммы:
+	
+	\[
+	\begin{cases}
+	Q = \{ M_k \}\\
+	\widetilde{Q} = \{ N_k \}
+	\end{cases}
+	\]
+	
+	\begin{equation}
+	\label{lec15:40}
+	\begin{gathered}
+	\sigma = \sigma \{ h, (\widetilde{P}, \widetilde{Q}) \} = \sum_{k = 1}^{m} h 
+	\left( f \left( N_k \right) \right|I\left( N_k \right)| \Delta G_k = 
+	\sigma \{ h \left( P, Q \right) \} =\\= \sum_{k = 1}^{m} h 
+	\left( N_k \right) \Delta D_k
+	\end{gathered}
+	\end{equation}
+	
+	Поэтому, учитывая, что при диффеоморфизме \eqref{lec14:11}, \eqref{lec14:12} 
+	имеем $d = \diam D \to 0$ $ \iff \widetilde{d} = \diam \widetilde{P} \to 0$ 
+	получаем, что, несмотря на использование специальных интегральных сумм, засчёт 
+	выбора точки и в силу непрерывности подынтегральной функции  предел общих 
+	интегральных сумм будет такой же, как и у специальных, так как непревная ФНП 
+	является интегрируемой. Поэтому
+	
+	\begin{equation}
+	\label{lec15:41}
+	\begin{gathered}
+	\int\limits_{D} h \left( x \right) dx = \lim\limits_{d \to 0} \sigma\{ h, 
+	\left(P, Q \right)  \} = \lim\limits_{\widetilde{d} \to 0} \sum_{k = 1}^{m} h
+	\left( f \left( N_k \right) \right) | I \left( N_k  \right) | \Delta G_k =\\= 
+	\left[t = f(x) \right] = \int\limits_{G} | I \left( t \right) | h 
+	\left( f \left( t \right) \right) dt
+	\end{gathered}
+	\end{equation}
+	
+	\end{proof}
+	
+	\begin{exmp}
+	Пусть $ n = 2 $, то есть имеем плоскость $ \mathbb{R}^2 $, снабжённую 
+	ПДСК $ Oxy $, использум 
+	\begin{equation}
+	\label{lec15:42} 
+	\begin{cases}
+	x = r\cos\phi,\\
+	y = r\sin\phi, 
+	\end{cases}
+	\end{equation} то для 
+	$I = \begin{vmatrix}
+	x_r' & x_\phi' \\
+	y_r' & y_\phi' \\
+	\end{vmatrix} = 
+	\begin{vmatrix}	
+	\cos\phi & -r\sin\phi \\
+	\sin\phi & r\cos\phi \\
+	\end{vmatrix} = r$.
+	Если в рассмотренной области для \smallskip $ \left( r, \phi \right) \in G $, 
+	являющейся соответствующим образом при отображении \eqref{lec15:42} квадрируемого 
+	компакта $ D \subset \mathbb{R}^2 \implies r > 0$, в результате имеем 
+	диффеоморфизм	 \eqref{lec15:42}. В этом случае замена переменной 
+	\eqref{lec15:41} даёт:
+	\begin{equation} 
+	\label{lec15:43}
+	\begin{gathered} 
+	\iint_{D} h \left( x, y \right) dx dy = \left[ h\left( x, y \right) 
+	\text{ непрерывна на } D \subset \mathbb{R}^2 \right] 
+	\stackrel{\eqref{lec15:42}}{=}\\= \iint\limits_{G} r f 
+	\left( r\cos\phi,\; r\sin\phi \right) dr d\phi 
+	\end{gathered}
+	\end{equation}
+	
+	\eqref{lec15:43} остаётся справедливой не только тогда, когда $ r > 0 $, 
+	но и $ r \geq 0 $, причём $ r = 0 $ лишь на множестве конечных $m$.
+	\end{exmp}
+	
+	\begin{exmp} \textbf{C иллюстрацией}
+		\smallbreak
+		
+	Рассмотрим $\displaystyle I_0 = \iint\limits_{x^2+y^2 \leq 2x+2y} (x+y)dx dy$\\
+		
+	$D: (x - 1) ^ 2 + (y - 1) ^ 2 \leq 2$
+	
+	\includegraphics[scale=0.7]{lec15_1}
+	\smallskip
+	
+	В данном случае, проводя касательную в $(0, 0)$, полагая $-\dfrac{\pi}{4}\leq \phi 
+	\leq \dfrac{3\pi}{4},\;\\ r_1(\phi)=0,\; r_2(\phi)=2(\cos{\phi} + \sin{\phi})$
+	
+	$\displaystyle I_0 = \iint\limits_{G} r(r\cos{\phi}+r\sin{\phi})dr d\phi=
+	\int\limits_{-\frac{\pi}{4}}^{\frac{3\pi}{4}}d\phi \int\limits_{0}^{2(\cos{\phi}
+	+\sin{\phi})}r^2(\cos{\phi}	+\sin{\phi})dr=\\=	2\int\limits_{-\frac{\pi}{4}}^
+	{\frac{3\pi}{4}}\left[\frac{r^3}{3}(\cos(\phi)+\sin(\phi))\right]_{r=0}^
+	{r=\cos{\phi}+\sin{\phi}}d\phi=\frac{2}{3}\int\limits_{-\frac{\pi}{4}}^
+	{\frac{3\pi}{4}}(\cos{\phi}+\sin{\phi})^4 d\phi=\frac{2}{3}\int\limits_
+	{-\frac{\pi}{4}}^{\frac{3\pi}{4}}(1 +\sin{2\phi})^2 d\phi 
+	=\\=\frac{2}{3}\int\limits_{-\frac{\pi}{4}}^
+	{\frac{3\pi}{4}}\left(1 +2\sin{2\phi}+\frac{1-\cos{4\phi}}{2}\right)^2 d\phi=
+	\frac{2}{3}\left[\frac{3}{2}\phi - \cos{2\phi} - \frac{1}{8}\sin{4\phi}
+	\right]_{-\frac{\pi}{4}}^{\frac{3\pi}{4}}=\pi	$
+	
+	%\int\limits_{-\frac{\pi}{4}}^{\frac{3\pi}{4}}
+	%\cos{\phi}+\sin{\phi}
+	
+	\end{exmp}	
+
+	\begin{exmp}
+		Пусть $ n = 3 $, то есть имеем $ \mathbb{R}^3 $, c  $ Oxyz $. Аналогом замены
+		будет:
+		\begin{itemize}
+			\item[а)]
+			Цилиндрическая замена
+			
+			$\begin{cases}
+				x = r \cos{\phi},\\
+				y = r \sin{\phi},\\
+				z = z,
+			\end{cases}$
+			
+			В этом случае якобиан $I = \begin{vmatrix}
+			x'_r & x'_\phi & 0 \\
+			y'_r & y'_\phi & 0 \\
+			0 & 0 & 1
+			\end{vmatrix}=r\geq 0$.
+			
+			В случае $r > 0$ для непрерывной $h=h(x, y, z)$ и соответствующих
+			кубируемых компактов в $\R^3$ имеем:
+			
+			\begin{equation}
+			\label{lec15:44}
+			\iiint\limits_{D} h(x, y, z) dx dy dz=
+			\iiint\limits_{G} rh(r\cos{\phi},\; r\sin{\phi},\; z) dr d\phi dz
+			\end{equation}
+			
+			\eqref{lec15:44} можно использовать, когда $r=0$ лишь на конечном множестве
+			$r = [0,\;+\infty],\\ \phi \in [0,\; 2\pi]$. Иногда удобно рассматривать
+			отрицательные углы $(-\pi \leq \phi \leq \pi)$, или брать $\phi$ из
+			соответствующих промежутков длиной $2\pi$.
+			
+			\item[б)]
+			
+			Сферическая замена 
+			
+			$\begin{cases}
+			x = r \cos{\phi} \sin{\psi},\;\;\;\;\;\;\;\;\;\;\;
+			 -\frac{\pi}{2}\leq \psi \leq \frac{\pi}{2}\\
+			y = r \sin{\phi} \cos{\psi},\;\;\;\;\;\;\;\;\;\;\;\; r \geq 0\\
+			z = r \sin{\phi},\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; 0 \leq \phi \leq 2\pi
+			\end{cases}$
+			
+			 $I = \begin{vmatrix}
+				x'_r & x'_\phi & x'_\psi \\
+				y'_r & y'_\phi & y'_\psi \\
+				z'_r & z'_\phi & z'_\psi
+			\end{vmatrix}=r^2\cos{\psi}\geq 0$
+			
+			Для непрерывной $g=g(x, y, z)$ и соответствующих
+			кубируемых компактов в $\R^3$ имеем:
+			
+			\begin{equation}
+			\label{lec15:45}
+			\iiint\limits_{D} h(x, y, z) dx dy dz=
+			\iiint\limits_{G} r^2g(r \cos{\phi} \sin{\psi},\; r \sin{\phi} \cos{\psi},\;
+			 r \sin{\phi})\cos{\psi}\; dz d\phi d\psi
+			\end{equation}
+			
+		\end{itemize}
+	\end{exmp}
+
+	\begin{exmp}
+		\textbf{Без иллюстрации}
+		
+		
+		$x^2 + y^2 + z^2 \geq R^2, \;\; r^2 \leq R^2, \;\; 0 \leq \phi \leq 2\pi, \;\; -\dfrac{\pi}{2} \leq \psi \leq \dfrac{\pi}{2}$
+		
+		\[V_{\text{ш}} = \iiint\limits_{x^2 + y^2 + z^2 \leq R^2} dxdydz = \iiint\limits_{
+			\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;
+			\begin{cases}
+			r \leq R\\
+			0 \leq \phi \leq 2\pi\\
+			-\dfrac{\pi}{2} \leq \psi \leq \dfrac{\pi}{2}
+			\end{cases}
+		}r^2\cos \phi \; dr d\phi d\psi = \int\limits_{0}^{R}r^2dr\int\limits_{0}^
+	{2\pi}\cos\phi \; d\phi \int\limits_{-\frac{\pi}{2}}^{\frac{\pi}{2}}d\psi\]
+		
+		Переменные полностью разделились, поэтому 3И можно рассматривать как произведение
+		 однократных интегралов
+		
+		\[
+		\left[\dfrac{r^3}{3}\right]_{0}^{R} \cdot \Big[\sin \psi \Big]_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \cdot \Big[\phi\Big]_{0}^{2\pi} = 
+		\dfrac{4}{3} \pi R^3 
+		\]
+	\end{exmp}
+	
+	Рассмотрим вычисление 2И и 3И с помощью соответствующих общих замечаний. 
+	
+	\begin{examples}
+~
+
+		\begin{enumerate}
+			\item
+			Вычислим $\displaystyle I_0 = \iint\limits_D xy\; dxdy$, гдe
+			$D: \left[
+			\begin{array}{l} 
+			xy= 1\\
+			xy = 4\\
+			y = \dfrac{x}{4}\\
+			y = 4x\\
+			x \geq 0\\
+			y \geq 0
+			\end{array}
+			\right]
+			$
+			
+			\includegraphics[scale=0.85]{lec15_2}
+			
+			\[\begin{cases}
+			\smallskip
+			\upsilon = xy \big|_{1}^{4}\\
+			\vartheta = \frac{x}{y} \big|_{\frac{1}{4}}^{4}
+			\end{cases}\]
+			
+			
+			Для обратного якобиана получаем: 
+			
+			\[J = \begin{bmatrix}
+			\upsilon'_x & \upsilon'_y\\
+			\vartheta'_x & 	\vartheta'_y
+			\end{bmatrix} = \begin{bmatrix}
+			\smallskip
+			x & y\\
+			-\frac{y}{x^2}& \frac{1}{x}
+			\end{bmatrix} = 2 \dfrac{y}{x} = 2 \vartheta\]
+			
+			Для прямого якобиана имеем: $I = \dfrac{1}{J} = \dfrac{1}{2\vartheta}$
+			
+			$\displaystyle I_0 = \iint\limits_{\begin{cases}
+				1 \leq \upsilon \leq 4\\
+				\frac{1}{4} \leq \vartheta \leq 4
+				\end{cases}} \upsilon \cdot \dfrac{1}{2\vartheta} \; d\upsilon 
+			d\vartheta = \dfrac{1}{2}\int\limits_{1}^{4} \upsilon d\upsilon \int\limits_{\frac{1}{4}}^{4} \dfrac{d\vartheta}{\vartheta} =
+			 \dfrac{1}{2} \left[\dfrac{\upsilon ^ 2}{2}\right]_1^4 \cdot 
+			 \big[ \ln{\vartheta}\big]_{\frac{1}{4}}^4 = 2^3 \ln{4} = 16 \ln{2}$
+			\item Рассмотрим тело ограниченное поверхностью 2 порядка
+			
+			$(x + y + z)^2 + (x + y - z)^2 + (x - y + z)^2 \leq 1$
+			
+			$\begin{cases}
+			\upsilon = x + y + z\\
+			\vartheta =  x + y - z\\
+			\omega = x - y + z\\
+			\end{cases} \implies \upsilon^2 + \vartheta^2 + \omega^2 \leq 1$ ~--- шар
+			
+			$I = \begin{bmatrix}
+			1 & 1 & 1\\
+			1 & 1 & -1\\
+			1 & -1 & 1
+			\end{bmatrix} = \begin{bmatrix}
+			1 & 1 & 1\\
+			0 & 0 & 2\\
+			0 & 2 & 0
+			\end{bmatrix} = -4 < 0 \implies |I| = \frac{1}{4}$
+			
+			$V = \displaystyle \iiint\limits_{\upsilon^2 + \vartheta^2 +
+				 \omega^2 \leq 1} \frac{1}{4} d \upsilon d \vartheta d \omega
+			  = \frac{1}{4} V_{ш} = \frac{1}{4} \cdot \frac{4}{3}\pi 
+			  = \frac{\pi}{3}$
+		\end{enumerate}
+	\end{examples}
+	
+\end{document}
