@@ -94,6 +94,10 @@ Use equation and \eqref{}.'
 	      '[Тт]\s*\.(\s*|\s+~\s*|\s*~\s+)[кедп]|[Тт]~\.|[Тт]\.~[кедп]([^\.]|$)' \
 	      '"Т. к." and "т. е" are better to write as "т.~к." and "т.~е."
 Use "make autofix" to fix this error'
+	
+	check -- "$1" \
+	      '\\mathbb' \
+	      'Use predefined symbols for sets (as \R, \C, \N, \Z, \Q).'
 }
 
 export -f error
