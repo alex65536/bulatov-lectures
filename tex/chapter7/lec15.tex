@@ -14,77 +14,77 @@
 	\begin{proof}
 		
 	Будем использовать формулу \eqref{lec14:15} в предположении, что
-	$D$ и $G$ ~--- квадрируемые компакты в $\R^n$. Рассмотрим $\forall P =
+	$D$ и $G$ ~--- квадрируемые компакты в $\R^n$. Рассмотрим произвольное 
+	разбиение $P =
 	\{ D_k \},\; k = \overline{1, m}$ измеримого компакта $D \subset 
-	\mathbb{R}^n$ на измеримые компакты $D_k,\; D = \bigcup\limits_{k = 1}^{m} 
+	\R^n$ на измеримые компакты $D_k$, так что $D = \bigcup\limits_{k = 1}^{m} 
 	D_k$ 
-	и $mes\left(D_i \cap D_j\right) = 0,\; i = j$ (общими могут быть лишь
-	граничные точки).
+	и $\mes\left(D_i \cap D_j\right) = 0,\; i = j$ т.~е. различные части $D_i$ и 
+	$D_j$ могут иметь общими лишь, может быть, граничные точки.
 		   
-	При диффеоморфизме \eqref{lec14:11} и \eqref{lec14:12} разбиения $P$ 
+	При диффеоморфизме \eqref{lec14:11} и \eqref{lec14:12} разбиение $P$ 
 	множества $D$ порождает соответствующее разбиение измеримого компакта 
-	$G \subset \mathbb{R}^n$, на соответствующие измеримые компакты
-	$G_k = g(D_k)$, которые являются соответствующими образами диффеоморфизма 
+	$G \subset \R^n$ на соответствующие измеримые компакты
+	$G_k = g(D_k)$, которые являются соответствующими образами обратного 
+	диффеоморфизма 
 	\eqref{lec14:12} по отношению к \eqref{lec14:11}. При этом так же, как и выше,
-	
-	\[
-	\bigcup\limits_{k = 1}^{m} = G,\; mes\left(G_i \cap G_j\right) = 0, i \neq j
-	\]
+	$
+	\bigcup\limits_{k = 1}^{m} G_k = G$ и $\mes\left(G_i \cap G_j\right) = 0$, 
+	$\forall i \neq j$.
 	
 	Используя теорему о среднем для $n$-кратного интеграла (формулируется и 
-	доказывается аналогично соответствующей теореме для ОИ). 
-	В силу интегрируемости имеем:
+	доказывается аналогично соответствующей теореме для ОИ), 
+	в силу интегрируемости имеем:
 	
 	\[
-	\begin{array}{c}
-	\exists N_k \in D_k,\; k = \overline{1, m} \implies \Delta D_k = mes D_k 
-	= \int\limits_{G_k} |I\left( t \right)| dt = \\ = |I \left( N_k \right) |
-	 \Delta G_k,\; \Delta G_k = mes G_k = \int\limits_{G_k} dt
-	\end{array}
+	\begin{gathered}
+	\exists N_k \in D_k,\; k = \overline{1, m} \implies \Delta D_k = \mes D_k 
+	= \int\limits_{G_k} |I(t)| dt = \\ = |I(N_k)|
+	 \Delta G_k,\; \Delta G_k = \mes G_k = \int\limits_{G_k} dt.
+	\end{gathered}
 	\]
 	
-		
-	Получаем таким образом для разбиения $\widetilde{P} = \{ G_k  \},\; 
-	k = \overline{1, m}$, множества отмеченных точек $\widetilde{Q} : M_k = 
+	Получаем таким образом разбиение $\widetilde{P} = \{ G_k  \},\; 
+	k = \overline{1, m}$, с множеством отмеченных точек $\widetilde{Q} : M_k = 
 	f(N_k) 
 	\in D_k$. В результате для соответствующей интегральной суммы:
 	
 	\[
 	\begin{cases}
-	Q = \{ M_k \}\\
-	\widetilde{Q} = \{ N_k \}
+	Q = \{ N_k \},\\
+	\widetilde{Q} = \{ M_k \};
 	\end{cases}
 	\]
 	
 	\begin{equation}
 	\label{lec15:40}
 	\begin{gathered}
-	\sigma = \sigma \{ h, (\widetilde{P}, \widetilde{Q}) \} = \sum_{k = 1}^{m} h 
-	\left( f \left( N_k \right) \right|I\left( N_k \right)| \Delta G_k = 
-	\sigma \{ h \left( P, Q \right) \} =\\= \sum_{k = 1}^{m} h 
-	\left( N_k \right) \Delta D_k
+	\sigma = \sigma \{ h; (\widetilde{P}; \widetilde{Q}) \} = \sum_{k = 1}^{m} h 
+	\left( f \left( N_k \right) \right)|I(N_k)| \Delta G_k = \\ = 
+	\sigma \{ h; \left( P; Q \right) \} = \sum_{k = 1}^{m} h 
+	\left( N_k \right) \Delta D_k.
 	\end{gathered}
 	\end{equation}
 	
 	Поэтому, учитывая, что при диффеоморфизме \eqref{lec14:11}, \eqref{lec14:12} 
-	имеем $d = \diam D \to 0$ $ \iff \widetilde{d} = \diam \widetilde{P} \to 0$ 
+	имеем $d = \diam D \to 0$ $ \iff \widetilde{d} = \diam \widetilde{P} \to 0$,
 	получаем, что, несмотря на использование специальных интегральных сумм, 
-	засчёт 
+	за счёт 
 	выбора точки и в силу непрерывности подынтегральной функции  предел общих 
-	интегральных сумм будет такой же, как и у специальных, так как непревная ФНП 
+	интегральных сумм будет такой же, как и у специальных, так как непрерывная 
+	ФНП 
 	является интегрируемой. Поэтому
 	
 	\begin{equation}
 	\label{lec15:41}
 	\begin{gathered}
-	\int\limits_{D} h \left( x \right) dx = \lim\limits_{d \to 0} \sigma\{ h, 
-	\left(P, Q \right)  \} = \lim\limits_{\widetilde{d} \to 0} \sum_{k = 1}^{m} h
-	\left( f \left( N_k \right) \right) | I \left( N_k  \right) | \Delta G_k =\\= 
-	\left[t = f(x) \right] = \int\limits_{G} | I \left( t \right) | h 
-	\left( f \left( t \right) \right) dt
+	\int\limits_{D} h \left( x \right) dx = \lim\limits_{d \to 0} \sigma\{ h; 
+	\left(P; Q \right)  \} = \lim\limits_{\widetilde{d} \to 0} \sum_{k = 1}^{m} h
+	\left( f \left( N_k \right) \right) | I ( N_k ) | \Delta G_k =\\= 
+	\left[t = f(x) \right] = \int\limits_{G} | I (t) | h 
+	\left( f \left( t \right) \right) dt. \qedhere
 	\end{gathered}
 	\end{equation}
-	
 	\end{proof}
 	
 	\begin{exmp}
