@@ -15,7 +15,7 @@
 В основном будем использовать общую формулу
 \begin{equation}
 \label{lec16:1}
-\mes H = \int\limits_Hdx = \underset{H}{\int \ldots \int}dx_1 \ldots dx_n,
+\mes H = \int\limits_Hdx = \idotsint\limits_H dx_1 \ldots dx_n,
 \end{equation}
 где $H$ --- измеримое множество из $\R^n$.
 
@@ -27,25 +27,25 @@
 $Oxy$ имеем:
 \begin{equation}
 \label{lec16:2}
-S = \text{Пл. } D = \iint\limits_Ddxdy.
+S = \text{площадь } D = \iint\limits_Ddxdy.
 \end{equation}
-В случае, когда $D \subset \R^{2}$ --- криволинейная трапеция т.~е. 
+В случае, когда $D \subset \R^{2}$~--- криволинейная трапеция, т.~е. 
 \begin{equation}
 \label{lec16:3}
 	D=\{
 	(x,y)\in \R^2 \mid c(x)\leq y\leq d(x), a\leq x \leq b
 	\},
 \end{equation}
-где $c(x)$ и $d(x)$ непрерывны на $\left[a; b\right]$
- используется вычесление 2И через повторные интегралы:
+где $c(x)$ и $d(x)$ непрерывны на $\left[a; b\right]$,
+ используется вычисление 2И через повторные интегралы:
 \begin{equation}
 \label{lec16:4}
 S = \int\limits_a^bdx\int\limits_{c(x)}^{d(x)}dy = 
-\int\limits_a^b\left[y\right]^d(x)_c(x)
+\int\limits_a^b\left[y\right]^{d(x)}_{c(x)}dx
 =\int\limits_a^b(d(x) - c(x))dx.
 \end{equation}
-Если заранее неизвестно, график какой функции  $c(x)$ или $d(x)$ 
-расположен выше, то формула \eqref{lec16:1} принимает вид:
+Если заранее неизвестно, график какой из функций $c(x)$ или $d(x)$ 
+расположен выше, то формула \eqref{lec16:4} принимает вид:
 \begin{equation}
 \label{lec16:5}
 S =  \int\limits_a^b\abs{c(x) - d(x)}dx.
@@ -58,8 +58,8 @@ S =  \int\limits_a^b\abs{c(x) - d(x)}dx.
   вычисления площадей с помощью соответствующей замены переменных в 2И.
 
 
-В общем случае если между квадрируемыми фигурами 
-$D\subset \R^2$ и $G$ имеется диффеоморфизм:
+В общем случае, если между квадрируемыми фигурами 
+$D\subset \R^2$ и $G$ имеется диффеоморфизм
 \begin{equation*}
 \begin{cases}
 x = x(u, v), \\
@@ -68,7 +68,7 @@ y = y(u, v),
 \text{ где }  (u, v) \in G, (x, y) \in D,
 \end{equation*}
 где используются соответствующие ПДСК $Ouv$ и $Oxy$, 
-то тогда, вычисляя якобиан:
+то тогда, вычисляя якобиан
 \begin{equation*}
 J(u,v) = \det
 \begin{bmatrix}
@@ -80,13 +80,13 @@ y'_u & y'_v\\
 имеем
 \begin{equation}
 \label{lec16:6}
-S \overset{\ref{lec16:2}}{=}  \abs{ J(u,v)} dudv.
+S \overset{\ref{lec16:2}}{=} \iint\limits_G \abs{ J(u,v)} dudv.
 \end{equation}
 
 
 \begin{example}
 	Рассмотрим плоскую квадрируемую  фигуру
-	 $D \subset \R{2}$, ограниченную линиями второго
+	 $D \subset \R^{2}$, ограниченную линиями второго
 	порядка
 	\begin{equation*}
 	(a_1 x + b_1 y + c_1)^2 + (a_2 x + b_2 y + c_2)^2 = R^2,
@@ -115,20 +115,20 @@ S \overset{\ref{lec16:2}}{=}  \abs{ J(u,v)} dudv.
 	v_x'&v_y'.
 	\end{bmatrix}
 	=
-	\begin{pmatrix}
+	\begin{vmatrix}
 	a_1&b_1\\
 	a_2&b_2
-	\end{pmatrix}=\Delta\neq0
+	\end{vmatrix}=\Delta\neq0.
 	\end{equation*}	
 	Тогда для исходного якобиана получаем
 	\begin{equation*}
-	J=\dfrac{1}{J}=\dfrac{1}{\Delta}.
+	I=\dfrac{1}{J}=\dfrac{1}{\Delta}.
 	\end{equation*}
 	\begin{equation*}
 	S  \overset{\ref{lec16:6}}{=} \iint\limits_{u^2 + v^2 \leq R^2}
 	\dfrac{1}{\abs{\Delta}}dudv = \dfrac{1}{\abs
 		{\Delta}}\iint\limits_{u^2 + v^2 \leq R^2}dudv=\left[
-	S_{\text{пр.}}=\pi R^2\right]=
+	S_{\text{круга}}=\pi R^2\right]=
 	\dfrac{\pi R^2}{\abs{\Delta}}.
 	\end{equation*}
 	При использовании в  \eqref{lec16:6}  полярной замены
@@ -150,19 +150,19 @@ S \overset{\ref{lec16:2}}{=}  \abs{ J(u,v)} dudv.
 	Доказать, что при использовании обобщенной полярной замены
 	\begin{equation*}
 	\begin{cases}
-	x=a\cos^\alpha\phi,\\
-	y=b\sin^\alpha\phi,
+	x=ar\cos^\alpha\phi,\\
+	y=br\sin^\alpha\phi,
 	\end{cases}
 	\end{equation*}
 	где $
-	a,b=const>0,
-	\alpha>0, (x,y)\in D \subset \R^2, (rm\phi)\in G\subset \R^2$
-	якобиан $J=\alpha a b r \cos^{\alpha-1}\phi\sin^{\alpha-1}\phi$ и значит для 
+	a,b=const>0,\
+	\alpha>0,\ (x,y)\in D \subset \R^2,\ (r,\phi)\in G\subset \R^2$,
+	якобиан $J=\alpha a b r \cos^{\alpha-1}\phi\sin^{\alpha-1}\phi$ и, значит, для 
 	площади имеем
 	\begin{equation}
 	\label{lec16:8}
 	S \overset{\ref{lec16:6}}{=} \alpha a b \iint\limits_G r\cos^{\alpha - 1}\phi
-	\sin^{\alpha - 1}\phi dr d\phi.
+	\sin^{\alpha - 1}\phi \: dr d\phi.
 	\end{equation}
 \end{exercise}
 	\begin{example}
@@ -175,11 +175,10 @@ S \overset{\ref{lec16:2}}{=}  \abs{ J(u,v)} dudv.
 	\begin{equation*}
 	S_{\text{элл}} = 
 	ab\iint\limits_
-	{\begin{gathered}
+	{\substack{
 		0\leq r\leq1\\
 		0\leq \phi \leq 2\pi
-		\end{gathered}
-	 } rdrd \phi =
+	}} rdrd \phi =
 	ab \int\limits_0^{2\pi}d\phi\int\limits_0^1rdr =
 	ab \left[\phi \right]^{2\pi}_0
 	\left[\dfrac{r^2}{2}\right]_0^1 = \pi ab.
@@ -189,19 +188,18 @@ S \overset{\ref{lec16:2}}{=}  \abs{ J(u,v)} dudv.
 \end{example}
 
 Позднее будет показано, что если в $\R^{3}$ имеется гладкая поверхность
-$\text{П}\subset \R^3$, заданная явным уравнением 
+$\Pi\subset \R^3$, заданная явным уравнением 
 \begin{equation*}
 \begin{cases}
 z = f(x, y),\\
-(x, y) \in D \subset \R^{2},\\
-D --- \text{кв.} 
+(x, y) \in D \subset \R^{2},
 \end{cases}
 \end{equation*} 
-где $f(x, y)$ ---
-непрервына и дифференцируема на квадрируемом компакте $D$, то тогда
+где $f(x, y)$
+непрерывна и дифференцируема на квадрируемом компакте $D$, то тогда
 \begin{equation}
 \label{lec16:9}
-S_\text{П} = \iint\limits_D\sqrt{1 + (f'_x)^2 + (f'_y)^2}dxdy.
+S_\Pi = \iint\limits_D\sqrt{1 + (f'_x)^2 + (f'_y)^2}\:dxdy.
 \end{equation}
 \begin{example}
 	Вычислим площадь сферы $x^2+y^2+z^2=R^2$.
@@ -209,11 +207,11 @@ S_\text{П} = \iint\limits_D\sqrt{1 + (f'_x)^2 + (f'_y)^2}dxdy.
 	z=\pm\sqrt{R^2-x^2-y^2}\implies 
 	x^2+y^2\leq R^2.
 \end{equation*}	
-Учитывая симметричность относительно $Oxy$ имеем
+Учитывая симметричность сферы относительно $Oxy$, имеем
 \begin{gather*}
 S_{\text{сф}}=\iint\limits_{x^2+y^2 \leq R^2}
 \sqrt{
-1+\left(-\dfrac{x}{\sqrt
+1+\left(\dfrac{-x}{\sqrt
 	{
 		R^2-x^2-y^2
 	}}
@@ -249,44 +247,43 @@ I=r^2
 =
 2\int\limits_0^{2\pi}d\phi\int\limits_0^{R}
 \dfrac{r}{\sqrt{R^2-r^2}}\,dr=
-\end{gather*}
-(имеем несобственный интеграл, но формально действуя как с собственным)
-\begin{gather*}
-=
-2\left[\phi\right]^{2\pi}_0
+\\ =[
+\text{имеем несобственный интеграл, но формально действуем как с собственным}
+]= \\ =
+2\left[\phi\right]^{2\pi}_0\cdot
 \left[
--\sqrt{R^2-r^2}^R_0
-\right]
+-\sqrt{R^2-r^2}
+\right]^R_0
 =
-R\cdot2\cdot2\pi(0-(-R))=4\pi R^2
+R\cdot2\cdot2\pi(0-(-R))=4\pi R^2.
 \end{gather*}
 \end{example}
-Рассмотрим случай кубируемых тел $T\subset \R^3$. Ипользуя ПДСК $Oxyz$ в силу 
+Рассмотрим случай кубируемых тел $T\subset \R^3$. Используя ПДСК $Oxyz$, в силу 
 \ref{lec16:1}:
 \begin{equation}
 \label{lec16:10}
-V=\text{объем }T=\iiint dxdydz.
+V=\text{объем }T=\iiint\limits_T dxdydz.
 \end{equation}
-В случае когда кубируемое тело $T\subset \R^3$ представляет собой цилиндроид:
+В случае, когда кубируемое тело $T\subset \R^3$ представляет собой цилиндроид
 \begin{equation*}
 T=\{
 (x,y,z)\in\R^3 \mid 
-p(x,y)\leq z \leq q(x,y) x,y\in D\subset \R^3
+p(x,y)\leq z \leq q(x,y),\ (x,y)\in D\subset \R^2
 \},
 \end{equation*}
-где $D\subset \R^2$ --- квадрируемая проекция $T$ на $Oxy$, а $p(x,y)$ и 
-$q(x,y)$ предполагается непрерывной на $D$.
+где $D\subset \R^2$~--- квадрируемая проекция $T$ на $Oxy$, а $p(x,y)$ и 
+$q(x,y)$ предполагаются непрерывными на $D$.
 
-Переходя к повторным интегралам получаем, что объем ограниченной 
+Переходя к повторным интегралам, получаем, что объем ограниченной 
 цилиндрической функции:
 \begin{equation}
 \label{lec16:11}
 V_{\text{цил}}=\iint\limits_D\int\limits_{p(x,y)}^{q(x,y)}dz\,dxdy=
-\iint\limits_D(q(x,y)-p(x,y))dxdy.
+\iint\limits_D(q(x,y)-p(x,y))\:dxdy.
 \end{equation}
 
 Как и в случае площадей, если заранее не известно, какая из поверхностей 
-$q(x,y)$ и $p(x,y)$ расположена выше \ref{lec16:11} обобщается в виде
+$q(x,y)$ и $p(x,y)$ расположена выше, \ref{lec16:11} обобщается в виде
 \begin{equation}
 \label{lec16:12}
 	V_{\text{цил}}=\iint\limits_D\abs{q(x,y)-p(x,y)}dxdy.
@@ -294,30 +291,28 @@ $q(x,y)$ и $p(x,y)$ расположена выше \ref{lec16:11} обобща
 
 \begin{example}
 	Вычислим объем шара $x^2+ y^2 + z^2 \leq R^2$ с использованием 
-	\ref{lec16:11}. Его можно рассматривать как цилиндр:
+	\ref{lec16:11}. Его можно рассматривать как цилиндроид
 	\begin{equation*}
-		\begin{split}
-			&p(x, y) = -\sqrt{-(x^2 + y^2) + R^2} \leq z \leq
-			\sqrt{R^2 - x^2 - y^2} = q(x, y),\\
-			&\text{где } D: x^2 + y^2 \leq R^2.
-		\end{split}
+		p(x, y) = -\sqrt{-(x^2 + y^2) + R^2} \leq z \leq
+		\sqrt{R^2 - x^2 - y^2} = q(x, y),
 	\end{equation*}
+	где $D: x^2 + y^2 \leq R^2$.
 	
 	В результате, в силу \eqref{lec16:11}, следует:
 	\begin{gather*}
 			V_{\text{ш}} = 2 \iint\limits_{x^2 + y^2 \leq R^2}\sqrt{R^2 - x^2 - 
-			y^2}dxdy =
+			y^2}\:dxdy =
 			\left[
 			\begin{gathered}
-				x = Rr \cos \phi,\\
-				y = Rr \sin \phi,\\
-				J = R^2 r,
+				x = Rr \cos \phi\\
+				y = Rr \sin \phi\\
+				J = R^2 r
 			\end{gathered}
-		\right] =2R^3\iint\limits_Gr\sqrt{1-r^2}=\\
+		\right] =2R^3\iint\limits_Gr\sqrt{1-r^2}\:drd\phi=\\
 		=
 			\left[
 			\begin{gathered}
-				0 \leq \phi \leq 2 \pi,\\
+				0 \leq \phi \leq 2 \pi\\
 				0 \leq r \leq 1
 			\end{gathered}
 			\right]
@@ -338,9 +333,9 @@ $q(x,y)$ и $p(x,y)$ расположена выше \ref{lec16:11} обобща
 	y = y(u, v, \omega), \\ 
 	z = z(u, v, \omega), 
 \end{cases}
-(u, v, \omega) \in G  \subset \R^{3} , \;\; (x, y, z) \in T \subset \R^{3}.
+(u, v, \omega) \in G  \subset \R^{3} , \;\; (x, y, z) \in T \subset \R^{3},
 \end{equation*}
-где кубируемые тела $G$ и $T$ в $\R{3}$, рассматриваются в соответствующих ПДСК
+где кубируемые тела $G$ и $T$ в $\R^{3}$ рассматриваются в соответствующих ПДСК
 $Ouv\omega$ и $Oxyz$. Если используемые функции непрерывно дифференцируемы и 
 для якобиана этого диффеоморфизма выполняется
 \begin{equation*}
