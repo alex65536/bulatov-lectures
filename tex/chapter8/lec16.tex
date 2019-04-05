@@ -157,7 +157,8 @@ S \overset{\ref{lec16:2}}{=} \iint\limits_G \abs{ J(u,v)} dudv.
 	где $
 	a,b=const>0,\
 	\alpha>0,\ (x,y)\in D \subset \R^2,\ (r,\phi)\in G\subset \R^2$,
-	якобиан $J=\alpha a b r \cos^{\alpha-1}\phi\sin^{\alpha-1}\phi$ и, значит, для 
+	якобиан $J=\alpha a b r \cos^{\alpha-1}\phi\sin^{\alpha-1}\phi$ и, значит, 
+	для 
 	площади имеем
 	\begin{equation}
 	\label{lec16:8}
@@ -258,7 +259,8 @@ I=r^2
 R\cdot2\cdot2\pi(0-(-R))=4\pi R^2.
 \end{gather*}
 \end{example}
-Рассмотрим случай кубируемых тел $T\subset \R^3$. Используя ПДСК $Oxyz$, в силу 
+Рассмотрим случай кубируемых тел $T\subset \R^3$. Используя ПДСК $Oxyz$, в 
+силу 
 \ref{lec16:1}:
 \begin{equation}
 \label{lec16:10}
@@ -316,9 +318,9 @@ $q(x,y)$ и $p(x,y)$ расположена выше, \ref{lec16:11} обобщ�
 				0 \leq r \leq 1
 			\end{gathered}
 			\right]
-			=2R^3 \int\limits_0^{2\pi}d\phi \int\limits_0^1r\sqrt{1 - r^2} \; d(r^2) =
-			2R^3\left[-\dfrac{2}3(1-\phi^2)^{\frac{3}2}\right]^1_0 = 
-			R^3\cdot 2\pi \cdot \dfrac{2}{3}=\frac{4}{3}\pi R^3.
+			=2R^3 \int\limits_0^{2\pi}d\phi \int\limits_0^1r\sqrt{1 - r^2} \; dr =
+			4\pi R^3\left[-\dfrac{1}3(1-r^2)^{\frac{3}2}\right]^1_0 = 
+			R^3\cdot 4\pi \cdot \dfrac{1}{3}=\frac{4}{3}\pi R^3.
 	\end{gather*}
 \end{example}
 
@@ -344,21 +346,20 @@ J(u, v, \omega) = \det
 	x'_u&x'_v&x'_\omega\\
 	y'_u&y'_v&y'_\omega\\
 	z'_u&z'_v&z'_\omega
-\end{bmatrix} \implies 
-J(u,v,w)\neq
-0 \forall(u,v,\omega)\in G \subset \R^3.
+\end{bmatrix} \neq
+0 \quad \forall(u,v,\omega)\in G \subset \R^3,
 \end{equation*}
 то тогда, в силу формулы замены переменных в 3И, имеем:
 \begin{equation}
 \label{lec16:13}
-V = \text{объём} T = \iiint\limits_tdxdydz=\iiint\limits_G \abs{J(u, v, 
+V = \text{объём } T = \iiint\limits_Tdxdydz=\iiint\limits_G \abs{J(u, v, 
 \omega)}dudv d\omega.
 \end{equation}
 
 \begin{example}
-Рассмотрим параллелепипед, ограниченный поверхностями :
+Рассмотрим параллелепипед, ограниченный поверхностями
 \begin{equation*}
-		-h_k \leq a_kx + b_ky + c_kz + d_k \leq h_k, k =\overline{ 1, 3}.
+		-h_k \leq a_kx + b_ky + c_kz + d_k \leq h_k,\ k =\overline{ 1, 3}.
 \end{equation*}
 Используя обратный диффеоморфизм
 \begin{equation*}
@@ -368,7 +369,7 @@ V = \text{объём} T = \iiint\limits_tdxdydz=\iiint\limits_G \abs{J(u, v,
 		&\omega = a_3x + b_3y + c_3z + d_3.
 	\end{cases}, 
 \end{equation*}
-и для его якобиана
+и его якобиан
 \begin{equation*} 
 	\mathfrak{J} = \det
 	\begin{bmatrix}
@@ -388,7 +389,7 @@ V = \text{объём} T = \iiint\limits_tdxdydz=\iiint\limits_G \abs{J(u, v,
  основании
 \eqref{lec16:13} получаем, что объем ограниченного параллелепипеда:
 \begin{equation*}
-	V_{\text{парол.}} = \iiint\limits_{
+	V_{\text{паралл}} = \iiint\limits_{
 		\substack{
 			-h_1 \leq u \leq h_1\\
 			-h_2 \leq v \leq h_2\\
@@ -396,29 +397,29 @@ V = \text{объём} T = \iiint\limits_tdxdydz=\iiint\limits_G \abs{J(u, v,
 	}} \dfrac{du \; dv \; d\omega}{\abs{\Delta}} =
 	\dfrac{1}{\abs{\Delta}}\int\limits_{-h_1}^{h_1}du\int\limits_{-h_2}^{h_2}dv
 	\int\limits_{-h_3}^{h_3}d\omega =
-	\dfrac{1}\Delta (2h_1)(2h_2)(2h_3) =\dfrac{8h_1h_2h_3}{\abs{\Delta}}.
+	\dfrac{1}{\abs{\Delta}} (2h_1)(2h_2)(2h_3) =\dfrac{8h_1h_2h_3}{\abs{\Delta}}.
 \end{equation*}
 \end{example}
 
-При использовании сферической замены
+Если использовать сферическую замену
 \begin{equation*}
 	\begin{cases}
 		x = r \cos \phi \cos \psi,\\
 		y = r \sin \phi \cos \psi,\\
 		z = r \sin \psi,\\
-		I = r\cos \psi, 
+		I = r^2 \cos \psi, 
 	\end{cases}
-	\begin{gathered}
+	\begin{array}{c}
 		(x, y, z) \in T, \\
 		(r, \phi, \psi) \in G,\\
 		r\geq 0,\\
-		\phi\in \left[0,2\pi\right],\psi\in\left[-\dfrac{\pi}2,\dfrac{\pi}2\right].
-	\end{gathered}
+		\phi\in \left[0,2\pi\right],\psi\in\left[-\frac{\pi}2,\frac{\pi}2\right],
+	\end{array}
 \end{equation*}
-то в этом случае \ref{lec16:13} имеет вид:
+то в этом случае \ref{lec16:13} имеет вид
 \begin{equation}
 \label{lec16:14}
-V = \text{объём} T = \iiint\limits_Gr^2\cos\psi dr d\phi d\psi.
+V = \text{объём } T = \iiint\limits_Gr^2\cos\psi\; dr\, d\phi\, d\psi.
 \end{equation}
 \begin{exercise}
 	Найти якобиан общей сферической замены 
@@ -428,7 +429,7 @@ V = \text{объём} T = \iiint\limits_Gr^2\cos\psi dr d\phi d\psi.
 			y = br \sin^{\alpha}\phi \cos^{\beta}\psi,\\
 			z = cr \sin^{\beta}\psi,
 		\end{cases}
-		a, b, c =const>0, \;\; \alpha,\beta=const \in \R{}.
+		a, b, c =const>0, \;\; \alpha,\beta=const \in \R,
 	\end{equation*}
 и формулу для объема.
 \end{exercise}
@@ -440,7 +441,7 @@ V = \text{объём} T = \iiint\limits_Gr^2\cos\psi dr d\phi d\psi.
 $\R^2$ и тел из $\R^3$.
 
 Рассмотрим квадрируемый плоский материальный компакт
-$D \subset \R{2}$, у которого в ПДСК в любой точке $M(x, y) \in D$ известна
+$D \subset \R^{2}$, у которого в ПДСК в любой точке $M(x, y) \in D$ известна
 плотность $\rho = \rho(M) = \rho(x,y)$, являющаяся непрерывной Ф2П на $D$. 
 Тогда
 масса $m_0$ рассматриваемой материальной плоской фигуры $D \subset \R^{2}$
@@ -449,84 +450,87 @@ $D \subset \R{2}$, у которого в ПДСК в любой точке $M(x
 \label{lec16:15}
 m_0 = \iint\limits_D \rho(x, y) \; dxdy,
 \end{equation}
-а координаты центра тяжести $c(x_0, y_0)$ (центра масс) фигуры $D$ по формулам
+а координаты \emph{центра тяжести} $c(x_0, y_0)$ (центра масс)
+фигуры $D$ вычисляются по формулам
 \begin{equation}
 \label{lec16:16}
 \begin{cases}
-	&x_0 = \frac{1}{m_0}\iint\limits_D\rho x dx dy,\\
-	&y_0 = \frac{1}{m_0}\iint\limits_D\rho y dx dy.
+	x_0 = \frac{1}{m_0}\iint\limits_D x\rho(x,y)\: dx dy,\\
+	y_0 = \frac{1}{m_0}\iint\limits_D y\rho(x,y)\: dx dy.
 	\end{cases}
 \end{equation}
-В случае, когда фигура однородна $\rho=const>0$,
- формулы \ref{lec16:17} упрощается:
+В случае, когда фигура однородна ($\rho=const>0$),
+ формулы \ref{lec16:17} упрощаются:
  \begin{equation*}
  \begin{cases}
- 	&x_0 = \frac{1}{S_0}\iint\limits_D x dx dy,\\
- 	&y_0 =\frac{1}{S_0}\iint\limits_D y dx dy.
+ 	x_0 = \frac{1}{S_0}\iint\limits_D x dx dy,\\
+ 	y_0 =\frac{1}{S_0}\iint\limits_D y dx dy,
  	\end{cases}
- \text{, где} S_0=\iint\limits_D dxdy=\text{Пл}D.
+ \text{где } S_0=\iint\limits_D dxdy\text{~--- площадь }D.
  \end{equation*}
-В общем случае для моментов инерции $I_x$ и $I_y$ относительно соответствующих 
+В общем случае для \emph{моментов инерции} $I_x$ и $I_y$ относительно 
+соответствующих 
 координатных
 осей $Ox$ и $Oy$ имеем
 \begin{equation}
 \label{lec16:17}
 \begin{cases}
-	&I_x = \iint\limits_Dy^2\rho dx dy,\\
-	&I_y = \iint\limits_Dx^2\rho dx dy.\\
+	I_x = \iint\limits_Dy^2\rho(x, y) dx dy,\\
+	I_y = \iint\limits_Dx^2\rho(x, y) dx dy.\\
 	\end{cases}
 \end{equation}
-Рассматривая также центробежный момент,
+Рассматривают также \emph{центробежный момент}:
 \begin{equation}
 \label{lec16:18}
-I_{xy} = \iint\limits_Dxy\rho dx dy.
+I_{xy} = \iint\limits_Dxy\rho(x, y) dx dy.
 \end{equation}
-Аналогичная формула и в случае материального пространственного тела
-$T \subset \R^{3}$, $T$ --- кубируемый компакт в $\R^{3}$.
-Если в ПДСК $Oxyz$ $\forall M(x, y, z) \in T$, определена плотность $\rho (M) =
-\rho(x, y, z)$ --- непрерывная Ф3П на $T$, то тогда для массы
+Аналогичные формулы и в случае материального пространственного тела
+$T \subset \R^{3}$, где $T$~--- кубируемый компакт в $\R^{3}$.
+Если в ПДСК $Oxyz$, для $\forall M(x, y, z) \in T$ определена плотность $\rho 
+(M) =
+\rho(x, y, z)$~--- непрерывная Ф3П на $T$, то тогда для массы этого тела имеем
 \begin{equation}
 \label{lec16:19}
 m_0 = \iiint\limits_T \rho(x, y, z) dx dy dz,
 \end{equation}
-и для координат центра тяжести $c(x_0, y_0, z_0)$ получаем
+а для координат центра тяжести $c(x_0, y_0, z_0)$ получаем
 \begin{equation}
 \label{lec16:20}
 \begin{cases}
-&x_0 = \frac{1}{m_0}\iiint\limits_Tx \rho dx dy dz,\\
-&y_0 = \frac{1}{m_0}\iiint\limits_Ty \rho dx dy dz,\\
-&z_0 = \frac{1}{m_0}\iiint\limits_Tz \rho dx dy dz.\\
+x_0 = \frac{1}{m_0}\iiint\limits_Tx \rho \, dx dy dz,\\
+y_0 = \frac{1}{m_0}\iiint\limits_Ty \rho \, dx dy dz,\\
+z_0 = \frac{1}{m_0}\iiint\limits_Tz \rho \, dx dy dz.\\
 \end{cases}
 \end{equation}
-В случае, когда тело однородное, т.~е. $\rho=const>0$
+В случае, когда тело однородно, т.~е. $\rho=const>0$:
 \begin{equation*}
 	\ref{lec16:20}\iff
 	\begin{cases}
-		&x_0 = \frac{1}{V_0}\iiint\limits_Tx  dx dy dz,\\
-		&y_0 = \frac{1}{V_0}\iiint\limits_Ty  dx dy dz,\\
-		&z_0 = \frac{1}{V_0}\iiint\limits_Tz  dx dy dz.\\
+		x_0 = \frac{1}{V_0}\iiint\limits_Tx \, dx dy dz,\\
+		y_0 = \frac{1}{V_0}\iiint\limits_Ty \, dx dy dz,\\
+		z_0 = \frac{1}{V_0}\iiint\limits_Tz \, dx dy dz,\\
 	\end{cases}
 \text{ где } V_0=\text{объем }T=\iiint\limits_T dxdydz.
 \end{equation*}
-Моменты инерции рассмотренного тела $T \subset \R{3}$ относительно 
+Моменты инерции рассмотренного тела $T \subset \R^{3}$ относительно 
 соответствующих
 координатных плоскостей $Oxy$, $Oyz$, $Oxz$:
 \begin{equation}
 \label{lec16:21}
 \begin{cases}
-&I_{xy} = I_{yx} = \iiint\limits_Tz^2 \rho dx dy dz,\\
-&I_{yz} = I_{zy} = \iiint\limits_Tx^2 \rho dx dy dz,\\
-&I_{zx} = I_{xz} = \iiint\limits_Ty^2 \rho dx dy dz.\\
+I_{xy} = I_{yx} = \iiint\limits_Tz^2 \rho \, dx dy dz,\\
+I_{yz} = I_{zy} = \iiint\limits_Tx^2 \rho \, dx dy dz,\\
+I_{zx} = I_{xz} = \iiint\limits_Ty^2 \rho \, dx dy dz.\\
 \end{cases}
 \end{equation}
 Для моментов инерции $I_x$, $I_y$, $I_z$ относительно координатных осей
-$Ox$, $Oy$, $Oz$ соответственно получаем:
+$Ox$, $Oy$, $Oz$ соответственно, получаем:
 \begin{equation}
 \label{lec16:22}
 \begin{cases}
-&I_x = I_{xy} + I_{xz} = \iiint\limits_T (y^2 + z^2) \rho dx dy dz,\\
-&I_y = I_{yx} + I_{yz} = \iiint\limits_T (x^2 + z^2) \rho dx dy dz,\\
-&I_z = I_{xz} + I_{yz} = \iiint\limits_T (x^2 + y^2) \rho dx dy dz.\\
+I_x = I_{xy} + I_{xz} = \iiint\limits_T (y^2 + z^2) \rho \, dx dy dz,\\
+I_y = I_{yx} + I_{yz} = \iiint\limits_T (x^2 + z^2) \rho \, dx dy dz,\\
+I_z = I_{xz} + I_{yz} = \iiint\limits_T (x^2 + y^2) \rho \, dx dy dz.\\
 \end{cases}
 \end{equation}
 \section{Интеграл Эйлера-Пуассона}
