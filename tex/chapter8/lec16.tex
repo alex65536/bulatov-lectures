@@ -1,0 +1,280 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+\section{Основные геометрические приложения n-кратных интегралов}
+
+В основном будем использовать общую формулу
+\begin{equation}
+\label{lec16:1}
+\mes H = \int\limits_Hdx = \underset{H}{\int \ldots \int}dx_1 \ldots dx_n,
+\end{equation}
+где $H$ -- измеримое множество из $\R^n$.
+
+В дальнейшем ограничимся
+использованием \eqref{lec16:1} для вычисления площадей квадрируемых плоских
+фигур, а также площадей поверхностей и кубируемых тел в $\R^{3}$.
+
+Для площади квадрируемой плоской фигуры $D \subset \R^{2}$ в ПДСК
+$Oxy$ имеем:
+\begin{equation}
+\label{lec16:2}
+S = \text{Пл. } D = \iint\limits_Ddxdy.
+\end{equation}
+В случае, когда $D \subset \R^{2}$ - криволинейная трапеция т. е. 
+\begin{equation}
+\label{lec16:3}
+	D=\{
+	(x,y)\in \R^2 \mid c(x)\leq y\leq d(x), a\leq x \leq b
+	\},
+\end{equation}
+где $c(x)$ и $d(x)$ непрерывны на $\left[a; b\right]$
+ используется вычесление 2И через повторные интегралы:
+\begin{equation}
+\label{lec16:4}
+S = \int\limits_a^bdx\int\limits_{c(x)}^{d(x)}dy = 
+\int\limits_a^b\left[y\right]^d(x)_c(x)
+=\int\limits_a^b(d(x) - c(x))dx.
+\end{equation}
+Если заранее неизвестно, график какой функции  $c(x)$ или $d(x)$ 
+расположен выше, то формула \eqref{lec16:1} принимает вид:
+\begin{equation}
+\label{lec16:5}
+S =  \int\limits_a^b\abs{c(x) - d(x)}dx.
+\end{equation}
+Ранее формула использовалась для вычисления
+ площади через ОИ. Т. е. использование
+  указанного метода вычисления {ничего нового}
+в сравнении с ОИ не даёт. На практике
+ более эффективно использование 2И для
+  вычисления площадей с помощью соответствующей замены переменных в 2И.
+
+
+В общем случае если между квадрируемыми фигурами 
+$D\subset \R^2$ и $G$ имеется диффеоморфизм:
+\begin{equation*}
+\begin{cases}
+x = x(u, v), \\
+y = y(u, v),
+\end{cases}
+\text{ где }  (u, v) \in G, (x, y) \in D,
+\end{equation*}
+где используются соответствующие ПДСК $Ouv$ и $Oxy$, 
+то тогда, вычисляя якобиан:
+\begin{equation*}
+J(u,v) = \det
+\begin{bmatrix}
+x'_u & x'_v\\
+y'_u & y'_v\\
+\end{bmatrix}
+\neq 0
+\end{equation*}
+имеем
+\begin{equation}
+\label{lec16:6}
+S \overset{\ref{lec16:2}}{=}  \abs{ J(u,v)} dudv.
+\end{equation}
+
+
+\begin{example}
+	Рассмотрим плоскую квадрируемую  фигуру
+	 $D \subset \R{2}$, ограниченную линиями второго
+	порядка
+	\begin{equation*}
+	(a_1 x + b_1 y + c_1)^2 + (a_2 x + b_2 y + c_2)^2 = R^2,
+	\end{equation*}
+	где
+	\begin{equation*}
+	\Delta =
+	\begin{vmatrix}
+	a_1 & b_1\\
+	a_2 & b_2\\
+	\end{vmatrix} =
+	a_1b_2-b_1a_2\neq 0.
+	\end{equation*}
+	В этом случае для обратного диффеоморфизма
+	\begin{equation*}
+	\begin{cases}
+	u = a_1 x + b_1 y + c_1, \\
+	v = a_2 x + b_2 y + c_2,
+	\end{cases}
+	\end{equation*}
+	имеем
+	\begin{equation*}
+	J=\det 
+	\begin{bmatrix}
+	u_x'&u_y'\\
+	v_x'&v_y'
+	\end{bmatrix}
+	=
+	\begin{pmatrix}
+	a_1&b_1\\
+	a_2&b_2
+	\end{pmatrix}=\Delta\neq0
+	\end{equation*}	
+	тогда для исходного якобиана получаем
+	\begin{equation*}
+	J=\cfrac{1}{J}=\cfrac{1}{\Delta}.
+	\end{equation*}
+	\begin{equation*}
+	S  \overset{\ref{lec16:6}}{=} \iint\limits_{u^2 + v^2 \leqslant R^2}
+	\dfrac{1}{\abs{\Delta}}dudv = \dfrac{1}{\abs
+		{\Delta}}\iint\limits_{u^2 + v^2 \leqslant R^2}dudv=\left[
+	S_{\text{пр.}}=\pi R^2\right]=
+	\cfrac{\pi R^2}{\abs{\Delta}}.
+	\end{equation*}
+	При использовании в  \eqref{lec16:6}  полярной замены
+	\begin{equation*}
+	\begin{cases}
+		x=r\cos\phi,\\
+		y=r\sin\phi,
+	\end{cases}
+	(x,y)\in G \subset \R^2,
+	\end{equation*}
+	учитывая, что якобиан $J=r$, для площади имеем 
+	\begin{equation}
+	\label{lec16:7}
+	S = \iint\limits_Grdrd\phi.
+	\end{equation}
+\end{example}
+
+\begin{exercise}
+	Доказать, что при использовании обобщенной полярной замены
+	\begin{equation*}
+	\begin{cases}
+	x=a\cos^\alpha\phi,\\
+	y=b\sin^\alpha\phi,
+	\end{cases}
+	\end{equation*}
+	где $
+	a,b=const>0,
+	\alpha>0, (x,y)\in D \subset \R^2, (rm\phi)\in G\subset \R^2$
+	якобиан $J=\alpha a b r \cos^{\alpha-1}\phi\sin^{\alpha-1}\phi$ и значит для площади имеем
+	\begin{equation}
+	\label{lec16:8}
+	S \overset{\ref{lec16:6}}{=} \alpha a b \iint\limits_G r\cos^{\alpha - 1}\phi
+	\sin^{\alpha - 1}\phi dr d\phi.
+	\end{equation}
+\end{exercise}
+	\begin{example}
+	Для площади $S_{\text{элл}}$ плоской фигуры, ограниченной эллипсом
+	\[
+	\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1
+	\], 
+	из \eqref{lec16:8}, при
+	$ \alpha = 1 $ имеем:
+	\begin{equation*}
+	S_{\text{элл}} = 
+	ab\iint\limits_
+	{\begin{gathered}
+		0\leq r\leq1\\
+		0\leq \phi \leq 2\pi
+		\end{gathered}
+	 } rdrd \phi =
+	ab \int\limits_0^{2\pi}d\phi\int\limits_0^1rdr =
+	ab \left[\phi \right]^{2\pi}_0
+	\left[\dfrac{r^2}{2}\right]_0^1 = \pi ab.
+	\end{equation*}
+	В частности, при $a = b = r > 0$ получаем известную формулу плозади круга $S_{\text{кр}} = \pi R^2$.
+\end{example}
+
+Позднее будет показано, что если в $\R^{3}$ имеется гладкая поверхность
+$\text{П}\subset \R^3$, заданная явным уравнением 
+\begin{equation*}
+\begin{cases}
+z = f(x, y),\\
+(x, y) \in D \subset \R^{2}\\
+D -- \text{кв.} 
+\end{cases}
+\end{equation*} 
+где $f(x, y)$ -
+непрервына и дифференцируема на квадрируемом компакте $D$, то тогда
+\begin{equation}
+\label{lec16:9}
+S_\text{П} = \iint\limits_D\sqrt{1 + (f'_x)^2 + (f'_y)^2}dxdy.
+\end{equation}
+\begin{example}
+	Вычислим площадь сферы $x^2+y^2+z^2=R^2$
+\begin{equation*}
+	z=\pm\sqrt{R^2-x^2-y^2}\Rightarrow 
+	x^2+y^2\leq R^2
+\end{equation*}	
+Учитывая симметричность относительно $Oxy$ имеем
+\begin{gather*}
+S_{\text{сф}}=\iint\limits_{x^2+y^2 \leq R^2}
+\sqrt{
+1+\left(-\cfrac{x}{\sqrt
+	{
+		R^2-x^2-y^2
+	}}
+\right)^2
++
+\left(
+\cfrac{-y}
+{\sqrt{R^2-x^2-y^2}}\right)^2
+}dxdy
+=\\
+=
+\iint\limits_{x^2+y^2\leq R^2}
+\cfrac{Rdxdy}{\sqrt{R^2-x^2-y^2}}
+=
+\left[
+\begin{gathered}
+x=r\cos \phi\\
+y=r\sin \phi\\
+I=r^2
+\end{gathered}
+\right]
+=
+2\iint\limits_{G}
+\cfrac{Rrdrd\phi}
+{\sqrt{1-r^2}}
+=
+\left[
+\begin{gathered}
+0\leq r \leq R\\
+0\leq \phi \leq 2 \pi
+\end{gathered}
+\right]=\\
+=
+2\int\limits_0^{2\pi}d\phi\int\limits_0^{R}
+\cfrac{r}{\sqrt{R^2-r^2}}\,dr=
+\end{gather*}
+имеем несобственный интеграл, но формально действуя как с собственным
+\begin{gather*}
+=
+2\left[\phi\right]^{2\pi}_0
+\left[
+-\sqrt{R^2-r^2}^R_0
+\right]
+=
+R\cdot2\cdot2\pi(0-(-R))=4\pi R^2
+\end{gather*}
+\end{example}
+Рассмотрим случай кубируемых тел $T\subset \R^3$. Ипользуя ПДСК $Oxyz$ в силу \ref{lec16:1}:
+\begin{equation}
+\label{lec16:10}
+V=\text{объем }T=\iiint dxdydz.
+\end{equation}
+В случае когда кубируемое тело $T\subset \R^3$ представляет собой цилиндроид:
+\begin{equation*}
+T=\{
+(x,y,z)\in\R^3 \mid 
+p(x,y)\leq z \leq q(x,y) x,y\in D\subset \R^3
+\}
+\end{equation*}
+где $D\subset \R^2$ -- квадрируемая проекция $T$ на $Oxy$, а $p(x,y)$ и $q(x,y)$ предполагается непрерывной на $D$.
+
+Переходя к повторным интегралам получаем, что объем, что объем ограниченной цилиндрической функции:
+\begin{equation*}
+V_{\text{цил}}=\iint\limits_D\int\limits_{p(x,y)}^{q(x,y)}dz\,dxdy
+\end{equation*}
+\end{document}
