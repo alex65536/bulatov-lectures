@@ -29,7 +29,7 @@ $Oxy$ имеем:
 \label{lec16:2}
 S = \text{Пл. } D = \iint\limits_Ddxdy.
 \end{equation}
-В случае, когда $D \subset \R^{2}$ - криволинейная трапеция т. е. 
+В случае, когда $D \subset \R^{2}$ - криволинейная трапеция т.~е. 
 \begin{equation}
 \label{lec16:3}
 	D=\{
@@ -51,7 +51,7 @@ S = \int\limits_a^bdx\int\limits_{c(x)}^{d(x)}dy =
 S =  \int\limits_a^b\abs{c(x) - d(x)}dx.
 \end{equation}
 Ранее формула использовалась для вычисления
- площади через ОИ. Т. е. использование
+ площади через ОИ. Т.~е. использование
   указанного метода вычисления {ничего нового}
 в сравнении с ОИ не даёт. На практике
  более эффективно использование 2И для
@@ -125,9 +125,9 @@ S \overset{\ref{lec16:2}}{=}  \abs{ J(u,v)} dudv.
 	J=\cfrac{1}{J}=\cfrac{1}{\Delta}.
 	\end{equation*}
 	\begin{equation*}
-	S  \overset{\ref{lec16:6}}{=} \iint\limits_{u^2 + v^2 \leqslant R^2}
+	S  \overset{\ref{lec16:6}}{=} \iint\limits_{u^2 + v^2 \leq R^2}
 	\dfrac{1}{\abs{\Delta}}dudv = \dfrac{1}{\abs
-		{\Delta}}\iint\limits_{u^2 + v^2 \leqslant R^2}dudv=\left[
+		{\Delta}}\iint\limits_{u^2 + v^2 \leq R^2}dudv=\left[
 	S_{\text{пр.}}=\pi R^2\right]=
 	\cfrac{\pi R^2}{\abs{\Delta}}.
 	\end{equation*}
@@ -157,7 +157,8 @@ S \overset{\ref{lec16:2}}{=}  \abs{ J(u,v)} dudv.
 	где $
 	a,b=const>0,
 	\alpha>0, (x,y)\in D \subset \R^2, (rm\phi)\in G\subset \R^2$
-	якобиан $J=\alpha a b r \cos^{\alpha-1}\phi\sin^{\alpha-1}\phi$ и значит для площади имеем
+	якобиан $J=\alpha a b r \cos^{\alpha-1}\phi\sin^{\alpha-1}\phi$ и значит для 
+	площади имеем
 	\begin{equation}
 	\label{lec16:8}
 	S \overset{\ref{lec16:6}}{=} \alpha a b \iint\limits_G r\cos^{\alpha - 1}\phi
@@ -183,7 +184,8 @@ S \overset{\ref{lec16:2}}{=}  \abs{ J(u,v)} dudv.
 	ab \left[\phi \right]^{2\pi}_0
 	\left[\dfrac{r^2}{2}\right]_0^1 = \pi ab.
 	\end{equation*}
-	В частности, при $a = b = r > 0$ получаем известную формулу плозади круга $S_{\text{кр}} = \pi R^2$.
+	В частности, при $a = b = r > 0$ получаем известную формулу плозади круга 
+	$S_{\text{кр}} = \pi R^2$.
 \end{example}
 
 Позднее будет показано, что если в $\R^{3}$ имеется гладкая поверхность
@@ -204,7 +206,7 @@ S_\text{П} = \iint\limits_D\sqrt{1 + (f'_x)^2 + (f'_y)^2}dxdy.
 \begin{example}
 	Вычислим площадь сферы $x^2+y^2+z^2=R^2$
 \begin{equation*}
-	z=\pm\sqrt{R^2-x^2-y^2}\Rightarrow 
+	z=\pm\sqrt{R^2-x^2-y^2}\implies 
 	x^2+y^2\leq R^2
 \end{equation*}	
 Учитывая симметричность относительно $Oxy$ имеем
@@ -259,7 +261,8 @@ I=r^2
 R\cdot2\cdot2\pi(0-(-R))=4\pi R^2
 \end{gather*}
 \end{example}
-Рассмотрим случай кубируемых тел $T\subset \R^3$. Ипользуя ПДСК $Oxyz$ в силу \ref{lec16:1}:
+Рассмотрим случай кубируемых тел $T\subset \R^3$. Ипользуя ПДСК $Oxyz$ в силу 
+\ref{lec16:1}:
 \begin{equation}
 \label{lec16:10}
 V=\text{объем }T=\iiint dxdydz.
@@ -271,9 +274,11 @@ T=\{
 p(x,y)\leq z \leq q(x,y) x,y\in D\subset \R^3
 \}
 \end{equation*}
-где $D\subset \R^2$ -- квадрируемая проекция $T$ на $Oxy$, а $p(x,y)$ и $q(x,y)$ предполагается непрерывной на $D$.
+где $D\subset \R^2$ -- квадрируемая проекция $T$ на $Oxy$, а $p(x,y)$ и 
+$q(x,y)$ предполагается непрерывной на $D$.
 
-Переходя к повторным интегралам получаем, что объем, что объем ограниченной цилиндрической функции:
+Переходя к повторным интегралам получаем, что объем, что объем ограниченной 
+цилиндрической функции:
 \begin{equation*}
 V_{\text{цил}}=\iint\limits_D\int\limits_{p(x,y)}^{q(x,y)}dz\,dxdy
 \end{equation*}
