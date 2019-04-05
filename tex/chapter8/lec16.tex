@@ -75,7 +75,7 @@ J(u,v) = \det
 x'_u & x'_v\\
 y'_u & y'_v\\
 \end{bmatrix}
-\neq 0
+\neq 0,
 \end{equation*}
 имеем
 \begin{equation}
@@ -112,7 +112,7 @@ S \overset{\ref{lec16:2}}{=}  \abs{ J(u,v)} dudv.
 	J=\det 
 	\begin{bmatrix}
 	u_x'&u_y'\\
-	v_x'&v_y'
+	v_x'&v_y'.
 	\end{bmatrix}
 	=
 	\begin{pmatrix}
@@ -120,16 +120,16 @@ S \overset{\ref{lec16:2}}{=}  \abs{ J(u,v)} dudv.
 	a_2&b_2
 	\end{pmatrix}=\Delta\neq0
 	\end{equation*}	
-	тогда для исходного якобиана получаем
+	Тогда для исходного якобиана получаем
 	\begin{equation*}
-	J=\cfrac{1}{J}=\cfrac{1}{\Delta}.
+	J=\dfrac{1}{J}=\dfrac{1}{\Delta}.
 	\end{equation*}
 	\begin{equation*}
 	S  \overset{\ref{lec16:6}}{=} \iint\limits_{u^2 + v^2 \leq R^2}
 	\dfrac{1}{\abs{\Delta}}dudv = \dfrac{1}{\abs
 		{\Delta}}\iint\limits_{u^2 + v^2 \leq R^2}dudv=\left[
 	S_{\text{пр.}}=\pi R^2\right]=
-	\cfrac{\pi R^2}{\abs{\Delta}}.
+	\dfrac{\pi R^2}{\abs{\Delta}}.
 	\end{equation*}
 	При использовании в  \eqref{lec16:6}  полярной замены
 	\begin{equation*}
@@ -167,9 +167,9 @@ S \overset{\ref{lec16:2}}{=}  \abs{ J(u,v)} dudv.
 \end{exercise}
 	\begin{example}
 	Для площади $S_{\text{элл}}$ плоской фигуры, ограниченной эллипсом
-	\[
-	\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1
-	\], 
+	\begin{equation*}
+	\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1,
+	\end{equation*}
 	из \eqref{lec16:8}, при
 	$ \alpha = 1 $ имеем:
 	\begin{equation*}
@@ -193,7 +193,7 @@ $\text{П}\subset \R^3$, заданная явным уравнением
 \begin{equation*}
 \begin{cases}
 z = f(x, y),\\
-(x, y) \in D \subset \R^{2}\\
+(x, y) \in D \subset \R^{2},\\
 D -- \text{кв.} 
 \end{cases}
 \end{equation*} 
@@ -204,29 +204,29 @@ D -- \text{кв.}
 S_\text{П} = \iint\limits_D\sqrt{1 + (f'_x)^2 + (f'_y)^2}dxdy.
 \end{equation}
 \begin{example}
-	Вычислим площадь сферы $x^2+y^2+z^2=R^2$
+	Вычислим площадь сферы $x^2+y^2+z^2=R^2$.
 \begin{equation*}
 	z=\pm\sqrt{R^2-x^2-y^2}\implies 
-	x^2+y^2\leq R^2
+	x^2+y^2\leq R^2.
 \end{equation*}	
 Учитывая симметричность относительно $Oxy$ имеем
 \begin{gather*}
 S_{\text{сф}}=\iint\limits_{x^2+y^2 \leq R^2}
 \sqrt{
-1+\left(-\cfrac{x}{\sqrt
+1+\left(-\dfrac{x}{\sqrt
 	{
 		R^2-x^2-y^2
 	}}
 \right)^2
 +
 \left(
-\cfrac{-y}
+\dfrac{-y}
 {\sqrt{R^2-x^2-y^2}}\right)^2
 }dxdy
 =\\
 =
 \iint\limits_{x^2+y^2\leq R^2}
-\cfrac{Rdxdy}{\sqrt{R^2-x^2-y^2}}
+\dfrac{Rdxdy}{\sqrt{R^2-x^2-y^2}}
 =
 \left[
 \begin{gathered}
@@ -237,7 +237,7 @@ I=r^2
 \right]
 =
 2\iint\limits_{G}
-\cfrac{Rrdrd\phi}
+\dfrac{Rrdrd\phi}
 {\sqrt{1-r^2}}
 =
 \left[
@@ -248,9 +248,9 @@ I=r^2
 \right]=\\
 =
 2\int\limits_0^{2\pi}d\phi\int\limits_0^{R}
-\cfrac{r}{\sqrt{R^2-r^2}}\,dr=
+\dfrac{r}{\sqrt{R^2-r^2}}\,dr=
 \end{gather*}
-имеем несобственный интеграл, но формально действуя как с собственным
+(имеем несобственный интеграл, но формально действуя как с собственным)
 \begin{gather*}
 =
 2\left[\phi\right]^{2\pi}_0
@@ -272,14 +272,266 @@ V=\text{объем }T=\iiint dxdydz.
 T=\{
 (x,y,z)\in\R^3 \mid 
 p(x,y)\leq z \leq q(x,y) x,y\in D\subset \R^3
-\}
+\},
 \end{equation*}
 где $D\subset \R^2$ -- квадрируемая проекция $T$ на $Oxy$, а $p(x,y)$ и 
 $q(x,y)$ предполагается непрерывной на $D$.
 
-Переходя к повторным интегралам получаем, что объем, что объем ограниченной 
+Переходя к повторным интегралам получаем, что объем ограниченной 
 цилиндрической функции:
+\begin{equation}
+\label{lec16:11}
+V_{\text{цил}}=\iint\limits_D\int\limits_{p(x,y)}^{q(x,y)}dz\,dxdy=
+\iint\limits_D(q(x,y)-p(x,y))dxdy.
+\end{equation}
+
+Как и в случае площадей, если заранее не известно, какая из поверхностей 
+$q(x,y)$ и $p(x,y)$ расположена выше \ref{lec16:11} обобщается в виде
+\begin{equation}
+	V_{\text{цил}}=\iint\limits_D\abs{q(x,y)-p(x,y)}dxdy.
+\end{equation}
+
+\begin{example}
+	Вычислим объем шара $x^2+ y^2 + z^2 \leq R^2$ с использованием 
+	\ref{lec16:11}. Его можно рассматривать как цилиндр:
+	\begin{equation*}
+		\begin{split}
+			&p(x, y) = -\sqrt{-(x^2 + y^2) + R^2} \leq z \leq
+			\sqrt{R^2 - x^2 - y^2} = q(x, y),\\
+			&\text{где } D: x^2 + y^2 \leq R^2.
+		\end{split}
+	\end{equation*}
+	
+	В результате, в силу \eqref{lec16:11}, следует:
+	\begin{gather*}
+			V_{\text{ш}} = 2 \iint\limits_{x^2 + y^2 \leq R^2}\sqrt{R^2 - x^2 - 
+			y^2}dxdy =
+			\left[
+			\begin{gathered}
+				x = Rr \cos \phi,\\
+				y = Rr \sin \phi,\\
+				J = R^2 r,
+			\end{gathered}
+		\right] =2R^3\iint\limits_Gr\sqrt{1-r^2}=\\
+		=
+			\left[
+			\begin{gathered}
+				0 \leq \phi \leq 2 \pi,\\
+				0 \leq r \leq 1
+			\end{gathered}
+			\right]
+			=2R^3 \int\limits_0^{2\pi}d\phi \int\limits_0^1r\sqrt{1 - r^2} \; d(r^2) =
+			2R^3\left[-\dfrac{2}3(1-\phi^2)^{\frac{3}2}\right]^1_0 = 
+			R^3\cdot 2\pi \cdot \dfrac{2}{3}=\frac{4}{3}\pi R^3.
+	\end{gather*}
+\end{example}
+
+
+В общем случае, кроме вычисления объёма по формуле \eqref{lec16:12} по
+2И, эффективным методом является использование замены в 3И. 
+
+Пусть имеется диффеоморфизм
 \begin{equation*}
-V_{\text{цил}}=\iint\limits_D\int\limits_{p(x,y)}^{q(x,y)}dz\,dxdy
+\begin{cases}
+	x = x(u, v, \omega), \\
+	y = y(u, v, \omega), \\ 
+	z = z(u, v, \omega), 
+\end{cases}
+(u, v, \omega) \in G  \subset \R^{3} , \;\; (x, y, z) \in T \subset \R^{3}.
 \end{equation*}
+где кубируемые тела $G$ и $T$ в $\R{3}$, рассматриваются в соответствующих ПДСК
+$Ouv\omega$ и $Oxyz$. Если используемые функции непрерывно дифференцируемы и 
+для якобиана этого диффеоморфизма выполняется
+\begin{equation*}
+J(u, v, \omega) = \det
+\begin{bmatrix}
+	x'_u&x'_v&x'_\omega\\
+	y'_u&y'_v&y'_\omega\\
+	z'_u&z'_v&z'_\omega
+\end{bmatrix} \implies 
+J(u,v,w)\neq
+0 \forall(u,v,\omega)\in G \subset \R^3.
+\end{equation*}
+то тогда, в силу формулы замены переменных в 3И, имеем:
+\begin{equation}
+\label{lec16:13}
+V = \text{объём} T = \iiint\limits_tdxdydz=\iiint\limits_G \abs{J(u, v, 
+\omega)}dudv d\omega.
+\end{equation}
+
+\begin{example}
+Рассмотрим параллелепипед, ограниченный поверхностями :
+\begin{equation*}
+		-h_k \leq a_kx + b_ky + c_kz + d_k \leq h_k, k =\overline{ 1, 3}.
+\end{equation*}
+Используя обратный диффеоморфизм
+\begin{equation*}
+	\begin{cases}
+		&u = a_1x + b_1y + c_1z + d_1\\
+		&v = a_2x + b_2y + c_2z + d_2\\
+		&\omega = a_3x + b_3y + c_3z + d_3.
+	\end{cases}, 
+\end{equation*}
+и для его якобиана
+\begin{equation*} 
+	\mathfrak{J} = \det
+	\begin{bmatrix}
+		u'_x&u'_y&u'_z\\
+		v'_x&v'_y&v'_z\\
+		\omega'_x&\omega'_y&\omega'_z
+	\end{bmatrix}=
+\begin{vmatrix}
+	u'_x&u'_y&u'_z\\
+	v'_x&v'_y&v'_z\\
+	\omega'_x&\omega'_y&\omega'_z
+\end{vmatrix}
+	 = \Delta.
+\end{equation*}
+Если $\Delta\neq0$, то
+ $J = \dfrac{1}{\mathfrak{J} } = \dfrac{1}{\Delta} \neq 0$. В связи с этим, на 
+ основании
+\eqref{lec16:13} получаем, что объем ограниченного параллелепипеда:
+\begin{equation*}
+	V_{\text{парол.}} = \iiint\limits_{
+		\substack{
+			-h_1 \leq u \leq h_1\\
+			-h_2 \leq v \leq h_2\\
+			-h_3 \leq \omega \leq h_3\\
+	}} \dfrac{du \; dv \; d\omega}{\abs{\Delta}} =
+	\dfrac{1}{\abs{\Delta}}\int\limits_{-h_1}^{h_1}du\int\limits_{-h_2}^{h_2}dv
+	\int\limits_{-h_3}^{h_3}d\omega =
+	\dfrac{1}\Delta (2h_1)(2h_2)(2h_3) =\dfrac{8h_1h_2h_3}{\abs{\Delta}}.
+\end{equation*}
+\end{example}
+
+При использовании сферической замены
+\begin{equation*}
+	\begin{cases}
+		x = r \cos \phi \cos \psi,\\
+		y = r \sin \phi \cos \psi,\\
+		z = r \sin \psi,\\
+		I = r\cos \psi, 
+	\end{cases}
+	\begin{gathered}
+		(x, y, z) \in T, \\
+		(r, \phi, \psi) \in G,\\
+		r\geq 0,\\
+		\phi\in \left[0,2\pi\right],\psi\in\left[-\dfrac{\pi}2,\dfrac{\pi}2\right].
+	\end{gathered}
+\end{equation*}
+то в этом случае \ref{lec16:13} имеет вид:
+\begin{equation}
+\label{lec16:14}
+V = \text{объём} T = \iiint\limits_Gr^2\cos\psi dr d\phi d\psi.
+\end{equation}
+\begin{exercise}
+	Найти якобиан общей сферической замены 
+	\begin{equation*}
+		\begin{cases}
+			x = ar \cos^{\alpha}\phi \cos^{\beta}\psi,\\
+			y = br \sin^{\alpha}\phi \cos^{\beta}\psi,\\
+			z = cr \sin^{\beta}\psi,
+		\end{cases}
+		a, b, c =const>0, \;\; \alpha,\beta=const \in \R{}.
+	\end{equation*}
+и формулу для объема.
+\end{exercise}
+
+\section{Механические приложения 2И и 3И}
+Механические приложения 2И и 3И используются при вычислении масс плоских фигур 
+и пространственных тел, а также нахождении центров
+тяжести и соответствующих моментов инерции материальных плоских фигур из 
+$\R^2$ и тел из $\R^3$.
+
+Рассмотрим квадрируемый плоский материальный компакт
+$D \subset \R{2}$, у которого в ПДСК в любой точке $M(x, y) \in D$ известна
+плотность $\rho = \rho(M) = \rho(x,y)$, являющаяся непрерывной Ф2П на $D$. 
+Тогда
+масса $m_0$ рассматриваемой материальной плоской фигуры $D \subset \R^{2}$
+будет вычисляться по формуле
+\begin{equation}
+\label{lec16:15}
+m_0 = \iint\limits_D \rho(x, y) \; dxdy,
+\end{equation}
+а координаты центра тяжести $c(x_0, y_0)$ (центра масс) фигуры $D$ по формулам
+\begin{equation}
+\label{lec16:16}
+\begin{cases}
+	&x_0 = \frac{1}{m_0}\iint\limits_D\rho x dx dy,\\
+	&y_0 = \frac{1}{m_0}\iint\limits_D\rho y dx dy.
+	\end{cases}
+\end{equation}
+В случае, когда фигура однородна $\rho=const>0$,
+ формулы \ref{lec16:17} упрощается:
+ \begin{equation*}
+ \begin{cases}
+ 	&x_0 = \frac{1}{S_0}\iint\limits_D x dx dy,\\
+ 	&y_0 =\frac{1}{S_0}\iint\limits_D y dx dy.
+ 	\end{cases}
+ \text{, где} S_0=\iint\limits_D dxdy=\text{Пл}D.
+ \end{equation*}
+В общем случае для моментов инерции $I_x$ и $I_y$ относительно соответствующих 
+координатных
+осей $Ox$ и $Oy$ имеем
+\begin{equation}
+\label{lec16:17}
+\begin{cases}
+	&I_x = \iint\limits_Dy^2\rho dx dy,\\
+	&I_y = \iint\limits_Dx^2\rho dx dy.\\
+	\end{cases}
+\end{equation}
+Рассматривая также центробежный момент,
+\begin{equation}
+\label{lec16:18}
+I_{xy} = \iint\limits_Dxy\rho dx dy.
+\end{equation}
+Аналогичная формула и в случае материального пространственного тела
+$T \subset \R^{3}$, $T$ - кубируемый компакт в $\R^{3}$.
+Если в ПДСК $Oxyz$ $\forall M(x, y, z) \in T$, определена плотность $\rho (M) =
+\rho(x, y, z)$ - непрерывная Ф3П на $T$, то тогда для массы
+\begin{equation}
+\label{lec16:19}
+m_0 = \iiint\limits_T \rho(x, y, z) dx dy dz,
+\end{equation}
+и для координат центра тяжести $c(x_0, y_0, z_0)$ получаем
+\begin{equation}
+\label{lec16:20}
+\begin{cases}
+&x_0 = \frac{1}{m_0}\iiint\limits_Tx \rho dx dy dz,\\
+&y_0 = \frac{1}{m_0}\iiint\limits_Ty \rho dx dy dz,\\
+&z_0 = \frac{1}{m_0}\iiint\limits_Tz \rho dx dy dz.\\
+\end{cases}
+\end{equation}
+В случае, когда тело однородное, т.~е. $\rho=const>0$
+\begin{equation*}
+	\ref{lec16:20}\iff
+	\begin{cases}
+		&x_0 = \frac{1}{V_0}\iiint\limits_Tx  dx dy dz,\\
+		&y_0 = \frac{1}{V_0}\iiint\limits_Ty  dx dy dz,\\
+		&z_0 = \frac{1}{V_0}\iiint\limits_Tz  dx dy dz.\\
+	\end{cases}
+\text{ где } V_0=\text{объем }T=\iiint\limits_T dxdydz.
+\end{equation*}
+Моменты инерции рассмотренного тела $T \subset \R{3}$ относительно 
+соответствующих
+координатных плоскостей $Oxy$, $Oyz$, $Oxz$:
+\begin{equation}
+\label{lec16:21}
+\begin{cases}
+&I_{xy} = I_{yx} = \iiint\limits_Tz^2 \rho dx dy dz,\\
+&I_{yz} = I_{zy} = \iiint\limits_Tx^2 \rho dx dy dz,\\
+&I_{zx} = I_{xz} = \iiint\limits_Ty^2 \rho dx dy dz.\\
+\end{cases}
+\end{equation}
+Для моментов инерции $I_x$, $I_y$, $I_z$ относительно координатных осей
+$Ox$, $Oy$, $Oz$ соответственно получаем:
+\begin{equation}
+\label{lec16:22}
+\begin{cases}
+&I_x = I_{xy} + I_{xz} = \iiint\limits_T (y^2 + z^2) \rho dx dy dz,\\
+&I_y = I_{yx} + I_{yz} = \iiint\limits_T (x^2 + z^2) \rho dx dy dz,\\
+&I_z = I_{xz} + I_{yz} = \iiint\limits_T (x^2 + y^2) \rho dx dy dz.\\
+\end{cases}
+\end{equation}
+\section{Интеграл Эйлера-Пуассона}
 \end{document}
