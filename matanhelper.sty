@@ -55,6 +55,12 @@
 \newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\appr}[1]{\underset{#1}\longrightarrow}
 
+\newcommand*{\overcurvearrow}[1]{%
+  \overset{%
+    \resizebox{\widthof{#1}}{0.5em}{$\curvearrowright$}%
+  }{#1}%
+}
+
 % Числовые множества
 \newcommand{\R}{\mathbb{R}}
 \renewcommand{\C}{\mathbb{C}}
