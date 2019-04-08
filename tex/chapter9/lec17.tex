@@ -1,0 +1,195 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+\section{Гладике и кусочно-гладкие кривые в $\R^n$}
+
+\emph{Линей(кривой)} $l \subset \R^n $ будем 
+называеть произвольное отображение
+\begin{equation}
+  \label{lec17:1}
+  f: [\alpha, \beta] \to \R^n,
+\end{equation}
+ставящее в соответствие для $\forall t \in [\alpha, \beta]$ 
+единственную точку(образ) $M = f(t) \in \R^n$,
+где $f(t) = (f_1(t), f_2(t), \ldots, f_n(t))$ и
+$\forall f_k(t)$ ~--- Ф1П, $t \in [\alpha, \beta], k = \overline{1,n}$.\\
+Испульзую координатную запись
+$M = (x_1, x_2, \ldots, x_n) \in \R^n$ из \eqref{lec17:1} 
+получаем параметрическое представление кривой $l \subset \R^n$
+\begin{equation}
+ \label{lec17:2}
+ l: 
+ \left\{
+  \begin{array}{cc}
+    x_k = f_k(t), k = \overline{1,n},\\
+    t \in \left[\alpha, \beta\right].
+  \end{array}
+ \right.
+\end{equation}
+
+В общем случае одна и та же кривая $l \subset \R^n$, 
+как образ отображения \eqref{lec17:1}, может иметь в $\R^n$ разные
+параметрические представления \eqref{lec17:2} при каждом из которых 
+геометрически 
+будут получаться одни и те же множества точек в $\R^n$.\\
+Например, в $R^2$ в ПДСК  $Oxy$ на единичной окружности мы можем 
+использовать как параметрическое преставление
+\[
+\left\{
+  \begin{array}{cc}
+    x = \cos(t) \\
+    y = \sin(t)
+  \end{array}
+  \right.
+  t \in \left[0, 2\pi \right]
+\] 
+так и параметрическое представление:
+\[
+\left\{
+  \begin{array}{cc}
+    x = \sin(t) \\
+    y = \cos(t)
+  \end{array}
+  \right.
+  t \in \left[0, 2\pi \right]
+\] 
+в результате, при каждом из этих отображений, 
+получится один и тот же образ в $\R^2$.\\
+В общем случае для \eqref{lec17:1}, \eqref{lec17:2}
+точку $M_\alpha = f(\alpha) \in l$ будем считать начальной точкой,
+а точку $M_\beta = f(\beta) \in l$ будем называть концевой точкой для кривой 
+$l$ и в этом случае, при необходимости саму кривую $l$ будем записывать в виде
+$l = \buildrel\,\,\frown\over{M_\alpha,\ M_\beta}$.
+
+В дальнейшем будем также рассматривать ориентированные кривые $l$, т.~е.
+те, у которых задано направление движения.
+
+Например:
+  \begin{center}
+    \begin{minipage}{.5\textwidth}
+      \centering
+        \begin{tikzpicture}				
+           \draw (0, 0) arc(0:90:2);
+           \draw[-<] (0,0) arc(0:45:2);
+				
+           \fill [black] (0, 0) circle (2pt);
+           \fill [black] (-2, 2) circle (2pt);
+				
+           \draw (-2,2.3) node[anchor=center] {$M_\alpha$};
+           \draw (0.5,0) node[anchor=center] {$M_\beta$};
+           \end{tikzpicture}
+		\end{minipage}
+     \end{center}
+Ориентацию, соответствующую возростанию параметра $t$ будем считать
+положительной и записыввать в виде 
+$l^+= \buildrel\,\,\frown\over{M_\alpha,\ M_\beta}$
+(на дуге стрелка слева направо).\\
+Для этой же кривой с противоположенной ориентацией будем использовать запись
+$l^-= \buildrel\,\,\frown\over{M_\alpha,\ M_\beta} \text{(справа налево)} =
+\buildrel\,\,\frown\over{M_\beta,\ M_\alpha} \text{(слева направо)}$.
+
+Кривая $l \subset \R^n$ без \emph{самопересечений} называется 
+\emph{простой} кривой.
+
+Если у такой простой кривой начало
+совпрадает с концом, то получим \emph{замкнутую} кривую.
+
+В дальнейшем ориентированную соотвествующим образом простую замкнутую кривую
+в $\R^n$ будем называть \emph{контуром}.
+
+Если у кривой $l \subset \R^n$  существует параметрическое представление 
+\eqref{lec17:2}, в котором используемые функции непрерывно дифференцируемы на
+$\left[\alpha,\ \beta \right]$, причем в точках $\alpha$ и $\beta$
+подразумевается соотвествующая односторонняя дифференцируемость,
+то $l$ назывют \emph{гладкой} кривой.
+
+Для гладкой кривой  $l \subset \R^n$ точка 
+$M_0 = f(t_0),\ t_0 \in \left[\alpha,\ \beta \right]$
+называется \emph{особой}, если $\forall f'_k(t_0)) = 0, k = \overline{1,n}$.
+
+Кривая $l \subset \R^n$ c представлением \eqref{lec17:2} называется 
+\emph{кусочно гладкой}, елси 
+\[
+  \exists P = \left\{ t_k \right\} , k = \overline{1,n}
+\]
+такое разбиение
+отрезка $\left[\alpha, \beta \right]$,
+\[
+  \alpha = t_0  < t_1 < t_2 < \dots < t_{n-1} < t_n = \beta
+\]
+что во-первых: любое $f_j(t)$ непрерывно дифференцируемо 
+для $t \in \left]t_k,\ t_{k-} \right[, k = \overline{1, m}$,
+причём либая из точек разбиения $t_j, j = \overline{1, m}$ не является
+особой для $l \subset \R^n$ т.~е.
+\[
+  \sum\limits_{j = 1}^m(f'_j(t))^2 > 0
+\]
+И во-вторых препологается, что на концах кадого из интервалов разбиения
+т.~е. в каждой из точек 
+$t_j \in \left[ \alpha, \beta \right], j = \overline{1,m}$
+у любой $f_k(t)$ существуют конечные односторонние производные.
+
+По той же схеме, как для плоских в $\R^2$ и пространственных в  $\R^3$ 
+линий определяют спрямляемые кривые $l \subset \R^n$.
+Если $l \subset \R^n$ спрямляема, то её длина, 
+в соответствии c \eqref{lec17:2}
+вычисляется по формуле
+\begin{equation}
+ \label{lec17:3}
+ L = \text{длина}\ l = \int\limits_\alpha^\beta|f'(t)|dt =  
+ \int\limits_\alpha^\beta\sqrt{(f'_1(t))^2 + (f'_2(t))^2 
+ + \dots (f'_n(t))^2}dt
+\end{equation}
+
+Если рассматреть на отрезке $\alpha(t),\ t \in \left[\alpha, \beta\right]$,
+длину $S$ соотвествующей части кривой $l \subset \R^n$, 
+то в силу \eqref{lec17:3} имеем
+\begin{equation}
+\label{lec17:4}
+ S = S(t) = \int\limits_\alpha^t(|f'(\tau)|)d\tau
+\end{equation}
+Отсюда, в случем непрервыности используемых в \eqref{lec17:2} 
+функций  по т. Барроу следует:
+\[
+  \exists S'(t) = |f'(t)|>0
+\]
+для не особых точек $t \in \left[\alpha, \beta \right]$.
+
+Поэтому получаемая функция $S = S(t)$ монотонно возрастает 
+на $\left[\alpha, \beta \right]$ от начального значения  $S(\alpha) = 0$ 
+до конечного значения $S(\beta) = L$.
+$\forall s \in \left[0, L \right]$ в случае, когда $S'(t) > 0$  уравнение
+$S(t) = S$ имеет единственное решение 
+$t = t(S) \in \left[\alpha, \beta \right]$
+Используюя это решение в \eqref{lec17:2} приходим к новой параметризации
+рассматриваемой кривой
+\begin{equation}
+ \label{lec17:5}
+ l:
+ \left\{
+   \begin{array}{cc}
+      x_k = f_k(t(S)),\ k = \overline{1,n}\\
+      S \in \left[0, L \right]
+   \end{array}
+ \right.
+\end{equation}
+В которой роль параметра играет длина $S$ в рассматриваемой части дуги $L$.
+Параметр $S$ в \eqref{lec17:5} называется \emph{натуральным} параметром, 
+а параметрическое представление \eqref{lec17:5} чрез натуральный параметр S
+называется натуральным представлением кривой $l$ на $\left[ 0, L \right]$.
+
+
+
+
+
+
+\end{document}
