@@ -7,6 +7,9 @@
 \usepackage{textcomp}
 \usepackage{tikz}
 
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows.meta}
+
 % Теоремы, следствия, замечания, ...
 \theoremstyle{plain}
 \newtheorem{theorem}{Теорема}[chapter]
@@ -55,12 +58,20 @@
 \newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
 \newcommand{\appr}[1]{\underset{#1}\longrightarrow}
 
-% TODO : рисовать эту стрелку лучше при помощи tikz (?)
-\newcommand*{\overcurvearrow}[1]{%
-  \overset{%
-    \resizebox{\widthof{#1}}{0.5em}{$\curvearrowright$}%
-  }{#1}%
+% Дуги и стрелки над обозначениями кривых
+\newcommand{\overbow@any}[2]{
+   \tikz [baseline = (N.base), every node/.style={}] {
+      \node [inner sep = 0pt] (N) {$#1$};
+      \draw [line width = 0.4pt, #2] plot [smooth, tension=1.3] coordinates {
+         ($(N.north west) + (0.1ex,0)$)
+         ($(N.north)      + (0,0.5ex)$)
+         ($(N.north east) + (0,0)$)
+      };
+   }
 }
+\newcommand{\overbow}[1]{\overbow@any{#1}{-}}
+\newcommand{\overbowleft}[1]{\overbow@any{#1}{{latex[length=3mm]}-}}
+\newcommand{\overbowright}[1]{\overbow@any{#1}{-{latex[length=3mm]}}}
 
 % Числовые множества
 \newcommand{\R}{\mathbb{R}}
