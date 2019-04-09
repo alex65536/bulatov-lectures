@@ -28,7 +28,7 @@ install:
     # download a newer pgf
     - tlmgr init-usertree
     - tlmgr option repository http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2013/tlnet-final/
-    - tlmgr install pdf
+    - tlmgr install pgf
 
 script:
     make LATEXMK="./latexmk/latexmk.pl" LATEXMK_FLAGS="-Werror"
