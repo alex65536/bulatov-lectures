@@ -14,6 +14,7 @@ addons:
       - latexmk
       # required only for CI
       - pgf
+      - xzdec
       - curl
 
 before_install:
@@ -24,6 +25,10 @@ install:
     # download a newer latexmk
     - curl https://ctan.mirror.norbert-ruehl.de/support/latexmk.zip -o /tmp/latexmk.zip
     - unzip /tmp/latexmk.zip latexmk/latexmk.pl
+    # download a newer pgf
+    - tlmgr init-usertree
+    - tlmgr option repository http://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2013/tlnet-final/
+    - tlmgr install pdf
 
 script:
     make LATEXMK="./latexmk/latexmk.pl" LATEXMK_FLAGS="-Werror"
