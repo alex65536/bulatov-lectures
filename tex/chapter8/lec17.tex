@@ -15,8 +15,7 @@
 		\emph{Интегралом Эйлера-Пуассона} называется несобственный интеграл 
 		\begin{equation}
 		 	\label{lec17:1}
-            \int\limits_0^{+\infty}e^{-x^2}dx = \lim\limits_{A\to +\infty} 
-            I(A),
+            \int\limits_0^{+\infty}e^{-x^2}dx = \lim\limits_{A\to +\infty} I(A),
 		\end{equation}
         где
 		\begin{equation}
@@ -319,7 +318,8 @@
       \left. x - \frac{|a|}{x} \right|_{-\infty}^{+ \infty},\\
       x^2 - tx - |a| = 0 \iff \\ \iff
       x = \frac{t \pm \sqrt{t^2 + 4|a|}}{2} 
-      \xrightarrow[t \to \mp \infty]{} \mp \infty, \\
+      \xrightarrow[t \to \mp \infty]{} \mp \infty \implies \\
+      \implies x = \frac{t - \sqrt{t^2 + 4|a|}}{2}, \\
       dx = d(\frac{t - \sqrt{t^2 +4|a|}}{2}) =
       \frac{1}{2}\big(1 - \frac{t}{\sqrt{t^2 + 4|a|}}\big)dt.
      \end{array}
@@ -329,8 +329,7 @@
     \left(1 - \frac{t}{\sqrt{t^2 + 4|a|}}\right) dt = 
     \\
     =\frac{1}{2}e^{2|a|}\left(
-    \underbrace{\int\limits_{-\infty}^{+\infty}e^{-t^2}dt}_{\text{чётная}} 
-    \:\cdot\:
+    \underbrace{\int\limits_{-\infty}^{+\infty}e^{-t^2}dt}_{\text{чётная}} \:\cdot\:
     \underbrace{\int\limits_{-\infty}^{+\infty}
     \frac{te^{-t^2}}{\sqrt{t^2 + 4|a|}}dt}_\text{нечётная}\right) =
     e^{2|a|}\int\limits_{0}^{+\infty}e^{-t^2}dt 
