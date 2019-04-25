@@ -1,4 +1,15 @@
 #!/bin/bash
+set -e
+
+if [ -z "$BASH" ]; then
+	echo "Please use Bash for running the script!"
+	exit 42
+fi
+
+if [ -n "$(git status --porcelain)" ]; then
+	echo "Please commit your changes first to prevent loss of data!"
+	exit 43
+fi
 
 shopt -s globstar
 
@@ -8,7 +19,7 @@ sedfix() {
 
 foldfix() {
 	for FILE in tex/**/*.tex; do
-		NEWFILE="$(awk -f wrap.awk "$FILE")"
+		NEWFILE="$(gawk -f wrap.awk "$FILE")"
 		if [[ "$?" != 0 ]]; then
 			echo "wrap.awk failed with non-zero exitcode"
 			exit 1

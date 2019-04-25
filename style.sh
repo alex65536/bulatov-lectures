@@ -1,6 +1,11 @@
 #!/bin/bash
 set -e
 
+if [ -z "$BASH" ]; then
+	echo "Please use Bash for running the script!"
+	exit 42
+fi
+
 EXITCODE=0
 
 finish() {
