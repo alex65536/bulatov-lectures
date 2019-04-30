@@ -10,11 +10,13 @@
 }
 
 \begin{document}
-	Если $f$~--- непрерывная функция, а поверхность является гладкой, то такой интеграл существует.
+	Если $f$~--- непрерывная функция, а поверхность является гладкой, то такой 
+	интеграл существует.
 
 	Координаты центра тяжести материальной поверхности $\pi$ с плотностью $\rho =
 	 \rho(x,y,z)$ могут быть найдены по формуле: 
-	\begin{gather*}x_0 = \frac{\iint \limits_\pi \rho  x ds}{\iint \limits_\pi \rho ds} =
+	\begin{gather*}x_0 = \frac{\iint \limits_\pi \rho  x ds}{\iint \limits_\pi 
+	\rho ds} =
 	 \frac{M_{yz}}{m}, \\
 	y_0 = \frac{\iint \limits_\pi \rho  y ds}{\iint \limits_\pi \rho ds} =
 	 \frac{M_{xz}}{m}, \\
@@ -23,8 +25,8 @@
 	 \end{gather*}
 	
 	\subsection{Вычисление ПовИ-1}
-	Пусть поверхность $\pi$ задана формулой $\pi \ : \ \overrightarrow{r} =
-	 \overrightarrow{r}(u, v) = (x(u,v), \ y(u,v), \ z(u, v)$, где $(u, v) \in D
+	Пусть поверхность $\pi$ задана формулой $\pi \ : \ \vec{r} =
+	 \vec{r}(u, v) = (x(u,v), \ y(u,v), \ z(u, v)$, где $(u, v) \in D
 	  \subset \R^2$, поверхность $\pi$ является гладкой двусторонней
 	   поверхностью. Рассмотрим точку $M_k$.
 	\[M_k(x_k, y_k, z_k) \leftrightarrow (u_k, v_k)\]
@@ -36,9 +38,9 @@
 	\[\sum^{n}_{k=1} \ f(x_k, y_k, z_k)\Delta s_k = \sum^{n}_{k=1} \ f(x(u_k, 
 	v_k),
 	 y(u_k, v_k), z(u_k, v_k))\Delta s_k \]
-	\[\Delta s_k = \iint \limits_{D_k}\sqrt{EG - F^2}dudv = (\star)  \]
+	\[\Delta s_k = \iint \limits_{D_k}\sqrt{EG - F^2}dudv = *  \]
 	Под корнем непрерывная от $u, v$ функция. Тогда найдется точка $(\tilde{u_k},
-	 \tilde{v_k}) \in D_k$ такая, что $(\star) = \sqrt{EG -F^2} \big|_{\tilde{u}_k
+	 \tilde{v_k}) \in D_k$ такая, что $* = \sqrt{EG -F^2} \big|_{\tilde{u}_k
 	  \tilde{v}_k} \cdot \Delta \sigma_k = (\sqrt{EG _F^2} \big|_{u_kv_k} 
 	  +\alpha_k)
    \Delta \sigma_k$, где $\alpha_k \to 0$ при $\delta \to 0$ (Вытекает из 
@@ -59,20 +61,20 @@
     \begin{rem}
     Величину $ds = \sqrt{EG - F^2} du dv$ можно называть
      дифференциалом поверхности и ее можно заменить другим выражением:
-    \[ds = \sqrt{Eg - F^2} = |[\overrightarrow{r_u}', \overrightarrow{r_v}']| 
+    \[ds = \sqrt{Eg - F^2} = |[\vec r\,'_u}', \vec{r_v]| 
     du dv =
-     |\overrightarrow{N}| du dv = \sqrt{A^2 + B^2 + C^2} du dv \] 	
+     |\vec{N}| du dv = \sqrt{A^2 + B^2 + C^2} du dv \] 	
     Пусть $\pi$ определена формулой $z= \phi(x,y)$, где $(x,y) \in D$ ($D$ \---
      замкнутая квадрируемая область). Тогда эту поверхность можно 
      параметризовать
       $x=u, y = v, z= \phi(u,v), \ (u, v) \in D$. Имеем вектор 
-      $\overrightarrow{r} =
+      $\vec{r} =
        (u, v, \phi(u,v))$. Имеем:
-    \[\overrightarrow{r_u}' = (1, 0, \phi'_u) \] 
-    \[\overrightarrow{r_v}' = (0, 1, \phi'_v)\]
-	\[E =(\overrightarrow{r_u}')^2 = 1 + (\phi'_u)^2\]
-	\[G =(\overrightarrow{r_v}')^2 = 1 + (\phi'_v)^2\]
-	\[F = \ <\overrightarrow{r_u}', \overrightarrow{r_v}'> = \phi'_u \cdot 
+    \[\vec r\,'_u = (1, 0, \phi'_u) \] 
+    \[\vec r\,'_v = (0, 1, \phi'_v)\]
+	\[E =(\vec r\,'_u)^2 = 1 + (\phi'_u)^2\]
+	\[G =(\vec r\,'_v)^2 = 1 + (\phi'_v)^2\]
+	\[F = \ <\vec r\,'_u}', \vec{r_v> = \phi'_u \cdot 
 	\phi'_v\]
 	\[EG - F^2 = 1 + (\phi'_u)^2 + (\phi'_v)^2 \]
 	\[\iint \limits_D f(x, y, z)ds = \iint \limits_D f(u,v, \phi(u,v)) \sqrt{1 +
@@ -84,7 +86,7 @@
 	\item
 	\[ \iint \limits_\pi z^2 ds ,\text{ где $pi$ \--- часть конической 
 	поверхности} \] 
-	\[\pi: \overrightarrow{r} = (u\cos v\sin \alpha, u\sin v\sin\alpha, 
+	\[\pi: \vec{r} = (u\cos v\sin \alpha, u\sin v\sin\alpha, 
 	u\cos\alpha) ,
 	  \alpha\in (0, \frac{\pi}{2}) \--\text{постоянная}\] 
 	\[0 \leq v \leq 2\pi, \qquad 0 < u \leq a \]
@@ -135,18 +137,18 @@
 		\section{ПовИ-2}
 		Пусть задана гладкая двусторонняя квалрируемая поверхность $\pi$. Выберем
 		 какую-то сторону поверхности. Так как поверхность гладкая, в каждой точке
-		  поверхности есть вектор нормали $\overrightarrow{N} = \pm (A, B,C) = \pm
-		   [\overrightarrow{r'}_u, \overrightarrow{r'}_v]$. Выбираем конкретный
-		    знак + или -. Тогда во всех точках будет задан $\overrightarrow{N}$
-		     Единственным образом. Обозначим $\overrightarrow{n} =
-		      \frac{\overrightarrow{N}}{|\overrightarrow{N}|}$ \--- имеет
+		  поверхности есть вектор нормали $\vec{N} = \pm (A, B,C) = \pm
+		   [\vec r\,'}_u, \vec{r'_v]$. Выбираем конкретный
+		    знак + или -. Тогда во всех точках будет задан $\vec{N}$
+		     Единственным образом. Обозначим $\vec{n} =
+		      \frac{\vec{N}}{|\vec{N}|}$ \--- имеет
 		       единичную длину. Его координатами являются
 		       направляющие косинусы
-		\[\overrightarrow{n} = \frac{\pm(A,B,C)}{\sqrt{A^2 +B^2 + C^2}} = 
+		\[\vec{n} = \frac{\pm(A,B,C)}{\sqrt{A^2 +B^2 + C^2}} = 
 		(\cos \alpha, \cos \beta, \cos \gamma).\]
 		\subsection{Выбор стороны поверхности}
 		Если взять $\pm C$ с таким знаком, что $\pm C > 0$, то тогда $\cos \gamma
-		 > 0$ и, значит, $\overrightarrow{n}$ и $\overrightarrow{N}$ образуют с осью
+		 > 0$ и, значит, $\vec{n}$ и $\vec{N}$ образуют с осью
 		  $Oz$ острый угол (можно говорить, что вектор нормали направлен вверх).
 		   Это и дает определенную сторону поверхности.\\
 		Пусть задана поверхность$\pi$ \--- гдадкая двусторонняя квадрируемая
@@ -154,7 +156,7 @@
 	  $\pi_k$, площадь $\pi_k$ равна $\Delta s_k$. Выберем некоторую сторону
 	  поверхности $\pi$ (тогда говорят, что $\pi$ ориентирована). Возьмем
       $M_k(x_k, y_k, z_k) \in \pi_k$. В этой точке есть вектор	
-      $\overrightarrow{n} =
+      $\vec{n} =
        (\cos \alpha, \cos \beta, \cos \gamma).$ Обозначим $\Delta \sigma_k = $
         площадь проекции кусочка $\pi_k$ на $Oxy$. Введем в рассмотрение $(\pm
         \Delta\sigma_k),$ где знак \glqq$ + $\grqq, если $\cos \gamma > 0$ и 
