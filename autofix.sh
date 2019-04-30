@@ -45,9 +45,9 @@ sedfix 's/\\Leftrightarrow|\\Longleftrightarrow/\\iff/g'
 
 sedfix 's/\\int(\s*\\limits\s*_\s*\{?[\\a-zA-Z]+\}?\s*)\\int/\\iint\1/g'
 
-sedfix 's/\\vec\s*\{\s*([a-z])\s*'\''(.*)\}/\\vec \1\\,'\''\2/g'
+sedfix 's/\\vec\s*\{\s*([a-z])\s*'\''([^}]*)\}/\\vec \1\\,'\''\2/g'
 sedfix 's/\\vec\s*([a-z])\s*'\''/\\vec \1\\,'\''/g'
-sedfix 's/\\vec\s*\{\s*([a-z])(.*)\}\s*'\''/\\vec \1\\,'\''\2/g'
+sedfix 's/\\vec\s*\{\s*([a-z])([^}]*)\}\s*'\''/\\vec \1\\,'\''\2/g'
 
 sedfix 's/\\ast(\b|[^a-zA-Z*])|\\star(\b|[^a-zA-Z*])/*/g'
 
