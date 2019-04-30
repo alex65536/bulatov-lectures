@@ -112,7 +112,7 @@ Use equation and \eqref{}.'
 	      'Use the construct \like "\vec r\," to take derivative of a vector'
 	      
 	check -- "$1" \
-	      '\\ast|\\star' \
+	      '\\ast(\b|[^a-zA-Z*])|\\star(\b|[^a-zA-Z*])' \
 	      'Just use *'
 }
 
