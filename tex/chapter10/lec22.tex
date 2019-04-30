@@ -17,7 +17,8 @@
 таком случае говорят, что задано \emph{поле нормалей}. В связи с этим, 
 поверхности бывают односторонние и двусторонние.
 
-Примерами двусторонних поверхностей являются сфера, эллиптический параболоид и т.~д. Примером односторонней поверхности является \emph{лист Мёбиуса} :
+Примерами двусторонних поверхностей являются сфера, эллиптический параболоид и 
+т.~д. Примером односторонней поверхности является \emph{лист Мёбиуса} :
 
 \begin{center}
 \includegraphics[scale = 0.5]{lec22_0.png}
@@ -41,7 +42,8 @@ $\vec{N}(0, v) = -\vec{N}(0, v + \pi).$
 
 \section{Первая квадратичная форма поверхности}
 
-Первая квадратичная форма поверхности играет важную роль для исследования поверхностей.
+Первая квадратичная форма поверхности играет важную роль для исследования 
+поверхностей.
 
 Рассмотрим гладкую двустороннюю поверхность \[\vec{r} = \vec{r}(u,  v) = 
 (x(u,  v), \ y(u,  v), z(u,  v)).\]
@@ -84,7 +86,8 @@ l = \int\limits_\alpha^\beta\sqrt{(x'_t)^2 + (y'_t)^2 + (z'_t)^2}\,dt =
 \int\limits_\alpha^\beta  |d\rho| =  \int\limits_\alpha^\beta|d\vec{r}| = 
 \int\limits_\alpha^\beta\sqrt{(d\vec{r})^2} = \] 
 \[ 
-= \int\limits_\alpha^\beta\sqrt{Edu^2 + 2Fdudv + Gdv^2} \text{, где } u = u(t), v = v(t). 
+= \int\limits_\alpha^\beta\sqrt{Edu^2 + 2Fdudv + Gdv^2} \text{, где } u = 
+u(t), v = v(t). 
 \]
 
 \begin{exmp}
@@ -123,7 +126,8 @@ a^2\cos^2u(t)d(v(t)^2)} =
 = \left[ 2\tg\left(\frac{\pi}{4} + 
 \frac{t}{2}\right)\cos^2\left(\frac{\pi}{4} + \frac{t}{2}\right) = 
 2\sin\left(\frac{\pi}{4} + 
-\frac{t}{2}\right)\cos\left(\frac{\pi}{4} + \frac{t}{2}\right) = \sin\left(\frac\pi2 + t\right) = -\cos(t)
+\frac{t}{2}\right)\cos\left(\frac{\pi}{4} + \frac{t}{2}\right) = 
+\sin\left(\frac\pi2 + t\right) = -\cos(t)
 \right] =\\
 \int\limits_0^1\sqrt{a^2dt^2 + a^2\frac{\cos^2t}{\cos^2t}dt^2} = 
 \int\limits_0^1\sqrt{a^2dt^2 + a^2dt^2} = a\sqrt2.
@@ -139,7 +143,8 @@ a^2\cos^2u(t)d(v(t)^2)} =
 
 Разобьём $\pi$ на части $\pi_k$. На каждом кусочке $\pi_k$
 выберем точку $M_k$, и в этой точке построим касательную 
-плоскость. Спроецируем $\pi_k$ на касательную плоскость, построенную в точке $M_k$. Получим некоторое 
+плоскость. Спроецируем $\pi_k$ на касательную плоскость, построенную в точке 
+$M_k$. Получим некоторое 
 множество $P_k$ с площадью $\Delta S_k$. Тогда \[\text{площадь  } \pi = S_\pi 
 \approx \sum\limits_{k=1}^n\Delta S_k,\] то есть \[S_\pi = 
 \lim\limits_{\delta\rightarrow0}\sum\limits_{k = 1}^n\Delta S_k,\]
@@ -152,7 +157,8 @@ a^2\cos^2u(t)d(v(t)^2)} =
 Мы рассмотрим разбиение, построенное с помощью координатных прямых. Рассмотрим 
 элемент площади, который соответствует координатным кривым
 $\vec{r} = \vec{r}(u, v)$, $\vec{r} = 
-\vec{r}(u + \Delta u, v)$, $\vec{r} = \vec{r}(u, v + \Delta v)$. Получаем криволинейный четырехугольник:
+\vec{r}(u + \Delta u, v)$, $\vec{r} = \vec{r}(u, v + \Delta v)$. Получаем 
+криволинейный четырехугольник:
 
 \begin{center}
 \includegraphics[scale = 1]{lec22_2.png}
@@ -160,9 +166,11 @@ $\vec{r} = \vec{r}(u, v)$, $\vec{r} =
 
 Для достаточно мелкого разбиения площадь поверхности приближённо равна площади 
 этого элемента. Тогда $\Delta S_k \approx \left|\left[\vec r\,'_u\Delta u, \ 
-\vec r\,'_v\Delta v\right]\right| = \left|\left[r'_u, \ r'_v\right]\right|\Delta u\Delta v$. 
+\vec r\,'_v\Delta v\right]\right| = \left|\left[r'_u, \ 
+r'_v\right]\right|\Delta u\Delta v$. 
 Суммируя площади и переходя к пределу, получаем
-\[S_\pi = \iint\limits_D\left|\left[\vec r\,'_u, \ \vec r\,'_v\right]\right|\,du\,dv = \iint\limits_D|\vec{N}|\,du\,dv = 
+\[S_\pi = \iint\limits_D\left|\left[\vec r\,'_u, \ \vec 
+r\,'_v\right]\right|\,du\,dv = \iint\limits_D|\vec{N}|\,du\,dv = 
 \iint\limits_D\sqrt{A^2+B^2+C^2}\,du\,dv.\]
 
 Рассмотрим выражение
@@ -194,19 +202,23 @@ S_\pi = \iint\limits_D\sqrt{EG - F^2}\,du\,dv.
 \[
  S_\pi = \int\limits_0^1du\int\limits_0^1\sqrt{EG-F^2}\,dv = 
  \int\limits_0^1du\int\limits_0^1\sqrt{a^4\cos^2u}\,dv = 
- a^2\int\limits_0^1du\int\limits_0^1\cos u\,dv = a^2\sin u\big|_0^1 = a^2\sin 1.
+ a^2\int\limits_0^1du\int\limits_0^1\cos u\,dv = a^2\sin u\big|_0^1 = a^2\sin 
+ 1.
 \]
 \end{exmp}
 
 \section{Поверхностный интеграл первого рода (ПовИ-1)}
 
-Пусть дана двусторонняя гладкая поверхность $\pi$, и $S$~--- её площадь. \[\pi : 
+Пусть дана двусторонняя гладкая поверхность $\pi$, и $S$~--- её площадь. \[\pi 
+: 
 \vec{r} = (x, y, z).\]
 Пусть на поверхности задана функция $f(x, y, z)$. 
-Рассмотрим разбиение поверхности $\pi$ на кусочки $\pi_k,\ k = \overline{1, n}$, $\Delta 
+Рассмотрим разбиение поверхности $\pi$ на кусочки $\pi_k,\ k = \overline{1, 
+n}$, $\Delta 
 S_k = S_{\pi_k}$, $\delta$~--- диаметр разбиения. На каждом кусочке $\pi_k$ 
 возьмём любую точку $M_k \in \pi_k$ с координатами $M_k(x_k, y_k, z_k)$ и 
-построим сумму \[\sigma = \sum\limits_{k = 1}^nf(x_k, \ y_k, \ z_k)\Delta S_k.\]
+построим сумму \[\sigma = \sum\limits_{k = 1}^nf(x_k, \ y_k, \ z_k)\Delta 
+S_k.\]
 
 Предел такой суммы записывают
 \[\lim\limits_{\delta\rightarrow0}\sigma = \iint\limits_\pi f(x, y, 
