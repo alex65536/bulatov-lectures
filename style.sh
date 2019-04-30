@@ -108,7 +108,7 @@ Use equation and \eqref{}.'
 	      'Use \iint!'
 	
 	check -- "$1" \
-	      '\\vec\s*\{\s*[a-z]\s*'\''.*\}|\\vec\s*[a-z]\s*'\''' \
+	      '\\vec\s*\{\s*[a-z]\s*'\''.*\}|\\vec\s*[a-z]\s*'\''|\\vec\s*\{\s*[a-z].*\}\s*'\''' \
 	      'Use the construct \like "\vec r\," to take derivative of a vector'
 }
 
