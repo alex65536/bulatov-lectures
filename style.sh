@@ -103,6 +103,10 @@ Use "make autofix" to fix this error'
 	check -- "$1" \
 	      '\\mathbb' \
 	      'Use predefined symbols for sets (as \R, \C, \N, \Z, \Q).'
+	      
+	check -- "$1" \
+	      '\\int\s*\\limits\s*_\s*\{?[\\a-zA-Z]+\}?\s*\\int' \
+	      'Use \iint!'
 }
 
 export -f error
