@@ -110,6 +110,10 @@ Use equation and \eqref{}.'
 	check -- "$1" \
 	      '\\vec\s*\{\s*[a-z]\s*'\''.*\}|\\vec\s*[a-z]\s*'\''|\\vec\s*\{\s*[a-z].*\}\s*'\''' \
 	      'Use the construct \like "\vec r\," to take derivative of a vector'
+	      
+	check -- "$1" \
+	      '\\ast|\\star' \
+	      'Just use *'
 }
 
 export -f error
