@@ -49,7 +49,7 @@ sedfix 's/\\vec\s*\{\s*([a-z])\s*'\''([^}]*)\}/\\vec \1\\,'\''\2/g'
 sedfix 's/\\vec\s*([a-z])\s*'\''/\\vec \1\\,'\''/g'
 sedfix 's/\\vec\s*\{\s*([a-z])([^}]*)\}\s*'\''/\\vec \1\\,'\''\2/g'
 
-sedfix 's/\\ast(\b|[^a-zA-Z*])|\\star(\b|[^a-zA-Z*])/*/g'
+sedfix 's/(\\ast|\\star)(\b|[^a-zA-Z*])/*\2/g'
 
 # Wrap each line to 80 chars each
 foldfix
