@@ -32,7 +32,8 @@
 	   
 	Рассмотрим точку $M_k$:
 	\[M_k(x_k, y_k, z_k) \leftrightarrow (u_k, v_k).\]
-	Разбиение $\pi$ на части $\pi_k$ соответствует разбиению области $D$ на части $D_k$, при 
+	Разбиение $\pi$ на части $\pi_k$ соответствует разбиению области $D$ на части 
+	$D_k$, при 
 	этом
 	${M_k \in \pi_k} \iff (u_k, v_k) \in D_k$.
 	 
@@ -42,8 +43,10 @@
 	v_k),
 	 y(u_k, v_k), z(u_k, v_k))\Delta s_k \]
 	\[\Delta s_k = \iint \limits_{D_k}\sqrt{EG - F^2}dudv = *  \]
-	Под корнем находится непрерывная от $u, v$ функция. Тогда найдется точка $(\widetilde{u_k},
-	 \widetilde{v_k}) \in D_k$ такая, что $* = \sqrt{EG -F^2} \big|_{(\widetilde{u}_k,
+	Под корнем находится непрерывная от $u, v$ функция. Тогда найдется точка 
+	$(\widetilde{u_k},
+	 \widetilde{v_k}) \in D_k$ такая, что $* = \sqrt{EG -F^2} 
+	 \big|_{(\widetilde{u}_k,
 	  \widetilde{v}_k)} \cdot \Delta \sigma_k = (\sqrt{EG - F^2} \big|_{u_kv_k} 
 	  +\alpha_k)
    \Delta \sigma_k$, где $\alpha_k \to 0$ при $\delta \to 0$ (это вытекает из 
@@ -104,7 +107,8 @@
 	\[\vec r\,'_v = (-u \sin v \sin \alpha, u \cos v \sin \alpha, 0).  \]
 	Тогда
 	\begin{gather*}
-	E = \left<\vec r\,'_u, \vec r\,'_u\right>= 1, \\ G = \left<\vec r\,'_v, \vec r\,'_v\right> = u^2 \sin \alpha^2, \\
+	E = \left<\vec r\,'_u, \vec r\,'_u\right>= 1, \\ G = \left<\vec r\,'_v, \vec 
+	r\,'_v\right> = u^2 \sin \alpha^2, \\
 	F = \left<\vec r\,'_u, \vec r\,'_v\right> = -u \cos v \sin^2 \alpha \sin 
 	v +
 	 u \sin v \sin ^2 \alpha \cos v+0 =0, \\
@@ -112,7 +116,8 @@
 	\end{gather*}
 	\begin{gather*}
 	\iint \limits_\pi z^2 ds = \iint\limits_{0<u \leq \alpha} u^2 \cos^2 \alpha
-	 \ u \sin \alpha \,du\, dv = \sin \alpha \cos ^2 \alpha \int \limits_0^\alpha du
+	 \ u \sin \alpha \,du\, dv = \sin \alpha \cos ^2 \alpha \int \limits_0^\alpha 
+	 du
 	  \int \limits_0 ^{2\pi} u^3 dv = \\ = 2 \pi \sin \alpha \cos ^2 \alpha 
 	  \frac{\alpha^4}{4} =
 	   \frac{\pi \alpha^4}{2} \sin \alpha \cos^2 \alpha.
@@ -160,7 +165,8 @@
 		  \item монотонность.
 		 \end{itemize}
 
-		\item Основная оценка для ПовИ-1. Если \[m \leq f(x, y, z) \leq M, \quad (x, y, z) \in \pi,\]
+		\item Основная оценка для ПовИ-1. Если \[m \leq f(x, y, z) \leq M, \quad (x, 
+		y, z) \in \pi,\]
 		  то \[mS \leq \iint \limits_\pi f(x, y, z) ds \leq MS,\] где $S$ \---
 		   площадь $\pi$.
 		\item \[\iint \limits_\pi ds  = S = \text{площадь }\pi.\]
@@ -186,7 +192,8 @@
 		       направляющие косинусы
 		\[\vec{n} = \frac{\pm(A,B,C)}{\sqrt{A^2 +B^2 + C^2}} = 
 		(\cos \alpha, \cos \beta, \cos \gamma),\]
-		где $\alpha$, $\beta$, $\gamma$~--- углы, которые $\vec n$ образует с осями координат.
+		где $\alpha$, $\beta$, $\gamma$~--- углы, которые $\vec n$ образует с осями 
+		координат.
 		\paragraph{Выбор стороны поверхности.}
 		Если взять $\pm C$ с таким знаком, что $\pm C > 0$, то тогда $\cos \gamma
 		 > 0$ и, значит, $\vec{n}$ и $\vec{N}$ образуют с осью
@@ -194,11 +201,13 @@
 		   Это и дает определенную сторону поверхности.
 		   
 		Пусть задана поверхность $\pi$ \--- гладкая двусторонняя квадрируемая
-	 поверхность, на которой определена функция $R(x,y,z)$. Разобьем поверхность $\pi$ на части	
+	 поверхность, на которой определена функция $R(x,y,z)$. Разобьем поверхность 
+	 $\pi$ на части	
 	  $\pi_k$, при этом площадь $\pi_k$ равна $\Delta s_k$.
 	  
 	  Выберем некоторую сторону
-	  поверхности $\pi$ (тогда говорят, что $\pi$ \emph{ориентирована}). Возьмем некоторую точку
+	  поверхности $\pi$ (тогда говорят, что $\pi$ \emph{ориентирована}). Возьмем 
+	  некоторую точку
       $M_k(x_k, y_k, z_k) \in \pi_k$. В этой точке есть вектор	
       $\vec{n} =
        (\cos \alpha, \cos \beta, \cos \gamma).$ Обозначим $\Delta \sigma_k = $
@@ -210,7 +219,8 @@
          R(x_k, y_k, z_k)(\pm \Delta\sigma_k).\] Предел этой суммы обозначают
          \[\lim\limits_{\delta \to 0} \sum\limits_{k=1}^n R(x_k, y_k, z_k)(\pm
          \Delta\sigma_k) = \iint \limits_\pi R(x, y, z) dx dy\] и называют
-         \emph{поверхностным интегралом второго рода} (ПовИ-2) по выбранной стороне
+         \emph{поверхностным интегралом второго рода} (ПовИ-2) по выбранной 
+         стороне
          поверхности $\pi$. Аналогично определяют \[\iint \limits_\pi P(x, y, 
          z) 
          dydz\] и \[\iint \limits_\pi Q(x, y, z) dxdz .\]
@@ -220,6 +230,7 @@
 		\[\iint \limits_\pi P(x, y, z) dydz + Q(x, y, z) dxdz
 		 + R(x, y, z) dxdy. \]
 		 
-		Сразу заметим, что ПовИ-2 зависит от выбора стороны поверхности (при выборе другой
+		Сразу заметим, что ПовИ-2 зависит от выбора стороны поверхности (при выборе 
+		другой
 		 стороны знак поменяется на противоположный).
 	\end{document}
