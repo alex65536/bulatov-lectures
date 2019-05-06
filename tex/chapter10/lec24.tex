@@ -10,7 +10,7 @@
 }
 
 \begin{document}
-\section{Связь ПовИ-2 с ПовИ-1}
+\subsection{Связь ПовИ-2 с ПовИ-1}
 
 Рассмотрим ПовИ-2 вида $\iint\limits_\pi R(x, y, z)dxdy.$
 
@@ -53,13 +53,13 @@ P(x, y, z) \cos\alpha ds, \iint\limits_\pi Q(x, y, z)dxdz = \iint\limits_\pi
 \iint\limits_\pi(P\cos\alpha + Q\cos\beta + R\cos\gamma)ds\end{equation} ---
  формула, связывающая ПовИ-2 с ПовИ-1.
 
-\section{Вычисление ПовИ-2}
+\subsection{Вычисление ПовИ-2}
 
-Пусть поверхность $\pi$ определяется формулами $\vec{r} = \vec{r}(u,v) =
+Пусть гладкая поверхность $\pi$ определяется формулами $\vec{r} = \vec{r}(u,v) =
  (x(u,v), y(u,v), z(u,v)), (u, v)\in D\subset \R^2$ --- замкнутая область.
 
 Как известно, $ds = \left|\left[ \vec r\,'_u,  \vec r\,'_v\right]\right|dudv = 
-\sqrt{EG - F^2}dudv = \sqrt{A^2 + B^2 + C^2}dudv.$ В соответствии с этим, вектор
+\sqrt{EG - F^2} dudv = \sqrt{A^2 + B^2 + C^2}dudv.$ В соответствии с этим, вектор
  $\vec{n} = (\cos\alpha, \cos\beta, \cos\gamma) = \pm\frac{(A, B, C)}{\sqrt{A^2
  		 + B^2 + C^2}}.$ Поэтому \[\cos\alpha = \frac{\pm A}{\sqrt{A^2 + B^2 + 
  		 C^2}},\quad \cos\beta = \frac{\pm B}{\sqrt{A^2 + B^2 + C^2}},\quad 
@@ -147,7 +147,7 @@ P(x, y, z) \cos\alpha ds, \iint\limits_\pi Q(x, y, z)dxdz = \iint\limits_\pi
 	 \frac{z^2}{a}\right)ds = a \iint\limits_\pi ds = 4\pi a^3.\]
 \end{example}
 
-\section{Связь ПовИ-2 с 3И}
+\subsection{Связь ПовИ-2 с 3И}
 
 Рассмотрим некоторое тело $V\subset \R^3,$ ограниченное поверхностью $\pi.$ 
 Как и ранее, $\pi$ --- гладкая квадрируемая двусторонняя поверхность. 
@@ -202,11 +202,11 @@ R(x, y, z)dxdy +  \iint\limits_{\pi_{\text{н}}^{\downarrow}} R(x, y, z)dxdy =
 	 --- внешняя сторона сферы $x^2 + y^2 + z^2 = a^2.$
 	Воспользуемся формулой \eqref{lec24, num_3}:
 	
-	$I=\iint\limits_V (3x^2 + 3y^2 + 3z^2)dxdydz = \left[ \begin{cases}x=
+	$I=\iiint\limits_V (3x^2 + 3y^2 + 3z^2)dxdydz = \left[ \begin{cases}x=
 	 r\cos\phi \cos\psi,\\ y=r\sin\phi\cos\psi, \\ z=r\sin\psi,\end{cases}
 	  J =r^2\cos\psi,\\ \phi\in[0, 2\pi], \psi\in\left[-\frac{\pi}{2},
 	  \frac{\pi}{2}\right]\right]=\\ =3\int\limits_0^{2\pi}d\phi\int\limits
-	  _{-\frac{\pi}{2}}^{\frac{\pi}{2}}d\psi\int\limits_0^a r^4\cos\psi d\psi=
+	  _{-\frac{\pi}{2}}^{\frac{\pi}{2}}d\psi\int\limits_0^a r^4\cos\psi dr=
 	  \frac{12}{5}a^5\pi.$
 \end{example}
 
