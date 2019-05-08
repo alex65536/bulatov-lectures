@@ -80,7 +80,7 @@ y'_u & y'_v\\
 имеем
 \begin{equation}
 \label{lec16:6}
-S \overset{\ref{lec16:2}}{=} \iint\limits_G \abs{ J(u,v)} dudv.
+S \overset{\eqref{lec16:2}}{=} \iint\limits_G \abs{ J(u,v)} dudv.
 \end{equation}
 
 
@@ -125,7 +125,7 @@ S \overset{\ref{lec16:2}}{=} \iint\limits_G \abs{ J(u,v)} dudv.
 	I=\dfrac{1}{J}=\dfrac{1}{\Delta}.
 	\end{equation*}
 	\begin{equation*}
-	S  \overset{\ref{lec16:6}}{=} \iint\limits_{u^2 + v^2 \leq R^2}
+	S  \overset{\eqref{lec16:6}}{=} \iint\limits_{u^2 + v^2 \leq R^2}
 	\dfrac{1}{\abs{\Delta}}dudv = \dfrac{1}{\abs
 		{\Delta}}\iint\limits_{u^2 + v^2 \leq R^2}dudv=\left[
 	S_{\text{круга}}=\pi R^2\right]=
@@ -162,7 +162,7 @@ S \overset{\ref{lec16:2}}{=} \iint\limits_G \abs{ J(u,v)} dudv.
 	площади имеем
 	\begin{equation}
 	\label{lec16:8}
-	S \overset{\ref{lec16:6}}{=} \alpha a b \iint\limits_G r\cos^{\alpha - 1}\phi
+	S \overset{\eqref{lec16:6}}{=} \alpha a b \iint\limits_G r\cos^{\alpha - 1}\phi
 	\sin^{\alpha - 1}\phi \: dr d\phi.
 	\end{equation}
 \end{exercise}
@@ -261,7 +261,7 @@ R\cdot2\cdot2\pi(0-(-R))=4\pi R^2.
 \end{example}
 Рассмотрим случай кубируемых тел $T\subset \R^3$. Используя ПДСК $Oxyz$, в 
 силу 
-\ref{lec16:1}:
+\eqref{lec16:1}:
 \begin{equation}
 \label{lec16:10}
 V=\text{объем }T=\iiint\limits_T dxdydz.
@@ -285,7 +285,7 @@ V_{\text{цил}}=\iint\limits_D\int\limits_{p(x,y)}^{q(x,y)}dz\,dxdy=
 \end{equation}
 
 Как и в случае площадей, если заранее не известно, какая из поверхностей 
-$q(x,y)$ и $p(x,y)$ расположена выше, \ref{lec16:11} обобщается в виде
+$q(x,y)$ и $p(x,y)$ расположена выше, \eqref{lec16:11} обобщается в виде
 \begin{equation}
 \label{lec16:12}
 	V_{\text{цил}}=\iint\limits_D\abs{q(x,y)-p(x,y)}dxdy.
@@ -293,7 +293,7 @@ $q(x,y)$ и $p(x,y)$ расположена выше, \ref{lec16:11} обобщ�
 
 \begin{example}
 	Вычислим объем шара $x^2+ y^2 + z^2 \leq R^2$ с использованием 
-	\ref{lec16:11}. Его можно рассматривать как цилиндроид
+	\eqref{lec16:11}. Его можно рассматривать как цилиндроид
 	\begin{equation*}
 		p(x, y) = -\sqrt{-(x^2 + y^2) + R^2} \leq z \leq
 		\sqrt{R^2 - x^2 - y^2} = q(x, y),
@@ -325,7 +325,7 @@ $q(x,y)$ и $p(x,y)$ расположена выше, \ref{lec16:11} обобщ�
 \end{example}
 
 
-В общем случае, кроме вычисления объёма по формуле \ref{lec16:12} по
+В общем случае, кроме вычисления объёма по формуле \eqref{lec16:12} по
 2И, эффективным методом является использование замены в 3И. 
 
 Пусть имеется диффеоморфизм
@@ -416,7 +416,7 @@ V = \text{объём } T = \iiint\limits_Tdxdydz=\iiint\limits_G \abs{J(u, v,
 		\phi\in \left[0,2\pi\right],\psi\in\left[-\frac{\pi}2,\frac{\pi}2\right],
 	\end{array}
 \end{equation*}
-то в этом случае \ref{lec16:13} имеет вид
+то в этом случае \eqref{lec16:13} имеет вид
 \begin{equation}
 \label{lec16:14}
 V = \text{объём } T = \iiint\limits_Gr^2\cos\psi\; dr\, d\phi\, d\psi.
@@ -460,7 +460,7 @@ m_0 = \iint\limits_D \rho(x, y) \; dxdy,
 	\end{cases}
 \end{equation}
 В случае, когда фигура однородна ($\rho=const>0$),
- формулы \ref{lec16:17} упрощаются:
+ формулы \eqref{lec16:17} упрощаются:
  \begin{equation*}
  \begin{cases}
  	x_0 = \frac{1}{S_0}\iint\limits_D x dx dy,\\
@@ -504,7 +504,7 @@ z_0 = \frac{1}{m_0}\iiint\limits_Tz \rho \, dx dy dz.\\
 \end{equation}
 В случае, когда тело однородно, т.~е. $\rho=const>0$:
 \begin{equation*}
-	\ref{lec16:20}\iff
+	\eqref{lec16:20}\iff
 	\begin{cases}
 		x_0 = \frac{1}{V_0}\iiint\limits_Tx \, dx dy dz,\\
 		y_0 = \frac{1}{V_0}\iiint\limits_Ty \, dx dy dz,\\
