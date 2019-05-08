@@ -55,11 +55,13 @@ P(x, y, z) \cos\alpha ds, \iint\limits_\pi Q(x, y, z)dxdz = \iint\limits_\pi
 
 \subsection{Вычисление ПовИ-2}
 
-Пусть гладкая поверхность $\pi$ определяется формулами $\vec{r} = \vec{r}(u,v) =
+Пусть гладкая поверхность $\pi$ определяется формулами $\vec{r} = \vec{r}(u,v) 
+=
  (x(u,v), y(u,v), z(u,v)), (u, v)\in D\subset \R^2$ --- замкнутая область.
 
 Как известно, $ds = \left|\left[ \vec r\,'_u,  \vec r\,'_v\right]\right|dudv = 
-\sqrt{EG - F^2} dudv = \sqrt{A^2 + B^2 + C^2}dudv.$ В соответствии с этим, вектор
+\sqrt{EG - F^2} dudv = \sqrt{A^2 + B^2 + C^2}dudv.$ В соответствии с этим, 
+вектор
  $\vec{n} = (\cos\alpha, \cos\beta, \cos\gamma) = \pm\frac{(A, B, C)}{\sqrt{A^2
  		 + B^2 + C^2}}.$ Поэтому \[\cos\alpha = \frac{\pm A}{\sqrt{A^2 + B^2 + 
  		 C^2}},\quad \cos\beta = \frac{\pm B}{\sqrt{A^2 + B^2 + C^2}},\quad 
@@ -163,10 +165,12 @@ P(x, y, z) \cos\alpha ds, \iint\limits_\pi Q(x, y, z)dxdz = \iint\limits_\pi
 Вычислим
 \[\iiint\limits_V \pderiv {R(x, y, z)}{z} dxdydz = *\]
 
-Будем предполагать, что $V$ --- такое тело, что любая прямая, параллельная $Oz,$
+Будем предполагать, что $V$ --- такое тело, что любая прямая, параллельная 
+$Oz,$
  пересекает поверхность $\pi$ не более, чем в двух точках.
 
-Пусть $D$ --- проекция $V$ на плоскость $Oxy.$ На $D$ возьмем произвольную точку
+Пусть $D$ --- проекция $V$ на плоскость $Oxy.$ На $D$ возьмем произвольную 
+точку
  $(x, y)$ и восстановим перпендикуляр, и так для каждой точки из $D.$ Тогда
   поверхность $\pi$ разобьется на две части: одна будет содержать точку
    $z_{\text{н}},$ вторая --- $z_{\text{в}}.$
@@ -193,7 +197,8 @@ R(x, y, z)dxdy +  \iint\limits_{\pi_{\text{н}}^{\downarrow}} R(x, y, z)dxdy =
 \[* = \iint\limits_\pi R(x, y, z)dxdy.\]
 
 Аналогично доказывается, что \[\iiint\limits_V \pderiv {P}{x} dxdydz = \iint
- Pdydz\quad \text{и}\quad \iiint\limits_V \pderiv {Q}{y} dxdydz = \iint Pdxdz.\]
+ Pdydz\quad \text{и}\quad \iiint\limits_V \pderiv {Q}{y} dxdydz = \iint 
+ Pdxdz.\]
 В совокупности это и дает формулу Гаусса-Островского.
 \end{proof}
 

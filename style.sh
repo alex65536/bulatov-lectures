@@ -97,12 +97,23 @@ Use equation and \eqref{}.'
 	
 	check -- "$1" \
 	      '[Тт]\s*\.(\s*|\s+~\s*|\s*~\s+)[кедп]|[Тт]~\.|[Тт]\.~[кедп]([^\.]|$)' \
-	      '"Т. к." and "т. е" are better to write as "т.~к." and "т.~е."
-Use "make autofix" to fix this error'
+	      '"Т. к." and "т. е" are better to write as "т.~к." and "т.~е."'
 	
 	check -- "$1" \
 	      '\\mathbb' \
 	      'Use predefined symbols for sets (as \R, \C, \N, \Z, \Q).'
+	      
+	check -- "$1" \
+	      '\\int\s*\\limits\s*_\s*\{?[\\a-zA-Z]+\}?\s*\\int' \
+	      'Use \iint!'
+	
+	check -- "$1" \
+	      '\\vec\s*\{\s*[a-z]\s*'\''.*\}|\\vec\s*[a-z]\s*'\''|\\vec\s*\{\s*[a-z].*\}\s*'\''' \
+	      'Use the construct \like "\vec r\," to take derivative of a vector'
+	      
+	check -- "$1" \
+	      '\\ast(\b|[^a-zA-Z*])|\\star(\b|[^a-zA-Z*])' \
+	      'Just use *'
 }
 
 export -f error
