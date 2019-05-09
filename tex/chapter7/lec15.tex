@@ -38,21 +38,22 @@
 	
 	\[
 	\begin{gathered}
-	\exists N_k \in D_k,\; k = \overline{1, m} \implies \Delta D_k = \mes D_k 
+	\exists N_k \in G_k,\; k = \overline{1, m} \implies \Delta D_k = \mes D_k 
 	= \int\limits_{G_k} |I(t)| dt = \\ = |I(N_k)|
 	 \Delta G_k,\; \Delta G_k = \mes G_k = \int\limits_{G_k} dt.
 	\end{gathered}
 	\]
 	
-	Получаем таким образом разбиение $\widetilde{P} = \{ G_k  \},\; 
-	k = \overline{1, m}$, с множеством отмеченных точек $\widetilde{Q} : M_k = 
+	Полученное таким образом разбиение $\widetilde{P} = \{ G_k  \},\; 
+	k = \overline{1, m}$, с множеством отмеченных точек $\widetilde{Q} = \{ N_k \}$
+	даёт для разбиения $P = \{D_k\}$ множество отмеченных точек $Q : M_k = 
 	f(N_k) 
 	\in D_k$. В результате для соответствующей интегральной суммы:
 	
 	\[
 	\begin{cases}
-	Q = \{ N_k \},\\
-	\widetilde{Q} = \{ M_k \};
+	Q = \{ M_k \},\\
+	\widetilde{Q} = \{ N_k \};
 	\end{cases}
 	\]
 	
@@ -62,12 +63,12 @@
 	\sigma = \sigma \{ h; (\widetilde{P}; \widetilde{Q}) \} = \sum_{k = 1}^{m} h 
 	\left( f \left( N_k \right) \right)|I(N_k)| \Delta G_k = \\ = 
 	\sigma \{ h; \left( P; Q \right) \} = \sum_{k = 1}^{m} h 
-	\left( N_k \right) \Delta D_k.
+	\left( M_k \right) \Delta D_k.
 	\end{gathered}
 	\end{equation}
 	
 	Поэтому, учитывая, что при диффеоморфизме \eqref{lec14:11}, \eqref{lec14:12} 
-	имеем $d = \diam D \to 0$ $ \iff \widetilde{d} = \diam \widetilde{P} \to 0$,
+	имеем $d = \diam P \to 0$ $ \iff \widetilde{d} = \diam \widetilde{P} \to 0$,
 	получаем, что, несмотря на использование специальных интегральных сумм, 
 	за счёт 
 	выбора точки и в силу непрерывности подынтегральной функции  предел общих 
@@ -81,7 +82,7 @@
 	\int\limits_{D} h \left( x \right) dx = \lim\limits_{d \to 0} \sigma\{ h; 
 	\left(P; Q \right)  \} = \lim\limits_{\widetilde{d} \to 0} \sum_{k = 1}^{m} h
 	\left( f \left( N_k \right) \right) | I ( N_k ) | \Delta G_k =\\= 
-	\left[t = f(x) \right] = \int\limits_{G} | I (t) | h 
+	\left[x = f(t) \right] = \int\limits_{G} | I (t) | h 
 	\left( f \left( t \right) \right) dt.
 	\end{gathered}
 	\end{equation}
