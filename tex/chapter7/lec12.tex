@@ -156,13 +156,13 @@ $Q = \{M_k\}\quad \forall M_k \in P_k,\ k = \overline{1, m}$,
 где \[\Delta{P_k} = \mes P_k,\ k = \overline{1, m}.\]
 
 В дальнейшем величину $d_k = \underset{\forall A, B \in 
-D_k}\sup \{d(A; B)\}$
+P_k}\sup \{d(A; B)\}$
 будем называть \emph{диаметром} множества $P_k \subset 
 D$, $k = \overline{1, m}$. 
 Геометрически $d_k$ соответствует диаметру $n$-мерного шара
 наименьшего размера, содержащего $P_k$.
 
-Величину ${d_0 = \underset{1 \le k \le m}\max \{r_k\}}$ 
+Величину ${d_0 = \underset{1 \le k \le m}\max \{d_k\}}$ 
 будем называть \emph{диаметром} используемого разбиения и
 обозначать $d_0 = \diam P$.
 
@@ -258,7 +258,7 @@ $R(D)$. Имеем следующие основные свойства $n$-кр
 	
 	Пусть $f, g \in R(D)$ на измеримом множестве $D$, то 
 	в случае, когда 
-	$\forall x \in D \subset \R^n \implies f(x) \ge g(x)$, имеем
+	$\forall x \in D \subset \R^n \implies f(x) \le g(x)$, имеем
 	
 	\[
 	\int\limits_Df(x)dx \le \int\limits_Dg(x)dx.
