@@ -20,7 +20,7 @@
 		S_2 = a_1 + a_2,\\
 		S_3 = a_1 + a_2 + a_3,\\
 		\dots\\
-		S_n = \sum\limits_{k = 1}^na_k
+		S_n = \sum\limits_{k = 1}^na_k.
 \end{array}		
 \]
 Эту последовательность удобно записывать в виде:
@@ -40,7 +40,8 @@
 что ряд \eqref{lec_26, num_1}  \emph{сходится}. 
 В противном случае ---\emph{ расходится}.
 \begin{definition}
-Если предел конечен, т.~е. $\lim\limits_{n \to \infty} S_n = S \in \R$, то $S$ 
+Если предел конечен, т.~е. 
+$\lim\limits_{n \to \infty} S_n = S \in \R$, то $S$ 
 называют \emph{суммой ряда} и пишут:
 \[
 	\sum\limits_{k = 1}^\infty a_k=S
@@ -96,8 +97,7 @@
 	\end{gather*}
 \end{example}
 
-Сходимость ряда означает, что для достаточно большого $n$ выполняется
-$\mid S -S_n \mid \leq \epsilon$ т.~е.
+Сходимость ряда означает, что:
 \[
 	\forall\epsilon > 0\enspace \exists\nu = \nu_\epsilon \enspace
 	\forall n\geq \nu \implies \  \mid S -S_n \mid \ \leq \epsilon, \ \text{ т.~е.}\ 
@@ -110,16 +110,27 @@ $\mid S -S_n \mid \leq \epsilon$ т.~е.
 \[
 	\sum\limits_{k = m + 1}^\infty a_k = a_{m+1} + a_{m+2} +  \ldots
 	 \text{\ --- \emph{остаток ряда \eqref{lec_26, num_1} } }
-.\]
-Для $n > m$:\enspace $S_n = S_m + a_{m+1} + a_{m+2} + \ldots + a_n = 
-S_m + \sum\limits_{k = m+1}^n a_k$
+\]
 
-При $n\longrightarrow{}\infty$ предел слева существует и конечен $\iff$
- существует и конечен предел справа. 
- Т.~е. ряд \eqref{lec_26, num_1}  сходится $\iff$  
- сходится любой его остаток.
-Также, если сходится ряд, то сходится и любой его остаток. 
-Если сходится какой-либо остаток ряда, то сходится  и сам  ряд.
+Рассмотрим частные суммы $S_n$ и $S_m$ 
+ряда   \eqref{lec_26, num_1}, $n > m$:
+\[
+	S_n = S_m + a_{m+1} + a_{m+2} + \ldots + a_n = 
+	S_m + \sum\limits_{k = m+1}^n a_k
+.\]
+Перейдём к пределу при $n\longrightarrow{}\infty$:
+\[
+	\lim\limits_{n \to \infty}S_n = 
+	\lim\limits_{n \to \infty}(S_m + \sum\limits_{k = m+1}^n a_k) =
+	S_m + \lim\limits_{n \to \infty}\sum\limits_{k = m+1}^n a_k
+.\]
+$\lim\limits_{n \to \infty}S_n$
+существует и конечен $\iff$
+ существует и конечен 
+ $ \lim\limits_{n \to \infty} \sum\limits_{k = m+1}^n a_k$. 
+Таким образом, если ряд \eqref{lec_26, num_1}  сходится,
+то сходится и любой его остаток. 
+Если же сходится какой-либо остаток ряда, то сходится  и сам  ряд.
 
 \begin{thm}[Необходимое условие сходимости ряда]
 	  Если ряд  \eqref{lec_26, num_1} сходится,
@@ -156,7 +167,8 @@ S_m + \sum\limits_{k = m+1}^n a_k$
 	.\]
 \end{example}
 
-Сходимость ряда --- это сходимость последовательностей его частных
+Сходимость ряда ---
+ это сходимость последовательностей его частных
 сумм т.~е. выполняется критерий Коши для последовательности:
 \begin{gather*}
 	\forall\epsilon > 0 \enspace \exists\nu = \nu_\epsilon \enspace
@@ -174,7 +186,7 @@ S_m + \sum\limits_{k = m+1}^n a_k$
 	  \sum\limits_{k = 1}^\infty a_k\  \text{сходится}
 	  \iff 
 	 \forall\epsilon > 0 \  \exists\nu = \nu_\epsilon \ 
-	 \forall m, n \in \N \enspace \text{т.ч.} \enspace m > n \geq \nu \implies
+	 \forall m, n \in \N \enspace \text{т.~ч.} \enspace n > m \geq \nu \implies
 	 \left| \sum\limits_{k = m + 1}^n a_k \right| \leq \epsilon
 	 .\]
 \end{thm}
@@ -188,9 +200,13 @@ S_m + \sum\limits_{k = m+1}^n a_k$
  \end{thm}
 \begin{proof}
 	Пусть  $\sum\limits_{k = 1}^\infty a_k = A$  
-	и $\sum\limits_{k = 1}^\infty b_k = B$
+	и $\sum\limits_{k = 1}^\infty b_k = B$, \enspace
+	 $\alpha, \beta \in \R$. Соответствующие частные суммы обозначим $A_k$ и $B_k$.
  	\[
  		\sum\limits_{k = 1}^\infty(\alpha a_k + \beta b_k) =
+ 		\lim\limits_{k \to \infty} (\alpha A_k + \beta B_k) =
+ 		\alpha\lim\limits_{k \to \infty} A_k +
+ 		\beta\lim\limits_{k \to \infty} B_k =
  		\alpha\sum\limits_{k = 1}^\infty a_k + 
  		\beta\sum\limits_{k = 1}^\infty b_k = \alpha A + 
  		\beta B
@@ -260,7 +276,8 @@ S_m + \sum\limits_{k = m+1}^n a_k$
 \begin{proof}
 	\begin{enumerate}[label={\alph*)}]
 	\item Пусть $b_k$ сходится.
-	Тогда по \hyperref[lec26:pos_series]{критерию сходимости положительных рядов}:
+	Тогда по 
+	\hyperref[lec26:pos_series]{критерию сходимости положительных рядов}:
 	 \begin{gather*}
 	 	\exists M \in \R \ \forall n \in \N \ 
 	 	\sum\limits_{k = 1}^n b_k \leq M
@@ -306,7 +323,7 @@ S_m + \sum\limits_{k = m+1}^n a_k$
 	то по \hyperref[lec26:comp_test_1]{признаку  1\textdegree a)}\ ряд
 	$ \sum\limits_{k = 1}^\infty\frac{1}{k + 3^k}$ сходится.
 \end{example}
- \begin{rem}
+\begin{rem}
 Для использования \hyperref[lec26:comp_test_1]{признака  1\textdegree} 
 достаточно, чтобы $a_k \leq b_k\ \forall k\geq N$, т.~к.
 признак работает для  остатков рядов $a_k$ и $b_k$. Рассмотрим пример:
@@ -326,7 +343,8 @@ S_m + \sum\limits_{k = m+1}^n a_k$
  \end{rem}
   \begin{thm}[Признак сравнения 2\textdegree]
  	\label{lec26:comp_test_2}
- 	Пусть $\sum\limits_{k = 1}^\infty a_k,\enspace \sum\limits_{k = 1}^\infty b_k$
+ 	Пусть $\sum\limits_{k = 1}^\infty a_k,
+ 	\enspace \sum\limits_{k = 1}^\infty b_k$
  	 --- положительные ряды,\\ 
  	а также существует предел:
  	\[
@@ -334,8 +352,8 @@ S_m + \sum\limits_{k = m+1}^n a_k$
  	.\]
 	Тогда:
 	\begin{enumerate}[label={\alph*)}]
-	\item если $l < +\infty$ и $b_k$ сходится , то сходится и $a_k$
-	\item если $l > 0$ и $b_k$ расходится , то расходится и $a_k$
+	\item если $l < +\infty$ и $b_k$ сходится, то сходится и $a_k$
+	\item если $l > 0$ и $b_k$ расходится, то расходится и $a_k$
 	\end{enumerate}
  \end{thm}
  \begin{proof}
@@ -382,7 +400,8 @@ S_m + \sum\limits_{k = m+1}^n a_k$
 	Тогда $\frac{a_k}{b_k} = \frac{k}{10^k + 7} \xrightarrow[k \to \infty]{} 
 	\frac{1}{10}$\ 
 	$\implies$ т.~к. $b_k$ расходится, то по \  
-	 \hyperref[lec26:comp_test_2]{признаку  2\textdegree b)}\ $a_k$ также сходится.
+	 \hyperref[lec26:comp_test_2]{признаку  2\textdegree b)}\ 
+	 $a_k$ также расходится.
 \end{example}
 \begin{thm}[Признак сравнения 3\textdegree]
  	\label{lec26:comp_test_3}
@@ -391,8 +410,8 @@ S_m + \sum\limits_{k = m+1}^n a_k$
  	а также $\frac{a_{k+1}}{a_k} \leq \frac{b_{k+1}}{b_k} \ 
  	\forall k \in \N$. Тогда:
 	\begin{enumerate}[label={\alph*)}]
-	\item если  $b_k$ сходится , то сходится и $a_k$
-	\item если $a_k$ расходится , то расходится и $b_k$
+	\item если  $b_k$ сходится, то сходится и $a_k$
+	\item если $a_k$ расходится, то расходится и $b_k$
 	\end{enumerate}
 \end{thm}
 \begin{proof}
@@ -421,5 +440,4 @@ S_m + \sum\limits_{k = m+1}^n a_k$
 	доказательство признака 3\textdegree \ следует из
 	\hyperref[lec26:comp_test_1]{признака  1\textdegree}.
 \end{proof}
-
 \end{document}
