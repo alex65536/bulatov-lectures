@@ -310,7 +310,7 @@ $\lim\limits_{n \to \infty}S_n$
 		 \sum\limits_{k = 1}^\infty\frac{1}{\sqrt{k}}
 	.\]
 	Так как \  $\forall k \in \N \enspace
-	 \frac{1}{\sqrt{k}} \leq \frac{1}{k}$ \  и ряд 
+	 \frac{1}{\sqrt{k}} \geq \frac{1}{k}$ \  и ряд 
 	\ $\sum\limits_{k = 1}^\infty \frac{1}{k}$\   расходится,
 	то по \hyperref[lec26:comp_test_1]{признаку  1\textdegree b)}\ ряд
 	$ \sum\limits_{k = 1}^\infty\frac{1}{\sqrt{k}}$ расходится.
@@ -420,22 +420,22 @@ $\lim\limits_{n \to \infty}S_n$
 	\end{enumerate}
 \end{thm}
 \begin{proof}
-	По условию имеем:
+	По условию выполняются следующие неравенства:
  	\[
 		\begin{array}{l}
-			\frac{a_2}{a_1} \leq \frac{b_2}{b_1}\\
-			\frac{a_3}{a_2} \leq \frac{b_3}{b_2}\\
+			\frac{a_2}{a_1} \leq \frac{b_2}{b_1}, \\
+			\frac{a_3}{a_2} \leq \frac{b_3}{b_2}, \\
 			\dots\\
-			\frac{a_n}{a_{n-1}} \leq \frac{b_n}{b_{n-1}}
+			\frac{a_n}{a_{n-1}} \leq \frac{b_n}{b_{n-1}}.
 		\end{array}		
-	.\]
+	\]
 	Перемножим их почленно. Тогда:
 	\[
 		\frac{a_2}{a_1}\cdot\frac{a_3}{a_2}\cdot\ldots
 		\cdot\frac{a_n}{a_{n-1}} \leq
 		\frac{b_2}{b_1}\cdot\frac{b_3}{b_2}\cdot\ldots
 		\cdot\frac{b_n}{b_{n-1}}
-	\]
+	.\]
 	Сократив дроби в обеих частях неравенства, получим:
 	\[
 		\frac{a_n}{a_1} \leq \frac{b_n}{b_1} \implies
