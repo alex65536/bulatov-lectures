@@ -152,60 +152,73 @@
 		\eqref{lec_26, num_1}, то \eqref{lec_26, num_1} сходится тогда и только 
 		тогда, когда сходится последовательность \[b_n = \int\limits_1^n f(x)dx.\]
 		\begin{proof}
-			Докажем, что:
-			\[ \int_{1}^{n} f(x) \; dx = b_n , \; n \in \N  \]
-			Последовательность $b_n$ возрастает, т.~к. :
-			\[ b_{n+1} = \int_{1}^{n+1} f(x) \; dx  = b_n + \int_{n}^{n+1} f(x) \; dx > 
-			b_n \]
-			В силу того, что $f(x) > 0 \; \forall x \in \R$.\\			
-			Имеем $a_{k+1} \le f(x) \le a_k, \; \forall x \in [k,k+1]$\\		
-			В силу монотонности ОИ:
-			\[ a_{k+1} = \int_{k}^{k+1}a_{k+1} \; dx  \le \int_{k}^{k+1}f(x) \; dx \le 
-			\int_{k}^{k+1}a_{k} \; dx  = a_{k}   \]
-			Тогда, рассматривая остаток $S_n$:
-			\[ S_n = a_1 + a_2 + \dots + a_n = a_1 +  \int_{1}^{n}f(x) \; dx  = a_1 + 
-			b_n \]
+			Рассмотрим
+			\[ \int_{1}^{n} f(x) \, dx = b_n , \; n \in \N.  \]
+			По условию $f(x)$ интегрируема и монотонна. Тогда для сходимости 
+			необходимо, чтобы $f(x) \appr{x\to\infty}0$.
+			Последовательность $b_n$ возрастает, т.~к.
+			\[ b_{n+1} = \int\limits_{1}^{n+1} f(x) \, dx  = b_n + 
+			\int\limits_{n}^{n+1} f(x) \, dx > 
+			b_n. \]
+			В силу того, что $f(x) > 0 \ \; \forall x \in \R$,
+			имеем $a_{k+1} \le f(x) \le a_k, \; \forall x \in [k,k+1]$
+			В силу монотонности ОИ получаем
+			\[ a_{k+1} = \int\limits_{k}^{k+1}a_{k+1} \; dx  \le 
+			\int\limits_{k}^{k+1}f(x) \, dx \le 
+			\int\limits_{k}^{k+1}a_{k} \, dx  = a_{k} \implies a_{k+1} \le 
+			\int\limits_{k}^{k+1}f(x) \, dx \le a_k. \]
+			Тогда рассмотрим частную сумму $S_n$:
+			\[ S_n = a_1 + a_2 + \dots + a_n \le a_1 +  \int\limits_{1}^{n}f(x) \, dx  
+			= a_1 + 
+			b_n. \]
 			Если $b_n$ сходится, то т.~к. $b_n$ возрастающая, по критерию сходимости 
-			монотонной последовательности $\exists M : b_n \le M => S_n \le a_1 + M \;  
-			\forall n => S_n$ сходится.
-			\[ S_n = a_1 + a_2 + \dots + a_n \ge \int_{1}^{n}f(x) \; dx  + a_n   \]
-			Если $b_n$ расходится ($b_n$  возрастает и неограничена), тогда и $S_n \ge 
-			b_n + a_n$ так же неограничена, а значит расходится, значит расходится и 
-			\ref{lec_26, num_1}
-			\begin{exc}
-				Доказать интегральный признак
-			\end{exc}	
+			монотонной последовательности $\exists M : b_n \le M \implies S_n \le a_1 + 
+			M \ \; 
+			\forall n \in \N$, т.~е. $S_n$ сходится по тому же критерию, т.~е. сходится 
+			и ряд \eqref{lec_26, num_1}. С другой стороны,
+			\[ S_n = a_1 + a_2 + \dots + a_n \ge \int\limits_{1}^{n}f(x) \, dx  + a_n = 
+			a_n + b_n. \]
+			Если $b_n$ расходится ($b_n$ возрастает и неограничена), то тогда и $S_n 
+			\ge 
+			b_n + a_n$ неограничена (т.~е. расходится), значит, расходится и 
+			\eqref{lec_26, num_1}.
 		\end{proof}
 	\end{thm}
 
-	\begin{iex}
-		
-		\begin{equation}  \sum_{k = 1}^{\infty} \frac{1}{k^p}  
+	\begin{iex} Рассмотрим \emph{обобщенный гармонический ряд}
+		\begin{equation}  \sum_{k = 1}^{\infty} \frac{1}{k^p}. 
 		\label{lec27,harmonic_row_generalized}  \end{equation}
-		Обобщенный гармонический ряд.
 		
-		Рассмотрим $f(x) = \frac{1}{x^p}$
-		\[ b_n = \int_{1}^{n} \frac{dx}{x^p} = \begin{cases} \frac{x^{-p + 1}}{-p + 
+		В качестве производящей функции возьмем $f(x) = \dfrac{1}{x^p}$.
+		\[ b_n = \int\limits_{1}^{n} \frac{dx}{x^p} = \begin{cases} \frac{x^{-p + 
+		1}}{-p + 
 		1} , \; \;\; p \ne 1  \\  \ln{|x|}, \; \; \; p = 1 \end{cases} =  
 		\begin{cases} \frac{n^{1-p}}{1-p } \underset{n \rightarrow \infty}
-		{\longrightarrow} \frac{1}{1-p} , \; \;\; p > 1  \\  \ln{|x|} \underset{n 
+		{\longrightarrow} \frac{1}{1-p} ,& \; \;\; p > 1  \\  \ln{|x|} \underset{n 
 		\rightarrow \infty}
-		{\longrightarrow} \infty , \; \; \; p = 1 \end{cases} \]
-		При $p < 1$, $\frac{n^{1-p} - 1}{1-p} \underset{n \rightarrow \infty}
-		{\longrightarrow} \infty $, значит ряд \ref{lec27,harmonic_row_generalized} 
-		сходится при $p>1$, расходится при $p \le 1$.\\
-		Воспользуемся \ref{lec26:comp_test_2}, где возьмем $b_n = \frac{1}{n^p}$. Из 
-		\ref{lec26:comp_test_2} следует, что  $\frac{a_n}{b_n} \underset{n 
-		\rightarrow \infty} {\longrightarrow} l $ и $0 < l < +\infty$, то ряды 
-		сходятся/расходятся одновременно.
+		{\longrightarrow} \infty ,& \; \; \; p = 1 \\
+		\frac{n^{1-p}}{1-p } \underset{n \rightarrow \infty}
+		{\longrightarrow} \infty ,& \; \;\; p < 1  \\
+		\end{cases} \]
+		Значит, ряд \eqref{lec27,harmonic_row_generalized} 
+		сходится при $p>1$ и расходится при $p \le 1$.
+		\end{iex}
 		
-		$\frac{a_n}{b_n} \underset{n \rightarrow \infty} {\longrightarrow} l <=> a_n 
-		\sim l b_n$, $0 < l < +\infty$, а если $b_n = \frac{1}{n^p}$, то $a_n \sim 
-		\frac{l}{n^p}$.\\	
-		Получаем \emph{степенной признак сравнения}:\\		
-		Если $a_n \sim \frac{l}{n^p}$, то при $p>1$ ряд сходится, при $p \le 1$ ряд 
+		Воспользуемся \hyperref[lec26:comp_test_2]{признаком 2\textdegree}, где 
+		возьмем $b_n = \dfrac{1}{n^p}$. Из 
+		\hyperref[lec26:comp_test_2]{признака 2\textdegree} следует, что если 
+		$\dfrac{a_n}{b_n} \underset{n 
+		\rightarrow \infty} {\longrightarrow} l $ и $0 < l < +\infty$, то ряды 
+		либо одновременно сходятся, либо одновременно расходятся.
+		
+		\[\dfrac{a_n}{b_n} \underset{n \rightarrow \infty} {\longrightarrow} l \iff 
+		a_n 
+		\sim l b_n,\ 0 < l < +\infty.\] Если $b_n = \dfrac{1}{n^p}$, то $a_n \sim 
+		\dfrac{l}{n^p}$.
+		
+		Получаем \emph{степенной признак сравнения}:
+		если $a_n \sim \dfrac{l}{n^p}$, то при $p>1$ ряд сходится, при $p \le 1$ ряд 
 		расходится.
-	\end{iex}	
 
 	\begin{examples}
 		~
@@ -213,55 +226,65 @@
 		\item \[ \sum_{k = 1}^{\infty} \frac{k+1}{\sqrt[3]{2k^4 + 1}}  \]
 		Воспользуемся степенным признаком сравнения:
 		\[ a_n = \frac{n+1}{\sqrt[3]{2n^4 + 1}} \sim \frac{n}{\sqrt[3]{2} 
-		\sqrt[3]{n^4}} = \frac{1}{\sqrt[3]{2} \sqrt[3]{n}}          \]
+		\sqrt[3]{n^4}} = \frac{1}{\sqrt[3]{2} \sqrt[3]{n}}. \]
 		
 		$p = \frac{1}{3} < 1$, откуда следует, что ряд расходится. 
-		\item \[ \sum_{k=1}^{\infty} \frac{1}{\sqrt[5]{k+1}} \sin{\frac{1}{k}}  \]
-		\[  a_n =  \frac{1}{\sqrt[5]{k+1}} \sin{\frac{1}{k}} \sim 
-		\frac{1}{n^{\frac{1}{5}} }  \frac{1}{n} =  \frac{1}{n^{\frac{6}{5}} }        
+		\item \[ \sum_{k=1}^{\infty} \frac{1}{\sqrt[5]{k+1}}\cdot \sin{\frac{1}{k}}  
 		\]
-		Ряд сходится, т.~к. $p = \frac{6}{5} > 1$
+		\[  a_n =  \frac{1}{\sqrt[5]{k+1}}\cdot \sin{\frac{1}{k}} \sim 
+		\frac{1}{n^{\frac{1}{5}} } \cdot \frac{1}{n} =  \frac{1}{n^{\frac{6}{5}} }.  
+		 
+		\]
+		Ряд сходится, т.~к. $p = \frac{6}{5} > 1$.
 	\end{enumerate}	
 	\end{examples}	
 
 	\subsection{Признак Дюамеля (Дюамеля-Раабе)}
 	
+	Признак Даламбера в случае $\dfrac{a_{n+1}}{a_n} \appr{n\to\infty} 1$ не дает 
+	ответа, сходится ли ряд. В таком случае будем изучать ряд дальше.
+	
 	\begin{thm}[Признак Дюамеля-Раабе]\label{lec27,duamele_raabe}
-		Пусть $\frac{a_n}{a_{n+1}} = 1 + \frac{\mu}{n} + o\left( \frac{1}{n}\right) 
-		$. Тогда при $\mu > 1$, ряд \ref{lec_26, num_1} \--- сходится, $\mu < 1$ 
+		Пусть $\dfrac{a_n}{a_{n+1}} = 1 + \dfrac{\mu}{n} + o\left( 
+		\dfrac{1}{n}\right) 
+		$. Тогда при $\mu > 1$ ряд \eqref{lec_26, num_1} сходится, а при $\mu < 1$ 
 		\--- расходится.
 		\begin{proof}
-			Воспользуемся \ref{lec26:comp_test_3}. В нем \ref{lec_26, num_1} сравним с 
-			\ref{lec27, 3}
-			Пусть \begin{equation} \label{lec27, 3}
-			\sum_{k = 1}^{\infty} b_k
+			Воспользуемся \hyperref[lec26:comp_test_3]{признаком 3\textdegree}. В нем 
+			\eqref{lec_26, num_1} сравним с 
+			\begin{equation} \label{lec27, 3}
+			\sum_{k = 1}^{\infty} b_k.
 			\end{equation}
 			Если \begin{equation}\label{lec27, 4}
-			\frac{a_{n+1}}{a_n} \le \frac{b_{n+1}}{b_n}
+			\frac{a_{n+1}}{a_n} \le \frac{b_{n+1}}{b_n},
 			\end{equation}
-			То из сходимости \ref{lec27, 3} следует сходимость \ref{lec_26, num_1}, а 
-			из расходимости  \ref{lec_26, num_1}, расходимость \ref{lec27, 3} . 
-			\ref{lec27, 4} перепишем в виде:
+			то из сходимости \eqref{lec27, 3} следует сходимость \eqref{lec_26, num_1}, 
+			а 
+			из расходимости  \eqref{lec_26, num_1}~--- расходимость \eqref{lec27, 3} . 
+			\eqref{lec27, 4} перепишем в виде
 			\begin{equation} \label{lec27,(5)}
-			\frac{a_n}{a_{n+1}} \ge \frac{b_n}{b_{n+1}}
+			\frac{a_n}{a_{n+1}} \ge \frac{b_n}{b_{n+1}}.
 			\end{equation}
-			Пусть $\mu > 1$. Тогда $\exists p :  1 < p < \mu$ и рассмотрим ряд:
-			\[  \sum_{k=1}^{\infty} b_k = \sum_{k=1}^{\infty} \frac{1}{k^p}    \]
-			Для него:
+			Пусть $\mu > 1$. Тогда $\exists p :  1 < p < \mu$. Рассмотрим ряд
+			\[  \sum_{k=1}^{\infty} b_k = \sum_{k=1}^{\infty} \frac{1}{k^p},\]
+			для которого
 			\[ \frac{b_n}{b_{n+1}} = \frac{(n+1)^p}{n^p} = \left( 1 + \frac{1}{n} 
-			\right)^p = 1 + \frac{p}{n} + \overline{o}\left( \frac{1}{n} \right)       
+			\right)^p = 1 + \frac{p}{n} + \overline{o}\left( \frac{1}{n} \right).       
 			\]
-			А тогда, если $\mu > 1$, $p < \mu$ и:
-			\[ \frac{b_n}{b_{n+1}} \le \frac{a_n}{a_{n+1}}      \]
-			При достаточно больших $n$ и ряд \ref{lec27, 3} при $p > 1$ сходится. По 
-			\ref{lec26:comp_test_3} сходится и ряд \ref{lec_26, num_1}.
+			Раз $1 < p < \mu$, то
+			$\dfrac{b_n}{b_{n+1}} \le \dfrac{a_n}{a_{n+1}}$
+			при достаточно больших $n$. Т.~к. $p > 1$, то ряд $\eqref{lec27, 3} = 
+			\sum\limits_{k=1}^{\infty} \frac{1}{k^p}$ сходится. Но тогда по 
+			\hyperref[lec26:comp_test_3]{признаку 3\textdegree} сходится и ряд 
+			\eqref{lec_26, num_1}.
 			
-			Если $\mu < 1$, то $\exists p : 1 > p > \mu$, для ряда \ref{lec27, 3}:
+			Если $\mu < 1$, то $\exists p : 1 > p > \mu$, и для ряда \eqref{lec27, 3}:
 			\[  \frac{a_n}{a_{n+1}} = 1 + \frac{\mu}{n} + \overline{o}\left( 
 			\frac{1}{n} \right) \le  1 + \frac{p}{n} + \overline{o}\left( \frac{1}{n} 
 			\right) = \frac{b_n}{b_{n+1}}                   \]
-			Откуда по \ref{lec26:comp_test_3} ряд \ref{lec_26, num_1} расходится, т.~к. 
-			\ref{lec27, 3} расходится.
+			Откуда по \hyperref[lec26:comp_test_3]{признаку 3\textdegree} ряд 
+			\eqref{lec_26, num_1} расходится, т.~к. 
+			\eqref{lec27, 3} расходится.
 		\end{proof}
 	\end{thm}	
 	
@@ -270,9 +293,8 @@
 		\[ \sum_{k=1}^{\infty} \frac{(2k-1)!!}{(2k)!!}    \]
 		\[ \frac{a_n}{a_{n+1}} = \frac{ (2n-1)!! \; (2n+2)!!}{ (2n+1)!! \;  (2n)!! } 
 		= \frac{2n+2}{2n+1} = 1 + \frac{1}{2n+1} = 1 + \frac{1}{2n} + \frac{1}{2n+1} 
-		- \frac{1}{2n} = 1 + \frac{1}{2n} + o\left( \frac{1}{n} \right)     \]
-		$\mu = \frac{1}{2} < 1$, следовательно ряд $\sum_{k=1}^{\infty} 
-		\frac{(2k-1)!!}{(2k)!!}$ расходится.
-		
+		- \frac{1}{2n} = 1 + \frac{1}{2n} + o\left( \frac{1}{n} \right). \]
+		$\mu = \dfrac{1}{2} < 1$, следовательно, ряд $\sum\limits_{k=1}^{\infty} 
+		\dfrac{(2k-1)!!}{(2k)!!}$ расходится.
 	\end{example}	
 \end{document}
