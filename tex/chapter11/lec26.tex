@@ -24,7 +24,7 @@
 		S_n = \sum\limits_{k = 1}^na_k.
 \end{array}		
 \]
-Эту последовательность удобно записывать в виде:
+Эту последовательность удобно изучать, записывая ее в виде:
 \begin{equation}
 	\label{lec_26, num_1}
 	 \sum\limits_{k = 1}^\infty a_k
@@ -32,29 +32,32 @@
 \begin{definition}
 Выражение вида \eqref{lec_26, num_1} называется
 \emph{числовым рядом} (или просто \emph{рядом}).
-\end{definition}
 Числа  $a_1, a_2,  \ldots, a_k,  \ldots$ 
-называются \emph{элементами\slashчленами ряда}.
+называются \emph{элементами} (\emph{членами}) ряда.
+\end{definition}
 
 Рассмотрим $\lim\limits_{n \to \infty} S_n$. Если он существует 
 и конечен, то говорят, 
 что ряд \eqref{lec_26, num_1}  \emph{сходится}. 
-В противном случае ---\emph{ расходится}.
-\begin{definition}
+В противном случае говорят, что ряд \emph{расходится}.
 Если предел конечен, т.~е. 
 $\lim\limits_{n \to \infty} S_n = S \in \R$, то $S$ 
 называют \emph{суммой ряда} и пишут:
 \[
 	\sum\limits_{k = 1}^\infty a_k=S
 .\]
-\end{definition}
 Сумму первых $m$ элементов ряда 
 $S_m$ называют \emph{частной суммой ряда}. 
-\emph{Сходимость ряда} означает,
+Сходимость ряда означает,
 что сходится последовательность его частных сумм.
 
-\begin{example}
-	Рассмотрим ряд:
+\begin{examples}
+
+~
+
+\begin{enumerate}
+ \item 
+	Рассмотрим ряд
 	 \[
 		 \sum\limits_{k = 1}^\infty\frac{1}{k(k+1)} = 
 		 \frac{1}{1\cdot 2} + \frac{1}{2\cdot 3} + \ldots
@@ -66,54 +69,49 @@ $S_m$ называют \emph{частной суммой ряда}.
 		\left(\frac{1}{2} - \frac{2}{3}\right) + \ldots + 
 		\left(\frac{1}{n} - \frac{1}{n+1}\right) =
 		 1 - \frac{1}{n+1}
-		\xrightarrow[n \to \infty]{}1
-	\end{gather*}
-	\[
+		\appr{n \to \infty}{1}. \\
 		\lim\limits_{n \to \infty} S_n = 1 \implies \text{
-		ряд сходится, его сумма --- 1}
-	\]
-\end{example}
-\begin{example}
-	Рассмотрим ряд:
+		ряд сходится, его сумма равна 1.}
+	\end{gather*}
+\item
+	Рассмотрим ряд
 	 \[
-		 \sum\limits_{k = 1}^\infty\frac{1}{2^{k-1}}
+		 \sum\limits_{k = 1}^\infty\frac{1}{2^{k-1}}.
 	\]
 	\begin{gather*}
 		S_n =  \sum\limits_{k = 1}^n\frac{1}{2^{k-1}} =
 		1 + \frac{1}{2} + \frac{1}{4} + \ldots + \frac{1}{2^{n-1}} =\\
 		=  \frac{ 1 - \frac{1}{2^n}}{1 - \frac{1}{2}}
 		\xrightarrow[n \to \infty]{}2
-		\implies \text{
-		ряд сходится, его сумма --- 2}
+		\implies \text{ряд сходится, его сумма --- 2.}
 	\end{gather*}
-\end{example}
-\begin{example}
-	Рассмотрим ряд:
+\item
+	Рассмотрим ряд
 	 \[
-		 \sum\limits_{k = 1}^\infty(-1)^{k-1}
+		 \sum\limits_{k = 1}^\infty(-1)^{k-1}.
 	\]
 	\begin{gather*}
 		S_1 = 1, \ S_2 = 0, \ S_3 = 1, \ S_4 = 0, \ \ldots
-		\implies \nexists \lim\limits_{n \to \infty} S_n \implies \\
-		\implies \text{ряд расходится}
+		\implies \nexists \lim\limits_{n \to \infty} S_n \implies \text{ряд расходится.}
 	\end{gather*}
-\end{example}
+\end{enumerate}
+\end{examples}
 
-Сходимость ряда означает, что:
+Сходимость ряда означает, что для достаточно большого
+$n$ выполняется $\abs{S - S_n} \le \eps$, т.~е.
 \[
-	\forall\epsilon > 0\enspace \exists\nu = \nu_\epsilon \enspace
-	\forall n\geq \nu \implies \  \mid S -S_n \mid \ \leq \epsilon, \ \text{ 
+	\forall\eps > 0\enspace \exists\nu = \nu_\eps \enspace
+	\forall n\geq \nu \implies \abs{S - S_n} \leq \eps, \ \text{ 
 	т.~е.}\ 
-	\left|\sum\limits_{k = n_1}^\infty a_k\right| \leq \epsilon
+	\left|\sum\limits_{k = n_1}^\infty a_k\right| \leq \eps
 .\]
 
-Если отбросить конечное число первых членов ряда, например  
-первые  $m$ членов, то получится новый ряд:
-
+Если отбросить конечное число первых членов ряда, например,  
+первые  $m$ членов, то получится новый ряд
 \[
-	\sum\limits_{k = m + 1}^\infty a_k = a_{m+1} + a_{m+2} +  \ldots
-	 \text{\ --- \emph{остаток ряда \eqref{lec_26, num_1} } }
+	\sum\limits_{k = m + 1}^\infty a_k = a_{m+1} + a_{m+2} +  \ldots,
 \]
+который называется \emph{остатком} ряда \eqref{lec_26, num_1}.
 
 Рассмотрим частные суммы $S_n$ и $S_m$ 
 ряда   \eqref{lec_26, num_1}, $n > m$:
@@ -121,83 +119,89 @@ $S_m$ называют \emph{частной суммой ряда}.
 	S_n = S_m + a_{m+1} + a_{m+2} + \ldots + a_n = 
 	S_m + \sum\limits_{k = m+1}^n a_k
 .\]
-Перейдём к пределу при $n\longrightarrow{}\infty$:
+Перейдём к пределу при $n\to\infty$:
 \[
 	\lim\limits_{n \to \infty}S_n = 
-	\lim\limits_{n \to \infty}(S_m + \sum\limits_{k = m+1}^n a_k) =
+	\lim\limits_{n \to \infty}\left(S_m + \sum\limits_{k = m+1}^n a_k\right) =
 	S_m + \lim\limits_{n \to \infty}\sum\limits_{k = m+1}^n a_k
 .\]
 $\lim\limits_{n \to \infty}S_n$
-существует и конечен $\iff$
+существует и конечен тогда и только тогда, когда
  существует и конечен 
  $ \lim\limits_{n \to \infty} \sum\limits_{k = m+1}^n a_k$. 
 Таким образом, если ряд \eqref{lec_26, num_1}  сходится,
 то сходится и любой его остаток. 
-Если же сходится какой-либо остаток ряда, то сходится  и сам  ряд.
+Если же сходится какой-либо остаток ряда, то сходится  и сам  ряд. Если сходится какой-либо остаток ряда, то сходится и любой другой его остаток.
+
+\subsection{Необходимое условие сходимости ряда}
 
 \begin{thm}[Необходимое условие сходимости ряда]
-	  Если ряд  \eqref{lec_26, num_1} сходится,
-	 то $\lim\limits_{n \to \infty} a_n = 0$
+	Если ряд \eqref{lec_26, num_1} сходится,
+	то \[\lim\limits_{n \to \infty} a_n = 0.\]
 \end{thm}
 \begin{proof}
-	Пусть ряд \eqref{lec_26, num_1} сходится и $S$ --- его сумма. Тогда
-	$S_n - S_{n-1} = a_n$. При $n\longrightarrow{}\infty$ получаем:
+	Пусть ряд \eqref{lec_26, num_1} сходится и $S$ --- его сумма. Тогда для его частных сумм выполняется
+	$S_n - S_{n-1} = a_n$. При $n\to\infty$ получаем:
 	\[
 		\lim\limits_{n \to \infty} a_n = \lim\limits_{n \to \infty}
 		(S_n - S_{n - 1}) = \lim\limits_{n \to \infty}S_n - 
-		 \lim\limits_{n \to \infty}S_{n - 1}  = S - S = 0
-	.\]
+		 \lim\limits_{n \to \infty}S_{n - 1}  = S - S = 0. \qedhere
+	\]
 \end{proof}
 \begin{example}
-	Рассмотрим ряд:
+	Рассмотрим \emph{гармонический ряд}
 	\[
 		 \sum\limits_{k = 1}^\infty\frac{1}{k} = 
 		 1+ \frac{1}{2} + \frac{1}{3} + \ldots + 
-		  \frac{1}{n} + \ldots \text{--- \emph{гармонический ряд}}
+		  \frac{1}{n} + \ldots
 	.\]
+	Для него выполнено необходимое условие
+	\[a_n = \frac{1}{n} \appr{n \to \infty}0,\]
+	но при этом
 	\[
-		a_n = \frac{1}{n} \xrightarrow[n \to \infty]{}0, \ \text{но}
-		\ S_{2n} = S_n + \frac{1}{n + 1} + \frac{1}{n + 2} + 
-		 \ldots + \frac{1}{2n} > S_n = \frac{1}{2n}\cdot n =
+		S_{2n} = S_n + \frac{1}{n + 1} + \frac{1}{n + 2} + 
+		 \ldots + \frac{1}{2n} > S_n + \frac{1}{2n}\cdot n =
 		 S_n + \frac{1}{2}
 	.\]
 	Предположим, что ряд сходится и имеет сумму $S$.
-	Перейдём к пределу при $n\longrightarrow{}\infty$:
+	Тогда перейдём к пределу при $n\to\infty$:
 	\[
-		S_{2n} > S_n  \xrightarrow[n \to \infty]{} S \leq S + 
-		 \frac{1}{2} \text{ ---  противоречие} \implies
-		 \text{ гармонический ряд расходится}
+		S_{2n} > S_{n} + \frac12 \implies S \geq S + 
+		 \frac{1}{2}
 	.\]
+	Получили противоречие, т.~е. гармонический ряд расходится.
 \end{example}
 
+\subsection{Критерий Коши сходимости числовых рядов}
+
 Сходимость ряда ---
- это сходимость последовательностей его частных
-сумм т.~е. выполняется критерий Коши для последовательности:
+ это сходимость последовательности его частных
+сумм, т.~е. выполняется критерий Коши для последовательности:
 \begin{gather*}
-	\forall\epsilon > 0 \enspace \exists\nu = \nu_\epsilon \enspace
-	\forall m,n \geq \nu, \enspace \mid S_n - S_m \mid \leq \epsilon
+	\forall\eps > 0 \quad \exists\nu = \nu_\eps \quad
+	\forall m,n \geq \nu: \abs{S_n - S_m} \leq \eps.
 \end{gather*}
 Без ограничения общности предположим, что $n > m$. Тогда:
 \begin{gather*}
 	\enspace \left| S_n - S_m \right| =
 	\left| \sum\limits_{k = 1}^n a_k -  \sum\limits_{k = 1}^m a_k \right| = 
-	\left| \sum\limits_{k = m + 1}^n a_k \right| \leq \epsilon
+	\left| \sum\limits_{k = m + 1}^n a_k \right| \leq \eps.
 \end{gather*}
-Таким образом, получаем \emph{критерий Коши для рядов}:
+Таким образом, получаем критерий Коши для рядов:
 \begin{thm}[Критерий Коши сходимости числового ряда]
 	  \[
 	  \sum\limits_{k = 1}^\infty a_k\  \text{сходится}
 	  \iff 
-	 \forall\epsilon > 0 \  \exists\nu = \nu_\epsilon \ 
+	 \forall\eps > 0 \quad \exists\nu = \nu_\eps \quad 
 	 \forall m, n \in \N \enspace \text{т.~ч.} \enspace n > m \geq \nu \implies
-	 \left| \sum\limits_{k = m + 1}^n a_k \right| \leq \epsilon
+	 \left| \sum\limits_{k = m + 1}^n a_k \right| \leq \eps
 	 .\]
 \end{thm}
 
 Пусть $\sum\limits_{k = 1}^\infty a_k$  и $\sum\limits_{k = 1}^\infty b_k$
- --- два сходящихся ряда, $\alpha, \beta \in \R$.
+ --- два сходящихся ряда, а $\alpha, \beta \in \R$~--- некоторые числа.
 Ряд $\sum\limits_{k = 1}^\infty(\alpha a_k + \beta b_k)$
- называют \emph{линейной комбинацией рядов}. 
+ называют \emph{линейной комбинацией} рядов. 
 \begin{thm}
 Если ряды сходятся, то сходится и их линейная комбинация.
  \end{thm}
@@ -205,7 +209,7 @@ $\lim\limits_{n \to \infty}S_n$
 	Пусть  $\sum\limits_{k = 1}^\infty a_k = A$  
 	и $\sum\limits_{k = 1}^\infty b_k = B$, \enspace
 	 $\alpha, \beta \in \R$. Соответствующие частные суммы обозначим $A_k$ и 
-	 $B_k$.
+	 $B_k$. Тогда
  	\[
  		\sum\limits_{k = 1}^\infty(\alpha a_k + \beta b_k) =
  		\lim\limits_{k \to \infty} (\alpha A_k + \beta B_k) =
@@ -213,13 +217,14 @@ $\lim\limits_{n \to \infty}S_n$
  		\beta\lim\limits_{k \to \infty} B_k =
  		\alpha\sum\limits_{k = 1}^\infty a_k + 
  		\beta\sum\limits_{k = 1}^\infty b_k = \alpha A + 
- 		\beta B
+ 		\beta B. \qedhere
  	\]
  \end{proof}
  Линейная комбинация расходящихся рядов может сходиться.
- Если один из рядов сходится, а другой расходится, то 
- сумма расходится.
- \subsection{Положительные ряды}
+ Если один из рядов сходится, а другой --- расходится, то их линейная комбинация
+ расходится. Если ряд \eqref{lec_26, num_1} сходится, 
+ то $\sum\limits_{k=1}^\infty \alpha a_k = \alpha \sum\limits_{k=1}^\infty a_k$.
+ \section{Положительные ряды}
 \begin{definition}
 Если все члены ряда \eqref{lec_26, num_1} положительны
 ($\forall k \in \N \ a_k > 0$),
