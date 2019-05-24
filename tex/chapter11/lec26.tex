@@ -92,7 +92,8 @@ $S_m$ называют \emph{частной суммой ряда}.
 	\]
 	\begin{gather*}
 		S_1 = 1, \ S_2 = 0, \ S_3 = 1, \ S_4 = 0, \ \ldots
-		\implies \nexists \lim\limits_{n \to \infty} S_n \implies \text{ряд расходится.}
+		\implies \nexists \lim\limits_{n \to \infty} S_n \implies \text{ряд 
+		расходится.}
 	\end{gather*}
 \end{enumerate}
 \end{examples}
@@ -131,7 +132,8 @@ $\lim\limits_{n \to \infty}S_n$
  $ \lim\limits_{n \to \infty} \sum\limits_{k = m+1}^n a_k$. 
 Таким образом, если ряд \eqref{lec_26, num_1}  сходится,
 то сходится и любой его остаток. 
-Если же сходится какой-либо остаток ряда, то сходится  и сам  ряд. Если сходится какой-либо остаток ряда, то сходится и любой другой его остаток.
+Если же сходится какой-либо остаток ряда, то сходится  и сам  ряд. Если 
+сходится какой-либо остаток ряда, то сходится и любой другой его остаток.
 
 \subsection{Необходимое условие сходимости ряда}
 
@@ -140,7 +142,8 @@ $\lim\limits_{n \to \infty}S_n$
 	то \[\lim\limits_{n \to \infty} a_n = 0.\]
 \end{thm}
 \begin{proof}
-	Пусть ряд \eqref{lec_26, num_1} сходится и $S$ --- его сумма. Тогда для его частных сумм выполняется
+	Пусть ряд \eqref{lec_26, num_1} сходится и $S$ --- его сумма. Тогда для его 
+	частных сумм выполняется
 	$S_n - S_{n-1} = a_n$. При $n\to\infty$ получаем:
 	\[
 		\lim\limits_{n \to \infty} a_n = \lim\limits_{n \to \infty}
@@ -221,39 +224,46 @@ $\lim\limits_{n \to \infty}S_n$
  	\]
  \end{proof}
  Линейная комбинация расходящихся рядов может сходиться.
- Если один из рядов сходится, а другой --- расходится, то их линейная комбинация
+ Если один из рядов сходится, а другой --- расходится, то их линейная 
+ комбинация
  расходится. Если ряд \eqref{lec_26, num_1} сходится, 
- то $\sum\limits_{k=1}^\infty \alpha a_k = \alpha \sum\limits_{k=1}^\infty a_k$.
+ то $\sum\limits_{k=1}^\infty \alpha a_k = \alpha \sum\limits_{k=1}^\infty 
+ a_k$.
  \section{Положительные ряды}
 \begin{definition}
 Если все члены ряда \eqref{lec_26, num_1} положительны
 ($\forall k \in \N \ a_k > 0$),
-то такой ряд называют \emph{положительным рядом}.
+то такой ряд называют \emph{положительным} рядом.
 \end{definition}
 Для положительных рядов имеем:
 \[
-	S_{n+1} = S_n + a_{n+1}  > S_n \implies S_n \uparrow
+	S_{n+1} = S_n + a_{n+1}  > S_n \implies S_n \uparrow.
 \]
 А это значит, что к положительным рядам применим 
-критерий сходимости монотонной последовательности:
+критерий сходимости монотонной последовательности: для сходимости 
+последовательности $S_n$ необходимо и достаточно, чтобы она была ограничена 
+сверху. Отсюда получаем
  \begin{thm} [Критерий сходимости положительных рядов]
  	\label{lec26:pos_series}
- 	 Положительный ряд сходится $\iff$ последовательность 
- 	его частных сумм ограничена сверху.
+ 	 Для сходимости положительного ряда 
+ 	 необходимо и достаточно, чтобы 
+ 	 последовательность 
+ 	 его частных сумм была ограничена сверху.
  \end{thm}
  \begin{rem}
  	 Если  последовательность $S_n$ не ограничена сверху, 
- 	 то  $S_n\xrightarrow[n \to \infty]{}+\infty$. В таком случае пишут:
+ 	 то  $S_n\appr{n \to \infty}{+\infty}$. В таком случае иногда записывают:
  	 \[
  		\sum\limits_{k = 1}^\infty a_k= +\infty
 	.\]
-	Рассмотрим ряд:
-	 \begin{gather*}
+	Рассмотрим \emph{геометрический} ряд
+	 \[
  		\sum\limits_{k = 1}^\infty q^{k-1}=  1 + q + q^2 + \ldots
- 		\ (q > 0)\ \text{ --- геометрический ряд}\\
- 		S_n = \frac{1 - q^n}{1 - q} \text{ --- частная сумма первых $n$ членов}
-	.\end{gather*}
-	Если $0 < q < 1$, то ряд сходится:
+ 		\ (q > 0).
+	\]
+	Частная сумма его первых $n$ членов:
+	\[S_n = \frac{1 - q^n}{1 - q}.\]
+	Если $0 \le q < 1$, то ряд сходится:
 	\[
 	\sum\limits_{k = 1}^\infty q^{k-1} = \lim\limits_{n \to \infty} S_n =
 	\frac{1}{1 - q} \in \R
@@ -266,39 +276,44 @@ $\lim\limits_{n \to \infty}S_n$
  \end{rem}
  \subsection{Признаки сравнения рядов}
 
-Мы рассматриваем положительные ряды.
+Рассматриваем положительные ряды.
 Сделать вывод об поведении изучаемого ряда
 можно, сравнивая его элементы с  элементами
-другого (эталонного) ряда,  поведение (сходимость\slash
-расходимость) которого известно.
+другого (эталонного) ряда,  поведение (сходимость/расходимость) которого 
+известно.
  \begin{thm}[Признак сравнения 1\textdegree]
  	\label{lec26:comp_test_1}
  	Пусть $\sum\limits_{k = 1}^\infty a_k,\enspace \sum\limits_{k = 1}^\infty 
  	b_k$
  	 --- положительные ряды\\ 
- 	 и пусть  $\exists c = const > 0,\  \text{т.~ч.}\enspace  
- 	 a_k \leq cb_k \  \forall k\in \N$. Тогда:
+ 	 и пусть  $\exists c = const > 0\ \text{т.~ч.}\enspace  
+ 	 a_k \leq c\cdot b_k \ \: \forall k\in \N$. Тогда:
 	\begin{enumerate}[label={\alph*)}]
-	\item если сходится $b_k$, то сходится и $a_k$
-	\item если расходится $a_k$, то расходится и $b_k$
+	\item если сходится $\sum\limits_{k = 1}^\infty 
+ 	b_k$, то сходится и $\sum\limits_{k = 1}^\infty a_k$;
+	\item если расходится $\sum\limits_{k = 1}^\infty a_k$,
+	то расходится и $\sum\limits_{k = 1}^\infty b_k$.
 	\end{enumerate}
  \end{thm}
 \begin{proof}
+	
+	~
+	
 	\begin{enumerate}[label={\alph*)}]
 	\item Пусть $b_k$ сходится.
 	Тогда по 
 	\hyperref[lec26:pos_series]{критерию сходимости положительных рядов}:
 	 \begin{gather*}
-	 	\exists M \in \R \ \forall n \in \N \ 
+	 	\exists M \in \R \quad \forall n \in \N \quad 
 	 	\sum\limits_{k = 1}^n b_k \leq M
 	 	\implies
 		\left[
-			a_k \leq cb_k \enspace \forall k \in \N
+			a_k \leq c\cdot b_k \enspace \forall k \in \N
 		\right]
 		\implies \\
 		\implies
 		\sum\limits_{k = 1}^n a_k \leq
-		\sum\limits_{k = 1}^n cb_k =
+		\sum\limits_{k = 1}^n c\cdot b_k =
 		c\sum\limits_{k = 1}^n b_k \leq
 		c \cdot M = M_1 \implies \\
 		\implies
@@ -307,36 +322,43 @@ $\lim\limits_{n \to \infty}S_n$
 	 .\end{gather*}
 	\item Пусть $a_k$ расходится. Предположим, что $b_k$
 	сходится, но тогда по пункту a)
-	сходится и $a_k$ --- противоречие 
-	$\implies$ $b_k$ расходится.
+	сходится и $a_k$ --- противоречие. 
+	Отсюда получаем, что $b_k$ расходится. \qedhere
 	\end{enumerate}
 \end{proof}
-\begin{example}
-	Рассмотрим ряд:
+\begin{examples}
+
+~
+
+\begin{enumerate}
+\item
+	Рассмотрим ряд
 	\[
 		 \sum\limits_{k = 1}^\infty\frac{1}{\sqrt{k}}
 	.\]
 	Так как \  $\forall k \in \N \enspace
-	 \frac{1}{\sqrt{k}} \geq \frac{1}{k}$ \  и ряд 
-	\ $\sum\limits_{k = 1}^\infty \frac{1}{k}$\   расходится,
-	то по \hyperref[lec26:comp_test_1]{признаку  1\textdegree b)}\ ряд
-	$ \sum\limits_{k = 1}^\infty\frac{1}{\sqrt{k}}$ расходится.
-\end{example}
-\begin{example}
-	Рассмотрим ряд:
+	 \dfrac{1}{\sqrt{k}} \geq \dfrac{1}{k}$ и ряд 
+	 $\displaystyle\sum\limits_{k = 1}^\infty \frac{1}{k}$ расходится,
+	то по \hyperref[lec26:comp_test_1]{признаку  1\textdegree b)} ряд
+	$\displaystyle\sum\limits_{k = 1}^\infty\frac{1}{\sqrt{k}}$ расходится.
+\item
+	Рассмотрим ряд
 	\[
 		 \sum\limits_{k = 1}^\infty\frac{1}{k + 3^k}
 	.\]
 	Так как \  $\forall k \in \N \enspace
-	 \frac{1}{{k + 3^k}} \leq \frac{1}{3^k}$ \  и ряд 
-	\ $\sum\limits_{k = 1}^\infty \frac{1}{3^k}$\   сходится,
-	то по \hyperref[lec26:comp_test_1]{признаку  1\textdegree a)}\ ряд
-	$ \sum\limits_{k = 1}^\infty\frac{1}{k + 3^k}$ сходится.
-\end{example}
+	 \dfrac{1}{{k + 3^k}} \leq \dfrac{1}{3^k}$ \  и ряд 
+	\ $\displaystyle\sum\limits_{k = 1}^\infty \frac{1}{3^k}$\   сходится,
+	то по \hyperref[lec26:comp_test_1]{признаку  1\textdegree a)} ряд
+	$\displaystyle \sum\limits_{k = 1}^\infty\frac{1}{k + 3^k}$ сходится.
+\end{enumerate}
+\end{examples}
 \begin{rem}
 Для использования \hyperref[lec26:comp_test_1]{признака  1\textdegree} 
-достаточно, чтобы $a_k \leq b_k\ \forall k\geq N$, т.~к.
-признак работает для  остатков рядов $a_k$ и $b_k$. Рассмотрим пример:
+достаточно, чтобы $a_k \leq b_k\quad \forall k\geq N$, т.~е.
+признак работает в этом случае для остатков рядов $a_k$ и $b_k$. 
+ \end{rem}
+\begin{example}
 \begin{gather*}
 	\sum\limits_{k = 0}^\infty\frac{1}{k!} = \frac{1}{1} + 
 	\frac{1}{1} +  \frac{1}{2} +  \frac{1}{6} +
@@ -345,33 +367,36 @@ $\lim\limits_{n \to \infty}S_n$
 	\frac{1}{2} +  \frac{1}{4} +  \frac{1}{8} +
 	\frac{1}{16} +  \frac{1}{32} + \ldots\\
 \end{gather*}
-	В силу того, что \enspace
-	$\frac{1}{k!} < \frac{1}{2^k} \enspace \forall k \geq 4$
-	\enspace и ряд $\sum\limits_{k = 0}^\infty\frac{1}{2^k}$ сходится,
-	ряд $\sum\limits_{k = 0}^\infty\frac{1}{k!}$ сходится по
+	В силу того, что
+	$\displaystyle\frac{1}{k!} < \frac{1}{2^k} \  \forall k \geq 4$
+	и ряд $\displaystyle\sum\limits_{k = 0}^\infty\frac{1}{2^k}$ сходится,
+	ряд $\displaystyle\sum\limits_{k = 0}^\infty\frac{1}{k!}$ сходится по
 	 \hyperref[lec26:comp_test_1]{признаку  1\textdegree a)}.
- \end{rem}
+\end{example}
   \begin{thm}[Признак сравнения 2\textdegree]
  	\label{lec26:comp_test_2}
  	Пусть $\sum\limits_{k = 1}^\infty a_k,
  	\enspace \sum\limits_{k = 1}^\infty b_k$
  	 --- положительные ряды,\\ 
- 	а также существует предел:
+ 	а также существует предел
  	\[
  	\lim\limits_{n \to \infty}\frac{a_k}{b_k} = l,\enspace 0 \leq l \leq +\infty
  	.\]
 	Тогда:
 	\begin{enumerate}[label={\alph*)}]
-	\item если $l < +\infty$ и $b_k$ сходится, то сходится и $a_k$
-	\item если $l > 0$ и $b_k$ расходится, то расходится и $a_k$
+	\item если $l < +\infty$ и $b_k$ сходится, то сходится и $a_k$;
+	\item если $l > 0$ и $b_k$ расходится, то расходится и $a_k$.
 	\end{enumerate}
  \end{thm}
  \begin{proof}
+ 
+ ~
+ 
 	\begin{enumerate}[label={\alph*)}]
 	\item Пусть $l< +\infty$.
-	Тогда для достаточно больших k будем иметь:
+	Тогда для достаточно больших $k$ будем иметь:
 	 \[
-	 	\frac{a_k}{b_k} \leq l + 1 \  \implies \ a_k \leq (l+1)b_k
+	 	\frac{a_k}{b_k} \leq l + 1  \implies a_k \leq (l+1)b_k
 	 .\]
 	Тогда по \hyperref[lec26:comp_test_1]{признаку  1\textdegree a)} из 
 	 сходимости $b_k$ будет следовать сходимость $a_k$.
@@ -381,12 +406,17 @@ $\lim\limits_{n \to \infty}S_n$
 	.\]
 	Пусть $b_k$ расходится. Если предположить,
 	что $a_k$  сходится, то по доказанному пункту
-	2\textdegree a) сходится и $b_k$ --- противоречие 
-	$\implies$ $a_k$ расходится.
+	2\textdegree a) сходится и $b_k$. Противоречие.
+	Отсюда получаем, что $a_k$ расходится. \qedhere
 	\end{enumerate}
 \end{proof}
-\begin{example}
-	Рассмотрим ряд:
+\begin{examples}
+
+~
+
+\begin{enumerate}
+\item
+Рассмотрим ряд:
 	\[
 		 \sum\limits_{k = 1}^\infty a_k=  \sum\limits_{k = 1}^\infty\frac{1}{3^k + 5}
 	.\]
@@ -394,12 +424,12 @@ $\lim\limits_{n \to \infty}S_n$
 	\[
 		\sum\limits_{k = 1}^\infty b_k=   \sum\limits_{k = 1}^\infty\frac{1}{3^k}
 	.\]
-	Тогда $\frac{a_k}{b_k} = \frac{3^k}{3^k + 5} \xrightarrow[k \to \infty]{} 1$\ 
-	$\implies$ т.~к. $b_k$ сходится, то по \  
+	Тогда \[\frac{a_k}{b_k} = \frac{3^k}{3^k + 5} \xrightarrow[k \to \infty]{} 
+	1.\]
+	Т.~к. $b_k$ сходится, то по  
 	 \hyperref[lec26:comp_test_2]{признаку  2\textdegree a)}\ $a_k$ также 
 	 сходится.
-\end{example}
-\begin{example}
+\item
 	Рассмотрим ряд:
 	\[
 		 \sum\limits_{k = 1}^\infty a_k=  \sum\limits_{k = 1}^\infty\frac{1}{10k + 7}
@@ -408,35 +438,35 @@ $\lim\limits_{n \to \infty}S_n$
 	\[
 		\sum\limits_{k = 1}^\infty b_k=   \sum\limits_{k = 1}^\infty\frac{1}{k}
 	.\]
-	Тогда $\frac{a_k}{b_k} = \frac{k}{10^k + 7} \xrightarrow[k \to \infty]{} 
-	\frac{1}{10}$\ 
-	$\implies$ т.~к. $b_k$ расходится, то по \  
-	 \hyperref[lec26:comp_test_2]{признаку  2\textdegree b)}\ 
+	Тогда \[\frac{a_k}{b_k} = \frac{k}{10^k + 7} \xrightarrow[k \to \infty]{} 
+	\frac{1}{10}.\] 
+	Т.~к. $b_k$ расходится, то по  
+	 \hyperref[lec26:comp_test_2]{признаку  2\textdegree b)}
 	 $a_k$ также расходится.
-\end{example}
+\end{enumerate}
+\end{examples}
+
 \begin{thm}[Признак сравнения 3\textdegree]
  	\label{lec26:comp_test_3}
  	Пусть $\sum\limits_{k = 1}^\infty a_k,\enspace \sum\limits_{k = 1}^\infty 
  	b_k$
  	 --- положительные ряды,\\ 
- 	а также $\frac{a_{k+1}}{a_k} \leq \frac{b_{k+1}}{b_k} \ 
- 	\forall k \in \N$. Тогда:
+ 	а также $\displaystyle\frac{a_{k+1}}{a_k} \leq \frac{b_{k+1}}{b_k} \quad
+ 	\forall k \in \N.$ Тогда:
 	\begin{enumerate}[label={\alph*)}]
-	\item если  $b_k$ сходится, то сходится и $a_k$
-	\item если $a_k$ расходится, то расходится и $b_k$
+	\item если  $b_k$ сходится, то сходится и $a_k$;
+	\item если $a_k$ расходится, то расходится и $b_k$.
 	\end{enumerate}
 \end{thm}
 \begin{proof}
 	По условию выполняются следующие неравенства:
- 	\[
-		\begin{array}{l}
+ 	\begin{gather*}
 			\frac{a_2}{a_1} \leq \frac{b_2}{b_1}, \\
 			\frac{a_3}{a_2} \leq \frac{b_3}{b_2}, \\
 			\dots\\
 			\frac{a_n}{a_{n-1}} \leq \frac{b_n}{b_{n-1}}.
-		\end{array}		
-	\]
-	Перемножим их почленно. Тогда:
+	\end{gather*}
+	Перемножим их почленно. Получаем
 	\[
 		\frac{a_2}{a_1}\cdot\frac{a_3}{a_2}\cdot\ldots
 		\cdot\frac{a_n}{a_{n-1}} \leq
@@ -446,9 +476,9 @@ $\lim\limits_{n \to \infty}S_n$
 	Сократив дроби в обеих частях неравенства, получим:
 	\[
 		\frac{a_n}{a_1} \leq \frac{b_n}{b_1} \implies
-		a_n \leq \frac{a_1}{b_1}\cdot b_n\enspace \forall n \in \N
+		a_n \leq \frac{a_1}{b_1}\cdot b_n\quad \forall n \in \N
 	.\]
-	Так как $ \frac{a_1}{b_1} = const$, 
+	Так как $\dfrac{a_1}{b_1} = const$, 
 	доказательство признака 3\textdegree \ следует из
 	\hyperref[lec26:comp_test_1]{признака  1\textdegree}.
 \end{proof}
