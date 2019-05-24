@@ -24,14 +24,17 @@
 		~
 		
 	\begin{enumerate}[label={\alph*)}]
-		 \item Пусть $c < 1$. Тогда $\exists q: c < q < 1$, и для достаточно больших $n$ выполнено
+		 \item Пусть $c < 1$. Тогда $\exists q: c < q < 1$, и для достаточно больших 
+		 $n$ выполнено
 			\[ \sqrt[n]{a_n} \leq q \iff a_n \leq q^n. \]
 			Ряд $\sum\limits_{n=1}^{\infty} q^n$ сходится, т.~к. $q < 1$. Тогда по 
 			теореме \ref{lec26:comp_test_1}
 			рассматриваемый ряд \eqref{lec_26, num_1} сходится.
 			 
-		\item Пусть $c>1$ . Тогда $\exists q : c > q > 1 $ и \[\exists N : \forall n \geq N \quad
-			 \sqrt[n]{a_n} \geq q \iff a_n \geq q^n.\] Значит, $\lim\limits_{n \to \infty} a_n 
+		\item Пусть $c>1$ . Тогда $\exists q : c > q > 1 $ и \[\exists N : \forall n 
+		\geq N \quad
+			 \sqrt[n]{a_n} \geq q \iff a_n \geq q^n.\] Значит, $\lim\limits_{n \to 
+			 \infty} a_n 
 			 \neq 0$, и не выполнено необходимое условие сходимости ряда. \qedhere
 	\end{enumerate}
 	\end{proof}
@@ -71,12 +74,15 @@
 			~
 			
 			\begin{enumerate}[label={\alph*)}]
-			\item Пусть $d < 1$, тогда $\exists q : d < q < 1$  и тогда \[\exists N \in \N \quad
+			\item Пусть $d < 1$, тогда $\exists q : d < q < 1$  и тогда \[\exists N \in 
+			\N \quad
 			\forall n \geq N:
 			\frac{a_{n+1}}{a_n} \leq q = \frac{q^{n+1}}{q^n}.  \]
 			Ряд $\sum\limits_{k=1}^{\infty} q^k$ сходится, т.~к. 
-			$q<1$. Но тогда по теореме \ref{lec26:comp_test_3} сходится и \eqref{lec_26, num_1}.
-			\item Пусть $d > 1$, тогда $\exists q : 1 < q < d $ и \[\exists N \in \N \quad \forall n 
+			$q<1$. Но тогда по теореме \ref{lec26:comp_test_3} сходится и 
+			\eqref{lec_26, num_1}.
+			\item Пусть $d > 1$, тогда $\exists q : 1 < q < d $ и \[\exists N \in \N 
+			\quad \forall n 
 			\geq N:
 			\frac{a_{n+1}}{a_n} \geq \frac{q^{n+1}}{q^n} = q > 1.  \]
 			Т.~к. все $a_k > 0$, то $\lim\limits_{k \to \infty} a_k \neq 0$, и не 
@@ -91,16 +97,19 @@
 	\begin{enumerate}
 	 \item
 		\[ \sum_{k = 1}^{\infty} \frac{(k!)^2}{(2k!)^2}    \]
-		\[ \frac{a_{n+1}}{a_n} = \frac{((n+1)!)^2 \cdot (2n)!}{(n!)^2 \cdot (2n+2)!} = 
+		\[ \frac{a_{n+1}}{a_n} = \frac{((n+1)!)^2 \cdot (2n)!}{(n!)^2 \cdot (2n+2)!} 
+		= 
 		\frac{n+1}{2(2n+1)}  \appr{n \rightarrow \infty} \frac{1}{4}. \]
 		Т.~е. ряд $\sum\limits_{k = 1}^{\infty} \frac{(k!)^2}{(2k!)^2}$ сходится по 
 		\hyperref[lec27:dalamber]{признаку Даламбера}.
 	\item
 		\[  \sum_{k = 1}^{\infty} \frac{k^k}{k! \cdot 2^k} \]
-		\[ \frac{a_{n+1}}{a_n} = \frac{n! \cdot 2^n \cdot (n+1)^{n+1}}{(n+1)! \cdot n^n \cdot 
+		\[ \frac{a_{n+1}}{a_n} = \frac{n! \cdot 2^n \cdot (n+1)^{n+1}}{(n+1)! \cdot 
+		n^n \cdot 
 		2^{n+1}} = \frac{(n+1)^{n}}{2\cdot n^n } \underset{n \rightarrow \infty} 
 		{\longrightarrow}  \frac{e}{2} > 1. \]
-		Т.~е. ряд $\sum\limits_{k = 1}^{\infty} \frac{k^k}{k! \cdot 2^k}$ расходится по 
+		Т.~е. ряд $\sum\limits_{k = 1}^{\infty} \frac{k^k}{k! \cdot 2^k}$ расходится 
+		по 
 		\hyperref[lec27:dalamber]{признаку Даламбера}.
 	\end{enumerate}
 	\end{examples}
@@ -124,7 +133,8 @@
 		\end{enumerate}
 		
 	\item При $d=1$ признаки Коши и Даламбера не дают точного результата 
-	на сходимость ряда \eqref{lec_26, num_1}, поэтому требуются дополнительные исследования.
+	на сходимость ряда \eqref{lec_26, num_1}, поэтому требуются дополнительные 
+	исследования.
 	\end{enumerate}
 	\end{remarks}
 	
@@ -138,7 +148,9 @@
 		[1, + \infty]$.
 	
 	\begin{thm}[Интегральный признак] \label{lec27,integral_att}
-		Если $f(x)$~--- монотонная производящая интегрируемая функция для ряда \eqref{lec_26, num_1}, то \eqref{lec_26, num_1} сходится тогда и только тогда, когда сходится последовательность \[b_n = \int\limits_1^n f(x)dx.\]
+		Если $f(x)$~--- монотонная производящая интегрируемая функция для ряда 
+		\eqref{lec_26, num_1}, то \eqref{lec_26, num_1} сходится тогда и только 
+		тогда, когда сходится последовательность \[b_n = \int\limits_1^n f(x)dx.\]
 		\begin{proof}
 			Докажем, что:
 			\[ \int_{1}^{n} f(x) \; dx = b_n , \; n \in \N  \]
