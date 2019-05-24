@@ -10,126 +10,135 @@
 }
 
 \begin{document}
+	\subsection{Признаки Коши и Даламбера. Интегральный признак.}
 	
-	Рассматриваем ряд $\sum_{n=1}^{\infty} a_n$ \ref{lec_26, num_1}
-	
-	\begin{thm}[ Признак Коши ]\label{lec27:cauchy} 
-		
-		Пусть $\exists \lim_{n \to \infty } \sqrt[n]{a_n}  = c$. Если
-		
-			а) $c < 1$, то ряд сходится 
-			
-			б) $c>1$, то ряд расходится
-		
-	\begin{proof}
-		 а) Пусть $c < 1$. Тогда $\exists q, c < q < 1$ и для достаточно больших $n$
-			\[ \sqrt[n]{a_n} \leq q <=> a_n \leq q^n \]
-			Ряд $\sum_{n=1}^{\infty} q^n = \sum_{n=1}^{\infty} q_n$ сходится, тогда по 
-			признаку \ref{lec26:comp_test_1}
-			 $c>1$, то рассматриваемый ряд \ref{lec_26, num_1} сходится \\
-			 
-			 б) $c>1$ . Тогда $\exists q : c > q > 1 $ и $\exists N : \forall n \geq N 
-			 \sqrt[n]{a_n} \geq q <=> a_n \geq q^n$. Значит $\lim_{n \to \infty} a_n 
-			 \neq 0$ и не выполнено основное условеи сходимости ряда.
-		
-		
-	\end{proof}
+	\begin{thm}[Признак Коши]\label{lec27:cauchy} 	
+		Пусть $\exists \lim\limits_{n \to \infty } \sqrt[n]{a_n}  = c$. Если
+	\begin{enumerate}[label={\alph*)}]
+			\item $c < 1$, то ряд сходится;
+			\item $c > 1$, то ряд расходится.
+	\end{enumerate}
 	\end{thm}
+	\begin{proof}
+		
+		~
+		
+	\begin{enumerate}[label={\alph*)}]
+		 \item Пусть $c < 1$. Тогда $\exists q: c < q < 1$, и для достаточно больших $n$ выполнено
+			\[ \sqrt[n]{a_n} \leq q \iff a_n \leq q^n. \]
+			Ряд $\sum\limits_{n=1}^{\infty} q^n$ сходится, т.~к. $q < 1$. Тогда по 
+			теореме \ref{lec26:comp_test_1}
+			рассматриваемый ряд \eqref{lec_26, num_1} сходится.
+			 
+		\item Пусть $c>1$ . Тогда $\exists q : c > q > 1 $ и \[\exists N : \forall n \geq N \quad
+			 \sqrt[n]{a_n} \geq q \iff a_n \geq q^n.\] Значит, $\lim\limits_{n \to \infty} a_n 
+			 \neq 0$, и не выполнено необходимое условие сходимости ряда. \qedhere
+	\end{enumerate}
+	\end{proof}
 
-	\begin{example}
-		\[ \sum_{k=1}^{\infty}  \frac{3^k + k}{5^k}  \]
+	\begin{examples}
+
+	~
+
+	\begin{enumerate}
+	 \item
+		\[ \sum_{k=1}^{\infty}  \frac{3^k + k}{5^k}.  \]
 		\[ \sqrt[n]{a_n} = \sqrt[n]{\frac{3^n + n}{5^n}} = \frac{3}{5} \sqrt[n]{1 + 
 		\frac{n}{3^n}}  \underset{n \rightarrow \infty}
-		{\longrightarrow} \frac{3}{5} < 1    \]
-		Откуда из признака \ref{lec27:cauchy}, получаем, что сходится ряд 
-		$\sum_{k=1}^{\infty}  \frac{3^k + k}{5^k}$
-		
-	\end{example} 
- 
-	\begin{example}
-		\[ \sum_{k}^{\infty} \left( \frac{k}{k+1}\right) ^{k^2}   \]
-		\[ \sqrt[n]{a_n} =  \left( \frac{n}{n+1}\right) ^n  \underset{n \rightarrow 
-		\infty}
-		{\longrightarrow} \frac{1}{e} < 1  \]
-		Откуда из признака \ref{lec27:cauchy}, получаем, что сходится ряд 
-		$\sum_{k}^{\infty} \left( \frac{k}{k+1}\right) ^{k^2}$
-		
-		
-	\end{example} 	
+		{\longrightarrow} \frac{3}{5} < 1.    \]
+		Из \hyperref[lec27:cauchy]{признака Коши} получаем, что ряд  
+		$\sum\limits_{k=1}^{\infty}  \frac{3^k + k}{5^k}$
+		сходится.
+	\item
+		\[ \sum_{k=1}^{\infty} \left( \frac{k}{k+1}\right) ^{k^2}. \]
+		\[ \sqrt[n]{a_n} =  \left( \frac{n}{n+1}\right) ^n  \appr{n \rightarrow 
+		\infty} \frac{1}{e} < 1. \]
+		Из \hyperref[lec27:cauchy]{признака Коши}, получаем, что ряд 
+		$\sum\limits_{k=1}^{\infty} \left( \frac{k}{k+1}\right) ^{k^2}$ сходится.
+	\end{enumerate}
+	\end{examples} 	
 
-
-
-	\begin{thm}[Признак Даламбера ]\label{lec27:dalamber}
+	\begin{thm}[Признак Даламбера]\label{lec27:dalamber}
 		
-		Пусть $\exists \lim_{n \to \infty } \frac{a_{n+1}}{a_n} = d$. Тогда:
-		
-		а) Из $d < 1$ следует, что ряд \ref{lec_26, num_1} сходится
-		
-		б) Из $d > 1$ следует, что ряд \ref{lec_26, num_1} расходится
-		
+		Пусть $\exists \lim\limits_{n \to \infty} \dfrac{a_{n+1}}{a_n} = d$. Тогда:
+		\begin{enumerate}[label={\alph*)}]
+		\item Из $d < 1$ следует, что ряд \eqref{lec_26, num_1} сходится;
+		\item Из $d > 1$ следует, что ряд \eqref{lec_26, num_1} расходится.
+		\end{enumerate}
+	\end{thm}
 		\begin{proof}
 			
-			а) Пусть $d < 1$, тогда $\exists q : d < q < 1$  и тогда $\exists N : 
-			\forall n \geq N$:	
-			\[ \frac{a_{n+1}}{a_n} \leq q = \frac{q^{n+1}}{q^n}   \]
-			Ряд $\sum_{k=1}^{\infty} b_k = \sum_{k=1}^{\infty} q^k$ сходится, т.~к. 
-			$q<1$. По свойству \ref{lec26:comp_test_3} сходится и \ref{lec_26, num_1} \\
-			б) Пусть $d > 1$, тогда $\exists q : 1 < q < d $ и $\exists N : \forall n 
-			\geq N$:
-			\[  \frac{a_{n+1}}{a_n} \geq \frac{q^{n+1}}{q^n} = q > 1    \]
-			И так как все $a_k > 0$, то $\lim_{k \to \infty} a_k \neq 0 $ и не 
+			~
+			
+			\begin{enumerate}[label={\alph*)}]
+			\item Пусть $d < 1$, тогда $\exists q : d < q < 1$  и тогда \[\exists N \in \N \quad
+			\forall n \geq N:
+			\frac{a_{n+1}}{a_n} \leq q = \frac{q^{n+1}}{q^n}.  \]
+			Ряд $\sum\limits_{k=1}^{\infty} q^k$ сходится, т.~к. 
+			$q<1$. Но тогда по теореме \ref{lec26:comp_test_3} сходится и \eqref{lec_26, num_1}.
+			\item Пусть $d > 1$, тогда $\exists q : 1 < q < d $ и \[\exists N \in \N \quad \forall n 
+			\geq N:
+			\frac{a_{n+1}}{a_n} \geq \frac{q^{n+1}}{q^n} = q > 1.  \]
+			Т.~к. все $a_k > 0$, то $\lim\limits_{k \to \infty} a_k \neq 0$, и не 
 			выполнено необходимое условие сходимости.
+			\qedhere
+			\end{enumerate}
 		\end{proof}
-	\end{thm}			
-	
-	\begin{example}
+	\begin{examples}
+
+	~
+
+	\begin{enumerate}
+	 \item
 		\[ \sum_{k = 1}^{\infty} \frac{(k!)^2}{(2k!)^2}    \]
-		\[ \frac{a_{n+1}}{a_n} = \frac{((n+1)!)^2 \; (2n)!}{(n!)^2 \; (2n+2)!} = 
-		\frac{n+1}{2(2n+1)}  \underset{n \rightarrow \infty} {\longrightarrow} 
-		\frac{1}{4}    \]
-		Т.~е. ряд $\sum_{k = 1}^{\infty} \frac{(k!)^2}{(2k!)^2}$ сходится по 
-		признаку Даламбера.
-		
-	\end{example}
+		\[ \frac{a_{n+1}}{a_n} = \frac{((n+1)!)^2 \cdot (2n)!}{(n!)^2 \cdot (2n+2)!} = 
+		\frac{n+1}{2(2n+1)}  \appr{n \rightarrow \infty} \frac{1}{4}. \]
+		Т.~е. ряд $\sum\limits_{k = 1}^{\infty} \frac{(k!)^2}{(2k!)^2}$ сходится по 
+		\hyperref[lec27:dalamber]{признаку Даламбера}.
+	\item
+		\[  \sum_{k = 1}^{\infty} \frac{k^k}{k! \cdot 2^k} \]
+		\[ \frac{a_{n+1}}{a_n} = \frac{n! \cdot 2^n \cdot (n+1)^{n+1}}{(n+1)! \cdot n^n \cdot 
+		2^{n+1}} = \frac{(n+1)^{n}}{2\cdot n^n } \underset{n \rightarrow \infty} 
+		{\longrightarrow}  \frac{e}{2} > 1. \]
+		Т.~е. ряд $\sum\limits_{k = 1}^{\infty} \frac{k^k}{k! \cdot 2^k}$ расходится по 
+		\hyperref[lec27:dalamber]{признаку Даламбера}.
+	\end{enumerate}
+	\end{examples}
 
-	\begin{example}
-		\[  \sum_{k = 1}^{\infty} \frac{k^k}{k! \; 2^k} \]
-		\[ \frac{a_{n+1}}{a_n} = \frac{n! \; 2^n \; (n+1)^{n+1}}{(n+1)! \; n^n \; 
-		2^{n+1}} = \frac{(n+1)^{n}}{2 n^n } \underset{n \rightarrow \infty} 
-		{\longrightarrow}  \frac{e}{2} \]
-		Т.~е. ряд $\sum_{k = 1}^{\infty} \frac{k^k}{k! \; 2^k}$ расходится по 
-		признаку Даламбера.
-	\end{example}	
-
-	\begin{remark} В доказательствах мы использовали "для достаточно больших N", 
+	\begin{remarks}
+	
+	~
+	
+	\begin{enumerate}
+	\item В доказательствах мы использовали <<для достаточно больших $N$>>, 
 	то есть условие должно выполнятся для некоторого остатка ряда, т.~к. из 
 	сходимости/расходимости остатка следует сходимость/расходимость ряда.
+	\item  В признаке Даламбера можно рассматривать
+		\[  \lim_{n \to \infty} \frac{a_n}{a_{n+1}} = \delta = \frac{1}{d}. \]
+		И тогда, соответственно:
+		\begin{enumerate}[label={\alph*)}]
+		\item $\delta > 1$~--- \eqref{lec_26, 
+		num_1} сходится; \\
+		\item $\delta < 1$~--- \eqref{lec_26, 
+		num_1} расходится.
+		\end{enumerate}
 		
-	\end{remark}	
-
-	\begin{remark} В признаке Даламбера можно рассматривать:
-		
-		\[  \lim_{n \to \infty} \frac{a_n}{a_{n+1}} = \delta = \frac{1}{d}      \]
-		И тогда соответственно: $\begin{cases} 1)\delta > 1 \text{\ref{lec_26, 
-		num_1} сходится} \\ 
-											   2)\delta < 1 \text{\ref{lec_26, num_1} расходится} \\
-		 \end{cases}$
-	\end{remark}
-
-	\begin{remark} При $d=1$ признаки Коши и Даламбера не дают точного результата 
-	на сходимость ряда \ref{lec_26, num_1}, требуются дополнительные исследования.
-		
-	\end{remark}
-
-	Рассмотрим еще один:
+	\item При $d=1$ признаки Коши и Даламбера не дают точного результата 
+	на сходимость ряда \eqref{lec_26, num_1}, поэтому требуются дополнительные исследования.
+	\end{enumerate}
+	\end{remarks}
+	
+	Рассмотрим также интегральный признак Коши.
+	
+	Функцию $f(x)$, определенную на промежутке $[1, + \infty]$, называют 
+		\emph{производящей} для ряда \eqref{lec_26, num_1}, если
+		\[ f(k) = a_k, \ \forall k \in \N.\]
+		Поскольку \eqref{lec_26, num_1} является положительным, то будем считать, что
+		$f(x) > 0 \quad \forall x \in 
+		[1, + \infty]$.
 	
 	\begin{thm}[Интегральный признак] \label{lec27,integral_att}
-		Функцию $f(x)$ определенную на промежутке $[1, + \infty]$ называют 
-		производящей для ряда \ref{lec_26, num_1}, если:
-		\[ f(k) = a_k, \; \forall k \in \N, \; f(x) > 0 \; \forall x \in 
-		\R \]
-		Для сходимости  \ref{lec_26, num_1} необходимо, чтобы:
-		\[  \lim_{k \to \infty} f(k) = 0    \]
+		Если $f(x)$~--- монотонная производящая интегрируемая функция для ряда \eqref{lec_26, num_1}, то \eqref{lec_26, num_1} сходится тогда и только тогда, когда сходится последовательность \[b_n = \int\limits_1^n f(x)dx.\]
 		\begin{proof}
 			Докажем, что:
 			\[ \int_{1}^{n} f(x) \; dx = b_n , \; n \in \N  \]
@@ -203,7 +212,7 @@
 	\end{enumerate}	
 	\end{examples}	
 
-	\section{Признак Дюамеля (Дюамеля-Раабе)}
+	\subsection{Признак Дюамеля (Дюамеля-Раабе)}
 	
 	\begin{thm}[Признак Дюамеля-Раабе]\label{lec27,duamele_raabe}
 		Пусть $\frac{a_n}{a_{n+1}} = 1 + \frac{\mu}{n} + o\left( \frac{1}{n}\right) 
