@@ -1,0 +1,299 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+	\subsection{Признаки Коши и Даламбера. Интегральный признак.}
+	
+	\begin{thm}[Признак Коши]\label{lec27:cauchy} 	
+		Пусть $\exists \lim\limits_{n \to \infty } \sqrt[n]{a_n}  = c$. Если
+	\begin{enumerate}[label={\alph*)}]
+			\item $c < 1$, то ряд сходится;
+			\item $c > 1$, то ряд расходится.
+	\end{enumerate}
+	\end{thm}
+	\begin{proof}
+		
+		~
+		
+	\begin{enumerate}[label={\alph*)}]
+		 \item Пусть $c < 1$. Тогда $\exists q: c < q < 1$, и для достаточно больших 
+		 $n$ выполнено
+			\[ \sqrt[n]{a_n} \leq q \iff a_n \leq q^n. \]
+			Ряд $\sum\limits_{n=1}^{\infty} q^n$ сходится, т.~к. $q < 1$. Тогда по 
+			теореме \ref{lec26:comp_test_1}
+			рассматриваемый ряд \eqref{lec_26, num_1} сходится.
+			 
+		\item Пусть $c>1$ . Тогда $\exists q : c > q > 1 $ и \[\exists N : \forall n 
+		\geq N \quad
+			 \sqrt[n]{a_n} \geq q \iff a_n \geq q^n.\] Значит, $\lim\limits_{n \to 
+			 \infty} a_n 
+			 \neq 0$, и не выполнено необходимое условие сходимости ряда. \qedhere
+	\end{enumerate}
+	\end{proof}
+
+	\begin{examples}
+
+	~
+
+	\begin{enumerate}
+	 \item
+		\[ \sum_{k=1}^{\infty}  \frac{3^k + k}{5^k}.  \]
+		\[ \sqrt[n]{a_n} = \sqrt[n]{\frac{3^n + n}{5^n}} = \frac{3}{5} \sqrt[n]{1 + 
+		\frac{n}{3^n}}  \underset{n \rightarrow \infty}
+		{\longrightarrow} \frac{3}{5} < 1.    \]
+		Из \hyperref[lec27:cauchy]{признака Коши} получаем, что ряд  
+		$\sum\limits_{k=1}^{\infty}  \frac{3^k + k}{5^k}$
+		сходится.
+	\item
+		\[ \sum_{k=1}^{\infty} \left( \frac{k}{k+1}\right) ^{k^2}. \]
+		\[ \sqrt[n]{a_n} =  \left( \frac{n}{n+1}\right) ^n  \appr{n \rightarrow 
+		\infty} \frac{1}{e} < 1. \]
+		Из \hyperref[lec27:cauchy]{признака Коши}, получаем, что ряд 
+		$\sum\limits_{k=1}^{\infty} \left( \frac{k}{k+1}\right) ^{k^2}$ сходится.
+	\end{enumerate}
+	\end{examples} 	
+
+	\begin{thm}[Признак Даламбера]\label{lec27:dalamber}
+		
+		Пусть $\exists \lim\limits_{n \to \infty} \dfrac{a_{n+1}}{a_n} = d$. Тогда:
+		\begin{enumerate}[label={\alph*)}]
+		\item Из $d < 1$ следует, что ряд \eqref{lec_26, num_1} сходится;
+		\item Из $d > 1$ следует, что ряд \eqref{lec_26, num_1} расходится.
+		\end{enumerate}
+	\end{thm}
+		\begin{proof}
+			
+			~
+			
+			\begin{enumerate}[label={\alph*)}]
+			\item Пусть $d < 1$, тогда $\exists q : d < q < 1$  и тогда \[\exists N \in 
+			\N \quad
+			\forall n \geq N:
+			\frac{a_{n+1}}{a_n} \leq q = \frac{q^{n+1}}{q^n}.  \]
+			Ряд $\sum\limits_{k=1}^{\infty} q^k$ сходится, т.~к. 
+			$q<1$. Но тогда по теореме \ref{lec26:comp_test_3} сходится и 
+			\eqref{lec_26, num_1}.
+			\item Пусть $d > 1$, тогда $\exists q : 1 < q < d $ и \[\exists N \in \N 
+			\quad \forall n 
+			\geq N:
+			\frac{a_{n+1}}{a_n} \geq \frac{q^{n+1}}{q^n} = q > 1.  \]
+			Т.~к. все $a_k > 0$, то $\lim\limits_{k \to \infty} a_k \neq 0$, и не 
+			выполнено необходимое условие сходимости.
+			\qedhere
+			\end{enumerate}
+		\end{proof}
+	\begin{examples}
+
+	~
+
+	\begin{enumerate}
+	 \item
+		\[ \sum_{k = 1}^{\infty} \frac{(k!)^2}{(2k!)^2}    \]
+		\[ \frac{a_{n+1}}{a_n} = \frac{((n+1)!)^2 \cdot (2n)!}{(n!)^2 \cdot (2n+2)!} 
+		= 
+		\frac{n+1}{2(2n+1)}  \appr{n \rightarrow \infty} \frac{1}{4}. \]
+		Т.~е. ряд $\sum\limits_{k = 1}^{\infty} \frac{(k!)^2}{(2k!)^2}$ сходится по 
+		\hyperref[lec27:dalamber]{признаку Даламбера}.
+	\item
+		\[  \sum_{k = 1}^{\infty} \frac{k^k}{k! \cdot 2^k} \]
+		\[ \frac{a_{n+1}}{a_n} = \frac{n! \cdot 2^n \cdot (n+1)^{n+1}}{(n+1)! \cdot 
+		n^n \cdot 
+		2^{n+1}} = \frac{(n+1)^{n}}{2\cdot n^n } \underset{n \rightarrow \infty} 
+		{\longrightarrow}  \frac{e}{2} > 1. \]
+		Т.~е. ряд $\sum\limits_{k = 1}^{\infty} \frac{k^k}{k! \cdot 2^k}$ расходится 
+		по 
+		\hyperref[lec27:dalamber]{признаку Даламбера}.
+	\end{enumerate}
+	\end{examples}
+
+	\begin{remarks}
+	
+	~
+	
+	\begin{enumerate}
+	\item В доказательствах мы использовали <<для достаточно больших $N$>>, 
+	то есть условие должно выполнятся для некоторого остатка ряда, т.~к. из 
+	сходимости/расходимости остатка следует сходимость/расходимость ряда.
+	\item  В признаке Даламбера можно рассматривать
+		\[  \lim_{n \to \infty} \frac{a_n}{a_{n+1}} = \delta = \frac{1}{d}. \]
+		И тогда, соответственно:
+		\begin{enumerate}[label={\alph*)}]
+		\item $\delta > 1$~--- \eqref{lec_26, 
+		num_1} сходится; \\
+		\item $\delta < 1$~--- \eqref{lec_26, 
+		num_1} расходится.
+		\end{enumerate}
+		
+	\item При $d=1$ признаки Коши и Даламбера не дают точного результата 
+	на сходимость ряда \eqref{lec_26, num_1}, поэтому требуются дополнительные 
+	исследования.
+	\end{enumerate}
+	\end{remarks}
+	
+	Рассмотрим также интегральный признак Коши.
+	
+	Функцию $f(x)$, определенную на промежутке $[1, + \infty]$, называют 
+		\emph{производящей} для ряда \eqref{lec_26, num_1}, если
+		\[ f(k) = a_k, \ \forall k \in \N.\]
+		Поскольку \eqref{lec_26, num_1} является положительным, то будем считать, что
+		$f(x) > 0 \quad \forall x \in 
+		[1, + \infty]$.
+	
+	\begin{thm}[Интегральный признак] \label{lec27,integral_att}
+		Если $f(x)$~--- монотонная производящая интегрируемая функция для ряда 
+		\eqref{lec_26, num_1}, то \eqref{lec_26, num_1} сходится тогда и только 
+		тогда, когда сходится последовательность \[b_n = \int\limits_1^n f(x)dx.\]
+		\begin{proof}
+			Рассмотрим
+			\[ \int_{1}^{n} f(x) \, dx = b_n , \; n \in \N.  \]
+			По условию $f(x)$ интегрируема и монотонна. Тогда для сходимости 
+			необходимо, чтобы $f(x) \appr{x\to\infty}0$.
+			Последовательность $b_n$ возрастает, т.~к.
+			\[ b_{n+1} = \int\limits_{1}^{n+1} f(x) \, dx  = b_n + 
+			\int\limits_{n}^{n+1} f(x) \, dx > 
+			b_n. \]
+			В силу того, что $f(x) > 0 \ \; \forall x \in \R$,
+			имеем $a_{k+1} \le f(x) \le a_k, \; \forall x \in [k,k+1]$
+			В силу монотонности ОИ получаем
+			\[ a_{k+1} = \int\limits_{k}^{k+1}a_{k+1} \; dx  \le 
+			\int\limits_{k}^{k+1}f(x) \, dx \le 
+			\int\limits_{k}^{k+1}a_{k} \, dx  = a_{k} \implies a_{k+1} \le 
+			\int\limits_{k}^{k+1}f(x) \, dx \le a_k. \]
+			Тогда рассмотрим частную сумму $S_n$:
+			\[ S_n = a_1 + a_2 + \dots + a_n \le a_1 +  \int\limits_{1}^{n}f(x) \, dx  
+			= a_1 + 
+			b_n. \]
+			Если $b_n$ сходится, то т.~к. $b_n$ возрастающая, по критерию сходимости 
+			монотонной последовательности $\exists M : b_n \le M \implies S_n \le a_1 + 
+			M \ \; 
+			\forall n \in \N$, т.~е. $S_n$ сходится по тому же критерию, т.~е. сходится 
+			и ряд \eqref{lec_26, num_1}. С другой стороны,
+			\[ S_n = a_1 + a_2 + \dots + a_n \ge \int\limits_{1}^{n}f(x) \, dx  + a_n = 
+			a_n + b_n. \]
+			Если $b_n$ расходится ($b_n$ возрастает и неограничена), то тогда и $S_n 
+			\ge 
+			b_n + a_n$ неограничена (т.~е. расходится), значит, расходится и 
+			\eqref{lec_26, num_1}.
+		\end{proof}
+	\end{thm}
+
+	\begin{iex} Рассмотрим \emph{обобщенный гармонический ряд}
+		\begin{equation}  \sum_{k = 1}^{\infty} \frac{1}{k^p}. 
+		\label{lec27,harmonic_row_generalized}  \end{equation}
+		
+		В качестве производящей функции возьмем $f(x) = \dfrac{1}{x^p}$.
+		\[ b_n = \int\limits_{1}^{n} \frac{dx}{x^p} = \begin{cases} \frac{x^{-p + 
+		1}}{-p + 
+		1} , \; \;\; p \ne 1  \\  \ln{|x|}, \; \; \; p = 1 \end{cases} =  
+		\begin{cases} \frac{n^{1-p}}{1-p } \underset{n \rightarrow \infty}
+		{\longrightarrow} \frac{1}{1-p} ,& \; \;\; p > 1  \\  \ln{|x|} \underset{n 
+		\rightarrow \infty}
+		{\longrightarrow} \infty ,& \; \; \; p = 1 \\
+		\frac{n^{1-p}}{1-p } \underset{n \rightarrow \infty}
+		{\longrightarrow} \infty ,& \; \;\; p < 1  \\
+		\end{cases} \]
+		Значит, ряд \eqref{lec27,harmonic_row_generalized} 
+		сходится при $p>1$ и расходится при $p \le 1$.
+		\end{iex}
+		
+		Воспользуемся \hyperref[lec26:comp_test_2]{признаком 2\textdegree}, где 
+		возьмем $b_n = \dfrac{1}{n^p}$. Из 
+		\hyperref[lec26:comp_test_2]{признака 2\textdegree} следует, что если 
+		$\dfrac{a_n}{b_n} \underset{n 
+		\rightarrow \infty} {\longrightarrow} l $ и $0 < l < +\infty$, то ряды 
+		либо одновременно сходятся, либо одновременно расходятся.
+		
+		\[\dfrac{a_n}{b_n} \underset{n \rightarrow \infty} {\longrightarrow} l \iff 
+		a_n 
+		\sim l b_n,\ 0 < l < +\infty.\] Если $b_n = \dfrac{1}{n^p}$, то $a_n \sim 
+		\dfrac{l}{n^p}$.
+		
+		Получаем \emph{степенной признак сравнения}:
+		если $a_n \sim \dfrac{l}{n^p}$, то при $p>1$ ряд сходится, при $p \le 1$ ряд 
+		расходится.
+
+	\begin{examples}
+		~
+	\begin{enumerate}[label=\arabic*)]	
+		\item \[ \sum_{k = 1}^{\infty} \frac{k+1}{\sqrt[3]{2k^4 + 1}}  \]
+		Воспользуемся степенным признаком сравнения:
+		\[ a_n = \frac{n+1}{\sqrt[3]{2n^4 + 1}} \sim \frac{n}{\sqrt[3]{2} 
+		\sqrt[3]{n^4}} = \frac{1}{\sqrt[3]{2} \sqrt[3]{n}}. \]
+		
+		$p = \frac{1}{3} < 1$, откуда следует, что ряд расходится. 
+		\item \[ \sum_{k=1}^{\infty} \frac{1}{\sqrt[5]{k+1}}\cdot \sin{\frac{1}{k}}  
+		\]
+		\[  a_n =  \frac{1}{\sqrt[5]{k+1}}\cdot \sin{\frac{1}{k}} \sim 
+		\frac{1}{n^{\frac{1}{5}} } \cdot \frac{1}{n} =  \frac{1}{n^{\frac{6}{5}} }.  
+		\]
+		Ряд сходится, т.~к. $p = \frac{6}{5} > 1$.
+	\end{enumerate}	
+	\end{examples}	
+
+	\subsection{Признак Дюамеля (Дюамеля-Раабе)}
+	
+	Признак Даламбера в случае $\dfrac{a_{n+1}}{a_n} \appr{n\to\infty} 1$ не дает 
+	ответа, сходится ли ряд. В таком случае будем изучать ряд дальше.
+	
+	\begin{thm}[Признак Дюамеля-Раабе]\label{lec27,duamele_raabe}
+		Пусть $\dfrac{a_n}{a_{n+1}} = 1 + \dfrac{\mu}{n} + o\left( 
+		\dfrac{1}{n}\right) 
+		$. Тогда при $\mu > 1$ ряд \eqref{lec_26, num_1} сходится, а при $\mu < 1$ 
+		\--- расходится.
+		\begin{proof}
+			Воспользуемся \hyperref[lec26:comp_test_3]{признаком 3\textdegree}. В нем 
+			\eqref{lec_26, num_1} сравним с 
+			\begin{equation} \label{lec27, 3}
+			\sum_{k = 1}^{\infty} b_k.
+			\end{equation}
+			Если \begin{equation}\label{lec27, 4}
+			\frac{a_{n+1}}{a_n} \le \frac{b_{n+1}}{b_n},
+			\end{equation}
+			то из сходимости \eqref{lec27, 3} следует сходимость \eqref{lec_26, num_1}, 
+			а 
+			из расходимости  \eqref{lec_26, num_1}~--- расходимость \eqref{lec27, 3} . 
+			\eqref{lec27, 4} перепишем в виде
+			\begin{equation} \label{lec27,(5)}
+			\frac{a_n}{a_{n+1}} \ge \frac{b_n}{b_{n+1}}.
+			\end{equation}
+			Пусть $\mu > 1$. Тогда $\exists p :  1 < p < \mu$. Рассмотрим ряд
+			\[  \sum_{k=1}^{\infty} b_k = \sum_{k=1}^{\infty} \frac{1}{k^p},\]
+			для которого
+			\[ \frac{b_n}{b_{n+1}} = \frac{(n+1)^p}{n^p} = \left( 1 + \frac{1}{n} 
+			\right)^p = 1 + \frac{p}{n} + \overline{o}\left( \frac{1}{n} \right).       
+			\]
+			Раз $1 < p < \mu$, то
+			$\dfrac{b_n}{b_{n+1}} \le \dfrac{a_n}{a_{n+1}}$
+			при достаточно больших $n$. Т.~к. $p > 1$, то ряд $\eqref{lec27, 3} = 
+			\sum\limits_{k=1}^{\infty} \frac{1}{k^p}$ сходится. Но тогда по 
+			\hyperref[lec26:comp_test_3]{признаку 3\textdegree} сходится и ряд 
+			\eqref{lec_26, num_1}.
+			
+			Если $\mu < 1$, то $\exists p : 1 > p > \mu$, и для ряда \eqref{lec27, 3}:
+			\[  \frac{a_n}{a_{n+1}} = 1 + \frac{\mu}{n} + \overline{o}\left( 
+			\frac{1}{n} \right) \le  1 + \frac{p}{n} + \overline{o}\left( \frac{1}{n} 
+			\right) = \frac{b_n}{b_{n+1}}                   \]
+			Откуда по \hyperref[lec26:comp_test_3]{признаку 3\textdegree} ряд 
+			\eqref{lec_26, num_1} расходится, т.~к. 
+			\eqref{lec27, 3} расходится.
+		\end{proof}
+	\end{thm}	
+	
+	
+	\begin{example}
+		\[ \sum_{k=1}^{\infty} \frac{(2k-1)!!}{(2k)!!}    \]
+		\[ \frac{a_n}{a_{n+1}} = \frac{ (2n-1)!! \; (2n+2)!!}{ (2n+1)!! \;  (2n)!! } 
+		= \frac{2n+2}{2n+1} = 1 + \frac{1}{2n+1} = 1 + \frac{1}{2n} + \frac{1}{2n+1} 
+		- \frac{1}{2n} = 1 + \frac{1}{2n} + o\left( \frac{1}{n} \right). \]
+		$\mu = \dfrac{1}{2} < 1$, следовательно, ряд $\sum\limits_{k=1}^{\infty} 
+		\dfrac{(2k-1)!!}{(2k)!!}$ расходится.
+	\end{example}	
+\end{document}

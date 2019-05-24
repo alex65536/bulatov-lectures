@@ -51,5 +51,8 @@ sedfix 's/\\vec\s*\{\s*([a-z])([^}]*)\}\s*'\''/\\vec \1\\,'\''\2/g'
 
 sedfix 's/(\\ast|\\star)(\b|[^a-zA-Z*])/*\2/g'
 
+sedfix 's/\\mathbb\{R\}/\\R/g'
+sedfix 's/\\mathbb\{N\}/\\N/g'
+
 # Wrap each line to 80 chars each
 foldfix
