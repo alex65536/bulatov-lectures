@@ -246,8 +246,8 @@ p_0 = \underset{\substack{
 \begin{equation}
 \label{rep-lim}
 	\left\{\begin{aligned}
-		A = \displaystyle\lim_{x \to x_0}{(\lim_{y \to y_0}{f(x, y)})}, \\
-		B = \displaystyle\lim_{y \to y_0}{(\lim_{x \to x_0}{f(x, y)})}, 
+		A = \displaystyle\lim_{x \to x_0}{\left(\lim_{y \to y_0}{f(x, y)}\right)}, \\
+		B = \displaystyle\lim_{y \to y_0}{\left(\lim_{x \to x_0}{f(x, y)}\right)}, 
 	\end{aligned}\right.
 \end{equation}
 
@@ -274,7 +274,7 @@ $\exists$ двойной предел \eqref{double-lim} и $\exists$ повто
 		(x, y) \ne (0, 0)
 	\end{aligned}\right.\]
 	В данном случае $\exists A = \displaystyle\lim_{x \to 0}
-	{(\lim_{y \to 0}{ \dfrac{x^2 + y^2}{|x| + |y|} })} =
+	{\left(\lim_{y \to 0}{ \dfrac{x^2 + y^2}{|x| + |y|} }\right)} =
 	\displaystyle \lim_{x \to 0}{\dfrac{x^2}{|x|}} =
 	\displaystyle \lim_{x \to 0}{|x|} = 0$. В силу симметрии
 	$\exists B = \displaystyle\lim_{y \to 0}
@@ -296,8 +296,8 @@ $\exists$ двойной предел \eqref{double-lim} и $\exists$ повто
 	\end{aligned}\right.\]
 	В данном случае в точке $M_0(0, 0)$, являющейся предельной для
 	$D = \R^2 \backslash M_0$, имеем
-	\[|f(x, y) \leq |x| \cdot |\cos{\dfrac{1}{y}}| + |y| \cdot 
-	|\cos{\dfrac{1}{x}}| \leq (|x| + |y|) 
+	\[|f(x, y) \leq |x| \cdot \left|\cos{\dfrac{1}{y}} \right| + |y| \cdot 
+	\left|\cos{\dfrac{1}{x}} \right| \leq (|x| + |y|) 
 	\underset{\substack{x \to 0 \\ y \to 0}}{\longrightarrow}0 \implies
 	f(x, y) \underset{\substack{x \to 0 \\ y \to 0}}{\longrightarrow}0,\] т.~е. 
 	$\exists$ двойной предел, но в то же время 
@@ -310,10 +310,10 @@ $\exists$ двойной предел \eqref{double-lim} и $\exists$ повто
 	
 	\item[3)] Для $f(x, y) = \dfrac{x^2 y}{x^4 + y^2}, (x, y) \ne (0, 0)$
 	имеем \[\exists A = \displaystyle \lim_{x \to 0}
-	{(\lim_{y \to 0}{( \dfrac{x^2 y}{x^4 + y^2} )})} =
+	{\left(\lim_{y \to 0}{\left( \dfrac{x^2 y}{x^4 + y^2} \right)}\right)} =
 	\lim_{x \to 0}{\left(\dfrac{0}{x^4}\right)} = 0\]
 	\[\exists B = \displaystyle \lim_{y \to 0}
-	{(\lim_{x \to 0}{( \dfrac{x^2 y}{x^4 + y^2} )})} =
+	{\left(\lim_{x \to 0}{\left( \dfrac{x^2 y}{x^4 + y^2} \right)}\right)} =
 	\lim_{y \to 0}{\left(\dfrac{0}{y^2}\right)} = 0\]
 	
 	В данном случае, несмотря на то, что $\exists A = B = 0$, но
@@ -386,8 +386,8 @@ $\exists$ двойной предел \eqref{double-lim} и $\exists$ повто
 	Чтобы получить предполагаемое значение $p_0$, рассмотрим один
 	из повторных пределов: 
 	\[A = \displaystyle \lim_{x \to +0}
-	{(\lim_{y \to +0}{(\lim_{z \to +0}{(x + y + z)^{xyz}})})} =
-	\lim_{x \to +0}{(\lim_{y \to +0}{(x + y)^0})} = \lim_{x \to +0}{1} = 1\]
+	{\left(\lim_{y \to +0}{\left(\lim_{z \to +0}{(x + y + z)^{xyz}}\right)}\right)} =
+	\lim_{x \to +0}{\left(\lim_{y \to +0}{(x + y)^0}\right)} = \lim_{x \to +0}{1} = 1\]
 	
 	Поэтому, \underline{если} $\exists p_0$, то $p_0 = A = 1$.
 	Пользуясь пределом сжатой ФНП, докажем, что действительно $p_0 = 1$.
@@ -400,19 +400,21 @@ $\exists$ двойной предел \eqref{double-lim} и $\exists$ повто
 	Во-вторых, используя неравенство между средним арифметическим
 	и средним геометрическим трёх положительных чисел, получаем
 	$\dfrac{x + y + z}{3} \geq \sqrt[3]{xyz}$, поэтому
-	\[ {(3\sqrt[3]{xyz})}^{xyz} \leq {(x + y + z)}^{xyz} \leq 1. \]
+	\[ {\left(3\sqrt[3]{xyz}\right)}^{xyz} \leq {(x + y + z)}^{xyz} \leq 1. \]
 	
 	Cейчас достаточно показать, что ${(3\sqrt[3]{xyz})}^{xyz}
 	\underset{\substack{x \to +0 \\ y \to +0 \\ z \to +0}}{\longrightarrow} 1$.
 	Полагая $t = xyz \to +0$, получаем, что 
 	\[ {(3\sqrt[3]{xyz})}^{xyz} = {(27t)}^{t/3} = e^{\frac{t}{3}\ln{27t}}
 	= e^{\frac{\ln{(27t)}}{3t^{-1}}}. \]
-	Отсюда, учитывая, что $\lim_{t \to +0}{\dfrac{\ln{(27t)}}{3t^{-1}}}
+	Отсюда, учитывая, что 
+	\[ \lim_{t \to +0}{\dfrac{\ln{(27t)}}{3t^{-1}}}
 	\overset{\lopital}{=} \lim_{t \to +0}{\dfrac{1/t}{ (-3/t^2) }} =
-	-\dfrac{1}{3} \displaystyle \lim_{t \to +0}{t} = 0$, имеем 
-		${\left(\lim_{\substack{x \to +0 \\ y \to +0 \\ z \to +0}}
+	-\dfrac{1}{3} \displaystyle \lim_{t \to +0}{t} = 0\]
+	 имеем 
+		\[{\left(\lim_{\substack{x \to +0 \\ y \to +0 \\ z \to +0}}
 			{3\sqrt[3]{xyz}}
-		\right)}^{xyz} = e^0 = 1$.
+		\right)}^{xyz} = e^0 = 1\]
 \end{itemize}
 \end{exmps}
 
