@@ -139,7 +139,7 @@
 		расходится, значит, абсолютной сходимости нет.
 		
 		Однако $\cfrac{1}{k}\downarrow0$, 
-		т.~е. выполнены все условия \href{29:leibnitz}{признака Лейбница}. Значит, 
+		т.~е. выполнены все условия \hyperref[29:leibnitz]{признака Лейбница}. Значит, 
 		ряд сходится.
 		
 		Этот ряд называют \emph{рядом Лейбница}.
@@ -270,10 +270,11 @@
 		\[\left|\sum_{k = 1}^n \sin k\alpha\right|\leq 
 		\frac{1}{\left|\sin\frac{\alpha}{2}\right|} = M\quad \forall n.\]
 		
-		Следовательно, по \href{29:dirichle}{признаку Дирихле}, ряд сходится.
+		Следовательно, по \hyperref[29:dirichle]{признаку Дирихле}, ряд сходится.
 	\end{example}
 
 	\begin{thm}[Признак Абеля]
+		\label{29:abel}
 		Пусть
 		\begin{enumerate}
 			\item Последовательность $(a_n)$ монотонна и ограничена;
@@ -299,7 +300,7 @@
 		\forall n\]. 
 		Также $c_k = a - a_k \downarrow 0$ и для 
 		\[\sum_{k = 1}^\infty c_kb_k\]
-		выполнены условия признака Дирихле \ref{29:dirichle}. 
+		выполнены условия \hyperref[29:dirichle]{признака Дирихле}. 
 		Значит, ряд сходится.
 		
 		Тогда в \eqref{29:9} переходя к пределу при $n\to\infty$ 
@@ -317,8 +318,8 @@
 		\[\frac{1}{\ln n}\downarrow\quad \left|\sum_{k = 2}^n \sin k\right|
 		\leq \frac{1}{\sin\frac{1}{2}}\ \forall n.\]
 		Значит, ряд $\sum\limits_{k = 2}^\infty b_k$ сходится по 
-		\href{29:dirichle}{признаку Дирихле}, а отсюда получаем, 
-		что и исходный ряд сходится по \href{29:abel}{признаку Абеля}.
+		\hyperref[29:dirichle]{признаку Дирихле}, а отсюда получаем, 
+		что и исходный ряд сходится по \hyperref[29:abel]{признаку Абеля}.
 	\end{example}
 
 	\subsection{Абсолютная и условная сходимость}
@@ -351,13 +352,13 @@
 		\end{equation}
 	\end{thm}
 	\begin{proof}
-		\encircle{$\implies$} Пусть ряд $\sum\limits_{k = 1}^\infty |a_k|$ 
+		\nec Пусть ряд $\sum\limits_{k = 1}^\infty |a_k|$ 
 		сходится. 
 		Но $b_k\leq |a_k|$, $c_k\leq |a_k|$, $\forall k$. 
 		Тогда, по \hyperref[lec26:comp_test_1]{признаку 1\textdegree}, 
 		сходятся ряды \eqref{29:10}.
 		
-		\encircle{$\Leftarrow$} Пусть оба ряда \eqref{29:10}. 
+		\suff Пусть оба ряда \eqref{29:10}. 
 		Тогда
 		\[\sum_{k = 1}^\infty |a_k|\leq \sum_{k = 1}^\infty |b_k| + 
 		\sum_{k = 1}^\infty|c_k| = \sum_{k = 1}^\infty b_k + 
@@ -382,7 +383,7 @@
 		\[\sum_{k = 1}^n a_k = \sum_{k = 1}^n b_k - \sum_{k = 1}^n c_k.\]
 		
 		Пусть $n\to\infty$. Если оба ряда \eqref{29:10} сходятся, 
-		то, по \href{29:absolute_conv}{критерию абсолютной сходимости}, 
+		то, по \hyperref[29:absolute_conv]{критерию абсолютной сходимости}, 
 		получаем, что \eqref{29:1} сходится абсолютно, что противоречит 
 		условной сходимости \eqref{29:1}.
 		
