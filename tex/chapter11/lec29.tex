@@ -23,7 +23,8 @@
 		\label{29:2}
 	\end{equation}
 	\begin{definition}
-		Если \eqref{29:2} сходится, то говорят, что ряд \eqref{29:1} \emph{сходится абсолютно}.
+		Если \eqref{29:2} сходится, то говорят, что ряд \eqref{29:1} \emph{сходится 
+		абсолютно}.
 	\end{definition}
 	
 	\begin{thm}\label{lec29:converge}
@@ -35,7 +36,8 @@
 		m \geq \nu_\varepsilon \implies \sum_{k = m + 1}^n |a_k|\leq\varepsilon.\]
 		
 		Но тогда
-		\[\forall \varepsilon > 0\ \exists\nu = \nu_\varepsilon\ \colon\ \forall n > m 
+		\[\forall \varepsilon > 0\ \exists\nu = \nu_\varepsilon\ \colon\ \forall n > 
+		m 
 		\geq \nu_\varepsilon \implies \left|\sum_{k = m + 1}^n a_k\right|
 		\leq\sum_{k = m + 1}^n |a_k|\leq\varepsilon.\]
 		Значит, по критерию Коши, ряд \eqref{29:1} сходится.
@@ -50,9 +52,11 @@
 		\[\sum_{n = 1}^\infty \frac{\sin n}{n\sqrt{n + 1}}.\]
 		
 		Исследуем на абсолютную сходимость. Имеем:
-		\[\left|\frac{\sin n}{n\sqrt{n + 1}}\right|\leq\frac{1}{n\sqrt{n + 1}}\leq\frac{1}{n^{3/2}}.\]
+		\[\left|\frac{\sin n}{n\sqrt{n + 1}}\right|\leq\frac{1}{n\sqrt{n + 
+		1}}\leq\frac{1}{n^{3/2}}.\]
 		
-		Последний ряд сходится, так как является обобщённым гармоническим рядом с показателем, большим единицы. 
+		Последний ряд сходится, так как является обобщённым гармоническим рядом с 
+		показателем, большим единицы. 
 		А значит, по \hyperref[lec26:comp_test_1]{признаку 1\textdegree}, 
 		данный ряд сходится абсолютно, а также, 
 		по доказанной выше теореме \ref{lec29:converge}, он сходится.
@@ -74,12 +78,14 @@
 		\begin{gather*}
 			s_{2n} = (a_1 - a_2) + (a_3 - a_4) + \ldots + (a_{2n - 3} - a_{2n - 2}) + 
 			\underbrace{(a_{2n - 1} - a_{2n})}_{> 0} >\\
-			> (a_1 - a_2) + (a_3 - a_4) + \ldots + (a_{2n - 3} - a_{2n - 2}) = s_{2n - 2}.
+			> (a_1 - a_2) + (a_3 - a_4) + \ldots + (a_{2n - 3} - a_{2n - 2}) = s_{2n - 
+			2}.
 		\end{gather*}
 		Получаем, что $s_{2n}\uparrow$.
 		
 		Вместе с тем,
-		\[s_{2n} = a_1 - (a_{2} - a_3) - \ldots - (a_{2n - 2} - a_{2n - 1}) - a_{2n} < a_1,\]
+		\[s_{2n} = a_1 - (a_{2} - a_3) - \ldots - (a_{2n - 2} - a_{2n - 1}) - a_{2n} 
+		< a_1,\]
 		где скобки положительны ввиду монотонности $(a_n)$.
 		
 		Таким образом, $s_{2n}\uparrow$ и $s_{2n} < a_1\implies $
@@ -95,20 +101,24 @@
 			\label{29:5}
 		\end{equation}
 		
-		Из \eqref{29:4}, \eqref{29:5} получаем, что $s_n\to s$ при $n\to\infty$, т.~е. ряд 
+		Из \eqref{29:4}, \eqref{29:5} получаем, что $s_n\to s$ при $n\to\infty$, 
+		т.~е. ряд 
 		\eqref{29:3} сходится.
 	\end{proof}
 
-	В дополнение можно сформулировать следующее утверждение: если выполнены все условия 
+	В дополнение можно сформулировать следующее утверждение: если выполнены все 
+	условия 
 	теоремы, то
 	\begin{equation}
 		\left|s_n - s\right|\leq a_{n + 1}
 		\label{29:6}
 	\end{equation}
 	\begin{proof}
-		Действительно, по ходу доказательства теоремы мы показали, что $s_{2n}\uparrow s$. 
+		Действительно, по ходу доказательства теоремы мы показали, что 
+		$s_{2n}\uparrow s$. 
 		Покажем, что $s_{2n + 1}\downarrow s$:
-		\[s_{2n + 1} = a_1 - (a_2 - a_3) - \ldots - (a_{2n} - a_{2n + 1}) < s_{2n - 1}.\]
+		\[s_{2n + 1} = a_1 - (a_2 - a_3) - \ldots - (a_{2n} - a_{2n + 1}) < s_{2n - 
+		1}.\]
 		
 		Тогда для $s_{2n}$ получаем
 		\[s - s_{2n} \leq s_{2n + 1} - s_{2n} = a_{2n + 1}
@@ -129,13 +139,15 @@
 		расходится, значит, абсолютной сходимости нет.
 		
 		Однако $\cfrac{1}{k}\downarrow0$, 
-		т.~е. выполнены все условия \href{29:leibnitz}{признака Лейбница}. Значит, ряд сходится.
+		т.~е. выполнены все условия \href{29:leibnitz}{признака Лейбница}. Значит, 
+		ряд сходится.
 		
 		Этот ряд называют \emph{рядом Лейбница}.
 	\end{example}
 
 \begin{definition}
-	Если \eqref{29:1} сходится, а \eqref{29:2} расходится, то говорят, то \eqref{29:1} сходится \emph{условно}.
+	Если \eqref{29:1} сходится, а \eqref{29:2} расходится, то говорят, то 
+	\eqref{29:1} сходится \emph{условно}.
 \end{definition}
 	
 	\subsection{Признаки Дирихле и Абеля}
@@ -205,7 +217,7 @@
 		Если
 		\begin{enumerate}
 			\item $a_k\downarrow 0$, $k\to\infty$;
-			\item $\exists M\colon |B_k|\leqslant M\iff 
+			\item $\exists M\colon |B_k|\leq M\iff 
 			\left|\sum\limits_{i = 1}^k b_i\right|\leq M$ $\forall k$,
 		\end{enumerate}
 		то \eqref{29:8} сходится.
@@ -213,10 +225,11 @@
 	\begin{proof}
 		Воспользуемся определением сходимости $a_n$ к нулю. 
 		Выберем произвольное $\varepsilon > 0$. Так как $a_k \downarrow 0$, то 
-		$\exists \nu = \nu_\varepsilon\colon \forall n\geq \nu_\varepsilon\implies a_n\leq 
+		$\exists \nu = \nu_\varepsilon\colon \forall n\geq \nu_\varepsilon\implies 
+		a_n\leq 
 		\varepsilon$.
 		
-		Зафиксируем произвольные $n > m\geqslant \nu_\varepsilon$. Имеем
+		Зафиксируем произвольные $n > m\geq \nu_\varepsilon$. Имеем
 		\[\left|\sum_{k = m + 1}^n b_k\right|\leq 
 		\left|\sum_{k = 1}^n b_k\right| + \left|\sum_{k = 1}^m b_k\right|
 		\leq 2M.\]
@@ -224,7 +237,7 @@
 		Тогда
 		\[\left|\sum_{k = m + 1}^n a_kb_k\right|\leq
 		[\text{используем \eqref{29:lemma_abel}}]\leq
-		 2M(|a_{m + 1} + 2|a_n||)\leqslant 6M\varepsilon.\]
+		 2M(|a_{m + 1} + 2|a_n||)\leq 6M\varepsilon.\]
 			
 		Значит, \eqref{29:8} сходится по критерию Коши.
 	\end{proof}
@@ -273,7 +286,7 @@
 		Так как $(a_n)$ монотонна и ограничена, то $\exists a = 
 		\lim\limits_{n\to\infty} a_n\in \R$.
 		
-		Обозначим $c_k = a - a_k$, т.е. $a_k = a - c_k$. 
+		Обозначим $c_k = a - a_k$, т.~е. $a_k = a - c_k$. 
 		Тогда для частной суммы \eqref{29:8} имеем
 		\begin{equation}
 			\sum_{k = 1}^n a_kb_k = \sum_{k = 1}^n ab_k - \sum_{k = 1}^n c_kb_k
@@ -318,11 +331,11 @@
 	где
 	\[b_k = \begin{cases}
 		a_k,\ a_{k} > 0\\
-		0,\ a_{k}\leqslant0
+		0,\ a_{k}\leq0
 	\end{cases},\]
 	\[c_k = \begin{cases}
 		0,\ a_{k} > 0\\
-		-a_k,\ a_{k}\leqslant 0
+		-a_k,\ a_{k}\leq 0
 	\end{cases}.\]
 	
 	Ясно, что $a_k = b_k - c_k$ $\forall k$.
@@ -338,7 +351,7 @@
 		\end{equation}
 	\end{thm}
 	\begin{proof}
-		\encircle{$\Rightarrow$} Пусть ряд $\sum\limits_{k = 1}^\infty |a_k|$ 
+		\encircle{$\implies$} Пусть ряд $\sum\limits_{k = 1}^\infty |a_k|$ 
 		сходится. 
 		Но $b_k\leq |a_k|$, $c_k\leq |a_k|$, $\forall k$. 
 		Тогда, по \hyperref[lec26:comp_test_1]{признаку 1\textdegree}, 
@@ -346,7 +359,7 @@
 		
 		\encircle{$\Leftarrow$} Пусть оба ряда \eqref{29:10}. 
 		Тогда
-		\[\sum_{k = 1}^\infty |a_k|\leqslant \sum_{k = 1}^\infty |b_k| + 
+		\[\sum_{k = 1}^\infty |a_k|\leq \sum_{k = 1}^\infty |b_k| + 
 		\sum_{k = 1}^\infty|c_k| = \sum_{k = 1}^\infty b_k + 
 		\sum_{k = 1}^\infty c_k.\]
 		
@@ -359,7 +372,8 @@
 		то при $n\to\infty$ получаем \eqref{29:11}.
 	\end{proof}
 
-	\begin{thm}[Необходимое условие условной сходимости]\label{29:conditional_conv}
+	\begin{thm}[Необходимое условие условной 
+	сходимости]\label{29:conditional_conv}
 		Если ряд \eqref{29:1} сходится условно, 
 		то оба ряда \eqref{29:10} имеют бесконечные суммы.
 	\end{thm}
