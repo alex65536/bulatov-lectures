@@ -114,6 +114,10 @@ Use equation and \eqref{}.'
 	check -- "$1" \
 	      '\\ast(\b|[^a-zA-Z*])|\\star(\b|[^a-zA-Z*])' \
 	      'Just use *'
+	      
+	check -- "$1" \
+	      '\\epsilon|\\varepsilon' \
+	      'Use \eps'
 }
 
 export -f error
