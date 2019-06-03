@@ -32,14 +32,14 @@
 	\end{thm}
 	\begin{proof}
 		Пусть \eqref{29:2} сходится. Тогда, по критерию Коши сходимости рядов, имеем
-		\[\forall \varepsilon > 0\ \exists\nu = \nu_\varepsilon\ \colon\ \forall n > 
-		m \geq \nu_\varepsilon \implies \sum_{k = m + 1}^n |a_k|\leq\varepsilon.\]
+		\[\forall \eps > 0\ \exists\nu = \nu_\eps\ \colon\ \forall n > 
+		m \geq \nu_\eps \implies \sum_{k = m + 1}^n |a_k|\leq\eps.\]
 		
 		Но тогда
-		\[\forall \varepsilon > 0\ \exists\nu = \nu_\varepsilon\ \colon\ \forall n > 
+		\[\forall \eps > 0\ \exists\nu = \nu_\eps\ \colon\ \forall n > 
 		m 
-		\geq \nu_\varepsilon \implies \left|\sum_{k = m + 1}^n a_k\right|
-		\leq\sum_{k = m + 1}^n |a_k|\leq\varepsilon.\]
+		\geq \nu_\eps \implies \left|\sum_{k = m + 1}^n a_k\right|
+		\leq\sum_{k = m + 1}^n |a_k|\leq\eps.\]
 		Значит, по критерию Коши, ряд \eqref{29:1} сходится.
 	\end{proof}
 
@@ -225,12 +225,12 @@
 	\end{thm}
 	\begin{proof}
 		Воспользуемся определением сходимости $a_n$ к нулю. 
-		Выберем произвольное $\varepsilon > 0$. Так как $a_k \downarrow 0$, то 
-		$\exists \nu = \nu_\varepsilon\colon \forall n\geq \nu_\varepsilon\implies 
+		Выберем произвольное $\eps > 0$. Так как $a_k \downarrow 0$, то 
+		$\exists \nu = \nu_\eps\colon \forall n\geq \nu_\eps\implies 
 		a_n\leq 
-		\varepsilon$.
+		\eps$.
 		
-		Зафиксируем произвольные $n > m\geq \nu_\varepsilon$. Имеем
+		Зафиксируем произвольные $n > m\geq \nu_\eps$. Имеем
 		\[\left|\sum_{k = m + 1}^n b_k\right|\leq 
 		\left|\sum_{k = 1}^n b_k\right| + \left|\sum_{k = 1}^m b_k\right|
 		\leq 2M.\]
@@ -238,7 +238,7 @@
 		Тогда
 		\[\left|\sum_{k = m + 1}^n a_kb_k\right|\leq
 		[\text{используем \eqref{29:lemma_abel}}]\leq
-		 2M(|a_{m + 1} + 2|a_n||)\leq 6M\varepsilon.\]
+		 2M(|a_{m + 1} + 2|a_n||)\leq 6M\eps.\]
 			
 		Значит, \eqref{29:8} сходится по критерию Коши.
 	\end{proof}
