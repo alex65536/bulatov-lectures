@@ -1,0 +1,228 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+\subsection{Признак Гаусса}
+
+\begin{thm}[признак Гаусса]
+Пусть \[\dfrac{a_n}{a_{n+1}} = \lambda + \dfrac{\mu}{n} +
+\dfrac{\theta_n}{n^{1 + \eps}},\]
+где $\theta_n$ ограничена и $\eps > 0$.
+
+Тогда:
+\begin{itemize}
+	 \item если $\lambda > 1$, то ряд сходится;
+	 \item если $\lambda < 1$, то ряд расходится;
+	 \item если $\lambda = 1$, то
+	 $\begin{cases}
+	 	\mu > 1 \implies \text{ряд сходится;}\\
+	 	\mu \leq 1 \implies \text{ряд расходится.} 
+	 \end{cases}$
+\end{itemize}
+\end{thm}
+
+\begin{example} Исследовать на сходимость
+
+\[\sum\limits_{k = 1}^{\infty}\left(\dfrac{(2k - 1)!!}{(2k)!!} \right)^p
+\dfrac{1}{k^q}.\]
+
+\begin{gather*}
+\dfrac{a_{n}}{a_{n + 1}} = \left(\dfrac{(2n - 1)!!}{(2n)!!}\right)^p \cdot
+\dfrac{1}{n^q} \cdot\left( \dfrac{(2n + 2)!!}{(2n + 1)!!}\right)^p \cdot
+(n + 1)^q = \left(\dfrac{2n + 2}{2n + 1}\right)^p \cdot
+\left(\dfrac{n+1}{n}\right)^q = 
+\\
+= \left(1 + \dfrac{1}{1 + 2n}\right)^p \cdot
+\left(1 + \dfrac{1}{n}\right)^q
+= \left(1 + \dfrac{q}{n} + O\left(\dfrac{1}{n^2}\right)\right) \cdot
+\left(1 + \dfrac{p}{2n + 1} + O\left(\dfrac{1}{n^2}\right)\right) =
+\\
+=
+\left(1 + \dfrac{q}{n} + O\left(\dfrac{1}{n^2}\right)\right) \cdot
+\left(1 + \dfrac{p}{2n} \cdot \dfrac{1}{1 + \frac{1}{2n}}
++ O\left(\dfrac{1}{n^2}\right)\right) =
+\\
+= \left(1 + \dfrac{q}{n} + O\left(\dfrac{1}{n^2}\right)\right) \cdot \left(1 +
+\dfrac{p}{2n} \cdot \left(1 - \dfrac{1}{2n} + O\left(\dfrac{1}{n^2}
+\right)\right) + O\left(\dfrac{1}{n^2}\right) \right) =
+\\
+= \left(1 + \dfrac{q}{n} + O\left(\dfrac{1}{n^2}\right)\right) \cdot \left(1 +
+\dfrac{p}{2n} + O\left(\dfrac{1}{n^2}\right)\right) = 1 + \left(\dfrac{p}{2} +
+q \right) \cdot \dfrac{1}{n} + O\left(\dfrac{1}{n^2}\right).
+\end{gather*}
+
+Т.~е. ряд сходится при $\dfrac{p}{2} + q > 1$ и
+расходится при $\dfrac{p}{2} + q \leq 1$.
+\end{example}
+
+\subsection{Формула Валлиса}
+
+\begin{thm}[формула Валлиса]
+\[\boxed{
+\lim\limits_{m \to \infty} \left( \dfrac{(2m)!!} {(2m-1)!!}  \right)^2
+\cdot \dfrac{1}{2m+1} = \dfrac{\pi}{2}.
+}\]
+\end{thm}
+\begin{proof}
+Рассмотрим интеграл
+\[
+\mathrm{I}_n = \int\limits_0^{\frac{\pi}{2}} \cos^n x \;dx.\]
+При $n = 0$ и $n = 1$ имеем
+\[\mathrm{I}_0 = \dfrac{\pi}{2}, \quad \mathrm{I}_{1} = 1.
+\]
+Вычислим $\mathrm{I}_n$:
+\begin{gather*}
+\mathrm{I}_n =  \int\limits_0^{\frac{\pi}{2}} \cos^{n - 1} x \cdot \cos x\;dx =
+\left[\begin{array}{l}
+u = \cos^{n-1}x\\
+du = (n - 1) \cos^{n-2}x \sin x\;dx\\
+v = \sin x \\
+dv = \cos x\;dx\\
+\end{array}\right]
+= \sin x \cos^{n-1} x \Big|_0^{\frac{\pi}{2}} + 
+\\
++ (n - 1) \cdot \int\limits_{0}^{\frac{\pi}{2}} \cos^{n-2}x \sin^2 x\; dx
+= (n - 1) \int\limits_{0}^{\frac{\pi}{2}} \cos^{n-2}x \cdot (1 - \cos^{2}x)dx 
+= \\
+= (n-1)\mathrm{I}_{n-2} - (n-1)\mathrm{I}_{n} \implies 
+\mathrm{I}_n = \dfrac{(n-1)}{n}\cdot\mathrm{I}_{n-2}.
+\end{gather*}
+
+Т.~е. \[\mathrm{I}_n = \dfrac{(n-1)}{n}\cdot\mathrm{I}_{n-2}, \quad n > 1.\]
+
+При $n = 2m$ получаем:
+\[
+\mathrm{I}_{2m} = \dfrac{2m - 1}{2m} \cdot \mathrm{I}_{2m-2} = \dfrac{2m-1}{2m}
+\cdot \dfrac{2m - 3}{2m-2} \cdot \mathrm{I}_{2m- 4} = \ldots =
+\dfrac{(2m - 1)!!}{(2m)!!} \cdot \dfrac{\pi}{2}.
+\]
+\[\mathrm{I}_{2m} = \dfrac{(2m - 1)!!}{(2m)!!} \cdot \dfrac{\pi}{2}.\]
+
+При $n = 2m+1$:
+\[
+\mathrm{I}_{2m + 1} = \dfrac{2m}{2m + 1} \cdot \mathrm{I}_{2m-1} = \ldots =
+\dfrac{(2m)!!}{(2m + 1)!!} \cdot \mathrm{I}_{1} = \dfrac{(2m)!!}{(2m + 1)!!}.
+\]
+
+\[\mathrm{I}_{2m + 1} = \dfrac{(2m)!!}{(2m + 1)!!}.\]
+
+Учитывая, что $
+\mathrm{I}_{2m+2}\le \mathrm{I}_{2m+1}\le \mathrm{I}_{2m}
+$, имеем
+\[
+\dfrac{(2m+1)!!}{(2m+2)!!} \cdot \dfrac{\pi}{2} \le \dfrac{(2m)!!}{(2m+1)!!} 
+\le \dfrac{\pi}{2} \cdot \dfrac{(2m-1)!!}{(2m)!!}.
+\]
+Умножив последнее неравенство на $\dfrac{(2m)!!}{(2m-1)!!}$, получим:
+\[
+\dfrac{2m+1}{2m+2} \cdot \dfrac{\pi}{2} \le \left( \dfrac{(2m)!!}
+{(2m-1)!!}  \right)^2 \cdot \dfrac{1}{2m+1} \le \dfrac{\pi}{2}.
+\]
+Используя теорему о сжатой последовательности, получаем, что
+\[
+\lim\limits_{m \to \infty} \left( \dfrac{(2m)!!} {(2m-1)!!}  \right)^2
+\cdot \dfrac{1}{2m+1} = \dfrac{\pi}{2}. \qedhere
+\]
+\end{proof}
+
+\subsection{Формула Стирлинга}
+\begin{thm}[формула Стирлинга]
+\[
+n! \sim \dfrac{n^n}{e^n}\cdot\sqrt{2\pi n}.
+\]
+\end{thm}
+
+\begin{proof}
+Рассмотрим последовательность
+\[\sigma_n = \dfrac{n! \cdot e^n}{n^n \cdot \sqrt{n}}.\]
+Обозначим $ S_n = \ln{\sigma_n}$, $U_k = S_k - S_{k-1}$ и рассмотрим ряд
+\begin{equation}
+\label{stirling} S_1 + \sum\limits_{k=2}^\infty U_k.
+\end{equation}
+Заметим, что частные суммы ряда:
+\[ 
+S_1 + U_2 + U_3 + \ldots + U_n = S_1 + \left(S_2 - S_1\right) + 
+\left(S_3 - S_2\right) + \ldots + \left(S_n - S_{n - 1}\right) = S_n.
+\]
+Исследуем ряд \eqref{stirling} на сходимость:
+\begin{gather*}
+U_n = S_n - S_{n - 1} = \ln\sigma_n - \ln\sigma_{n - 1} = 
+\ln\dfrac{\sigma_n}{\sigma_{n - 1}} = \ln\left(\dfrac{n! \cdot 
+e^n}{n^n\sqrt{n}}
+\cdot \dfrac{(n - 1)^{n - 1}\sqrt{n - 1}}{(n - 1)! \cdot e^{n -1}}\right) =
+\\
+= \ln\left(\dfrac{(n - 1)^{n - 1}}{n^{n - 1}} \cdot \dfrac{\sqrt{n - 
+1}}{\sqrt{n}}
+\cdot e\right) = \ln \left(e\cdot \left(1 - \dfrac{1}{n} \right)^{n - 
+\frac{1}{2}}\right) = 
+1 + \left(n - \dfrac{1}{2} \right) \cdot\ln \left( 1 - \dfrac{1}{n} \right) =
+\\
+= 1 + \left( n - \dfrac{1}{2} \right)\cdot\left(-\dfrac{1}{n} - \dfrac{1}{2n^2}
+- \dfrac{1}{3n^3} + O\left(\dfrac{1}{n^4} \right) \right) = 
+1 - 1 - \dfrac{1}{2n} - \dfrac{1}{3n^2} + \dfrac{1}{2n} + \dfrac{1}{4n^2}
++ O\left( \dfrac{1}{n^3} \right) = 
+\\
+= -\dfrac{1}{12n^2} + O\left( \dfrac{1}{n^3}\right).
+\end{gather*}
+Т.~е. $U_n \sim -\frac{1}{12n^2}$, откуда получаем, что ряд \eqref{stirling} 
+сходится.
+Из сходимости ряда \eqref{stirling} следует сходимость
+последовательности его частичных сумм. Т.~е. $ \exists 
+S = \lim\limits_{n\to\infty} S_n \in \R$.
+
+Из формулы Валлиса:
+\[
+\dfrac{\pi}{2} = \lim\limits_{m \to \infty} \left( \dfrac{(2m)!!}{(2m - 1)!!}
+\right)^2\cdot \dfrac{1}{2m + 1} = \dfrac{((2m)!!)^4}{((2m)!)^2} \cdot
+\dfrac{1}{2m + 1} = \lim\limits_{n \to \infty} 
+\underbrace{\dfrac{2^{4m}\cdot(m!)^4}{((2m)!)^2} 
+\cdot \dfrac{1}{2m + 1}}_{\alpha_m^2}.
+\]
+\[
+\alpha_m = \dfrac{2^{2m}(m!)^2}{(2m)!\sqrt{2m + 1}} \appr{m\to\infty} 
+\sqrt{\dfrac{\pi}{2}}.
+\]
+Т.~к. $ S_m \appr{m\to\infty} S $, то $ \lim\limits_{n \to \infty} \sigma_n = 
+e^s$, откуда 
+$\dfrac{\sigma_n^2}{\sigma_{2n}} \appr{m\to\infty}  \dfrac{e^{2s}}{e^s} = e^s 
+$.
+
+Рассмотрим выражение $\dfrac{\sigma_n^2}{\sigma_{2n}}$:
+\begin{gather*}
+\dfrac{\sigma_n^2}{\sigma_{2n}} = 
+\dfrac{(n!)^2\cdot e^{2n}\cdot (2n)^{2n}\sqrt{2n}}{n^{2n}\cdot n\cdot 
+(2n)!\cdot e^{2n}} =
+\dfrac{(n!)^2\cdot2^{2n}\sqrt{2n}}{n\cdot(2n)!} =
+\dfrac{2^{2n}(n!)^2}{(2n)!\sqrt{2n + 1}} \cdot 
+\dfrac{\sqrt{2n+1}\cdot\sqrt{2}}{\sqrt{n}} = 
+\\ =
+\dfrac{\alpha_n\cdot\sqrt{2n + 1}\cdot\sqrt{2}}{\sqrt{n}} \appr{n\to\infty}
+2\sqrt{\dfrac{\pi}{2}} = \sqrt{2\pi} \implies
+\left[\lim\limits_{n \to \infty} \sigma_n = \lim\limits_{n\to\infty} 
+\dfrac{\sigma_n^2}{\sigma_{2n}} = e^s\right] \implies \\ \implies
+\lim\limits_{n\to\infty} \sigma_n = \lim\limits_{n\to\infty} \dfrac{n!\cdot 
+e^n}{n^n \sqrt{n}} = \sqrt{2\pi}.
+\end{gather*}
+Отсюда получаем, что
+\[
+n! \sim \dfrac{n^n}{e^n}\sqrt{2\pi n}. \qedhere
+\]
+\end{proof}
+\begin{example}
+Исследовать на сходимость
+\[\sum\limits_{n=1}^\infty\dfrac{(n!)^2}{(2n)!}\cdot4^n.\]
+
+$a_n = \dfrac{(n!)^2}{(2n)!}\cdot4^n \sim \dfrac{n^{2n}}{e^{2n}} 
+\cdot 2\pi n \cdot \dfrac{e^{2n}}{(2n)^{2n}} \cdot \dfrac1{2 \sqrt{\pi n}}
+\cdot 4^n = \sqrt{\pi n} \underset{n\to\infty}{\centernot\longrightarrow} 0
+$, т.~е. ряд расходится.
+\end{example}
+\end{document}

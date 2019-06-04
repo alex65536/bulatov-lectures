@@ -1,0 +1,414 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+	\section{Знакопеременные ряды}
+	
+	Рассмотрим ряд
+	\begin{equation}
+		\sum_{n = 1}^\infty a_n
+		\label{29:1}
+	\end{equation}
+	без условия $a_n > 0$. Вместе с рядом \eqref{29:1} 
+	рассмотрим также ряд
+	\begin{equation}
+		\sum_{n = 1}^\infty |a_n|.
+		\label{29:2}
+	\end{equation}
+	\begin{definition}
+		Если ряд \eqref{29:2} сходится, то говорят, что ряд \eqref{29:1} 
+		\emph{сходится 
+		абсолютно}.
+	\end{definition}
+	
+	\begin{thm}\label{lec29:converge}
+		Если ряд сходится абсолютно, то он сходится.
+	\end{thm}
+	\begin{proof}
+		Пусть ряд \eqref{29:2} сходится. Тогда, по критерию Коши сходимости рядов, 
+		имеем
+		\[\forall \eps > 0\ \exists\nu = \nu_\eps\ \colon\ \forall n > 
+		m \geq \nu_\eps \implies 
+		\left|\sum_{k = m + 1}^n |a_k|\right| =
+		\sum_{k = m + 1}^n |a_k|\leq\eps.\]
+		
+		Но тогда
+		\[\forall \eps > 0\ \exists\nu = \nu_\eps\ \colon\ \forall n > 
+		m 
+		\geq \nu_\eps \implies \left|\sum_{k = m + 1}^n a_k\right|
+		\leq\sum_{k = m + 1}^n |a_k|\leq\eps.\]
+		Значит, ряд \eqref{29:1} сходится по критерию Коши.
+	\end{proof}
+
+\begin{remark}
+	Заметим, что ряд \eqref{29:2} является положительным рядом, т.~е. к нему 
+	применимы все признаки для положительных рядов.
+\end{remark}
+	
+	\begin{example}
+		Рассмотрим ряд
+		\[\sum_{n = 1}^\infty \frac{\sin n}{n\sqrt{n + 1}}.\]
+		
+		Исследуем на абсолютную сходимость. Имеем:
+		\[\left|\frac{\sin n}{n\sqrt{n + 1}}\right|\leq\frac{1}{n\sqrt{n + 
+		1}}\leq\frac{1}{n^{3/2}}.\]
+		
+		Последний ряд сходится, так как является обобщённым гармоническим рядом с 
+		показателем, большим единицы. 
+		А значит, по \hyperref[lec26:comp_test_1]{признаку 1\textdegree}, 
+		исходный ряд сходится абсолютно, а тогда, 
+		по доказанной выше теореме \ref{lec29:converge}, он сходится.
+	\end{example}
+
+	При изучении знакопеременных рядов выделяют специальные ряды вида
+	\begin{equation}
+		\sum_{n = 1}^\infty (-1)^{n - 1}a_n\quad a_n > 0,
+		\label{29:3}
+	\end{equation}
+	которые называют \emph{знакочередующимися рядами}. 
+	Для этих рядов может быть использован \emph{признак Лейбница}.
+	\begin{thm}[признак Лейбница сходимости знакочередующихся рядов]
+		\label{29:leibnitz}
+		Если $a_n$ стремится к нулю монотонно, то \eqref{29:3} сходится.
+	\end{thm}
+	\begin{proof}
+		Рассмотрим частные суммы \eqref{29:3}, а именно
+		\begin{gather*}
+			s_{2n} = (a_1 - a_2) + (a_3 - a_4) + \ldots + (a_{2n - 3} - a_{2n - 2}) + 
+			\underbrace{(a_{2n - 1} - a_{2n})}_{> 0} >\\
+			> (a_1 - a_2) + (a_3 - a_4) + \ldots + (a_{2n - 3} - a_{2n - 2}) = s_{2n - 
+			2}.
+		\end{gather*}
+		Получаем, что $s_{2n}\uparrow$.
+		
+		Вместе с тем,
+		\[s_{2n} = a_1 - (a_{2} - a_3) - \ldots - (a_{2n - 2} - a_{2n - 1}) - a_{2n} 
+		< a_1,\]
+		где скобки положительны ввиду монотонности $(a_n)$.
+		
+		Т.~е. $s_{2n}\uparrow$ и $s_{2n} < a_1$, а, 
+		значит, последовательность $s_{2n}$ сходится:
+		\begin{equation}
+			\exists S = \lim\limits_{n\to\infty}s_{2n}\in\R.
+			\label{29:4}
+		\end{equation}
+		Также 
+		\begin{equation}
+			s_{2n + 1} = s_{2n} + a_{2n + 1}
+			\appr{n\to\infty} S.
+			\label{29:5}
+		\end{equation}
+		
+		Из \eqref{29:4}, \eqref{29:5} получаем, что $\lim\limits_{n\to\infty} s_n = 
+		S$, 
+		т.~е. ряд 
+		\eqref{29:3} сходится.
+	\end{proof}
+
+	В дополнение к признаку Лейбница можно 
+	сформулировать следующее утверждение: если 
+	выполнены все условия теоремы, то верна
+	оценка сходимости ряда \eqref{29:3}:
+	\begin{equation}
+		\left|s_n - s\right|\leq a_{n + 1}.
+		\label{29:6}
+	\end{equation}
+	\begin{proof}
+		Действительно, по ходу доказательства признака Лейбница мы показали, что 
+		$s_{2n}\uparrow s$. 
+		Покажем теперь, что $s_{2n + 1}\downarrow s$:
+		\[s_{2n + 1} = a_1 - (a_2 - a_3) - \ldots - \underbrace{(a_{2n} - a_{2n + 
+		1})}_{\ge 0} < s_{2n - 
+		1}.\]
+		
+		Тогда для $s_{2n}$ получаем
+		\[s - s_{2n} \leq s_{2n + 1} - s_{2n} = a_{2n + 1}
+		\implies |s_{2n} - s|\leq a_{2n + 1}.\]
+		
+		Для $s_{2n + 1}$ имеем
+		\[|s_{2n + 1} - s| = s_{2n + 1} - s 
+		\leq s_{2n + 1} - s_{2n + 3} = 
+		a_{2n + 2} - a_{2n + 3}\leq a_{2n + 2}.\]
+		Т.~е. $|s_n - s|\leq a_{n + 1}$, что соответствует \eqref{29:6}.
+	\end{proof}
+
+	\begin{example}
+		Рассмотрим ряд
+		\[\sum_{k = 1}^\infty\frac{(-1)^{k - 1}}{k}.\]
+		Заметим, что ряд
+		\[\sum_{k = 1}^\infty\abs{\frac{(-1)^{k - 1}}{k}} = 
+		\sum_{k = 1}^\infty\frac{1}{k}\]
+		расходится, значит, абсолютной сходимости нет.
+		
+		Однако $\cfrac{1}{k}\downarrow0$, 
+		т.~е. выполнены все условия \hyperref[29:leibnitz]{признака Лейбница}. 
+		Значит, 
+		ряд сходится.
+		
+		Этот ряд называют \emph{рядом Лейбница}.
+	\end{example}
+
+\begin{definition}
+	Если \eqref{29:1} сходится, а \eqref{29:2} расходится, то говорят, то 
+	\eqref{29:1} \emph{сходится условно}.
+\end{definition}
+	
+	\subsection{Признаки Дирихле и Абеля}
+	
+	Будем рассматривать сумму $\sum\limits_{i = 1}^n a_ib_i$. Обозначим
+	\begin{gather*}
+	 B_1 = b_1, \\
+	 B_2 = b_1 + b_2, \\
+	 \ldots \\
+	 B_k = \sum_{i=1}^k b_i.
+	\end{gather*}
+	Из этих обозначений получаем
+	\begin{gather*}
+	 b_1 = B_1, \\
+	 b_2 = B_2 - B_1, \\
+	 b_3 = B_3 - B_2, \\
+	 \ldots \\
+	 b_n = B_n - B_{n - 1}.
+	\end{gather*}
+	Тогда
+	\begin{gather*}
+		\sum_{i = 1}^n a_ib_i = a_1b_1 + a_2b_2 + a_3b_3 + \ldots + a_nb_n = \\
+		= a_1B_1 + a_2(B_2 - B_1) + a_3(B_3 - B_2) + \ldots + a_n(B_n - B_{n - 1}) = 
+		\\
+		= B_1(a_1 - a_2) + B_2(a_2 - a_3) + \ldots + B_{n - 1}(a_{n - 1} - a_n) 
+		+ B_na_n.
+	\end{gather*}
+	Таким образом получаем, что
+	\begin{equation}
+		\sum_{i = 1}^na_ib_i = \sum_{i = 1}^{n - 1}B_i(a_i - a_{i + 1}) + a_nB_n
+		\label{29:7}
+	\end{equation}
+	
+	\begin{definition}
+		\eqref{29:7} называется \emph{преобразованием Абеля}.
+	\end{definition}
+	
+	\begin{lemma}[Абель]\label{29:lemma_abel}
+		Пусть последовательность $(a_n)$ монотонна и 
+		$\exists M\colon |B_i|\leq M$, $\forall i = \overline{1,n}$. 
+		Тогда
+		\[\left|\sum_{i = 1}^n a_ib_i\right|\leq M(|a_1| + 2|a_n|).\]
+	\end{lemma}
+	\begin{proof}
+		Воспользуемся преобразованием Абеля \eqref{29:7}:
+		\begin{gather*}
+			\left|\sum_{i = 1}^n a_ib_i\right| = 
+			\left|\sum_{i = 1}^{n - 1}B_i(a_i - a_{i + 1}) + a_nB_n\right|
+			\leq \sum_{i = 1}^{n - 1}|B_i||a_{i} - a_{i + 1}| + |a_n||B_n| \leq \\
+			\leq M\left(\sum_{i = 1}^{n - 1}|a_i - a_{i + 1}| + |a_n|\right) = *
+		\end{gather*}
+		
+		Так как $(a_n)$ монотонна, то разности $a_i - a_{i + 1}$ имеют один и 
+		тот же знак (либо <<$+$>>, когда $a_n\downarrow$, либо <<$-$>>, 
+		когда $a_n\uparrow$).
+		Тогда
+		\[* = M|a_1 - \cancel{a_2} + \cancel{a_2} - \cancel{a_3} + \ldots + 
+		\cancel{a_{n - 1}} + a_n| + M|a_n| = M|a_1 - a_n| + M|a_n|\leq
+		 M(|a_1| + 2|a_n|).\qedhere\]
+	\end{proof}
+
+	Будем далее рассматривать ряды вида
+	\begin{equation}
+		\sum_{k = 1}^\infty a_kb_k.
+		\label{29:8}
+	\end{equation}
+	
+	\begin{thm}[признак Дирихле]\label{29:dirichle}
+		Если
+		\begin{enumerate}
+			\item $a_k\downarrow 0$ при $k\to\infty$;
+			\item $\exists M\colon |B_k|\leq M\iff 
+			\left|\sum\limits_{i = 1}^k b_i\right|\leq M \quad \forall k \in \N$,
+		\end{enumerate}
+		то ряд \eqref{29:8} сходится.
+	\end{thm}
+	\begin{proof}
+		Воспользуемся определением сходимости $a_n$ к нулю. 
+		Выберем произвольное $\eps > 0$. Так как $a_k \downarrow 0$, то 
+		$\exists \nu = \nu_\eps\colon \forall n\geq \nu_\eps\implies 
+		a_n\leq\eps$.
+		
+		Зафиксируем произвольные $n > m\geq \nu_\eps$. Имеем
+		\[\left|\sum_{k = m + 1}^n b_k\right|\leq 
+		\left|\sum_{k = 1}^n b_k\right| + \left|\sum_{k = 1}^m b_k\right|
+		\leq 2M.\]
+		Тогда
+		\[\left|\sum_{k = m + 1}^n a_kb_k\right|\leq
+		\left[\text{используем \hyperref[29:lemma_abel]{лемму Абеля}}\,\right]\leq
+		 2M(|a_{m + 1}| + 2|a_n|)\leq 6M\eps.\]
+			
+		Значит, \eqref{29:8} сходится по критерию Коши.
+	\end{proof}
+
+	\begin{example}
+		Рассмотрим ряд
+		\[\sum_{k = 1}^\infty\frac{\sin k\alpha}{k}.\]
+		
+		Если $\alpha = 0$ или $\alpha = \pi$, то все члены ряда равны нулю, 
+		и ряд сходится. Пусть теперь $\alpha\in (0;\pi)$. 
+		
+		Пусть $a_k = \cfrac{1}{k}\downarrow 0$, $b_k = \sin k\alpha$. 
+		Тогда получаем, что
+		\begin{gather*}
+			\sum_{k = 1}^n b_k = \sum_{k = 1}^n\sin k\alpha =
+			\frac{1}{\sin\frac{\alpha}{2}}
+			\sum_{k = 1}^n \sin k\alpha\cdot\sin\frac{\alpha}{2} = \\
+			= \frac{1}{2\sin\frac{\alpha}{2}}
+			\sum_{k = 1}^n\left(\cos\left(k\alpha - \frac{\alpha}{2}\right) - 
+			\cos\left(k\alpha + \frac{\alpha}{2}\right)\right) = \\
+			= \frac{1}{2\sin\frac{\alpha}{2}}\left(\cos\frac{\alpha}{2} - 
+			\cancel{\cos\frac{3\alpha}{2}} + \cancel{\cos\frac{3\alpha}{2}} - 
+			\ldots + \cancel{\cos\frac{(2n - 1)\alpha}{2}} - 
+			\cos\frac{(2n + 1)\alpha}{2}\right) = \\
+			= \frac{1}{2\sin\frac{\alpha}{2}}\left(\cos\frac{\alpha}{2} - 
+			\cos\frac{(2n + 1)\alpha}{2}\right).
+		\end{gather*}
+		
+		Поэтому
+		\[\left|\sum_{k = 1}^n \sin k\alpha\right|\leq 
+		\frac{1}{\left|\sin\frac{\alpha}{2}\right|} = M\quad \forall n \in \N.\]
+		
+		Выполнены все условия \hyperref[29:dirichle]{признака Дирихле}, т.~е. ряд 
+		сходится.
+	\end{example}
+
+	\begin{thm}[признак Абеля]
+		\label{29:abel}
+		Пусть
+		\begin{enumerate}
+			\item последовательность $(a_n)$ монотонна и ограничена;
+			\item ряд $\sum\limits_{k = 1}^\infty b_k$ сходится.
+		\end{enumerate}
+	
+		Тогда ряд \eqref{29:8} сходится.
+	\end{thm}
+	\begin{proof}
+		Так как $(a_n)$ монотонна и ограничена, то эта последовательность сходится, 
+		т.~е. $\exists a = 
+		\lim\limits_{n\to\infty} a_n\in \R$.
+		
+		Для определенности будем считать, что $a_n\uparrow$.
+		Обозначим $c_k = a - a_k$, т.~е. $a_k = a - c_k$. 
+		Тогда для частной суммы \eqref{29:8} имеем
+		\begin{equation}
+			\sum_{k = 1}^n a_kb_k = \sum_{k = 1}^n ab_k - \sum_{k = 1}^n c_kb_k.
+			\label{29:9}
+		\end{equation}
+		
+		Так как ряд $\sum\limits_{k = 1}^\infty b_k$ сходится, 
+		то его частные суммы ограничены, т.~е. 
+		\[\exists M\colon \left|\sum\limits_{k = 1}^n b_k\right|\leq M \quad
+		\forall n \in \N.\]
+		Также $c_k = a - a_k \downarrow 0$ и для ряда
+		$\sum\limits_{k = 1}^\infty c_kb_k$
+		выполнены все условия \hyperref[29:dirichle]{признака Дирихле}. 
+		Значит, ряд сходится.
+		
+		Тогда в \eqref{29:9} при $n\to\infty$ 
+		справа будет конечный предел, т.~е. для частных сумм ряда \eqref{29:8} также 
+		существует конечный предел. Значит, ряд \eqref{29:8} сходится.
+	\end{proof}
+	\begin{example}
+		Рассмотрим ряд
+		\[\sum_{n = 2}^\infty\frac{\sin n\arctg n}{\ln n}.\]
+		
+		Обозначим $a_n = \arctg n$, $b_n = \cfrac{\sin n}{\ln n}$. 
+		Имеем, что $a_n\uparrow$ и $|a_n|\leq \cfrac{\pi}{2}$.
+		
+		Для ряда \[\sum_{k = 2}^\infty b_k\] 
+		имеем
+		\[\frac{1}{\ln n}\downarrow0,\quad \left|\sum_{k = 2}^n \sin k\right|
+		\leq \frac{1}{\sin\frac{1}{2}} \quad\forall n \in \N.\]
+		Значит, ряд $\sum\limits_{k = 2}^\infty b_k$ сходится по 
+		\hyperref[29:dirichle]{признаку Дирихле}, а отсюда получаем, 
+		что и исходный ряд сходится по \hyperref[29:abel]{признаку Абеля}.
+	\end{example}
+
+	\subsection{Абсолютная и условная сходимость}
+	
+	Рассмотрим ряд \eqref{29:1} с элементами произовального знака. Наряду с ним 
+	рассмотрим два ряда 
+	\begin{equation}
+		\sum\limits_{k = 1}^\infty b_k,\ \sum\limits_{k = 1}^\infty c_k,
+		\label{29:10}
+	\end{equation} 
+	где
+	\[b_k = \begin{cases}
+		a_k,& a_{k} > 0\\
+		0,& a_{k}\leq0
+	\end{cases}\]
+	\[c_k = \begin{cases}
+		0,& a_{k} > 0\\
+		-a_k,& a_{k}\leq 0
+	\end{cases}\]
+	
+	Ясно, что $a_k = b_k - c_k$ $\forall k\in\N$.
+	
+	\begin{thm}[критерий абсолютной сходимости]\label{29:absolute_conv}
+		Ряд $\sum\limits_{k = 1}^\infty a_k$ сходится абсолютно 
+		тогда и только тогда, когда сходятся оба ряда 
+		$\sum\limits_{k = 1}^\infty b_k$, $\sum\limits_{k = 1}^\infty c_k$, 
+		причём
+		\begin{equation}
+			\sum_{k = 1}^\infty a_k = \sum_{k = 1}^\infty b_k - \sum_{k = 1}^\infty c_k.
+			\label{29:11}
+		\end{equation}
+	\end{thm}
+	\begin{proof}
+		~
+		
+		\nec: Пусть ряд \eqref{29:1} сходится 
+		абсолютно, т.~е. сходится ряд $\sum\limits_{k = 1}^\infty |a_k|$.
+		Но тогда $b_k\leq |a_k|$, $c_k\leq |a_k|$, $\forall k\in\N$. 
+		Тогда, по \hyperref[lec26:comp_test_1]{признаку 1\textdegree}, 
+		сходятся ряды \eqref{29:10}.
+		
+		\suff: Пусть оба ряда \eqref{29:10} сходятся. 
+		Тогда
+		\[\sum_{k = 1}^\infty |a_k|\leq \sum_{k = 1}^\infty |b_k| + 
+		\sum_{k = 1}^\infty|c_k| = \sum_{k = 1}^\infty b_k + 
+		\sum_{k = 1}^\infty c_k.\]
+		
+		Так как оба ряда \eqref{29:10} сходятся, 
+		то частные суммы ряда \eqref{29:2} ограничены и монотонны, т.~е. исходный 
+		ряд сходится абсолютно.
+		
+		Докажем вторую часть. Так как 
+		\[\sum_{k = 1}^n a_k = \sum_{k = 1}^n b_k - \sum_{k = 1}^n c_k,\]
+		то при $n\to\infty$ получаем \eqref{29:11}.
+	\end{proof}
+
+	\begin{thm}[необходимое условие условной 
+	сходимости]\label{29:conditional_conv}
+		Если ряд \eqref{29:1} сходится условно, 
+		то оба ряда \eqref{29:10} имеют бесконечные суммы.
+	\end{thm}
+	\begin{proof}
+		Действительно, для частичных сумм \eqref{29:1} имеем 
+		\[\sum_{k = 1}^n a_k = \sum_{k = 1}^n b_k - \sum_{k = 1}^n c_k.\]
+		
+		Пусть $n\to\infty$. Если оба ряда \eqref{29:10} сходятся, 
+		то, по \hyperref[29:absolute_conv]{критерию абсолютной сходимости} 
+		получаем, что \eqref{29:1} сходится абсолютно, что противоречит 
+		условной сходимости \eqref{29:1}.
+		
+		Если справа одна из сумм имеет конечный предел, а вторая~--- бесконечный,
+		 то и слева будет бесконечный предел, т.~е. \eqref{29:1} не сходится,
+		  что противоречит сходимости \eqref{29:1}.
+		
+		Значит, оба ряда \eqref{29:10} имеют бесконечные суммы.
+	\end{proof}
+\end{document}

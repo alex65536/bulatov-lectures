@@ -6,7 +6,9 @@ if [ -z "$BASH" ]; then
 	exit 42
 fi
 
-if [ -n "$(git status --porcelain)" ]; then
+[[ "$1" == "-f" || "$1" == "--force" ]] && FORCE=1
+
+if [ "$FORCE" != 1 ] && [ -n "$(git status --porcelain)" ]; then
 	echo "Please commit your changes first to prevent loss of data!"
 	exit 43
 fi
@@ -53,6 +55,8 @@ sedfix 's/(\\ast|\\star)(\b|[^a-zA-Z*])/*\2/g'
 
 sedfix 's/\\mathbb\{R\}/\\R/g'
 sedfix 's/\\mathbb\{N\}/\\N/g'
+
+sedfix 's/\\epsilon|\\varepsilon/\\eps/g'
 
 # Wrap each line to 80 chars each
 foldfix

@@ -1,0 +1,274 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+\section{Действия над рядами}
+\subsection{Линейная комбинация рядов}
+Рассмотрим два ряда:
+$\sum\limits_{k = 1}^{\infty} \alpha_k$ и
+$\sum\limits_{k = 1}^{\infty} \beta_k$.
+Их линейной комбинацией называется:
+\[x \sum\limits_{k = 1}^{\infty} \alpha_k +
+y \sum\limits_{k = 1}^{\infty} \beta_k,\]
+где $x,y = \fix$.
+Если ряды
+$\sum\limits_{k = 1}^{\infty} \alpha_k$ и
+$\sum\limits_{k = 1}^{\infty} \beta_k$
+сходятся, то и их линейная комбинация сходится:
+\[x \sum\limits_{k = 1}^{n} \alpha_k + y \sum\limits_{k = 1}^{n} \beta_k
+\underset{n \to \infty} {\longrightarrow}
+x \sum\limits_{k = 1}^{\infty} \alpha_k +
+y \sum\limits_{k = 1}^{\infty} \beta_k\]
+\[x \sum\limits_{k = 1}^{n} \alpha_k + y \sum\limits_{k = 1}^{n} \beta_k
+= \sum\limits_{k = 1}^{n} (x \alpha_k + y \beta_k)
+\underset{n \to \infty} {\longrightarrow}
+\sum\limits_{k = 1}^{\infty} (x \alpha_k + y \beta_k)\]
+Рассмотрим ряд справа $\sum\limits_{k = 1}^{\infty} (x \alpha_k + y \beta_k)$
+и его частные суммы
+$x \sum\limits_{k = 1}^{n} \alpha_k + y \sum\limits_{k = 1}^{n} \beta_k
+= \sum\limits_{k = 1}^{n} (x \alpha_k + y \beta_k)$
+как линейную комбинацию рядов $\sum\limits_{k = 1}^{\infty} \alpha_k$ и
+$\sum\limits_{k = 1}^{\infty} \beta_k$.
+
+\subsection{Группировка членов ряда}
+Рассмотрим ряд
+$\sum\limits_{k = 1}^{\infty} = a_1 + a_2 + a_3 + \ldots + a_n + \ldots$
+Если сгруппировать слагаемые в этой сумме (т.~е. рассавить скобки), то получим
+другой ряд-группировку:
+\begin{equation}
+\begin{gathered}
+	\label{lec30, series_groups}
+	\sum\limits_{k = 1}^{\infty} c_k \\
+	c_1 = a_1 + \ldots + a_{k_1} \\
+	c_2 = a_{k_1+1} + \ldots + a_{k_2} \\
+	\ldots \\
+	c_n = a_{k_{n-1}+1} + \ldots + a_{k_n} \\
+	\ldots
+\end{gathered}
+\end{equation}
+\begin{thm}
+	Если ряд $\sum\limits_{k = 1}^{\infty} a_k$ сходится,
+	то группировка членов этого ряда не меняет его суммы.
+\end{thm}
+\begin{proof}
+Рассмотрим частную сумму ряда \eqref{lec30, series_groups}
+$\sigma_m = \sum\limits_{n = 1}^{m} c_n$.
+Пусть $\sum\limits_{k = 1}^{\infty} a_k$ сходится, т.~е. сходится
+$ S_n = \sum\limits_{k = 1}^{n} a_k$, тогда
+\[\sigma_m = c_1 + c_2 + \ldots + c_n = (a_1 + \ldots a_{k_1}) +
+(a_{k_1 + 1} + \ldots a_{k_2}) +
+\ldots + (a_{k_{m-1} + 1} + \ldots a_{k_m}) = S_{k_m}\]
+т.~е. последовательность частичных сумм ряда-группировки
+\eqref{lec30, series_groups} является подпоследовательностью
+последовательности $S_n$ и сходится к тому же пределу что и $S_n$.
+\end{proof}
+Группировка членов расходящегося ряда, вообще говоря, недопустима.
+\begin{example}
+	$\sum\limits_{k = 1}^{n} (-1)^{k - 1} = 1 - 1 + 1 - 1  + \ldots \neq
+	(1 - 1) + (1 - 1) + \ldots = 0$
+\end{example}
+\subsection{Перестановка членов ряда}
+Если члены ряда $\sum\limits_{k = 1}^{\infty} a_k$
+переставить местами каким-либо образом, то получим новый ряд-перестановку:
+$\sum\limits_{n = 1}^{\infty} p_n$, \
+$p_n = a_{k_n}$ ~--- какой-то член ряда $\sum\limits_{k = 1}^{\infty} a_k$.
+\begin{thm}
+	Если ряд $\sum\limits_{k = 1}^{\infty} a_k$ сходится и его члены положительны,
+	то перестановка допустима, т.~е. при перестановке членов сходящегося
+	положительного ряда его сумма не меняется.
+\end{thm}
+\begin{proof}
+	Пусть $\sum\limits_{k = 1}^{\infty} a_k$  сходится и
+	$\sum\limits_{k = 1}^{\infty} a_k = A$, \ \
+	$p_1 + p_2 + \ldots + p_m = a_{k_1} + a_{k_2} + \ldots + a_{k_m} = *$.
+	Среди номеров $k_1, k_2, \ldots , k_m \ \exists$ наибольший, пусть это
+	$N = \max\{k_1, k_2, \ldots k_n\}$, \ тогда $* \leq a_1 + a_2 + \ldots +
+	a_N \leq A$, \ т.~е. частные суммы ряда \eqref{lec30, series_groups}
+	ограничены числом $A$. Поскольку ряд \eqref{lec30, series_groups}
+	положительный, он сходится. При этом его сумма:
+	$P = \lim\limits_{m \to \infty}(p_1 + p_2 + \ldots + p_m) \leq A$. \
+	Но с другой стороны можно считать, что $\sum\limits_{k = 1}^{\infty} a_k$
+	получен перестановкой членов ряда \eqref{lec30, series_groups}, тогда:
+	\[A \leq P \ \implies \ P = A\]
+\end{proof}
+
+\begin{crl*}
+	При перестановке членов абсолютно сходящегося ряда его сумма не меняется.
+\end{crl*}
+\begin{proof}
+		Пусть $\sum\limits_{k = 1}^{\infty} a_k$ сходится абсолютно,
+		значит сходятся ряды $\sum\limits_{k = 1}^{\infty} b_k$ и
+		$\sum\limits_{k = 1}^{\infty} c_k$, где\[b_k = \begin{cases}
+			a_k, \ \ a_k > 0\\
+			0, \ \ a_k < 0
+		  \end{cases} \ \
+		 c_k = \begin{cases}
+			0, \ \ a_k > 0\\
+			-a_k, \ \ a_k < 0
+		  \end{cases}\]
+  Перестановка в $\sum\limits_{k = 1}^{\infty} a_k$ порождает перестановки
+  в рядах  $\sum\limits_{k = 1}^{\infty} b_k$ и
+  $\sum\limits_{k = 1}^{\infty} c_k$, \ Но это положительные ряды,
+  значит их сумма не меняется. А т.~к. $\sum\limits_{k = 1}^{\infty} a_k
+   = \sum\limits_{k = 1}^{\infty} b_k + \sum\limits_{k = 1}^{\infty} c_k$,
+   \ то не меняется и сумма ряда $\sum\limits_{k = 1}^{\infty} a_k$.
+\end{proof}
+\begin{thm}[Теорема Римана]
+	Если $\sum\limits_{k = 1}^{\infty} a_k$ сходится условно, то
+	$\forall \ A, \ - \infty \leq A \leq + \infty \ \exists$
+	перестановка членов ряда $\sum\limits_{k = 1}^{\infty} a_k$ т.~ч.
+	$\sum\limits_{n = 1}^{\infty} p_n = A$.
+	\begin{proof}
+		Схема доказательства: Пусть $A$ ~--- число, т.~к. ряд
+		$\sum\limits_{k = 1}^{\infty} a_k$ сходится условно, то оба ряда
+		$\sum\limits_{k = 1}^{\infty} b_k$ и
+		$\sum\limits_{k = 1}^{\infty} c_k$, где
+		\[b_k = \begin{cases}
+			a_k, \ \ a_k > 0\\
+			0, \ \ a_k < 0
+		  \end{cases} \ \
+		 c_k = \begin{cases}
+			0, \ \ a_k > 0\\
+			-a_k, \ \ a_k < 0
+		  \end{cases}\]
+		  имеют бесконечные суммы, т.~е. у нас есть <<банк>> положительных
+		  элементов	ряда $\sum\limits_{k = 1}^{\infty} a_k$ и <<банк>> \
+		  отрицательных элементов ряда $\sum\limits_{k = 1}^{\infty} a_k$.
+		  Будем брать элементы ряда $\sum\limits_{k = 1}^{\infty} b_k$
+		  подряд стоящие так, чтобы их сумма стала чуть больше чем $A$.
+		  Затем добавляем отрицательные элементы, представленые в ряде
+		  $\sum\limits_{k = 1}^{\infty} c_k$ до тех пор, пока набранная
+		  сумма станет мнньше, чем $A$. Затем снова добавляе положительные
+		  элементы, чтобы сумма стала больше $A$. Поскольку $a_k \to 0$,
+		  то полученная последовательность cумм будет стремиться к $A$.
+
+		  Если $A = +\infty$, то набираем, например, положительные
+		  слагаемые ряда $\sum\limits_{k = 1}^{\infty} a_k$ до тех пор
+		  пока их сумма станет больше 10, затем один отрицательный элемент,
+		  затем положительные, пока сумма станет больше 20, затем снова один
+		  отрицательный элемент и т.~д. Полученная перестановка стремится к
+		  $+ \infty$.
+	\end{proof}
+\end{thm}
+\subsection{Перемножение рядов}
+Произведением рядов $\sum\limits_{k = 1}^{\infty} a_k$ и
+$\sum\limits_{k = 1}^{\infty} b_k$ называют ряд:
+$\sum\limits_{\forall \ i,j}^{\infty} a_i b_j$, т.~е. ряд, содержащий все
+возможные произведения элементов рядов $\sum\limits_{k = 1}^{\infty} a_k$ и
+$\sum\limits_{k = 1}^{\infty} b_k$. \ Рассмотрим ряд:
+\begin{equation}
+	\label{lec30, series_multiplication}
+	\sum\limits_{n = 1}^{\infty} c_n
+\end{equation}
+где $c_n$ ~--- произведения чисел $a_i$ и $b_j$.
+\begin{thm}[Теорема Коши]
+	Пусть ряды $\sum\limits_{k = 1}^{\infty} a_k$ и
+	$\sum\limits_{k = 1}^{\infty} b_k$ сходятся абсолютно и
+	$\sum\limits_{k = 1}^{\infty} a_k = A$ и
+	$\sum\limits_{k = 1}^{\infty} b_k = B$, тогда ряд-произведение
+	\eqref{lec30, series_multiplication} сходится абсолютно и его сумма:
+	\[\sum\limits_{n = 1}^{\infty} c_n = A \cdot B \]
+	\[\sum\limits_{k = 1}^{\infty} a_k \cdot
+	\sum\limits_{k = 1}^{\infty} b_k =
+	\sum\limits_{\forall \ i,j}^{\infty} a_i b_j\]
+\end{thm}
+\begin{proof}
+Покажем, что $\sum\limits_{n = 1}^{\infty} |c_n|$ сходится. Рассмотрим
+его частную сумму:
+\[|c_1| + |c_2| + \ldots + |c_m| = |a_{i_1} \cdot b_{j_1}| +
+|a_{i_2} \cdot b_{j_2}| + \ldots + |a_{i_m} \cdot b_{j_m}| \leq *\]
+Пусть $l = \max\{i_1, j_1, \ldots i_m, j_m\}$, тогда:
+\[* \leq (|a_1| + \ldots + |a_l|)(|b_1| + \ldots + |b_l|)
+\leq\ \sum\limits_{k = 1}^{\infty} |a_k| \cdot
+\sum\limits_{k = 1}^{\infty} |b_k| = M\]
+Частная сумма $\sum\limits_{n = 1}^{\infty} |c_n| \leq M \implies
+\sum\limits_{n = 1}^{\infty} |c_n|$ сходится, т.~е.
+$\sum\limits_{n = 1}^{\infty} c_n$ сходится абсолютно.
+Так как $\sum\limits_{n = 1}^{\infty} c_n$ сходится абсолютно, то допустимы
+любые перестановки его членов, т.~е. суммы при этом не меняются. Поэтому при
+вычислени суммы этого ряда можно использовать любую удобную нам
+перестановку. Например можно в качестве последовательности его частичных
+сумм рассмотреть $(a_1 + \ldots + a_l)(b_1 + \ldots + b_l)$. Здесь
+содержится любое произведение $a_i b_j$ при достаточно большом $l$, т.~е.
+при $l \to \infty$ сюда попадают все элементы из
+$\sum\limits_{\forall \ i,j}^{\infty} a_i b_j$. То есть:
+\[\sum\limits_{\forall \ i,j}^{\infty} a_i b_j =
+\lim\limits_{l \to \infty} (a_1 + \ldots + a_l)(b_1 + \ldots + b_l) =
+A \cdot B\]
+\end{proof}
+Существует и часто используется и специальный способ перемножения рядов.
+Перемножение рядов по методу Коши:
+\[(a_1 + a_2 + a_3 + \ldots)(b_1 + b_2 + b_3 + \ldots) = a_1 b_1 +
+(a_1 b_2 + a_2 b_1) + (a_1 b_3 + a_2 b_2 + a_3 b_1) + \ldots +
+\sum\limits_{i + j = n + 1} a_i b_j + \ldots\]
+\begin{thm}[Теорема Мертенса]
+Если ряды $\sum\limits_{k = 1}^{\infty} a_k$ и
+$\sum\limits_{k = 1}^{\infty} b_k$ сходятся и хотя бы один из них
+сходится абсолютно, то сходится ряд \eqref{lec30, series_multiplication}
+и его сумма равна $A \cdot B$. Без доказательства.
+\end{thm}
+
+Если $\sum\limits_{k = 1}^{\infty} a_k$ и
+$\sum\limits_{k = 1}^{\infty} b_k$ условно сходятся, то их произведение
+может быть расходящимся.
+\begin{example}
+	\[\sum\limits_{k = 1}^{\infty} \frac{(-1)^{k-1}}{\sqrt{k}} \cdot
+	\sum\limits_{k = 1}^{\infty} \frac{(-1)^{k-1}}{\sqrt{k}} =
+	\left(1 - \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{3}} + \cdots +
+	\frac{(-1)^{n-1}}{\sqrt{n}} + \cdots \right) \cdot \]
+	\[\cdot \left(1 - \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{3}} + \cdots +
+	\frac{(-1)^{n-1}}{\sqrt{n}} + \cdots \right) = 1 +
+	\left( - \frac{1}{\sqrt{2}} - \frac{1}{\sqrt{2}} \right) +
+	\left( \frac{1}{\sqrt{3}} + \frac{1}{\sqrt{2}} \cdot
+	\frac{1}{\sqrt{2}} + \frac{1}{\sqrt{3}} \right) + \] 
+	\[ + \left( -1 \right) ^ {n - 1}
+	\underbrace{\left(1 \cdot \frac{1}{\sqrt{n}} + \frac{1}{\sqrt{2}} \cdot
+	\frac{1}{\sqrt{n - 1}} + \frac{1}{\sqrt{3}} \cdot
+	\frac{1}{\sqrt{n - 2}} + \ldots + \frac{1}{\sqrt{n}}
+	\cdot 1\right)}_{\tilde{c}_n} + \cdots \]
+	Cумма $\tilde{c}_n$ содержит n слагаемых и каждое из них не меньше,
+	чем $\frac{1}{\sqrt{n}}$. Поэтому $|c_n| \geq 1, \ c_n \not\to 0$
+	~--- ряд расходится.
+\end{example}
+\begin{remark}
+	Произведение расходящихся рядов может оказаться сходящимся.
+\end{remark}
+\section{Ряды в $\C$}
+Рассмотрим ряд:
+\[\sum\limits_{k = 1}^{\infty} z_k , \ z_k =
+\alpha_k + i\beta_k \in \C\]
+Сходимость ряда определяется по той же схеме, что и ранее.
+\[ \sigma_n = \sum\limits_{k = 1}^{\infty} z_k =
+\sum\limits_{k = 1}^{\infty} (\alpha_k + i\beta_k)\]
+Предел $\lim\limits_{n \to \infty} \sigma_n = \sigma$,
+если он существует, называют суммой ряда, если он конечен, то ряд сходится.
+Поскольку $\sigma_n = \sum\limits_{k = 1}^{\infty} (\alpha_k + i\beta_k) =
+\sum\limits_{k = 1}^{\infty} \alpha_k +
+i \sum\limits_{k = 1}^{\infty} \beta_k$,
+то это приводит к рядам $\sum\limits_{k = 1}^{\infty} \alpha_k$ и
+$\sum\limits_{k = 1}^{\infty} \beta_k$.
+Конечный предел $\sigma_n$ существует $\iff$ когда
+существуют конечные пределы $\sum\limits_{k = 1}^{n} \alpha_k$ и
+$\sum\limits_{k = 1}^{n} \beta_k$.
+Т.~е. $\sum\limits_{k = 1}^{\infty} z_k$ сходится $\iff$
+сходятся оба ряда $\sum\limits_{k = 1}^{\infty} \alpha_k , \
+\sum\limits_{k = 1}^{\infty} \beta_k$.
+\[\sum\limits_{k = 1}^{\infty} z_k = \sum\limits_{k = 1}^{\infty}
+(\alpha_k + i\beta_k) = \sum\limits_{k = 1}^{\infty} \alpha_k +
+i\sum\limits_{k = 1}^{\infty} \beta_k\]
+Необходимое условие сходимости: $\lim\limits_{k \to \infty} z_k = 0$.
+
+Критерий Коши:
+\[ \forall \ \eps > 0 \ \exists \ N = N(\eps), \ \forall \
+n \geq N(\eps) \ \forall \ p > 0 \implies
+|S_{n + p} - S_n| \leq \eps \]
+
+\end{document}
