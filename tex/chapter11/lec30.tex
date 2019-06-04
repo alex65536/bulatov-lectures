@@ -39,7 +39,10 @@ y \sum\limits_{k = 1}^{\infty} \beta_k.\]
 \sum\limits_{k = 1}^{\infty} (x \alpha_k + y \beta_k). 
 \end{equation}
 Его частная сумма равна
-\[\sum\limits_{k = 1}^{n} (x \alpha_k + y \beta_k) = x \sum\limits_{k = 1}^{n} \alpha_k + y \sum\limits_{k = 1}^{n} \beta_k,\] т.~е. линейной комбинации частных сумм рядов \eqref{30:3}. Если ряды \eqref{30:3} сходятся, то сходится и \eqref{30:4.1}:
+\[\sum\limits_{k = 1}^{n} (x \alpha_k + y \beta_k) = x \sum\limits_{k = 1}^{n} 
+\alpha_k + y \sum\limits_{k = 1}^{n} \beta_k,\] т.~е. линейной комбинации 
+частных сумм рядов \eqref{30:3}. Если ряды \eqref{30:3} сходятся, то сходится 
+и \eqref{30:4.1}:
 
 \[x \sum\limits_{k = 1}^{n} \alpha_k + y \sum\limits_{k = 1}^{n} \beta_k
 = \sum\limits_{k = 1}^{n} (x \alpha_k + y \beta_k)
@@ -90,7 +93,8 @@ $ S_n = \sum\limits_{k = 1}^{n} a_k$, тогда
 \label{30:6}
 \sum\limits_{n = 1}^{\infty} p_n,
 \end{equation}
-где $p_n = a_{k_n}$ ~--- какой-либо член ряда $\sum\limits_{k = 1}^{\infty} a_k$.
+где $p_n = a_{k_n}$ ~--- какой-либо член ряда $\sum\limits_{k = 1}^{\infty} 
+a_k$.
 \begin{thm}
 	Если ряд $\sum\limits_{k = 1}^{\infty} a_k$ сходится и его члены положительны,
 	то перестановка допустима, т.~е. при перестановке членов сходящегося
@@ -126,7 +130,8 @@ $ S_n = \sum\limits_{k = 1}^{n} a_k$, тогда
 			0,& a_k > 0\\
 			-a_k,& a_k \le 0
 		  \end{cases}\]
-  Перестановка членов в ряде $\sum\limits_{k = 1}^{\infty} a_k$ порождает перестановки членов
+  Перестановка членов в ряде $\sum\limits_{k = 1}^{\infty} a_k$ порождает 
+  перестановки членов
   в рядах  $\sum\limits_{k = 1}^{\infty} b_k$ и
   $\sum\limits_{k = 1}^{\infty} c_k$. Но эти ряды являются положительными,
   т.~е. их сумма не меняется. А т.~к. $\sum\limits_{k = 1}^{\infty} a_k
@@ -136,7 +141,8 @@ $ S_n = \sum\limits_{k = 1}^{n} a_k$, тогда
 \begin{thm}[Риман]
 	Если $\sum\limits_{k = 1}^{\infty} a_k$ сходится условно, то
 	\[\forall A,\ - \infty \leq A \leq + \infty \quad \exists\;
-	\text{перестановка членов ряда } \sum\limits_{k = 1}^{\infty} a_k \text{ т.~ч. }
+	\text{перестановка членов ряда } \sum\limits_{k = 1}^{\infty} a_k \text{ 
+	т.~ч. }
 	\sum\limits_{n = 1}^{\infty} p_n = A.\]
 	\begin{proof}
 		Доказательство проводится по следующей схеме.
@@ -167,7 +173,8 @@ $ S_n = \sum\limits_{k = 1}^{n} a_k$, тогда
 		  Если $A = +\infty$, то набираем, например, положительные
 		  слагаемые ряда $\sum\limits_{k = 1}^{\infty} a_k$ до тех пор
 		  пока их сумма не станет больше $10$, затем один отрицательный элемент,
-		  затем снова положительные элементы, пока сумма не станет больше $20$, затем снова один
+		  затем снова положительные элементы, пока сумма не станет больше $20$, 
+		  затем снова один
 		  отрицательный элемент и т.~д. Полученная перестановка стремится к
 		  $+ \infty$.
 		  
@@ -234,7 +241,8 @@ $\sum\limits_{\forall i,j}^{\infty} a_i b_j$. Т.~е.
 \lim\limits_{l \to \infty} (a_1 + \ldots + a_l)(b_1 + \ldots + b_l) =
 A \cdot B. \qedhere\]
 \end{proof}
-Существует и часто используется специальный способ перемножения рядов по методу Коши:
+Существует и часто используется специальный способ перемножения рядов по 
+методу Коши:
 \[(a_1 + a_2 + a_3 + \ldots)(b_1 + b_2 + b_3 + \ldots) = a_1 b_1 +
 (a_1 b_2 + a_2 b_1) + (a_1 b_3 + a_2 b_2 + a_3 b_1) + \ldots +
 \sum\limits_{i + j = n + 1} a_i b_j + \ldots\]
@@ -277,11 +285,13 @@ $\sum\limits_{k = 1}^{\infty} b_k$ условно сходятся, то их п
 \sum\limits_{k = 1}^{\infty} z_k , \quad z_k =
 \alpha_k + i\beta_k \in \C. 
 \end{equation}
-Сходимость ряда определяется по той же схеме, что и ранее. Рассмотрим частичные суммы
+Сходимость ряда определяется по той же схеме, что и ранее. Рассмотрим 
+частичные суммы
 \[ \sigma_n = \sum\limits_{k = 1}^{\infty} z_k =
 \sum\limits_{k = 1}^{\infty} (\alpha_k + i\beta_k).\]
 Предел $\lim\limits_{n \to \infty} \sigma_n = \sigma$,
-если он существует, называют \emph{суммой ряда}. Если этот предел конечен, то ряд сходится.
+если он существует, называют \emph{суммой ряда}. Если этот предел конечен, то 
+ряд сходится.
 Поскольку $\sigma_n = \sum\limits_{k = 1}^{\infty} (\alpha_k + i\beta_k) =
 \sum\limits_{k = 1}^{\infty} \alpha_k +
 i \sum\limits_{k = 1}^{\infty} \beta_k$,
@@ -296,9 +306,11 @@ $\sum\limits_{k = 1}^{n} \beta_k$.
 \[\sum\limits_{k = 1}^{\infty} z_k = \sum\limits_{k = 1}^{\infty}
 (\alpha_k + i\beta_k) = \sum\limits_{k = 1}^{\infty} \alpha_k +
 i\sum\limits_{k = 1}^{\infty} \beta_k.\]
-Необходимое условие сходимости рядов в $\C$: $\lim\limits_{k \to \infty} z_k = 0$.
+Необходимое условие сходимости рядов в $\C$: $\lim\limits_{k \to \infty} z_k = 
+0$.
 
-\begin{thm}[критерий Коши] Ряд \eqref{30:?} сходится тогда и только тогда, когда
+\begin{thm}[критерий Коши] Ряд \eqref{30:?} сходится тогда и только тогда, 
+когда
 
 \[ \forall \eps > 0 \quad \exists \nu = \nu_\eps \quad \forall n, m \in \N : 
 m > n \geq \nu \implies
