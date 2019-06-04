@@ -19,7 +19,10 @@
  \sum\limits_{k=1}^\infty a_k.
  \label{32:1}
 \end{equation}
-Как мы рассматривали ранее, его суммой называется предел частных сумм $S = \lim\limits_{n\to\infty} \sum\limits_{k=1}^n a_k$. Существуют другие способы суммирования рядов, в частности, \emph{метод средних арифметических}. Обозначим 
+Как мы рассматривали ранее, его суммой называется предел частных сумм $S = 
+\lim\limits_{n\to\infty} \sum\limits_{k=1}^n a_k$. Существуют другие способы 
+суммирования рядов, в частности, \emph{метод средних арифметических}. 
+Обозначим 
 \begin{gather*}
  \sigma_1 = S_1, \\
  \sigma_2 = \frac{S_1 + S_2}2, \\
@@ -29,7 +32,10 @@
 \end{gather*}
 где $S_k = \sum\limits_{k=1}^\infty a_k$.
 
-Предел $\lim\limits_{n\to\infty} \sigma_n = \sigma$ называется \emph{суммой} ряда \eqref{32:1} (обобщенной суммой ряда \eqref{32:1}). Такой метод суммирования называется \emph{методом средних арифметических} или \emph{методом Чезаро}.
+Предел $\lim\limits_{n\to\infty} \sigma_n = \sigma$ называется \emph{суммой} 
+ряда \eqref{32:1} (обобщенной суммой ряда \eqref{32:1}). Такой метод 
+суммирования называется \emph{методом средних арифметических} или 
+\emph{методом Чезаро}.
 
 \begin{exmp}
  Рассмотрим ряд
@@ -60,10 +66,17 @@
 Значит, по методу Чезаро ряд сходится и его сумма равна $\frac12$.
 \end{exmp}
 
-Таким образом, метод Чезаро позволяем суммировать некоторые расходящиеся в смысле Коши ряды. Существует большое количество обощенных методов суммирования рядов. При построении таких методов выдвигаются два требования:
+Таким образом, метод Чезаро позволяем суммировать некоторые расходящиеся в 
+смысле Коши ряды. Существует большое количество обощенных методов суммирования 
+рядов. При построении таких методов выдвигаются два требования:
 \begin{enumerate}
- \item Метод должен быть \emph{линейным}, т.е. если ряд $\sum\limits_{k=1}^\infty a_k$ имеет обобщенную сумму $\sigma_a$, а ряд $\sum\limits_{k=1}^\infty b_k$ имеет обобщенную сумму $\sigma_b$, то линейная комбинация этих рядов \[\sum\limits_{k=1}^\infty (\alpha a_k + \beta b_k)\] имеет сумму $\alpha\sigma_a + \beta\sigma_b$.
- \item Метод должен быть \emph{реулярным}, т.е. если ряд \eqref{32:1} имеет по Коши сумму $S$, то и сумма по обобщенному методу должна быть равна $S$.
+ \item Метод должен быть \emph{линейным}, т.~е. если ряд 
+ $\sum\limits_{k=1}^\infty a_k$ имеет обобщенную сумму $\sigma_a$, а ряд 
+ $\sum\limits_{k=1}^\infty b_k$ имеет обобщенную сумму $\sigma_b$, то линейная 
+ комбинация этих рядов \[\sum\limits_{k=1}^\infty (\alpha a_k + \beta b_k)\] 
+ имеет сумму $\alpha\sigma_a + \beta\sigma_b$.
+ \item Метод должен быть \emph{реулярным}, т.~е. если ряд \eqref{32:1} имеет 
+ по Коши сумму $S$, то и сумма по обобщенному методу должна быть равна $S$.
 \end{enumerate}
 
 Метод Чезаро, очевидно, является линейным.
@@ -72,35 +85,69 @@
  Убедиться в том, что метод Чезаро линеен.
 \end{exc}
 
-Прежде всего, получим необходимое условие сходимости ряда по методу Чезаро. Пусть ряд \eqref{32:1} сходится и имеет сумму $\sigma$ по методу Чезаро. Рассмотрим выражение
-\[\frac{n}{n-1}\sigma_n - \sigma_{n-1} \appr{n\to\infty} \sigma - \sigma = 0.\] Т.е. \[\frac{n\sigma_n - (n-1)\sigma_{n-1}}{n-1} \appr{n\to\infty} 0.\] Но $n\sigma_n = \sum\limits_{k=1}^n S_k$ и $(n-1)\sigma_{n-1} = \sum\limits_{k=1}^{n-1} S_k$. Тогда получаем, что
-\[\frac{\sum\limits_{k=1}^n S_k - \sum\limits_{k=1}^{n-1} S_k}{n-1} = \frac{S_n}{n-1} \appr{n\to\infty} 0.\]
-Полученное выражение уже можно считать необходимым условием, но мы пойдем дальше. Рассмотрим другое выражение: \[\frac{a_n}n = \frac{\sum\limits_{k=1}^n a_k - \sum\limits_{k=1}^{n-1} a_k}n = \frac{S_n - S_{n-1}}n  = \underbrace{\frac{n-1}n\cdot\frac{S_n}{n-1}}_{\to0} - \underbrace{\frac{S_{n-1}}{n-2}\cdot\frac{n-2}n}_{\to0} \appr{n\to\infty} 0-0 = 0.\]
+Прежде всего, получим необходимое условие сходимости ряда по методу Чезаро. 
+Пусть ряд \eqref{32:1} сходится и имеет сумму $\sigma$ по методу Чезаро. 
+Рассмотрим выражение
+\[\frac{n}{n-1}\sigma_n - \sigma_{n-1} \appr{n\to\infty} \sigma - \sigma = 
+0.\] Т.~е. \[\frac{n\sigma_n - (n-1)\sigma_{n-1}}{n-1} \appr{n\to\infty} 0.\] 
+Но $n\sigma_n = \sum\limits_{k=1}^n S_k$ и $(n-1)\sigma_{n-1} = 
+\sum\limits_{k=1}^{n-1} S_k$. Тогда получаем, что
+\[\frac{\sum\limits_{k=1}^n S_k - \sum\limits_{k=1}^{n-1} S_k}{n-1} = 
+\frac{S_n}{n-1} \appr{n\to\infty} 0.\]
+Полученное выражение уже можно считать необходимым условием, но мы пойдем 
+дальше. Рассмотрим другое выражение: \[\frac{a_n}n = \frac{\sum\limits_{k=1}^n 
+a_k - \sum\limits_{k=1}^{n-1} a_k}n = \frac{S_n - S_{n-1}}n  = 
+\underbrace{\frac{n-1}n\cdot\frac{S_n}{n-1}}_{\to0} - 
+\underbrace{\frac{S_{n-1}}{n-2}\cdot\frac{n-2}n}_{\to0} \appr{n\to\infty} 0-0 
+= 0.\]
 
-Таким образом, получаем необходимое условие сходимости ряда по Чезаро: \[\frac{a_n}n \appr{n\to\infty} 0.\]
+Таким образом, получаем необходимое условие сходимости ряда по Чезаро: 
+\[\frac{a_n}n \appr{n\to\infty} 0.\]
 
 \begin{thm}
-Если \eqref{32:1} сходится по методу Коши и имеет сумму $S$, то он сходится и по методу Чезаро и имеет обобщенную сумму $\sigma = S$. Т.~е. метод Чезаро регулярен.
+Если \eqref{32:1} сходится по методу Коши и имеет сумму $S$, то он сходится и 
+по методу Чезаро и имеет обобщенную сумму $\sigma = S$. Т.~е. метод Чезаро 
+регулярен.
 \end{thm}
 \begin{proof}
- Пусть $\lim\limits_{n\to\infty} S_n = S \in\R$. Раз существует конечный предел частных сумм, то \[\exists M : |S_n| \le M\quad\forall n\in\N,\] а также
+ Пусть $\lim\limits_{n\to\infty} S_n = S \in\R$. Раз существует конечный 
+ предел частных сумм, то \[\exists M : |S_n| \le M\quad\forall n\in\N,\] а 
+ также
  \[\forall\eps>0 \ \ \exists N \in \N: \forall n \ge \N: |S - S_n| \le \eps.\]
-Покажем, что $\sigma_n \appr{n\to\infty} S$ или, что то же самое, $\sigma_{N+p} \appr{p\to\infty} S$. Для этого рассмотрим разность
+Покажем, что $\sigma_n \appr{n\to\infty} S$ или, что то же самое, 
+$\sigma_{N+p} \appr{p\to\infty} S$. Для этого рассмотрим разность
 \begin{gather*}
 |S - \sigma_{N+p}| = \abs{S - \frac1{N+p}\cdot\sum\limits_{k=1}^{N+p}S_k}
 = \\ =
-\abs{\left(S - \frac1p\cdot\sum\limits_{k=N+1}^{N+p}S_k\right) + \left(\frac1p\cdot\sum\limits_{k=N+1}^{N+p}S_k - \frac1{N+p}\cdot\sum_{k=N+1}^{N+p}S_k\right) - \frac1{N+p}\sum\limits_{k=1}^{N}S_k}
+\abs{\left(S - \frac1p\cdot\sum\limits_{k=N+1}^{N+p}S_k\right) + 
+\left(\frac1p\cdot\sum\limits_{k=N+1}^{N+p}S_k - 
+\frac1{N+p}\cdot\sum_{k=N+1}^{N+p}S_k\right) - 
+\frac1{N+p}\sum\limits_{k=1}^{N}S_k}
 \le \\ \le
-\abs{S - \frac1p\cdot\sum\limits_{k=N+1}^{N+p}S_k} + \abs{\frac1p\cdot\sum\limits_{k=N+1}^{N+p}S_k - \frac1{N+p}\cdot\sum\limits_{k=N+1}^{N+p}S_k} + \abs{\frac1{N+p}\cdot\sum\limits_{k=1}^N S_k} = A_1 + A_2 + A_3,
+\abs{S - \frac1p\cdot\sum\limits_{k=N+1}^{N+p}S_k} + 
+\abs{\frac1p\cdot\sum\limits_{k=N+1}^{N+p}S_k - 
+\frac1{N+p}\cdot\sum\limits_{k=N+1}^{N+p}S_k} + 
+\abs{\frac1{N+p}\cdot\sum\limits_{k=1}^N S_k} = A_1 + A_2 + A_3,
 \end{gather*}
 где
 \begin{gather*}
-A_1 = \abs{S - \frac1p\cdot\sum\limits_{k=N+1}^{N+p}S_k} = \frac1p\abs{S\cdot p - \sum\limits_{k=N+1}^{N+p}S_k} = \frac1p \abs{\sum\limits_{k=N+1}^{N+p}(S - S_k)} \le\\\le \frac1p\cdot\sum\limits_{k=N+1}^{N+p}|S - S_k| \le \frac1p\cdot(p\eps) = \eps, \\
-A_2 = \abs{\frac1p\cdot\sum\limits_{k=N+1}^{N+p}S_k - \frac1{N+p}\cdot\sum\limits_{k=N+1}^{N+p}S_k} = \abs{\sum\limits_{k=N+1}^{N+p} \left(\frac1p - \frac1{N+p}\right)S_k} \le \frac N{p(N+p)}\cdot \sum\limits_{k=N+1}^{N+p} |S_k| \le\\\le \frac N{p(N+p)}\cdot pM = \frac{N\cdot M}{N + p} \le \eps \text{ (для достаточно больших $p$)}, \\
-A_3 = \abs{\frac1{N+p}\cdot\sum\limits_{k=1}^{N}S_k} \le \frac1{N+p}\cdot\sum\limits_{k=1}^{N}|S_k| \le \frac{N\cdot M}{N + p} \le \eps \text{ (для достаточно больших $p$)}.
+A_1 = \abs{S - \frac1p\cdot\sum\limits_{k=N+1}^{N+p}S_k} = \frac1p\abs{S\cdot 
+p - \sum\limits_{k=N+1}^{N+p}S_k} = \frac1p \abs{\sum\limits_{k=N+1}^{N+p}(S - 
+S_k)} \le\\\le \frac1p\cdot\sum\limits_{k=N+1}^{N+p}|S - S_k| \le 
+\frac1p\cdot(p\eps) = \eps, \\
+A_2 = \abs{\frac1p\cdot\sum\limits_{k=N+1}^{N+p}S_k - 
+\frac1{N+p}\cdot\sum\limits_{k=N+1}^{N+p}S_k} = \abs{\sum\limits_{k=N+1}^{N+p} 
+\left(\frac1p - \frac1{N+p}\right)S_k} \le \frac N{p(N+p)}\cdot 
+\sum\limits_{k=N+1}^{N+p} |S_k| \le\\\le \frac N{p(N+p)}\cdot pM = 
+\frac{N\cdot M}{N + p} \le \eps \text{ (для достаточно больших $p$)}, \\
+A_3 = \abs{\frac1{N+p}\cdot\sum\limits_{k=1}^{N}S_k} \le 
+\frac1{N+p}\cdot\sum\limits_{k=1}^{N}|S_k| \le \frac{N\cdot M}{N + p} \le \eps 
+\text{ (для достаточно больших $p$)}.
 \end{gather*}
 
-Поэтому для достаточно больших $p$ получаем, что $|S - \sigma_{N+p}| \le 3\cdot\eps$. Таким образом, $\sigma_{N+p} \appr{p\to\infty} S$. Теорема доказана.
+Поэтому для достаточно больших $p$ получаем, что $|S - \sigma_{N+p}| \le 
+3\cdot\eps$. Таким образом, $\sigma_{N+p} \appr{p\to\infty} S$. Теорема 
+доказана.
 \end{proof}
 
 \subsection{Суммирование рядов методом Абеля-Пуассона}
@@ -112,32 +159,43 @@ A_3 = \abs{\frac1{N+p}\cdot\sum\limits_{k=1}^{N}S_k} \le \frac1{N+p}\cdot\sum\li
 \end{equation}
 Вместе с ним рассмотрим так называемый степенной ряд
 \[\sum\limits_{k=0}^\infty a_kx^k = a_0 + a_1x + a_2x^2 + \dots\]
-\underline{Если} этот ряд сходится для всех $x \in [0;1[$ и имеет сумму $S(x)$, то обобщенной суммой ряда \eqref{32:2} методом Абеля-Пуассона считается число \[P = \lim_{x\to1-0}S(x).\]
+\underline{Если} этот ряд сходится для всех $x \in [0;1[$ и имеет сумму 
+$S(x)$, то обобщенной суммой ряда \eqref{32:2} методом Абеля-Пуассона 
+считается число \[P = \lim_{x\to1-0}S(x).\]
 
 \begin{thm}
- Если ряд \eqref{32:2} сходится по методу Чезаро и имеет сумму $\sigma$, то он сходится и по методу Абеля-Пуассона и имеет сумму, равную $P = \sigma$.
+ Если ряд \eqref{32:2} сходится по методу Чезаро и имеет сумму $\sigma$, то он 
+ сходится и по методу Абеля-Пуассона и имеет сумму, равную $P = \sigma$.
 \end{thm}
 
 \begin{crl*}
- Если ряд сходится по Коши и имеет сумму $S$, то его сумма по методу Абеля-Пуассона также равна $S$.
+ Если ряд сходится по Коши и имеет сумму $S$, то его сумма по методу 
+ Абеля-Пуассона также равна $S$.
 \end{crl*}
 
 \begin{exmp}
-Рассмотрим ряд \[1-2+3-4+5-\dots\] Для него построим соответствующий степенной ряд \[1-2x+3x^2-4x^3 + 5x^4 - \dots = \sum_{k=0}\infty (-1)^k(k+1)x^k.\]
+Рассмотрим ряд \[1-2+3-4+5-\dots\] Для него построим соответствующий степенной 
+ряд \[1-2x+3x^2-4x^3 + 5x^4 - \dots = \sum_{k=0}\infty (-1)^k(k+1)x^k.\]
 Исследуем этот ряд по \hyperref[lec27:cauchy]{признаку Коши}:
 \[\sqrt[n]{\abs{(-1)^n\cdot(n+1)x^n}} \appr{n\to\infty} |x|.\]
-По Коши ряд сходится по крайней мере для $|x| < 1$, т.~е. он сходится и для $x \in [0;1[$.
+По Коши ряд сходится по крайней мере для $|x| < 1$, т.~е. он сходится и для $x 
+\in [0;1[$.
 
 Найдем его сумму. Пусть она равна $S(x)$. Но тогда
 \begin{gather*}
- S(x) = \sum\limits_{k=1}^\infty (-1)^k\cdot(k+1)x^k \implies \int S(x)dx + C = \sum\limits_{k=0}^\infty \left(\int (-1)^k\cdot(k+1)x^k\;dx\right) = \\ =
+ S(x) = \sum\limits_{k=1}^\infty (-1)^k\cdot(k+1)x^k \implies \int S(x)dx + C 
+ = \sum\limits_{k=0}^\infty \left(\int (-1)^k\cdot(k+1)x^k\;dx\right) = \\ =
  \sum\limits_{k=0}^\infty (-1)^k\cdot x^{k+1} =
- x - x^2 + x^3 - x^4 + \dots = \frac x{1+x} \implies S(x) = \left(\frac x{1+x}\right)' = \frac 1{(1+x)^2}.
+ x - x^2 + x^3 - x^4 + \dots = \frac x{1+x} \implies S(x) = \left(\frac 
+ x{1+x}\right)' = \frac 1{(1+x)^2}.
 \end{gather*}
 
-Т.е. $P = \lim\limits_{x\to1-0} S(x) = \dfrac14$. Получаем, что ряд сходится по Абелю-Пуассону и имеет сумму $\dfrac14$.
+Т.~е. $P = \lim\limits_{x\to1-0} S(x) = \dfrac14$. Получаем, что ряд сходится 
+по Абелю-Пуассону и имеет сумму $\dfrac14$.
 
-Заметим, что этот ряд не сходится по Чезаро, т.~к. него не выполняется необходимое условие сходимости: \[\frac{a_n}n = \frac{(-1)^n(n+1)}n \underset{n\to\infty}{\centernot\longrightarrow} 0.\]
+Заметим, что этот ряд не сходится по Чезаро, т.~к. него не выполняется 
+необходимое условие сходимости: \[\frac{a_n}n = \frac{(-1)^n(n+1)}n 
+\underset{n\to\infty}{\centernot\longrightarrow} 0.\]
 \end{exmp}
 
 \end{document}
