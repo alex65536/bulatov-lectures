@@ -1,0 +1,202 @@
+\makeatletter
+\def\input@path{{../../}}
+\makeatother
+\documentclass[../../main.tex]{subfiles}
+
+\graphicspath{
+	{../../img/}
+	{../img/}
+	{img/}
+}
+
+\begin{document}
+	\subsection{Бесконечное произведение}
+
+	Пусть задана последовательность $(p_k),\ p_k \in \mathbb{R}$. Отталкиваясь от нее, построим новую последовательность:
+
+	\[
+	\begin{cases}
+	P_1 = p_1 \\
+	P_2 = p_1 \cdot p_2 \\
+	P_3 = p_1 \cdot p_2 \cdot p_3 \\
+	\ldots \\
+	P_n = \prod\limits_{k = 1}^{n} p_k \\
+	\ldots
+	\end{cases} 
+	\]
+
+	Эту последовательность называют бесконечным произведением и записывают в виде:
+
+	\begin{equation} \label{lec31, 1}
+		\prod\limits_{k = 1}^{\infty} p_k
+	\end{equation}
+	
+	Числа $p_k$ называются элементами (членами) произведения, а $P_n = \prod\limits_{k = 1}^{n} p_k$ называют частичными произведениями.
+	
+	Если последовательность $P_n$ сходится (имеет предел $\lim\limits_{n \to \infty}P_n$), то этот предел называют значением произведения \eqref{lec31, 1}. Если этот предел конечен и не равен нулю, то говорят, что \eqref{lec31, 1} сходится, иначе - расходится.
+	
+	\begin{example}
+		\begin{enumerate}[label=\arabic*)]
+			\item \[ \prod\limits_{k = 2}^{\infty} \left(1 - \frac{1}{k^2}\right) \]
+			
+			\[P_n = \prod\limits_{k = 2}^{n} \left(1 - \frac{1}{k^2}\right) = \prod\limits_{k = 2}^{n} \frac{(k - 1)(k + 1)}{k^2} = \]
+			
+			\[= \frac{1 \cdot 3}{2 \cdot 2} \cdot \frac{2 \cdot 4}{3 \cdot 3} \cdot \frac{3 \cdot 5}{4 \cdot 4} \cdot \ldots \cdot \frac{(n - 2) \cdot n}{(n - 1) \cdot (n - 1)} \cdot \frac{(n - 1) \cdot (n + 1)}{n \cdot n} = \frac{1}{2} \cdot \frac{n + 1}{n} \appr{n \to \infty} \frac{1}{2}\]
+			
+			Поэтому бесконечное произведение имеет конечный предел, равный $\frac{1}{2}$.
+			
+			\item  \[ \prod\limits_{k = 2}^{\infty} \left(1 - \frac{1}{k}\right) \]
+			
+			\[P_n = \prod\limits_{k = 2}^{n} \left(1 - \frac{1}{k}\right) = \frac{1}{2} \cdot \frac{2}{3} \cdot \frac{3}{4} \cdot \ldots \cdot \frac{n - 1}{n} = \frac{1}{n} \appr{n \to \infty} 0\]
+			
+			То есть бесконечная последовательность расходится.
+			
+			\item \[ \frac{2 \cdot 2}{1 \cdot 3} \cdot \frac{4 \cdot 4}{3 \cdot 5} \cdot \frac{6 \cdot 6}{5 \cdot 7} \cdot \ldots \cdot \frac{2n \cdot 2n}{(2n - 1) \cdot (2n + 1)} \cdot \ldots\]
+			
+			\[ P_n = \frac{2 \cdot 2}{1 \cdot 1} \cdot \frac{4 \cdot 4}{3 \cdot 3} \cdot \frac{6 \cdot 6}{5 \cdot 5} \cdot \ldots \cdot \frac{2n \cdot 2n}{(2n - 1) \cdot (2n + 1)} = \frac{2 \cdot 2}{1 \cdot 3} \cdot \frac{4 \cdot 4}{3 \cdot 5} \cdot \frac{6 \cdot 6}{5 \cdot 7} \cdot \ldots \cdot \frac{2n \cdot 2n}{(2n - 1) \cdot (2n - 1)} \cdot \frac{1}{2n + 1} = \]
+			
+			\[= \frac{((2n)!!)^2}{((2n - 1)!!)^2 \cdot (2n + 1)} \appr{n \to \infty} \frac{\pi}{2}\]
+		\end{enumerate}
+	\end{example}
+	Пусть \eqref{lec31, 1} сходится, т.~е. $\exists \lim\limits_{n \to \infty} \prod\limits_{k = 1}^{n} p_k = \pi \in \mathbb{R},\ \pi \neq 0$. В этом случае $P_{n - 1} = \prod\limits_{k = 1}^{n - 1}p_k,\ P_{n} = \prod\limits_{k = 1}^{n}p_k$. Тогда $p_n = \frac{P_n}{P_{n - 1}} \appr{n \to \infty} \frac{\pi}{\pi} = 1$ - необходимое условие сходимости бесконечных произведений.
+		
+	В дальнейшем будем это предполагать, т.~е. считаем, что $p_k$ примерно равно 1 и $p_k > 0$.
+		
+	Если у \eqref{lec31, 1} удалить несколько первых множителей (N штук), то получим:
+		
+	\begin{equation} \label{lec31, 2}
+	\prod\limits_{k = N + 1}^{\infty} p_k
+	\end{equation}
+		
+	Возьмем любое $n > N$. При нем $P_n = \prod\limits_{k = 1}^{n} = \left(\prod\limits_{k = 1}^{N}\right)\left(\prod\limits_{k = N + 1}^{n}\right)$
+		
+	При $n \to \infty$ конечный ненулевой предел слева существует тогда и только тогда, когда предел справа конечен и не равен нулю. Т.~е. бесонечное произведение \eqref{lec31, 1} сходится тогда и только тогда, когда сходится бесконечное произведение \eqref{lec31, 2}. \eqref{lec31, 2} называется остаточным произведением (остатком) \eqref{lec31, 1}.
+		
+	Получаем: 
+		
+	\begin{enumerate}[label={\alph*)}]
+		\item Если сходится бесконечное произзведение, то и любой его остаток
+			
+		\item Если сходится какой-либо остаток произведения \eqref{lec31, 1}, то сходится и \eqref{lec31, 1}.
+		\end{enumerate}
+	
+	\subsection{Связь с рядами}
+	
+	\begin{equation}\label{lec31, 3}
+	 \ln P_n = \ln \prod\limits_{k = 1}^{n} p_k = \sum\limits_{k = 1}^{n} \ln p_k
+	\end{equation}
+	
+	Рассмотрим ряд
+	\begin{equation}\label{lec31, 4}
+	\sum\limits_{k = 1}^{\infty} \ln p_k
+	\end{equation}
+	
+	При переходе в \eqref{lec31, 3} к пределу, конечные пределы слева и справа могут существовать только одновременно. Это значит, что \eqref{lec31, 1} сходится тогда и только тогда, когда сходится ряд \eqref{lec31, 4}.
+	
+	\begin{thm}\label{lec31:thm1} 
+		Произведение $\prod\limits_{k = 1}^{\infty} p_k$ сходится тогда и только тогда, когда сходится ряд $\sum\limits_{k = 1}^{\infty} \ln p_k$. При этом если $s = \sum\limits_{k = 1}^{\infty} \ln p_k$, то $\prod\limits_{k = 1}^{\infty} p_k = e^s$
+	\end{thm}
+
+	\begin{example}
+		\begin{enumerate}[label=\arabic*)]
+			\item \[\prod\limits_{k = 1}^{\infty} \sqrt{\frac{k + 3}{k}}\]
+			
+			\[\sum\limits_{k = 1}^{\infty} \ln \sqrt{\frac{k + 3}{k}} = \frac{1}{2} \sum\limits_{k = 1}^{\infty} \ln\left(1 + \frac{3}{k}\right) \]
+			
+			$a_k = \ln \left(1 + \frac{3}{k}\right) \sim \frac{3}{k}$ - расходится $\implies$ расходится и бесконечное произведение.
+			
+			\item \[\prod\limits_{k = 1}^{\infty} e^{\frac{1}{k(k + 1)}} \]
+			
+			\[\ln P_n = \sum\limits_{k = 1}^{n} \ln \left(e^{\frac{1}{k(k + 1)}}\right) = \sum\limits_{k = 1}^{n} \frac{1}{k(k + 1)}\] - сходится.
+			
+			\[\sum\limits_{k = 1}^{n} \frac{1}{k(k + 1)} = \sum\limits_{k = 1}^{n} \left(\frac{1}{k} - \frac{1}{k + 1} \right) = 1 - \frac{1}{n + 1} \appr{n \to \infty} 1 \]
+			
+			\[s = \sum\limits_{k = 1}^{\infty} \frac{1}{k(k + 1)} = 1 \implies \prod\limits_{k = 1}^{\infty} e^{\frac{1}{k(k + 1)}} = e\]
+		\end{enumerate}
+	\end{example}
+
+	Рассмотрим $\sum\limits_{k = 1}^{\infty} \ln p_k$ \eqref{lec31, 4}. Пусть $p_k = 1 + \alpha_k,\ \forall k$. Из необходимого условия сходимости следует, что $\alpha_k \appr{k \to \infty} 0$. Предположим, что все $\alpha_k > 0$, тогда $\ln p_k = \ln (1 + \alpha_k) \sim \alpha_k$.
+	
+	Ряд \eqref{lec31, 4} и ряд $\sum\limits_{k = 1}^{\infty} \alpha_k$ оба сходятся или оба расхоятся по \hyperref[lec26:comp_test_2]{признаку 2\textdegree}.
+	
+	\begin{thm}\label{lec31:thm2} 
+		Произведение $\prod\limits_{k = 1}^{\infty} p_k = \prod\limits_{k = 1}^{\infty}(1 + \alpha_k),\ \alpha_k > 0$ сходится тогда и только тогда, когда сходится ряд $\sum\limits_{k = 1}^{\infty} \alpha_k = \sum\limits_{k = 1}^{\infty} (p_k - 1)$
+	\end{thm}		
+
+	\begin{example}
+		\begin{enumerate}
+			\item $\sum\limits_{k = 1}^{\infty} \frac{1}{k^a}$ сходится при $a > 1$ и расходится при $a \leq 1$, поэтому аналогичное верно и для ряда $\prod\limits_{k = 1}^{\infty} \left(1 + \frac{1}{k^a}\right)$
+			
+			\item \[\prod\limits_{k = 1}^{\infty} \left(1 + \frac{x^{2k}}{3^k}\right)\]
+			
+			\[\sum\limits_{k = 1}^{\infty}\alpha_k = \sum\limits_{k = 1}^{\infty} \frac{x^{2k}}{3^k}\]
+			
+			Исследуем сходимость по признаку Коши: $\sqrt[n]{\alpha_n} = \sqrt[n]{\frac{x^{2n}}{3^n}} = \frac{x^2}{3} \implies$ ряд (и бесконечное произведение также) сходится, если $\frac{x^2}{3} < 1$, т.е. когда $x \in ]-\sqrt{3}; \sqrt{3}[$
+			
+			\item \[\prod\limits_{k = 1}^{\infty} \sqrt{\frac{k^2 + \sqrt{k}}{k^2}}\]
+			
+			Рассмотрим $\ln\sqrt{\frac{k^2 + \sqrt{k}}{k^2}} = \frac{1}{2}\ln\frac{k^2 + \sqrt{k}}{k^2} \sim \frac{1}{2} \cdot \frac{1}{k^{3/2}}$. Т.к. $\frac{3}{2} > 1$, то ряд сходится.
+			
+			\item \[\prod\limits_{k = 1}^{\infty} \cos\frac{1}{k}\]
+			
+			$\sum\limits_{k = 1}^{\infty}(p_k - 1) = \sum\limits_{k = 1}^{\infty} (\cos\frac{1}{k} - 1) = -\sum\limits_{k = 1}^{\infty}2\sin^2\frac{1}{2k}$
+			
+			$p_k - 1 = -2\sin^2\frac{1}{2k} \sim -\frac{1}{2k^2} \implies \sum\limits_{k = 1}^{\infty}(p_k - 1)$ сходится.
+		\end{enumerate}	
+	\end{example}
+
+	Рассмотрим произведение \eqref{lec31, 1}, где $p_k = 1 + \alpha_k$ и $\alpha_k$ не сохраняет знак. Произведение называется абсолютно сходящимся, если сходится
+	\begin{equation} \label{lec31, 6}
+	 \prod\limits_{k = 1}^{\infty} (1 + |\alpha_k|)
+	\end{equation}
+	
+	\begin{thm}
+		Если сходится \eqref{lec31, 6}, то и \eqref{lec31, 1} (т.е. если произведение сходится абсолютно, то оно сходится)
+		\begin{proof}
+			В \eqref{lec31, 6} $\textbar\alpha_k\textbar > 0$. Будем предполагать, что \eqref{lec31, 6} сходится и воспользуемся критерием Коши для доказательства сходимости \eqref{lec31, 1}. Сходимость \eqref{lec31, 1} равносильна сходимости $\sum\limits_{k = 1}^{\infty} \ln (1 + \alpha_k)$.
+			
+			\[\forall \varepsilon > 0,\ \exists \nu = \nu_\varepsilon,\ \forall n, m \geq \nu (n \geq m): \textbar\sum\limits_{k = m + 1}^{n} \ln(1 + \alpha_k)\textbar \leq \varepsilon\].
+			
+			\[\textbar\sum\limits_{k = m + 1}^{n} \ln(1 + \alpha_k) \textbar \leq \sum\limits_{k = m + 1}^{n} \textbar\ln(1 + \alpha_k)\textbar = (*)\]
+			
+			$\frac{\textbar\ln(1 + \alpha_k)\textbar}{\textbar\alpha_k\textbar} = \textbar \frac{\ln(1 + \alpha_k)}{\alpha_k}\textbar \to 1$, т.к. $\textbar \ln(1 + \alpha_k) \textbar \sim \textbar \alpha_k \textbar \sim \ln(1 + \textbar \alpha_k \textbar)$.
+			
+			Т.к. \eqref(lec31, 6) сходится, то сходится и ряд $\sum\limits_{k = 1}^{\infty} \ln(1 + \textbar \alpha_k \textbar)$, а значит и $\sum\limits_{k = 1}^{\infty} \textbar \alpha_k \textbar$, а значит сходится ряд $\sum\limits_{k = 1}^{\infty} \textbar \ln(1 + \alpha_k) \textbar$. Итак:
+			
+			\[\forall \varepsilon > 0,\ \exists \nu = \nu_\varepsilon,\ \forall n > m > \nu: (*) \leq \varepsilon \implies\]
+			по критерию Коши \eqref{lec31, 1} сходится.
+		\end{proof}
+	\end{thm}
+
+	\begin{thm}
+		Если сходятся оба ряда $\sum\limits_{k = 1}^{\infty} \alpha_k$ и $\sum\limits_{k = 1}^{\infty} \alpha_k^2$, то и $\prod\limits_{k = 1}^{\infty} (1 + \alpha_k)$.
+		
+		\begin{proof}
+			Рассмотрим 
+			\begin{equation}\label{lec31, 7}
+				\prod\limits_{k = 1}^{\infty} (1 + \alpha_k)
+			\end{equation}
+			
+			Т.к. $\ln(1 + \alpha_k) = \alpha_k - \frac{\alpha_k^2}{2} + o(\alpha_k^2) = \alpha_k + b_k$
+			
+			Тогда если оба ряда в условии теоремы сходятся, то \eqref{lec31, 7} сходится как сумма двух сдодящихся рядов $\sum\limits_{k = 1}^{\infty} \alpha_k$ и $\sum\limits_{k = 1}^{\infty} b_k$, т.к. $b_k \sim \alpha_k^2$.
+		\end{proof}
+	\end{thm}
+
+	\begin{example}
+		\[\prod\limits_{k = 1}^{\infty} \left(1 + \frac{\sin k}{k}\right)\]
+		
+		$\alpha_k = \frac{\sin k}{k}$ не сохраняет знак, но $\sum\limits_{k = 1}^{\infty} \frac{\sin k}{k}$ сходится по признаку Дирихле: $\textbar \sum\limits_{k = 1}^{n} \sin k \textbar \leq \frac{1}{\sin \frac{1}{2}}$ - ограничена, а $\frac{1}{k}$ монотонно стремится к 0.
+		
+		$\sum\limits_{k = 1}^{\infty} \left(\frac{\sin k}{k}\right)^2$ сходится, поскольку $\left(\frac{\sin k}{k}\right)^2 \leq \frac{1}{k^2}$, поэтому рассматриваемое произведение сходится.
+	\end{example}
+
+	Заметим, что из доказательства следует, что если один из рядов $\sum\limits_{k = 1}^{\infty} \alpha_k$ и $\sum\limits_{k = 1}^{\infty} \alpha_k^2$ сходится, а другой расходится, то произведение расходится.
+	
+	\begin{example}
+		\[\prod\limits_{k = 1}^{\infty} \left(1 + \frac{(-1)^k}{k^a}\right)\]
+		
+		Ряд $\sum\limits_{k = 1}^{\infty} \frac{(-1)^k}{k^a}$ сходится при $a > 0$, а ряд $\sum\limits_{k = 1}^{\infty} \left(\frac{(-1)^k}{k^a}\right)^2 = \sum\limits_{k = 1}^{\infty} \frac{1}{k^{2a}}$ - сходится при $2a > 1$ и расходится при $2a \leq 1$. Оба сходятся при $a > \frac{1}{2}$, а при $a \leq \frac{1}{2}$ один расходится, поэтому $\prod\limits_{k = 1}^{\infty} \left(1 + \frac{(-1)^k}{k^a}\right)$ сходится при $a > \frac{1}{2}$, расходится при $a \leq \frac{1}{2}$.
+	\end{example}
+	
+\end{document}
