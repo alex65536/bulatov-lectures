@@ -131,11 +131,11 @@
 			
 			\[\sum\limits_{k = 1}^{\infty}\alpha_k = \sum\limits_{k = 1}^{\infty} \frac{x^{2k}}{3^k}\]
 			
-			Исследуем сходимость по признаку Коши: $\sqrt[n]{\alpha_n} = \sqrt[n]{\frac{x^{2n}}{3^n}} = \frac{x^2}{3} \implies$ ряд (и бесконечное произведение также) сходится, если $\frac{x^2}{3} < 1$, т.е. когда $x \in ]-\sqrt{3}; \sqrt{3}[$
+			Исследуем сходимость по признаку Коши: $\sqrt[n]{\alpha_n} = \sqrt[n]{\frac{x^{2n}}{3^n}} = \frac{x^2}{3} \implies$ ряд (и бесконечное произведение также) сходится, если $\frac{x^2}{3} < 1$, т.~е. когда $x \in ]-\sqrt{3}; \sqrt{3}[$
 			
 			\item \[\prod\limits_{k = 1}^{\infty} \sqrt{\frac{k^2 + \sqrt{k}}{k^2}}\]
 			
-			Рассмотрим $\ln\sqrt{\frac{k^2 + \sqrt{k}}{k^2}} = \frac{1}{2}\ln\frac{k^2 + \sqrt{k}}{k^2} \sim \frac{1}{2} \cdot \frac{1}{k^{3/2}}$. Т.к. $\frac{3}{2} > 1$, то ряд сходится.
+			Рассмотрим $\ln\sqrt{\frac{k^2 + \sqrt{k}}{k^2}} = \frac{1}{2}\ln\frac{k^2 + \sqrt{k}}{k^2} \sim \frac{1}{2} \cdot \frac{1}{k^{3/2}}$. Т.~к. $\frac{3}{2} > 1$, то ряд сходится.
 			
 			\item \[\prod\limits_{k = 1}^{\infty} \cos\frac{1}{k}\]
 			
@@ -151,7 +151,7 @@
 	\end{equation}
 	
 	\begin{thm}
-		Если сходится \eqref{lec31, 6}, то и \eqref{lec31, 1} (т.е. если произведение сходится абсолютно, то оно сходится)
+		Если сходится \eqref{lec31, 6}, то и \eqref{lec31, 1} (т.~е. если произведение сходится абсолютно, то оно сходится)
 		\begin{proof}
 			В \eqref{lec31, 6} $\textbar\alpha_k\textbar > 0$. Будем предполагать, что \eqref{lec31, 6} сходится и воспользуемся критерием Коши для доказательства сходимости \eqref{lec31, 1}. Сходимость \eqref{lec31, 1} равносильна сходимости $\sum\limits_{k = 1}^{\infty} \ln (1 + \alpha_k)$.
 			
@@ -159,9 +159,9 @@
 			
 			\[\textbar\sum\limits_{k = m + 1}^{n} \ln(1 + \alpha_k) \textbar \leq \sum\limits_{k = m + 1}^{n} \textbar\ln(1 + \alpha_k)\textbar = (*)\]
 			
-			$\frac{\textbar\ln(1 + \alpha_k)\textbar}{\textbar\alpha_k\textbar} = \textbar \frac{\ln(1 + \alpha_k)}{\alpha_k}\textbar \to 1$, т.к. $\textbar \ln(1 + \alpha_k) \textbar \sim \textbar \alpha_k \textbar \sim \ln(1 + \textbar \alpha_k \textbar)$.
+			$\frac{\textbar\ln(1 + \alpha_k)\textbar}{\textbar\alpha_k\textbar} = \textbar \frac{\ln(1 + \alpha_k)}{\alpha_k}\textbar \to 1$, т.~к. $\textbar \ln(1 + \alpha_k) \textbar \sim \textbar \alpha_k \textbar \sim \ln(1 + \textbar \alpha_k \textbar)$.
 			
-			Т.к. \eqref(lec31, 6) сходится, то сходится и ряд $\sum\limits_{k = 1}^{\infty} \ln(1 + \textbar \alpha_k \textbar)$, а значит и $\sum\limits_{k = 1}^{\infty} \textbar \alpha_k \textbar$, а значит сходится ряд $\sum\limits_{k = 1}^{\infty} \textbar \ln(1 + \alpha_k) \textbar$. Итак:
+			Т.~к. \eqref(lec31, 6) сходится, то сходится и ряд $\sum\limits_{k = 1}^{\infty} \ln(1 + \textbar \alpha_k \textbar)$, а значит и $\sum\limits_{k = 1}^{\infty} \textbar \alpha_k \textbar$, а значит сходится ряд $\sum\limits_{k = 1}^{\infty} \textbar \ln(1 + \alpha_k) \textbar$. Итак:
 			
 			\[\forall \varepsilon > 0,\ \exists \nu = \nu_\varepsilon,\ \forall n > m > \nu: (*) \leq \varepsilon \implies\]
 			по критерию Коши \eqref{lec31, 1} сходится.
@@ -177,9 +177,9 @@
 				\prod\limits_{k = 1}^{\infty} (1 + \alpha_k)
 			\end{equation}
 			
-			Т.к. $\ln(1 + \alpha_k) = \alpha_k - \frac{\alpha_k^2}{2} + o(\alpha_k^2) = \alpha_k + b_k$
+			Т.~к. $\ln(1 + \alpha_k) = \alpha_k - \frac{\alpha_k^2}{2} + o(\alpha_k^2) = \alpha_k + b_k$
 			
-			Тогда если оба ряда в условии теоремы сходятся, то \eqref{lec31, 7} сходится как сумма двух сдодящихся рядов $\sum\limits_{k = 1}^{\infty} \alpha_k$ и $\sum\limits_{k = 1}^{\infty} b_k$, т.к. $b_k \sim \alpha_k^2$.
+			Тогда если оба ряда в условии теоремы сходятся, то \eqref{lec31, 7} сходится как сумма двух сдодящихся рядов $\sum\limits_{k = 1}^{\infty} \alpha_k$ и $\sum\limits_{k = 1}^{\infty} b_k$, т.~к. $b_k \sim \alpha_k^2$.
 		\end{proof}
 	\end{thm}
 
