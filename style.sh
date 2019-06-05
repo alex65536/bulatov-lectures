@@ -80,7 +80,7 @@ Use equation and \eqref{}.'
 	      'Use \R instead of R (if it'\''s set of real numbers)'
 	
 	check -- "$1" \
-	      '\\R\s*_\s*n' \
+	      '\\R\s*_\s*[23n]' \
 	      'Maybe you meant \R^n?'
 	
 	check -- "$1" \
