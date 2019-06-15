@@ -225,7 +225,8 @@ $I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$
     \pderiv{F_i}{u_{k+1}} \equiv 0\quad\forall i = \overline{1,k}.
     \end{equation}
     
-    Аналогично получим ФУ вида
+    При подстановке $v$ в $(k+1)$-е уравнение системы
+    получим ФУ вида
     \begin{equation}
         \label{lec_9.num_17}
         H(x, u_{k+1}) = 0,
@@ -295,7 +296,7 @@ $I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$
      \vdots & \vdots & \ddots & \vdots \\
      \pderiv{F_{k+1}}{u_1} & \pderiv{F_{k+1}}{u_2} & \dots &
      \sum_{j = 1}^{k}
-        \pderiv{F_{k+1}}{v_j} \cdot \pderiv{v_j}{u_{k+1}} + 
+        \pderiv{F_{k+1}}{u_j} \cdot \pderiv{u_j}{u_{k+1}} + 
         \pderiv{F_{k+1}}{u_{k+1}} \\
     \end{vmatrix} \stackrel{\eqref{lec9,a}, \eqref{lec_9.num_22}}{=}
     \begin{vmatrix}
@@ -311,12 +312,12 @@ $I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$
      \pderiv{F_2}{u_1} & \pderiv{F_2}{u_2} & \dots & \pderiv{F_1}{u_k}\\
      \vdots & \vdots & \ddots & \vdots \\
      \pderiv{F_{k}}{u_1} & \pderiv{F_{k}}{u_2} & \dots & \pderiv{F_{k}}{u_k} \\
-    \end{vmatrix} \cdot (-1)^{k+1} \cdot \pderiv{H(x, u_{k+1})}{u_{k+1}} = 
-    (-1)^{k+1} \cdot \pderiv{H(x, u_{k+1})}{u_{k+1}} \cdot I_0,
+    \end{vmatrix} \cdot (-1)^{2k+2} \cdot \pderiv{H(x, u_{k+1})}{u_{k+1}} = 
+    \pderiv{H(x, u_{k+1})}{u_{k+1}} \cdot I_0,
     \end{gather*}
     причем в силу \eqref{lec_9.num_15} $I_0 \ne 0$. Также по условию теоремы 
-    $I(x_0, u_0) \ne 0$. Но раз \[I(x_0, u_0) = (-1)^{k+1} \cdot \pderiv{H(x, 
-    u_{k+1})}{u_{k+1}} \cdot I_0 \ne 0,\]
+    $I(x_0, u_0) \ne 0$. Но раз \[I(x_0, u_0) = 
+    \pderiv{H(x, u_{k+1})}{u_{k+1}} \cdot I_0 \ne 0,\]
     то тогда \[\pderiv{H(x, u_{k+1})}{u_{k+1}} \ne 0,\]
     и поэтому для полученного ФУ выполнены все условия 
     однозначной разрешимости ФУ и, значит, 
