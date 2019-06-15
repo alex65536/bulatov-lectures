@@ -213,8 +213,20 @@ $I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$
     условие
     $v(x_0) = v(x_0, u_{0,k+1}) = v_0$.
     
-    Представляя это решение в последнем уравнении из
-    \eqref{lec_9.num_7}, получим ФУ вида
+    В силу разрешимости \eqref{lec_9.num_16} получаем
+    \begin{equation}
+	\label{lec9,a}
+    F_i(x, v(x, u_{k+1}), u_{k+1}) \equiv 0\quad\forall i = \overline{1,k}.
+    \end{equation}
+    Дифференцируя равенства по $u_{k+1}$ как сложные функции, получаем
+    \begin{equation}
+	\label{lec9,b}
+    \sum_{j=1}^k \pderiv{F_i}{u_j}\cdot\pderiv{u_j}{u_{k+1}} +
+    \pderiv{F_i}{u_{k+1}} \equiv 0\quad\forall i = \overline{1,k}.
+    \end{equation}
+    
+    При подстановке $v$ в $(k+1)$-е уравнение системы
+    получим ФУ вида
     \begin{equation}
         \label{lec_9.num_17}
         H(x, u_{k+1}) = 0,
@@ -239,36 +251,75 @@ $I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$
     Осталось показать, что \eqref{lec_9.num_18} с начальным
     условием \eqref{lec_9.num_19} имеет единственное решение относительно 
     $u_{k+1}$ в рассматриваемых окрестностях начальных
-    точек. Для этого, в силу теоремы о однозначной 
-    разрешимости СФУ
+    точек. Для этого, в силу теоремы об однозначной 
+    разрешимости ФУ
     достаточно проверить, что
     \begin{equation}
     \label{lec_9.num_20}
-    \det\pderiv{H(x, u_{k+1})}{u_{k+1}} 
-    \vline\underset{\left(x_0, u_{0,k+1}\right)}{} \neq 0
+    \pderiv{H(x, u_{k+1})}{u_{k+1}} 
+    \vline\underset{\left(x_0, u_{0,k+1}\right)}{} \neq 0.
     \end{equation}
     
-    Дифференцируя равенство
-    \begin{equation}
-    \label{lec_9.num_21}
-    F_{k+1}\left(x, v(x, u_{k+1}), 
-    u_{k+1}\right) \equiv 0
-    \end{equation}
-    по $u_{k+1}$ в соответствующих точках $x_0\ \text{и}\ u_0$,
-    получаем
+    Дифференцируя функцию \eqref{lec_9.num_18}
+    по $u_{k+1}$ в точках $x_0$ и $u_0$ (по правилу
+    дифференцирования сложной функции), получаем
     \begin{equation}
         \label{lec_9.num_22}
+        \pderiv{H(x, u_{k+1})}{u_{k+1}}  =
         \sum_{j = 1}^{k}
         \pderiv{F_{k+1}}{v_j} \cdot \pderiv{v_j}{u_{k+1}} + 
-        \pderiv{F}{u_{k+1}} \equiv 0
+        \pderiv{F_{k+1}}{u_{k+1}}.
     \end{equation}
     
-    Прибавляя к $\left(k + 1\right)$-му столбцу 
-    якобиана соответствующий столбец, в результате
-    получим, что 
-    \[I\left(x_0, u_0\right)= \dots = 
-    \det\pderiv{H\left(x_0,u_{k+1}\right)}{u_{k+1}} \neq 0,\]
-    поэтому для полученного ФУ выполнены все условия 
+    Но тогда
+    \begin{gather*}
+    I(x_0, u_0) = 
+    \begin{vmatrix}
+     \pderiv{F_1}{u_1} & \pderiv{F_1}{u_2} & \dots & \pderiv{F_1}{u_{k+1}} \\
+     \pderiv{F_2}{u_1} & \pderiv{F_2}{u_2} & \dots & \pderiv{F_2}{u_{k+1}} \\
+     \vdots & \vdots & \ddots & \vdots \\
+     \pderiv{F_{k+1}}{u_1} & \pderiv{F_{k+1}}{u_2} & \dots & 
+     \pderiv{F_{k+1}}{u_{k+1}} \\
+    \end{vmatrix} =
+    \left[\begin{array}{c}
+    \text{прибавляем $(k+1)$-му столбцу} \\
+    \text{линейную комбинацию предыдующих}
+    \end{array}\right] = \\
+	= 
+    \begin{vmatrix}
+     \pderiv{F_1}{u_1} & \pderiv{F_1}{u_2} & \dots & 
+     \sum_{j=1}^k \pderiv{F_1}{u_j}\cdot\pderiv{u_j}{u_{k+1}} +
+    \pderiv{F_1}{u_{k+1}}\\
+     \pderiv{F_2}{u_1} & \pderiv{F_2}{u_2} & \dots & 
+     \sum_{j=1}^k \pderiv{F_2}{u_j}\cdot\pderiv{u_j}{u_{k+1}} +
+    \pderiv{F_2}{u_{k+1}} \\
+     \vdots & \vdots & \ddots & \vdots \\
+     \pderiv{F_{k+1}}{u_1} & \pderiv{F_{k+1}}{u_2} & \dots &
+     \sum_{j = 1}^{k}
+        \pderiv{F_{k+1}}{u_j} \cdot \pderiv{u_j}{u_{k+1}} + 
+        \pderiv{F_{k+1}}{u_{k+1}} \\
+    \end{vmatrix} \stackrel{\eqref{lec9,a}, \eqref{lec_9.num_22}}{=}
+    \begin{vmatrix}
+     \pderiv{F_1}{u_1} & \pderiv{F_1}{u_2} & \dots & 0\\
+     \pderiv{F_2}{u_1} & \pderiv{F_2}{u_2} & \dots & 0\\
+     \vdots & \vdots & \ddots & \vdots \\
+     \pderiv{F_{k+1}}{u_1} & \pderiv{F_{k+1}}{u_2} & \dots & \pderiv{H(x, 
+     u_{k+1})}{u_{k+1}} \\
+    \end{vmatrix} =
+    \\ = [\text{правило Лапласа}] = 
+    \begin{vmatrix}
+     \pderiv{F_1}{u_1} & \pderiv{F_1}{u_2} & \dots & \pderiv{F_1}{u_k}\\
+     \pderiv{F_2}{u_1} & \pderiv{F_2}{u_2} & \dots & \pderiv{F_1}{u_k}\\
+     \vdots & \vdots & \ddots & \vdots \\
+     \pderiv{F_{k}}{u_1} & \pderiv{F_{k}}{u_2} & \dots & \pderiv{F_{k}}{u_k} \\
+    \end{vmatrix} \cdot (-1)^{2k+2} \cdot \pderiv{H(x, u_{k+1})}{u_{k+1}} = 
+    \pderiv{H(x, u_{k+1})}{u_{k+1}} \cdot I_0,
+    \end{gather*}
+    причем в силу \eqref{lec_9.num_15} $I_0 \ne 0$. Также по условию теоремы 
+    $I(x_0, u_0) \ne 0$. Но раз \[I(x_0, u_0) = 
+    \pderiv{H(x, u_{k+1})}{u_{k+1}} \cdot I_0 \ne 0,\]
+    то тогда \[\pderiv{H(x, u_{k+1})}{u_{k+1}} \ne 0,\]
+    и поэтому для полученного ФУ выполнены все условия 
     однозначной разрешимости ФУ и, значит, 
     $\exists! u_{k+1} = u_{k+1}\left(x\right)$, 
     удовлетворяющее, во-первых, начальному условию

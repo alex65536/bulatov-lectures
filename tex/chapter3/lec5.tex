@@ -154,7 +154,7 @@ f(g_1(t),g_2(t),\dots,g_n(t))$, то она также является непр
 В силу непрерывной дифференцируемости $f(x)$ в $x_0$ на соответствущем 
 приращении $\D x \in \R^n$ имеем
 \begin{equation}
-\D f(x_0) = \sum_{j=1}^{n} \pderiv{f(x_0)}{x_j}dx_j+\alpha
+\D f(x_0) = \sum_{j=1}^{n} \pderiv{f(x_0)}{x_j}\D x_j+\alpha
 \text{, где } \alpha=o(\abs{\D x})
 \label{l5:df}.
 \end{equation}
@@ -177,7 +177,7 @@ f(g_1(t),g_2(t),\dots,g_n(t))$, то она также является непр
 \[\D h(t_0) = f(x_0 + \D x) - f(x_0) = \D f(x_0)\]
 
 Из \eqref{l5:df} следует
-\[\D h(t_0) = \sum_{j=1}^{n} \pderiv{f(x_0)}{x_j}dx_j+\alpha.\]
+\[\D h(t_0) = \sum_{j=1}^{n} \pderiv{f(x_0)}{x_j}\D x_j+\alpha.\]
 
 В силу \eqref{l5:dg} и того, что $dx_j = \D g_j(t_0)$, имеем 
 
@@ -209,7 +209,7 @@ $\gamma = o(\abs{\D t})$.
 	\[\leq\text{[нер-во Коши-Буняковского]}\leq
 	\sqrt{\left(\sum_{j=1}^{m}\left(
 	\pderiv{g_k(t_0)}{t_j}\right)^2\right)\cdot
-	\left(\sum_{j=1}^{m}\D t_j^2\right)}=\]
+	\left(\sum_{j=1}^{m}\D t_j^2\right)} + \abs{o(\abs{\D t})}=\]
 	\[=\left[c=\sum_{j=1}^{m}\left(
 	\pderiv{g_k(t_0)}{t_j}\right)^2=const \geq 0\right]=\sqrt c\abs{\D t}+
 	\abs{o(\abs{\D t})}=\]
@@ -236,10 +236,15 @@ $\gamma = o(\abs{\D t})$.
 	\right)\cdot\left(\sum_{j=1}^{n}\beta_j^2\right)}=
 	O(1)\cdot\sqrt{\sum_{j=1}^{n}o(\abs{\D t})^2}=O(1)\cdot o(\abs{\D t})\]
 	
+	(\emph{Примечание редактора:} отметим, что $\sqrt{\sum\limits_{j=1}^{n}o(
+	\abs{\D t})^2} = \abs{o(\abs{\D t})} = o(\abs{\D t})$,
+	что лучше проверить для себя).
+	
 	Значит,
 	$\lim_{\D t \to 0}\cfrac{\abs{
 	\beta}}{\abs{\D t}}\leq 0$, т.~е.$\beta = o(\abs{\D t })$.
 	
+
 \end{itemize}
 Из двух пунктов выше получаем $\gamma = 
 \alpha + \beta = o(\abs{\D t})$, что в сочетании

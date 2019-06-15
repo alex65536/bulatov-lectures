@@ -52,7 +52,7 @@
 	Учитывая, что $
 	\alpha_k = \frac{o(|\Delta x_k|)}{\Delta x_k} = 
 	\frac{o(|\Delta x_k|)}{|\Delta x_k|} \cdot \frac{|\Delta x_k|}{\Delta x_k}
-	\appr{\Delta x_k \to 0}$, получим, переходя к пределу: 
+	\appr{\Delta x_k \to 0}0$, получим, переходя к пределу: 
 	$\lim\limits_{\Delta x \to 0} \frac{\Delta_k f(x_0)}{\Delta x_k} = p_k.$
 	
 	Далее полученные пределы будем называть \emph{частными производными
@@ -61,7 +61,7 @@
 	\begin{equation}
 		\label{partial}
 		\pderiv{f(x)}{x_k} = \lim\limits_{\Delta x_k \to 0}
-		\frac{\Delta f(x_0)}{\Delta x_k} \in \R, \ k = \overline{1, n}.
+		\frac{\Delta_k f(x_0)}{\Delta x_k} \in \R, \ k = \overline{1, n}.
 	\end{equation} 
 	
 	Вторым необходимым условием дифференцируемости ФНП является существование 
@@ -104,7 +104,7 @@
 	В результате $\eqref{differential}$ перепишется как 
 	\begin{equation}
 		\label{other_different}
-		df(x_0) = \sum_{k = 1}^{n} \pderiv{f(x_0)}{x_k}\Delta x_k.
+		df(x_0) = \sum_{k = 1}^{n} \pderiv{f(x_0)}{x_k}dx_k.
 	\end{equation}
 	В дальнейшем будем обозначать $\displaystyle\pderiv{f(x_0)}{x_k} = 
 	f_{x_k}'(x_0)$.

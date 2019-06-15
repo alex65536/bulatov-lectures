@@ -94,8 +94,7 @@
     	 (t_{01}, \ldots, t_{0m})$~---
     	предельная точка для $D(g)$. Если функция $f(x)$ непрерывна в точке 
     	$x_0 = (p_1, \ldots, p_n) \in D \subset \R^n$, то в случае 
-    	существования композиции $h(t) = f(g(t))$ в соответствующих окрестностях
-    	$t_0$ и $x_0$ имеем
+    	существования композиции $h(t) = f(g(t))$ имеем
     	\[
     	    \exists \lim\limits_{t \to t_0}h(t) = \lim\limits_{t \to t_0}f(g(t)) =
     		\left[f\text{~--- непрерывна}\right] = f(\lim\limits_{t \to t_0}g(t)) = 
@@ -120,7 +119,7 @@
     	\end{equation*} 
     	
     Функция $G(t)$ непрерывна, так как $\exists \lim\limits_{t \to t_0} G(t) = 
-    \left[ t \ne t_0 \right] \lim\limits_{t \to t_0} g(t) = x_0 = G(t_0)$.
+    \left[ t \ne t_0 \right] = \lim\limits_{t \to t_0} g(t) = x_0 = G(t_0)$.
     
     Применяя предыдущую теорему для композиции непрерывных функций, т.~к.
     $\forall t \ne t_0 \implies G(t) = g(t)$, то
@@ -178,7 +177,8 @@
 	\end{rem}
 	
     \begin{crl*}[о прохождении непрерывной ФНП через ноль]
-			Если $f(x)$ непрерывна на $D \subset \R^n$ и $\exists a,b \in D: 
+			Если $f(x)$ непрерывна на связном множестве $D \subset \R^n$ и $\exists a,b 
+			\in D: 
 			f(a) \cdot f(b) < 0$, то $\exists x_0 \in D : f(x_0) = 0.$
 	\end{crl*}
 	
