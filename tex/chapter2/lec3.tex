@@ -29,7 +29,7 @@ $(\overline{D} = D)$ в случае, когда $\forall M_k \in D \implies M_0
 \displaystyle \lim_{k \to \infty}{M_k} \in D$. По аналогии с ЧП 
 последовательность $M_k \underset{k \to \infty}{\longrightarrow} M_0$,
 где $\forall M_k \ne M_0, k \in \N$
-будем называть последовательностью Гейне точки $M_0$.
+будем называть \emph{последовательностью Гейне} точки $M_0$.
 
 \begin{exc}
 	Показать, что точка $M_0 \in \R^n$ будет предельной для множества 
@@ -159,22 +159,22 @@ $ и $h(x)\underset{x \to x_0}{\longrightarrow}p_0$,
 
 По аналогии с Ф1П в случае, когда $f(x)\underset{x \to x_0}{\longrightarrow}0$
 говорим, что имеем бесконечно малую ФНП (бмФНП). В частности,
-в разобранном выше примере имеем бмФНМ в окрестности нулевого вектора.
+в разобранном выше примере имеем бмФНП в окрестности нулевого вектора.
 Бесконечно большой ФНП (ББФНП) будем называть функцию,
 для которой $f(x)\underset{x \to x_0}{\longrightarrow}\infty$, т.~е.
 
-\[\forall\ \eps > 0, \exists\ \delta > 0\ |\
+\[\forall\ \eps > 0, \exists\ \delta > 0\ |\ 
 \forall x \in \dot{V}(x_0) \subset D(f), d(x, x_0) \leq \delta
 \implies |f(x)| \geq \eps\]
 
 Здесь также можно рассматривать случай ББФНП, стремящейся к $\pm \infty$.
 \begin{itemize}
 	\item[а)] $f(x)\underset{x \to x_0}{\longrightarrow} -\infty \iff
-	\forall\ \eps > 0, \exists\ \delta > 0\ |\
+	\forall\ \eps > 0, \exists\ \delta > 0\ |\ 
 	\forall x \in \dot{V}(x_0) \subset D(f), d(x, x_0) \leq \delta
 	\implies f(x) \leq -\eps$
 	\item[б)] $f(x)\underset{x \to x_0}{\longrightarrow} +\infty \iff
-	\forall\ \eps > 0, \exists\ \delta > 0\ |\
+	\forall\ \eps > 0, \exists\ \delta > 0\ |\ 
 	\forall x \in \dot{V}(x_0) \subset D(f), d(x, x_0) \leq \delta
 	\implies f(x) \geq \eps$
 \end{itemize}
@@ -182,7 +182,7 @@ $ и $h(x)\underset{x \to x_0}{\longrightarrow}p_0$,
 Кроме бесконечных пределов в конечных точках определяют предел ФНП
 на бесконечности: $f(x)\underset{x \to \infty}{\longrightarrow}
 p_0 \in \R \iff
-\forall\ \eps > 0, \exists\ \delta > 0\ |\
+\forall\ \eps > 0, \exists\ \delta > 0\ |\ 
 \forall x \in D(f), d(x, \vec{0}) \geq \delta
 \implies |f(x) - p_0| \leq \eps$.
 
@@ -194,15 +194,15 @@ p_0 \in \R \iff
 
 \begin{itemize}
 	\item[а)] $f(x)\underset{x \to \infty}{\longrightarrow} +\infty \iff
-	\forall\ \eps > 0, \exists\ \delta > 0\ |\
+	\forall\ \eps > 0, \exists\ \delta > 0\ |\ 
 	\forall x \in D(f), d(x, \vec{0}) \geq \delta
 	\implies f(x) \geq \eps$
 	\item[б)] $f(x)\underset{x \to \infty}{\longrightarrow} -\infty \iff
-	\forall\ \eps > 0, \exists\ \delta > 0\ |\
+	\forall\ \eps > 0, \exists\ \delta > 0\ |\ 
 	\forall x \in D(f), d(x, \vec{0}) \geq \delta
 	\implies f(x) \leq -\eps$
 	\item[в)] $f(x)\underset{x \to \infty}{\longrightarrow} \infty \iff
-	\forall\ \eps > 0, \exists\ \delta > 0\ |\
+	\forall\ \eps > 0, \exists\ \delta > 0\ |\ 
 	\forall x \in D(f), d(x, \vec{0}) \geq \delta
 	\implies |f(x)| \geq \eps$
 \end{itemize}
