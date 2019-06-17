@@ -86,6 +86,42 @@
     \begin{exc}
     	Доказать данную теорему по аналогии с теоремой для Ф1П.
     \end{exc}
+	\begin{eans}
+		Раз $f(x)$ непрерывна в точке $x_0$, то
+		\[
+		\forall \eps > 0\ \exists \delta > 0,\ \forall x\in D(f)\ d(x, x_0)\leq 
+		\delta\implies \abs{f(x) - f(x_0)}\leq \eps.
+		\]
+		Но в то же время, по числу $\widetilde{\eps} = \cfrac{\delta}{\sqrt{n}}$ 
+		имеем
+		\[\exists \widetilde{\delta_k} > 0,\ \forall t\in D(g)\ d(t, 
+		t_0)\leq\widetilde{\delta_k}\implies \abs{g_k(t) - g_k(t_0)}\leq 
+		\frac{\delta}{\sqrt{n}},\quad k = \overline{1, n}.\]
+		Выбирая $\widetilde{\delta} = \min_{1\leq k\leq 
+		n}\left\{\widetilde{\delta_k}\right\}$, имеем:
+		
+		\[\forall t\in D(g)\ d(t, t_0)\leq\widetilde{\delta}\implies \abs{g_k(t) - 
+		g_k(t_0)}\leq \frac{\delta}{\sqrt{n}},\quad k = \overline{1, n}.\]
+		
+		Но тогда, учитывая, что $x = g(t)$, $x_0 = g(t_0)$, получаем
+		\begin{gather*}
+			d(x, x_0) = d(g(t), g(t_0)) = d\left((g_1(t),\ldots,g_n(t)), 
+			(g_1(t_0),\ldots,g_n(t_0))\right) = \\
+			= \sqrt{\sum_{k = 1}^n\left(g_k(t) - g_k(t_0)\right)^2}\leq \sqrt{\sum_{k = 
+			1}^n\frac{\delta^2}{n}} = \delta.
+		\end{gather*}
+		
+		Также имеем, что $h(t) = f(g(t))$ и $\abs{h(t) - h(t_0)} = \abs{f(g(t)) - 
+		f(g(t_0))} = \abs{f(x) - f(x_0)}$, а значит,
+		\[\forall \eps > 0\ \exists \widetilde{\delta} > 0,\ \forall t\in D(h)\ d(t, 
+		t_0)\leq \widetilde{\delta}\implies \abs{h(t) - h(t_0)}\leq \eps,\]
+		что означает непрерывность $h(t)$ в точке $t_0$.
+		
+		(\emph{Небольшое примечание:} в последней формуле $\widetilde{\delta}$ 
+		берётся из условия непрерывности $g_k$, построенной по числу 
+		$\frac{\delta}{\sqrt{n}}$, где $\delta$ строится по произвольному $\eps$ из 
+		условия непрерывности $f$).
+	\end{eans}
     \begin{crl*}[о пределе композиции ФНП]
     	Пусть $\exists \lim\limits_{t \to t_0}g_k(t) = p_k, \ 
     	\forall k = \overline{1, n}; \  g(t) = (g_1(t), 
@@ -206,7 +242,44 @@
 	\begin{exc}
 		Доказать данную теорему по той же схеме, что и для Ф1П.
 	\end{exc}
-	
+	\begin{eans}
+		Докажем для $\max$ от противного.
+		
+		Пусть $M = \sup\limits_{x\in D}f(x)$ (напомню, что супремум, в отличии от 
+		максимума, всегда существует). 
+		Предположим, что $M = +\infty$. Тогда
+		\[\forall n\in\N\ \exists x_n\in D\implies y_n = f(x_n) \geq n.\]
+		Так как $D$~--- компакт, т.~е. ограниченное множество, то для него 
+		справедлив принцип выбора, а именно, из поледовательности $(x_n)$ можно 
+		выбрать сходящуюся $\left(x_{n_i}\right)$ к $x_0\in D$ ($x_0$ лежит в $D$, 
+		т.~к. $D$~--- замкнутое множество), $y_{n_{i}} = f\left(x_{n_{i}}\right) 
+		\geq n_{i}$.
+		
+		Но тогда, переходя к пределу и используя непрерывность $f(x)$ получаем:
+		\[f(x_0) = \lim_{x_{n_{i}}\to x_0}f\left(x_{n_i}\right)\geq 
+		\lim_{n_i\to\infty}n_i = \infty.\]
+		Противоречие с тем, что $f(x)$ непрерывна в $x_0$.
+		
+		Значит, $M\in \R$. Пусть теперь $\nexists x\in D\colon f(x) = M$. Тогда 
+		рассмотрим функцию
+		\[f_0(x) = \frac{1}{M - f(x)}.\]
+		
+		Т.~к. $M = \sup\limits_{x\in D} f(x)$, то $M > f(x)$ $\forall x\in D$ (так 
+		как мы предполагаем, что нет $x$ такого, что $f(x) = M$), а значит, $f_0(x) 
+		> 0$. Более того, $f_0$ непрерывна на $D$, т.~к. и числитель, и знаменатель 
+		являются непрерывными, а знаменатель не обращается в ноль $\forall x\in D$.
+		
+		Но тогда $\exists M_0 = \sup_{x\in D}f_0(x)\in \R$ (по доказанному выше). 
+		Т.~о. получаем:
+		\[f_0(x)\leq M_0\iff M - f(x)\geq \frac{1}{M_0}\iff f(x)\leq M - 
+		\frac{1}{M_0},\]
+		что означает, что $M$ не является супремумом $f(x)$ на $D$. Противоречие.
+		
+		Аналогично доказывается утверждение для $\min$.
+		
+	\end{eans}
+
+
 	Как и для Ф1П определена \emph{равномерно непрерывная} ФНП.
 	\begin{defn}
 		$f(x)$~--- равномерно непрерывна на $D \subset \R^n$ если 
@@ -230,4 +303,32 @@
 		Доказать теорему самостоятельно, воспользовавшись 
 		схемой доказательства для Ф1П.
 	\end{exc}
+	\begin{eans}
+		Предположим, что $f(x)$ не является равномерно непрерывной на $D$, что 
+		значит,
+		\[\exists \eps > 0, \forall \delta > 0\ \exists \widetilde{x}, 
+		\overline{x}\in D, d(\widetilde{x}, \overline{x})\leq \delta \implies 
+		\abs{f(\widetilde{x}) - f(\overline{x})} > \eps.\]
+		
+		Возьмём $\delta_n = \frac{1}{n}$. Для них получим последовательности 
+		$\widetilde{x}_n$, $\overline{x}_n$. Так как $D$~--- ограниченное и 
+		замкнутое множество, то из $\widetilde{x}_n$, $\overline{x}_n$ можно выбрать 
+		сходящуеся подпоследовательности $\widetilde{x}_{n_k}$ к $x_0\in D$, 
+		$\overline{x}_{n_k}$ к $x_1\in D$. Используя то, что
+		\[d(\widetilde{x}_{n_k}, \overline{x}_{n_k})\leq\frac{1}{n_k}\]
+		и то, что $d(x, y)$~--- непрерывная ФНП, то, переходя к пределу при 
+		$n_k\to\infty$, получаем $d(x_0, x_1) = 0 \iff x_1 = x_0$.
+		
+		Перейдём теперь в неравенстве
+		\[\abs{f(\widetilde{x}_{n_k}) - f(\overline{x}_{n_k})} > \eps\]
+		к пределу при $n_k\to\infty$, воспользуемся непрерывностью Ф1П $|t|$ и 
+		непрерывностью $f(x)$ на $D$:
+		\[\eps = \lim_{n_k\to\infty}\eps < 
+		\abs{\lim_{n_k\to\infty}f(\widetilde{x}_{n_k}) - 
+		\lim_{n_k\to\infty}f(\overline{x}_{n_k})} = 
+		\abs{f\left(\lim_{n_k\to\infty}\widetilde{x}_{n_k}\right) - 
+		f\left(\lim_{n_k\to\infty}\overline{x}_{n_k}\right)} = \abs{f(x_0) - f(x_0)} 
+		= 0,\]
+		откуда получаем, что $\eps < 0$. Противоречие.
+	\end{eans}
 \end{document}
