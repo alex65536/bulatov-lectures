@@ -70,7 +70,7 @@ y = y(u, v),
 где используются соответствующие ПДСК $Ouv$ и $Oxy$, 
 то тогда, вычисляя якобиан
 \begin{equation*}
-J(u,v) = \det
+I(u,v) = \det
 \begin{bmatrix}
 x'_u & x'_v\\
 y'_u & y'_v\\
@@ -80,7 +80,7 @@ y'_u & y'_v\\
 имеем
 \begin{equation}
 \label{lec16:6}
-S \overset{\eqref{lec16:2}}{=} \iint\limits_G \abs{ J(u,v)} dudv.
+S \overset{\eqref{lec16:2}}{=} \iint\limits_G \abs{ I(u,v)} dudv.
 \end{equation}
 
 
@@ -139,7 +139,7 @@ S \overset{\eqref{lec16:2}}{=} \iint\limits_G \abs{ J(u,v)} dudv.
 	\end{cases}
 	(x,y)\in G \subset \R^2,
 	\end{equation*}
-	учитывая, что якобиан $J=r$, для площади имеем 
+	учитывая, что якобиан $I=r$, для площади имеем 
 	\begin{equation}
 	\label{lec16:7}
 	S = \iint\limits_Grdrd\phi.
@@ -157,7 +157,7 @@ S \overset{\eqref{lec16:2}}{=} \iint\limits_G \abs{ J(u,v)} dudv.
 	где $
 	a,b=const>0,\
 	\alpha>0,\ (x,y)\in D \subset \R^2,\ (r,\phi)\in G\subset \R^2$,
-	якобиан $J=\alpha a b r \cos^{\alpha-1}\phi\sin^{\alpha-1}\phi$ и, значит, 
+	якобиан $I=\alpha a b r \cos^{\alpha-1}\phi\sin^{\alpha-1}\phi$ и, значит, 
 	для 
 	площади имеем
 	\begin{equation}
@@ -309,7 +309,7 @@ $q(x,y)$ и $p(x,y)$ расположена выше, \eqref{lec16:11} обоб�
 			\begin{gathered}
 				x = Rr \cos \phi\\
 				y = Rr \sin \phi\\
-				J = R^2 r
+				I = R^2 r
 			\end{gathered}
 		\right] =2R^3\iint\limits_Gr\sqrt{1-r^2}\:drd\phi=\\
 		=
@@ -342,7 +342,7 @@ $q(x,y)$ и $p(x,y)$ расположена выше, \eqref{lec16:11} обоб�
 $Ouv\omega$ и $Oxyz$. Если используемые функции непрерывно дифференцируемы и 
 для якобиана этого диффеоморфизма выполняется
 \begin{equation*}
-J(u, v, \omega) = \det
+I(u, v, \omega) = \det
 \begin{bmatrix}
 	x'_u&x'_v&x'_\omega\\
 	y'_u&y'_v&y'_\omega\\
@@ -353,7 +353,7 @@ J(u, v, \omega) = \det
 то тогда, в силу формулы замены переменных в 3И, имеем:
 \begin{equation}
 \label{lec16:13}
-V = \text{объём } T = \iiint\limits_Tdxdydz=\iiint\limits_G \abs{J(u, v, 
+V = \text{объём } T = \iiint\limits_Tdxdydz=\iiint\limits_G \abs{I(u, v, 
 \omega)}dudv d\omega.
 \end{equation}
 
@@ -372,7 +372,7 @@ V = \text{объём } T = \iiint\limits_Tdxdydz=\iiint\limits_G \abs{J(u, v,
 \end{equation*}
 и его якобиан
 \begin{equation*} 
-	\mathfrak{J} = \det
+	J = \det
 	\begin{bmatrix}
 		u'_x&u'_y&u'_z\\
 		v'_x&v'_y&v'_z\\
@@ -386,7 +386,7 @@ V = \text{объём } T = \iiint\limits_Tdxdydz=\iiint\limits_G \abs{J(u, v,
 	 = \Delta.
 \end{equation*}
 Если $\Delta\neq0$, то
- $J = \dfrac{1}{\mathfrak{J} } = \dfrac{1}{\Delta} \neq 0$. В связи с этим, на 
+ $I = \dfrac{1}{J } = \dfrac{1}{\Delta} \neq 0$. В связи с этим, на 
  основании
 \eqref{lec16:13} получаем, что объем ограниченного параллелепипеда:
 \begin{equation*}
