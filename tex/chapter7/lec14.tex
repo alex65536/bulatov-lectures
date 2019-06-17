@@ -73,7 +73,7 @@
 		\Delta z_k = z_k - z_{k - 1}, \\ k = \overline{1, m},\ j = \overline{1, l}.
 		\end{cases}\]
 		
-		Отсюда при $\widetilde{d_0} = \diam \widetilde{P_0} \to 0$ имеем: 
+		Отсюда при $\widetilde{d_0} = \diam \widetilde{P_0} \to 0$ для функции $F(x, y) = \sum\limits_{k = 1}^m F_k(x, y)$ имеем: 
 		
 		\begin{equation}
 		\iint\limits_D F\left(x, y\right) dxdy = \lim\limits_{\widetilde{d_0} 
@@ -89,7 +89,7 @@
 		\left(\int\limits_{z_k - 1}^{z_k} f(M_j, z)dz\right) \Delta D_j = \\ 
 		= \sum\limits_{j = 1}^{l} \sum\limits_{k = 1}^{m} I_{kj} \Delta D_j = 
 		\sum\limits_{j = 1}^{l} \sum\limits_{k = 1}^{m} f\left(N_{kj}\right) \Delta 
-		z_k \Delta D_j, \label{lec14:7}
+		z_k \Delta D_j = \sigma_0, \label{lec14:7}
 		\end{gathered}
 		\end{equation}
 		где $\Delta D_j = \mes D_j$~--- площадь $D_j$.
@@ -108,7 +108,7 @@
 		
 		Из непрерывности исходной функции предел этих специальных интегральных сумм 
 		рассмотренного 3И будет такой же, что и у общей интегральной суммы, поэтому 
-		при $d = \diam P \to 0$ получаем $0 \leq \diam \widetilde{P} < d \implies d 
+		при $d = \diam P \to 0$ получаем $0 \leq \diam \widetilde{P} < d \implies \diam \widetilde{P} 
 		\to 0$ для рассматриваемого кубируемого компакта $H \subset \R^3$ следует
 		\begin{equation}
 		I = \lim\limits_{d \to 0} \sigma_0 = \iint\limits_D  F\left(x, y\right) dxdy 

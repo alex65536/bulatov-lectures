@@ -122,7 +122,7 @@
 	$\lambda_1,\; \ldots,\; \lambda_m\quad \forall 
 	\lambda_i \in \R,\ i = \overline{1,\; m}$, 
 	с помощью которых на рассматриваемой ФНП и уравнении 
-	связи строится \emph{уравнение Лагранжа}:
+	связи строится \emph{функция Лагранжа}:
 	\begin{equation}
 	L\left(x, y\right) = f\left(x, y\right) + \sum\limits_{k = 1}^m 
 	\lambda_k F_k\left(x, y\right) \label{lec11.1:8}
@@ -134,12 +134,12 @@
 	\eqref{lec11.1:8} на обычный локальный экстремум относительно $x, y,\lambda$.
 	Во-первых, из необходимого условия локального экстремума:
 	\begin{equation}
-	du = 0 \implies \dfrac{\partial f}{\partial x_1} dx_1 + \ldots + 
+	df = 0 \implies \dfrac{\partial f}{\partial x_1} dx_1 + \ldots + 
 	\dfrac{\partial f}{\partial x_n} dx_n + \dfrac{\partial f}{\partial y_1}dy_1
 	 + \ldots + \dfrac{\partial f}{\partial y_n} dy_n = 0 \label{lec11.1:9}
 	\end{equation}
 	
-	Аналогично из уравнения связи получаем:
+	Аналогично из уравнений связи, а именно из $F_k(x, y) = 0$, $k = \overline{1, m}$, получаем:
 	\begin{equation}
 	dF_k\left(x, \; y\right) = 0 \implies \dfrac{\partial 
 	F_k}{\partial x_1}dx_1 + 
@@ -199,7 +199,7 @@
 	\label{lec11.1:13}
 	\sum\limits_{j=1}^{n}\left(  \dfrac{\partial f }{\partial x_j} + 
 	\sum\limits_{k=1}^{m} \lambda_k\dfrac{\partial F_k }{\partial x_j}  
-	\right) \partial x_j =0 
+	\right) d x_j =0 
 	\end{equation}
 	
 	В\eqref{lec11.1:13} дифференциалы
