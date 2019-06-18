@@ -172,7 +172,17 @@ $\Phi(x) = f( x, \varphi(x) )$:
 	dx_k + \sum_{j = 1}^{m} \pderiv{ f(x_0, y_0) }{\varphi_j} d\varphi_j = 0.
 \end{equation}
 
-Рассматривая \eqref{lec_10.num_6} как линейную систему относительно неизвестных
+Аналогично дифференцируя тождество $F(x, \varphi(x)) \equiv 0$, т.~е. $F_i(x, 
+\varphi(x)) \equiv 0$ для ${\forall x \in \widetilde{V}(x_0)}$, $i = 
+\overline{1, m}$, имеем:
+\begin{equation}
+\label{2527}
+d F_i (x_0, y_0) = \sum\limits_{k=1}^{n} \dfrac{\partial F_i (x_0, 
+y_0)}{\partial x_k} d x_i + \sum\limits_{j=1}^{n} \dfrac{\partial F_i (x_0, 
+y_0)}{\partial y_j} d \varphi_j = 0
+\end{equation}
+
+Рассматривая \eqref{2527} как линейную систему относительно неизвестных
 $d\varphi_1, \ldots, d\varphi_m$ и учитывая, что якобиан 
 этой системы не равен $0$,
 мы можем однозначно выразить линейным образом $d\varphi_1, \dots, d\varphi_m$
