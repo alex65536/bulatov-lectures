@@ -278,7 +278,7 @@
 		Аналогично доказывается утверждение для $\min$.
 		
 	\end{eans}
-
+	\medskip
 
 	Как и для Ф1П определена \emph{равномерно непрерывная} ФНП.
 	\begin{defn}
@@ -323,12 +323,12 @@
 		\[\abs{f(\widetilde{x}_{n_k}) - f(\overline{x}_{n_k})} > \eps\]
 		к пределу при $n_k\to\infty$, воспользуемся непрерывностью Ф1П $|t|$ и 
 		непрерывностью $f(x)$ на $D$:
-		\[\eps = \lim_{n_k\to\infty}\eps < 
+		\[\eps = \lim_{n_k\to\infty}\eps \le
 		\abs{\lim_{n_k\to\infty}f(\widetilde{x}_{n_k}) - 
 		\lim_{n_k\to\infty}f(\overline{x}_{n_k})} = 
 		\abs{f\left(\lim_{n_k\to\infty}\widetilde{x}_{n_k}\right) - 
 		f\left(\lim_{n_k\to\infty}\overline{x}_{n_k}\right)} = \abs{f(x_0) - f(x_0)} 
 		= 0,\]
-		откуда получаем, что $\eps < 0$. Противоречие.
+		откуда получаем, что $\eps \le 0$. Противоречие.
 	\end{eans}
 \end{document}
