@@ -125,7 +125,7 @@
     \begin{crl*}[о пределе композиции ФНП]
     	Пусть $\exists \lim\limits_{t \to t_0}g_k(t) = p_k, \ 
     	\forall k = \overline{1, n}; \  g(t) = (g_1(t), 
-    	\ldots, g_m(t)),\ t = (t_1,
+    	\ldots, g_n(t)),\ t = (t_1,
     	 \ldots, t_m) \in D(g) \subset \R^m,$ а $t_0 = 
     	 (t_{01}, \ldots, t_{0m})$~---
     	предельная точка для $D(g)$. Если функция $f(x)$ непрерывна в точке 
@@ -278,7 +278,7 @@
 		Аналогично доказывается утверждение для $\min$.
 		
 	\end{eans}
-
+	\medskip
 
 	Как и для Ф1П определена \emph{равномерно непрерывная} ФНП.
 	\begin{defn}
@@ -312,9 +312,10 @@
 		
 		Возьмём $\delta_n = \frac{1}{n}$. Для них получим последовательности 
 		$\widetilde{x}_n$, $\overline{x}_n$. Так как $D$~--- ограниченное и 
-		замкнутое множество, то из $\widetilde{x}_n$, $\overline{x}_n$ можно выбрать 
-		сходящуеся подпоследовательности $\widetilde{x}_{n_k}$ к $x_0\in D$, 
-		$\overline{x}_{n_k}$ к $x_1\in D$. Используя то, что
+		замкнутое множество, то из последовательности $\left(\widetilde{x}_n, 
+		\overline{x}_n\right)$ можно выбрать 
+		сходящуюся подпоследовательность $\left(\widetilde{x}_{n_k}, 
+		\overline{x}_{n_k}\right)$ к $(x_0, x_1)\in D^2$. Используя то, что
 		\[d(\widetilde{x}_{n_k}, \overline{x}_{n_k})\leq\frac{1}{n_k}\]
 		и то, что $d(x, y)$~--- непрерывная ФНП, то, переходя к пределу при 
 		$n_k\to\infty$, получаем $d(x_0, x_1) = 0 \iff x_1 = x_0$.
@@ -323,12 +324,12 @@
 		\[\abs{f(\widetilde{x}_{n_k}) - f(\overline{x}_{n_k})} > \eps\]
 		к пределу при $n_k\to\infty$, воспользуемся непрерывностью Ф1П $|t|$ и 
 		непрерывностью $f(x)$ на $D$:
-		\[\eps = \lim_{n_k\to\infty}\eps < 
+		\[\eps = \lim_{n_k\to\infty}\eps \le
 		\abs{\lim_{n_k\to\infty}f(\widetilde{x}_{n_k}) - 
 		\lim_{n_k\to\infty}f(\overline{x}_{n_k})} = 
 		\abs{f\left(\lim_{n_k\to\infty}\widetilde{x}_{n_k}\right) - 
 		f\left(\lim_{n_k\to\infty}\overline{x}_{n_k}\right)} = \abs{f(x_0) - f(x_0)} 
 		= 0,\]
-		откуда получаем, что $\eps < 0$. Противоречие.
+		откуда получаем, что $\eps \le 0$. Противоречие.
 	\end{eans}
 \end{document}

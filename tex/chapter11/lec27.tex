@@ -161,7 +161,7 @@
 			\int\limits_{n}^{n+1} f(x) \, dx > 
 			b_n. \]
 			В силу того, что $f(x) > 0 \ \; \forall x \in \R$,
-			имеем $a_{k+1} \le f(x) \le a_k, \; \forall x \in [k,k+1]$
+			имеем $a_{k+1} \le f(x) \le a_k, \; \forall x \in [k,k+1]$.
 			В силу монотонности ОИ получаем
 			\[ a_{k+1} = \int\limits_{k}^{k+1}a_{k+1} \; dx  \le 
 			\int\limits_{k}^{k+1}f(x) \, dx \le 
@@ -175,7 +175,7 @@
 			монотонной последовательности $\exists M : b_n \le M \implies S_n \le a_1 + 
 			M \ \; 
 			\forall n \in \N$, т.~е. $S_n$ сходится по тому же критерию, т.~е. сходится 
-			и ряд \eqref{lec_26, num_1}. С другой стороны,
+			и ряд \eqref{lec_26, num_1}. С другой стороны
 			\[ S_n = a_1 + a_2 + \dots + a_n \ge \int\limits_{1}^{n}f(x) \, dx  + a_n = 
 			a_n + b_n. \]
 			Если $b_n$ расходится ($b_n$ возрастает и неограничена), то тогда и $S_n 
@@ -190,11 +190,11 @@
 		\label{lec27,harmonic_row_generalized}  \end{equation}
 		
 		В качестве производящей функции возьмем $f(x) = \dfrac{1}{x^p}$.
-		\[ b_n = \int\limits_{1}^{n} \frac{dx}{x^p} = \begin{cases} \frac{x^{-p + 
-		1}}{-p + 
-		1} , \; \;\; p \ne 1  \\  \ln{|x|}, \; \; \; p = 1 \end{cases} =  
+		\[ b_n = \int\limits_{1}^{n} \frac{dx}{x^p} =\left[ \int\dfrac{dx}{x^p} = 
+		\begin{cases} \frac{x^{-p + 1}}{-p + 
+		1} , \; \;\; p \ne 1  \\  \ln{|x|}, \; \; \; p = 1 \end{cases} \right] =  
 		\begin{cases} \frac{n^{1-p} - 1}{1-p } \underset{n \rightarrow \infty}
-		{\longrightarrow} \frac{1}{1-p} ,& \; \;\; p > 1  \\  \ln{|n|} \underset{n 
+		{\longrightarrow} \frac{1}{p-1} ,& \; \;\; p > 1  \\  \ln{|n|} \underset{n 
 		\rightarrow \infty}
 		{\longrightarrow} \infty ,& \; \; \; p = 1 \\
 		\frac{n^{1-p} - 1}{1-p } \underset{n \rightarrow \infty}

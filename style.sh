@@ -96,7 +96,7 @@ Use equation and \eqref{}.'
 	      'Use \iint for double integral, \iiint for triple integral'
 	
 	check -- "$1" \
-	      '[Тт]\s*\.(\s*|\s+~\s*|\s*~\s+)[кедп]|[Тт]~\.|[Тт]\.~[кедп]([^\.]|$)' \
+	      '[Тт]\s*\.(\s*|\s+~\s*|\s*~\s+)[кедпч]|[Тт]~\.|[Тт]\.~[кедпч]([^\.]|$)' \
 	      '"Т. к." and "т. е" are better to write as "т.~к." and "т.~е."'
 	
 	check -- "$1" \
