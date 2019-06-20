@@ -72,6 +72,8 @@ s/([Кк])вадрир/\1адрир/g
 s/([Сс])(жат[а-я]+)/\1\2 архиватором/g
 ' **/*.tex
 
+sed -i -E 's/mes\}/mr}/g' matanhelper.sty
+
 echo "Building PDF..."
 make build
 make clean
