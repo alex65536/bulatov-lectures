@@ -1,6 +1,5 @@
 \usetikzlibrary{arrows}
 \begin{tikzpicture}
-triangle 60triangle 60->\tikzstyle{myedgestyle} = [->]
 
 \node (v1) at (0,0) {};
 \node (v2) at (0,4.5) {};
