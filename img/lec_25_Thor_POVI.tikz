@@ -1,20 +1,22 @@
-\usetikzlibrary{arrows}
-\begin{tikzpicture}
-
-\node (v1) at (0,0) {};
-\node (v2) at (0,4.5) {};
-\node (v3) at (4.5,0) {};
-\node (v4) at (-3,-3) {};
-\draw [-triangle 60] (v1.center) to (v2.center);
-\draw [-triangle 60]  (v1.center) to (v3.center);
-\draw [-triangle 60]  (v1.center) to (v4.center);
-\draw [-triangle 60] (-1.5,-1.5) node (v6) {} ellipse (0.826 and 1.0956);
-\node (v5) at (-2.0569,-0.6884) {};
-\node at (-2,-3) {$x$};
-\node at (4.5,-0.5) {$y$};
-\node at (0.5,4.5) {$z$};
-\draw[<->] (v5.center) to (v6.center);
-\node at (-1,-1.5) {$b$};
-\node at (-1.5,-1) {$a$};
-\node at (0.5,-0.5) {$(0,0)$};
+\begin{tikzpicture}[scale = 0.5]
+		\node [style=none] (0) at (0, 9) {};
+		\node [style=none] (1) at (0, 0) {};
+		\node [style=none] (2) at (9, 0) {};
+		\node [style=circle] (3) at (5, 0) {};
+		\node [style=none] (4) at (5, 2) {};
+		\node [style=none] (5) at (3, 0) {};
+		\node [style=none] (6) at (5, -2) {};
+		\node [style=none] (7) at (7, 0) {};
+		\node [style=none] (8) at (5.75, -1) {$a$};
+		\node [style=none] (9) at (5, 0.75) {$(b,0)$};
+		\node [style=none] (10) at (9, -0.75) {$x$};
+		\node [style=none] (11) at (1, 9) {$z$};
+		\node [style=none] (12) at (0, -1) {$(0,0)$};
+		\draw [style=arrow] (1.center) to (0.center);
+		\draw [style=arrow] (1.center) to (2.center);
+		\draw [bend left=45] (5.center) to (4.center);
+		\draw [bend left=45] (4.center) to (7.center);
+		\draw [bend left=45] (7.center) to (6.center);
+		\draw [bend right=315] (6.center) to (5.center);
+		\draw [style=new edge style 0] (3) to (6.center);
 \end{tikzpicture}
