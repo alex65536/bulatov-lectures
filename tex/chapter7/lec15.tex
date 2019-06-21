@@ -14,13 +14,16 @@
 	\begin{proof}
 		
 	Будем использовать формулу \eqref{lec14:15} в предположении, что
-	$D$ и $G$ ~--- квадрируемые компакты в $\R^n$. Рассмотрим произвольное 
+	$D$ и $G$ ~--- измеримые компакты в $\R^n$. Рассмотрим произвольное 
 	разбиение $P =
 	\{ D_k \},\; k = \overline{1, m}$ измеримого компакта $D \subset 
 	\R^n$ на измеримые компакты $D_k$, так что $D = \bigcup\limits_{k = 1}^{m} 
 	D_k$ 
-	и $\mes\left(D_i \cap D_j\right) = 0,\; i = j$, т.~е. различные части $D_i$ и 
-	$D_j$ могут иметь общими лишь, может быть, граничные точки.
+	и $\mes\left(D_i \cap D_j\right) = 0,\; i \ne j$, т.~е. различные части $D_i$ 
+	и 
+	$D_j$ могут иметь общими лишь, может быть, граничные точки. (\emph{Примечание 
+	редактора:} то, что пересечение имеет меру ноль может также означать, что, 
+	например, на плоскости общей может быть прямая).
 		   
 	При диффеоморфизме \eqref{lec14:11} и \eqref{lec14:12} разбиение $P$ 
 	множества $D$ порождает соответствующее разбиение измеримого компакта 
@@ -61,9 +64,9 @@
 	\begin{equation}
 	\label{lec15:40}
 	\begin{gathered}
-	\sigma = \sigma \{ h; (\widetilde{P}; \widetilde{Q}) \} = \sum_{k = 1}^{m} h 
+	\sigma = \sigma (h; (\widetilde{P}; \widetilde{Q}) ) = \sum_{k = 1}^{m} h 
 	\left( f \left( N_k \right) \right)|I(N_k)| \Delta G_k = \\ = 
-	\sigma \{ h; \left( P; Q \right) \} = \sum_{k = 1}^{m} h 
+	\sigma ( h; \left( P; Q \right) ) = \sum_{k = 1}^{m} h 
 	\left( M_k \right) \Delta D_k.
 	\end{gathered}
 	\end{equation}
@@ -235,7 +238,7 @@
 
 	\begin{exmp}
 		Рассмотрим шар
-		\[x^2 + y^2 + z^2 \geq R^2.\]
+		\[x^2 + y^2 + z^2 \leq R^2.\]
 		После полярной замены имеем \[r^2 \leq R^2, \;\; 0 \leq \phi \leq 2\pi, 
 		\;\; -\dfrac{\pi}{2} \leq \psi \leq \dfrac{\pi}{2}.\]
 		

@@ -117,44 +117,55 @@ $\displaystyle \lim_{x \to x_0}{f(x)} = p_0 \in \R$.
 Так же, как и для Ф1П,
 доказывается \emph{критерий Гейне} сходимости ФНП в пространстве $\R^n$:
 
+\begin{thm}[критерий Гейне]
 Для того, чтобы $f(x)\underset{x \to x_0}{\longrightarrow}p_0$
 необходимо и достаточно, чтобы
-$\forall\ M_k \in D$~--- последовательности Гейне точки 
+$\forall M_k \in D$~--- последовательности Гейне точки 
 $M_0 \in \R^n \implies$ 
 \[f(M_k)\underset{k \to \infty}
 {\longrightarrow}p_0 \in \R\]   
+\end{thm}
 
 \begin{proof}
 	\quad 
 
 	\nec
-	$f(x) \underset{x \to x_0}{\longrightarrow} p_0\iff \forall \eps > 0 \quad \exists 
-	\delta \geq 0, \quad \forall x \in \dot{V}(x_0)$, $d(x,x_0) \leq \delta \implies 
-	|f(x)-p_0| \leq \eps.$ Пусть $M_k$~--- последовательность Гейне точки 
-	$M_0$, т.e.
+	$f(x) \underset{x \to x_0}{\longrightarrow} p_0$ по определению означает, что
+	\[\forall \eps > 0 \quad
+	\exists \delta \geq 0, \quad \forall x \in \dot{V}(x_0),\ d(x,x_0) \leq 
+	\delta \implies 
+	|f(x)-p_0| \leq \eps.\] Пусть $M_k$~--- последовательность Гейне точки 
+	$M_0$, т.~е.
 	\begin{equation}
 	\label{heine-1}
 		M_k\underset{k \to \infty}{\longrightarrow} M_0 \iff \forall \tilde \eps > 0 
 		\quad \exists \nu \in \R \;|\; \forall k \geq \nu \implies d(M_k, x_0) \leq 
 		\tilde \eps
 	\end{equation} 
-	Возьмём в \eqref{heine-1} $\tilde\eps = \delta$. 
-	\[ \forall \eps > 0 \quad\exists \nu \in \R \;|\; \forall k \geq \nu \implies d(M_k,x_0) 
-	\leq \tilde \eps = \delta \implies f(M_k)-p_0\leq \eps \implies f(M_k) 
-	\underset{k \to \infty}{\longrightarrow}p_0.\]
+	Возьмём в \eqref{heine-1} $\tilde\eps = \delta$. Тогда получаем, что
+	\[ \forall \eps > 0 \quad\exists \nu \in \R \;|\; \forall k \geq \nu \implies
+	d(M_k,x_0) 
+	\leq \tilde \eps = \delta \implies f(M_k)-p_0\leq \eps,\] откуда $f(M_k) 
+	\underset{k \to \infty}{\longrightarrow}p_0.$
 
 	\suff Положим, что это неверно, тогда:
 	\begin{equation}
 	\label{heine-2}
-		\exists \eps_0>0 \quad\forall \delta \geq 0 \quad\exists x \in  \dot{V}(x_0), 
-		\text{ т.ч. } d(x,x_0)\leq\delta, \text{ и } |f(x)-p_0|>\eps_0,
+		\exists \eps_0>0 \quad\forall \delta \geq 0 \quad\exists x \in  
+		\dot{V}(x_0), 
+		\text{ т.~ч. } d(x,x_0)\leq\delta, \text{ и } |f(x)-p_0|>\eps_0,
 	\end{equation}
-	т.е. для $\delta = \frac1n \quad \exists x(\frac1n) : \delta = \frac1n 
-	\implies d(x(\frac1n),x_0)\leq \delta$
-	При $n \to \infty \implies \delta \to 0$ и $d(x(\frac1n),x_0) \to 0 \implies 
-	x(\frac1n) \underset{n \to \infty}{\longrightarrow}x_0$, т.е. последовательность 
-	$y_n = x(\frac1n)$~-- последовательность Гейне, тогда $\forall \eps_0 \quad 
-	\exists \nu \in \R \;|\; \forall k \geq \nu \implies |f(y_k)-p_0|\leq \eps_0$, 
+	т.~е. для $\delta = \frac1n$ получаем, что \[\exists x\left(\frac1n\right) : 
+	\delta = \frac1n 
+	\implies d\left(x\left(\frac1n\right),x_0\right)\leq \delta.\]
+	При $n \to \infty$ имеем $\delta \to 0$ и 
+	$d\left(x\left(\frac1n\right),x_0\right) \to 0$. Отсюда имеем
+	$x\left(\frac1n\right) \underset{n \to \infty}{\longrightarrow}x_0$, т.~е.
+	последовательность 
+	$y_n = x(\frac1n)$~-- последовательность Гейне. Но тогда \[\forall \eps_0 > 0 
+	\quad 
+	\exists \nu \in \R \;|\; \forall k \geq \nu \implies |f(y_k)-p_0|\leq 
+	\eps_0,\] 
 	что противоречит \eqref{heine-2}.
 \end{proof}
 

@@ -216,7 +216,7 @@
 		когда $a_n\uparrow$).
 		Тогда
 		\[* = M|a_1 - \cancel{a_2} + \cancel{a_2} - \cancel{a_3} + \ldots + 
-		\cancel{a_{n - 1}} + a_n| + M|a_n| = M|a_1 - a_n| + M|a_n|\leq
+		\cancel{a_{n - 1}} + a_n| + M|a_n| = M|a_1 + a_n| + M|a_n|\leq
 		 M(|a_1| + 2|a_n|).\qedhere\]
 	\end{proof}
 
@@ -247,7 +247,7 @@
 		\leq 2M.\]
 		Тогда
 		\[\left|\sum_{k = m + 1}^n a_kb_k\right|\leq
-		\left[\text{используем \hyperref[29:lemma_abel]{лемму Абеля}}\,\right]\leq
+		\left[\text{\hyperref[29:lemma_abel]{лемма Абеля}}\,\right]\leq
 		 2M(|a_{m + 1}| + 2|a_n|)\leq 6M\eps.\]
 			
 		Значит, \eqref{29:8} сходится по критерию Коши.
@@ -339,7 +339,7 @@
 
 	\subsection{Абсолютная и условная сходимость}
 	
-	Рассмотрим ряд \eqref{29:1} с элементами произовального знака. Наряду с ним 
+	Рассмотрим ряд \eqref{29:1} с элементами произвольного знака. Наряду с ним 
 	рассмотрим два ряда 
 	\begin{equation}
 		\sum\limits_{k = 1}^\infty b_k,\ \sum\limits_{k = 1}^\infty c_k,
@@ -401,7 +401,7 @@
 		\[\sum_{k = 1}^n a_k = \sum_{k = 1}^n b_k - \sum_{k = 1}^n c_k.\]
 		
 		Пусть $n\to\infty$. Если оба ряда \eqref{29:10} сходятся, 
-		то, по \hyperref[29:absolute_conv]{критерию абсолютной сходимости} 
+		то по \hyperref[29:absolute_conv]{критерию абсолютной сходимости} 
 		получаем, что \eqref{29:1} сходится абсолютно, что противоречит 
 		условной сходимости \eqref{29:1}.
 		

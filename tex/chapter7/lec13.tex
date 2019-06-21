@@ -47,8 +47,8 @@ $\left( x, y \right) \in D \subset \R^n$ и $D$~--- измеримое множ�
 	 $j = \overline{0, l}$~--- разбиение отрезка $\left[ c, d\right]$, 
 	 т.~e. $c = y_0 < y_1 < \dots < y_{j-1} < y_j < \dots < y_l = d $.
 	 
-	 С помощью вертикальных прямых $ x = x_i,\  i = \overline{1, m-1} $
-	 и горизонтальных прямых $ y = y_j,\ j = \overline{1, l-1} $
+	 С помощью вертикальных прямых $ x = x_i,\  i = \overline{1, m} $
+	 и горизонтальных прямых $ y = y_j,\ j = \overline{1, l} $
 	 прямоугольник $\Pi$ разобьется на части \[\Pi_{ij} = 
 	 \left[ x_{i - 1}, x_i \right] \times \left[ y_{j - 1}, y_j \right], \] 
 	 образующие соответствующее разбиение
@@ -172,13 +172,13 @@ $\left( x, y \right) \in D \subset \R^n$ и $D$~--- измеримое множ�
  	Из \eqref{lec_13, num_15} $ \implies $ что рассматриваемая $\sigma$
  	является одной из интегральных сумм для Ф1П  \eqref{lec_13, num_16}.
  	Отсюда при 
- 	\[ \widetilde{d} = \diam \widetilde{P} = 
+ 	\[ \overline{d} = \diam \overline{P} = 
  		\underset{1 \leq j \leq l} {\max} \left\lbrace \Delta y_j \right\rbrace 
  	\to 0 \]
  	В силу непрерывности, а, значит, интегрируемости
  	используемой функции получаем: 
- 	\[ \exists \lim\limits_{ \widetilde{d} \to 0 } \sigma = 
- 	\lim\limits_{ \widetilde{d} \to 0 } 
+ 	\[ \exists \lim\limits_{ \overline{d} \to 0 } \sigma = 
+ 	\lim\limits_{ \overline{d} \to 0 } 
  	\sum\limits_{j = 1}^l F \left( y_j \right) \Delta y_j =
  	\int\limits_c^d F \left( y \right)dy. \]
  	
@@ -190,7 +190,7 @@ $\left( x, y \right) \in D \subset \R^n$ и $D$~--- измеримое множ�
  	в силу критерия Гейне.
  	
  	Таким образом, окончательно получим, что
- 	\[ I = \lim\limits_{ \widetilde{d} \to 0 } \sigma = 
+ 	\[ I = \lim\limits_{ \overline{d} \to 0 } \sigma = 
  	\int\limits_c^d F \left( y \right) dy =
  	\int\limits_c^d \left( \int\limits_a^b 
  	f \left( x, y\right) dx \right) dy, \]
@@ -245,6 +245,9 @@ $\left( x, y \right) \in D \subset \R^n$ и $D$~--- измеримое множ�
 		\int\limits_c^d dy \int\limits_a^b f \left( x, y \right) dx.
 		\end{equation}
 		
+		(\emph{Примечание редактора:} этот результат по сравнению с замечанием можно 
+		ещё сильнее обобщить, требуя только $f\in R(\Pi)$, который гарантирует 
+		интегрируемость $G(x)$ и $\Phi(y)$).
 	\end{enumerate}
 	
 \end{rems}

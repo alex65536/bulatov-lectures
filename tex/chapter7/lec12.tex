@@ -23,6 +23,8 @@ $\Pi \subset \R^n$ будем называть множество точек
 \mes\Pi = (b_1 - a_1) \cdot (b_2 - a_2) \cdot \ldots \cdot (b_n - a_n).
 \end{equation}
 
+(\emph{Примечание редактора:} эту меру называют \emph{мерой Жордана}).
+
 \begin{example}
     ~
     
@@ -61,7 +63,7 @@ $H_k,\ k = \overline{1,m}$, т.~е.
 
 Для произвольного $D \subset \R^n$ многогранник $P$ 
 считается \emph{вписанным} в $D$, 
-если $P \subset D$. Аналогично, многогранник Q 
+если $P \subset D$. Аналогично, многогранник $Q$ 
 считается \emph{описанным} около $D$, если $D \subset Q$.
 
 Величины
@@ -83,12 +85,10 @@ m^* = \underset{Q \supset D}{\inf} \{ \mes Q \}
 является ограниченность рассматриваемого множества $D \subset \R^n$. 
 Для пустого множества по определению полагают $\mes\emptyset = 0$.
 В общем случае, $D_0 \subset \R^n$ будем называть \emph{множеством меры нуль}, 
-если для $\forall\; \eps > 0\quad \exists P_\eps \subset D_0$ 
-и $\exists Q_\eps \supset D_0$~--- многогранники такие, что
-
+если для $\forall \eps > 0\ \exists H$~--- многогранник, $D_0\subset H$ и
 \begin{equation}
 \label{614}
-\mes Q_\eps - \mes P_\eps \le \eps.
+\mes H\leq\eps
 \end{equation}
 
 Для множеств меры нуль имеем следующие свойства:
@@ -136,7 +136,7 @@ $D_k \subset \R^n,\ k = \overline{1,m}$ в случае,
 
 Рассмотрим произвольное разбиение $P = \{P_k\}$, ${k = 
 \overline{1, m}}$ измеримого множества $D$
-на измеримые части $\forall P_k \subset D,\ k = 
+на измеримые части $P_k \subset D,\ k = 
 \overline{1, m}$, для которых:
 
 \begin{enumerate}
@@ -147,7 +147,7 @@ $D_k \subset \R^n,\ k = \overline{1,m}$ в случае,
 
 Выбирая произвольным образом отмеченное множество точек 
 $Q = \{M_k\}\quad \forall M_k \in P_k,\ k = \overline{1, m}$,
-для ФНП $f(x)\quad \forall x \in D \subset \R^n $ 
+для ФНП $f(x),\ \forall x \in D \subset \R^n $ 
 рассмотрим \emph{интегральную сумму}
 
 \begin{equation}
@@ -170,7 +170,7 @@ D$, $k = \overline{1, m}$.
 множество, считается \emph{интегрируемой} на $D$, если
 \begin{equation}
 \label{7.8}
-\exists I \subset \R \quad
+\exists I \in \R \quad
 \forall \eps > 0 \quad \exists \delta > 0 \quad 
 \forall \{P; Q\} \ 
 \diam P \le \delta \implies \abs{I  - \sigma} \le \eps.
@@ -247,8 +247,7 @@ $R(D)$. Имеем следующие основные свойства $n$-кр
 	
 	Если $f \subset R(D)$, где $D = D_1 \cup D_2$, 
 	а $D_1$, $D_2$~--- измеримые множества в $\R^n$,
-	общими у которых могут быть лишь только граничные точки 
-	(${ \mes(D_1 \cap D_2) = 0 }$), то
+	$\mes(D_1~\cap~D_2) = 0$, то
 	
 	\[
 		\int\limits_{D}f(x)dx = \int\limits_{D_1}f(x)dx + \int\limits_{D_2}f(x)dx.
@@ -295,7 +294,7 @@ $R(D)$. Имеем следующие основные свойства $n$-кр
 \end{thm}
 
 \begin{crl*}[теорема о среднем для ФНП]
-	Пусть $f \in C(D)$, а $g \subset R(D)$, где $D \subset \R^n$~---
+	Пусть $f \in C(D)$, а $g \in R(D)$, где $D \subset \R^n$~---
 	 измеримый компакт. Если функция $g(x)$ сохраняет один и 
 	 тот же знак $\forall x \in D $, то тогда $\exists 
 	 x_0 \in D \subset \R^n \implies$

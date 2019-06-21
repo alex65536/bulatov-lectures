@@ -113,7 +113,7 @@
 	\section{Метод множителей Лагранжа} 
 	
 	Недостатком предыдущего метода является то, что используемые переменные 
-	$x = $ $=\left(x_1, \ldots, x_n\right), \; y = \left(y_1,\ldots, y_n\right)$
+	$x = $ $=\left(x_1, \ldots, x_n\right), \; y = \left(y_1,\ldots, y_m\right)$
 	неравноправны между собой, т.~к. $x_k,\ k = \overline{1, n}$~--- 
 	независимые переменные, а $y_j,\ j = \overline{1, m}$, зависимы и 
 	должны быть выражены через $x_k$ за счет уравнения связи. 
@@ -122,7 +122,7 @@
 	$\lambda_1,\; \ldots,\; \lambda_m\quad \forall 
 	\lambda_i \in \R,\ i = \overline{1,\; m}$, 
 	с помощью которых на рассматриваемой ФНП и уравнении 
-	связи строится \emph{уравнение Лагранжа}:
+	связи строится \emph{функция Лагранжа}:
 	\begin{equation}
 	L\left(x, y\right) = f\left(x, y\right) + \sum\limits_{k = 1}^m 
 	\lambda_k F_k\left(x, y\right) \label{lec11.1:8}
@@ -134,12 +134,14 @@
 	\eqref{lec11.1:8} на обычный локальный экстремум относительно $x, y,\lambda$.
 	Во-первых, из необходимого условия локального экстремума:
 	\begin{equation}
-	du = 0 \implies \dfrac{\partial f}{\partial x_1} dx_1 + \ldots + 
+	df = 0 \implies \dfrac{\partial f}{\partial x_1} dx_1 + \ldots + 
 	\dfrac{\partial f}{\partial x_n} dx_n + \dfrac{\partial f}{\partial y_1}dy_1
-	 + \ldots + \dfrac{\partial f}{\partial y_n} dy_n = 0 \label{lec11.1:9}
+	 + \ldots + \dfrac{\partial f}{\partial y_m} dy_m = 0 \label{lec11.1:9}
 	\end{equation}
 	
-	Аналогично из уравнения связи получаем:
+	Аналогично из уравнений связи, а именно из $F_k(x, y) \equiv 0$, $k = 
+	\overline{1, 
+	m}$, в некоторой окрестности $V(x_0, y_0)$, получаем:
 	\begin{equation}
 	dF_k\left(x, \; y\right) = 0 \implies \dfrac{\partial 
 	F_k}{\partial x_1}dx_1 + 
@@ -199,7 +201,7 @@
 	\label{lec11.1:13}
 	\sum\limits_{j=1}^{n}\left(  \dfrac{\partial f }{\partial x_j} + 
 	\sum\limits_{k=1}^{m} \lambda_k\dfrac{\partial F_k }{\partial x_j}  
-	\right) \partial x_j =0 
+	\right) d x_j =0 
 	\end{equation}
 	
 	В\eqref{lec11.1:13} дифференциалы
@@ -260,7 +262,8 @@
 	_{= 0\ \eqref{lec11.1:15}} = 0
 	\end{multline*}
 	
-	То есть, $dL\left( x, y, z \right) = 0$, что соответствует уравнению 
+	То есть, $dL\left( x, y, \lambda \right) = 0$, что 
+	соответствует уравнению 
 	стационарной точки для функции Лагранжа. Найдя эту функцию, дальнейшие
 	исследования проводят обычным образом: при поиске локального экстремума 
 	находят $d^2L$ и избавляются от зависимых 
@@ -364,7 +367,7 @@
 	
 	В силу теоремы о гранях
 	\[ \exists M_0 = \sup\limits_{x \in D} f(x),\
-	m = \inf\limits_{x \in D} f(x). \]
+	m_0 = \inf\limits_{x \in D} f(x). \]
 	
 	Если $M_0 \in \R$ и $M_0 \in E(f)$, то $M_0 = M = 
 	\max\limits_{x \in D} f(x)$.

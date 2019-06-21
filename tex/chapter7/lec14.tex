@@ -73,7 +73,8 @@
 		\Delta z_k = z_k - z_{k - 1}, \\ k = \overline{1, m},\ j = \overline{1, l}.
 		\end{cases}\]
 		
-		Отсюда при $\widetilde{d_0} = \diam \widetilde{P_0} \to 0$ имеем: 
+		Отсюда при $\widetilde{d_0} = \diam \widetilde{P_0} \to 0$ для функции $F(x, 
+		y) = \sum\limits_{k = 1}^m F_k(x, y)$ имеем: 
 		
 		\begin{equation}
 		\iint\limits_D F\left(x, y\right) dxdy = \lim\limits_{\widetilde{d_0} 
@@ -89,7 +90,7 @@
 		\left(\int\limits_{z_k - 1}^{z_k} f(M_j, z)dz\right) \Delta D_j = \\ 
 		= \sum\limits_{j = 1}^{l} \sum\limits_{k = 1}^{m} I_{kj} \Delta D_j = 
 		\sum\limits_{j = 1}^{l} \sum\limits_{k = 1}^{m} f\left(N_{kj}\right) \Delta 
-		z_k \Delta D_j, \label{lec14:7}
+		z_k \Delta D_j = \sigma_0, \label{lec14:7}
 		\end{gathered}
 		\end{equation}
 		где $\Delta D_j = \mes D_j$~--- площадь $D_j$.
@@ -108,7 +109,8 @@
 		
 		Из непрерывности исходной функции предел этих специальных интегральных сумм 
 		рассмотренного 3И будет такой же, что и у общей интегральной суммы, поэтому 
-		при $d = \diam P \to 0$ получаем $0 \leq \diam \widetilde{P} < d \implies d 
+		при $d = \diam P \to 0$ получаем $0 \leq \diam \widetilde{P} < d \implies 
+		\diam \widetilde{P} 
 		\to 0$ для рассматриваемого кубируемого компакта $H \subset \R^3$ следует
 		\begin{equation}
 		I = \lim\limits_{d \to 0} \sigma_0 = \iint\limits_D  F\left(x, y\right) dxdy 
@@ -224,15 +226,14 @@
 	
 	Рассмотрим множества $D \subset \R^n$ и $G \subset \R^n$. Множество $D$ будем 
 	рассматривать в ПДСК\\ $Ox_1 \ldots x_n$, а $G$ ~--- в ПДСК $Ot_1 \ldots t_n$.
-	Отображение 
+	В случае биективного отображения
 	\begin{equation}
 	\label{lec14:11}
 	f : G \to D,
 	\end{equation} при котором 
 	для $\forall t = \left( t_1, \ldots, t_n \right) \in G$ $\exists ! \,
 	x = f\left(t\right) = \left(f_1\left( t\right) , \ldots, f_n\left( t\right)  
-	\right)  \in D$
-	будет взаимно однозначным, если оно биективно. В этом случае 
+	\right)  \in D$, имеем
 	\begin{equation}
 	\label{lec14:12}
 	\exists ! g :  D \to G

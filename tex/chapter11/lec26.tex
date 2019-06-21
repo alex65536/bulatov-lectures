@@ -104,7 +104,7 @@ $n$ выполняется $\abs{S - S_n} \le \eps$, т.~е.
 	\forall\eps > 0\enspace \exists\nu = \nu_\eps \enspace
 	\forall n\geq \nu \implies \abs{S - S_n} \leq \eps, \ \text{ 
 	т.~е.}\ 
-	\left|\sum\limits_{k = n_1}^\infty a_k\right| \leq \eps
+	\left|\sum\limits_{k = n+1}^\infty a_k\right| \leq \eps
 .\]
 
 Если отбросить конечное число первых членов ряда, например,  
@@ -277,7 +277,7 @@ $\lim\limits_{n \to \infty}S_n$
  \subsection{Признаки сравнения рядов}
 
 Рассматриваем положительные ряды.
-Сделать вывод об поведении изучаемого ряда
+Сделать вывод о поведении изучаемого ряда
 можно, сравнивая его элементы с  элементами
 другого (эталонного) ряда,  поведение (сходимость/расходимость) которого 
 известно.
@@ -355,7 +355,7 @@ $\lim\limits_{n \to \infty}S_n$
 \end{examples}
 \begin{rem}
 Для использования \hyperref[lec26:comp_test_1]{признака  1\textdegree} 
-достаточно, чтобы $a_k \leq b_k\quad \forall k\geq N$, т.~е.
+достаточно, чтобы $a_k \leq c\cdot b_k\quad \forall k\geq N$, т.~е.
 признак работает в этом случае для остатков рядов $a_k$ и $b_k$. 
  \end{rem}
 \begin{example}
@@ -380,7 +380,7 @@ $\lim\limits_{n \to \infty}S_n$
  	 --- положительные ряды,\\ 
  	а также существует предел
  	\[
- 	\lim\limits_{n \to \infty}\frac{a_k}{b_k} = l,\enspace 0 \leq l \leq +\infty
+ 	\lim\limits_{k \to \infty}\frac{a_k}{b_k} = l,\enspace 0 \leq l \leq +\infty
  	.\]
 	Тогда:
 	\begin{enumerate}[label={\alph*)}]
@@ -438,7 +438,7 @@ $\lim\limits_{n \to \infty}S_n$
 	\[
 		\sum\limits_{k = 1}^\infty b_k=   \sum\limits_{k = 1}^\infty\frac{1}{k}
 	.\]
-	Тогда \[\frac{a_k}{b_k} = \frac{k}{10^k + 7} \xrightarrow[k \to \infty]{} 
+	Тогда \[\frac{a_k}{b_k} = \frac{k}{10k + 7} \xrightarrow[k \to \infty]{} 
 	\frac{1}{10}.\] 
 	Т.~к. $b_k$ расходится, то по  
 	 \hyperref[lec26:comp_test_2]{признаку  2\textdegree b)}

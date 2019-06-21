@@ -83,7 +83,7 @@ q \right) \cdot \dfrac{1}{n} + O\left(\dfrac{1}{n^2}\right).
 \mathrm{I}_n =  \int\limits_0^{\frac{\pi}{2}} \cos^{n - 1} x \cdot \cos x\;dx =
 \left[\begin{array}{l}
 u = \cos^{n-1}x\\
-du = (n - 1) \cos^{n-2}x \sin x\;dx\\
+du = (n - 1) \cos^{n-2}x (-\sin x) \;dx\\
 v = \sin x \\
 dv = \cos x\;dx\\
 \end{array}\right]
@@ -181,8 +181,9 @@ S = \lim\limits_{n\to\infty} S_n \in \R$.
 Из формулы Валлиса:
 \[
 \dfrac{\pi}{2} = \lim\limits_{m \to \infty} \left( \dfrac{(2m)!!}{(2m - 1)!!}
-\right)^2\cdot \dfrac{1}{2m + 1} = \dfrac{((2m)!!)^4}{((2m)!)^2} \cdot
-\dfrac{1}{2m + 1} = \lim\limits_{n \to \infty} 
+\right)^2\cdot \dfrac{1}{2m + 1} =
+\lim\limits_{m \to \infty} \dfrac{((2m)!!)^4}{((2m)!)^2} \cdot
+\dfrac{1}{2m + 1} = \lim\limits_{m \to \infty} 
 \underbrace{\dfrac{2^{4m}\cdot(m!)^4}{((2m)!)^2} 
 \cdot \dfrac{1}{2m + 1}}_{\alpha_m^2}.
 \]
@@ -192,7 +193,7 @@ S = \lim\limits_{n\to\infty} S_n \in \R$.
 \]
 Т.~к. $ S_m \appr{m\to\infty} S $, то $ \lim\limits_{n \to \infty} \sigma_n = 
 e^s$, откуда 
-$\dfrac{\sigma_n^2}{\sigma_{2n}} \appr{m\to\infty}  \dfrac{e^{2s}}{e^s} = e^s 
+$\dfrac{\sigma_n^2}{\sigma_{2n}} \appr{n\to\infty}  \dfrac{e^{2s}}{e^s} = e^s 
 $.
 
 Рассмотрим выражение $\dfrac{\sigma_n^2}{\sigma_{2n}}$:
