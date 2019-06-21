@@ -35,10 +35,10 @@
 		\node [style=none] (33) at (-1.5, -1.5) {};
 		\node [style=none] (34) at (-1, -1) {};
 		\node [style=none] (35) at (-0.5, -0.5) {};
-		\node [style=none] (36) at (-5, -4) {$M_1$};
-		\node [style=none] (37) at (5, -4) {$M_2$};
-		\node [style=none] (38) at (5, 4) {$M_3$};
-		\node [style=none] (39) at (-5, 4) {$M_4$};
+		\node [style=none] (36) at (-4.5835,-0.5014) {$M_1$};
+		\node [style=none] (37) at (4.8334,-0.5014) {$M_2$};
+		\node [style=none] (38) at (0.5833,4.4167) {$M_3$};
+		\node [style=none] (39) at (0.5833,-4.5) {$M_4$};
 		\node [style=none] (40) at (10.5, -0.5) {$x$};
 		\node [style=none] (41) at (0.5, 8) {$y$};
 		\node [style=none] (42) at (6, 6) {};

@@ -1,5 +1,5 @@
 \begin{tikzpicture}[scale = 0.4]
-		\node [style=none] (0) at (-0.125,12) {};
+		\node [style=none] (0) at (0, 12) {};
 		\node [style=none] (1) at (0, 0) {};
 		\node [style=none] (2) at (12, 0) {};
 		\node [style=none] (3) at (2, 9) {};
@@ -13,8 +13,8 @@
 		\node [style=none] (13) at (12, 9) {$C$};
 		\node [style=none] (14) at (1, 9) {$D$};
 		\node [style=none] (15) at (7, 7) {$G$};
-		\node [style=none] (16) at (5.5,4.25) {$\psi(x)$};
-		\node [style=none] (17) at (5.5,9) {$\varphi(x)$};
+		\node [style=none] (16) at (5.5,4.25) {$\phi(x)$};
+		\node [style=none] (17) at (5.5,9) {$\psi(x)$};
 		\node [style=none] (18) at (2, -0.75) {$a$};
 		\node [style=none] (19) at (11, -0.75) {$b$};
 		\node [style=none] (20) at (13, 0) {$x$};

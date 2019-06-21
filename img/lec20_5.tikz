@@ -13,8 +13,8 @@
 		\node [style=none] (13) at (9, -1) {$C$};
 		\node [style=none] (14) at (9, -12) {$D$};
 		\node [style=none] (15) at (7, -6) {$G$};
-		\node [style=none] (16) at (4.075,-8.5) {$h(x)$};
-		\node [style=none] (17) at (9.525,-7.5) {$l(x)$};
+		\node [style=none] (16) at (4.075,-8.5) {$h(y)$};
+		\node [style=none] (17) at (9.525,-7.5) {$l(y)$};
 		\node [style=none] (18) at (-0.75, -11) {$c$};
 		\node [style=none] (19) at (-0.75,-2.5) {$d$};
 		\node [style=none] (20) at (1, -1) {$y$};
