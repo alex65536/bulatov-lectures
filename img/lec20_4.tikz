@@ -1,0 +1,27 @@
+\begin{tikzpicture}[scale = 0.4]
+		\node [style=circle] (0) at (-5, 0) {};
+		\node [style=circle] (1) at (0, 7) {};
+		\node [style=circle] (2) at (0, 0) {};
+		\node [style=circle] (3) at (0, -7) {};
+		\node [style=none] (4) at (3, 4) {};
+		\node [style=circle] (5) at (3, -4) {};
+		\node [style=circle] (6) at (3, 4) {};
+		\node [style=none] (7) at (-6, 0) {$p$};
+		\node [style=none] (8) at (4, 4) {};
+		\node [style=none] (9) at (4, 4) {$n$};
+		\node [style=none] (10) at (4, -4) {$m$};
+		\node [style=none] (11) at (0, 8) {$A$};
+		\node [style=none] (12) at (0, -8) {$C$};
+		\node [style=none] (13) at (-1, 0) {$B$};
+		\node [style=none] (14) at (-3, 0) {$G_1$};
+		\node [style=none] (15) at (1, 4) {$G_2$};
+		\node [style=none] (16) at (1, -4) {$G_3$};
+		\draw [in=-180, out=90] (0) to (1);
+		\draw [in=180, out=-90] (0) to (3);
+		\draw [in=90, out=0] (1) to (4.center);
+		\draw [in=0, out=-90] (4.center) to (2);
+		\draw [in=90, out=0] (2) to (5);
+		\draw [in=0, out=-90] (5) to (3);
+		\draw (1) to (2);
+		\draw (2) to (3);
+\end{tikzpicture}

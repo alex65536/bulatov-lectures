@@ -1,0 +1,30 @@
+\begin{tikzpicture}[scale = 0.4]
+		\node [style=none] (0) at (12, -13) {};
+		\node [style=none] (1) at (0, -13) {};
+		\node [style=none] (2) at (0, -1) {};
+		\node [style=none] (3) at (9, -11) {};
+		\node [style=none] (5) at (9, -2) {};
+		\node [style=none] (6) at (5, -11) {};
+		\node [style=none] (8) at (4.75, -2) {};
+		\node [style=none] (9) at (0, -11) {};
+		\node [style=none] (10) at (0, -2) {};
+		\node [style=none] (11) at (5, -12) {$A$};
+		\node [style=none] (12) at (4.75, -1) {$B$};
+		\node [style=none] (13) at (9, -1) {$C$};
+		\node [style=none] (14) at (9, -12) {$D$};
+		\node [style=none] (15) at (7, -6) {$G$};
+		\node [style=none] (16) at (4.075,-8.5) {$h(x)$};
+		\node [style=none] (17) at (9.525,-7.5) {$l(x)$};
+		\node [style=none] (18) at (-0.75, -11) {$c$};
+		\node [style=none] (19) at (-0.75,-2.5) {$d$};
+		\node [style=none] (20) at (1, -1) {$y$};
+		\node [style=none] (21) at (13, -13) {$x$};
+		\draw [style=arrow] (1.center) to (0.center);
+		\draw [style=arrow] (1.center) to (2.center);
+		\draw (3.center) to (6.center);
+		\draw (5.center) to (8.center);
+		\draw [style=new edge style 0] (6.center) to (9.center);
+		\draw [style=new edge style 0] (8.center) to (10.center);
+		\draw [in=60, out=-105] (8.center) to (6.center);
+		\draw [bend left, looseness=0.75] (3.center) to (5.center);
+\end{tikzpicture}

@@ -1,0 +1,18 @@
+\begin{tikzpicture}[scale = 0.5]
+		\node [style=none] (0) at (0, 0) {};
+		\node [style=none] (1) at (0, 9) {};
+		\node [style=none] (2) at (9, 0) {};
+		\node [style=none] (3) at (6, 0) {};
+		\node [style=circle] (4) at (3, 4.5) {};
+		\node [style=none] (5) at (6, -1) {$B$};
+		\node [style=none] (6) at (0, -1) {$A$};
+		\node [style=circle] (7) at (3, 0) {};
+		\node [style=none] (8) at (3, -1) {$n$};
+		\node [style=none] (9) at (3, 5.5) {$m$};
+		\node [style=none] (10) at (9, -1) {$x$};
+		\node [style=none] (11) at (1, 9) {$y$};
+		\draw [style=arrow] (0.center) to (1.center);
+		\draw [style=arrow, in=180, out=0] (0.center) to (2.center);
+		\draw [in=180, out=90, looseness=0.75] (0.center) to (4);
+		\draw [in=90, out=0, looseness=0.75] (4) to (3.center);
+\end{tikzpicture}

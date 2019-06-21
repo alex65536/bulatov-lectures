@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+		\node [style=none] (0) at (-1, 5) {};
+		\node [style=none] (1) at (-6, 3) {};
+		\node [style=none] (2) at (-6, -1) {};
+		\node [style=none] (3) at (0, -2.75) {};
+		\node [style=none] (4) at (5, 1) {};
+		\node [style=none] (5) at (1.25, -1.75) {$D$};
+		\node [style=circle] (6) at (-3, 3) {};
+		\node [style=circle] (7) at (-3, 0) {};
+		\node [style=circle] (8) at (2, 0) {};
+		\node [style=circle] (9) at (2, 3) {};
+		\node [style=none] (10) at (2.75, 2.5) {$M(x,y)$};
+		\node [style=none] (11) at (-2, 2.5) {$M_1(x_0,y)$};
+		\node [style=none] (12) at (2.75, -0.5) {$M_2(x,y_0)$};
+		\node [style=none] (13) at (-2, -0.5) {$M_0(x_0,y_0)$};
+		\draw [bend right=15] (0.center) to (1.center);
+		\draw [bend right=45, looseness=1.25] (1.center) to (2.center);
+		\draw [in=150, out=-45, looseness=1.50] (2.center) to (3.center);
+		\draw [in=-60, out=-30, looseness=0.75] (3.center) to (4.center);
+		\draw [bend left, looseness=1.25] (0.center) to (4.center);
+		\draw [style=new edge style 0] (6) to (7);
+		\draw [style=new edge style 0] (7) to (8);
+		\draw [style=new edge style 0] (8) to (9);
+		\draw [style=new edge style 0] (9) to (6);
+\end{tikzpicture}

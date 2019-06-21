@@ -1,0 +1,10 @@
+\begin{tikzpicture}[scale=0.3]
+		\node [style=circle] (0) at (-5, -3) {};
+		\node [style=circle] (1) at (2, 3) {};
+		\node [style=none] (2) at (-3.25, 3) {$I$};
+		\node [style=none] (3) at (0, -4) {$II$};
+		\node [style=none] (4) at (-5.5001,-4.3584) {$A$};
+		\node [style=none] (5) at (3.5001,3.5001) {$B$};
+		\draw [in=180, out=105] (0) to (1);
+		\draw [in=-60, out=-30] (0) to (1);
+\end{tikzpicture}

@@ -1,0 +1,27 @@
+\begin{tikzpicture}[scale = 0.5]
+		\node [style=none] (0) at (0, 0) {};
+		\node [style=none] (1) at (5, 5) {};
+		\node [style=none] (2) at (10, 10) {};
+		\node [style=circle] (3) at (0, 0) {};
+		\node [style=circle] (4) at (10, 10) {};
+		\node [style=circle] (5) at (0.675, 2.5) {};
+		\node [style=circle] (6) at (3.25, 4.7) {};
+		\node [style=circle] (7) at (6.625, 5.5) {};
+		\node [style=circle] (8) at (8.975, 7.5) {};
+		\node [style=rectangle] (9) at (0.15, 1.25) {};
+		\node [style=rectangle] (10) at (1.8, 3.875) {};
+		\node [style=rectangle] (11) at (7.85,6.35) {};
+		\node [style=rectangle] (12) at (9.725, 8.75) {};
+		\node [style=none] (13) at (1.75, 0) {$A=A_0$};
+		\node [style=none] (14) at (2, 2.5) {$A_1$};
+		\node [style=none] (15) at (4, 4) {$A_2$};
+		\node [style=none] (16) at (8.25, 5) {$A_{n-2}$};
+		\node [style=none] (17) at (10.5, 7.5) {$A_{n-1}$};
+		\node [style=none] (18) at (11.75, 10) {$B = A_{n}$};
+		\node [style=none] (19) at (1.5, 1.25) {$M_1$};
+		\node [style=none] (22) at (3, 3.5) {$M_2$};
+		\node [style=none] (23) at (9.25, 6) {$M_{n-1}$};
+		\node [style=none] (24) at (11, 8.75) {$M_{n}$};
+		\draw [style=thin arrow, in=180, out=90] (0.center) to (1.center);
+		\draw [bend right=45, looseness=0.75] (1.center) to (2.center);
+\end{tikzpicture}

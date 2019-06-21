@@ -1,0 +1,30 @@
+\begin{tikzpicture}[scale = 0.4]
+		\node [style=none] (0) at (0, 12) {};
+		\node [style=none] (1) at (0, 0) {};
+		\node [style=none] (2) at (12, 0) {};
+		\node [style=none] (3) at (2, 9) {};
+		\node [style=none] (5) at (11, 9) {};
+		\node [style=none] (6) at (2, 5) {};
+		\node [style=none] (8) at (11, 4.75) {};
+		\node [style=none] (9) at (2, 0) {};
+		\node [style=none] (10) at (11, 0) {};
+		\node [style=none] (11) at (1, 5) {$A$};
+		\node [style=none] (12) at (12, 4.75) {$B$};
+		\node [style=none] (13) at (12, 9) {$C$};
+		\node [style=none] (14) at (1, 9) {$D$};
+		\node [style=none] (15) at (7, 7) {$G$};
+		\node [style=none] (16) at (5.5,4.25) {$\psi(x)$};
+		\node [style=none] (17) at (5.5,9) {$\varphi(x)$};
+		\node [style=none] (18) at (2, -0.75) {$a$};
+		\node [style=none] (19) at (11, -0.75) {$b$};
+		\node [style=none] (20) at (13, 0) {$x$};
+		\node [style=none] (21) at (1, 12) {$y$};
+		\draw [style=arrow] (1.center) to (0.center);
+		\draw [style=arrow] (1.center) to (2.center);
+		\draw (3.center) to (6.center);
+		\draw (5.center) to (8.center);
+		\draw [style=new edge style 0] (6.center) to (9.center);
+		\draw [style=new edge style 0] (8.center) to (10.center);
+		\draw [in=30, out=-165] (8.center) to (6.center);
+		\draw [in=180, out=-30, looseness=1.25] (3.center) to (5.center);
+\end{tikzpicture}
