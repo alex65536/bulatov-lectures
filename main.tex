@@ -30,6 +30,11 @@
 \usepackage{centernot}
 % Если нужны другие пакеты, их стоит добавлять сюда
 
+% Совместимость пакета subfiles версии 1.3 и выше с более старыми версиями
+\ifcsdef{subimport}{
+\renewcommand{\subimport}[2]{\input{#1#2}}
+}{}
+
 % Для рисунков
 \input{tikz-stylesheet.tikzstyles}
 
