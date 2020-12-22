@@ -8,7 +8,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel}
 \usepackage[left=2cm,right=2cm,top=2cm,bottom=3cm,bindingoffset=0cm]{geometry}
-\usepackage{subfiles}
+\usepackage[v1]{subfiles}
 \usepackage[bookmarks]{hyperref}
 \usepackage{pgfpatch}
 
@@ -32,6 +32,10 @@
 
 % Для рисунков
 \input{tikz-stylesheet.tikzstyles}
+
+\graphicspath{
+	{img/}
+}
 
 \begin{document}
 
