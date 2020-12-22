@@ -12,9 +12,6 @@ addons:
       - texlive-science
       - texlive-latex-extra
       - latexmk
-      # required only for CI
-      - pgf
-      - xzdec
       - curl
 
 before_install:
