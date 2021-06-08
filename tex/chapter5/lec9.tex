@@ -221,7 +221,7 @@ $I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$
     Дифференцируя равенства по $u_{k+1}$ как сложные функции, получаем
     \begin{equation}
 	\label{lec9,b}
-    \sum_{j=1}^k \pderiv{F_i}{u_j}\cdot\pderiv{u_j}{u_{k+1}} +
+    \sum_{j=1}^k \pderiv{F_i}{u_j}\cdot\pderiv{v_j}{u_{k+1}} +
     \pderiv{F_i}{u_{k+1}} \equiv 0\quad\forall i = \overline{1,k}.
     \end{equation}
     
@@ -267,7 +267,7 @@ $I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$
         \label{lec_9.num_22}
         \pderiv{H(x, u_{k+1})}{u_{k+1}}  =
         \sum_{j = 1}^{k}
-        \pderiv{F_{k+1}}{v_j} \cdot \pderiv{v_j}{u_{k+1}} + 
+        \pderiv{F_{k+1}}{u_j} \cdot \pderiv{v_j}{u_{k+1}} + 
         \pderiv{F_{k+1}}{u_{k+1}}.
     \end{equation}
     
@@ -288,17 +288,17 @@ $I(x, u) = \det\pderiv{F\left(x, u\right)}{u}$
 	= 
     \begin{vmatrix}
      \pderiv{F_1}{u_1} & \pderiv{F_1}{u_2} & \dots & 
-     \sum_{j=1}^k \pderiv{F_1}{u_j}\cdot\pderiv{u_j}{u_{k+1}} +
+     \sum_{j=1}^k \pderiv{F_1}{u_j}\cdot\pderiv{v_j}{u_{k+1}} +
     \pderiv{F_1}{u_{k+1}}\\
      \pderiv{F_2}{u_1} & \pderiv{F_2}{u_2} & \dots & 
-     \sum_{j=1}^k \pderiv{F_2}{u_j}\cdot\pderiv{u_j}{u_{k+1}} +
+     \sum_{j=1}^k \pderiv{F_2}{u_j}\cdot\pderiv{v_j}{u_{k+1}} +
     \pderiv{F_2}{u_{k+1}} \\
      \vdots & \vdots & \ddots & \vdots \\
      \pderiv{F_{k+1}}{u_1} & \pderiv{F_{k+1}}{u_2} & \dots &
      \sum_{j = 1}^{k}
-        \pderiv{F_{k+1}}{u_j} \cdot \pderiv{u_j}{u_{k+1}} + 
+        \pderiv{F_{k+1}}{u_j} \cdot \pderiv{v_j}{u_{k+1}} + 
         \pderiv{F_{k+1}}{u_{k+1}} \\
-    \end{vmatrix} \stackrel{\eqref{lec9,a}, \eqref{lec_9.num_22}}{=}
+    \end{vmatrix} \stackrel{\eqref{lec9,b}, \eqref{lec_9.num_22}}{=}
     \begin{vmatrix}
      \pderiv{F_1}{u_1} & \pderiv{F_1}{u_2} & \dots & 0\\
      \pderiv{F_2}{u_1} & \pderiv{F_2}{u_2} & \dots & 0\\
